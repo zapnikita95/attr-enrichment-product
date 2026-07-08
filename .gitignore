@@ -1,0 +1,16 @@
+# Temp extraction artifacts
+_ref_*.txt
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Secrets
+.env
+*creds*
+*totp*

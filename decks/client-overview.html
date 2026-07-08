@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=1280">
+<title>Обогащение каталога — обзор</title>
+<link rel="stylesheet" href="engine/qbr-deck.css">
+</head>
+<body>
+<div class="deck" id="deck">
+<section class="slide title-cover active">
+<span class="slide-num">1</span>
+<div class="title-wrap">
+  <div class="title-frame">
+    <div class="title-bg title-bg-gradient"></div>
+    <div class="title-overlay">
+      <h1>Обогащение каталога</h1>
+      <p class="sub">Больше находок в поиске — без изменения вашего PIM</p>
+      <p class="period">Diginetica · для партнёров search</p>
+    </div>
+    <span class="slide-num-in">1</span>
+  </div>
+</div>
+</section>
+<section class="slide">
+<span class="slide-num">2</span>
+<div class="slide-head"><span class="tag">Проблема</span></div>
+<div class="slide-body">
+
+<h2>Ваш покупатель ищет то, чего нет в карточке</h2>
+<ul class="big-list glass fill-card" style="padding:24px 28px">
+  <li><strong>Нулевая выдача</strong>Популярные запросы без результата — потерянные продажи.</li>
+  <li><strong>Неточная выдача</strong>Fallback вместо точного товара (нерелевантные позиции в топе).</li>
+  <li><strong>Фото ≠ фид</strong>Цвет, принт, надпись на упаковке не попадают в поиск.</li>
+</ul>
+
+</div>
+</section>
+<section class="slide">
+<span class="slide-num">3</span>
+<div class="slide-head"><span class="tag">Решение</span></div>
+<div class="slide-body">
+
+<h2>Мы добавляем атрибуты в поиск — не в ваш PIM</h2>
+<div class="grid2">
+  <div class="glass fill-card"><h3 class="card-h3">Из текста</h3><p>Материал, состав, возраст — из описаний поставщиков</p></div>
+  <div class="glass fill-card"><h3 class="card-h3">С фото</h3><p>OCR, принт, форма, цвет — с карточек товаров</p></div>
+</div>
+<div class="glass" style="margin-top:14px;text-align:center"><strong>Заливка через Diginetica Dashboard</strong> — без очереди в ваш IT</div>
+
+</div>
+</section>
+<section class="slide">
+<span class="slide-num">4</span>
+<div class="slide-head"><span class="tag">Результат</span></div>
+<div class="slide-body">
+
+<h2>Что вы получаете</h2>
+<div class="grid4">
+  <div class="glass goal-card"><div class="goal-label">Меньше нулей</div><div class="goal-metric">−33%</div><div class="goal-note">Кейс ювелирка</div><div class="goal-art">📉</div></div>
+  <div class="glass goal-card"><div class="goal-label">Лучший топ-20</div><div class="goal-metric">+9%</div><div class="goal-note">NDCG@20</div><div class="goal-art">📈</div></div>
+  <div class="glass goal-card"><div class="goal-label">Точнее выдача</div><div class="goal-metric">+2.6pp</div><div class="goal-note">Class E · аптека</div><div class="goal-art">✓</div></div>
+  <div class="glass goal-card"><div class="goal-label">Новые слова</div><div class="goal-metric">49%</div><div class="goal-note">SKU с новой лексикой</div><div class="goal-art">✨</div></div>
+</div>
+
+</div>
+</section>
+<section class="slide slide-kpi">
+<span class="slide-num">5</span>
+<div class="slide-head"><span class="tag">Метрики</span></div>
+<div class="slide-body">
+
+<h2>Доказанный uplift</h2>
+<div class="grid3 grid3-kpi">
+  <div class="glass metric-card"><div class="lbl">NDCG@20</div><div class="value">+0.003 … +9%</div><div class="sparkline"><canvas id="sparkNdcg"></canvas></div></div>
+  <div class="glass metric-card"><div class="lbl">Zero queries</div><div class="value">до −33%</div><div class="sparkline"><canvas id="sparkZero"></canvas></div></div>
+  <div class="glass metric-card"><div class="lbl">Precision@20</div><div class="value">+0.010</div><div class="sparkline"><canvas id="sparkClassE"></canvas></div></div>
+</div>
+<ul class="rank-list glass" style="padding:12px 16px;margin-top:10px">
+  <li><span class="n">1</span><span class="q">кольцо змея</span><span class="v">842/мес</span></li>
+  <li><span class="n">2</span><span class="q">стельки ортопедические</span><span class="v">1203/мес</span></li>
+</ul>
+
+</div>
+</section>
+<section class="slide slide-patterns-ai">
+<span class="slide-num">6</span>
+<div class="slide-head"><span class="tag">Кейс</span></div>
+<div class="slide-body">
+
+<h2>Ювелирный ритейл</h2>
+<div class="pattern-examples">
+  <div class="glass pattern-ex"><div style="font-size:56px">🐍</div><div class="pat-label">Форма «змея»</div><div class="pat-sub">Zero −33%</div></div>
+  <div class="glass pattern-ex"><div style="font-size:56px">💍</div><div class="pat-label">Цвет металла</div><div class="pat-sub">NDCG +9%</div></div>
+</div>
+
+</div>
+</section>
+<section class="slide slide-kpi">
+<span class="slide-num">7</span>
+<div class="slide-head"><span class="tag">Кейс</span></div>
+<div class="slide-body">
+
+<h2>Аптечная сеть</h2>
+<div class="chart-box tall"><canvas id="serpBeforeAfter"></canvas></div>
+<div class="insight green glass" style="padding:14px"><strong>Пример</strong> Запрос «стельки» — корректный товар после OCR с упаковки</div>
+
+</div>
+</section>
+<section class="slide">
+<span class="slide-num">8</span>
+<div class="slide-head"><span class="tag">Кейс</span></div>
+<div class="slide-body">
+
+<h2>Fashion · OCR и принт</h2>
+<div class="grid2">
+  <div class="glass metric-card"><div class="lbl">Залито в поиск</div><div class="value">1 747</div></div>
+  <div class="glass metric-card"><div class="lbl">Новая лексика</div><div class="value">49%</div></div>
+</div>
+<div class="chart-box compact"><canvas id="lexiconPie"></canvas></div>
+
+</div>
+</section>
+<section class="slide">
+<span class="slide-num">9</span>
+<div class="slide-head"><span class="tag">Диагностика</span></div>
+<div class="slide-body">
+
+<h2>Бесплатная оценка до старта</h2>
+<div class="research-grid">
+  <div class="glass research-tile"><div class="research-icon">📊</div><div><h4>Lexicon gap</h4><p>Какие запросы не покрыты фидом</p></div></div>
+  <div class="glass research-tile"><div class="research-icon">🎯</div><div><h4>Impact forecast</h4><p>Сколько SKU и запросов выиграют</p></div></div>
+  <div class="glass research-tile"><div class="research-icon">📈</div><div><h4>NDCG baseline</h4><p>Точка отсчёта до внедрения</p></div></div>
+</div>
+
+</div>
+</section>
+<section class="slide">
+<span class="slide-num">10</span>
+<div class="slide-head"><span class="tag">Процесс</span></div>
+<div class="slide-body">
+
+<h2>Как это работает для вас</h2>
+<div class="flow-diagram glass fill-card" style="padding:24px">
+  <div class="flow-step"><strong>Диагностика</strong><br>2–3 дня</div>
+  <span class="flow-arrow">→</span>
+  <div class="flow-step"><strong>Пилот / batch</strong><br>2–4 нед</div>
+  <span class="flow-arrow">→</span>
+  <div class="flow-step"><strong>Заливка</strong><br>Dashboard</div>
+  <span class="flow-arrow">→</span>
+  <div class="flow-step"><strong>Отчёт</strong><br>QBR метрики</div>
+</div>
+
+</div>
+</section>
+<section class="slide">
+<span class="slide-num">11</span>
+<div class="slide-head"><span class="tag">Цена</span></div>
+<div class="slide-body">
+
+<h2>Прозрачное ценообразование</h2>
+<div class="grid2">
+  <div class="glass goal-card"><div class="goal-label">Разовый batch</div><div class="goal-metric">1×MRR</div><div class="goal-note">Обработка согласованного каталога</div></div>
+  <div class="glass goal-card"><div class="goal-label">Поддержка новинок</div><div class="goal-metric">5–10%</div><div class="goal-note">MRR в месяц по потоку SKU</div></div>
+</div>
+
+</div>
+</section>
+<section class="slide">
+<span class="slide-num">12</span>
+<div class="slide-head"><span class="tag">Пилот</span></div>
+<div class="slide-body">
+
+<h2>Следующий шаг</h2>
+<div class="glass fill-card" style="padding:28px">
+  <ul class="big-list">
+    <li><strong>Диагностика</strong> — бесплатно, 3 рабочих дня после фида</li>
+    <li><strong>Пилот</strong> — 5–10k SKU, метрики до/после</li>
+    <li><strong>Масштаб</strong> — полный batch после согласования uplift</li>
+  </ul>
+</div>
+
+</div>
+</section>
+<section class="slide">
+<span class="slide-num">13</span>
+<div class="slide-head"><span class="tag">Контакты</span></div>
+<div class="slide-body">
+
+<h2>Готовы показать цифры на вашем каталоге</h2>
+<div class="glass fill-card" style="padding:32px;text-align:center">
+  <p style="font-size:22px;font-weight:600;color:var(--accent)">Запросите диагностику lexicon gap</p>
+  <p style="margin-top:16px;color:var(--muted)">Diginetica Search · Обогащение каталога</p>
+</div>
+
+</div>
+</section>
+<section class="slide title-cover">
+<span class="slide-num">14</span>
+<div class="title-wrap">
+  <div class="title-frame">
+    <div class="title-bg title-bg-gradient"></div>
+    <div class="title-overlay">
+      <h1>Спасибо</h1>
+      <p class="sub">Диагностика бесплатно</p>
+      <p class="period">product@diginetica · Attr Impact Studio</p>
+    </div>
+  </div>
+</div>
+</section>
+
+</div>
+<nav class="nav-dots" id="nav" aria-label="Навигация">
+  <button type="button" id="prev" aria-label="Предыдущий">‹</button>
+  <div id="dots"></div>
+  <button type="button" id="next" aria-label="Следующий">›</button>
+</nav>
+<script type="application/json" id="deck-data">{"meta": {"product": "Обогащение каталога для поиска", "version": "2026-Q3", "source": "attr-enrichment-product"}, "portfolio_summary": {"cases_count": 7, "verticals": ["Аптека", "Ювелирка", "Fashion", "Дискаунт", "Детские товары", "Grocery", "Строительный ритейл"], "avg_ndcg_lift_pct": 4.5, "avg_zero_reduction_pct": 28}, "kpi": {"ndcg_at_20_delta": 0.003, "precision_at_20_delta": 0.01, "class_e_delta_pp": 2.6, "class_i_delta_pp": -2.2, "zero_reduction_pct": 33, "ndcg_jewelry_pct": 9, "zero_monthly": [{"label": "До", "value": 12.4}, {"label": "Пилот", "value": 10.1}, {"label": "Batch", "value": 8.3}]}, "sparklines": {"ndcg": [0.72, 0.721, 0.723, 0.725, 0.728], "zero": [12.4, 11.8, 10.5, 9.2, 8.3], "class_e": [41.2, 42.1, 42.8, 43.5, 43.8]}, "serp_classes": {"before": {"e": 41.2, "s": 28.4, "i": 5.7, "c": 24.7}, "after": {"e": 43.8, "s": 27.9, "i": 3.5, "c": 24.8}}, "lexicon": {"closed_pct": 49, "gap_pct": 51, "truly_new_sku_pct": 49, "dashboard_rows": 1747}, "zero_queries_closed": [{"query": "кольцо змея", "freq": 842, "skus": 127}, {"query": "стельки ортопедические", "freq": 1203, "skus": 89}, {"query": "кольцо череп", "freq": 615, "skus": 54}, {"query": "футболка с принтом леопард", "freq": 934, "skus": 312}, {"query": "таблетница на неделю", "freq": 478, "skus": 41}], "pricing_examples": [{"mrr": 30000, "sku": 15000, "new_per_week": 200, "batch": 30000, "recurring_pct": 5, "recurring": 1500}, {"mrr": 50000, "sku": 40000, "new_per_week": 1000, "batch": 50000, "recurring_pct": 10, "recurring": 5000}, {"mrr": 500000, "sku": 120000, "new_per_week": 3000, "batch": 500000, "recurring_pct": 10, "recurring": 50000}], "cases_highlight": ["pharmacy_vision", "jewelry_form", "befree_fashion", "discount_ocr"]}</script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+<script src="engine/qbr-deck.js"></script>
+<script>
+QBRDeck.init();
+QBRDeck.runWhenReady(function () { QBRDeck.initProductCharts(); });
+</script>
+</body>
+</html>

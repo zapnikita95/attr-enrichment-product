@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=1280">
+<title>Befree — Обогащение каталога</title>
+<link rel="stylesheet" href="../engine/qbr-deck.css">
+</head>
+<body>
+<div class="deck" id="deck">
+
+<section class="slide title-cover active">
+<span class="slide-num">1</span>
+<div class="title-wrap">
+  <div class="title-frame">
+    <div class="title-bg title-bg-gradient"></div>
+    <div class="title-overlay">
+      <h1>Обогащение каталога</h1>
+      <p class="sub">Befree</p>
+      <p class="period">site_id 1967 · 2026-07-08</p>
+    </div>
+    <span class="slide-num-in">1</span>
+  </div>
+</div>
+</section>
+
+<section class="slide">
+<span class="slide-num">2</span>
+<div class="slide-head"><span class="tag">Диагностика</span></div>
+<div class="slide-body">
+<h2>Прогноз Attr Impact Studio</h2>
+<div class="grid3">
+  <div class="glass metric-card"><div class="lbl">Zero → result</div><div class="value">—</div></div>
+  <div class="glass metric-card"><div class="lbl">Product reach</div><div class="value">—</div></div>
+  <div class="glass metric-card"><div class="lbl">Lexicon gap closure</div><div class="value">—%</div></div>
+</div>
+</div>
+</section>
+
+<section class="slide">
+<span class="slide-num">3</span>
+<div class="slide-head"><span class="tag">Кейсы</span></div>
+<div class="slide-body">
+<h2>Релевантный опыт</h2>
+<div class="glass fill-card" style="margin-bottom:12px"><h3 class="card-h3">Fashion · vision</h3><p><strong>1747 rows</strong></p><p class="goal-note">OCR надписей и распознавание принта на одежде. 1747 строк залито в Dashboard. 49% SKU получили truly_new лексику — слова, которых не было в фиде.…</p></div>
+<div class="glass fill-card" style="margin-bottom:12px"><h3 class="card-h3">Аптека · vision</h3><p><strong>NDCG +0.003</strong></p><p class="goal-note">Запрос «стельки» в выдачу попадал чай для сосудов из-за бедного описания. После OCR с упаковки — корректный товар в топе. Class E вырос на 2.6 п.п., Class I (нерелевантная выдача) снизился на 2.2 п.п.…</p></div>
+<div class="glass fill-card" style="margin-bottom:12px"><h3 class="card-h3">Ювелирка · vision</h3><p><strong>Zero −33%</strong></p><p class="goal-note">Форма украшения (змея, череп, сердце) — запросы без результата закрыты. Нулевая выдача −33%, NDCG@20 в среднем +9% после атрибутов form и metal_color.…</p></div>
+</div>
+</section>
+
+<section class="slide slide-kpi">
+<span class="slide-num">4</span>
+<div class="slide-head"><span class="tag">Метрики</span></div>
+<div class="slide-body">
+<h2>Ориентиры uplift</h2>
+<div class="grid3 grid3-kpi">
+  <div class="glass metric-card"><div class="lbl">NDCG@20</div><div class="value">+0.003 … +9%</div><div class="sparkline"><canvas id="sparkNdcg"></canvas></div></div>
+  <div class="glass metric-card"><div class="lbl">Zero %</div><div class="value">до −33%</div><div class="sparkline"><canvas id="sparkZero"></canvas></div></div>
+  <div class="glass metric-card"><div class="lbl">Class E</div><div class="value">+2.6pp</div><div class="sparkline"><canvas id="sparkClassE"></canvas></div></div>
+</div>
+</div>
+</section>
+
+<section class="slide">
+<span class="slide-num">5</span>
+<div class="slide-head"><span class="tag">Цена</span></div>
+<div class="slide-body">
+<h2>Коммерческое предложение</h2>
+<div class="grid2">
+  <div class="glass goal-card"><div class="goal-label">Batch</div><div class="goal-metric">500 000 ₽</div><div class="goal-note">1 × MRR = 500 000 ₽</div></div>
+  <div class="glass goal-card"><div class="goal-label">Recurring</div><div class="goal-metric">37 500 ₽</div><div class="goal-note">7.5% MRR / мес</div></div>
+</div>
+</div>
+</section>
+
+<section class="slide slide-dark slide-plan">
+<span class="slide-num">6</span>
+<div class="slide-head"><span class="tag">План</span></div>
+<h2>Следующие шаги</h2>
+<div class="plan-grid">
+  <div class="plan-tile"><div class="plan-icon">1</div><p>Согласовать scope атрибутов и SKU</p></div>
+  <div class="plan-tile"><div class="plan-icon">2</div><p>Batch extraction 2–4 недели</p></div>
+  <div class="plan-tile"><div class="plan-icon">3</div><p>Заливка Dashboard + TOTP</p></div>
+  <div class="plan-tile"><div class="plan-icon">4</div><p>QBR-отчёт через 4 недели</p></div>
+</div>
+</section>
+
+</div>
+<nav class="nav-dots" id="nav">
+  <button type="button" id="prev">‹</button>
+  <div id="dots"></div>
+  <button type="button" id="next">›</button>
+</nav>
+<script type="application/json" id="deck-data">{"meta": {"product": "Обогащение каталога для поиска", "version": "2026-Q3", "source": "attr-enrichment-product", "partner": "Befree", "site_id": 1967}, "portfolio_summary": {"cases_count": 7, "verticals": ["Аптека", "Ювелирка", "Fashion", "Дискаунт", "Детские товары", "Grocery", "Строительный ритейл"], "avg_ndcg_lift_pct": 4.5, "avg_zero_reduction_pct": 28}, "kpi": {"ndcg_at_20_delta": 0.003, "precision_at_20_delta": 0.01, "class_e_delta_pp": 2.6, "class_i_delta_pp": -2.2, "zero_reduction_pct": 33, "ndcg_jewelry_pct": 9, "zero_monthly": [{"label": "До", "value": 12.4}, {"label": "Пилот", "value": 10.1}, {"label": "Batch", "value": 8.3}]}, "sparklines": {"ndcg": [0.72, 0.721, 0.723, 0.725, 0.728], "zero": [12.4, 11.8, 10.5, 9.2, 8.3], "class_e": [41.2, 42.1, 42.8, 43.5, 43.8]}, "serp_classes": {"before": {"e": 41.2, "s": 28.4, "i": 5.7, "c": 24.7}, "after": {"e": 43.8, "s": 27.9, "i": 3.5, "c": 24.8}}, "lexicon": {"closed_pct": 49, "gap_pct": 51, "truly_new_sku_pct": 49, "dashboard_rows": 1747}, "zero_queries_closed": [{"query": "кольцо змея", "freq": 842, "skus": 127}, {"query": "стельки ортопедические", "freq": 1203, "skus": 89}, {"query": "кольцо череп", "freq": 615, "skus": 54}, {"query": "футболка с принтом леопард", "freq": 934, "skus": 312}, {"query": "таблетница на неделю", "freq": 478, "skus": 41}], "pricing_examples": [{"mrr": 30000, "sku": 15000, "new_per_week": 200, "batch": 30000, "recurring_pct": 5, "recurring": 1500}, {"mrr": 50000, "sku": 40000, "new_per_week": 1000, "batch": 50000, "recurring_pct": 10, "recurring": 5000}, {"mrr": 500000, "sku": 120000, "new_per_week": 3000, "batch": 500000, "recurring_pct": 10, "recurring": 50000}], "cases_highlight": ["pharmacy_vision", "jewelry_form", "befree_fashion", "discount_ocr"], "pricing": {"mrr": 500000.0, "batch": 500000.0, "recurring_pct": 7.5, "recurring": 37500.0}, "partner_impact": {"zero_to_nonzero_freq": "—", "product_reach_rows": "—", "lexicon_gap_closure_pct": "—"}, "cases_selected": ["befree_fashion", "pharmacy_vision", "jewelry_form"]}</script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+<script src="../engine/qbr-deck.js"></script>
+<script>
+QBRDeck.init();
+QBRDeck.runWhenReady(function () { QBRDeck.initProductCharts(); });
+</script>
+</body>
+</html>

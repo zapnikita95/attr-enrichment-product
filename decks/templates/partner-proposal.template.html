@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=1280">
+<title>{{PARTNER}} — Обогащение каталога</title>
+<link rel="stylesheet" href="../engine/qbr-deck.css">
+</head>
+<body>
+<div class="deck" id="deck">
+
+<section class="slide title-cover active">
+<span class="slide-num">1</span>
+<div class="title-wrap">
+  <div class="title-frame">
+    <div class="title-bg title-bg-gradient"></div>
+    <div class="title-overlay">
+      <h1>Обогащение каталога</h1>
+      <p class="sub">{{PARTNER}}</p>
+      <p class="period">site_id {{SITE_ID}} · {{DATE}}</p>
+    </div>
+    <span class="slide-num-in">1</span>
+  </div>
+</div>
+</section>
+
+<section class="slide">
+<span class="slide-num">2</span>
+<div class="slide-head"><span class="tag">Диагностика</span></div>
+<div class="slide-body">
+<h2>Прогноз Attr Impact Studio</h2>
+<div class="grid3">
+  <div class="glass metric-card"><div class="lbl">Zero → result</div><div class="value">{{ZERO_TO_NONZERO}}</div></div>
+  <div class="glass metric-card"><div class="lbl">Product reach</div><div class="value">{{PRODUCT_REACH}}</div></div>
+  <div class="glass metric-card"><div class="lbl">Lexicon gap closure</div><div class="value">{{LEXICON_GAP}}%</div></div>
+</div>
+</div>
+</section>
+
+<section class="slide">
+<span class="slide-num">3</span>
+<div class="slide-head"><span class="tag">Кейсы</span></div>
+<div class="slide-body">
+<h2>Релевантный опыт</h2>
+{{CASES_HTML}}
+</div>
+</section>
+
+<section class="slide slide-kpi">
+<span class="slide-num">4</span>
+<div class="slide-head"><span class="tag">Метрики</span></div>
+<div class="slide-body">
+<h2>Ориентиры uplift</h2>
+<div class="grid3 grid3-kpi">
+  <div class="glass metric-card"><div class="lbl">NDCG@20</div><div class="value">{{NDCG_HINT}}</div><div class="sparkline"><canvas id="sparkNdcg"></canvas></div></div>
+  <div class="glass metric-card"><div class="lbl">Zero %</div><div class="value">{{ZERO_HINT}}</div><div class="sparkline"><canvas id="sparkZero"></canvas></div></div>
+  <div class="glass metric-card"><div class="lbl">Class E</div><div class="value">+2.6pp</div><div class="sparkline"><canvas id="sparkClassE"></canvas></div></div>
+</div>
+</div>
+</section>
+
+<section class="slide">
+<span class="slide-num">5</span>
+<div class="slide-head"><span class="tag">Цена</span></div>
+<div class="slide-body">
+<h2>Коммерческое предложение</h2>
+<div class="grid2">
+  <div class="glass goal-card"><div class="goal-label">Batch</div><div class="goal-metric">{{BATCH_PRICE}}</div><div class="goal-note">1 × MRR = {{MRR_FMT}}</div></div>
+  <div class="glass goal-card"><div class="goal-label">Recurring</div><div class="goal-metric">{{RECURRING_PRICE}}</div><div class="goal-note">{{RECURRING_PCT}}% MRR / мес</div></div>
+</div>
+</div>
+</section>
+
+<section class="slide slide-dark slide-plan">
+<span class="slide-num">6</span>
+<div class="slide-head"><span class="tag">План</span></div>
+<h2>Следующие шаги</h2>
+<div class="plan-grid">
+  <div class="plan-tile"><div class="plan-icon">1</div><p>Согласовать scope атрибутов и SKU</p></div>
+  <div class="plan-tile"><div class="plan-icon">2</div><p>Batch extraction 2–4 недели</p></div>
+  <div class="plan-tile"><div class="plan-icon">3</div><p>Заливка Dashboard + TOTP</p></div>
+  <div class="plan-tile"><div class="plan-icon">4</div><p>QBR-отчёт через 4 недели</p></div>
+</div>
+</section>
+
+</div>
+<nav class="nav-dots" id="nav">
+  <button type="button" id="prev">‹</button>
+  <div id="dots"></div>
+  <button type="button" id="next">›</button>
+</nav>
+<script type="application/json" id="deck-data">{{DECK_DATA_JSON}}</script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+<script src="../engine/qbr-deck.js"></script>
+<script>
+QBRDeck.init();
+QBRDeck.runWhenReady(function () { QBRDeck.initProductCharts(); });
+</script>
+</body>
+</html>

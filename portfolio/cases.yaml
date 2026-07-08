@@ -1,0 +1,142 @@
+# Машиночитаемые кейсы для proposal_builder и decks
+# slide_priority: 1 = топ для презентаций
+
+- id: pharmacy_vision
+  vertical: Аптека
+  stream: vision
+  site_id: 6390
+  anonymized_name: "Аптечная сеть"
+  partner_hint: Ozerki
+  attributes:
+    - Original_name
+    - OCR упаковки
+    - digi_attr_image
+  metrics:
+    ndcg_at_20_delta: 0.003
+    precision_at_20_delta: 0.010
+    class_e_delta_pp: 2.6
+    class_i_delta_pp: -2.2
+    class_s_delta_pp: -0.5
+    class_c_delta_pp: 0.1
+  story: >
+    Запрос «стельки» в выдачу попадал чай для сосудов из-за бедного описания.
+    После OCR с упаковки — корректный товар в топе. Class E вырос на 2.6 п.п.,
+    Class I (нерелевантная выдача) снизился на 2.2 п.п.
+  proof_source:
+    - user_screenshot
+    - ozerki_attribute_impact_data.json
+  slide_priority: 1
+
+- id: jewelry_form
+  vertical: Ювелирка
+  stream: vision
+  anonymized_name: "Ювелирный ритейлер"
+  attributes:
+    - form
+    - metal_color
+    - digi_attr_pattern
+  metrics:
+    zero_queries_reduction_pct: 33
+    ndcg_avg_increase_pct: 9
+  story: >
+    Форма украшения (змея, череп, сердце) — запросы без результата закрыты.
+    Нулевая выдача −33%, NDCG@20 в среднем +9% после атрибутов form и metal_color.
+  proof_source:
+    - jewelry_benchmark_results
+  slide_priority: 1
+
+- id: befree_fashion
+  vertical: Fashion
+  stream: vision
+  site_id: 1967
+  partner_hint: Befree
+  anonymized_name: "Fashion-ритейлер"
+  attributes:
+    - digi_attr_image
+    - digi_attr_pattern
+    - print_pattern
+  metrics:
+    dashboard_rows: 1747
+    truly_new_lexicon_pct: 49
+    sku_with_new_terms_pct: 49
+  story: >
+    OCR надписей и распознавание принта на одежде. 1747 строк залито в Dashboard.
+    49% SKU получили truly_new лексику — слова, которых не было в фиде.
+  proof_source:
+    - befree_pattern_study
+    - dashboard_sent.json
+  slide_priority: 1
+
+- id: discount_ocr
+  vertical: Дискаунт
+  stream: vision
+  anonymized_name: "Дискаунт-сеть"
+  attributes:
+    - digi_attr_image
+    - OCR упаковки
+  metrics:
+    sku_processed: 11000
+    zero_to_result_queries: 340
+  story: >
+    Массовый OCR упаковок для 11 000 SKU. Закрыты zero-запросы по брендам и
+    составу, которых не было в YML-описаниях поставщиков.
+  proof_source:
+    - discount_ocr_batch_log
+  slide_priority: 2
+
+- id: kids_8858
+  vertical: Детские товары
+  stream: text
+  site_id: 8858
+  partner_hint: "Детский мир"
+  anonymized_name: "Детский ритейлер"
+  attributes:
+    - age_group
+    - material
+    - character
+  metrics:
+    vocabulary_gaps_closed: 180
+    attrs_extracted: 95
+  story: >
+    Текстовый стрим + LoRA на доменной лексике. Закрыты vocabulary gaps
+    в возрастных и тематических запросах (персонажи, материалы).
+  proof_source:
+    - kids_extraction_eval
+  slide_priority: 2
+
+- id: grocery_text
+  vertical: Grocery
+  stream: text
+  site_id: 221
+  anonymized_name: "Продуктовый ритейлер"
+  attributes_count: 130
+  metrics:
+    attrs_in_production: 130
+    lexicon_gap_closure_pct: 35
+  story: >
+    Массовое извлечение из описаний и params: 130 атрибутов в production.
+    Текстовый стрим для grocery с богатыми supplier-описаниями.
+  proof_source:
+    - grocery_attrs_export
+  slide_priority: 2
+
+- id: petrovich_attrs_audit
+  vertical: Строительный ритейл
+  stream: audit
+  site_id: 519
+  partner_hint: Petrovich
+  anonymized_name: "Строительный гипермаркет"
+  type: negative
+  attributes:
+    - current_attrs_noise
+  metrics:
+    noisy_attrs_pct: 42
+    duplicate_attrs: 18
+    conflicting_values: 7
+  story: >
+    Обратный кейс: аудит current_attrs показал 42% шумных значений.
+    Плохие атрибуты ухудшают ранжирование — сначала cleanup, потом enrichment.
+  proof_source:
+    - petrovich_519_qbr_presentation.html
+    - current_attrs_audit
+  slide_priority: 1

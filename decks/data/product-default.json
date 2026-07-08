@@ -1,0 +1,59 @@
+{
+  "meta": {
+    "product": "Обогащение каталога для поиска",
+    "version": "2026-Q3",
+    "source": "attr-enrichment-product"
+  },
+  "portfolio_summary": {
+    "cases_count": 7,
+    "verticals": ["Аптека", "Ювелирка", "Fashion", "Дискаунт", "Детские товары", "Grocery", "Строительный ритейл"],
+    "avg_ndcg_lift_pct": 4.5,
+    "avg_zero_reduction_pct": 28
+  },
+  "kpi": {
+    "ndcg_at_20_delta": 0.003,
+    "precision_at_20_delta": 0.010,
+    "class_e_delta_pp": 2.6,
+    "class_i_delta_pp": -2.2,
+    "zero_reduction_pct": 33,
+    "ndcg_jewelry_pct": 9,
+    "zero_monthly": [
+      { "label": "До", "value": 12.4 },
+      { "label": "Пилот", "value": 10.1 },
+      { "label": "Batch", "value": 8.3 }
+    ]
+  },
+  "sparklines": {
+    "ndcg": [0.72, 0.721, 0.723, 0.725, 0.728],
+    "zero": [12.4, 11.8, 10.5, 9.2, 8.3],
+    "class_e": [41.2, 42.1, 42.8, 43.5, 43.8]
+  },
+  "serp_classes": {
+    "before": { "e": 41.2, "s": 28.4, "i": 5.7, "c": 24.7 },
+    "after": { "e": 43.8, "s": 27.9, "i": 3.5, "c": 24.8 }
+  },
+  "lexicon": {
+    "closed_pct": 49,
+    "gap_pct": 51,
+    "truly_new_sku_pct": 49,
+    "dashboard_rows": 1747
+  },
+  "zero_queries_closed": [
+    { "query": "кольцо змея", "freq": 842, "skus": 127 },
+    { "query": "стельки ортопедические", "freq": 1203, "skus": 89 },
+    { "query": "кольцо череп", "freq": 615, "skus": 54 },
+    { "query": "футболка с принтом леопард", "freq": 934, "skus": 312 },
+    { "query": "таблетница на неделю", "freq": 478, "skus": 41 }
+  ],
+  "pricing_examples": [
+    { "mrr": 30000, "sku": 15000, "new_per_week": 200, "batch": 30000, "recurring_pct": 5, "recurring": 1500 },
+    { "mrr": 50000, "sku": 40000, "new_per_week": 1000, "batch": 50000, "recurring_pct": 10, "recurring": 5000 },
+    { "mrr": 500000, "sku": 120000, "new_per_week": 3000, "batch": 500000, "recurring_pct": 10, "recurring": 50000 }
+  ],
+  "cases_highlight": [
+    "pharmacy_vision",
+    "jewelry_form",
+    "befree_fashion",
+    "discount_ocr"
+  ]
+}

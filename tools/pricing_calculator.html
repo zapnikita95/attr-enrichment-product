@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Калькулятор цены · Обогащение каталога</title>
+<link rel="stylesheet" href="../decks/engine/qbr-deck.css">
+<style>
+body{overflow:auto;background:var(--bg);min-height:100vh;padding:32px 24px 48px}
+.wrap{max-width:960px;margin:0 auto}
+h1{font-size:28px;margin-bottom:8px}
+.sub{color:var(--muted);margin-bottom:24px}
+.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+label{display:block;font-weight:600;margin-bottom:6px;font-size:14px}
+input[type=number],select{width:100%;padding:12px 14px;border:1px solid #e2e8f0;border-radius:12px;font-size:16px}
+.chk-row{display:flex;align-items:center;gap:10px;margin-top:8px}
+.results{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:24px}
+.result-card .value{font-size:36px}
+.copy-box{margin-top:20px;padding:16px;background:#f8fafc;border-radius:12px;font-size:14px;line-height:1.5;white-space:pre-wrap}
+@media(max-width:700px){.form-grid,.results{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <h1>Калькулятор цены</h1>
+  <p class="sub">Batch = 1×MRR · Recurring = 5–10% MRR по новинкам/неделю</p>
+
+  <div class="glass">
+    <div class="form-grid">
+      <div>
+        <label for="mrr">MRR партнёра, ₽</label>
+        <input type="number" id="mrr" value="150000" min="30000" step="1000">
+      </div>
+      <div>
+        <label for="sku">SKU в каталоге</label>
+        <input type="number" id="sku" value="80000" min="1000" step="1000">
+      </div>
+      <div>
+        <label for="newpw">Новинок в неделю</label>
+        <input type="number" id="newpw" value="800" min="0" step="50">
+      </div>
+      <div>
+        <label>Опции</label>
+        <div class="chk-row"><input type="checkbox" id="incBatch" checked> <label for="incBatch" style="margin:0">Разовый batch</label></div>
+        <div class="chk-row"><input type="checkbox" id="incRec" checked> <label for="incRec" style="margin:0">Recurring</label></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="results">
+    <div class="glass result-card" id="batchCard">
+      <div class="lbl">Разовый batch</div>
+      <div class="value" id="batchVal">150 000 ₽</div>
+      <p class="goal-note">1 × MRR — первичная обработка каталога</p>
+    </div>
+    <div class="glass result-card" id="recCard">
+      <div class="lbl">Recurring / месяц</div>
+      <div class="value" id="recVal">11 250 ₽</div>
+      <p class="goal-note" id="recPct">7.5% MRR · 501–2000 нов./нед</p>
+    </div>
+  </div>
+
+  <div class="glass copy-box" id="copyText"></div>
+</div>
+
+<script>
+function fmt(n) {
+  return Math.round(n).toLocaleString('ru-RU') + ' ₽';
+}
+function recurringPct(newPerWeek) {
+  if (newPerWeek <= 500) return 5;
+  if (newPerWeek <= 2000) return 7.5;
+  return 10;
+}
+function calc() {
+  var mrr = Math.max(30000, parseFloat(document.getElementById('mrr').value) || 30000);
+  var sku = parseInt(document.getElementById('sku').value, 10) || 0;
+  var newpw = parseInt(document.getElementById('newpw').value, 10) || 0;
+  var incBatch = document.getElementById('incBatch').checked;
+  var incRec = document.getElementById('incRec').checked;
+  var pct = recurringPct(newpw);
+  var batch = incBatch ? mrr : 0;
+  var rec = incRec ? mrr * pct / 100 : 0;
+  document.getElementById('batchVal').textContent = incBatch ? fmt(batch) : '—';
+  document.getElementById('recVal').textContent = incRec ? fmt(rec) : '—';
+  document.getElementById('recPct').textContent = incRec
+    ? pct + '% MRR · ' + newpw + ' нов./нед · ' + sku.toLocaleString('ru-RU') + ' SKU'
+    : 'Не выбрано';
+  document.getElementById('copyText').textContent =
+    'Коммерческое предложение: обогащение каталога для поиска\n' +
+    'MRR: ' + fmt(mrr) + '\n' +
+    'SKU: ' + sku.toLocaleString('ru-RU') + '\n' +
+    'Новинок/нед: ' + newpw + '\n\n' +
+    (incBatch ? 'Разовый batch: ' + fmt(batch) + ' (1×MRR)\n' : '') +
+    (incRec ? 'Recurring: ' + fmt(rec) + '/мес (' + pct + '% MRR)\n' : '') +
+    '\nДиагностика lexicon gap — бесплатно.';
+}
+['mrr','sku','newpw','incBatch','incRec'].forEach(function(id) {
+  document.getElementById(id).addEventListener('input', calc);
+  document.getElementById(id).addEventListener('change', calc);
+});
+calc();
+</script>
+</body>
+</html>
