@@ -17,3 +17,6 @@ Thumbs.db
 
 # Hermes session exports (local backup)
 .hermes-export/
+.hermes-session-log.jsonl
+.hermes-session-context.md
+.hermes-session-meta.json
