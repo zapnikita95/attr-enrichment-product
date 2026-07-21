@@ -1,0 +1,747 @@
+{
+  "generated_at": "2026-07-21T12:03:02.795322+00:00",
+  "site_id": 3826,
+  "site_checks": {
+    "3826": {
+      "n": 473003,
+      "uniq_q": 46331
+    },
+    "1967": {
+      "n": 2508399,
+      "uniq_q": 169370
+    }
+  },
+  "top_n": 5000,
+  "window_days": 90,
+  "source": "sessions.searches",
+  "method": "regex_intent_lexicon_on_top_queries",
+  "top_queries_preview": [
+    {
+      "q": "платье",
+      "search_count": 23658
+    },
+    {
+      "q": "брюки женские",
+      "search_count": 12187
+    },
+    {
+      "q": "футболка женская",
+      "search_count": 10563
+    },
+    {
+      "q": "рубашка женская",
+      "search_count": 8563
+    },
+    {
+      "q": "джинсы женские",
+      "search_count": 6286
+    },
+    {
+      "q": "шорты женские",
+      "search_count": 5793
+    },
+    {
+      "q": "юбка",
+      "search_count": 4838
+    },
+    {
+      "q": "куртка женская",
+      "search_count": 3435
+    },
+    {
+      "q": "футболка мужская",
+      "search_count": 3184
+    },
+    {
+      "q": "блузки женские",
+      "search_count": 2908
+    },
+    {
+      "q": "жилет женский",
+      "search_count": 2657
+    },
+    {
+      "q": "шорты женские джинсовые",
+      "search_count": 2581
+    },
+    {
+      "q": "сарафан женский",
+      "search_count": 2493
+    },
+    {
+      "q": "шорты мужские",
+      "search_count": 2362
+    },
+    {
+      "q": "брюки женские летние",
+      "search_count": 2288
+    },
+    {
+      "q": "шорты",
+      "search_count": 2241
+    },
+    {
+      "q": "пиджак женский",
+      "search_count": 2162
+    },
+    {
+      "q": "брюки мужские",
+      "search_count": 2106
+    },
+    {
+      "q": "сарафан",
+      "search_count": 2082
+    },
+    {
+      "q": "рубашка мужская",
+      "search_count": 2059
+    },
+    {
+      "q": "блузка",
+      "search_count": 1778
+    },
+    {
+      "q": "джинсовая куртка",
+      "search_count": 1777
+    },
+    {
+      "q": "футболка",
+      "search_count": 1740
+    },
+    {
+      "q": "топ",
+      "search_count": 1732
+    },
+    {
+      "q": "рубашка",
+      "search_count": 1651
+    },
+    {
+      "q": "жилет",
+      "search_count": 1629
+    },
+    {
+      "q": "брюки",
+      "search_count": 1552
+    },
+    {
+      "q": "куртка джинсовая женская",
+      "search_count": 1542
+    },
+    {
+      "q": "платье джинсовое",
+      "search_count": 1497
+    },
+    {
+      "q": "юбка летняя",
+      "search_count": 1489
+    },
+    {
+      "q": "платье желтое",
+      "search_count": 1410
+    },
+    {
+      "q": "джинсы",
+      "search_count": 1400
+    },
+    {
+      "q": "ветровка женская",
+      "search_count": 1361
+    },
+    {
+      "q": "кардиган женский",
+      "search_count": 1352
+    },
+    {
+      "q": "джинсы мужские",
+      "search_count": 1331
+    },
+    {
+      "q": "комбинезон женский",
+      "search_count": 1296
+    },
+    {
+      "q": "трусы мужские",
+      "search_count": 1281
+    },
+    {
+      "q": "джинсовая юбка",
+      "search_count": 1150
+    },
+    {
+      "q": "поло мужское",
+      "search_count": 1140
+    },
+    {
+      "q": "поло женское",
+      "search_count": 1107
+    },
+    {
+      "q": "футболка женская белая",
+      "search_count": 1100
+    },
+    {
+      "q": "платье красное",
+      "search_count": 1096
+    },
+    {
+      "q": "кардиган",
+      "search_count": 1056
+    },
+    {
+      "q": "майка женская",
+      "search_count": 995
+    },
+    {
+      "q": "брюки на резинке женские",
+      "search_count": 990
+    },
+    {
+      "q": "лонгслив женский",
+      "search_count": 977
+    },
+    {
+      "q": "купальник женский",
+      "search_count": 934
+    },
+    {
+      "q": "жакет женский",
+      "search_count": 931
+    },
+    {
+      "q": "джемпер женский",
+      "search_count": 928
+    },
+    {
+      "q": "платье коричневое",
+      "search_count": 921
+    }
+  ],
+  "classification": {
+    "total_search_events_in_top": 402798,
+    "matched_volume": 200012,
+    "unmatched_volume": 202786,
+    "intents": [
+      {
+        "attr_id": "gender_target",
+        "search_volume_in_top": 164329,
+        "share_of_top_pct": 40.8,
+        "uniq_queries": 1242,
+        "fashion_baseline": "Часто уже в навигации/фиде; токен «женские/мужские» = modifier, не всегда gap.",
+        "examples": [
+          {
+            "q": "брюки женские",
+            "search_count": 12187
+          },
+          {
+            "q": "футболка женская",
+            "search_count": 10563
+          },
+          {
+            "q": "рубашка женская",
+            "search_count": 8563
+          },
+          {
+            "q": "джинсы женские",
+            "search_count": 6286
+          },
+          {
+            "q": "шорты женские",
+            "search_count": 5793
+          },
+          {
+            "q": "куртка женская",
+            "search_count": 3435
+          },
+          {
+            "q": "футболка мужская",
+            "search_count": 3184
+          },
+          {
+            "q": "блузки женские",
+            "search_count": 2908
+          }
+        ],
+        "verdict_hint": "strong_demand_but_check_feed_nav_collision"
+      },
+      {
+        "attr_id": "color",
+        "search_volume_in_top": 27737,
+        "share_of_top_pct": 6.89,
+        "uniq_queries": 531,
+        "fashion_baseline": "Сильный intent, но часто уже системный facet/фид.",
+        "examples": [
+          {
+            "q": "футболка женская белая",
+            "search_count": 1100
+          },
+          {
+            "q": "платье красное",
+            "search_count": 1096
+          },
+          {
+            "q": "платье черное",
+            "search_count": 899
+          },
+          {
+            "q": "платье белое",
+            "search_count": 875
+          },
+          {
+            "q": "рубашка женская белая",
+            "search_count": 837
+          },
+          {
+            "q": "брюки женские белые",
+            "search_count": 768
+          },
+          {
+            "q": "джинсы женские белые",
+            "search_count": 636
+          },
+          {
+            "q": "юбка белая",
+            "search_count": 573
+          }
+        ],
+        "verdict_hint": "strong_demand_but_check_feed_nav_collision"
+      },
+      {
+        "attr_id": "material",
+        "search_volume_in_top": 25744,
+        "share_of_top_pct": 6.39,
+        "uniq_queries": 330,
+        "fashion_baseline": "Сильный intent; collision с params состава. Не путать с типом «джинсы».",
+        "examples": [
+          {
+            "q": "шорты женские джинсовые",
+            "search_count": 2581
+          },
+          {
+            "q": "джинсовая куртка",
+            "search_count": 1777
+          },
+          {
+            "q": "куртка джинсовая женская",
+            "search_count": 1542
+          },
+          {
+            "q": "платье джинсовое",
+            "search_count": 1497
+          },
+          {
+            "q": "джинсовая юбка",
+            "search_count": 1150
+          },
+          {
+            "q": "сарафан джинсовый",
+            "search_count": 804
+          },
+          {
+            "q": "брюки женские лен",
+            "search_count": 662
+          },
+          {
+            "q": "шорты мужские джинсовые",
+            "search_count": 622
+          }
+        ],
+        "verdict_hint": "strong_demand_but_check_feed_nav_collision"
+      },
+      {
+        "attr_id": "sleeve_length_product_proxy",
+        "search_volume_in_top": 8875,
+        "share_of_top_pct": 2.2,
+        "uniq_queries": 132,
+        "fashion_baseline": "Тип изделия майка/топ ≈ без рукавов; не прямой facet-токен.",
+        "examples": [
+          {
+            "q": "топ",
+            "search_count": 1732
+          },
+          {
+            "q": "майка женская",
+            "search_count": 995
+          },
+          {
+            "q": "майка топ женская",
+            "search_count": 762
+          },
+          {
+            "q": "майка",
+            "search_count": 597
+          },
+          {
+            "q": "топ женская",
+            "search_count": 383
+          },
+          {
+            "q": "топ вязаный",
+            "search_count": 367
+          },
+          {
+            "q": "топ женский",
+            "search_count": 291
+          },
+          {
+            "q": "топ с кружевом",
+            "search_count": 198
+          }
+        ],
+        "verdict_hint": "proxy_product_type_not_facet"
+      },
+      {
+        "attr_id": "print_pattern",
+        "search_volume_in_top": 7757,
+        "share_of_top_pct": 1.93,
+        "uniq_queries": 151,
+        "fashion_baseline": "Визуальный поиск стиля (клетка/полоска/принт).",
+        "examples": [
+          {
+            "q": "рубашка женская в полоску",
+            "search_count": 649
+          },
+          {
+            "q": "футболка с принтом женская",
+            "search_count": 647
+          },
+          {
+            "q": "рубашка в клетку женская",
+            "search_count": 524
+          },
+          {
+            "q": "платье цветочный принт",
+            "search_count": 423
+          },
+          {
+            "q": "футболка женская в полоску",
+            "search_count": 357
+          },
+          {
+            "q": "футболка с принтом мужская",
+            "search_count": 305
+          },
+          {
+            "q": "белая футболка с принтом женская",
+            "search_count": 243
+          },
+          {
+            "q": "брюки женские в полоску",
+            "search_count": 184
+          }
+        ],
+        "verdict_hint": "strong_filter_candidate"
+      },
+      {
+        "attr_id": "sleeve_length",
+        "search_volume_in_top": 4735,
+        "share_of_top_pct": 1.18,
+        "uniq_queries": 107,
+        "fashion_baseline": "Явный sleeve intent в запросе (короткий/длинный/без рукавов).",
+        "examples": [
+          {
+            "q": "рубашка мужская с коротким рукавом",
+            "search_count": 660
+          },
+          {
+            "q": "джемпер женский с коротким рукавом",
+            "search_count": 301
+          },
+          {
+            "q": "рубашка мужская с длинным рукавом",
+            "search_count": 239
+          },
+          {
+            "q": "блузки женские с короткими рукавами",
+            "search_count": 213
+          },
+          {
+            "q": "джинсовое платье без рукавов",
+            "search_count": 147
+          },
+          {
+            "q": "рубашка женская с коротким рукавом",
+            "search_count": 146
+          },
+          {
+            "q": "блузки женские с длинными рукавами",
+            "search_count": 145
+          },
+          {
+            "q": "жилет женский без рукавов",
+            "search_count": 129
+          }
+        ],
+        "verdict_hint": "strong_filter_candidate"
+      },
+      {
+        "attr_id": "length",
+        "search_volume_in_top": 2512,
+        "share_of_top_pct": 0.62,
+        "uniq_queries": 74,
+        "fashion_baseline": "Классика платьев/юбок: mini/midi/maxi.",
+        "examples": [
+          {
+            "q": "платье макси",
+            "search_count": 263
+          },
+          {
+            "q": "юбка миди",
+            "search_count": 188
+          },
+          {
+            "q": "платье миди",
+            "search_count": 164
+          },
+          {
+            "q": "платье сарафан макси",
+            "search_count": 131
+          },
+          {
+            "q": "платье мини",
+            "search_count": 120
+          },
+          {
+            "q": "атласное платье миди",
+            "search_count": 113
+          },
+          {
+            "q": "платье рубашка миди",
+            "search_count": 103
+          },
+          {
+            "q": "юбка джинсовая миди",
+            "search_count": 83
+          }
+        ],
+        "verdict_hint": "strong_filter_candidate"
+      },
+      {
+        "attr_id": "hood",
+        "search_volume_in_top": 1570,
+        "share_of_top_pct": 0.39,
+        "uniq_queries": 44,
+        "fashion_baseline": "Facet верхней одежды; в UI часто «с капюшоном».",
+        "examples": [
+          {
+            "q": "худи",
+            "search_count": 194
+          },
+          {
+            "q": "и худи женские",
+            "search_count": 153
+          },
+          {
+            "q": "куртка женская с капюшоном",
+            "search_count": 123
+          },
+          {
+            "q": "худи мужское",
+            "search_count": 100
+          },
+          {
+            "q": "парка женская",
+            "search_count": 88
+          },
+          {
+            "q": "толстовки и худи женские",
+            "search_count": 76
+          },
+          {
+            "q": "ветровка мужская с капюшоном",
+            "search_count": 50
+          },
+          {
+            "q": "ветровка с капюшоном женская",
+            "search_count": 45
+          }
+        ],
+        "verdict_hint": "strong_filter_candidate"
+      },
+      {
+        "attr_id": "fastener",
+        "search_volume_in_top": 1238,
+        "share_of_top_pct": 0.31,
+        "uniq_queries": 50,
+        "fashion_baseline": "Тип застёжки — частый facet fashion.",
+        "examples": [
+          {
+            "q": "толстовка женская на молнии",
+            "search_count": 130
+          },
+          {
+            "q": "кардиган на пуговицах женский",
+            "search_count": 121
+          },
+          {
+            "q": "кардиган мужской на пуговицах",
+            "search_count": 99
+          },
+          {
+            "q": "толстовка мужская на молнии",
+            "search_count": 75
+          },
+          {
+            "q": "кофта на молнии женская",
+            "search_count": 64
+          },
+          {
+            "q": "женский вязаный кардиган на пуговицах",
+            "search_count": 60
+          },
+          {
+            "q": "костюм спортивный на молнии женский",
+            "search_count": 34
+          },
+          {
+            "q": "толстовка мужская с капюшоном на молнии",
+            "search_count": 32
+          }
+        ],
+        "verdict_hint": "strong_filter_candidate"
+      },
+      {
+        "attr_id": "silhouette",
+        "search_volume_in_top": 999,
+        "share_of_top_pct": 0.25,
+        "uniq_queries": 29,
+        "fashion_baseline": "Сильный fashion intent (оверсайз/клёш).",
+        "examples": [
+          {
+            "q": "джинсы женские клеш",
+            "search_count": 206
+          },
+          {
+            "q": "мужская футболка оверсайз",
+            "search_count": 130
+          },
+          {
+            "q": "джинсы клеш",
+            "search_count": 122
+          },
+          {
+            "q": "футболка женская оверсайз",
+            "search_count": 68
+          },
+          {
+            "q": "клеш",
+            "search_count": 52
+          },
+          {
+            "q": "футболка оверсайз",
+            "search_count": 49
+          },
+          {
+            "q": "джинсы skinny",
+            "search_count": 45
+          },
+          {
+            "q": "брюки клеш",
+            "search_count": 30
+          }
+        ],
+        "verdict_hint": "strong_filter_candidate"
+      },
+      {
+        "attr_id": "collar",
+        "search_volume_in_top": 570,
+        "share_of_top_pct": 0.14,
+        "uniq_queries": 21,
+        "fashion_baseline": "Вырез/воротник влияет на стиль образа.",
+        "examples": [
+          {
+            "q": "водолазка женская",
+            "search_count": 140
+          },
+          {
+            "q": "с воротником поло мужской",
+            "search_count": 97
+          },
+          {
+            "q": "водолазка мужская",
+            "search_count": 89
+          },
+          {
+            "q": "водолазка",
+            "search_count": 52
+          },
+          {
+            "q": "вязаная футболка с воротником поло",
+            "search_count": 18
+          },
+          {
+            "q": "водолазка мужская черная",
+            "search_count": 17
+          },
+          {
+            "q": "платье с вырезом",
+            "search_count": 15
+          },
+          {
+            "q": "футболка мужская голубая с вырезом",
+            "search_count": 14
+          }
+        ],
+        "verdict_hint": "weak_or_sparse"
+      },
+      {
+        "attr_id": "fit_waist",
+        "search_volume_in_top": 137,
+        "share_of_top_pct": 0.03,
+        "uniq_queries": 7,
+        "fashion_baseline": "Посадка — facet брюк/джинсов.",
+        "examples": [
+          {
+            "q": "джинсы женские прямого с высокой посадкой",
+            "search_count": 53
+          },
+          {
+            "q": "женские джинсы wide с высокой посадкой",
+            "search_count": 37
+          },
+          {
+            "q": "джинсы силуэта bootcut со средней посадкой утепленные",
+            "search_count": 11
+          },
+          {
+            "q": "джинсы женские прямого силуэта с высокой посадкой",
+            "search_count": 10
+          },
+          {
+            "q": "джинсы со средней посадкой",
+            "search_count": 9
+          },
+          {
+            "q": "джинсы с высокой посадкой",
+            "search_count": 9
+          },
+          {
+            "q": "джинсы широкие wide с высокой посадкой с цветочным принтом",
+            "search_count": 8
+          }
+        ],
+        "verdict_hint": "weak_or_sparse"
+      },
+      {
+        "attr_id": "pockets",
+        "search_volume_in_top": 50,
+        "share_of_top_pct": 0.01,
+        "uniq_queries": 2,
+        "fashion_baseline": "Функциональный boolean для брюк/верхней.",
+        "examples": [
+          {
+            "q": "брюки мужские с карманами карго",
+            "search_count": 42
+          },
+          {
+            "q": "джоггеры мужские с карманами",
+            "search_count": 8
+          }
+        ],
+        "verdict_hint": "weak_or_sparse"
+      }
+    ],
+    "zero_signal_intents": []
+  },
+  "disclaimer": "Prior LLM candidacy without this file is NOT query-evidence. Use this pack as ground truth for demand ranking."
+}

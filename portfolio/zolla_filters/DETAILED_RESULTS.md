@@ -1,6 +1,6 @@
 # Zolla Filter Pipeline — DETAILED RESULTS
 
-Updated: 2026-07-21 11:50 UTC
+Updated: 2026-07-21 12:03 UTC
 
 ## Budget models (defaults)
 
@@ -158,6 +158,29 @@ Updated: 2026-07-21 11:50 UTC
 **Сделано хорошо (≥90% coerce):** collar, fastener, hood, length, pockets, print_pattern, sleeve_length
 **Слабо / не дожали:** —
 
+## Demand evidence (ClickHouse) — источник правды по «имеет смысл»
+
+См. `FILTER_DEMAND_EVIDENCE.md` + `query_demand_evidence.json`.
+**Без этого файла вердикт «имеет смысл» = не пруф (только LLM/fashion).**
+
+siteId=3826, window=90d, top_n=5000, source=`sessions.searches`
+
+| attr | volume | share% | uniq | verdict |
+|------|--------|--------|------|---------|
+| `gender_target` | 164329 | 40.8 | 1242 | strong_demand_but_check_feed_nav_collision |
+| `color` | 27737 | 6.89 | 531 | strong_demand_but_check_feed_nav_collision |
+| `material` | 25744 | 6.39 | 330 | strong_demand_but_check_feed_nav_collision |
+| `sleeve_length_product_proxy` | 8875 | 2.2 | 132 | proxy_product_type_not_facet |
+| `print_pattern` | 7757 | 1.93 | 151 | strong_filter_candidate |
+| `sleeve_length` | 4735 | 1.18 | 107 | strong_filter_candidate |
+| `length` | 2512 | 0.62 | 74 | strong_filter_candidate |
+| `hood` | 1570 | 0.39 | 44 | strong_filter_candidate |
+| `fastener` | 1238 | 0.31 | 50 | strong_filter_candidate |
+| `silhouette` | 999 | 0.25 | 29 | strong_filter_candidate |
+| `collar` | 570 | 0.14 | 21 | weak_or_sparse |
+| `fit_waist` | 137 | 0.03 | 7 | weak_or_sparse |
+| `pockets` | 50 | 0.01 | 2 | weak_or_sparse |
+
 ## Text gold coerce (3826)
 
 ```json
@@ -189,23 +212,14 @@ Updated: 2026-07-21 11:50 UTC
 }
 ```
 
-## Что ещё можно сделать фильтрами у Zolla (backlog)
+## Backlog (только если CH strong / collision-checked)
 
-Уже в schema seed / vision pipeline:
-- schema ids: hood, length, print_pattern, sleeve_length, pockets, fastener, collar, gender_target
-
-Кандидаты на следующий прогон (после feed-collision check):
-- `color` / `color_shade` — только если нет в YML params (часто дубль фида → reject)
-- `silhouette` / фасон (прямой, оверсайз, прилегающий) — enum 4–6
-- `material` top-level (хлопок, шерсть, полиэстер, экокожа…) — enum, collision с составом фида
-- `waist_fit` посадка (высокая/средняя/низкая) — для брюк/юбок
-- `liner` / подкладка boolean — верхняя одежда
-- `fur_trim` опушка boolean — пальто/парки
-
-Reject (не фильтры): ощущения ткани, детальный % состава, размер (variant), бренд,
-уникальный декор свободным текстом, «эффект стройности».
+- schema ids сейчас: hood, length, print_pattern, sleeve_length, pockets, fastener, collar, gender_target
+- `silhouette` — strong в CH, ещё не в vision pilot
+- `color` / `material` / `gender_target` — strong demand, но **feed/nav collision first**
+- `fit_waist` / `collar` / `pockets` — weak в топе; category-gated only
 
 ## Dedupe rule
 
 Vision вызывается **1 раз на picture_url** (`picture_dedupe.normalize_picture_url`),
-затем значение размножается на все `offer_id` с той же картинкой (размеры/цвета-варианты).
+затем значение размножается на все `offer_id` с той же картинкой.

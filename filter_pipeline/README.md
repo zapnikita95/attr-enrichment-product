@@ -24,6 +24,20 @@ py -3.13 filter_pipeline/run_zolla_pilot.py --stage compare_models --attrs hood
 
 OpenRouter key берётся из `image_description-main/.env`.
 
+## Demand evidence (обязательно перед «имеет смысл»)
+
+```powershell
+py -3.13 filter_pipeline/zolla_query_demand.py
+```
+
+Пишет:
+- `portfolio/zolla_filters/FILTER_DEMAND_EVIDENCE.md` — пруфы по запросам
+- `portfolio/zolla_filters/query_demand_evidence.json` — машинный отчёт
+- `portfolio/zolla_filters/zolla_top_queries_90d.json` — топ searchTerm
+
+Источник: ClickHouse `sessions.searches` siteId=**3826**, 90 дней.  
+LLM candidacy без этого файла — не считать пруфом спроса.
+
 ## Бюджет моделей
 
 | Роль | Модель | Tier |

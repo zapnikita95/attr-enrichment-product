@@ -376,37 +376,55 @@ def write_detailed_results() -> Path:
             f"{s.get('coerced_rate')} | {s.get('expected_match_rate')} |"
         )
 
+    demand = {}
+    dem_path = OUT / "query_demand_evidence.json"
+    if dem_path.is_file():
+        demand = json.loads(dem_path.read_text(encoding="utf-8"))
+
     lines += [
         "",
         f"**Сделано хорошо (≥90% coerce):** {', '.join(done_attrs) or '—'}",
         f"**Слабо / не дожали:** {', '.join(weak_attrs) or '—'}",
         "",
+        "## Demand evidence (ClickHouse) — источник правды по «имеет смысл»",
+        "",
+        "См. `FILTER_DEMAND_EVIDENCE.md` + `query_demand_evidence.json`.",
+        "**Без этого файла вердикт «имеет смысл» = не пруф (только LLM/fashion).**",
+        "",
+    ]
+    if demand:
+        lines.append(
+            f"siteId={demand.get('site_id')}, window={demand.get('window_days')}d, "
+            f"top_n={demand.get('top_n')}, source=`{demand.get('source')}`"
+        )
+        lines.append("")
+        lines.append("| attr | volume | share% | uniq | verdict |")
+        lines.append("|------|--------|--------|------|---------|")
+        for row in (demand.get("classification") or {}).get("intents") or []:
+            lines.append(
+                f"| `{row['attr_id']}` | {row['search_volume_in_top']} | "
+                f"{row['share_of_top_pct']} | {row['uniq_queries']} | {row['verdict_hint']} |"
+            )
+        lines.append("")
+
+    lines += [
         "## Text gold coerce (3826)",
         "",
         "```json",
         json.dumps(text_stats, ensure_ascii=False, indent=2),
         "```",
         "",
-        "## Что ещё можно сделать фильтрами у Zolla (backlog)",
+        "## Backlog (только если CH strong / collision-checked)",
         "",
-        "Уже в schema seed / vision pipeline:",
-        f"- schema ids: {', '.join(schema_ids)}",
-        "",
-        "Кандидаты на следующий прогон (после feed-collision check):",
-        "- `color` / `color_shade` — только если нет в YML params (часто дубль фида → reject)",
-        "- `silhouette` / фасон (прямой, оверсайз, прилегающий) — enum 4–6",
-        "- `material` top-level (хлопок, шерсть, полиэстер, экокожа…) — enum, collision с составом фида",
-        "- `waist_fit` посадка (высокая/средняя/низкая) — для брюк/юбок",
-        "- `liner` / подкладка boolean — верхняя одежда",
-        "- `fur_trim` опушка boolean — пальто/парки",
-        "",
-        "Reject (не фильтры): ощущения ткани, детальный % состава, размер (variant), бренд,",
-        "уникальный декор свободным текстом, «эффект стройности».",
+        f"- schema ids сейчас: {', '.join(schema_ids)}",
+        "- `silhouette` — strong в CH, ещё не в vision pilot",
+        "- `color` / `material` / `gender_target` — strong demand, но **feed/nav collision first**",
+        "- `fit_waist` / `collar` / `pockets` — weak в топе; category-gated only",
         "",
         "## Dedupe rule",
         "",
         "Vision вызывается **1 раз на picture_url** (`picture_dedupe.normalize_picture_url`),",
-        "затем значение размножается на все `offer_id` с той же картинкой (размеры/цвета-варианты).",
+        "затем значение размножается на все `offer_id` с той же картинкой.",
         "",
     ]
     path = OUT / "DETAILED_RESULTS.md"
