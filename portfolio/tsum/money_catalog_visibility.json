@@ -1,0 +1,700 @@
+{
+  "stream": "B_catalog_visibility",
+  "partner": "TSUM",
+  "site_id": 203,
+  "note": "Отдельный стрим от query ΔCVR. Деньги = доп. показы товаров в выдаче после индексации vision-атрибутов. Гипотеза; не суммировать 1:1 со стримом A.",
+  "formula": "newly_eligible=p_extract*(1-coverage); extra_impr=attr_demand*min(0.70, newly_eligible*serp_factor); Δ₽=extra_impr*CTR*purchase|click*AOV",
+  "aov": 106731,
+  "metrika_cvr_search_pct": 1.2112915469107848,
+  "catalog": {
+    "odezhda": {
+      "label": "Одежда (без верхней)",
+      "offers": 281329,
+      "n_categories_rolled_up": 17
+    },
+    "verhnyaya": {
+      "label": "Верхняя одежда",
+      "offers": 34650,
+      "n_categories_rolled_up": 4
+    },
+    "obuv": {
+      "label": "Обувь",
+      "offers": 63959,
+      "n_categories_rolled_up": 7
+    },
+    "sumki": {
+      "label": "Сумки",
+      "offers": 42445,
+      "n_categories_rolled_up": 5
+    },
+    "parfyum": {
+      "label": "Парфюмерия",
+      "offers": 9278,
+      "n_categories_rolled_up": 2
+    },
+    "aksessuary": {
+      "label": "Аксессуары / очки / часы",
+      "offers": 81708,
+      "n_categories_rolled_up": 12
+    }
+  },
+  "category_search": {
+    "by_bucket": {
+      "odezhda": {
+        "searches_90d": 1267825,
+        "queries": 5774,
+        "examples": [
+          {
+            "q": "платье",
+            "cnt": 128955
+          },
+          {
+            "q": "футболка",
+            "cnt": 73010
+          },
+          {
+            "q": "футболка мужская",
+            "cnt": 48690
+          },
+          {
+            "q": "шорты",
+            "cnt": 42899
+          },
+          {
+            "q": "футболка женская",
+            "cnt": 36670
+          },
+          {
+            "q": "джинсы",
+            "cnt": 34228
+          }
+        ]
+      },
+      "verhnyaya": {
+        "searches_90d": 148081,
+        "queries": 871,
+        "examples": [
+          {
+            "q": "куртка",
+            "cnt": 11653
+          },
+          {
+            "q": "ветровка",
+            "cnt": 8743
+          },
+          {
+            "q": "кожаная куртка",
+            "cnt": 8296
+          },
+          {
+            "q": "бомбер",
+            "cnt": 7699
+          },
+          {
+            "q": "пуховик",
+            "cnt": 6554
+          },
+          {
+            "q": "пальто",
+            "cnt": 5888
+          }
+        ]
+      },
+      "obuv": {
+        "searches_90d": 923875,
+        "queries": 2953,
+        "examples": [
+          {
+            "q": "кроссовки",
+            "cnt": 85751
+          },
+          {
+            "q": "кеды",
+            "cnt": 61403
+          },
+          {
+            "q": "туфли",
+            "cnt": 41374
+          },
+          {
+            "q": "мюли",
+            "cnt": 39425
+          },
+          {
+            "q": "кроссовки premiata мужские",
+            "cnt": 38040
+          },
+          {
+            "q": "кроссовки premiata женские",
+            "cnt": 34721
+          }
+        ]
+      },
+      "sumki": {
+        "searches_90d": 743707,
+        "queries": 2166,
+        "examples": [
+          {
+            "q": "сумка",
+            "cnt": 132204
+          },
+          {
+            "q": "сумка женская",
+            "cnt": 95856
+          },
+          {
+            "q": "сумки",
+            "cnt": 40476
+          },
+          {
+            "q": "сумка мужская",
+            "cnt": 27175
+          },
+          {
+            "q": "рюкзак",
+            "cnt": 25689
+          },
+          {
+            "q": "coccinelle женское сумки",
+            "cnt": 13034
+          }
+        ]
+      },
+      "parfyum": {
+        "searches_90d": 93006,
+        "queries": 568,
+        "examples": [
+          {
+            "q": "духи",
+            "cnt": 17867
+          },
+          {
+            "q": "парфюм",
+            "cnt": 14816
+          },
+          {
+            "q": "tom ford парфюм",
+            "cnt": 4861
+          },
+          {
+            "q": "guerlain парфюм",
+            "cnt": 4490
+          },
+          {
+            "q": "парфюмерия",
+            "cnt": 3014
+          },
+          {
+            "q": "chanel духи",
+            "cnt": 2073
+          }
+        ]
+      },
+      "aksessuary": {
+        "searches_90d": 750342,
+        "queries": 2500,
+        "examples": [
+          {
+            "q": "очки",
+            "cnt": 90119
+          },
+          {
+            "q": "солнцезащитные очки женские",
+            "cnt": 67145
+          },
+          {
+            "q": "ремень",
+            "cnt": 31427
+          },
+          {
+            "q": "серьги",
+            "cnt": 30675
+          },
+          {
+            "q": "браслет",
+            "cnt": 17038
+          },
+          {
+            "q": "солнцезащитные очки",
+            "cnt": 16947
+          }
+        ]
+      }
+    },
+    "other_searches_90d": 4716308,
+    "other_queries": 15168,
+    "likely_brand_searches_in_other_90d": 2987056
+  },
+  "hypotheses": {
+    "odezhda": {
+      "p_extract": {
+        "conservative": 0.28,
+        "optimistic": 0.52
+      },
+      "coverage_now": {
+        "conservative": 0.1,
+        "optimistic": 0.04
+      }
+    },
+    "verhnyaya": {
+      "p_extract": {
+        "conservative": 0.35,
+        "optimistic": 0.6
+      },
+      "coverage_now": {
+        "conservative": 0.12,
+        "optimistic": 0.05
+      }
+    },
+    "obuv": {
+      "p_extract": {
+        "conservative": 0.4,
+        "optimistic": 0.7
+      },
+      "coverage_now": {
+        "conservative": 0.15,
+        "optimistic": 0.06
+      }
+    },
+    "sumki": {
+      "p_extract": {
+        "conservative": 0.45,
+        "optimistic": 0.75
+      },
+      "coverage_now": {
+        "conservative": 0.18,
+        "optimistic": 0.08
+      }
+    },
+    "parfyum": {
+      "p_extract": {
+        "conservative": 0.15,
+        "optimistic": 0.35
+      },
+      "coverage_now": {
+        "conservative": 0.25,
+        "optimistic": 0.12
+      }
+    },
+    "aksessuary": {
+      "p_extract": {
+        "conservative": 0.2,
+        "optimistic": 0.4
+      },
+      "coverage_now": {
+        "conservative": 0.12,
+        "optimistic": 0.05
+      }
+    }
+  },
+  "funnel": {
+    "conservative": {
+      "p_enters_serp_given_eligible": 0.22,
+      "ctr_new_slot": 0.045,
+      "purchase_given_click": 0.045,
+      "attr_demand_source": "direct_facet",
+      "attr_gated_share_of_family_demand": 0.85,
+      "fallback_attr_share_of_cat_search": 0.04,
+      "p_session_cap": 0.45
+    },
+    "optimistic": {
+      "p_enters_serp_given_eligible": 0.35,
+      "ctr_new_slot": 0.065,
+      "purchase_given_click": 0.06,
+      "attr_demand_source": "expanded_style",
+      "attr_gated_share_of_family_demand": 0.35,
+      "fallback_attr_share_of_cat_search": 0.1,
+      "p_session_cap": 0.55
+    }
+  },
+  "scenarios": {
+    "conservative": {
+      "scenario": "conservative",
+      "funnel": {
+        "p_enters_serp_given_eligible": 0.22,
+        "ctr_new_slot": 0.045,
+        "purchase_given_click": 0.045,
+        "attr_demand_source": "direct_facet",
+        "attr_gated_share_of_family_demand": 0.85,
+        "fallback_attr_share_of_cat_search": 0.04,
+        "p_session_cap": 0.45
+      },
+      "aov": 106731,
+      "totals": {
+        "attr_demand_searches_90d": 128347,
+        "extra_impressions_90d": 26482,
+        "extra_clicks_90d": 1192,
+        "extra_purchases_90d": 53.63,
+        "revenue_90d": 5723646,
+        "revenue_month": 1907882,
+        "revenue_year": 22894584
+      },
+      "by_bucket": [
+        {
+          "bucket": "obuv",
+          "label": "Обувь",
+          "offers": 63959,
+          "category_searches_90d": 923875,
+          "attr_demand_searches_90d": 45862,
+          "attr_demand_source": "direct_facet",
+          "families_used": [
+            {
+              "family": "Обувь: каблук / платформа",
+              "searches_90d": 53956,
+              "searches_allocated": 45862
+            }
+          ],
+          "p_extract": 0.4,
+          "coverage_now": 0.15,
+          "newly_eligible_sku_share": 0.34,
+          "p_session_gets_new_sku_in_serp": 0.2493,
+          "extra_impressions_90d": 11435,
+          "extra_clicks_90d": 515,
+          "extra_purchases_90d": 23.16,
+          "revenue_90d": 2471431,
+          "revenue_month": 823810,
+          "revenue_year": 9885725,
+          "new_indexable_skus_est": 21746
+        },
+        {
+          "bucket": "sumki",
+          "label": "Сумки",
+          "offers": 42445,
+          "category_searches_90d": 743707,
+          "attr_demand_searches_90d": 20231,
+          "attr_demand_source": "direct_facet",
+          "families_used": [
+            {
+              "family": "Тип сумки",
+              "searches_90d": 23802,
+              "searches_allocated": 20231
+            }
+          ],
+          "p_extract": 0.45,
+          "coverage_now": 0.18,
+          "newly_eligible_sku_share": 0.369,
+          "p_session_gets_new_sku_in_serp": 0.2706,
+          "extra_impressions_90d": 5475,
+          "extra_clicks_90d": 246,
+          "extra_purchases_90d": 11.09,
+          "revenue_90d": 1183206,
+          "revenue_month": 394402,
+          "revenue_year": 4732824,
+          "new_indexable_skus_est": 15662
+        },
+        {
+          "bucket": "odezhda",
+          "label": "Одежда (без верхней)",
+          "offers": 281329,
+          "category_searches_90d": 1267825,
+          "attr_demand_searches_90d": 28500,
+          "attr_demand_source": "direct_facet",
+          "families_used": [
+            {
+              "family": "Принт / узор",
+              "searches_90d": 9790,
+              "searches_allocated": 8321
+            },
+            {
+              "family": "Силуэт / посадка",
+              "searches_90d": 8049,
+              "searches_allocated": 6841
+            },
+            {
+              "family": "Застёжка / детали",
+              "searches_90d": 13104,
+              "searches_allocated": 11138
+            },
+            {
+              "family": "Воротник / вырез",
+              "searches_90d": 2587,
+              "searches_allocated": 2198
+            }
+          ],
+          "p_extract": 0.28,
+          "coverage_now": 0.1,
+          "newly_eligible_sku_share": 0.252,
+          "p_session_gets_new_sku_in_serp": 0.1848,
+          "extra_impressions_90d": 5267,
+          "extra_clicks_90d": 237,
+          "extra_purchases_90d": 10.67,
+          "revenue_90d": 1138314,
+          "revenue_month": 379438,
+          "revenue_year": 4553256,
+          "new_indexable_skus_est": 70895
+        },
+        {
+          "bucket": "aksessuary",
+          "label": "Аксессуары / очки / часы",
+          "offers": 81708,
+          "category_searches_90d": 750342,
+          "attr_demand_searches_90d": 30013,
+          "attr_demand_source": "direct_facet",
+          "families_used": [
+            {
+              "family": "_fallback_share_of_category_search",
+              "searches_90d": 30013
+            }
+          ],
+          "p_extract": 0.2,
+          "coverage_now": 0.12,
+          "newly_eligible_sku_share": 0.176,
+          "p_session_gets_new_sku_in_serp": 0.1291,
+          "extra_impressions_90d": 3874,
+          "extra_clicks_90d": 174,
+          "extra_purchases_90d": 7.84,
+          "revenue_90d": 837218,
+          "revenue_month": 279073,
+          "revenue_year": 3348873,
+          "new_indexable_skus_est": 14381
+        },
+        {
+          "bucket": "parfyum",
+          "label": "Парфюмерия",
+          "offers": 9278,
+          "category_searches_90d": 93006,
+          "attr_demand_searches_90d": 2877,
+          "attr_demand_source": "direct_facet",
+          "families_used": [
+            {
+              "family": "Парфюм: ноты / концентрация",
+              "searches_90d": 3385,
+              "searches_allocated": 2877
+            }
+          ],
+          "p_extract": 0.15,
+          "coverage_now": 0.25,
+          "newly_eligible_sku_share": 0.1125,
+          "p_session_gets_new_sku_in_serp": 0.0825,
+          "extra_impressions_90d": 237,
+          "extra_clicks_90d": 11,
+          "extra_purchases_90d": 0.48,
+          "revenue_90d": 51299,
+          "revenue_month": 17100,
+          "revenue_year": 205196,
+          "new_indexable_skus_est": 1044
+        },
+        {
+          "bucket": "verhnyaya",
+          "label": "Верхняя одежда",
+          "offers": 34650,
+          "category_searches_90d": 148081,
+          "attr_demand_searches_90d": 864,
+          "attr_demand_source": "direct_facet",
+          "families_used": [
+            {
+              "family": "Капюшон",
+              "searches_90d": 1017,
+              "searches_allocated": 864
+            }
+          ],
+          "p_extract": 0.35,
+          "coverage_now": 0.12,
+          "newly_eligible_sku_share": 0.308,
+          "p_session_gets_new_sku_in_serp": 0.2259,
+          "extra_impressions_90d": 195,
+          "extra_clicks_90d": 9,
+          "extra_purchases_90d": 0.4,
+          "revenue_90d": 42178,
+          "revenue_month": 14059,
+          "revenue_year": 168710,
+          "new_indexable_skus_est": 10672
+        }
+      ]
+    },
+    "optimistic": {
+      "scenario": "optimistic",
+      "funnel": {
+        "p_enters_serp_given_eligible": 0.35,
+        "ctr_new_slot": 0.065,
+        "purchase_given_click": 0.06,
+        "attr_demand_source": "expanded_style",
+        "attr_gated_share_of_family_demand": 0.35,
+        "fallback_attr_share_of_cat_search": 0.1,
+        "p_session_cap": 0.55
+      },
+      "aov": 106731,
+      "totals": {
+        "attr_demand_searches_90d": 177723,
+        "extra_impressions_90d": 89502,
+        "extra_clicks_90d": 5818,
+        "extra_purchases_90d": 349.06,
+        "revenue_90d": 37255282,
+        "revenue_month": 12418427,
+        "revenue_year": 149021127
+      },
+      "by_bucket": [
+        {
+          "bucket": "obuv",
+          "label": "Обувь",
+          "offers": 63959,
+          "category_searches_90d": 923875,
+          "attr_demand_searches_90d": 84595,
+          "attr_demand_source": "expanded_style",
+          "families_used": [
+            {
+              "family": "Каблук и обувные формы",
+              "searches_90d": 241700,
+              "searches_allocated": 84595
+            }
+          ],
+          "p_extract": 0.7,
+          "coverage_now": 0.06,
+          "newly_eligible_sku_share": 0.658,
+          "p_session_gets_new_sku_in_serp": 0.55,
+          "extra_impressions_90d": 46527,
+          "extra_clicks_90d": 3024,
+          "extra_purchases_90d": 181.46,
+          "revenue_90d": 19366992,
+          "revenue_month": 6455664,
+          "revenue_year": 77467968,
+          "new_indexable_skus_est": 42085
+        },
+        {
+          "bucket": "aksessuary",
+          "label": "Аксессуары / очки / часы",
+          "offers": 81708,
+          "category_searches_90d": 750342,
+          "attr_demand_searches_90d": 75034,
+          "attr_demand_source": "expanded_style",
+          "families_used": [
+            {
+              "family": "_fallback_share_of_category_search",
+              "searches_90d": 75034
+            }
+          ],
+          "p_extract": 0.4,
+          "coverage_now": 0.05,
+          "newly_eligible_sku_share": 0.38,
+          "p_session_gets_new_sku_in_serp": 0.4433,
+          "extra_impressions_90d": 33265,
+          "extra_clicks_90d": 2162,
+          "extra_purchases_90d": 129.73,
+          "revenue_90d": 13846604,
+          "revenue_month": 4615535,
+          "revenue_year": 55386416,
+          "new_indexable_skus_est": 31049
+        },
+        {
+          "bucket": "odezhda",
+          "label": "Одежда (без верхней)",
+          "offers": 281329,
+          "category_searches_90d": 1267825,
+          "attr_demand_searches_90d": 9263,
+          "attr_demand_source": "expanded_style",
+          "families_used": [
+            {
+              "family": "Посадка и силуэт одежды",
+              "searches_90d": 8122,
+              "searches_allocated": 2274
+            },
+            {
+              "family": "Принт и орнамент",
+              "searches_90d": 12395,
+              "searches_allocated": 3470
+            },
+            {
+              "family": "Декор и фактура",
+              "searches_90d": 12567,
+              "searches_allocated": 3518
+            }
+          ],
+          "p_extract": 0.52,
+          "coverage_now": 0.04,
+          "newly_eligible_sku_share": 0.4992,
+          "p_session_gets_new_sku_in_serp": 0.55,
+          "extra_impressions_90d": 5095,
+          "extra_clicks_90d": 331,
+          "extra_purchases_90d": 19.87,
+          "revenue_90d": 2120651,
+          "revenue_month": 706884,
+          "revenue_year": 8482603,
+          "new_indexable_skus_est": 140439
+        },
+        {
+          "bucket": "sumki",
+          "label": "Сумки",
+          "offers": 42445,
+          "category_searches_90d": 743707,
+          "attr_demand_searches_90d": 6683,
+          "attr_demand_source": "expanded_style",
+          "families_used": [
+            {
+              "family": "Сумки по силуэту",
+              "searches_90d": 19097,
+              "searches_allocated": 6683
+            }
+          ],
+          "p_extract": 0.75,
+          "coverage_now": 0.08,
+          "newly_eligible_sku_share": 0.69,
+          "p_session_gets_new_sku_in_serp": 0.55,
+          "extra_impressions_90d": 3676,
+          "extra_clicks_90d": 239,
+          "extra_purchases_90d": 14.34,
+          "revenue_90d": 1529991,
+          "revenue_month": 509997,
+          "revenue_year": 6119965,
+          "new_indexable_skus_est": 29287
+        },
+        {
+          "bucket": "verhnyaya",
+          "label": "Верхняя одежда",
+          "offers": 34650,
+          "category_searches_90d": 148081,
+          "attr_demand_searches_90d": 879,
+          "attr_demand_source": "expanded_style",
+          "families_used": [
+            {
+              "family": "Декор и фактура",
+              "searches_90d": 12567,
+              "searches_allocated": 879
+            }
+          ],
+          "p_extract": 0.6,
+          "coverage_now": 0.05,
+          "newly_eligible_sku_share": 0.57,
+          "p_session_gets_new_sku_in_serp": 0.55,
+          "extra_impressions_90d": 483,
+          "extra_clicks_90d": 31,
+          "extra_purchases_90d": 1.89,
+          "revenue_90d": 201236,
+          "revenue_month": 67079,
+          "revenue_year": 804945,
+          "new_indexable_skus_est": 19750
+        },
+        {
+          "bucket": "parfyum",
+          "label": "Парфюмерия",
+          "offers": 9278,
+          "category_searches_90d": 93006,
+          "attr_demand_searches_90d": 1269,
+          "attr_demand_source": "expanded_style",
+          "families_used": [
+            {
+              "family": "Парфюмерия descriptive",
+              "searches_90d": 3628,
+              "searches_allocated": 1269
+            }
+          ],
+          "p_extract": 0.35,
+          "coverage_now": 0.12,
+          "newly_eligible_sku_share": 0.308,
+          "p_session_gets_new_sku_in_serp": 0.3593,
+          "extra_impressions_90d": 456,
+          "extra_clicks_90d": 30,
+          "extra_purchases_90d": 1.78,
+          "revenue_90d": 189808,
+          "revenue_month": 63269,
+          "revenue_year": 759231,
+          "new_indexable_skus_est": 2858
+        }
+      ]
+    }
+  },
+  "vs_stream_a": {
+    "stream_a": "RESERVE/NORMAL × fixable × ΔCVR × AOV (money_impact_metrika.json)",
+    "stream_b": "this file",
+    "combine_guidance": "Показывать раздельно. Верхняя оценка портфеля ≈ A + часть B; полный A+B завысит из-за общего attr-спроса."
+  }
+}

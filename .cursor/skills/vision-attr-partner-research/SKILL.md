@@ -27,3 +27,9 @@ description: >-
 ## Deliverable
 
 `portfolio/{partner}/*-image-attrs-research.html` + `MONEY_IMPACT.md` + `demo_cases.json`
+
+## Стрим B (отдельно) — каталог → выдача
+
+Скрипт-эталон: `_tsum_catalog_visibility_money.py`  
+Артефакты: `money_catalog_visibility.json`, `MONEY_CATALOG_VISIBILITY.md`  
+Не суммировать 1:1 со стримом A (RESERVE/NORMAL × ΔCVR).
