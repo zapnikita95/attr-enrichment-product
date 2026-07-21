@@ -1,0 +1,532 @@
+{
+  "generated_at": "2026-07-21T12:08:10.280761+00:00",
+  "partner": "Zolla",
+  "site_id": 3826,
+  "method_type": "TYPE_DECISION_METHOD.md Q0–Q4",
+  "method_demand": "sessions.searches top-5000 / 90d regex intents",
+  "feed_gap": {
+    "source": "yml-feed.3826 sample 8000 offers",
+    "human_params_present": [
+      "Цвет",
+      "Размер",
+      "Новинка",
+      "Скидка",
+      "barcode",
+      "vendorCodeCut"
+    ],
+    "style_params_present": [],
+    "conclusion": "В фиде Zolla нет structured params для капюшона, принта, рукава, застёжки, воротника, силуэта. Цвет/размер — 100% fill → не трогаем как enrichment filter.",
+    "name_lexicon_coverage_sample_20k": {
+      "print": "16.42%",
+      "sleeve": "12.66%",
+      "collar": "7.16%",
+      "length": "5.28%",
+      "hood": "4.68%",
+      "silhouette": "3.73%",
+      "fastener": "1.98%",
+      "note": "Лексика в name ≠ нормализованный facet; часть товаров с деталью на фото без слова в названии."
+    }
+  },
+  "attributes": [
+    {
+      "attr_id": "hood",
+      "label": "Капюшон",
+      "value_type": "boolean",
+      "allowed_values": [
+        "да",
+        "нет"
+      ],
+      "tree_path": "Q1=yes → boolean (деталь есть/нет)",
+      "why_type": "Капюшон — дискретная деталь изделия: либо присутствует, либо нет. Покупательский вопрос бинарный («с капюшоном»). Подвиды (съёмный/мех) — отдельные атрибуты, если появятся в спросе.",
+      "source": [
+        "vision",
+        "text"
+      ],
+      "demand_volume_top5k": 1570,
+      "demand_share_pct": 0.39,
+      "demand_uniq": 44,
+      "demand_verdict": "strong_filter_candidate",
+      "demand_examples": [
+        {
+          "q": "худи",
+          "search_count": 194
+        },
+        {
+          "q": "и худи женские",
+          "search_count": 153
+        },
+        {
+          "q": "куртка женская с капюшоном",
+          "search_count": 123
+        },
+        {
+          "q": "худи мужское",
+          "search_count": 100
+        },
+        {
+          "q": "парка женская",
+          "search_count": 88
+        },
+        {
+          "q": "толстовки и худи женские",
+          "search_count": 76
+        },
+        {
+          "q": "ветровка мужская с капюшоном",
+          "search_count": 50
+        },
+        {
+          "q": "ветровка с капюшоном женская",
+          "search_count": 45
+        }
+      ],
+      "feed_status": "missing_structured_param",
+      "partner_action": "extract+filter"
+    },
+    {
+      "attr_id": "pockets",
+      "label": "Карманы",
+      "value_type": "boolean",
+      "allowed_values": [
+        "да",
+        "нет"
+      ],
+      "tree_path": "Q1=yes → boolean",
+      "why_type": "Наличие карманов — факт присутствия детали, не шкала вариантов.",
+      "source": [
+        "vision",
+        "text"
+      ],
+      "demand_volume_top5k": 50,
+      "demand_share_pct": 0.01,
+      "demand_uniq": 2,
+      "demand_verdict": "weak_or_sparse",
+      "demand_examples": [
+        {
+          "q": "брюки мужские с карманами карго",
+          "search_count": 42
+        },
+        {
+          "q": "джоггеры мужские с карманами",
+          "search_count": 8
+        }
+      ],
+      "feed_status": "missing_structured_param",
+      "partner_action": "extract+filter"
+    },
+    {
+      "attr_id": "length",
+      "label": "Длина изделия",
+      "value_type": "enum",
+      "allowed_values": [
+        "mini",
+        "midi",
+        "maxi",
+        "до колена",
+        "укороченный"
+      ],
+      "tree_path": "Q1=no → Q2=yes → enum (стандарт fashion)",
+      "why_type": "В fashion есть устоявшиеся взаимоисключающие длины (mini/midi/maxi…). Один SKU = одно значение длины.",
+      "source": [
+        "vision",
+        "text"
+      ],
+      "demand_volume_top5k": 2512,
+      "demand_share_pct": 0.62,
+      "demand_uniq": 74,
+      "demand_verdict": "strong_filter_candidate",
+      "demand_examples": [
+        {
+          "q": "платье макси",
+          "search_count": 263
+        },
+        {
+          "q": "юбка миди",
+          "search_count": 188
+        },
+        {
+          "q": "платье миди",
+          "search_count": 164
+        },
+        {
+          "q": "платье сарафан макси",
+          "search_count": 131
+        },
+        {
+          "q": "платье мини",
+          "search_count": 120
+        },
+        {
+          "q": "атласное платье миди",
+          "search_count": 113
+        },
+        {
+          "q": "платье рубашка миди",
+          "search_count": 103
+        },
+        {
+          "q": "юбка джинсовая миди",
+          "search_count": 83
+        }
+      ],
+      "feed_status": "missing_structured_param",
+      "partner_action": "extract+filter"
+    },
+    {
+      "attr_id": "sleeve_length",
+      "label": "Длина рукава",
+      "value_type": "enum",
+      "allowed_values": [
+        "короткий",
+        "длинный",
+        "3/4",
+        "без рукавов"
+      ],
+      "tree_path": "Q1=no → Q2=yes → enum",
+      "why_type": "Стандартные взаимоисключающие варианты рукава в каталогах одежды.",
+      "source": [
+        "vision",
+        "text"
+      ],
+      "demand_volume_top5k": 4735,
+      "demand_share_pct": 1.18,
+      "demand_uniq": 107,
+      "demand_verdict": "strong_filter_candidate",
+      "demand_examples": [
+        {
+          "q": "рубашка мужская с коротким рукавом",
+          "search_count": 660
+        },
+        {
+          "q": "джемпер женский с коротким рукавом",
+          "search_count": 301
+        },
+        {
+          "q": "рубашка мужская с длинным рукавом",
+          "search_count": 239
+        },
+        {
+          "q": "блузки женские с короткими рукавами",
+          "search_count": 213
+        },
+        {
+          "q": "джинсовое платье без рукавов",
+          "search_count": 147
+        },
+        {
+          "q": "рубашка женская с коротким рукавом",
+          "search_count": 146
+        },
+        {
+          "q": "блузки женские с длинными рукавами",
+          "search_count": 145
+        },
+        {
+          "q": "жилет женский без рукавов",
+          "search_count": 129
+        }
+      ],
+      "feed_status": "missing_structured_param",
+      "partner_action": "extract+filter"
+    },
+    {
+      "attr_id": "fastener",
+      "label": "Застёжка",
+      "value_type": "enum",
+      "allowed_values": [
+        "молния",
+        "пуговицы",
+        "кнопки",
+        "завязки",
+        "нет"
+      ],
+      "tree_path": "Q1=no → Q2=yes → enum",
+      "why_type": "Тип застёжки — закрытый набор mutually exclusive вариантов.",
+      "source": [
+        "vision",
+        "text"
+      ],
+      "demand_volume_top5k": 1238,
+      "demand_share_pct": 0.31,
+      "demand_uniq": 50,
+      "demand_verdict": "strong_filter_candidate",
+      "demand_examples": [
+        {
+          "q": "толстовка женская на молнии",
+          "search_count": 130
+        },
+        {
+          "q": "кардиган на пуговицах женский",
+          "search_count": 121
+        },
+        {
+          "q": "кардиган мужской на пуговицах",
+          "search_count": 99
+        },
+        {
+          "q": "толстовка мужская на молнии",
+          "search_count": 75
+        },
+        {
+          "q": "кофта на молнии женская",
+          "search_count": 64
+        },
+        {
+          "q": "женский вязаный кардиган на пуговицах",
+          "search_count": 60
+        },
+        {
+          "q": "костюм спортивный на молнии женский",
+          "search_count": 34
+        },
+        {
+          "q": "толстовка мужская с капюшоном на молнии",
+          "search_count": 32
+        }
+      ],
+      "feed_status": "missing_structured_param",
+      "partner_action": "extract+filter"
+    },
+    {
+      "attr_id": "collar",
+      "label": "Воротник / вырез",
+      "value_type": "enum",
+      "allowed_values": [
+        "круглый",
+        "V-образный",
+        "стойка",
+        "отложной",
+        "капюшон",
+        "без воротника"
+      ],
+      "tree_path": "Q1=no → Q2=yes → enum",
+      "why_type": "Ограниченный набор конструкций горловины; один основной вариант на SKU.",
+      "source": [
+        "vision",
+        "text"
+      ],
+      "demand_volume_top5k": 570,
+      "demand_share_pct": 0.14,
+      "demand_uniq": 21,
+      "demand_verdict": "weak_or_sparse",
+      "demand_examples": [
+        {
+          "q": "водолазка женская",
+          "search_count": 140
+        },
+        {
+          "q": "с воротником поло мужской",
+          "search_count": 97
+        },
+        {
+          "q": "водолазка мужская",
+          "search_count": 89
+        },
+        {
+          "q": "водолазка",
+          "search_count": 52
+        },
+        {
+          "q": "вязаная футболка с воротником поло",
+          "search_count": 18
+        },
+        {
+          "q": "водолазка мужская черная",
+          "search_count": 17
+        },
+        {
+          "q": "платье с вырезом",
+          "search_count": 15
+        },
+        {
+          "q": "футболка мужская голубая с вырезом",
+          "search_count": 14
+        }
+      ],
+      "feed_status": "missing_structured_param",
+      "partner_action": "extract+filter"
+    },
+    {
+      "attr_id": "print_pattern",
+      "label": "Узор / принт",
+      "value_type": "multi_enum",
+      "allowed_values": [
+        "однотонный",
+        "полоска",
+        "клетка",
+        "горошек",
+        "цветочный",
+        "геометрия",
+        "леопард",
+        "зебра",
+        "камуфляж",
+        "меланж",
+        "люрекс",
+        "графика",
+        "абстракция",
+        "гусиная лапка"
+      ],
+      "tree_path": "Q1=no → Q2=partial → Q3=yes → multi_enum",
+      "why_type": "На ткани могут сосуществовать несколько признаков (полоска+люрекс). Closed-set ограничивает кардинальность facet.",
+      "source": [
+        "vision",
+        "text"
+      ],
+      "demand_volume_top5k": 7757,
+      "demand_share_pct": 1.93,
+      "demand_uniq": 151,
+      "demand_verdict": "strong_filter_candidate",
+      "demand_examples": [
+        {
+          "q": "рубашка женская в полоску",
+          "search_count": 649
+        },
+        {
+          "q": "футболка с принтом женская",
+          "search_count": 647
+        },
+        {
+          "q": "рубашка в клетку женская",
+          "search_count": 524
+        },
+        {
+          "q": "платье цветочный принт",
+          "search_count": 423
+        },
+        {
+          "q": "футболка женская в полоску",
+          "search_count": 357
+        },
+        {
+          "q": "футболка с принтом мужская",
+          "search_count": 305
+        },
+        {
+          "q": "белая футболка с принтом женская",
+          "search_count": 243
+        },
+        {
+          "q": "брюки женские в полоску",
+          "search_count": 184
+        }
+      ],
+      "feed_status": "missing_structured_param",
+      "partner_action": "extract+filter"
+    },
+    {
+      "attr_id": "silhouette",
+      "label": "Силуэт / крой",
+      "value_type": "enum",
+      "allowed_values": [
+        "прямой",
+        "оверсайз",
+        "прилегающий",
+        "клёш",
+        "свободный"
+      ],
+      "tree_path": "Q1=no → Q2=yes → enum",
+      "why_type": "Стандартные силуэты fashion; взаимоисключающие на уровне основного кроя.",
+      "source": [
+        "vision",
+        "text"
+      ],
+      "status": "backlog_strong_demand",
+      "demand_volume_top5k": 999,
+      "demand_share_pct": 0.25,
+      "demand_uniq": 29,
+      "demand_verdict": "strong_filter_candidate",
+      "demand_examples": [
+        {
+          "q": "джинсы женские клеш",
+          "search_count": 206
+        },
+        {
+          "q": "мужская футболка оверсайз",
+          "search_count": 130
+        },
+        {
+          "q": "джинсы клеш",
+          "search_count": 122
+        },
+        {
+          "q": "футболка женская оверсайз",
+          "search_count": 68
+        },
+        {
+          "q": "клеш",
+          "search_count": 52
+        },
+        {
+          "q": "футболка оверсайз",
+          "search_count": 49
+        },
+        {
+          "q": "джинсы skinny",
+          "search_count": 45
+        },
+        {
+          "q": "брюки клеш",
+          "search_count": 30
+        }
+      ],
+      "feed_status": "missing_structured_param",
+      "partner_action": "extract+filter"
+    }
+  ],
+  "do_not": [
+    {
+      "attr": "Цвет",
+      "why": "Fill ~100% в YML param «Цвет». Спрос в CH высокий, но это не gap enrichment.",
+      "demand_note": "strong_demand_but_check_feed_nav_collision"
+    },
+    {
+      "attr": "Размер",
+      "why": "Variant-level в фиде (100%). Не vision/text filter enrichment.",
+      "demand_note": "n/a"
+    },
+    {
+      "attr": "Пол (gender_target)",
+      "why": "В запросах часто «женские/мужские» как модификатор типа изделия; обычно закрывается навигацией/фидом. Не назначаем новым facet без проверки UI.",
+      "demand_note": "strong_demand_but_check_feed_nav_collision"
+    },
+    {
+      "attr": "Материал / состав %",
+      "why": "Состав должен идти из params/описания партнёра; vision по составу ненадёжен. Collision risk.",
+      "demand_note": "strong_demand_but_check_feed_nav_collision"
+    },
+    {
+      "attr": "Ощущения ткани / маркетинг",
+      "why": "Не нормализуется в closed-set; не facet.",
+      "demand_note": "no CH facet signal required"
+    }
+  ],
+  "money": {
+    "baseline_ch": {
+      "total_sessions": 1171945,
+      "search_sessions": 195259,
+      "search_orders": 10,
+      "search_cvr_pct": 0.005,
+      "aov_search": 3395.7,
+      "search_revenue_90d": 33957,
+      "searches_90d": 473003,
+      "uniq_queries_90d": 46331
+    },
+    "baseline_caveat": "В CH у Zolla search_orders за 90д крайне мало (возможен недоучёт withOrder). AOV/CVR из CH используем осторожно; для продажи партнёру нужен замер facet with/without или Метрика после появления фильтров.",
+    "direct_filter_intent_volume_90d_top5k": 19568,
+    "intent_share_of_top_pct": 4.86,
+    "assumptions": {
+      "filter_adoption_among_intent_searches": 0.15,
+      "cvr_lift_pp_absolute": 0.5,
+      "label": "ASSUMED — не измерено на Zolla facet usage"
+    },
+    "formula": "Δ₽/мес ≈ (intent_searches_90d/3) × adoption × (lift_pp/100) × AOV_search_CH",
+    "delta_revenue_rub_per_month_sketch": 16612.0,
+    "delta_revenue_rub_per_90d_sketch": 49835.0,
+    "what_we_will_measure_next": [
+      "conv_with_filters vs conv_without_filters по категориям (CH events)",
+      "SKU coverage после typed extract",
+      "filters per query"
+    ]
+  },
+  "pilot_vision_summary_ref": "vision_summary.json"
+}

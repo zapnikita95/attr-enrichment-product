@@ -24,6 +24,18 @@ py -3.13 filter_pipeline/run_zolla_pilot.py --stage compare_models --attrs hood
 
 OpenRouter key берётся из `image_description-main/.env`.
 
+## Партнёрская защита (формат как ЦУМ)
+
+```powershell
+py -3.13 filter_pipeline/zolla_query_demand.py
+py -3.13 filter_pipeline/build_zolla_partner_defense.py
+```
+
+Открой: `portfolio/zolla_filters/zolla-filters-research.html`
+
+Логика типов (boolean/enum): `TYPE_DECISION_METHOD.md` — дерево Q0–Q4.  
+Спрос: CH top queries. Gap: YML params. Деньги: формула с явным ASSUMED lift.
+
 ## Demand evidence (обязательно перед «имеет смысл»)
 
 ```powershell
@@ -36,7 +48,8 @@ py -3.13 filter_pipeline/zolla_query_demand.py
 - `portfolio/zolla_filters/zolla_top_queries_90d.json` — топ searchTerm
 
 Источник: ClickHouse `sessions.searches` siteId=**3826**, 90 дней.  
-LLM candidacy без этого файла — не считать пруфом спроса.
+LLM candidacy без этого файла — не считать пруфом спроса.  
+Тип значения без `TYPE_DECISION_METHOD.md` — не считать обоснованием.
 
 ## Бюджет моделей
 

@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Zolla — фильтры из картинок/описаний: защита</title>
+<style>
+:root {
+  --bg:#f7f5f2; --ink:#1a1a1a; --muted:#5c5c5c; --line:#ddd6cc;
+  --card:#fff; --accent:#1f3a2e; --warn:#7a3e1d;
+}
+* { box-sizing:border-box; }
+body { margin:0; font:16px/1.5 "Segoe UI", system-ui, sans-serif; color:var(--ink); background:var(--bg); }
+.wrap { max-width:1100px; margin:0 auto; padding:32px 20px 80px; }
+h1 { font-size:28px; font-weight:650; letter-spacing:-0.02em; margin:0 0 8px; }
+h2 { font-size:20px; margin:40px 0 12px; color:var(--accent); }
+h3 { font-size:16px; margin:24px 0 8px; }
+.lead { color:var(--muted); font-size:17px; max-width:780px; }
+.meta { margin:16px 0 28px; color:var(--muted); font-size:13px; }
+.grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(170px,1fr)); gap:12px; margin:20px 0; }
+.stat { background:var(--card); border:1px solid var(--line); padding:16px 14px; }
+.stat b { display:block; font-size:22px; font-weight:650; margin-bottom:4px; }
+.stat span { color:var(--muted); font-size:13px; }
+.callout { background:var(--card); border-left:3px solid var(--accent); padding:14px 16px; margin:18px 0; }
+.callout.warn { border-left-color:var(--warn); }
+table { width:100%; border-collapse:collapse; background:var(--card); font-size:13px; }
+th, td { border:1px solid var(--line); padding:8px 10px; text-align:left; vertical-align:top; }
+th { background:#efeae3; font-weight:600; }
+.tag { display:inline-block; background:#efeae3; padding:2px 8px; font-size:12px; margin-right:6px; }
+ol.tree { max-width:720px; }
+footer { margin-top:48px; color:var(--muted); font-size:12px; }
+code { font-size:12px; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="tag">site_id 3826 · Zolla</div>
+  <div class="tag">фильтры · vision + text</div>
+  <div class="tag">защита для партнёра</div>
+  <h1>Zolla: фильтры из картинок и описаний</h1>
+  <p class="lead">
+    Защита решения: <strong>какие атрибуты делать фильтрами</strong>,
+    <strong>в каком типе значения</strong> (boolean / enum / multi_enum),
+    <strong>почему их нет в фиде</strong>, <strong>что ищут пользователи</strong>
+    и <strong>как это бьёт в деньги</strong>.
+    Формат близкий к исследованию ЦУМ по атрибутам с картинок.
+  </p>
+  <p class="meta">
+    ClickHouse <code>sessions.searches</code> 90д · top-5000 запросов ·
+    YML sample 8k / name coverage 20k ·
+    тип значения — дерево Q0–Q4 (<code>TYPE_DECISION_METHOD.md</code>), не «мнение модели».
+  </p>
+
+  <div class="grid">
+    <div class="stat"><b>473 003</b><span>поисков за 90 дней</span></div>
+    <div class="stat"><b>46 331</b><span>уникальных запросов</span></div>
+    <div class="stat"><b>18 811</b><span>поисков в топе под filter-кандидаты*</span></div>
+    <div class="stat"><b>0</b><span>style-params в YML (капюшон/принт/рукав…)</span></div>
+    <div class="stat"><b>16 612 ₽</b><span>sketch Δ/мес (ASSUMED lift)</span></div>
+    <div class="stat"><b>100%</b><span>цвет и размер уже в фиде</span></div>
+  </div>
+  <p class="meta">* сумма объёмов интентов (пересечения возможны) — upper-bound охвата facet-формулировок в top-5000.</p>
+
+  <div class="callout">
+    <strong>Вывод для партнёра.</strong> Фид Zolla закрывает карточку (цвет, размер, скидка),
+    но <em>не даёт facet-ов визуального стиля</em>, которые люди уже пишут в поиск:
+    принт, рукав, длина, капюшон, застёжка, силуэт.
+    Мы нормализуем их в фильтры с жёстким типом значения, чтобы UI и индекс не расползались
+    («да/нет», а не «капюшон есть / с капюшоном»).
+  </div>
+
+  <h2>0. Как мы решаем тип фильтра (логика, не «с потолка»)</h2>
+  <ol class="tree">
+    <li><strong>Q0.</strong> Это вообще фильтр? (спрос + не дубль фида + нормализуемо)</li>
+    <li><strong>Q1.</strong> Вопрос «есть/нет» про деталь? → <code>boolean</code> = да/нет.
+      <br/>Пример: капюшон, карманы.</li>
+    <li><strong>Q2.</strong> Есть стандартный набор взаимоисключающих вариантов fashion? → <code>enum</code>.
+      <br/>Пример: длина mini/midi/maxi; рукав короткий/длинный/3/4/без рукавов.</li>
+    <li><strong>Q3.</strong> Несколько значений сразу возможны? → <code>multi_enum</code>.
+      <br/>Пример: принт полоска+люрекс.</li>
+    <li><strong>Q4.</strong> Число? → bins, не сырой float в facet.</li>
+  </ol>
+  <div class="callout warn">
+    Тип boolean для капюшона выбран <strong>не потому что «так сказала модель»</strong>, а потому что
+    онтология атрибута — наличие детали. Спрос в CH подтверждает, что вопрос бинарный
+    («куртка с капюшоном»), но спрос <em>не выбирает тип</em> — тип выбирает дерево Q1–Q4.
+  </div>
+
+  <h2>1. Что уже есть в фиде (и что НЕ трогаем)</h2>
+  <p>Sample 8 000 offer YML Zolla. Человекочитаемые params:</p>
+  <table>
+    <thead><tr><th>Param</th><th>Fill (sample)</th><th>Решение</th></tr></thead>
+    <tbody>
+      <tr><td>Цвет</td><td>100%</td><td>не enrichment-фильтр</td></tr>
+      <tr><td>Размер</td><td>100%</td><td>variant, не vision</td></tr>
+      <tr><td>Новинка / Скидка / barcode</td><td>~99–100%</td><td>операционка</td></tr>
+      <tr><td>Капюшон / принт / рукав / застёжка / воротник / силуэт</td><td><strong>нет param</strong></td><td>зона фильтров из фото/описаний</td></tr>
+    </tbody>
+  </table>
+  <p class="meta">Лексика в названии (sample 20k): принт ~16%, рукав ~13%, капюшон ~4.7%, застёжка ~2% —
+  это не замена facet: часть карточек с деталью на фото без слова в name.</p>
+
+  <h2>2. Не делать фильтрами / не тащить с фото</h2>
+  <table>
+    <thead><tr><th>Атрибут</th><th>Почему</th><th>CH note</th></tr></thead>
+    <tbody><tr><td>Цвет</td><td>Fill ~100% в YML param «Цвет». Спрос в CH высокий, но это не gap enrichment.</td><td>strong_demand_but_check_feed_nav_collision</td></tr><tr><td>Размер</td><td>Variant-level в фиде (100%). Не vision/text filter enrichment.</td><td>n/a</td></tr><tr><td>Пол (gender_target)</td><td>В запросах часто «женские/мужские» как модификатор типа изделия; обычно закрывается навигацией/фидом. Не назначаем новым facet без проверки UI.</td><td>strong_demand_but_check_feed_nav_collision</td></tr><tr><td>Материал / состав %</td><td>Состав должен идти из params/описания партнёра; vision по составу ненадёжен. Collision risk.</td><td>strong_demand_but_check_feed_nav_collision</td></tr><tr><td>Ощущения ткани / маркетинг</td><td>Не нормализуется в closed-set; не facet.</td><td>no CH facet signal required</td></tr></tbody>
+  </table>
+
+  <h2>3. Делать фильтрами: тип + спрос + gap</h2>
+  <table>
+    <thead>
+      <tr>
+        <th>Фильтр</th><th>Тип (дерево)</th><th>Почему такой тип</th>
+        <th>Спрос CH (top-5k)</th><th>Примеры запросов</th><th>Фид / действие</th>
+      </tr>
+    </thead>
+    <tbody><tr><td><strong>Капюшон</strong><br/><code>hood</code></td><td><code>boolean</code><br/><span style='font-size:12px;color:#5c5c5c'>Q1=yes → boolean (деталь есть/нет)</span></td><td>Капюшон — дискретная деталь изделия: либо присутствует, либо нет. Покупательский вопрос бинарный («с капюшоном»). Подвиды (съёмный/мех) — отдельные атрибуты, если появятся в спросе.</td><td>1 570 · 0.39%<br/><span style='font-size:12px'>strong_filter_candidate</span></td><td style='font-size:12px'>худи (194), и худи женские (153), куртка женская с капюшоном (123)</td><td>missing_structured_param<br/>extract+filter</td></tr><tr><td><strong>Карманы</strong><br/><code>pockets</code></td><td><code>boolean</code><br/><span style='font-size:12px;color:#5c5c5c'>Q1=yes → boolean</span></td><td>Наличие карманов — факт присутствия детали, не шкала вариантов.</td><td>50 · 0.01%<br/><span style='font-size:12px'>weak_or_sparse</span></td><td style='font-size:12px'>брюки мужские с карманами карго (42), джоггеры мужские с карманами (8)</td><td>missing_structured_param<br/>extract+filter</td></tr><tr><td><strong>Длина изделия</strong><br/><code>length</code></td><td><code>enum</code><br/><span style='font-size:12px;color:#5c5c5c'>Q1=no → Q2=yes → enum (стандарт fashion)</span></td><td>В fashion есть устоявшиеся взаимоисключающие длины (mini/midi/maxi…). Один SKU = одно значение длины.</td><td>2 512 · 0.62%<br/><span style='font-size:12px'>strong_filter_candidate</span></td><td style='font-size:12px'>платье макси (263), юбка миди (188), платье миди (164)</td><td>missing_structured_param<br/>extract+filter</td></tr><tr><td><strong>Длина рукава</strong><br/><code>sleeve_length</code></td><td><code>enum</code><br/><span style='font-size:12px;color:#5c5c5c'>Q1=no → Q2=yes → enum</span></td><td>Стандартные взаимоисключающие варианты рукава в каталогах одежды.</td><td>4 735 · 1.18%<br/><span style='font-size:12px'>strong_filter_candidate</span></td><td style='font-size:12px'>рубашка мужская с коротким рукавом (660), джемпер женский с коротким рукавом (301), рубашка мужская с длинным рукавом (239)</td><td>missing_structured_param<br/>extract+filter</td></tr><tr><td><strong>Застёжка</strong><br/><code>fastener</code></td><td><code>enum</code><br/><span style='font-size:12px;color:#5c5c5c'>Q1=no → Q2=yes → enum</span></td><td>Тип застёжки — закрытый набор mutually exclusive вариантов.</td><td>1 238 · 0.31%<br/><span style='font-size:12px'>strong_filter_candidate</span></td><td style='font-size:12px'>толстовка женская на молнии (130), кардиган на пуговицах женский (121), кардиган мужской на пуговицах (99)</td><td>missing_structured_param<br/>extract+filter</td></tr><tr><td><strong>Воротник / вырез</strong><br/><code>collar</code></td><td><code>enum</code><br/><span style='font-size:12px;color:#5c5c5c'>Q1=no → Q2=yes → enum</span></td><td>Ограниченный набор конструкций горловины; один основной вариант на SKU.</td><td>570 · 0.14%<br/><span style='font-size:12px'>weak_or_sparse</span></td><td style='font-size:12px'>водолазка женская (140), с воротником поло мужской (97), водолазка мужская (89)</td><td>missing_structured_param<br/>extract+filter</td></tr><tr><td><strong>Узор / принт</strong><br/><code>print_pattern</code></td><td><code>multi_enum</code><br/><span style='font-size:12px;color:#5c5c5c'>Q1=no → Q2=partial → Q3=yes → multi_enum</span></td><td>На ткани могут сосуществовать несколько признаков (полоска+люрекс). Closed-set ограничивает кардинальность facet.</td><td>7 757 · 1.93%<br/><span style='font-size:12px'>strong_filter_candidate</span></td><td style='font-size:12px'>рубашка женская в полоску (649), футболка с принтом женская (647), рубашка в клетку женская (524)</td><td>missing_structured_param<br/>extract+filter</td></tr><tr><td><strong>Силуэт / крой</strong><br/><code>silhouette</code></td><td><code>enum</code><br/><span style='font-size:12px;color:#5c5c5c'>Q1=no → Q2=yes → enum</span></td><td>Стандартные силуэты fashion; взаимоисключающие на уровне основного кроя.</td><td>999 · 0.25%<br/><span style='font-size:12px'>strong_filter_candidate</span></td><td style='font-size:12px'>джинсы женские клеш (206), мужская футболка оверсайз (130), джинсы клеш (122)</td><td>missing_structured_param<br/>extract+filter</td></tr></tbody>
+  </table>
+
+  <h2>4. Поиск: полный ranking интентов (пруф)</h2>
+  <p>
+    Источник: ClickHouse <code>sessions.searches</code>, siteId=3826, 90 дней.
+    Всего поисков <strong>473 003</strong>,
+    uniq <strong>46 331</strong>.
+    Ниже — матчинг по top-5000 (срез объёма в JSON evidence).
+  </p>
+  <table>
+    <thead><tr><th>Intent</th><th>Volume</th><th>Share%</th><th>Uniq</th><th>Verdict</th></tr></thead>
+    <tbody><tr><td><code>gender_target</code></td><td>164 329</td><td>40.8%</td><td>1242</td><td>strong_demand_but_check_feed_nav_collision</td></tr><tr><td><code>color</code></td><td>27 737</td><td>6.89%</td><td>531</td><td>strong_demand_but_check_feed_nav_collision</td></tr><tr><td><code>material</code></td><td>25 744</td><td>6.39%</td><td>330</td><td>strong_demand_but_check_feed_nav_collision</td></tr><tr><td><code>sleeve_length_product_proxy</code></td><td>8 875</td><td>2.2%</td><td>132</td><td>proxy_product_type_not_facet</td></tr><tr><td><code>print_pattern</code></td><td>7 757</td><td>1.93%</td><td>151</td><td>strong_filter_candidate</td></tr><tr><td><code>sleeve_length</code></td><td>4 735</td><td>1.18%</td><td>107</td><td>strong_filter_candidate</td></tr><tr><td><code>length</code></td><td>2 512</td><td>0.62%</td><td>74</td><td>strong_filter_candidate</td></tr><tr><td><code>hood</code></td><td>1 570</td><td>0.39%</td><td>44</td><td>strong_filter_candidate</td></tr><tr><td><code>fastener</code></td><td>1 238</td><td>0.31%</td><td>50</td><td>strong_filter_candidate</td></tr><tr><td><code>silhouette</code></td><td>999</td><td>0.25%</td><td>29</td><td>strong_filter_candidate</td></tr><tr><td><code>collar</code></td><td>570</td><td>0.14%</td><td>21</td><td>weak_or_sparse</td></tr><tr><td><code>fit_waist</code></td><td>137</td><td>0.03%</td><td>7</td><td>weak_or_sparse</td></tr><tr><td><code>pockets</code></td><td>50</td><td>0.01%</td><td>2</td><td>weak_or_sparse</td></tr></tbody>
+  </table>
+  <p class="meta">Полный файл с примерами запросов: <code>FILTER_DEMAND_EVIDENCE.md</code>.</p>
+
+  <h2>5. Деньги (прозрачно, со статусом ASSUMED)</h2>
+  <div class="callout warn">
+    В CH у Zolla search_orders за 90д крайне мало (возможен недоучёт withOrder). AOV/CVR из CH используем осторожно; для продажи партнёру нужен замер facet with/without или Метрика после появления фильтров.
+  </div>
+  <table>
+    <thead><tr><th>Поле</th><th>Значение</th></tr></thead>
+    <tbody>
+      <tr><td>Search sessions 90д (CH)</td><td>195 259</td></tr>
+      <tr><td>Search CVR (CH)</td><td>0.005% — возможно недоучёт заказов</td></tr>
+      <tr><td>AOV search (CH)</td><td>3395.7 ₽</td></tr>
+      <tr><td>Intent volume (filter-кандидаты, top-5k sum)</td><td>19 568</td></tr>
+      <tr><td>ASSUMED adoption</td><td>0.15</td></tr>
+      <tr><td>ASSUMED lift</td><td>+0.5 п.п. CVR</td></tr>
+      <tr><td>Формула</td><td><code>Δ₽/мес ≈ (intent_searches_90d/3) × adoption × (lift_pp/100) × AOV_search_CH</code></td></tr>
+      <tr><td><strong>Sketch Δ ₽/мес</strong></td><td><strong>16 612 ₽</strong></td></tr>
+      <tr><td>Sketch Δ ₽/90д</td><td>49 835 ₽</td></tr>
+    </tbody>
+  </table>
+  <p>Дальше вместо ASSUMED: замер <code>conv_with_filters</code> vs <code>conv_without_filters</code> по категориям (как в 4lapy filter-conversion).</p>
+
+  <h2>6. Что уже проверили технически (пилот)</h2>
+  <ul>
+    <li>Closed-set extract через OpenRouter (бюджет: gemma / flash-lite).</li>
+    <li>Дедуп по picture URL → один inference → размножение на все offer_id с той же картинкой.</li>
+    <li>Boolean капюшон: 100% канон <code>да|нет</code> на unique pics пилота.</li>
+    <li>Артефакты: <code>vision_summary.json</code>, <code>TYPE_DECISION_METHOD.md</code>, <code>FILTER_DEMAND_EVIDENCE.md</code>.</li>
+  </ul>
+
+  <footer>
+    Generated 2026-07-21T12:08:10.280761+00:00 · Diginetica filter enrichment defense · Zolla 3826
+  </footer>
+</div>
+</body>
+</html>
