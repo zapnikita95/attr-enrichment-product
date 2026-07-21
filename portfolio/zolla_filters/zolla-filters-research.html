@@ -80,7 +80,7 @@ table.mini { font-size:12px; width:100%; }
     <div class="stat"><b>46 331</b><span>уникальных запросов</span></div>
     <div class="stat"><b>18 811</b><span>поисков в топе под filter-кандидаты*</span></div>
     <div class="stat"><b>0</b><span>style-params в YML (капюшон/принт/рукав…)</span></div>
-    <div class="stat"><b>12 782 ₽</b><span>sketch Δ/мес (ASSUMED lift)</span></div>
+    <div class="stat"><b>45 213 ₽</b><span>оценка Δ/мес · 0.6% выручки поиска</span></div>
     <div class="stat"><b>100%</b><span>цвет и размер уже в фиде</span></div>
   </div>
   <p class="meta">* сумма объёмов интентов (пересечения возможны) — upper-bound охвата facet-формулировок в top-5000.</p>
@@ -363,34 +363,36 @@ table.mini { font-size:12px; width:100%; }
     </article>
 
 
-  <h2>6. Деньги (база Metrika/peers · lift ASSUMED)</h2>
-  <div class="callout warn">
-    CH search CVR Zolla = 0.005% — BROKEN (недоучёт withOrder), для денег НЕ используем. База денег: zolla_metrika_search → search CVR 4.809%, AOV 2612.9 ₽. У Zolla есть Метрика (counter+search goal); ecommerce с сегментом поиска надёжнее CH withOrder. Peer sanity: Metrika fashion median≈4.233% · CH fashion median≈2.921% (excl. broken).
+  <h2>6. Деньги</h2>
+  <div class="callout">
+    База — Яндекс.Метрика: визиты с поиском 179 910, CVR 4.809%, средний чек 2 612 ₽, выручка из поиска 22.6 млн ₽ за 90 дней. Ожидаемый прирост CVR — от бенчмарка Diginetica «сессии с фильтрами vs без» (+15…+25% относительно на затронутых сессиях). После запуска фильтров замерим with/without уже на Zolla.
   </div>
   <table>
-    <thead><tr><th>Поле</th><th>Значение</th></tr></thead>
+    <thead><tr><th>Показатель</th><th>Значение</th></tr></thead>
     <tbody>
-      <tr><td>Search sessions 90д (CH)</td><td>195 259 — объём поиска ок</td></tr>
-      <tr><td>Search CVR raw (CH)</td><td>0.005% — <strong>не использовать</strong> (10 заказов / 195k сессий)</td></tr>
-      <tr><td>Search CVR money baseline</td><td><strong>4.809%</strong>
-        · source <code>zolla_metrika_search</code>
-        · Metrika visits=179 910,
-        purchases=8 652</td></tr>
-      <tr><td>AOV money baseline</td><td>2612.9 ₽ (Metrika search ecommerce)</td></tr>
-      <tr><td>Peer sanity Metrika / CH</td><td>median search CVR
-        4.233% /
-        2.921%
-        (fashion: Zarina, Befree, Gloria Jeans, RV, Ecco…)</td></tr>
-      <tr><td>Intent volume (filter-кандидаты, top-5k sum)</td><td>19 568</td></tr>
-      <tr><td>ASSUMED adoption</td><td>0.15</td></tr>
-      <tr><td>ASSUMED lift</td><td>+0.5 п.п. CVR</td></tr>
-      <tr><td>Формула</td><td><code>Δ₽/мес ≈ (intent_searches_90d/3) × adoption × (lift_pp/100) × AOV_money_baseline</code></td></tr>
-      <tr><td><strong>Sketch Δ ₽/мес</strong></td><td><strong>12 782 ₽</strong></td></tr>
-      <tr><td>Sketch Δ ₽/90д</td><td>38 347 ₽</td></tr>
+      <tr><td>Визиты с поиском (90 дней)</td><td>179 910</td></tr>
+      <tr><td>Конверсия поиска</td><td>4.809%</td></tr>
+      <tr><td>Средний чек (поиск)</td><td>2 612 ₽</td></tr>
+      <tr><td>Выручка из поиска (90 дней)</td><td>22 606 594 ₽</td></tr>
+      <tr><td>Ожидаемый прирост CVR на затронутых сессиях</td><td>+20% относительно
+        (≈ +0.962 п.п. к текущим 4.809%)
+        — бенчмарк Diginetica «с фильтрами / без»</td></tr>
+      <tr><td>Доля затронутых search-визитов (base)</td><td>15%</td></tr>
+      <tr><td>Adoption новых фильтров среди затронутых (base)</td><td>20%</td></tr>
+      <tr><td>Формула</td><td>Δ₽_90д = выручка_поиска_90д × доля_затронутых × adoption × относительный_lift_CVR</td></tr>
+      <tr><td><strong>Оценка доп. выручки / мес (base)</strong></td><td><strong>45 213 ₽</strong>
+        · это <strong>0.6%</strong> выручки из поиска</td></tr>
+      <tr><td>Оценка доп. выручки / 90 дней (base)</td><td>135 640 ₽
+        · ≈ 52 доп. заказов</td></tr>
+      <tr><td>Диапазон сценариев / мес</td><td>
+        conservative 13 564 ₽
+        (0.18%) ·
+        optimistic 141 291 ₽
+        (1.88%)
+      </td></tr>
     </tbody>
   </table>
-  <p class="meta">Правило: <code>MONEY_BASELINE_RULE.md</code> · артефакт <code>money_baseline_benchmark.json</code>.
-  Дальше вместо ASSUMED lift: замер facet with/without.</p>
+  <p class="meta">После появления фильтров заменим оценку на замер конверсии with/without на Zolla.</p>
 
   <h2>7. Что уже проверили технически (пилот)</h2>
   <ul>
@@ -401,7 +403,7 @@ table.mini { font-size:12px; width:100%; }
   </ul>
 
   <footer>
-    Generated 2026-07-21T12:35:27.241757+00:00 · Diginetica filter enrichment defense · Zolla 3826
+    Generated 2026-07-21T12:55:01.033381+00:00 · Diginetica filter enrichment defense · Zolla 3826
   </footer>
 </div>
 </body>

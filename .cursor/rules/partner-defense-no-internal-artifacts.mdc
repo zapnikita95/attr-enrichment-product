@@ -1,0 +1,16 @@
+---
+description: Partner defense HTML must not leak internal broken metrics or competitor names
+alwaysApply: true
+---
+
+# Partner defense HTML — без внутренностей
+
+В HTML/презе **для партнёра** запрещено:
+
+1. Битые внутренние метрики («0.005% не использовать», «недоучёт withOrder», «10 заказов / …»)
+2. Имена других брендов/партнёров в бенчмарках (Zarina, Befree, …)
+3. Служебные пути файлов как «доказательство» (`*.md`, `*_benchmark.json`)
+
+Деньги: база Метрики партнёра; lift — от анонимного бенчмарка Diginetica; показать ₽ **и %** от выручки поиска.
+
+Внутренние caveat / peer lists — только в JSON для агента, не в партнёрском §Деньги.

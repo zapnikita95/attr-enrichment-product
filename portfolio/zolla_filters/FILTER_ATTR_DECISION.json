@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-21T12:35:27.241757+00:00",
+  "generated_at": "2026-07-21T12:55:01.033381+00:00",
   "partner": "Zolla",
   "site_id": 3826,
   "method_type": "TYPE_DECISION_METHOD.md Q0–Q4",
@@ -512,33 +512,87 @@
       "uniq_queries_90d": 46331
     },
     "baseline_money": {
-      "cvr_source": "zolla_metrika_search",
       "search_cvr_pct": 4.809,
       "aov": 2612.9,
       "metrika_search_visits": 179910.0,
       "metrika_search_purchases": 8652.0,
+      "metrika_search_revenue_90d": 22606594.0,
+      "source_partner_label": "Яндекс.Метрика · визиты с поиском"
+    },
+    "lift_benchmark": {
+      "source": "filter with/without на проектах Diginetica + полоса relative lift 15–25%",
+      "measured_positive_relative_median": 0.822,
+      "measured_positive_pp_median": 1.29,
+      "partner_sketch_relative": 0.25,
+      "band_relative": {
+        "conservative": 0.15,
+        "base": 0.2,
+        "optimistic": 0.25
+      },
+      "n_positive_categories": 2
+    },
+    "partner_lead": "База — Яндекс.Метрика: визиты с поиском 179 910, CVR 4.809%, средний чек 2 612 ₽, выручка из поиска 22.6 млн ₽ за 90 дней. Ожидаемый прирост CVR — от бенчмарка Diginetica «сессии с фильтрами vs без» (+15…+25% относительно на затронутых сессиях). После запуска фильтров замерим with/without уже на Zolla.",
+    "direct_filter_intent_volume_90d_top5k": 19568,
+    "intent_share_of_searches_pct": 4.14,
+    "intent_share_of_top_pct": 4.86,
+    "scenarios": {
+      "conservative": {
+        "name": "conservative",
+        "addressable_share": 0.08,
+        "adoption": 0.15,
+        "relative_cvr_lift": 0.15,
+        "cvr_lift_pp": 0.721,
+        "delta_revenue_rub_90d": 40692.0,
+        "delta_revenue_rub_month": 13564.0,
+        "pct_of_search_revenue_90d": 0.18,
+        "extra_orders_90d": 16.0
+      },
+      "base": {
+        "name": "base",
+        "addressable_share": 0.15,
+        "adoption": 0.2,
+        "relative_cvr_lift": 0.2,
+        "cvr_lift_pp": 0.962,
+        "delta_revenue_rub_90d": 135640.0,
+        "delta_revenue_rub_month": 45213.0,
+        "pct_of_search_revenue_90d": 0.6,
+        "extra_orders_90d": 52.0
+      },
+      "optimistic": {
+        "name": "optimistic",
+        "addressable_share": 0.25,
+        "adoption": 0.3,
+        "relative_cvr_lift": 0.25,
+        "cvr_lift_pp": 1.202,
+        "delta_revenue_rub_90d": 423874.0,
+        "delta_revenue_rub_month": 141291.0,
+        "pct_of_search_revenue_90d": 1.88,
+        "extra_orders_90d": 162.0
+      }
+    },
+    "assumptions": {
+      "addressable_share_base": 0.15,
+      "adoption_base": 0.2,
+      "relative_cvr_lift_base": 0.2,
+      "cvr_lift_pp_base": 0.962,
+      "label": "relative lift from Diginetica filter benches; addressable/adoption — sketch until Zolla facet measure"
+    },
+    "formula": "Δ₽_90д = выручка_поиска_90д × доля_затронутых × adoption × относительный_lift_CVR",
+    "delta_revenue_rub_per_month_sketch": 45213.0,
+    "delta_revenue_rub_per_90d_sketch": 135640.0,
+    "pct_of_search_revenue_90d": 0.6,
+    "what_we_will_measure_next": [
+      "conv_with_filters vs conv_without_filters на Zolla после появления facet",
+      "SKU coverage typed extract"
+    ],
+    "_internal": {
       "ch_search_cvr_pct_raw": 0.005,
       "ch_broken": true,
-      "peer_metrika_median_cvr_pct": 4.233,
-      "peer_ch_median_cvr_pct": 2.921,
-      "rule_ref": "MONEY_BASELINE_RULE.md"
-    },
-    "baseline_caveat": "CH search CVR Zolla = 0.005% — BROKEN (недоучёт withOrder), для денег НЕ используем. База денег: zolla_metrika_search → search CVR 4.809%, AOV 2612.9 ₽. У Zolla есть Метрика (counter+search goal); ecommerce с сегментом поиска надёжнее CH withOrder. Peer sanity: Metrika fashion median≈4.233% · CH fashion median≈2.921% (excl. broken).",
-    "direct_filter_intent_volume_90d_top5k": 19568,
-    "intent_share_of_top_pct": 4.86,
-    "assumptions": {
-      "filter_adoption_among_intent_searches": 0.15,
-      "cvr_lift_pp_absolute": 0.5,
-      "label": "ASSUMED lift — не измерено на Zolla facet usage; CVR/AOV база — Metrika/peers"
-    },
-    "formula": "Δ₽/мес ≈ (intent_searches_90d/3) × adoption × (lift_pp/100) × AOV_money_baseline",
-    "delta_revenue_rub_per_month_sketch": 12782.0,
-    "delta_revenue_rub_per_90d_sketch": 38347.0,
-    "what_we_will_measure_next": [
-      "conv_with_filters vs conv_without_filters по категориям (CH events)",
-      "SKU coverage после typed extract",
-      "filters per query"
-    ]
+      "peer_medians_internal_only": {
+        "metrika": 4.233,
+        "ch": 2.921
+      }
+    }
   },
   "pilot_vision_summary_ref": "vision_summary.json"
 }

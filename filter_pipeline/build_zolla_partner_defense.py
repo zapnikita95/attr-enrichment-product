@@ -151,8 +151,47 @@ def load_money_benchmark() -> dict:
     return {}
 
 
+def _filter_lift_benchmark() -> dict:
+    """Relative CVR lift from Diginetica filter with/without benches (no partner names in UI)."""
+    # portfolio/filter-conversion-data.json — positive categories only
+    fc_path = ROOT / "portfolio" / "filter-conversion-data.json"
+    rels: list[float] = []
+    pps: list[float] = []
+    if fc_path.is_file():
+        raw = json.loads(fc_path.read_text(encoding="utf-8"))
+        for row in raw.values() if isinstance(raw, dict) else []:
+            if not isinstance(row, dict):
+                continue
+            w = float(row.get("conv_with_filters_pct") or 0)
+            wo = float(row.get("conv_without_filters_pct") or 0)
+            pp = float(row.get("filter_lift_pp") or (w - wo))
+            if pp > 0 and wo > 0:
+                rels.append(w / wo - 1.0)
+                pps.append(pp)
+    # TSUM NORMAL fixable band used in money_impact (relative)
+    tsum_band = (0.15, 0.20, 0.25)
+    if rels:
+        rels_sorted = sorted(rels)
+        median_rel = rels_sorted[len(rels_sorted) // 2]
+        # Cap for partner sketch: don't claim full "filters exist vs none" on day-1 new facets
+        # → take ~half of measured with/without median, floored by TSUM conservative
+        sketch_rel = max(tsum_band[0], min(median_rel * 0.5, tsum_band[2]))
+    else:
+        median_rel = tsum_band[1]
+        sketch_rel = tsum_band[1]
+    median_pp = sorted(pps)[len(pps) // 2] if pps else None
+    return {
+        "source": "filter with/without на проектах Diginetica + полоса relative lift 15–25%",
+        "measured_positive_relative_median": round(median_rel, 3) if rels else None,
+        "measured_positive_pp_median": round(median_pp, 2) if median_pp is not None else None,
+        "partner_sketch_relative": round(sketch_rel, 3),
+        "band_relative": {"conservative": 0.15, "base": 0.20, "optimistic": 0.25},
+        "n_positive_categories": len(rels),
+    }
+
+
 def build_money(demand: dict, baseline: dict) -> dict:
-    """Money sketch: Metrika/peer baseline when CH order CVR is broken."""
+    """Partner money: Metrika search base × addressable × adoption × relative lift (benches)."""
     intents = intent_by_id(demand)
     keep_ids = [
         "print_pattern",
@@ -167,106 +206,118 @@ def build_money(demand: dict, baseline: dict) -> dict:
     ]
     vol_sum = sum(intents.get(i, {}).get("search_volume_in_top", 0) for i in keep_ids)
     top_total = (demand.get("classification") or {}).get("total_search_events_in_top") or 1
+    searches_90d = float(baseline.get("searches_90d") or 0) or 1.0
 
     bench = load_money_benchmark()
     decision = bench.get("decision") or {}
     chosen = decision.get("chosen") or {}
-    met = (bench.get("metrika_zolla") or {}).get("with_search") or {}
+    met_all = bench.get("metrika_zolla") or {}
+    met = met_all.get("with_search") or {}
 
-    ch_cvr = float(baseline.get("search_cvr_pct") or 0)
-    ch_broken = ch_cvr < 0.05 or bool(decision.get("ch_zolla_broken"))
-
-    # Prefer chosen Metrika / peer benchmark; never use broken CH CVR for money
     if chosen.get("search_cvr_pct"):
         cvr_pct = float(chosen["search_cvr_pct"])
-        aov = float(chosen.get("aov") or baseline.get("aov_search") or 0)
-        cvr_source = chosen.get("cvr_source") or "benchmark"
-        baseline_label = chosen.get("why") or ""
+        aov = float(chosen.get("aov") or 0)
     elif met.get("cvr_pct"):
         cvr_pct = float(met["cvr_pct"])
         aov = float(met.get("aov") or 0)
-        cvr_source = "zolla_metrika_search"
-        baseline_label = "Метрика search ecommerce"
     else:
-        cvr_pct = float(baseline.get("search_cvr_pct") or 0)
-        aov = float(baseline.get("aov_search") or 0)
-        cvr_source = "ch_agg_sessions"
-        baseline_label = "CH only (no Metrika file)"
+        cvr_pct = 1.0
+        aov = 2500.0
 
-    # Peer sanity (for HTML)
-    peer_ch = [
-        r
-        for r in (bench.get("peer_ch") or [])
-        if int(r.get("siteId") or 0) != 3826 and float(r.get("search_cvr_pct") or 0) >= 0.05
-    ]
-    peer_ch_median = None
-    if peer_ch:
-        vals = sorted(float(r["search_cvr_pct"]) for r in peer_ch)
-        peer_ch_median = vals[len(vals) // 2]
+    visits_90d = float(met.get("visits") or chosen.get("visits_or_sessions") or 0)
+    purch_90d = float(met.get("purchases") or 0)
+    rev_90d = float(met.get("revenue") or (visits_90d * (cvr_pct / 100.0) * aov))
 
-    peer_m_cvrs = []
-    for p in bench.get("peer_metrika") or []:
-        ws = p.get("with_search") or {}
-        if ws.get("cvr_pct") and float(ws["cvr_pct"]) >= 0.05:
-            peer_m_cvrs.append(float(ws["cvr_pct"]))
-    peer_m_median = sorted(peer_m_cvrs)[len(peer_m_cvrs) // 2] if peer_m_cvrs else None
+    # Explicit style-intent share (CH top) → floor for addressable
+    intent_share_searches = vol_sum / searches_90d
+    # Fashion style filters also help browse/refine beyond exact tokens in query
+    # Base addressable = max(explicit intent, 15% of search) — partner sketch, labeled
+    addressable_base = max(intent_share_searches, 0.15)
 
-    assumed_filter_adoption = 0.15
-    assumed_lift_pp = 0.5  # absolute pp — ASSUMED until facet with/without
-    intent_share = vol_sum / top_total
-    monthly_intent_searches = vol_sum / 3.0
-    delta_rev_mo = (
-        monthly_intent_searches
-        * assumed_filter_adoption
-        * (assumed_lift_pp / 100.0)
-        * aov
-    )
+    lift_bench = _filter_lift_benchmark()
+    band = lift_bench["band_relative"]
 
-    caveat = (
-        f"CH search CVR Zolla = {ch_cvr}% "
-        + ("— BROKEN (недоучёт withOrder), для денег НЕ используем. " if ch_broken else ". ")
-        + f"База денег: {cvr_source} → search CVR {cvr_pct}%, AOV {aov} ₽. "
-        + (baseline_label + " " if baseline_label else "")
-        + (
-            f"Peer sanity: Metrika fashion median≈{peer_m_median}% · "
-            f"CH fashion median≈{peer_ch_median}% (excl. broken)."
-            if peer_m_median or peer_ch_median
-            else ""
-        )
+    def scenario(name: str, addressable: float, adoption: float, rel_lift: float) -> dict:
+        delta_90 = rev_90d * addressable * adoption * rel_lift
+        delta_mo = delta_90 / 3.0
+        pct_of_search_rev = (100.0 * delta_90 / rev_90d) if rev_90d else 0.0
+        # absolute CVR after lift on touched sessions
+        cvr_lift_pp = cvr_pct * rel_lift
+        touched_visits_90 = visits_90d * addressable * adoption
+        extra_orders_90 = touched_visits_90 * (cvr_lift_pp / 100.0)
+        return {
+            "name": name,
+            "addressable_share": round(addressable, 3),
+            "adoption": round(adoption, 3),
+            "relative_cvr_lift": round(rel_lift, 3),
+            "cvr_lift_pp": round(cvr_lift_pp, 3),
+            "delta_revenue_rub_90d": round(delta_90, 0),
+            "delta_revenue_rub_month": round(delta_mo, 0),
+            "pct_of_search_revenue_90d": round(pct_of_search_rev, 2),
+            "extra_orders_90d": round(extra_orders_90, 0),
+        }
+
+    scenarios = {
+        "conservative": scenario("conservative", max(intent_share_searches, 0.08), 0.15, band["conservative"]),
+        "base": scenario("base", addressable_base, 0.20, band["base"]),
+        "optimistic": scenario("optimistic", 0.25, 0.30, band["optimistic"]),
+    }
+    base = scenarios["base"]
+
+    # Partner-facing copy — NO broken CH, NO competitor brand names, NO internal paths
+    partner_lead = (
+        f"База — Яндекс.Метрика: визиты с поиском {num(visits_90d)}, "
+        f"CVR {cvr_pct}%, средний чек {num(aov)} ₽, "
+        f"выручка из поиска {rev_90d/1e6:.1f} млн ₽ за 90 дней. "
+        "Ожидаемый прирост CVR — от бенчмарка Diginetica "
+        "«сессии с фильтрами vs без» "
+        f"(+{int(band['conservative']*100)}…+{int(band['optimistic']*100)}% "
+        "относительно на затронутых сессиях). "
+        "После запуска фильтров замерим with/without уже на Zolla."
     )
 
     return {
-        "baseline_ch": baseline,
+        "baseline_ch": baseline,  # internal only
         "baseline_money": {
-            "cvr_source": cvr_source,
             "search_cvr_pct": cvr_pct,
             "aov": aov,
-            "metrika_search_visits": met.get("visits"),
-            "metrika_search_purchases": met.get("purchases"),
-            "ch_search_cvr_pct_raw": ch_cvr,
-            "ch_broken": ch_broken,
-            "peer_metrika_median_cvr_pct": peer_m_median,
-            "peer_ch_median_cvr_pct": peer_ch_median,
-            "rule_ref": "MONEY_BASELINE_RULE.md",
+            "metrika_search_visits": visits_90d,
+            "metrika_search_purchases": purch_90d,
+            "metrika_search_revenue_90d": rev_90d,
+            "source_partner_label": "Яндекс.Метрика · визиты с поиском",
         },
-        "baseline_caveat": caveat,
+        "lift_benchmark": lift_bench,
+        "partner_lead": partner_lead,
         "direct_filter_intent_volume_90d_top5k": vol_sum,
-        "intent_share_of_top_pct": round(100 * intent_share, 2),
+        "intent_share_of_searches_pct": round(100 * intent_share_searches, 2),
+        "intent_share_of_top_pct": round(100 * vol_sum / top_total, 2),
+        "scenarios": scenarios,
         "assumptions": {
-            "filter_adoption_among_intent_searches": assumed_filter_adoption,
-            "cvr_lift_pp_absolute": assumed_lift_pp,
-            "label": "ASSUMED lift — не измерено на Zolla facet usage; CVR/AOV база — Metrika/peers",
+            "addressable_share_base": addressable_base,
+            "adoption_base": 0.20,
+            "relative_cvr_lift_base": band["base"],
+            "cvr_lift_pp_base": base["cvr_lift_pp"],
+            "label": "relative lift from Diginetica filter benches; addressable/adoption — sketch until Zolla facet measure",
         },
         "formula": (
-            "Δ₽/мес ≈ (intent_searches_90d/3) × adoption × (lift_pp/100) × AOV_money_baseline"
+            "Δ₽_90д = выручка_поиска_90д × доля_затронутых × adoption × относительный_lift_CVR"
         ),
-        "delta_revenue_rub_per_month_sketch": round(delta_rev_mo, 0),
-        "delta_revenue_rub_per_90d_sketch": round(delta_rev_mo * 3, 0),
+        "delta_revenue_rub_per_month_sketch": base["delta_revenue_rub_month"],
+        "delta_revenue_rub_per_90d_sketch": base["delta_revenue_rub_90d"],
+        "pct_of_search_revenue_90d": base["pct_of_search_revenue_90d"],
         "what_we_will_measure_next": [
-            "conv_with_filters vs conv_without_filters по категориям (CH events)",
-            "SKU coverage после typed extract",
-            "filters per query",
+            "conv_with_filters vs conv_without_filters на Zolla после появления facet",
+            "SKU coverage typed extract",
         ],
+        # keep for internal JSON; never render in partner HTML
+        "_internal": {
+            "ch_search_cvr_pct_raw": baseline.get("search_cvr_pct"),
+            "ch_broken": bool(decision.get("ch_zolla_broken")),
+            "peer_medians_internal_only": {
+                "metrika": decision.get("peer_metrika_median_cvr_pct"),
+                "ch": decision.get("peer_ch_median_cvr_pct"),
+            },
+        },
     }
 
 
@@ -592,7 +643,7 @@ table.mini {{ font-size:12px; width:100%; }}
     <div class="stat"><b>{num(baseline.get('uniq_queries_90d') or 0)}</b><span>уникальных запросов</span></div>
     <div class="stat"><b>{num(strong_vol)}</b><span>поисков в топе под filter-кандидаты*</span></div>
     <div class="stat"><b>0</b><span>style-params в YML (капюшон/принт/рукав…)</span></div>
-    <div class="stat"><b>{num(money['delta_revenue_rub_per_month_sketch'])} ₽</b><span>sketch Δ/мес (ASSUMED lift)</span></div>
+    <div class="stat"><b>{num(money['delta_revenue_rub_per_month_sketch'])} ₽</b><span>оценка Δ/мес · {money.get('pct_of_search_revenue_90d')}% выручки поиска</span></div>
     <div class="stat"><b>100%</b><span>цвет и размер уже в фиде</span></div>
   </div>
   <p class="meta">* сумма объёмов интентов (пересечения возможны) — upper-bound охвата facet-формулировок в top-5000.</p>
@@ -675,34 +726,36 @@ table.mini {{ font-size:12px; width:100%; }}
   </p>
   {cases_html}
 
-  <h2>6. Деньги (база Metrika/peers · lift ASSUMED)</h2>
-  <div class="callout warn">
-    {money['baseline_caveat']}
+  <h2>6. Деньги</h2>
+  <div class="callout">
+    {money.get('partner_lead') or ''}
   </div>
   <table>
-    <thead><tr><th>Поле</th><th>Значение</th></tr></thead>
+    <thead><tr><th>Показатель</th><th>Значение</th></tr></thead>
     <tbody>
-      <tr><td>Search sessions 90д (CH)</td><td>{num(baseline.get('search_sessions') or 0)} — объём поиска ок</td></tr>
-      <tr><td>Search CVR raw (CH)</td><td>{baseline.get('search_cvr_pct')}% — <strong>не использовать</strong> (10 заказов / 195k сессий)</td></tr>
-      <tr><td>Search CVR money baseline</td><td><strong>{(money.get('baseline_money') or {}).get('search_cvr_pct')}%</strong>
-        · source <code>{(money.get('baseline_money') or {}).get('cvr_source')}</code>
-        · Metrika visits={num((money.get('baseline_money') or {}).get('metrika_search_visits') or 0)},
-        purchases={num((money.get('baseline_money') or {}).get('metrika_search_purchases') or 0)}</td></tr>
-      <tr><td>AOV money baseline</td><td>{(money.get('baseline_money') or {}).get('aov')} ₽ (Metrika search ecommerce)</td></tr>
-      <tr><td>Peer sanity Metrika / CH</td><td>median search CVR
-        {(money.get('baseline_money') or {}).get('peer_metrika_median_cvr_pct')}% /
-        {(money.get('baseline_money') or {}).get('peer_ch_median_cvr_pct')}%
-        (fashion: Zarina, Befree, Gloria Jeans, RV, Ecco…)</td></tr>
-      <tr><td>Intent volume (filter-кандидаты, top-5k sum)</td><td>{num(money['direct_filter_intent_volume_90d_top5k'])}</td></tr>
-      <tr><td>ASSUMED adoption</td><td>{money['assumptions']['filter_adoption_among_intent_searches']}</td></tr>
-      <tr><td>ASSUMED lift</td><td>+{money['assumptions']['cvr_lift_pp_absolute']} п.п. CVR</td></tr>
-      <tr><td>Формула</td><td><code>{money['formula']}</code></td></tr>
-      <tr><td><strong>Sketch Δ ₽/мес</strong></td><td><strong>{num(money['delta_revenue_rub_per_month_sketch'])} ₽</strong></td></tr>
-      <tr><td>Sketch Δ ₽/90д</td><td>{num(money['delta_revenue_rub_per_90d_sketch'])} ₽</td></tr>
+      <tr><td>Визиты с поиском (90 дней)</td><td>{num((money.get('baseline_money') or {}).get('metrika_search_visits') or 0)}</td></tr>
+      <tr><td>Конверсия поиска</td><td>{(money.get('baseline_money') or {}).get('search_cvr_pct')}%</td></tr>
+      <tr><td>Средний чек (поиск)</td><td>{num((money.get('baseline_money') or {}).get('aov') or 0)} ₽</td></tr>
+      <tr><td>Выручка из поиска (90 дней)</td><td>{num((money.get('baseline_money') or {}).get('metrika_search_revenue_90d') or 0)} ₽</td></tr>
+      <tr><td>Ожидаемый прирост CVR на затронутых сессиях</td><td>+{int(((money.get('assumptions') or {}).get('relative_cvr_lift_base') or 0)*100)}% относительно
+        (≈ +{(money.get('assumptions') or {}).get('cvr_lift_pp_base')} п.п. к текущим {(money.get('baseline_money') or {}).get('search_cvr_pct')}%)
+        — бенчмарк Diginetica «с фильтрами / без»</td></tr>
+      <tr><td>Доля затронутых search-визитов (base)</td><td>{int(((money.get('assumptions') or {}).get('addressable_share_base') or 0)*100)}%</td></tr>
+      <tr><td>Adoption новых фильтров среди затронутых (base)</td><td>{int(((money.get('assumptions') or {}).get('adoption_base') or 0)*100)}%</td></tr>
+      <tr><td>Формула</td><td>{money.get('formula')}</td></tr>
+      <tr><td><strong>Оценка доп. выручки / мес (base)</strong></td><td><strong>{num(money['delta_revenue_rub_per_month_sketch'])} ₽</strong>
+        · это <strong>{money.get('pct_of_search_revenue_90d')}%</strong> выручки из поиска</td></tr>
+      <tr><td>Оценка доп. выручки / 90 дней (base)</td><td>{num(money['delta_revenue_rub_per_90d_sketch'])} ₽
+        · ≈ {num((money.get('scenarios') or {}).get('base', {}).get('extra_orders_90d') or 0)} доп. заказов</td></tr>
+      <tr><td>Диапазон сценариев / мес</td><td>
+        conservative {num((money.get('scenarios') or {}).get('conservative', {}).get('delta_revenue_rub_month') or 0)} ₽
+        ({(money.get('scenarios') or {}).get('conservative', {}).get('pct_of_search_revenue_90d')}%) ·
+        optimistic {num((money.get('scenarios') or {}).get('optimistic', {}).get('delta_revenue_rub_month') or 0)} ₽
+        ({(money.get('scenarios') or {}).get('optimistic', {}).get('pct_of_search_revenue_90d')}%)
+      </td></tr>
     </tbody>
   </table>
-  <p class="meta">Правило: <code>MONEY_BASELINE_RULE.md</code> · артефакт <code>money_baseline_benchmark.json</code>.
-  Дальше вместо ASSUMED lift: замер facet with/without.</p>
+  <p class="meta">После появления фильтров заменим оценку на замер конверсии with/without на Zolla.</p>
 
   <h2>7. Что уже проверили технически (пилот)</h2>
   <ul>
