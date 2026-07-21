@@ -1,0 +1,356 @@
+{
+  "focus_ids": [
+    "1008050",
+    "1029780",
+    "1043477"
+  ],
+  "vision_n": 18,
+  "keep_total": 49,
+  "money_base_a_month": 114818,
+  "money_b_cons_opt_month": [
+    23672,
+    125675
+  ],
+  "baseline": {
+    "search_sessions_90d": 532448,
+    "search_orders_90d": 16068,
+    "search_cvr_pct": 3.018,
+    "aov": 2130.48,
+    "search_revenue_90d": 34232514.0
+  },
+  "vet_searches_90d": 58742,
+  "top_attrs": [
+    {
+      "attr": "Действующее вещество",
+      "score": 45,
+      "n_products": 4,
+      "examples": [
+        {
+          "offer_id": "1008050",
+          "value": "моксидектин, празиквантел",
+          "name_product": "Гельминтал Спот-он Противопаразитарное средство для кошек от 4 до 10 кг, 1 пипетка",
+          "picture": "https://storage.yandexcloud.net/pim-core/419468.jpeg"
+        },
+        {
+          "offer_id": "1029780",
+          "value": "Имидаклоприд",
+          "name_product": "Elanco Адвантейдж Капли на холку от блох для кошек и котят до 4 кг, 1 пипетка по 0,4 мл",
+          "picture": "https://storage.yandexcloud.net/pim-core/419433.jpeg"
+        },
+        {
+          "offer_id": "1043477",
+          "value": "пирантела памоат, празиквантел",
+          "name_product": "Астрафарм Празител Суспензия от гельминтов для кошек и котят, 15 мл",
+          "picture": "https://storage.yandexcloud.net/pim-core/419395.jpeg"
+        },
+        {
+          "offer_id": "1058979",
+          "value": "Празиквантел, Моксидектин",
+          "name_product": "Apicenna Гельмимакс-2 Таблетки от гельминтов для щенков и взрослых собак самых мелких пород от 0,5 кг, 2 таблетки",
+          "picture": "https://storage.yandexcloud.net/pim-core/414806.jpeg"
+        }
+      ],
+      "effectiveness": "high"
+    },
+    {
+      "attr": "Спектр действия",
+      "score": 12,
+      "n_products": 4,
+      "examples": [
+        {
+          "offer_id": "1008050",
+          "value": "от гельминтов (Dirofilaria, Toxocara, Ancylostoma, Uncinaria, Echinococcus, Dipylidium, Trichuris, Taenia), от блох (Ctenocephalides), от клещей (Otodectes, Demodex, Sarcoptes)",
+          "name_product": "Гельминтал Спот-он Противопаразитарное средство для кошек от 4 до 10 кг, 1 пипетка",
+          "picture": "https://storage.yandexcloud.net/pim-core/419468.jpeg"
+        },
+        {
+          "offer_id": "1019973",
+          "value": "блохи, личинки блох, власоеды, иксодовые клещи, комары, москиты, кровососущие мухи",
+          "name_product": "Elanco Адвантикс капли на холку для собак весом до 4 кг от блох, клещей и комаров, 1 пипетка, 0,4 мл",
+          "picture": "https://storage.yandexcloud.net/pim-core/415109.jpeg"
+        },
+        {
+          "offer_id": "1063196",
+          "value": "антибактериальный",
+          "name_product": "Rolf Club Ушные капли от клещей с обезболивающим эффектом для кошек и собак, 10 мл (по рецепту)",
+          "picture": "https://storage.yandexcloud.net/pim-core/422651.jpeg"
+        },
+        {
+          "offer_id": "1056247",
+          "value": "клещи, блохи, личинки блох, комары",
+          "name_product": "Rolf Club Капли на холку для собак весом от 4 до 10 кг от блох и клещей, 3 пипетки",
+          "picture": "https://storage.yandexcloud.net/pim-core/424932.jpeg"
+        }
+      ],
+      "effectiveness": "high"
+    },
+    {
+      "attr": "Назначение",
+      "score": 12,
+      "n_products": 4,
+      "examples": [
+        {
+          "offer_id": "1058979",
+          "value": "Лечение и профилактика нематодозов и цестодозов",
+          "name_product": "Apicenna Гельмимакс-2 Таблетки от гельминтов для щенков и взрослых собак самых мелких пород от 0,5 кг, 2 таблетки",
+          "picture": "https://storage.yandexcloud.net/pim-core/414806.jpeg"
+        },
+        {
+          "offer_id": "1046379",
+          "value": "от кокцидиоза, от кишечных нематодозов",
+          "name_product": "Гельминтал Сироп мини от гельминтов для щенков и котят, 10 мл",
+          "picture": "https://storage.yandexcloud.net/pim-core/422696.jpeg"
+        },
+        {
+          "offer_id": "1068811",
+          "value": "от раздражения и зуда",
+          "name_product": "Petbiology Шампунь дерматологический с овсянкой и аллантоином для кошек и собак, 250 мл",
+          "picture": "https://storage.yandexcloud.net/pim-core/424971.jpeg"
+        },
+        {
+          "offer_id": "1000031",
+          "value": "улучшение состояния кожи и шерсти",
+          "name_product": "АВЗ Сера Кормовая добавка для нормализации обмена веществ у кошек и собак, 2,5 гр.",
+          "picture": "https://storage.yandexcloud.net/pim-core/356835.jpeg"
+        }
+      ],
+      "effectiveness": "high"
+    },
+    {
+      "attr": "Особенности",
+      "score": 7,
+      "n_products": 3,
+      "examples": [
+        {
+          "offer_id": "1019973",
+          "value": "Водостойкий",
+          "name_product": "Elanco Адвантикс капли на холку для собак весом до 4 кг от блох, клещей и комаров, 1 пипетка, 0,4 мл",
+          "picture": "https://storage.yandexcloud.net/pim-core/415109.jpeg"
+        },
+        {
+          "offer_id": "1019973",
+          "value": "Репеллентный эффект",
+          "name_product": "Elanco Адвантикс капли на холку для собак весом до 4 кг от блох, клещей и комаров, 1 пипетка, 0,4 мл",
+          "picture": "https://storage.yandexcloud.net/pim-core/415109.jpeg"
+        },
+        {
+          "offer_id": "1068811",
+          "value": "увлажняющий",
+          "name_product": "Petbiology Шампунь дерматологический с овсянкой и аллантоином для кошек и собак, 250 мл",
+          "picture": "https://storage.yandexcloud.net/pim-core/424971.jpeg"
+        }
+      ],
+      "effectiveness": "medium"
+    },
+    {
+      "attr": "Способ применения",
+      "score": 7,
+      "n_products": 3,
+      "examples": [
+        {
+          "offer_id": "1037252",
+          "value": "Внутривенно, Внутримышечно, Подкожно",
+          "name_product": "Мосагроген Цианокобаламин, витамин В12, 100мл",
+          "picture": "https://storage.yandexcloud.net/pim-core/422707.jpeg"
+        },
+        {
+          "offer_id": "1066747",
+          "value": "внутрь",
+          "name_product": "Вик – здоровье животных Клавуксицин Антибактериальный препарат для кошек и собак 500 мг, 12 табл. (по рецепту)",
+          "picture": "https://storage.yandexcloud.net/pim-core/418667.jpeg"
+        },
+        {
+          "offer_id": "1067323",
+          "value": "Внутрь",
+          "name_product": "ПРОМОМЕД Амклав Вет Антибактериальный препарат для кошек и собак 250 мг, 10 таблеток (по рецепту)",
+          "picture": "https://storage.yandexcloud.net/pim-core/422605.jpeg"
+        }
+      ],
+      "effectiveness": "medium"
+    },
+    {
+      "attr": "Особенность",
+      "score": 6,
+      "n_products": 3,
+      "examples": [
+        {
+          "offer_id": "1029780",
+          "value": "водостойкий",
+          "name_product": "Elanco Адвантейдж Капли на холку от блох для кошек и котят до 4 кг, 1 пипетка по 0,4 мл",
+          "picture": "https://storage.yandexcloud.net/pim-core/419433.jpeg"
+        },
+        {
+          "offer_id": "1043477",
+          "value": "с удобным дозатором",
+          "name_product": "Астрафарм Празител Суспензия от гельминтов для кошек и котят, 15 мл",
+          "picture": "https://storage.yandexcloud.net/pim-core/419395.jpeg"
+        },
+        {
+          "offer_id": "1056247",
+          "value": "даун-эффект в течение 2 минут",
+          "name_product": "Rolf Club Капли на холку для собак весом от 4 до 10 кг от блох и клещей, 3 пипетки",
+          "picture": "https://storage.yandexcloud.net/pim-core/424932.jpeg"
+        }
+      ],
+      "effectiveness": "medium"
+    },
+    {
+      "attr": "Вкус",
+      "score": 6,
+      "n_products": 3,
+      "examples": [
+        {
+          "offer_id": "1058979",
+          "value": "Курица",
+          "name_product": "Apicenna Гельмимакс-2 Таблетки от гельминтов для щенков и взрослых собак самых мелких пород от 0,5 кг, 2 таблетки",
+          "picture": "https://storage.yandexcloud.net/pim-core/414806.jpeg"
+        },
+        {
+          "offer_id": "1066747",
+          "value": "мясо",
+          "name_product": "Вик – здоровье животных Клавуксицин Антибактериальный препарат для кошек и собак 500 мг, 12 табл. (по рецепту)",
+          "picture": "https://storage.yandexcloud.net/pim-core/418667.jpeg"
+        },
+        {
+          "offer_id": "1009816",
+          "value": "Мясо",
+          "name_product": "KRKA Энроксил Таблетки при заболеваниях бактериальной этиологии у кошек и собак, 50 мг, 10 таблеток (по рецепту)",
+          "picture": "https://storage.yandexcloud.net/pim-core/414730.jpeg"
+        }
+      ],
+      "effectiveness": "medium"
+    },
+    {
+      "attr": "Показания",
+      "score": 6,
+      "n_products": 2,
+      "examples": [
+        {
+          "offer_id": "1063196",
+          "value": "от зуда",
+          "name_product": "Rolf Club Ушные капли от клещей с обезболивающим эффектом для кошек и собак, 10 мл (по рецепту)",
+          "picture": "https://storage.yandexcloud.net/pim-core/422651.jpeg"
+        },
+        {
+          "offer_id": "1063196",
+          "value": "от воспаления",
+          "name_product": "Rolf Club Ушные капли от клещей с обезболивающим эффектом для кошек и собак, 10 мл (по рецепту)",
+          "picture": "https://storage.yandexcloud.net/pim-core/422651.jpeg"
+        }
+      ],
+      "effectiveness": "medium"
+    },
+    {
+      "attr": "Серия",
+      "score": 4,
+      "n_products": 2,
+      "examples": [
+        {
+          "offer_id": "1029780",
+          "value": "Spot-on",
+          "name_product": "Elanco Адвантейдж Капли на холку от блох для кошек и котят до 4 кг, 1 пипетка по 0,4 мл",
+          "picture": "https://storage.yandexcloud.net/pim-core/419433.jpeg"
+        },
+        {
+          "offer_id": "1056247",
+          "value": "3D",
+          "name_product": "Rolf Club Капли на холку для собак весом от 4 до 10 кг от блох и клещей, 3 пипетки",
+          "picture": "https://storage.yandexcloud.net/pim-core/424932.jpeg"
+        }
+      ],
+      "effectiveness": "medium"
+    },
+    {
+      "attr": "Производитель",
+      "score": 3,
+      "n_products": 1,
+      "examples": [
+        {
+          "offer_id": "1008050",
+          "value": "Neoterica",
+          "name_product": "Гельминтал Спот-он Противопаразитарное средство для кошек от 4 до 10 кг, 1 пипетка",
+          "picture": "https://storage.yandexcloud.net/pim-core/419468.jpeg"
+        }
+      ],
+      "effectiveness": "support"
+    },
+    {
+      "attr": "Длительность защиты",
+      "score": 3,
+      "n_products": 1,
+      "examples": [
+        {
+          "offer_id": "1029780",
+          "value": "4 недели",
+          "name_product": "Elanco Адвантейдж Капли на холку от блох для кошек и котят до 4 кг, 1 пипетка по 0,4 мл",
+          "picture": "https://storage.yandexcloud.net/pim-core/419433.jpeg"
+        }
+      ],
+      "effectiveness": "support"
+    },
+    {
+      "attr": "Декор",
+      "score": 3,
+      "n_products": 1,
+      "examples": [
+        {
+          "offer_id": "1004154",
+          "value": "Заклепки",
+          "name_product": "Аркон Ошейник кожаный с подкладом для собак, обхват шеи 40-54 см, ширина 2,5 см, коньячный",
+          "picture": "https://storage.yandexcloud.net/pim-core/dbpim-prod_21252.JPG"
+        }
+      ],
+      "effectiveness": "support"
+    }
+  ],
+  "focus_keep": {
+    "1008050": [
+      {
+        "name": "Действующее вещество",
+        "value": "моксидектин, празиквантел"
+      },
+      {
+        "name": "Спектр действия",
+        "value": "от гельминтов (Dirofilaria, Toxocara, Ancylostoma, Uncinaria, Echinococcus, Dipylidium, Trichuris, Taenia), от блох (Ctenocephalides), от клещей (Otodectes, Demodex, Sarcoptes)"
+      },
+      {
+        "name": "Производитель",
+        "value": "Neoterica"
+      },
+      {
+        "name": "Разработано в",
+        "value": "Германия"
+      }
+    ],
+    "1029780": [
+      {
+        "name": "Действующее вещество",
+        "value": "Имидаклоприд"
+      },
+      {
+        "name": "Длительность защиты",
+        "value": "4 недели"
+      },
+      {
+        "name": "Особенность",
+        "value": "водостойкий"
+      },
+      {
+        "name": "Серия",
+        "value": "Spot-on"
+      }
+    ],
+    "1043477": [
+      {
+        "name": "Действующее вещество",
+        "value": "пирантела памоат, празиквантел"
+      },
+      {
+        "name": "Особенность",
+        "value": "с удобным дозатором"
+      }
+    ]
+  },
+  "html": "C:\\Users\\1\\OneDrive\\Desktop\\attr-enrichment-product\\portfolio\\4lapy_vet\\4lapy-vet-pharmacy-image-attrs.html",
+  "desktop": "C:\\Users\\1\\OneDrive\\Desktop\\Output\\4lapy_8267_vet_pharmacy\\4lapy-vet-pharmacy-image-attrs.html"
+}

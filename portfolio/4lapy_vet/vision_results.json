@@ -1,0 +1,2954 @@
+[
+  {
+    "id": "1008050",
+    "name": "Гельминтал Спот-он Противопаразитарное средство для кошек от 4 до 10 кг, 1 пипетка",
+    "url": "https://4lapy.ru/product/gelmintal-spot-on-protivoparazitarnoe-sredstvo-dlya-koshek-ot-4-do-10-kg-1-pipetka-10131-1008050",
+    "price": "625",
+    "categoryId": "568",
+    "category": "Капли",
+    "category_path": "Ветаптека / Защита от блох, клещей, гельминтов / Для кошек / Капли",
+    "params": {
+      "Артикул": "1008050",
+      "Объем": "0.005",
+      "В упаковке": "16.0",
+      "Страна-производитель": "Россия",
+      "Требуется лицензия": "true",
+      "Вес / фасовка, кг": "0.022",
+      "Для кого": "Кошки",
+      "rating": "5.00",
+      "reviews": "72",
+      "Длина": "14.20",
+      "Ширина": "8.70",
+      "Высота": "2.00",
+      "Форма выпуска": "Капли на холку",
+      "is_stm": "false",
+      "Фармакологическая группа": "Антигельминтики",
+      "Новинка": "false"
+    },
+    "pictures": [
+      "https://storage.yandexcloud.net/pim-core/419468.jpeg"
+    ],
+    "pharm_group": "Антигельминтики",
+    "form": "Капли на холку",
+    "for_whom": "Кошки",
+    "focus": true,
+    "vision": {
+      "image_kind": "packshot",
+      "ocr_labels": [
+        "гельминтал к",
+        "моксидектин празиквантел",
+        "для кошек массой",
+        "4-10 кг",
+        "SPOT-ON",
+        "neoterica",
+        "разработано в Германии",
+        "Комбинированный противопаразитарный препарат",
+        "Dirofilaria",
+        "Toxocara",
+        "Ancylostoma",
+        "Uncinaria",
+        "Echinococcus",
+        "Dipylidium",
+        "Trichuris",
+        "Taenia",
+        "Ctenocephalides",
+        "Otodectes",
+        "Demodex",
+        "Sarcoptes",
+        "ЧЕСТНЫЙ ЗНАК",
+        "Экопром",
+        "Россия",
+        "140070",
+        "Московская обл.",
+        "Люберецкий ра"
+      ],
+      "skip_reason": null,
+      "new_attributes": [
+        {
+          "name": "Действующее вещество",
+          "value": "моксидектин, празиквантел",
+          "evidence": "ocr",
+          "search_relevance": "high",
+          "filter_candidate": true,
+          "why_helps_search": "Пользователи ищут препараты по действующему веществу."
+        },
+        {
+          "name": "Спектр действия",
+          "value": "от гельминтов (Dirofilaria, Toxocara, Ancylostoma, Uncinaria, Echinococcus, Dipylidium, Trichuris, Taenia), от блох (Ctenocephalides), от клещей (Otodectes, Demodex, Sarcoptes)",
+          "evidence": "ocr",
+          "search_relevance": "high",
+          "filter_candidate": true,
+          "why_helps_search": "Детализирует спектр действия, что важно для пользователей, ищущих защиту от конкретных паразитов."
+        },
+        {
+          "name": "Производитель",
+          "value": "Neoterica",
+          "evidence": "ocr",
+          "search_relevance": "high",
+          "filter_candidate": true,
+          "why_helps_search": "Neoterica - бренд, указанный на упаковке, но не в названии или параметрах."
+        },
+        {
+          "name": "Разработано в",
+          "value": "Германия",
+          "evidence": "ocr",
+          "search_relevance": "medium",
+          "filter_candidate": true,
+          "why_helps_search": "Указывает на страну разработки, что может быть важно для некоторых покупателей."
+        },
+        {
+          "name": "Тип препарата",
+          "value": "комбинированный противопаразитарный",
+          "evidence": "ocr",
+          "search_relevance": "medium",
+          "filter_candidate": true,
+          "why_helps_search": "Уточняет тип препарата, что может быть полезно для поиска."
+        }
+      ],
+      "already_in_feed_visible": [
+        "Гельминтал",
+        "Спот-он",
+        "для кошек",
+        "от 4 до 10 кг",
+        "1 пипетка",
+        "Капли на холку",
+        "Россия"
+      ],
+      "not_useful_from_image": [
+        "ЧЕСТНЫЙ ЗНАК",
+        "Экопром",
+        "140070",
+        "Московская обл.",
+        "Люберецкий ра"
+      ],
+      "_usage": {
+        "prompt_tokens": 2177,
+        "completion_tokens": 891,
+        "total_tokens": 3068,
+        "cost": 0.0028806,
+        "is_byok": false,
+        "prompt_tokens_details": {
+          "cached_tokens": 0,
+          "cache_write_tokens": 0,
+          "audio_tokens": 0,
+          "video_tokens": 0
+        },
+        "cost_details": {
+          "upstream_inference_cost": 0.0028806,
+          "upstream_inference_prompt_cost": 0.0006531,
+          "upstream_inference_completions_cost": 0.0022275
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 0,
+          "image_tokens": 0,
+          "audio_tokens": 0
+        }
+      }
+    },
+    "keep": [
+      {
+        "name": "Действующее вещество",
+        "value": "моксидектин, празиквантел",
+        "evidence": "ocr",
+        "search_relevance": "high",
+        "filter_candidate": true,
+        "why_helps_search": "Пользователи ищут препараты по действующему веществу.",
+        "decision": "KEEP"
+      },
+      {
+        "name": "Спектр действия",
+        "value": "от гельминтов (Dirofilaria, Toxocara, Ancylostoma, Uncinaria, Echinococcus, Dipylidium, Trichuris, Taenia), от блох (Ctenocephalides), от клещей (Otodectes, Demodex, Sarcoptes)",
+        "evidence": "ocr",
+        "search_relevance": "high",
+        "filter_candidate": true,
+        "why_helps_search": "Детализирует спектр действия, что важно для пользователей, ищущих защиту от конкретных паразитов.",
+        "decision": "KEEP"
+      },
+      {
+        "name": "Производитель",
+        "value": "Neoterica",
+        "evidence": "ocr",
+        "search_relevance": "high",
+        "filter_candidate": true,
+        "why_helps_search": "Neoterica - бренд, указанный на упаковке, но не в названии или параметрах.",
+        "decision": "KEEP"
+      },
+      {
+        "name": "Разработано в",
+        "value": "Германия",
+        "evidence": "ocr",
+        "search_relevance": "medium",
+        "filter_candidate": true,
+        "why_helps_search": "Указывает на страну разработки, что может быть важно для некоторых покупателей.",
+        "decision": "KEEP"
+      },
+      {
+        "name": "Тип препарата",
+        "value": "комбинированный противопаразитарный",
+        "evidence": "ocr",
+        "search_relevance": "medium",
+        "filter_candidate": true,
+        "why_helps_search": "Уточняет тип препарата, что может быть полезно для поиска.",
+        "decision": "KEEP"
+      }
+    ],
+    "reject": []
+  },
+  {
+    "id": "1029780",
+    "name": "Elanco Адвантейдж Капли на холку от блох для кошек и котят до 4 кг, 1 пипетка по 0,4 мл",
+    "url": "https://4lapy.ru/product/elanco-advantejdzh-kapli-na-holku-ot-bloh-dlya-koshek-i-kotyat-do-4-kg-1-pipetka-po-0-4-ml-29195-1029780",
+    "price": "547",
+    "categoryId": "568",
+    "category": "Капли",
+    "category_path": "Ветаптека / Защита от блох, клещей, гельминтов / Для кошек / Капли",
+    "params": {
+      "Артикул": "1029780",
+      "Объем": "0.000",
+      "Возраст питомца": "Все возрасты",
+      "Размер питомца": "Мелкий и средний",
+      "Страна-производитель": "Германия",
+      "Требуется лицензия": "true",
+      "Вес / фасовка, кг": "0.019",
+      "Для кого": "Кошки",
+      "rating": "5.00",
+      "reviews": "77",
+      "Длина": "15.20",
+      "Ширина": "8.80",
+      "Высота": "2.60",
+      "Форма выпуска": "Капли на холку",
+      "is_stm": "false",
+      "Фармакологическая группа": "Препараты от клещей и паразитов",
+      "Новинка": "false"
+    },
+    "pictures": [
+      "https://storage.yandexcloud.net/pim-core/419433.jpeg",
+      "https://storage.yandexcloud.net/pim-core/394809.jpeg",
+      "https://storage.yandexcloud.net/pim-core/394810.jpeg",
+      "https://storage.yandexcloud.net/pim-core/394811.jpeg",
+      "https://storage.yandexcloud.net/pim-core/394812.jpeg",
+      "https://storage.yandexcloud.net/pim-core/394813.jpeg",
+      "https://storage.yandexcloud.net/pim-core/394814.jpeg",
+      "https://storage.yandexcloud.net/pim-core/394815.jpeg",
+      "https://storage.yandexcloud.net/pim-core/394816.jpeg",
+      "https://storage.yandexcloud.net/pim-core/394817.jpeg",
+      "https://storage.yandexcloud.net/pim-core/394818.jpeg"
+    ],
+    "pharm_group": "Препараты от клещей и паразитов",
+    "form": "Капли на холку",
+    "for_whom": "Кошки",
+    "focus": true,
+    "vision": {
+      "image_kind": "packshot",
+      "ocr_labels": [
+        "от блох",
+        "адвантейдж",
+        "для котят и кошек до 4 кг",
+        "ИМИДАКЛОПРИД",
+        "РАСТВОР ДЛЯ НАРУЖНОГО ПРИМЕНЕНИЯ (SPOT-ON)",
+        "Elanco",
+        "Защищает от повторного заражения блохами в течение 4 недель",
+        "ЧЕСТНЫЙ ЗНАК",
+        "личинки блох",
+        "вши, власоеды",
+        "водостойкий",
+        "1 пипетка х 0,4 мл",
+        "блохи"
+      ],
+      "skip_reason": null,
+      "new_attributes": [
+        {
+          "name": "Действующее вещество",
+          "value": "Имидаклоприд",
+          "evidence": "ocr",
+          "search_relevance": "high",
+          "filter_candidate": true,
+          "why_helps_search": "Пользователи ищут препараты по действующему веществу."
+        },
+        {
+          "name": "Спектр действия",
+          "value": "от блох, личинок блох, вшей, власоедов",
+          "evidence": "ocr",
+          "search_relevance": "high",
+          "filter_candidate": true,
+          "why_helps_search": "Уточняет от каких именно паразитов защищает препарат."
+        },
+        {
+          "name": "Длительность защиты",
+          "value": "4 недели",
+          "evidence": "ocr",
+          "search_relevance": "high",
+          "filter_candidate": true,
+          "why_helps_search": "Важный параметр для выбора средства защиты от паразитов."
+        },
+        {
+          "name": "Особенность",
+          "value": "водостойкий",
+          "evidence": "ocr",
+          "search_relevance": "medium",
+          "filter_candidate": true,
+          "why_helps_search": "Пользователи могут искать водостойкие средства."
+        },
+        {
+          "name": "Серия",
+          "value": "Spot-on",
+          "evidence": "ocr",
+          "search_relevance": "medium",
+          "filter_candidate": true,
+          "why_helps_search": "Уточняет линейку продукта."
+        }
+      ],
+      "already_in_feed_visible": [
+        "Elanco",
+        "Адвантейдж",
+        "для котят и кошек до 4 кг",
+        "от блох",
+        "1 пипетка по 0,4 мл"
+      ],
+      "not_useful_from_image": [
+        "ЧЕСТНЫЙ ЗНАК"
+      ],
+      "_usage": {
+        "prompt_tokens": 2201,
+        "completion_tokens": 688,
+        "total_tokens": 2889,
+        "cost": 0.0023803,
+        "is_byok": false,
+        "prompt_tokens_details": {
+          "cached_tokens": 0,
+          "cache_write_tokens": 0,
+          "audio_tokens": 0,
+          "video_tokens": 0
+        },
+        "cost_details": {
+          "upstream_inference_cost": 0.0023803,
+          "upstream_inference_prompt_cost": 0.0006603,
+          "upstream_inference_completions_cost": 0.00172
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 0,
+          "image_tokens": 0,
+          "audio_tokens": 0
+        }
+      }
+    },
+    "keep": [
+      {
+        "name": "Действующее вещество",
+        "value": "Имидаклоприд",
+        "evidence": "ocr",
+        "search_relevance": "high",
+        "filter_candidate": true,
+        "why_helps_search": "Пользователи ищут препараты по действующему веществу.",
+        "decision": "KEEP"
+      },
+      {
+        "name": "Длительность защиты",
+        "value": "4 недели",
+        "evidence": "ocr",
+        "search_relevance": "high",
+        "filter_candidate": true,
+        "why_helps_search": "Важный параметр для выбора средства защиты от паразитов.",
+        "decision": "KEEP"
+      },
+      {
+        "name": "Особенность",
+        "value": "водостойкий",
+        "evidence": "ocr",
+        "search_relevance": "medium",
+        "filter_candidate": true,
+        "why_helps_search": "Пользователи могут искать водостойкие средства.",
+        "decision": "KEEP"
+      },
+      {
+        "name": "Серия",
+        "value": "Spot-on",
+        "evidence": "ocr",
+        "search_relevance": "medium",
+        "filter_candidate": true,
+        "why_helps_search": "Уточняет линейку продукта.",
+        "decision": "KEEP"
+      }
+    ],
+    "reject": [
+      {
+        "name": "Спектр действия",
+        "value": "от блох, личинок блох, вшей, власоедов",
+        "evidence": "ocr",
+        "search_relevance": "high",
+        "filter_candidate": true,
+        "why_helps_search": "Уточняет от каких именно паразитов защищает препарат.",
+        "decision": "REJECT",
+        "reason": "feed_or_name_collision"
+      }
+    ]
+  },
+  {
+    "id": "1043477",
+    "name": "Астрафарм Празител Суспензия от гельминтов для кошек и котят, 15 мл",
+    "url": "https://4lapy.ru/product/astrafarm-antiparazitarnaya-suspenziya-dlya-koshek-i-kotyat-15-ml-10145-1043477",
+    "price": "445",
+    "categoryId": "570",
+    "category": "Таблетки",
+    "category_path": "Ветаптека / Защита от блох, клещей, гельминтов / Для кошек / Таблетки",
+    "params": {
+      "Артикул": "1043477",
+      "Объем": "0.000",
+      "Возраст питомца": "Все возрасты",
+      "Размер питомца": "Все размеры",
+      "Страна-производитель": "Россия",
+      "Требуется лицензия": "true",
+      "Вес / фасовка, кг": "0.079",
+      "Для кого": "Кошки",
+      "rating": "5.00",
+      "reviews": "258",
+      "Длина": "6.00",
+      "Ширина": "4.10",
+      "Высота": "11.10",
+      "Форма выпуска": "Суспензия",
+      "is_stm": "false",
+      "Фармакологическая группа": "Антигельминтики",
+      "Новинка": "false",
+      "Акция": "Скидка 25% на комплекс «Антиклещ»"
+    },
+    "pictures": [
+      "https://storage.yandexcloud.net/pim-core/419395.jpeg"
+    ],
+    "pharm_group": "Антигельминтики",
+    "form": "Суспензия",
+    "for_whom": "Кошки",
+    "focus": true,
+    "vision": {
+      "image_kind": "packshot",
+      "ocr_labels": [
+        "ЧЕСТНЫЙ ЗНАК",
+        "ПРАЗИТЕЛ",
+        "СУСПЕНЗИЯ ДЛЯ КОШЕК И КОТЯТ",
+        "(пирантела памоат, празиквантел)",
+        "препарат против всех видов гельминтов",
+        "15 мл",
+        "ПРАЗИТЕЛ ПЛЮС",
+        "С УДОБНЫМ ДОЗАТОРОМ!",
+        "КОНСУЛЬТАЦИИ ВЕТЕРИНАРНОГО ВРАЧА ПО ПРЕПАРАТУ",
+        "ТЕЛ. (495) 980-22-70 ИЛИ НА САЙТЕ WWW.SKIFF-PHARM.RU",
+        "СТО 17482612-015-2011 № РУП: 77-3-2.9-11-0630 №ПВР-3-4.9/01987",
+        "Скифф астрафарм",
+        "ПРОИЗВЕДЕНО: ООО «НВП «АСТРАФАРМ» 117246 Г. МОСКВА, НАУЧНЫЙ ПРОЕЗД Д.20 ТЕЛ./ФАКС (495) 785-83-50/70 ПО ЛИЦЕНЗИИ ООО «НПК «СКолор» WWW.ASTRAFARM.COM"
+      ],
+      "skip_reason": null,
+      "new_attributes": [
+        {
+          "name": "Действующее вещество",
+          "value": "пирантела памоат, празиквантел",
+          "evidence": "ocr",
+          "search_relevance": "high",
+          "filter_candidate": true,
+          "why_helps_search": "Пользователи могут искать препараты по действующему веществу."
+        },
+        {
+          "name": "Особенность",
+          "value": "с удобным дозатором",
+          "evidence": "ocr",
+          "search_relevance": "medium",
+          "filter_candidate": false,
+          "why_helps_search": "Указывает на удобство использования, что может быть важно для некоторых покупателей."
+        }
+      ],
+      "already_in_feed_visible": [
+        "Бренд: Астрафарм",
+        "Название: Празител",
+        "Форма выпуска: Суспензия",
+        "Для кого: Кошки и котята",
+        "Объем: 15 мл",
+        "Назначение: от гельминтов",
+        "Страна-производитель: Россия (по адресу производителя)"
+      ],
+      "not_useful_from_image": [
+        "Честный ЗНАК (маркировка)",
+        "Контактная информация для консультаций",
+        "Штрихкод",
+        "Юридическая информация о производителе"
+      ],
+      "_usage": {
+        "prompt_tokens": 2199,
+        "completion_tokens": 723,
+        "total_tokens": 2922,
+        "cost": 0.0024672,
+        "is_byok": false,
+        "prompt_tokens_details": {
+          "cached_tokens": 0,
+          "cache_write_tokens": 0,
+          "audio_tokens": 0,
+          "video_tokens": 0
+        },
+        "cost_details": {
+          "upstream_inference_cost": 0.0024672,
+          "upstream_inference_prompt_cost": 0.0006597,
+          "upstream_inference_completions_cost": 0.0018075
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 0,
+          "image_tokens": 0,
+          "audio_tokens": 0
+        }
+      }
+    },
+    "keep": [
+      {
+        "name": "Действующее вещество",
+        "value": "пирантела памоат, празиквантел",
+        "evidence": "ocr",
+        "search_relevance": "high",
+        "filter_candidate": true,
+        "why_helps_search": "Пользователи могут искать препараты по действующему веществу.",
+        "decision": "KEEP"
+      },
+      {
+        "name": "Особенность",
+        "value": "с удобным дозатором",
+        "evidence": "ocr",
+        "search_relevance": "medium",
+        "filter_candidate": false,
+        "why_helps_search": "Указывает на удобство использования, что может быть важно для некоторых покупателей.",
+        "decision": "KEEP"
+      }
+    ],
+    "reject": []
+  },
+  {
+    "id": "1058979",
+    "name": "Apicenna Гельмимакс-2 Таблетки от гельминтов для щенков и взрослых собак самых мелких пород от 0,5 кг, 2 таблетки",
+    "url": "https://4lapy.ru/product/apicenna-gelmimaks-2-tabletki-ot-gelmintov-dlya-shchenkov-i-vzroslyh-sobak-samyh-melkih-porod-ot-0-5-kg-2-tabletki-82939-1058979",
+    "price": "477",
+    "categoryId": "561",
+    "category": "Таблетки",
+    "category_path": "Ветаптека / Защита от блох, клещей, гельминтов / Для собак / Таблетки",
+    "params": {
+      "Артикул": "1058979",
+      "В упаковке": "60.0",
+      "Возраст питомца": "Все возрасты",
+      "Размер питомца": "Мелкий",
+      "Страна-производитель": "Россия",
+      "Требуется лицензия": "true",
+      "Вес / фасовка, кг": "0.011",
+      "Для кого": "Собаки",
+      "rating": "5.00",
+      "reviews": "2",
+      "Длина": "9.40",
+      "Ширина": "3.90",
+      "Высота": "2.00",
+      "Форма выпуска": "Таблетки",
+      "is_stm": "false",
+      "Фармакологическая группа": "Антигельминтики",
+      "Новинка": "false"
+    },
+    "pictures": [
+      "https://storage.yandexcloud.net/pim-core/414806.jpeg"
+    ],
+    "pharm_group": "Антигельминтики",
+    "form": "Таблетки",
+    "for_whom": "Собаки",
+    "focus": false,
+    "bucket": "anthelmintic",
+    "vision": {
+      "image_kind": "packshot",
+      "ocr_labels": [
+        "opicenna",
+        "гельмимакс-2",
+        "ПРАЗИКВАНТЕЛ, МОКСИДЕКТИН",
+        "Для лечения",
+        "и профилактики",
+        "нематодозов",
+        "и цестодозов",
+        "Для щенков",
+        "и взрослых собак",
+        "самых мелких пород",
+        "2 таблетки по 60 мг",
+        "с ароматом курицы",
+        "ЧЕСТНЫЙ",
+        "ЗНАК"
+      ],
+      "skip_reason": null,
+      "new_attributes": [
+        {
+          "name": "Действующее вещество",
+          "value": "Празиквантел, Моксидектин",
+          "evidence": "ocr",
+          "search_relevance": "high",
+          "filter_candidate": true,
+          "why_helps_search": "Пользователи ищут товары по действующему веществу."
+        },
+        {
+          "name": "Назначение",
+          "value": "Лечение и профилактика нематодозов и цестодозов",
+          "evidence": "ocr",
+          "search_relevance": "high",
+          "filter_candidate": true,
+          "why_helps_search": "Уточняет спектр действия препарата, пользователи ищут по конкретным видам гельминтов."
+        },
+        {
+          "name": "Вкус",
+          "value": "Курица",
+          "evidence": "ocr",
+          "search_relevance": "medium",
+          "filter_candidate": true,
+          "why_helps_search": "Помогает найти препарат, который питомец будет есть охотнее."
+        },
+        {
+          "name": "Дозировка",
+          "value": "60 мг",
+          "evidence": "ocr",
+          "search_relevance": "medium",
+          "filter_candidate": false,
+          "why_helps_search": "Уточняет дозировку одной таблетки."
+        }
+      ],
+      "already_in_feed_visible": [
+        "Apicenna",
+        "Гельмимакс-2",
+        "Таблетки",
+        "от гельминтов",
+        "для щенков",
+        "для взрослых собак",
+        "самых мелких пород",
+        "2 таблетки"
+      ],
+      "not_useful_from_image": [
+        "ЧЕСТНЫЙ ЗНАК"
+      ],
+      "_usage": {
+        "prompt_tokens": 2203,
+        "completion_tokens": 619,
+        "total_tokens": 2822,
+        "cost": 0.0022084,
+        "is_byok": false,
+        "prompt_tokens_details": {
+          "cached_tokens": 0,
+          "cache_write_tokens": 0,
+          "audio_tokens": 0,
+          "video_tokens": 0
+        },
+        "cost_details": {
+          "upstream_inference_cost": 0.0022084,
+          "upstream_inference_prompt_cost": 0.0006609,
+          "upstream_inference_completions_cost": 0.0015475
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 0,
+          "image_tokens": 0,
+          "audio_tokens": 0
+        }
+      }
+    },
+    "keep": [
+      {
+        "name": "Действующее вещество",
+        "value": "Празиквантел, Моксидектин",
+        "evidence": "ocr",
+        "search_relevance": "high",
+        "filter_candidate": true,
+        "why_helps_search": "Пользователи ищут товары по действующему веществу.",
+        "decision": "KEEP"
+      },
+      {
+        "name": "Назначение",
+        "value": "Лечение и профилактика нематодозов и цестодозов",
+        "evidence": "ocr",
+        "search_relevance": "high",
+        "filter_candidate": true,
+        "why_helps_search": "Уточняет спектр действия препарата, пользователи ищут по конкретным видам гельминтов.",
+        "decision": "KEEP"
+      },
+      {
+        "name": "Вкус",
+        "value": "Курица",
+        "evidence": "ocr",
+        "search_relevance": "medium",
+        "filter_candidate": true,
+        "why_helps_search": "Помогает найти препарат, который питомец будет есть охотнее.",
+        "decision": "KEEP"
+      },
+      {
+        "name": "Дозировка",
+        "value": "60 мг",
+        "evidence": "ocr",
+        "search_relevance": "medium",
+        "filter_candidate": false,
+        "why_helps_search": "Уточняет дозировку одной таблетки.",
+        "decision": "KEEP"
+      }
+    ],
+    "reject": []
+  },
+  {
+    "id": "1067231",
+    "name": "KRKA Принокат Капли на холку от гельминтов, блох, вшей, власоедов, ушного и чесоточных клещей для собак весом от 25-40 кг, 400 мг, 1 пипетка",
+    "url": "https://4lapy.ru/product/krka-prinokat-400-mg-kapli-na-holku-dlya-sobak-vesom-ot-25-40-kg-ot-gelmintov-bloh-vshej-vlasoedov-ushnogo-i-chesotochnyh-kleshchej-1-pipetka-97183-1067231",
+    "price": "867",
+    "categoryId": "562",
+    "category": "Капли",
+    "category_path": "Ветаптека / Защита от блох, клещей, гельминтов / Для собак / Капли",
+    "params": {
+      "Артикул": "1067231",
+      "Объем": "0.000",
+      "В упаковке": "80.0",
+      "Возраст питомца": "Все возрасты",
+      "Размер питомца": "Все размеры",
+      "Страна-производитель": "Словения",
+      "Требуется лицензия": "true",
+      "Вес / фасовка, кг": "0.022",
+      "Для кого": "Собаки",
+      "reviews": "0",
+      "Длина": "2.50",
+      "Ширина": "13.00",
+      "Высота": "7.40",
+      "Форма выпуска": "Капли на холку",
+      "is_stm": "false",
+      "Фармакологическая группа": "Препараты от клещей и паразитов",
+      "Новинка": "false"
+    },
+    "pictures": [
+      "https://storage.yandexcloud.net/pim-core/415020.jpeg"
+    ],
+    "pharm_group": "Препараты от клещей и паразитов",
+    "form": "Капли на холку",
+    "for_whom": "Собаки",
+    "focus": false,
+    "bucket": "anthelmintic",
+    "vision": {
+      "image_kind": "packshot",
+      "ocr_labels": [
+        "Для собак массой от 25 до 40 кг",
+        "> 25 - 40 кг",
+        "Chenocephalides felis",
+        "Demoder canis",
+        "Trichodectes canis",
+        "Otodectes cynotis",
+        "Sarcoptes scabiel var. canis",
+        "Принокат",
+        "400 мг + 100 мг",
+        "раствор для наружного применения для собак",
+        "имидаклоприд + моксидектин",
+        "Применять согласно приложенной инструкции",
+        "Dirofilaria immitis",
+        "Dirofilaria immitis microfilariae",
+        "Dirofilaria repens",
+        "Thelazia callipaeda",
+        "Toxocoro conis, Toxascaris leoning",
+        "Trichuris vulpis",
+        "Angiostrongylus vasorum",
+        "Cremosoma vulpis",
+        "Spirocerca lupi",
+        "ЧЕСТНЫЙ ЗНАК",
+        "Eucoleus (syn. Capillaria) boehmi",
+        "Ancylostoma coninum, Uncinaria stenocephala",
+        "1x",
+        "1 ПИПЕТКА Х 4,0 ΜΛ",
+        "KRKA"
+      ],
+      "skip_reason": null,
+      "new_attributes": [
+        {
+          "name": "Действующее вещество",
+          "value": "имидаклоприд, моксидектин",
+          "evidence": "ocr",
+          "search_relevance": "high",
+          "filter_candidate": true,
+          "why_helps_search": "Позволяет найти товар по действующему веществу, что важно для ветеринарных препаратов."
+        },
+        {
+          "name": "Объем",
+          "value": "4 мл",
+          "evidence": "ocr",
+          "search_relevance": "medium",
+          "filter_candidate": true,
+          "why_helps_search": "Уточняет объем одной пипетки, что может быть важно для дозировки."
+        },
+        {
+          "name": "Количество доз в упаковке",
+          "value": "1 пипетка",
+          "evidence": "ocr",
+          "search_relevance": "medium",
+          "filter_candidate": true,
+          "why_helps_search": "Уточняет количество пипеток в упаковке, что важно для планирования покупки."
+        },
+        {
+          "name": "Спектр действия",
+          "value": "от блох, вшей, власоедов, ушного клеща, чесоточных клещей, демодекозных клещей, дирофилярий, нематод, легочных гельминтов, глазных гельминтов",
+          "evidence": "ocr",
+          "search_relevance": "high",
+          "filter_candidate": true,
+          "why_helps_search": "Детализирует спектр действия препарата, позволяя пользователям найти средство от конкретных паразитов."
+        }
+      ],
+      "already_in_feed_visible": [
+        "KRKA",
+        "Принокат",
+        "Капли на холку",
+        "для собак",
+        "от гельминтов, блох, вшей, власоедов, ушного и чесоточных клещей",
+        "весом от 25-40 кг",
+        "1 пипетка"
+      ],
+      "not_useful_from_image": [
+        "400 мг + 100 мг",
+        "раствор для наружного применения",
+        "Применять согласно приложенной инструкции",
+        "ЧЕСТНЫЙ ЗНАК"
+      ],
+      "_usage": {
+        "prompt_tokens": 2235,
+        "completion_tokens": 928,
+        "total_tokens": 3163,
+        "cost": 0.0029905,
+        "is_byok": false,
+        "prompt_tokens_details": {
+          "cached_tokens": 0,
+          "cache_write_tokens": 0,
+          "audio_tokens": 0,
+          "video_tokens": 0
+        },
+        "cost_details": {
+          "upstream_inference_cost": 0.0029905,
+          "upstream_inference_prompt_cost": 0.0006705,
+          "upstream_inference_completions_cost": 0.00232
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 0,
+          "image_tokens": 0,
+          "audio_tokens": 0
+        }
+      }
+    },
+    "keep": [
+      {
+        "name": "Действующее вещество",
+        "value": "имидаклоприд, моксидектин",
+        "evidence": "ocr",
+        "search_relevance": "high",
+        "filter_candidate": true,
+        "why_helps_search": "Позволяет найти товар по действующему веществу, что важно для ветеринарных препаратов.",
+        "decision": "KEEP"
+      },
+      {
+        "name": "Объем",
+        "value": "4 мл",
+        "evidence": "ocr",
+        "search_relevance": "medium",
+        "filter_candidate": true,
+        "why_helps_search": "Уточняет объем одной пипетки, что может быть важно для дозировки.",
+        "decision": "KEEP"
+      }
+    ],
+    "reject": [
+      {
+        "name": "Количество доз в упаковке",
+        "value": "1 пипетка",
+        "evidence": "ocr",
+        "search_relevance": "medium",
+        "filter_candidate": true,
+        "why_helps_search": "Уточняет количество пипеток в упаковке, что важно для планирования покупки.",
+        "decision": "REJECT",
+        "reason": "feed_or_name_collision"
+      },
+      {
+        "name": "Спектр действия",
+        "value": "от блох, вшей, власоедов, ушного клеща, чесоточных клещей, демодекозных клещей, дирофилярий, нематод, легочных гельминтов, глазных гельминтов",
+        "evidence": "ocr",
+        "search_relevance": "high",
+        "filter_candidate": true,
+        "why_helps_search": "Детализирует спектр действия препарата, позволяя пользователям найти средство от конкретных паразитов.",
+        "decision": "REJECT",
+        "reason": "feed_or_name_collision"
+      }
+    ]
+  },
+  {
+    "id": "1046379",
+    "name": "Гельминтал Сироп мини от гельминтов для щенков и котят, 10 мл",
+    "url": "https://4lapy.ru/product/gelmintal-sirop-dlya-shchenkov-i-kotyat-so-vkusom-plombira-55-g-10136-1046379",
+    "price": "485",
+    "categoryId": "570",
+    "category": "Таблетки",
+    "category_path": "Ветаптека / Защита от блох, клещей, гельминтов / Для кошек / Таблетки",
+    "params": {
+      "Артикул": "1046379",
+      "Объем": "0.000",
+      "Возраст питомца": "Для малышей до 1 года",
+      "Страна-производитель": "Россия",
+      "Требуется лицензия": "true",
+      "Вес / фасовка, кг": "0.058",
+      "Для кого": "Кошки и собаки",
+      "rating": "5.00",
+      "reviews": "97",
+      "Длина": "11.20",
+      "Ширина": "6.30",
+      "Высота": "3.60",
+      "Форма выпуска": "Суспензия",
+      "is_stm": "false",
+      "Фармакологическая группа": "Антигельминтики",
+      "Новинка": "false"
+    },
+    "pictures": [
+      "https://storage.yandexcloud.net/pim-core/422696.jpeg"
+    ],
+    "pharm_group": "Антигельминтики",
+    "form": "Суспензия",
+    "for_whom": "Кошки и собаки",
+    "focus": false,
+    "bucket": "anthelmintic",
+    "vision": {
+      "image_kind": "packshot",
+      "ocr_labels": [
+        "гельминтал",
+        "МИНИ СИРОП",
+        "для собак, кошек, щенков и котят",
+        "толтразурил моксидектин",
+        "neoterica",
+        "разработано в Германии",
+        "гельминта",
+        "МИНИ СИРО",
+        "КОШЕК ШЕНКОВИКО",
+        "Для лечения и профилактики кокцидиозов и кишечных нематодозов",
+        "Isospora",
+        "Eimeria",
+        "Toxocara",
+        "Toxascaris",
+        "Ancylostoma",
+        "Uncinaria",
+        "Trichuris",
+        "ЧЕСТНЫЙ ЗНАК"
+      ],
+      "skip_reason": null,
+      "new_attributes": [
+        {
+          "name": "Действующее вещество",
+          "value": "толтразурил, моксидектин",
+          "evidence": "ocr",
+          "search_relevance": "high",
+          "filter_candidate": true,
+          "why_helps_search": "Пользователи часто ищут препараты по действующему веществу."
+        },
+        {
+          "name": "Назначение",
+          "value": "от кокцидиоза, от кишечных нематодозов",
+          "evidence": "ocr",
+          "search_relevance": "high",
+          "filter_candidate": true,
+          "why_helps_search": "Уточняет спектр действия препарата, что важно для пользователей, ищущих решение конкретных проблем."
+        },
+        {
+          "name": "Виды паразитов",
+          "value": "Isospora, Eimeria, Toxocara, Toxascaris, Ancylostoma, Uncinaria, Trichuris",
+          "evidence": "ocr",
+          "search_relevance": "medium",
+          "filter_candidate": true,
+          "why_helps_search": "Детализирует, от каких именно паразитов помогает препарат, что может быть важно для ветеринаров и владельцев животных."
+        },
+        {
+          "name": "Бренд-разработчик",
+          "value": "Neoterica",
+          "evidence": "ocr",
+          "search_relevance": "low",
+          "filter_candidate": false,
+          "why_helps_search": "Указывает на бренд-разработчика, что может быть интересно некоторым пользователям."
+        },
+        {
+          "name": "Страна разработки",
+          "value": "Германия",
+          "evidence": "ocr",
+          "search_relevance": "low",
+          "filter_candidate": false,
+          "why_helps_search": "Указывает на страну разработки, что может быть фактором доверия для некоторых покупателей."
+        }
+      ],
+      "already_in_feed_visible": [
+        "Гельминтал",
+        "Сироп",
+        "мини",
+        "для щенков и котят",
+        "для собак, кошек",
+        "10 мл",
+        "Россия"
+      ],
+      "not_useful_from_image": [
+        "ЧЕСТНЫЙ ЗНАК"
+      ],
+      "_usage": {
+        "prompt_tokens": 2176,
+        "completion_tokens": 793,
+        "total_tokens": 2969,
+        "cost": 0.0026353,
+        "is_byok": false,
+        "prompt_tokens_details": {
+          "cached_tokens": 0,
+          "cache_write_tokens": 0,
+          "audio_tokens": 0,
+          "video_tokens": 0
+        },
+        "cost_details": {
+          "upstream_inference_cost": 0.0026353,
+          "upstream_inference_prompt_cost": 0.0006528,
+          "upstream_inference_completions_cost": 0.0019825
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 0,
+          "image_tokens": 0,
+          "audio_tokens": 0
+        }
+      }
+    },
+    "keep": [
+      {
+        "name": "Действующее вещество",
+        "value": "толтразурил, моксидектин",
+        "evidence": "ocr",
+        "search_relevance": "high",
+        "filter_candidate": true,
+        "why_helps_search": "Пользователи часто ищут препараты по действующему веществу.",
+        "decision": "KEEP"
+      },
+      {
+        "name": "Назначение",
+        "value": "от кокцидиоза, от кишечных нематодозов",
+        "evidence": "ocr",
+        "search_relevance": "high",
+        "filter_candidate": true,
+        "why_helps_search": "Уточняет спектр действия препарата, что важно для пользователей, ищущих решение конкретных проблем.",
+        "decision": "KEEP"
+      },
+      {
+        "name": "Виды паразитов",
+        "value": "Isospora, Eimeria, Toxocara, Toxascaris, Ancylostoma, Uncinaria, Trichuris",
+        "evidence": "ocr",
+        "search_relevance": "medium",
+        "filter_candidate": true,
+        "why_helps_search": "Детализирует, от каких именно паразитов помогает препарат, что может быть важно для ветеринаров и владельцев животных.",
+        "decision": "KEEP"
+      }
+    ],
+    "reject": [
+      {
+        "name": "Бренд-разработчик",
+        "value": "Neoterica",
+        "evidence": "ocr",
+        "search_relevance": "low",
+        "filter_candidate": false,
+        "why_helps_search": "Указывает на бренд-разработчика, что может быть интересно некоторым пользователям.",
+        "decision": "REJECT",
+        "reason": "low_search_relevance"
+      },
+      {
+        "name": "Страна разработки",
+        "value": "Германия",
+        "evidence": "ocr",
+        "search_relevance": "low",
+        "filter_candidate": false,
+        "why_helps_search": "Указывает на страну разработки, что может быть фактором доверия для некоторых покупателей.",
+        "decision": "REJECT",
+        "reason": "low_search_relevance"
+      }
+    ]
+  },
+  {
+    "id": "1019973",
+    "name": "Elanco Адвантикс капли на холку для собак весом до 4 кг от блох, клещей и комаров, 1 пипетка, 0,4 мл",
+    "url": "https://4lapy.ru/product/elanco-advantiks-kapli-na-holku-dlya-sobak-vesom-do-4-kg-ot-bloh-kleshchej-i-komarov-1-pipetka-0-4-ml-29266-1019973",
+    "price": "1119.4",
+    "categoryId": "562",
+    "category": "Капли",
+    "category_path": "Ветаптека / Защита от блох, клещей, гельминтов / Для собак / Капли",
+    "params": {
+      "Артикул": "1019973",
+      "Объем": "0.001",
+      "В упаковке": "160.0",
+      "Возраст питомца": "Все возрасты",
+      "Размер питомца": "Мелкий",
+      "Страна-производитель": "Германия",
+      "Требуется лицензия": "true",
+      "Вес / фасовка, кг": "0.040",
+      "Для кого": "Собаки",
+      "rating": "5.00",
+      "reviews": "125",
+      "Длина": "12.50",
+      "Ширина": "9.00",
+      "Высота": "2.50",
+      "Форма выпуска": "Капли на холку",
+      "is_stm": "false",
+      "Фармакологическая группа": "Препараты от клещей и паразитов",
+      "Новинка": "false"
+    },
+    "pictures": [
+      "https://storage.yandexcloud.net/pim-core/415109.jpeg",
+      "https://storage.yandexcloud.net/pim-core/389204.jpeg",
+      "https://storage.yandexcloud.net/pim-core/389205.jpeg",
+      "https://storage.yandexcloud.net/pim-core/389206.jpeg",
+      "https://storage.yandexcloud.net/pim-core/389207.jpeg",
+      "https://storage.yandexcloud.net/pim-core/389208.jpeg",
+      "https://storage.yandexcloud.net/pim-core/389209.jpeg",
+      "https://storage.yandexcloud.net/pim-core/389210.jpeg",
+      "https://storage.yandexcloud.net/pim-core/389211.jpeg",
+      "https://storage.yandexcloud.net/pim-core/389212.jpeg"
+    ],
+    "pharm_group": "Препараты от клещей и паразитов",
+    "form": "Капли на холку",
+    "for_whom": "Собаки",
+    "focus": false,
+    "bucket": "ecto_parasite",
+    "vision": {
+      "image_kind": "packshot",
+      "ocr_labels": [
+        "адванТИКС®",
+        "для щенков и собак до 4 кг",
+        "от блох, клещей и комаров",
+        "ЧЕСТНЫЙ ЗНАК",
+        "Elanco",
+        "адвантикс",
+        "ИМИДАКЛОПРИД, ПЕРМЕТРИН",
+        "РАСТВОР ДЛЯ НАРУЖНОГО ПРИМЕНЕНИЯ (SPOT-ON)",
+        "Обладает репеллентным эффектом",
+        "блохи",
+        "личинки блох",
+        "власоеды",
+        "иксодовые клещи",
+        "комары и москиты",
+        "кровососущие мухи",
+        "водостойкий",
+        "1 пипетка х 0,4 мл"
+      ],
+      "skip_reason": null,
+      "new_attributes": [
+        {
+          "name": "Действующее вещество",
+          "value": "Имидаклоприд, Перметрин",
+          "evidence": "ocr",
+          "search_relevance": "high",
+          "filter_candidate": true,
+          "why_helps_search": "Пользователи часто ищут препараты по действующему веществу."
+        },
+        {
+          "name": "Спектр действия",
+          "value": "блохи, личинки блох, власоеды, иксодовые клещи, комары, москиты, кровососущие мухи",
+          "evidence": "ocr",
+          "search_relevance": "high",
+          "filter_candidate": true,
+          "why_helps_search": "Уточняет спектр действия, включая личинки, власоедов, москитов и мух, что важно для пользователей."
+        },
+        {
+          "name": "Особенности",
+          "value": "Водостойкий",
+          "evidence": "ocr",
+          "search_relevance": "high",
+          "filter_candidate": true,
+          "why_helps_search": "Важная характеристика для капель на холку, пользователи ищут водостойкие средства."
+        },
+        {
+          "name": "Особенности",
+          "value": "Репеллентный эффект",
+          "evidence": "ocr",
+          "search_relevance": "medium",
+          "filter_candidate": true,
+          "why_helps_search": "Указывает на дополнительное свойство препарата - отпугивание паразитов."
+        },
+        {
+          "name": "Возраст питомца",
+          "value": "Щенки",
+          "evidence": "ocr",
+          "search_relevance": "high",
+          "filter_candidate": true,
+          "why_helps_search": "Уточняет, что препарат подходит для щенков, что не полностью покрыто 'Все возрасты'."
+        }
+      ],
+      "already_in_feed_visible": [
+        "Elanco",
+        "адвантикс",
+        "Капли на холку",
+        "для собак",
+        "до 4 кг",
+        "от блох, клещей и комаров",
+        "1 пипетка",
+        "0,4 мл"
+      ],
+      "not_useful_from_image": [
+        "ЧЕСТНЫЙ ЗНАК"
+      ],
+      "_usage": {
+        "prompt_tokens": 2215,
+        "completion_tokens": 828,
+        "total_tokens": 3043,
+        "cost": 0.0027345,
+        "is_byok": false,
+        "prompt_tokens_details": {
+          "cached_tokens": 0,
+          "cache_write_tokens": 0,
+          "audio_tokens": 0,
+          "video_tokens": 0
+        },
+        "cost_details": {
+          "upstream_inference_cost": 0.0027345,
+          "upstream_inference_prompt_cost": 0.0006645,
+          "upstream_inference_completions_cost": 0.00207
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 0,
+          "image_tokens": 0,
+          "audio_tokens": 0
+        }
+      }
+    },
+    "keep": [
+      {
+        "name": "Действующее вещество",
+        "value": "Имидаклоприд, Перметрин",
+        "evidence": "ocr",
+        "search_relevance": "high",
+        "filter_candidate": true,
+        "why_helps_search": "Пользователи часто ищут препараты по действующему веществу.",
+        "decision": "KEEP"
+      },
+      {
+        "name": "Спектр действия",
+        "value": "блохи, личинки блох, власоеды, иксодовые клещи, комары, москиты, кровососущие мухи",
+        "evidence": "ocr",
+        "search_relevance": "high",
+        "filter_candidate": true,
+        "why_helps_search": "Уточняет спектр действия, включая личинки, власоедов, москитов и мух, что важно для пользователей.",
+        "decision": "KEEP"
+      },
+      {
+        "name": "Особенности",
+        "value": "Водостойкий",
+        "evidence": "ocr",
+        "search_relevance": "high",
+        "filter_candidate": true,
+        "why_helps_search": "Важная характеристика для капель на холку, пользователи ищут водостойкие средства.",
+        "decision": "KEEP"
+      },
+      {
+        "name": "Особенности",
+        "value": "Репеллентный эффект",
+        "evidence": "ocr",
+        "search_relevance": "medium",
+        "filter_candidate": true,
+        "why_helps_search": "Указывает на дополнительное свойство препарата - отпугивание паразитов.",
+        "decision": "KEEP"
+      },
+      {
+        "name": "Возраст питомца",
+        "value": "Щенки",
+        "evidence": "ocr",
+        "search_relevance": "high",
+        "filter_candidate": true,
+        "why_helps_search": "Уточняет, что препарат подходит для щенков, что не полностью покрыто 'Все возрасты'.",
+        "decision": "KEEP"
+      }
+    ],
+    "reject": []
+  },
+  {
+    "id": "1063196",
+    "name": "Rolf Club Ушные капли от клещей с обезболивающим эффектом для кошек и собак, 10 мл (по рецепту)",
+    "url": "https://4lapy.ru/product/rolf-club-ushnye-kapli-ot-kleshchej-s-obezbolivayushchim-effektom-dlya-koshek-i-sobak-10-ml-po-retseptu-89943-1063196",
+    "price": "577",
+    "categoryId": "624",
+    "category": "Капли и лосьоны для ушей",
+    "category_path": "Ветаптека / Ветаптека для собак / Капли и лосьоны для ушей",
+    "params": {
+      "Артикул": "1063196",
+      "Объем": "0.000",
+      "Размер питомца": "Все размеры",
+      "Страна-производитель": "Россия",
+      "Требуется лицензия": "true",
+      "Вес / фасовка, кг": "0.070",
+      "Для кого": "Кошки и собаки",
+      "rating": "5.00",
+      "reviews": "1",
+      "Длина": "7.00",
+      "Ширина": "4.00",
+      "Высота": "11.00",
+      "Форма выпуска": "Капли",
+      "is_stm": "false",
+      "Фармакологическая группа": "Ушные капли и лосьоны",
+      "Доступность": "самовывоз",
+      "Новинка": "false"
+    },
+    "pictures": [
+      "https://storage.yandexcloud.net/pim-core/422651.jpeg",
+      "https://storage.yandexcloud.net/pim-core/368907.jpeg"
+    ],
+    "pharm_group": "Ушные капли и лосьоны",
+    "form": "Капли",
+    "for_whom": "Кошки и собаки",
+    "focus": false,
+    "bucket": "ecto_parasite",
+    "vision": {
+      "image_kind": "packshot",
+      "ocr_labels": [
+        "ЧЕСТНЫЙ",
+        "3HAK",
+        "Комплексное действие",
+        "Rolf 3D",
+        "Club",
+        "Этофенпрокс - Энрофлоксацин • Бензокаин",
+        "РольфКлуб 3D",
+        "ушные капли",
+        "уничтожают",
+        "клещей",
+        "эффективны",
+        "против бактерий",
+        "снимают зуд, боль",
+        "и воспаление",
+        "С обезболивающим эффектом",
+        "neoterica",
+        "разработано в Германии",
+        "Серия:",
+        "Годен до:",
+        "ТУ 21.20.10-142-55025582-2021",
+        "Хранить в местах, недоступных для детей.",
+        "По истечении срока годности",
+        "ен применяться.",
+        "Капли ушныеpor",
+        "Отпускается без рецепта ветеринарного врача.",
+        "276-3-22"
+      ],
+      "skip_reason": null,
+      "new_attributes": [
+        {
+          "name": "Действующее вещество",
+          "value": "Этофенпрокс",
+          "evidence": "ocr",
+          "search_relevance": "high",
+          "filter_candidate": true,
+          "why_helps_search": "Пользователи ищут товары по действующему веществу."
+        },
+        {
+          "name": "Действующее вещество",
+          "value": "Энрофлоксацин",
+          "evidence": "ocr",
+          "search_relevance": "high",
+          "filter_candidate": true,
+          "why_helps_search": "Пользователи ищут товары по действующему веществу."
+        },
+        {
+          "name": "Действующее вещество",
+          "value": "Бензокаин",
+          "evidence": "ocr",
+          "search_relevance": "high",
+          "filter_candidate": true,
+          "why_helps_search": "Пользователи ищут товары по действующему веществу."
+        },
+        {
+          "name": "Спектр действия",
+          "value": "от клещей",
+          "evidence": "ocr",
+          "search_relevance": "high",
+          "filter_candidate": true,
+          "why_helps_search": "Уточняет спектр действия, пользователи ищут средства от клещей."
+        },
+        {
+          "name": "Спектр действия",
+          "value": "антибактериальный",
+          "evidence": "ocr",
+          "search_relevance": "high",
+          "filter_candidate": true,
+          "why_helps_search": "Уточняет спектр действия, пользователи ищут средства с антибактериальным эффектом."
+        },
+        {
+          "name": "Показания",
+          "value": "от зуда",
+          "evidence": "ocr",
+          "search_relevance": "high",
+          "filter_candidate": true,
+          "why_helps_search": "Пользователи ищут средства от зуда."
+        },
+        {
+          "name": "Показания",
+          "value": "от боли",
+          "evidence": "ocr",
+          "search_relevance": "high",
+          "filter_candidate": true,
+          "why_helps_search": "Пользователи ищут средства от боли."
+        },
+        {
+          "name": "Показания",
+          "value": "от воспаления",
+          "evidence": "ocr",
+          "search_relevance": "high",
+          "filter_candidate": true,
+          "why_helps_search": "Пользователи ищут средства от воспаления."
+        },
+        {
+          "name": "Линейка",
+          "value": "3D",
+          "evidence": "ocr",
+          "search_relevance": "medium",
+          "filter_candidate": true,
+          "why_helps_search": "Пользователи могут искать товары по линейке бренда."
+        },
+        {
+          "name": "Особенности",
+          "value": "разработано в Германии",
+          "evidence": "ocr",
+          "search_relevance": "low",
+          "filter_candidate": false,
+          "why_helps_search": "Может быть важно для некоторых пользователей, но не является ключевым поисковым запросом."
+        },
+        {
+          "name": "Требуется лицензия",
+          "value": "false",
+          "evidence": "ocr",
+          "search_relevance": "high",
+          "filter_candidate": true,
+          "why_helps_search": "Пользователи могут искать товары, отпускаемые без рецепта."
+        }
+      ],
+      "already_in_feed_visible": [
+        "Rolf Club",
+        "Ушные капли",
+        "от клещей",
+        "с обезболивающим эффектом",
+        "для кошек и собак"
+      ],
+      "not_useful_from_image": [
+        "Комплексное действие",
+        "уничтожают",
+        "эффективны",
+        "против бактерий",
+        "снимают зуд, боль",
+        "и воспаление",
+        "neoterica",
+        "ЧЕСТНЫЙ ЗНАК",
+        "ТУ 21.20.10-142-55025582-2021",
+        "Хранить в местах, недоступных для детей.",
+        "По истечении срока годности",
+        "ен применяться.",
+        "Капли ушныеpor",
+        "Серия:",
+        "Годен до:"
+      ],
+      "_usage": {
+        "prompt_tokens": 2191,
+        "completion_tokens": 1425,
+        "total_tokens": 3616,
+        "cost": 0.0042198,
+        "is_byok": false,
+        "prompt_tokens_details": {
+          "cached_tokens": 0,
+          "cache_write_tokens": 0,
+          "audio_tokens": 0,
+          "video_tokens": 0
+        },
+        "cost_details": {
+          "upstream_inference_cost": 0.0042198,
+          "upstream_inference_prompt_cost": 0.0006573,
+          "upstream_inference_completions_cost": 0.0035625
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 0,
+          "image_tokens": 0,
+          "audio_tokens": 0
+        }
+      }
+    },
+    "keep": [
+      {
+        "name": "Действующее вещество",
+        "value": "Этофенпрокс",
+        "evidence": "ocr",
+        "search_relevance": "high",
+        "filter_candidate": true,
+        "why_helps_search": "Пользователи ищут товары по действующему веществу.",
+        "decision": "KEEP"
+      },
+      {
+        "name": "Действующее вещество",
+        "value": "Энрофлоксацин",
+        "evidence": "ocr",
+        "search_relevance": "high",
+        "filter_candidate": true,
+        "why_helps_search": "Пользователи ищут товары по действующему веществу.",
+        "decision": "KEEP"
+      },
+      {
+        "name": "Действующее вещество",
+        "value": "Бензокаин",
+        "evidence": "ocr",
+        "search_relevance": "high",
+        "filter_candidate": true,
+        "why_helps_search": "Пользователи ищут товары по действующему веществу.",
+        "decision": "KEEP"
+      },
+      {
+        "name": "Спектр действия",
+        "value": "антибактериальный",
+        "evidence": "ocr",
+        "search_relevance": "high",
+        "filter_candidate": true,
+        "why_helps_search": "Уточняет спектр действия, пользователи ищут средства с антибактериальным эффектом.",
+        "decision": "KEEP"
+      },
+      {
+        "name": "Показания",
+        "value": "от зуда",
+        "evidence": "ocr",
+        "search_relevance": "high",
+        "filter_candidate": true,
+        "why_helps_search": "Пользователи ищут средства от зуда.",
+        "decision": "KEEP"
+      },
+      {
+        "name": "Показания",
+        "value": "от воспаления",
+        "evidence": "ocr",
+        "search_relevance": "high",
+        "filter_candidate": true,
+        "why_helps_search": "Пользователи ищут средства от воспаления.",
+        "decision": "KEEP"
+      },
+      {
+        "name": "Линейка",
+        "value": "3D",
+        "evidence": "ocr",
+        "search_relevance": "medium",
+        "filter_candidate": true,
+        "why_helps_search": "Пользователи могут искать товары по линейке бренда.",
+        "decision": "KEEP"
+      }
+    ],
+    "reject": [
+      {
+        "name": "Спектр действия",
+        "value": "от клещей",
+        "evidence": "ocr",
+        "search_relevance": "high",
+        "filter_candidate": true,
+        "why_helps_search": "Уточняет спектр действия, пользователи ищут средства от клещей.",
+        "decision": "REJECT",
+        "reason": "feed_or_name_collision"
+      },
+      {
+        "name": "Показания",
+        "value": "от боли",
+        "evidence": "ocr",
+        "search_relevance": "high",
+        "filter_candidate": true,
+        "why_helps_search": "Пользователи ищут средства от боли.",
+        "decision": "REJECT",
+        "reason": "feed_or_name_collision"
+      },
+      {
+        "name": "Особенности",
+        "value": "разработано в Германии",
+        "evidence": "ocr",
+        "search_relevance": "low",
+        "filter_candidate": false,
+        "why_helps_search": "Может быть важно для некоторых пользователей, но не является ключевым поисковым запросом.",
+        "decision": "REJECT",
+        "reason": "low_search_relevance"
+      },
+      {
+        "name": "Требуется лицензия",
+        "value": "false",
+        "evidence": "ocr",
+        "search_relevance": "high",
+        "filter_candidate": true,
+        "why_helps_search": "Пользователи могут искать товары, отпускаемые без рецепта.",
+        "decision": "REJECT",
+        "reason": "feed_or_name_collision"
+      }
+    ]
+  },
+  {
+    "id": "1056247",
+    "name": "Rolf Club Капли на холку для собак весом от 4 до 10 кг от блох и клещей, 3 пипетки",
+    "url": "https://4lapy.ru/product/rolf-club-kapli-na-holku-dlya-sobak-vesom-ot-4-do-10-kg-ot-bloh-i-kleshchej-3-pipetki-29359-1056247",
+    "price": "1555",
+    "categoryId": "220",
+    "category": "Капли",
+    "category_path": "Собаки / Защита от блох, клещей, гельминтов / Капли",
+    "params": {
+      "Артикул": "1056247",
+      "Объем": "0.000",
+      "Возраст питомца": "Все возрасты",
+      "Размер питомца": "Средний и крупный",
+      "Страна-производитель": "Россия",
+      "Требуется лицензия": "true",
+      "Вес / фасовка, кг": "0.028",
+      "Для кого": "Собаки",
+      "rating": "4.90",
+      "reviews": "75",
+      "Длина": "11.70",
+      "Ширина": "11.80",
+      "Высота": "2.80",
+      "Форма выпуска": "Капли на холку",
+      "is_stm": "false",
+      "Фармакологическая группа": "Препараты от клещей и паразитов",
+      "Новинка": "false"
+    },
+    "pictures": [
+      "https://storage.yandexcloud.net/pim-core/424932.jpeg"
+    ],
+    "pharm_group": "Препараты от клещей и паразитов",
+    "form": "Капли на холку",
+    "for_whom": "Собаки",
+    "focus": false,
+    "bucket": "ecto_parasite",
+    "vision": {
+      "image_kind": "packshot",
+      "ocr_labels": [
+        "Большая упаковка-выгодная цена!",
+        "Rolf 3D Club",
+        "Фипронил",
+        "Д-цифенотрин",
+        "Пирипроксифен",
+        "для собак 4-10 кг",
+        "РольфКлуб 3D капли для собак",
+        "уничтожают клещей до укуса",
+        "эффективен против блох и их личинок",
+        "обеспечивает защиту от комаров",
+        "3 тюбик-пипетки",
+        "neoterica",
+        "разработано в Германии",
+        "ЧЕСТНЫЙ ЗНАК",
+        "Даун-эффект в течение 2 минут!"
+      ],
+      "skip_reason": null,
+      "new_attributes": [
+        {
+          "name": "Действующее вещество",
+          "value": "Фипронил, Д-цифенотрин, Пирипроксифен",
+          "evidence": "ocr",
+          "search_relevance": "high",
+          "filter_candidate": true,
+          "why_helps_search": "Пользователи могут искать препараты по действующему веществу."
+        },
+        {
+          "name": "Спектр действия",
+          "value": "клещи, блохи, личинки блох, комары",
+          "evidence": "ocr",
+          "search_relevance": "high",
+          "filter_candidate": true,
+          "why_helps_search": "Уточняет спектр действия, добавляя личинки блох и комаров, что важно для пользователей."
+        },
+        {
+          "name": "Количество доз в упаковке",
+          "value": "3 пипетки",
+          "evidence": "ocr",
+          "search_relevance": "high",
+          "filter_candidate": true,
+          "why_helps_search": "Пользователи часто ищут товары по количеству доз в упаковке."
+        },
+        {
+          "name": "Серия",
+          "value": "3D",
+          "evidence": "ocr",
+          "search_relevance": "medium",
+          "filter_candidate": true,
+          "why_helps_search": "Пользователи могут искать конкретную серию продукта."
+        },
+        {
+          "name": "Особенность",
+          "value": "уничтожает клещей до укуса",
+          "evidence": "ocr",
+          "search_relevance": "medium",
+          "filter_candidate": false,
+          "why_helps_search": "Важная характеристика для пользователей, ищущих максимальную защиту."
+        },
+        {
+          "name": "Особенность",
+          "value": "даун-эффект в течение 2 минут",
+          "evidence": "ocr",
+          "search_relevance": "medium",
+          "filter_candidate": false,
+          "why_helps_search": "Показывает скорость действия препарата, что может быть важным критерием выбора."
+        },
+        {
+          "name": "Бренд-производитель",
+          "value": "Neoterica",
+          "evidence": "ocr",
+          "search_relevance": "medium",
+          "filter_candidate": true,
+          "why_helps_search": "Указывает на производителя, что может быть важно для пользователей, доверяющих определенным брендам."
+        },
+        {
+          "name": "Разработано в",
+          "value": "Германия",
+          "evidence": "ocr",
+          "search_relevance": "low",
+          "filter_candidate": false,
+          "why_helps_search": "Может быть дополнительным фактором доверия к продукту."
+        }
+      ],
+      "already_in_feed_visible": [
+        "Rolf Club",
+        "Капли на холку",
+        "для собак",
+        "от блох и клещей",
+        "4-10 кг"
+      ],
+      "not_useful_from_image": [
+        "Большая упаковка-выгодная цена!",
+        "ЧЕСТНЫЙ ЗНАК",
+        "2022"
+      ],
+      "_usage": {
+        "prompt_tokens": 2193,
+        "completion_tokens": 1018,
+        "total_tokens": 3211,
+        "cost": 0.0032029,
+        "is_byok": false,
+        "prompt_tokens_details": {
+          "cached_tokens": 0,
+          "cache_write_tokens": 0,
+          "audio_tokens": 0,
+          "video_tokens": 0
+        },
+        "cost_details": {
+          "upstream_inference_cost": 0.0032029,
+          "upstream_inference_prompt_cost": 0.0006579,
+          "upstream_inference_completions_cost": 0.002545
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 0,
+          "image_tokens": 0,
+          "audio_tokens": 0
+        }
+      }
+    },
+    "keep": [
+      {
+        "name": "Действующее вещество",
+        "value": "Фипронил, Д-цифенотрин, Пирипроксифен",
+        "evidence": "ocr",
+        "search_relevance": "high",
+        "filter_candidate": true,
+        "why_helps_search": "Пользователи могут искать препараты по действующему веществу.",
+        "decision": "KEEP"
+      },
+      {
+        "name": "Спектр действия",
+        "value": "клещи, блохи, личинки блох, комары",
+        "evidence": "ocr",
+        "search_relevance": "high",
+        "filter_candidate": true,
+        "why_helps_search": "Уточняет спектр действия, добавляя личинки блох и комаров, что важно для пользователей.",
+        "decision": "KEEP"
+      },
+      {
+        "name": "Серия",
+        "value": "3D",
+        "evidence": "ocr",
+        "search_relevance": "medium",
+        "filter_candidate": true,
+        "why_helps_search": "Пользователи могут искать конкретную серию продукта.",
+        "decision": "KEEP"
+      },
+      {
+        "name": "Особенность",
+        "value": "даун-эффект в течение 2 минут",
+        "evidence": "ocr",
+        "search_relevance": "medium",
+        "filter_candidate": false,
+        "why_helps_search": "Показывает скорость действия препарата, что может быть важным критерием выбора.",
+        "decision": "KEEP"
+      },
+      {
+        "name": "Бренд-производитель",
+        "value": "Neoterica",
+        "evidence": "ocr",
+        "search_relevance": "medium",
+        "filter_candidate": true,
+        "why_helps_search": "Указывает на производителя, что может быть важно для пользователей, доверяющих определенным брендам.",
+        "decision": "KEEP"
+      }
+    ],
+    "reject": [
+      {
+        "name": "Количество доз в упаковке",
+        "value": "3 пипетки",
+        "evidence": "ocr",
+        "search_relevance": "high",
+        "filter_candidate": true,
+        "why_helps_search": "Пользователи часто ищут товары по количеству доз в упаковке.",
+        "decision": "REJECT",
+        "reason": "feed_or_name_collision"
+      },
+      {
+        "name": "Особенность",
+        "value": "уничтожает клещей до укуса",
+        "evidence": "ocr",
+        "search_relevance": "medium",
+        "filter_candidate": false,
+        "why_helps_search": "Важная характеристика для пользователей, ищущих максимальную защиту.",
+        "decision": "REJECT",
+        "reason": "feed_or_name_collision"
+      },
+      {
+        "name": "Разработано в",
+        "value": "Германия",
+        "evidence": "ocr",
+        "search_relevance": "low",
+        "filter_candidate": false,
+        "why_helps_search": "Может быть дополнительным фактором доверия к продукту.",
+        "decision": "REJECT",
+        "reason": "low_search_relevance"
+      }
+    ]
+  },
+  {
+    "id": "1066622",
+    "name": "Livisto V-Skin Атопик Пребиотик спрей для чувствительной и сухой кожи у кошек и собак, 125 мл",
+    "url": "https://4lapy.ru/product/livisto-v-skin-atopik-prebiotik-sprej-dlya-chuvstvitelnoj-i-suhoj-kozhi-u-kosheki-sobak-125-ml-95592-1066622",
+    "price": "1689",
+    "categoryId": "648",
+    "category": "Дерматология",
+    "category_path": "Ветаптека / Универсальные препараты / Дерматология",
+    "params": {
+      "Артикул": "1066622",
+      "Объем": "0.000",
+      "Возраст питомца": "Все возрасты",
+      "Размер питомца": "Все размеры",
+      "Страна-производитель": "Испания",
+      "Требуется лицензия": "false",
+      "Вес / фасовка, кг": "0.170",
+      "Для кого": "Кошки и собаки",
+      "reviews": "0",
+      "Длина": "4.00",
+      "Ширина": "4.00",
+      "Высота": "14.50",
+      "Форма выпуска": "Спрей и пена",
+      "is_stm": "false",
+      "Фармакологическая группа": "Для применения в дерматологии",
+      "Новинка": "false"
+    },
+    "pictures": [
+      "https://storage.yandexcloud.net/pim-core/389068.jpeg",
+      "https://storage.yandexcloud.net/pim-core/389069.jpeg",
+      "https://storage.yandexcloud.net/pim-core/389070.jpeg"
+    ],
+    "pharm_group": "Для применения в дерматологии",
+    "form": "Спрей и пена",
+    "for_whom": "Кошки и собаки",
+    "focus": false,
+    "bucket": "dermatology",
+    "vision": {
+      "image_kind": "packshot",
+      "ocr_labels": [
+        "LIVISTO",
+        "V-SKIN",
+        "АТОПИК",
+        "ПРЕБИОТИК",
+        "СПРЕЙ",
+        "Для чувствительной и сухой кожи",
+        "125 МЛ"
+      ],
+      "skip_reason": null,
+      "new_attributes": [],
+      "already_in_feed_visible": [
+        "Livisto",
+        "V-Skin",
+        "Атопик",
+        "Пребиотик",
+        "спрей",
+        "для чувствительной и сухой кожи",
+        "кошек и собак",
+        "125 мл"
+      ],
+      "not_useful_from_image": [
+        "Производитель",
+        "Laboratorios Magniña, S.L.",
+        "Baiona, Spain",
+        "Падащи Кариа",
+        "СПЛ. с.Лереда, 1",
+        "Барзалка, Истания",
+        "Дистрибьютор в Европе",
+        "NESAL",
+        "chment, 19",
+        "SA",
+        "050, Esplugues de Llobregat,",
+        "άστηκα με",
+        "Эсмеральда, 19",
+        "Бергия, Ислания.",
+        "Эксклюзивный дистрибьютор на территории Российской Федерации",
+        "ООО «РУСА» г. Москва,",
+        "ул. Большая Семеновская, д. 42, стр. 1, пом. 1, ком. 1",
+        "Тел. +7 (495) 627-55-84",
+        "12"
+      ],
+      "_usage": {
+        "prompt_tokens": 2185,
+        "completion_tokens": 434,
+        "total_tokens": 2619,
+        "cost": 0.0017405,
+        "is_byok": false,
+        "prompt_tokens_details": {
+          "cached_tokens": 0,
+          "cache_write_tokens": 0,
+          "audio_tokens": 0,
+          "video_tokens": 0
+        },
+        "cost_details": {
+          "upstream_inference_cost": 0.0017405,
+          "upstream_inference_prompt_cost": 0.0006555,
+          "upstream_inference_completions_cost": 0.001085
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 0,
+          "image_tokens": 0,
+          "audio_tokens": 0
+        }
+      }
+    },
+    "keep": [],
+    "reject": []
+  },
+  {
+    "id": "1004154",
+    "name": "Аркон Ошейник кожаный с подкладом для собак, обхват шеи 40-54 см, ширина 2,5 см, коньячный",
+    "url": "https://4lapy.ru/product/arkon-oshejnik-kozhanyj-s-podkladom-dlya-sobak-obhvat-shei-40-54-sm-shirina-2-5-sm-konyachnyj-15766-1004154",
+    "price": "519",
+    "categoryId": "247",
+    "category": "Ошейники",
+    "category_path": "Собаки / Амуниция и аксессуары / Ошейники",
+    "params": {
+      "Артикул": "1004154",
+      "Размер питомца": "Мелкий",
+      "Назначение": "Ошейники",
+      "Страна-производитель": "Россия",
+      "Требуется лицензия": "false",
+      "Вес / фасовка, кг": "0.024",
+      "Для кого": "Собаки",
+      "rating": "5.00",
+      "reviews": "8",
+      "Цвет": "Коричневый",
+      "Размер": "40-54 см",
+      "Длина": "32.00",
+      "Ширина": "1.50",
+      "Высота": "0.40",
+      "Материал": "Кожа",
+      "is_stm": "false",
+      "Новинка": "false",
+      "sku_id": "40-54 см|1004154"
+    },
+    "pictures": [
+      "https://storage.yandexcloud.net/pim-core/dbpim-prod_21252.JPG"
+    ],
+    "pharm_group": "",
+    "form": "",
+    "for_whom": "Собаки",
+    "focus": false,
+    "bucket": "dermatology",
+    "vision": {
+      "image_kind": "packshot",
+      "ocr_labels": [
+        "Аркон"
+      ],
+      "skip_reason": null,
+      "new_attributes": [
+        {
+          "name": "Декор",
+          "value": "Заклепки",
+          "evidence": "visual",
+          "search_relevance": "high",
+          "filter_candidate": true,
+          "why_helps_search": "Пользователи могут искать ошейники с декоративными элементами."
+        }
+      ],
+      "already_in_feed_visible": [
+        "Бренд: Аркон",
+        "Материал: Кожа",
+        "Цвет: Коричневый (коньячный)"
+      ],
+      "not_useful_from_image": [],
+      "_usage": {
+        "prompt_tokens": 2177,
+        "completion_tokens": 195,
+        "total_tokens": 2372,
+        "cost": 0.0011406,
+        "is_byok": false,
+        "prompt_tokens_details": {
+          "cached_tokens": 0,
+          "cache_write_tokens": 0,
+          "audio_tokens": 0,
+          "video_tokens": 0
+        },
+        "cost_details": {
+          "upstream_inference_cost": 0.0011406,
+          "upstream_inference_prompt_cost": 0.0006531,
+          "upstream_inference_completions_cost": 0.0004875
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 0,
+          "image_tokens": 0,
+          "audio_tokens": 0
+        }
+      }
+    },
+    "keep": [
+      {
+        "name": "Декор",
+        "value": "Заклепки",
+        "evidence": "visual",
+        "search_relevance": "high",
+        "filter_candidate": true,
+        "why_helps_search": "Пользователи могут искать ошейники с декоративными элементами.",
+        "decision": "KEEP"
+      }
+    ],
+    "reject": []
+  },
+  {
+    "id": "1068811",
+    "name": "Petbiology Шампунь дерматологический с овсянкой и аллантоином для кошек и собак, 250 мл",
+    "url": "https://4lapy.ru/product/petbiology-shampun-dermatologicheskij-s-ovsyankoj-i-allantoinom-dlya-koshek-i-sobak-250-ml-99424-1068811",
+    "price": "515",
+    "categoryId": "338",
+    "category": "Шампуни",
+    "category_path": "Собаки / Средства гигиены и косметика / Шампуни",
+    "params": {
+      "Артикул": "1068811",
+      "Возраст питомца": "Все возрасты",
+      "Назначение": "Шампунь",
+      "Страна-производитель": "Россия",
+      "Требуется лицензия": "false",
+      "Вес / фасовка, кг": "0.290",
+      "Для кого": "Кошки и собаки",
+      "reviews": "0",
+      "Длина": "0.20",
+      "Ширина": "0.05",
+      "Высота": "0.05",
+      "is_stm": "false",
+      "Новинка": "false"
+    },
+    "pictures": [
+      "https://storage.yandexcloud.net/pim-core/424971.jpeg",
+      "https://storage.yandexcloud.net/pim-core/424723.jpeg"
+    ],
+    "pharm_group": "",
+    "form": "",
+    "for_whom": "Кошки и собаки",
+    "focus": false,
+    "bucket": "dermatology",
+    "vision": {
+      "image_kind": "packshot",
+      "ocr_labels": [
+        "ЧЕСТНЫЙ ЗНАК",
+        "PETBIOLOGY THERAPY",
+        "Для собак и кошек",
+        "Дерматологический Шампунь",
+        "Коллоидная овсянка",
+        "Аллантоин",
+        "Снимает раздражение и зуд",
+        "Стимулирует обновление клеток",
+        "Бережно увлажняет и очищает",
+        "Для животных склонных к аллергии, сухости и раздражению кожи",
+        "250 мл"
+      ],
+      "skip_reason": null,
+      "new_attributes": [
+        {
+          "name": "Назначение",
+          "value": "от раздражения и зуда",
+          "evidence": "ocr",
+          "search_relevance": "high",
+          "filter_candidate": true,
+          "why_helps_search": "Помогает найти шампунь для животных с проблемами кожи."
+        },
+        {
+          "name": "Назначение",
+          "value": "для чувствительной кожи",
+          "evidence": "ocr",
+          "search_relevance": "high",
+          "filter_candidate": true,
+          "why_helps_search": "Уточняет, что шампунь подходит для животных с чувствительной кожей, склонной к аллергии."
+        },
+        {
+          "name": "Особенности",
+          "value": "увлажняющий",
+          "evidence": "ocr",
+          "search_relevance": "medium",
+          "filter_candidate": true,
+          "why_helps_search": "Добавляет информацию об увлажняющих свойствах шампуня."
+        },
+        {
+          "name": "Действующее вещество",
+          "value": "коллоидная овсянка",
+          "evidence": "ocr",
+          "search_relevance": "high",
+          "filter_candidate": true,
+          "why_helps_search": "Указывает на ключевой компонент, который может быть важен для покупателей."
+        }
+      ],
+      "already_in_feed_visible": [
+        "Petbiology",
+        "Шампунь",
+        "дерматологический",
+        "с овсянкой и аллантоином",
+        "для кошек и собак",
+        "250 мл"
+      ],
+      "not_useful_from_image": [
+        "THERAPY",
+        "Стимулирует обновление клеток",
+        "Бережно увлажняет и очищает"
+      ],
+      "_usage": {
+        "prompt_tokens": 2154,
+        "completion_tokens": 619,
+        "total_tokens": 2773,
+        "cost": 0.0021937,
+        "is_byok": false,
+        "prompt_tokens_details": {
+          "cached_tokens": 0,
+          "cache_write_tokens": 0,
+          "audio_tokens": 0,
+          "video_tokens": 0
+        },
+        "cost_details": {
+          "upstream_inference_cost": 0.0021937,
+          "upstream_inference_prompt_cost": 0.0006462,
+          "upstream_inference_completions_cost": 0.0015475
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 0,
+          "image_tokens": 0,
+          "audio_tokens": 0
+        }
+      }
+    },
+    "keep": [
+      {
+        "name": "Назначение",
+        "value": "от раздражения и зуда",
+        "evidence": "ocr",
+        "search_relevance": "high",
+        "filter_candidate": true,
+        "why_helps_search": "Помогает найти шампунь для животных с проблемами кожи.",
+        "decision": "KEEP"
+      },
+      {
+        "name": "Особенности",
+        "value": "увлажняющий",
+        "evidence": "ocr",
+        "search_relevance": "medium",
+        "filter_candidate": true,
+        "why_helps_search": "Добавляет информацию об увлажняющих свойствах шампуня.",
+        "decision": "KEEP"
+      },
+      {
+        "name": "Действующее вещество",
+        "value": "коллоидная овсянка",
+        "evidence": "ocr",
+        "search_relevance": "high",
+        "filter_candidate": true,
+        "why_helps_search": "Указывает на ключевой компонент, который может быть важен для покупателей.",
+        "decision": "KEEP"
+      }
+    ],
+    "reject": [
+      {
+        "name": "Назначение",
+        "value": "для чувствительной кожи",
+        "evidence": "ocr",
+        "search_relevance": "high",
+        "filter_candidate": true,
+        "why_helps_search": "Уточняет, что шампунь подходит для животных с чувствительной кожей, склонной к аллергии.",
+        "decision": "REJECT",
+        "reason": "feed_or_name_collision"
+      }
+    ]
+  },
+  {
+    "id": "1037252",
+    "name": "Мосагроген Цианокобаламин, витамин В12, 100мл",
+    "url": "https://4lapy.ru/product/mosagrogen-tsianokobalamin-vitamin-v12-100ml-10806-1037252",
+    "price": "489",
+    "categoryId": "610",
+    "category": "Витамины и минералы",
+    "category_path": "Ветаптека / Ветаптека для собак / Витамины и минералы",
+    "params": {
+      "Артикул": "1037252",
+      "Объем": "0.000",
+      "Возраст питомца": "Все возрасты",
+      "Размер питомца": "Все размеры",
+      "Страна-производитель": "Россия",
+      "Требуется лицензия": "true",
+      "Вес / фасовка, кг": "0.201",
+      "Для кого": "Кошки и собаки",
+      "rating": "5.00",
+      "reviews": "10",
+      "Длина": "4.80",
+      "Ширина": "4.90",
+      "Высота": "9.40",
+      "Форма выпуска": "Раствор",
+      "is_stm": "false",
+      "Фармакологическая группа": "Витаминные и минеральные препараты",
+      "Новинка": "false"
+    },
+    "pictures": [
+      "https://storage.yandexcloud.net/pim-core/422707.jpeg"
+    ],
+    "pharm_group": "Витаминные и минеральные препараты",
+    "form": "Раствор",
+    "for_whom": "Кошки и собаки",
+    "focus": false,
+    "bucket": "vitamins",
+    "vision": {
+      "image_kind": "packshot",
+      "ocr_labels": [
+        "100 мл",
+        "ЦИАНОКОБАЛАМИН",
+        "Витамин В12",
+        "Внутривенно, Внутримышечно, Подкожно",
+        "МОСАГРОГЕН",
+        "ЧЕСТНЫЙ ЗНАК"
+      ],
+      "skip_reason": null,
+      "new_attributes": [
+        {
+          "name": "Способ применения",
+          "value": "Внутривенно, Внутримышечно, Подкожно",
+          "evidence": "ocr",
+          "search_relevance": "high",
+          "filter_candidate": true,
+          "why_helps_search": "Уточняет способ введения препарата, что важно для ветеринарных средств."
+        },
+        {
+          "name": "Вид животного",
+          "value": "Крупный рогатый скот, Лошади, Свиньи, Мелкий рогатый скот, Собаки, Кошки",
+          "evidence": "visual",
+          "search_relevance": "high",
+          "filter_candidate": true,
+          "why_helps_search": "Расширяет список животных, для которых предназначен препарат, помимо указанных в фиде."
+        }
+      ],
+      "already_in_feed_visible": [
+        "Мосагроген",
+        "Цианокобаламин",
+        "витамин В12",
+        "100мл",
+        "Раствор"
+      ],
+      "not_useful_from_image": [
+        "ЧЕСТНЫЙ ЗНАК"
+      ],
+      "_usage": {
+        "prompt_tokens": 2178,
+        "completion_tokens": 413,
+        "total_tokens": 2591,
+        "cost": 0.0016859,
+        "is_byok": false,
+        "prompt_tokens_details": {
+          "cached_tokens": 0,
+          "cache_write_tokens": 0,
+          "audio_tokens": 0,
+          "video_tokens": 0
+        },
+        "cost_details": {
+          "upstream_inference_cost": 0.0016859,
+          "upstream_inference_prompt_cost": 0.0006534,
+          "upstream_inference_completions_cost": 0.0010325
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 0,
+          "image_tokens": 0,
+          "audio_tokens": 0
+        }
+      }
+    },
+    "keep": [
+      {
+        "name": "Способ применения",
+        "value": "Внутривенно, Внутримышечно, Подкожно",
+        "evidence": "ocr",
+        "search_relevance": "high",
+        "filter_candidate": true,
+        "why_helps_search": "Уточняет способ введения препарата, что важно для ветеринарных средств.",
+        "decision": "KEEP"
+      },
+      {
+        "name": "Вид животного",
+        "value": "Крупный рогатый скот, Лошади, Свиньи, Мелкий рогатый скот, Собаки, Кошки",
+        "evidence": "visual",
+        "search_relevance": "high",
+        "filter_candidate": true,
+        "why_helps_search": "Расширяет список животных, для которых предназначен препарат, помимо указанных в фиде.",
+        "decision": "KEEP"
+      }
+    ],
+    "reject": []
+  },
+  {
+    "id": "1000031",
+    "name": "АВЗ Сера Кормовая добавка для нормализации обмена веществ у кошек и собак, 2,5 гр.",
+    "url": "https://4lapy.ru/product/avz-sera-kormovaya-dobavka-dlya-normalizatsii-obmena-veshchestv-u-koshek-i-sobak-2-5-gr-68-1000031",
+    "price": "115",
+    "categoryId": "613",
+    "category": "Кормовые добавки",
+    "category_path": "Ветаптека / Ветаптека для собак / Кормовые добавки",
+    "params": {
+      "Артикул": "1000031",
+      "В упаковке": "10.0",
+      "Страна-производитель": "Россия",
+      "Требуется лицензия": "false",
+      "Вес / фасовка, кг": "0.004",
+      "Для кого": "Кошки и собаки",
+      "rating": "5.00",
+      "reviews": "27",
+      "Длина": "3.60",
+      "Ширина": "12.70",
+      "Высота": "0.02",
+      "Форма выпуска": "Порошки",
+      "is_stm": "false",
+      "Фармакологическая группа": "Кормовые добавки",
+      "Новинка": "false"
+    },
+    "pictures": [
+      "https://storage.yandexcloud.net/pim-core/356835.jpeg"
+    ],
+    "pharm_group": "Кормовые добавки",
+    "form": "Порошки",
+    "for_whom": "Кошки и собаки",
+    "focus": false,
+    "bucket": "vitamins",
+    "vision": {
+      "image_kind": "packshot",
+      "ocr_labels": [
+        "БЕЗ",
+        "ΓΜΟ",
+        "CEPA",
+        "ДЛЯ ЖИВОТНЫХ",
+        "КОРМОВАЯ ДОБАВКА",
+        "Для нормализации обмена",
+        "веществ, улучшения состояния",
+        "кожи и шерсти кошек, собак,",
+        "декоративных кроликов и грызунов",
+        "ABB",
+        "здоровье животных"
+      ],
+      "skip_reason": null,
+      "new_attributes": [
+        {
+          "name": "Назначение",
+          "value": "улучшение состояния кожи и шерсти",
+          "evidence": "ocr",
+          "search_relevance": "high",
+          "filter_candidate": true,
+          "why_helps_search": "Пользователи могут искать добавки для улучшения состояния кожи и шерсти."
+        },
+        {
+          "name": "Для кого",
+          "value": "декоративные кролики",
+          "evidence": "ocr",
+          "search_relevance": "high",
+          "filter_candidate": true,
+          "why_helps_search": "Расширяет категорию животных, для которых подходит товар, что важно для поиска."
+        },
+        {
+          "name": "Для кого",
+          "value": "грызуны",
+          "evidence": "ocr",
+          "search_relevance": "high",
+          "filter_candidate": true,
+          "why_helps_search": "Расширяет категорию животных, для которых подходит товар, что важно для поиска."
+        }
+      ],
+      "already_in_feed_visible": [
+        "АВЗ",
+        "Сера",
+        "Кормовая добавка",
+        "Для нормализации обмена веществ",
+        "Для кошек и собак"
+      ],
+      "not_useful_from_image": [
+        "БЕЗ ГМО",
+        "здоровье животных"
+      ],
+      "_usage": {
+        "prompt_tokens": 2166,
+        "completion_tokens": 493,
+        "total_tokens": 2659,
+        "cost": 0.0018823,
+        "is_byok": false,
+        "prompt_tokens_details": {
+          "cached_tokens": 0,
+          "cache_write_tokens": 0,
+          "audio_tokens": 0,
+          "video_tokens": 0
+        },
+        "cost_details": {
+          "upstream_inference_cost": 0.0018823,
+          "upstream_inference_prompt_cost": 0.0006498,
+          "upstream_inference_completions_cost": 0.0012325
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 0,
+          "image_tokens": 0,
+          "audio_tokens": 0
+        }
+      }
+    },
+    "keep": [
+      {
+        "name": "Назначение",
+        "value": "улучшение состояния кожи и шерсти",
+        "evidence": "ocr",
+        "search_relevance": "high",
+        "filter_candidate": true,
+        "why_helps_search": "Пользователи могут искать добавки для улучшения состояния кожи и шерсти.",
+        "decision": "KEEP"
+      },
+      {
+        "name": "Для кого",
+        "value": "декоративные кролики",
+        "evidence": "ocr",
+        "search_relevance": "high",
+        "filter_candidate": true,
+        "why_helps_search": "Расширяет категорию животных, для которых подходит товар, что важно для поиска.",
+        "decision": "KEEP"
+      },
+      {
+        "name": "Для кого",
+        "value": "грызуны",
+        "evidence": "ocr",
+        "search_relevance": "high",
+        "filter_candidate": true,
+        "why_helps_search": "Расширяет категорию животных, для которых подходит товар, что важно для поиска.",
+        "decision": "KEEP"
+      }
+    ],
+    "reject": []
+  },
+  {
+    "id": "1046996",
+    "name": "Feel Good Масло лососевое Омега 3, 100 мл",
+    "url": "https://4lapy.ru/product/feel-good-maslo-lososevoe-omega-3-100-ml-9625-1046996",
+    "price": "454.9",
+    "categoryId": "649",
+    "category": "Кормовые добавки",
+    "category_path": "Ветаптека / Универсальные препараты / Кормовые добавки",
+    "params": {
+      "Артикул": "1046996",
+      "Объем": "0.000",
+      "Страна-производитель": "Россия",
+      "Требуется лицензия": "false",
+      "Вес / фасовка, кг": "0.130",
+      "Для кого": "Кошки и собаки",
+      "rating": "4.90",
+      "reviews": "100",
+      "Длина": "4.70",
+      "Ширина": "4.30",
+      "Высота": "13.20",
+      "Форма выпуска": "Масло",
+      "is_stm": "false",
+      "Фармакологическая группа": "Кормовые добавки",
+      "Новинка": "false"
+    },
+    "pictures": [
+      "https://storage.yandexcloud.net/pim-core/dbpim-prod_81557.jpg"
+    ],
+    "pharm_group": "Кормовые добавки",
+    "form": "Масло",
+    "for_whom": "Кошки и собаки",
+    "focus": false,
+    "bucket": "vitamins",
+    "vision": {
+      "image_kind": "packshot",
+      "ocr_labels": [
+        "GOOD",
+        "Feel",
+        "МАСЛО",
+        "ЛОСОСЯ",
+        "для кошек и собак",
+        "OMEGA 3",
+        "высокое содержание",
+        "el",
+        "444",
+        "00000",
+        "100ml",
+        "100 ml"
+      ],
+      "skip_reason": null,
+      "new_attributes": [
+        {
+          "name": "Особенности",
+          "value": "высокое содержание Омега 3",
+          "evidence": "ocr",
+          "search_relevance": "high",
+          "filter_candidate": true,
+          "why_helps_search": "Пользователи могут искать добавки с высоким содержанием Омега 3."
+        }
+      ],
+      "already_in_feed_visible": [
+        "Feel Good",
+        "Масло лососевое",
+        "Омега 3",
+        "100 мл",
+        "Для кошек и собак"
+      ],
+      "not_useful_from_image": [
+        "444",
+        "00000"
+      ],
+      "_usage": {
+        "prompt_tokens": 2144,
+        "completion_tokens": 309,
+        "total_tokens": 2453,
+        "cost": 0.0014157,
+        "is_byok": false,
+        "prompt_tokens_details": {
+          "cached_tokens": 0,
+          "cache_write_tokens": 0,
+          "audio_tokens": 0,
+          "video_tokens": 0
+        },
+        "cost_details": {
+          "upstream_inference_cost": 0.0014157,
+          "upstream_inference_prompt_cost": 0.0006432,
+          "upstream_inference_completions_cost": 0.0007725
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 0,
+          "image_tokens": 0,
+          "audio_tokens": 0
+        }
+      }
+    },
+    "keep": [],
+    "reject": [
+      {
+        "name": "Особенности",
+        "value": "высокое содержание Омега 3",
+        "evidence": "ocr",
+        "search_relevance": "high",
+        "filter_candidate": true,
+        "why_helps_search": "Пользователи могут искать добавки с высоким содержанием Омега 3.",
+        "decision": "REJECT",
+        "reason": "feed_or_name_collision"
+      }
+    ]
+  },
+  {
+    "id": "1066747",
+    "name": "Вик – здоровье животных Клавуксицин Антибактериальный препарат для кошек и собак 500 мг, 12 табл. (по рецепту)",
+    "url": "https://4lapy.ru/product/vic-klavuksitsin-antibakterialnyj-preparat-dlya-koshek-i-sobak-500-mg-12-tabl-95801-1066747",
+    "price": "1075",
+    "categoryId": "651",
+    "category": "Противомикробные средства",
+    "category_path": "Ветаптека / Универсальные препараты / Противомикробные средства",
+    "params": {
+      "Артикул": "1066747",
+      "Объем": "0.000",
+      "Размер питомца": "Все размеры",
+      "Страна-производитель": "Россия",
+      "Требуется лицензия": "true",
+      "Вес / фасовка, кг": "0.030",
+      "Для кого": "Кошки и собаки",
+      "reviews": "0",
+      "Длина": "10.00",
+      "Ширина": "13.00",
+      "Высота": "2.00",
+      "Форма выпуска": "Порошки",
+      "is_stm": "false",
+      "Фармакологическая группа": "Противомикробные средства",
+      "Доступность": "самовывоз",
+      "Новинка": "false"
+    },
+    "pictures": [
+      "https://storage.yandexcloud.net/pim-core/418667.jpeg",
+      "https://storage.yandexcloud.net/pim-core/390874.jpeg",
+      "https://storage.yandexcloud.net/pim-core/390875.jpeg",
+      "https://storage.yandexcloud.net/pim-core/390876.jpeg"
+    ],
+    "pharm_group": "Противомикробные средства",
+    "form": "Порошки",
+    "for_whom": "Кошки и собаки",
+    "focus": false,
+    "bucket": "antibiotics",
+    "vision": {
+      "image_kind": "packshot",
+      "ocr_labels": [
+        "ЧЕСТНЫЙ ЗНАК",
+        "VIC",
+        "Клавуксицин",
+        "таблетки",
+        "амоксициллин",
+        "клавулановая кислота",
+        "Антибиотик",
+        "ДЛЯ СОБАК И КОШЕК",
+        "500 МГ",
+        "со вкусом мяса",
+        "x12",
+        "таблеток для приема внутрь",
+        "ПОДАРИ ДРУГУ ЗДОРОВЬЕ"
+      ],
+      "skip_reason": null,
+      "new_attributes": [
+        {
+          "name": "Действующее вещество",
+          "value": "амоксициллин, клавулановая кислота",
+          "evidence": "ocr",
+          "search_relevance": "high",
+          "filter_candidate": true,
+          "why_helps_search": "Позволяет найти товар по действующему веществу, что важно для ветеринарных препаратов."
+        },
+        {
+          "name": "Вкус",
+          "value": "мясо",
+          "evidence": "ocr",
+          "search_relevance": "medium",
+          "filter_candidate": true,
+          "why_helps_search": "Помогает найти препарат с вкусовой добавкой для облегчения приема."
+        },
+        {
+          "name": "Количество таблеток",
+          "value": "12",
+          "evidence": "ocr",
+          "search_relevance": "medium",
+          "filter_candidate": true,
+          "why_helps_search": "Уточняет количество единиц товара в упаковке, что важно для планирования курса лечения."
+        },
+        {
+          "name": "Способ применения",
+          "value": "внутрь",
+          "evidence": "ocr",
+          "search_relevance": "medium",
+          "filter_candidate": true,
+          "why_helps_search": "Уточняет способ применения препарата, что важно для правильного использования."
+        }
+      ],
+      "already_in_feed_visible": [
+        "Клавуксицин",
+        "Антибактериальный препарат",
+        "для кошек и собак",
+        "500 мг",
+        "12 табл.",
+        "таблетки",
+        "Антибиотик"
+      ],
+      "not_useful_from_image": [
+        "ЧЕСТНЫЙ ЗНАК",
+        "VIC",
+        "ПОДАРИ ДРУГУ ЗДОРОВЬЕ"
+      ],
+      "_usage": {
+        "prompt_tokens": 2194,
+        "completion_tokens": 632,
+        "total_tokens": 2826,
+        "cost": 0.0022382,
+        "is_byok": false,
+        "prompt_tokens_details": {
+          "cached_tokens": 0,
+          "cache_write_tokens": 0,
+          "audio_tokens": 0,
+          "video_tokens": 0
+        },
+        "cost_details": {
+          "upstream_inference_cost": 0.0022382,
+          "upstream_inference_prompt_cost": 0.0006582,
+          "upstream_inference_completions_cost": 0.00158
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 0,
+          "image_tokens": 0,
+          "audio_tokens": 0
+        }
+      }
+    },
+    "keep": [
+      {
+        "name": "Действующее вещество",
+        "value": "амоксициллин, клавулановая кислота",
+        "evidence": "ocr",
+        "search_relevance": "high",
+        "filter_candidate": true,
+        "why_helps_search": "Позволяет найти товар по действующему веществу, что важно для ветеринарных препаратов.",
+        "decision": "KEEP"
+      },
+      {
+        "name": "Вкус",
+        "value": "мясо",
+        "evidence": "ocr",
+        "search_relevance": "medium",
+        "filter_candidate": true,
+        "why_helps_search": "Помогает найти препарат с вкусовой добавкой для облегчения приема.",
+        "decision": "KEEP"
+      },
+      {
+        "name": "Способ применения",
+        "value": "внутрь",
+        "evidence": "ocr",
+        "search_relevance": "medium",
+        "filter_candidate": true,
+        "why_helps_search": "Уточняет способ применения препарата, что важно для правильного использования.",
+        "decision": "KEEP"
+      }
+    ],
+    "reject": [
+      {
+        "name": "Количество таблеток",
+        "value": "12",
+        "evidence": "ocr",
+        "search_relevance": "medium",
+        "filter_candidate": true,
+        "why_helps_search": "Уточняет количество единиц товара в упаковке, что важно для планирования курса лечения.",
+        "decision": "REJECT",
+        "reason": "feed_or_name_collision"
+      }
+    ]
+  },
+  {
+    "id": "1067323",
+    "name": "ПРОМОМЕД Амклав Вет Антибактериальный препарат для кошек и собак 250 мг, 10 таблеток (по рецепту)",
+    "url": "https://4lapy.ru/product/promomed-amklav-vet-antibakterialnyj-preparat-dlya-koshek-i-sobak-250-mg-10-tabletok-po-retseptu-97297-1067323",
+    "price": "643",
+    "categoryId": "617",
+    "category": "Противомикробные средства",
+    "category_path": "Ветаптека / Ветаптека для собак / Противомикробные средства",
+    "params": {
+      "Артикул": "1067323",
+      "Объем": "0.000",
+      "В упаковке": "56.0",
+      "Возраст питомца": "Все возрасты",
+      "Размер питомца": "Все размеры",
+      "Страна-производитель": "Россия",
+      "Требуется лицензия": "true",
+      "Вес / фасовка, кг": "0.042",
+      "Для кого": "Кошки и собаки",
+      "reviews": "0",
+      "Длина": "7.30",
+      "Ширина": "4.70",
+      "Высота": "4.70",
+      "Форма выпуска": "Таблетки",
+      "is_stm": "false",
+      "Фармакологическая группа": "Противомикробные средства",
+      "Доступность": "самовывоз",
+      "Новинка": "false"
+    },
+    "pictures": [
+      "https://storage.yandexcloud.net/pim-core/422605.jpeg",
+      "https://storage.yandexcloud.net/pim-core/400675.jpeg",
+      "https://storage.yandexcloud.net/pim-core/400141.jpeg"
+    ],
+    "pharm_group": "Противомикробные средства",
+    "form": "Таблетки",
+    "for_whom": "Кошки и собаки",
+    "focus": false,
+    "bucket": "antibiotics",
+    "vision": {
+      "image_kind": "packshot",
+      "ocr_labels": [
+        "ПРОМОМЕД",
+        "Амклав",
+        "250 мг",
+        "ВЕТ",
+        "ЧЕСТНЫЙ ЗНАК",
+        "10 таблеток, для приема внутрь",
+        "АМОКСИЦИЛЛИН + КЛАВУЛАНОВАЯ КИСЛОТА",
+        "ДЛЯ ВЕТЕРИНАРНОГО ПРИМЕНЕНИЯ"
+      ],
+      "skip_reason": null,
+      "new_attributes": [
+        {
+          "name": "Действующее вещество",
+          "value": "Амоксициллин + Клавулановая кислота",
+          "evidence": "ocr",
+          "search_relevance": "high",
+          "filter_candidate": true,
+          "why_helps_search": "Позволяет найти товар по действующему веществу, что важно для ветеринарных препаратов."
+        },
+        {
+          "name": "Способ применения",
+          "value": "Внутрь",
+          "evidence": "ocr",
+          "search_relevance": "medium",
+          "filter_candidate": true,
+          "why_helps_search": "Уточняет способ применения, что может быть важно для покупателя."
+        }
+      ],
+      "already_in_feed_visible": [
+        "ПРОМОМЕД",
+        "Амклав",
+        "250 мг",
+        "10 таблеток",
+        "ВЕТ",
+        "Для ветеринарного применения"
+      ],
+      "not_useful_from_image": [
+        "ЧЕСТНЫЙ ЗНАК"
+      ],
+      "_usage": {
+        "prompt_tokens": 2215,
+        "completion_tokens": 417,
+        "total_tokens": 2632,
+        "cost": 0.001707,
+        "is_byok": false,
+        "prompt_tokens_details": {
+          "cached_tokens": 0,
+          "cache_write_tokens": 0,
+          "audio_tokens": 0,
+          "video_tokens": 0
+        },
+        "cost_details": {
+          "upstream_inference_cost": 0.001707,
+          "upstream_inference_prompt_cost": 0.0006645,
+          "upstream_inference_completions_cost": 0.0010425
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 0,
+          "image_tokens": 0,
+          "audio_tokens": 0
+        }
+      }
+    },
+    "keep": [
+      {
+        "name": "Действующее вещество",
+        "value": "Амоксициллин + Клавулановая кислота",
+        "evidence": "ocr",
+        "search_relevance": "high",
+        "filter_candidate": true,
+        "why_helps_search": "Позволяет найти товар по действующему веществу, что важно для ветеринарных препаратов.",
+        "decision": "KEEP"
+      },
+      {
+        "name": "Способ применения",
+        "value": "Внутрь",
+        "evidence": "ocr",
+        "search_relevance": "medium",
+        "filter_candidate": true,
+        "why_helps_search": "Уточняет способ применения, что может быть важно для покупателя.",
+        "decision": "KEEP"
+      }
+    ],
+    "reject": []
+  },
+  {
+    "id": "1009816",
+    "name": "KRKA Энроксил Таблетки при заболеваниях бактериальной этиологии у кошек и собак, 50 мг, 10 таблеток (по рецепту)",
+    "url": "https://4lapy.ru/product/krka-enroksil-tabletki-pri-zabolevaniyah-bakterialnoj-etiologii-u-koshek-i-sobak-50-mg-10-tabletok-po-retseptu-10665-1009816",
+    "price": "895",
+    "categoryId": "617",
+    "category": "Противомикробные средства",
+    "category_path": "Ветаптека / Ветаптека для собак / Противомикробные средства",
+    "params": {
+      "Артикул": "1009816",
+      "В упаковке": "8.0",
+      "Страна-производитель": "Словения",
+      "Требуется лицензия": "true",
+      "Вес / фасовка, кг": "0.014",
+      "Для кого": "Собаки",
+      "rating": "5.00",
+      "reviews": "34",
+      "Длина": "14.20",
+      "Ширина": "6.00",
+      "Высота": "1.70",
+      "Форма выпуска": "Таблетки",
+      "is_stm": "false",
+      "Фармакологическая группа": "Противомикробные средства",
+      "Доступность": "самовывоз",
+      "Новинка": "false"
+    },
+    "pictures": [
+      "https://storage.yandexcloud.net/pim-core/414730.jpeg",
+      "https://storage.yandexcloud.net/pim-core/368831.jpeg"
+    ],
+    "pharm_group": "Противомикробные средства",
+    "form": "Таблетки",
+    "for_whom": "Собаки",
+    "focus": false,
+    "bucket": "antibiotics",
+    "vision": {
+      "image_kind": "packshot",
+      "ocr_labels": [
+        "10 таблеток",
+        "Энроксил",
+        "50 мг таблетки",
+        "со вкусом мяса",
+        "Энрофлоксацин",
+        "для собак",
+        "для ветеринарного",
+        "применения",
+        "KRKA",
+        "Каждая таблетка содержит: энрофлоксацин - 50 мг.",
+        "Применять согласно приложенной инструкции."
+      ],
+      "skip_reason": null,
+      "new_attributes": [
+        {
+          "name": "Действующее вещество",
+          "value": "Энрофлоксацин",
+          "evidence": "ocr",
+          "search_relevance": "high",
+          "filter_candidate": true,
+          "why_helps_search": "Пользователи могут искать препараты по действующему веществу."
+        },
+        {
+          "name": "Вкус",
+          "value": "Мясо",
+          "evidence": "ocr",
+          "search_relevance": "medium",
+          "filter_candidate": true,
+          "why_helps_search": "Вкусовая маскировка важна для удобства применения, особенно для привередливых животных."
+        }
+      ],
+      "already_in_feed_visible": [
+        "10 таблеток",
+        "Энроксил",
+        "50 мг",
+        "таблетки",
+        "для собак",
+        "KRKA"
+      ],
+      "not_useful_from_image": [
+        "для ветеринарного применения",
+        "Каждая таблетка содержит: энрофлоксацин - 50 мг.",
+        "Применять согласно приложенной инструкции."
+      ],
+      "_usage": {
+        "prompt_tokens": 2196,
+        "completion_tokens": 440,
+        "total_tokens": 2636,
+        "cost": 0.0017588,
+        "is_byok": false,
+        "prompt_tokens_details": {
+          "cached_tokens": 0,
+          "cache_write_tokens": 0,
+          "audio_tokens": 0,
+          "video_tokens": 0
+        },
+        "cost_details": {
+          "upstream_inference_cost": 0.0017588,
+          "upstream_inference_prompt_cost": 0.0006588,
+          "upstream_inference_completions_cost": 0.0011
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 0,
+          "image_tokens": 0,
+          "audio_tokens": 0
+        }
+      }
+    },
+    "keep": [
+      {
+        "name": "Действующее вещество",
+        "value": "Энрофлоксацин",
+        "evidence": "ocr",
+        "search_relevance": "high",
+        "filter_candidate": true,
+        "why_helps_search": "Пользователи могут искать препараты по действующему веществу.",
+        "decision": "KEEP"
+      },
+      {
+        "name": "Вкус",
+        "value": "Мясо",
+        "evidence": "ocr",
+        "search_relevance": "medium",
+        "filter_candidate": true,
+        "why_helps_search": "Вкусовая маскировка важна для удобства применения, особенно для привередливых животных.",
+        "decision": "KEEP"
+      }
+    ],
+    "reject": []
+  }
+]

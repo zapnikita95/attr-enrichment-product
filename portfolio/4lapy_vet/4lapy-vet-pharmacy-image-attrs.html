@@ -1,0 +1,477 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Четыре Лапы — атрибуты с картинок: ветаптека</title>
+<style>
+:root {
+  --bg:#f4f7f5; --ink:#14201a; --muted:#5a6b62; --line:#d5e0d9;
+  --card:#fff; --accent:#1b5e3b; --warn:#8a4b12; --plus:#0d6b4c;
+}
+* { box-sizing:border-box; }
+body { margin:0; font:16px/1.5 "Segoe UI", system-ui, sans-serif; color:var(--ink); background:var(--bg); }
+.wrap { max-width:1100px; margin:0 auto; padding:32px 20px 80px; }
+h1 { font-size:28px; font-weight:650; letter-spacing:-0.02em; margin:0 0 8px; }
+h2 { font-size:20px; margin:40px 0 12px; color:var(--accent); }
+h3 { font-size:16px; margin:20px 0 8px; }
+.lead { color:var(--muted); font-size:17px; max-width:760px; }
+.meta { margin:12px 0 24px; color:var(--muted); font-size:13px; }
+.grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(170px,1fr)); gap:12px; margin:18px 0; }
+.stat { background:var(--card); border:1px solid var(--line); padding:14px; }
+.stat b { display:block; font-size:22px; font-weight:650; margin-bottom:4px; }
+.stat span { color:var(--muted); font-size:12px; }
+.callout { background:var(--card); border-left:3px solid var(--accent); padding:14px 16px; margin:16px 0; }
+.callout.warn { border-left-color:var(--warn); }
+.callout.plus { border-left-color:var(--plus); }
+table { width:100%; border-collapse:collapse; background:var(--card); font-size:14px; }
+th, td { border:1px solid var(--line); padding:8px 10px; text-align:left; vertical-align:top; }
+th { background:#e7f0ea; font-weight:600; }
+.tag { display:inline-block; background:#e7f0ea; padding:2px 8px; font-size:12px; margin-right:6px; }
+.case { display:grid; grid-template-columns:48px 200px 1fr; gap:14px; background:var(--card); border:1px solid var(--line); padding:14px; margin:14px 0; }
+.case-num { font-size:22px; font-weight:700; color:var(--accent); }
+.case-img img { width:200px; height:200px; object-fit:contain; background:#f0f4f1; display:block; }
+.case-meta { font-size:12px; color:var(--muted); }
+.case-cols { display:grid; grid-template-columns:1fr 1fr; gap:12px; }
+.case-cols h4 { margin:0 0 6px; font-size:12px; color:var(--muted); }
+table.mini { font-size:12px; }
+footer { margin-top:48px; color:var(--muted); font-size:12px; }
+@media (max-width:800px) {
+  .case { grid-template-columns:1fr; }
+  .case-cols { grid-template-columns:1fr; }
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="tag">Четыре Лапы · ветаптека</div>
+  <div class="tag">атрибуты с картинок</div>
+  <div class="tag">оценка ₽</div>
+  <h1>Ветаптека: что видно на упаковке и чего нет в фиде</h1>
+  <p class="lead">
+    Исследование разрыва между поиском покупателя («от блох», «от глистов», действующее вещество, срок защиты)
+    и тем, что сейчас в карточке YML. Фокус — <strong>препараты</strong>: антигельминтики и средства от эктопаразитов.
+    Deep-dive по трём SKU + расширенная выборка упаковок.
+  </p>
+  <p class="meta">
+    Каталог ~8,166 offer · ветаптека/препараты в выборке ~1,643 ·
+    ClickHouse поиск 90 дней · vision по фото упаковок · коллизии с name/params отфильтрованы.
+  </p>
+
+  <div class="grid">
+    <div class="stat"><b>1,643</b><span>товаров ветаптеки/препаратов в разборе</span></div>
+    <div class="stat"><b>58,742</b><span>вет/паразит-поисков за 90д</span></div>
+    <div class="stat"><b>114,818 ₽</b><span>стрим A · база Δ/мес (запросы)</span></div>
+    <div class="stat"><b>+23,672…125,675 ₽</b><span>стрим B · доп. потенциал / мес</span></div>
+    <div class="stat"><b>3.018%</b><span>search CVR · AOV ~2,130 ₽</span></div>
+    <div class="stat"><b>18</b><span>упаковок прогнано vision</span></div>
+  </div>
+
+  <div class="callout">
+    <strong>Вывод для партнёра.</strong> В фиде уже сильные «карточные» поля:
+    для кого, форма выпуска, фармгруппа, возраст/размер. Слабое место — то, что покупатель
+    <em>читает с коробки</em> и вбивает в поиск: <strong>действующее вещество</strong>,
+    <strong>спектр</strong> (блохи / клещи / глисты / комары), <strong>срок защиты</strong>,
+    <strong>число пипеток</strong>, уточнения по возрасту/весу с этикетки.
+    Это как раз зона атрибутов с картинок + OCR.
+  </div>
+  <div class="callout plus">
+    <strong>Два денежных слоя.</strong>
+    A — точнее матчим уже идущие вет-запросы (база ~<strong>114,818 ₽/мес</strong>).
+    B — доп. потенциал: товары появляются в выдаче по новым attr
+    (+<strong>23,672…125,675 ₽/мес</strong>).
+    B не замена A; не складывать без оговорки о пересечении.
+  </div>
+
+  <h2>1. Что уже есть в фиде (ветаптека)</h2>
+  <div class="grid">
+    <div>
+      <h3>Фармгруппы (выборка)</h3>
+      <table><thead><tr><th>Группа</th><th>Offers</th></tr></thead><tbody><tr><td>—</td><td>694</td></tr><tr><td>Препараты от клещей и паразитов</td><td>187</td></tr><tr><td>Витаминные и минеральные препараты</td><td>99</td></tr><tr><td>Антигельминтики</td><td>84</td></tr><tr><td>Перевязочные материалы</td><td>82</td></tr><tr><td>Противомикробные средства</td><td>50</td></tr><tr><td>Для применения в дерматологии</td><td>43</td></tr><tr><td>Для лечения и профилактики болезней МПС</td><td>33</td></tr><tr><td>Кормовые добавки</td><td>33</td></tr><tr><td>Ушные капли и лосьоны</td><td>29</td></tr><tr><td>Гормональные препараты</td><td>28</td></tr><tr><td>Успокоительные средства</td><td>27</td></tr></tbody></table>
+    </div>
+    <div>
+      <h3>Формы выпуска</h3>
+      <table><thead><tr><th>Форма</th><th>Offers</th></tr></thead><tbody><tr><td>—</td><td>717</td></tr><tr><td>Таблетки</td><td>317</td></tr><tr><td>Капли на холку</td><td>128</td></tr><tr><td>Раствор</td><td>78</td></tr><tr><td>Суспензия</td><td>60</td></tr><tr><td>Спрей и пена</td><td>49</td></tr><tr><td>Порошки</td><td>41</td></tr><tr><td>Капли</td><td>40</td></tr><tr><td>Ошейник</td><td>30</td></tr><tr><td>Паста</td><td>30</td></tr></tbody></table>
+    </div>
+  </div>
+  <table>
+    <thead><tr><th>Не достаём с картинки (уже в карточке / бесполезно)</th><th>Почему</th></tr></thead>
+    <tbody>
+      <tr><td>Для кого / возраст / размер питомца</td><td>структурные params</td></tr>
+      <tr><td>Форма выпуска, фармгруппа</td><td>уже в фиде</td></tr>
+      <tr><td>Бренд / артикул / страна</td><td>в name или params</td></tr>
+      <tr><td>Цена, акция, габариты упаковки</td><td>не search-facet с фото</td></tr>
+      <tr><td>Повтор названия («капли на холку» если уже в форме)</td><td>коллизия с фидом</td></tr>
+    </tbody>
+  </table>
+
+  <h2>2. Что нужно доставать с картинок</h2>
+  <table>
+    <thead><tr><th>Атрибут</th><th>Эффект</th><th>Почему gap</th></tr></thead>
+    <tbody>
+      <tr><td><strong>Действующее вещество (МНН)</strong></td><td>высокий</td><td>часто только на упаковке; в params нет</td></tr>
+      <tr><td><strong>Спектр: блохи / клещи / глисты / комары</strong></td><td>высокий</td><td>фармгруппа грубая; поиск формулирует конкретнее</td></tr>
+      <tr><td><strong>Срок защиты</strong></td><td>высокий</td><td>OCR «4 недели / 1 месяц»; в фиде нет</td></tr>
+      <tr><td><strong>Число доз / пипеток в упаковке</strong></td><td>средний–высокий</td><td>в name не всегда; на блистере видно</td></tr>
+      <tr><td>Порог возраста/веса с этикетки</td><td>средний</td><td>уточняет params «все возрасты»</td></tr>
+      <tr><td>Способ применения (деталь)</td><td>средний</td><td>если форма общая</td></tr>
+      <tr><td>Вкус суспензии / маскировка</td><td>поддержка</td><td>реже ищут, но OCR лёгкий</td></tr>
+    </tbody>
+  </table>
+
+  <h3>Ранжирование по факту vision-прогона</h3>
+  <table>
+    <thead><tr><th>Атрибут</th><th>Эффект</th><th>SKU с KEEP</th><th>score</th><th>Примеры значений</th></tr></thead>
+    <tbody><tr><td><strong>Действующее вещество</strong></td><td>high</td><td>4</td><td>45</td><td>моксидектин, празиквантел; Имидаклоприд; пирантела памоат, празиквантел</td></tr><tr><td><strong>Спектр действия</strong></td><td>high</td><td>4</td><td>12</td><td>от гельминтов (Dirofilaria, Toxocara, Ancylostoma, Uncinaria, Echinococcus, Dipylidium, Trichuris, Taenia), от блох (Ctenocephalides), от клещей (Otodectes, Demodex, Sarcoptes); блохи, личинки блох, власоеды, иксодовые клещи, комары, москиты, кровососущие мухи; антибактериальный</td></tr><tr><td><strong>Назначение</strong></td><td>high</td><td>4</td><td>12</td><td>Лечение и профилактика нематодозов и цестодозов; от кокцидиоза, от кишечных нематодозов; от раздражения и зуда</td></tr><tr><td><strong>Особенности</strong></td><td>medium</td><td>3</td><td>7</td><td>Водостойкий; Репеллентный эффект; увлажняющий</td></tr><tr><td><strong>Способ применения</strong></td><td>medium</td><td>3</td><td>7</td><td>Внутривенно, Внутримышечно, Подкожно; внутрь; Внутрь</td></tr><tr><td><strong>Особенность</strong></td><td>medium</td><td>3</td><td>6</td><td>водостойкий; с удобным дозатором; даун-эффект в течение 2 минут</td></tr><tr><td><strong>Вкус</strong></td><td>medium</td><td>3</td><td>6</td><td>Курица; мясо; Мясо</td></tr><tr><td><strong>Показания</strong></td><td>medium</td><td>2</td><td>6</td><td>от зуда; от воспаления</td></tr><tr><td><strong>Серия</strong></td><td>medium</td><td>2</td><td>4</td><td>Spot-on; 3D</td></tr><tr><td><strong>Производитель</strong></td><td>support</td><td>1</td><td>3</td><td>Neoterica</td></tr><tr><td><strong>Длительность защиты</strong></td><td>support</td><td>1</td><td>3</td><td>4 недели</td></tr><tr><td><strong>Декор</strong></td><td>support</td><td>1</td><td>3</td><td>Заклепки</td></tr><tr><td><strong>Вид животного</strong></td><td>support</td><td>1</td><td>3</td><td>Крупный рогатый скот, Лошади, Свиньи, Мелкий рогатый скот, Собаки, Кошки</td></tr><tr><td><strong>Разработано в</strong></td><td>support</td><td>1</td><td>2</td><td>Германия</td></tr><tr><td><strong>Дозировка</strong></td><td>support</td><td>1</td><td>2</td><td>60 мг</td></tr></tbody>
+  </table>
+
+  <h2>3. Поиск: вет/паразит спрос (90 дней)</h2>
+  <p>Всего поисков: <strong>949,958</strong>.
+  Вет/паразит-лексика: <strong>58,742</strong> поисков
+  (2235 запросов).</p>
+  <table>
+    <thead><tr><th>Семейство</th><th>Поисков</th><th>Запросов</th><th>Примеры</th></tr></thead>
+    <tbody><tr><td>Блохи / клещи / эктопаразиты</td><td>40,289</td><td>1396</td><td>бравекто, ошейник для собак, от клещей</td></tr><tr><td>Глисты / антигельминтики</td><td>11,799</td><td>422</td><td>от глистов для кошек, дронтал, от глистов</td></tr><tr><td>Форма: капли / спот-он</td><td>7,616</td><td>346</td><td>капли от клещей для собак, инспектор капли для собак, капли от клещей</td></tr><tr><td>Форма: суспензия / таблетки</td><td>6,827</td><td>317</td><td>таблетки от клещей для собак, таблетки от глистов для собак, неболин вет суспензия</td></tr><tr><td>Витамины / уход</td><td>6,684</td><td>367</td><td>витамины для собак, витамины для кошек, спрей от клещей</td></tr></tbody>
+  </table>
+  <h3>Топ запросов</h3>
+  <table>
+    <thead><tr><th>Запрос</th><th>Поисков/90д</th></tr></thead>
+    <tbody><tr><td>бравекто</td><td>4,384</td></tr><tr><td>ошейник для собак</td><td>1,715</td></tr><tr><td>от клещей</td><td>1,373</td></tr><tr><td>ошейник от клещей</td><td>1,343</td></tr><tr><td>инспектор</td><td>1,202</td></tr><tr><td>от глистов для кошек</td><td>1,068</td></tr><tr><td>ошейник</td><td>1,036</td></tr><tr><td>дронтал</td><td>1,002</td></tr><tr><td>таблетки от клещей для собак</td><td>896</td></tr><tr><td>капли от клещей для собак</td><td>846</td></tr><tr><td>витамины для собак</td><td>744</td></tr><tr><td>от глистов</td><td>708</td></tr><tr><td>ошейник от клещей для кошек</td><td>701</td></tr><tr><td>витамины для кошек</td><td>667</td></tr><tr><td>ошейник для собак от клещей</td><td>602</td></tr><tr><td>от клещей для собак</td><td>571</td></tr><tr><td>бравекто 20 40</td><td>546</td></tr><tr><td>фронтлайн</td><td>544</td></tr><tr><td>дронтал для собак</td><td>544</td></tr><tr><td>таблетки от глистов для собак</td><td>534</td></tr></tbody>
+  </table>
+
+  <h2>4. Наглядные кейсы: фото → атрибуты</h2>
+  <p class="lead" style="font-size:15px">
+    Слева — что уже в YML. Справа — KEEP с картинки после фильтра коллизий с названием и params.
+    Первые три — запрошенные focus SKU.
+  </p>
+  
+<article class="case">
+  <div class="case-num">1</div>
+  <a class="case-img" href="https://4lapy.ru/product/gelmintal-spot-on-protivoparazitarnoe-sredstvo-dlya-koshek-ot-4-do-10-kg-1-pipetka-10131-1008050" target="_blank" rel="noopener">
+    <img src="https://storage.yandexcloud.net/pim-core/419468.jpeg" alt="Гельминтал Спот-он Противопаразитарное средство для кошек от 4 до 10 кг, 1 пипетка" loading="lazy"/>
+  </a>
+  <div class="case-body">
+    <div class="case-meta">FOCUS · id 1008050 · Капли · 625 ₽</div>
+    <h3>Гельминтал Спот-он Противопаразитарное средство для кошек от 4 до 10 кг, 1 пипетка</h3>
+    <p class="case-line">packshot · OCR: гельминтал к, моксидектин празиквантел, для кошек массой, 4-10 кг, SPOT-ON, neoterica</p>
+    <div class="case-cols">
+      <div>
+        <h4>Уже в фиде / названии</h4>
+        <table class="mini"><tbody><tr><td>Объем</td><td>0.005</td></tr><tr><td>В упаковке</td><td>16.0</td></tr><tr><td>Страна-производитель</td><td>Россия</td></tr><tr><td>Вес / фасовка, кг</td><td>0.022</td></tr><tr><td>Для кого</td><td>Кошки</td></tr><tr><td>Форма выпуска</td><td>Капли на холку</td></tr><tr><td>Фармакологическая группа</td><td>Антигельминтики</td></tr></tbody></table>
+      </div>
+      <div>
+        <h4>С картинки (KEEP) · reject=1</h4>
+        <table class="mini">
+          <thead><tr><th>Атрибут</th><th>Значение</th><th>Доказ.</th><th>Релев.</th><th>Зачем поиску</th></tr></thead>
+          <tbody><tr><td><strong>Действующее вещество</strong></td><td>моксидектин, празиквантел</td><td>ocr</td><td>high</td><td>Пользователи ищут препараты по действующему веществу.</td></tr><tr><td><strong>Спектр действия</strong></td><td>от гельминтов (Dirofilaria, Toxocara, Ancylostoma, Uncinaria, Echinococcus, Dipylidium, Trichuris, Taenia), от блох (Ctenocephalides), от клещей (Otodectes, Demodex, Sarcoptes)</td><td>ocr</td><td>high</td><td>Детализирует спектр действия, что важно для пользователей, ищущих защиту от конкретных паразитов.</td></tr><tr><td><strong>Производитель</strong></td><td>Neoterica</td><td>ocr</td><td>high</td><td>Neoterica - бренд, указанный на упаковке, но не в названии или параметрах.</td></tr><tr><td><strong>Разработано в</strong></td><td>Германия</td><td>ocr</td><td>medium</td><td>Указывает на страну разработки, что может быть важно для некоторых покупателей.</td></tr></tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</article>
+<article class="case">
+  <div class="case-num">2</div>
+  <a class="case-img" href="https://4lapy.ru/product/elanco-advantejdzh-kapli-na-holku-ot-bloh-dlya-koshek-i-kotyat-do-4-kg-1-pipetka-po-0-4-ml-29195-1029780" target="_blank" rel="noopener">
+    <img src="https://storage.yandexcloud.net/pim-core/419433.jpeg" alt="Elanco Адвантейдж Капли на холку от блох для кошек и котят до 4 кг, 1 пипетка по 0,4 мл" loading="lazy"/>
+  </a>
+  <div class="case-body">
+    <div class="case-meta">FOCUS · id 1029780 · Капли · 547 ₽</div>
+    <h3>Elanco Адвантейдж Капли на холку от блох для кошек и котят до 4 кг, 1 пипетка по 0,4 мл</h3>
+    <p class="case-line">packshot · OCR: от блох, адвантейдж, для котят и кошек до 4 кг, ИМИДАКЛОПРИД, РАСТВОР ДЛЯ НАРУЖНОГО ПРИМЕНЕНИЯ (SPOT-ON), Elanco</p>
+    <div class="case-cols">
+      <div>
+        <h4>Уже в фиде / названии</h4>
+        <table class="mini"><tbody><tr><td>Объем</td><td>0.000</td></tr><tr><td>Возраст питомца</td><td>Все возрасты</td></tr><tr><td>Размер питомца</td><td>Мелкий и средний</td></tr><tr><td>Страна-производитель</td><td>Германия</td></tr><tr><td>Вес / фасовка, кг</td><td>0.019</td></tr><tr><td>Для кого</td><td>Кошки</td></tr><tr><td>Форма выпуска</td><td>Капли на холку</td></tr><tr><td>Фармакологическая группа</td><td>Препараты от клещей и паразитов</td></tr></tbody></table>
+      </div>
+      <div>
+        <h4>С картинки (KEEP) · reject=1</h4>
+        <table class="mini">
+          <thead><tr><th>Атрибут</th><th>Значение</th><th>Доказ.</th><th>Релев.</th><th>Зачем поиску</th></tr></thead>
+          <tbody><tr><td><strong>Действующее вещество</strong></td><td>Имидаклоприд</td><td>ocr</td><td>high</td><td>Пользователи ищут препараты по действующему веществу.</td></tr><tr><td><strong>Длительность защиты</strong></td><td>4 недели</td><td>ocr</td><td>high</td><td>Важный параметр для выбора средства защиты от паразитов.</td></tr><tr><td><strong>Особенность</strong></td><td>водостойкий</td><td>ocr</td><td>medium</td><td>Пользователи могут искать водостойкие средства.</td></tr><tr><td><strong>Серия</strong></td><td>Spot-on</td><td>ocr</td><td>medium</td><td>Уточняет линейку продукта.</td></tr></tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</article>
+<article class="case">
+  <div class="case-num">3</div>
+  <a class="case-img" href="https://4lapy.ru/product/astrafarm-antiparazitarnaya-suspenziya-dlya-koshek-i-kotyat-15-ml-10145-1043477" target="_blank" rel="noopener">
+    <img src="https://storage.yandexcloud.net/pim-core/419395.jpeg" alt="Астрафарм Празител Суспензия от гельминтов для кошек и котят, 15 мл" loading="lazy"/>
+  </a>
+  <div class="case-body">
+    <div class="case-meta">FOCUS · id 1043477 · Таблетки · 445 ₽</div>
+    <h3>Астрафарм Празител Суспензия от гельминтов для кошек и котят, 15 мл</h3>
+    <p class="case-line">packshot · OCR: ЧЕСТНЫЙ ЗНАК, ПРАЗИТЕЛ, СУСПЕНЗИЯ ДЛЯ КОШЕК И КОТЯТ, (пирантела памоат, празиквантел), препарат против всех видов гельминтов, 15 мл</p>
+    <div class="case-cols">
+      <div>
+        <h4>Уже в фиде / названии</h4>
+        <table class="mini"><tbody><tr><td>Объем</td><td>0.000</td></tr><tr><td>Возраст питомца</td><td>Все возрасты</td></tr><tr><td>Размер питомца</td><td>Все размеры</td></tr><tr><td>Страна-производитель</td><td>Россия</td></tr><tr><td>Вес / фасовка, кг</td><td>0.079</td></tr><tr><td>Для кого</td><td>Кошки</td></tr><tr><td>Форма выпуска</td><td>Суспензия</td></tr><tr><td>Фармакологическая группа</td><td>Антигельминтики</td></tr><tr><td>Акция</td><td>Скидка 25% на комплекс «Антиклещ»</td></tr></tbody></table>
+      </div>
+      <div>
+        <h4>С картинки (KEEP) · reject=0</h4>
+        <table class="mini">
+          <thead><tr><th>Атрибут</th><th>Значение</th><th>Доказ.</th><th>Релев.</th><th>Зачем поиску</th></tr></thead>
+          <tbody><tr><td><strong>Действующее вещество</strong></td><td>пирантела памоат, празиквантел</td><td>ocr</td><td>high</td><td>Пользователи могут искать препараты по действующему веществу.</td></tr><tr><td><strong>Особенность</strong></td><td>с удобным дозатором</td><td>ocr</td><td>medium</td><td>Указывает на удобство использования, что может быть важно для некоторых покупателей.</td></tr></tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</article>
+<article class="case">
+  <div class="case-num">4</div>
+  <a class="case-img" href="https://4lapy.ru/product/rolf-club-ushnye-kapli-ot-kleshchej-s-obezbolivayushchim-effektom-dlya-koshek-i-sobak-10-ml-po-retseptu-89943-1063196" target="_blank" rel="noopener">
+    <img src="https://storage.yandexcloud.net/pim-core/422651.jpeg" alt="Rolf Club Ушные капли от клещей с обезболивающим эффектом для кошек и собак, 10 мл (по рецепту)" loading="lazy"/>
+  </a>
+  <div class="case-body">
+    <div class="case-meta">ecto_parasite · id 1063196 · Капли и лосьоны для ушей · 577 ₽</div>
+    <h3>Rolf Club Ушные капли от клещей с обезболивающим эффектом для кошек и собак, 10 мл (по рецепту)</h3>
+    <p class="case-line">packshot · OCR: ЧЕСТНЫЙ, 3HAK, Комплексное действие, Rolf 3D, Club, Этофенпрокс - Энрофлоксацин • Бензокаин</p>
+    <div class="case-cols">
+      <div>
+        <h4>Уже в фиде / названии</h4>
+        <table class="mini"><tbody><tr><td>Объем</td><td>0.000</td></tr><tr><td>Размер питомца</td><td>Все размеры</td></tr><tr><td>Страна-производитель</td><td>Россия</td></tr><tr><td>Вес / фасовка, кг</td><td>0.070</td></tr><tr><td>Для кого</td><td>Кошки и собаки</td></tr><tr><td>Форма выпуска</td><td>Капли</td></tr><tr><td>Фармакологическая группа</td><td>Ушные капли и лосьоны</td></tr><tr><td>Доступность</td><td>самовывоз</td></tr></tbody></table>
+      </div>
+      <div>
+        <h4>С картинки (KEEP) · reject=4</h4>
+        <table class="mini">
+          <thead><tr><th>Атрибут</th><th>Значение</th><th>Доказ.</th><th>Релев.</th><th>Зачем поиску</th></tr></thead>
+          <tbody><tr><td><strong>Действующее вещество</strong></td><td>Этофенпрокс</td><td>ocr</td><td>high</td><td>Пользователи ищут товары по действующему веществу.</td></tr><tr><td><strong>Действующее вещество</strong></td><td>Энрофлоксацин</td><td>ocr</td><td>high</td><td>Пользователи ищут товары по действующему веществу.</td></tr><tr><td><strong>Действующее вещество</strong></td><td>Бензокаин</td><td>ocr</td><td>high</td><td>Пользователи ищут товары по действующему веществу.</td></tr><tr><td><strong>Спектр действия</strong></td><td>антибактериальный</td><td>ocr</td><td>high</td><td>Уточняет спектр действия, пользователи ищут средства с антибактериальным эффектом.</td></tr><tr><td><strong>Показания</strong></td><td>от зуда</td><td>ocr</td><td>high</td><td>Пользователи ищут средства от зуда.</td></tr><tr><td><strong>Показания</strong></td><td>от воспаления</td><td>ocr</td><td>high</td><td>Пользователи ищут средства от воспаления.</td></tr><tr><td><strong>Линейка</strong></td><td>3D</td><td>ocr</td><td>medium</td><td>Пользователи могут искать товары по линейке бренда.</td></tr></tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</article>
+<article class="case">
+  <div class="case-num">5</div>
+  <a class="case-img" href="https://4lapy.ru/product/rolf-club-kapli-na-holku-dlya-sobak-vesom-ot-4-do-10-kg-ot-bloh-i-kleshchej-3-pipetki-29359-1056247" target="_blank" rel="noopener">
+    <img src="https://storage.yandexcloud.net/pim-core/424932.jpeg" alt="Rolf Club Капли на холку для собак весом от 4 до 10 кг от блох и клещей, 3 пипетки" loading="lazy"/>
+  </a>
+  <div class="case-body">
+    <div class="case-meta">ecto_parasite · id 1056247 · Капли · 1555 ₽</div>
+    <h3>Rolf Club Капли на холку для собак весом от 4 до 10 кг от блох и клещей, 3 пипетки</h3>
+    <p class="case-line">packshot · OCR: Большая упаковка-выгодная цена!, Rolf 3D Club, Фипронил, Д-цифенотрин, Пирипроксифен, для собак 4-10 кг</p>
+    <div class="case-cols">
+      <div>
+        <h4>Уже в фиде / названии</h4>
+        <table class="mini"><tbody><tr><td>Объем</td><td>0.000</td></tr><tr><td>Возраст питомца</td><td>Все возрасты</td></tr><tr><td>Размер питомца</td><td>Средний и крупный</td></tr><tr><td>Страна-производитель</td><td>Россия</td></tr><tr><td>Вес / фасовка, кг</td><td>0.028</td></tr><tr><td>Для кого</td><td>Собаки</td></tr><tr><td>Форма выпуска</td><td>Капли на холку</td></tr><tr><td>Фармакологическая группа</td><td>Препараты от клещей и паразитов</td></tr></tbody></table>
+      </div>
+      <div>
+        <h4>С картинки (KEEP) · reject=3</h4>
+        <table class="mini">
+          <thead><tr><th>Атрибут</th><th>Значение</th><th>Доказ.</th><th>Релев.</th><th>Зачем поиску</th></tr></thead>
+          <tbody><tr><td><strong>Действующее вещество</strong></td><td>Фипронил, Д-цифенотрин, Пирипроксифен</td><td>ocr</td><td>high</td><td>Пользователи могут искать препараты по действующему веществу.</td></tr><tr><td><strong>Спектр действия</strong></td><td>клещи, блохи, личинки блох, комары</td><td>ocr</td><td>high</td><td>Уточняет спектр действия, добавляя личинки блох и комаров, что важно для пользователей.</td></tr><tr><td><strong>Серия</strong></td><td>3D</td><td>ocr</td><td>medium</td><td>Пользователи могут искать конкретную серию продукта.</td></tr><tr><td><strong>Особенность</strong></td><td>даун-эффект в течение 2 минут</td><td>ocr</td><td>medium</td><td>Показывает скорость действия препарата, что может быть важным критерием выбора.</td></tr><tr><td><strong>Бренд-производитель</strong></td><td>Neoterica</td><td>ocr</td><td>medium</td><td>Указывает на производителя, что может быть важно для пользователей, доверяющих определенным брендам.</td></tr></tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</article>
+<article class="case">
+  <div class="case-num">6</div>
+  <a class="case-img" href="https://4lapy.ru/product/apicenna-gelmimaks-2-tabletki-ot-gelmintov-dlya-shchenkov-i-vzroslyh-sobak-samyh-melkih-porod-ot-0-5-kg-2-tabletki-82939-1058979" target="_blank" rel="noopener">
+    <img src="https://storage.yandexcloud.net/pim-core/414806.jpeg" alt="Apicenna Гельмимакс-2 Таблетки от гельминтов для щенков и взрослых собак самых мелких пород от 0,5 кг, 2 таблетки" loading="lazy"/>
+  </a>
+  <div class="case-body">
+    <div class="case-meta">anthelmintic · id 1058979 · Таблетки · 477 ₽</div>
+    <h3>Apicenna Гельмимакс-2 Таблетки от гельминтов для щенков и взрослых собак самых мелких пород от 0,5 кг, 2 таблетки</h3>
+    <p class="case-line">packshot · OCR: opicenna, гельмимакс-2, ПРАЗИКВАНТЕЛ, МОКСИДЕКТИН, Для лечения, и профилактики, нематодозов</p>
+    <div class="case-cols">
+      <div>
+        <h4>Уже в фиде / названии</h4>
+        <table class="mini"><tbody><tr><td>В упаковке</td><td>60.0</td></tr><tr><td>Возраст питомца</td><td>Все возрасты</td></tr><tr><td>Размер питомца</td><td>Мелкий</td></tr><tr><td>Страна-производитель</td><td>Россия</td></tr><tr><td>Вес / фасовка, кг</td><td>0.011</td></tr><tr><td>Для кого</td><td>Собаки</td></tr><tr><td>Форма выпуска</td><td>Таблетки</td></tr><tr><td>Фармакологическая группа</td><td>Антигельминтики</td></tr></tbody></table>
+      </div>
+      <div>
+        <h4>С картинки (KEEP) · reject=0</h4>
+        <table class="mini">
+          <thead><tr><th>Атрибут</th><th>Значение</th><th>Доказ.</th><th>Релев.</th><th>Зачем поиску</th></tr></thead>
+          <tbody><tr><td><strong>Действующее вещество</strong></td><td>Празиквантел, Моксидектин</td><td>ocr</td><td>high</td><td>Пользователи ищут товары по действующему веществу.</td></tr><tr><td><strong>Назначение</strong></td><td>Лечение и профилактика нематодозов и цестодозов</td><td>ocr</td><td>high</td><td>Уточняет спектр действия препарата, пользователи ищут по конкретным видам гельминтов.</td></tr><tr><td><strong>Вкус</strong></td><td>Курица</td><td>ocr</td><td>medium</td><td>Помогает найти препарат, который питомец будет есть охотнее.</td></tr><tr><td><strong>Дозировка</strong></td><td>60 мг</td><td>ocr</td><td>medium</td><td>Уточняет дозировку одной таблетки.</td></tr></tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</article>
+<article class="case">
+  <div class="case-num">7</div>
+  <a class="case-img" href="https://4lapy.ru/product/elanco-advantiks-kapli-na-holku-dlya-sobak-vesom-do-4-kg-ot-bloh-kleshchej-i-komarov-1-pipetka-0-4-ml-29266-1019973" target="_blank" rel="noopener">
+    <img src="https://storage.yandexcloud.net/pim-core/415109.jpeg" alt="Elanco Адвантикс капли на холку для собак весом до 4 кг от блох, клещей и комаров, 1 пипетка, 0,4 мл" loading="lazy"/>
+  </a>
+  <div class="case-body">
+    <div class="case-meta">ecto_parasite · id 1019973 · Капли · 1119.4 ₽</div>
+    <h3>Elanco Адвантикс капли на холку для собак весом до 4 кг от блох, клещей и комаров, 1 пипетка, 0,4 мл</h3>
+    <p class="case-line">packshot · OCR: адванТИКС®, для щенков и собак до 4 кг, от блох, клещей и комаров, ЧЕСТНЫЙ ЗНАК, Elanco, адвантикс</p>
+    <div class="case-cols">
+      <div>
+        <h4>Уже в фиде / названии</h4>
+        <table class="mini"><tbody><tr><td>Объем</td><td>0.001</td></tr><tr><td>В упаковке</td><td>160.0</td></tr><tr><td>Возраст питомца</td><td>Все возрасты</td></tr><tr><td>Размер питомца</td><td>Мелкий</td></tr><tr><td>Страна-производитель</td><td>Германия</td></tr><tr><td>Вес / фасовка, кг</td><td>0.040</td></tr><tr><td>Для кого</td><td>Собаки</td></tr><tr><td>Форма выпуска</td><td>Капли на холку</td></tr><tr><td>Фармакологическая группа</td><td>Препараты от клещей и паразитов</td></tr></tbody></table>
+      </div>
+      <div>
+        <h4>С картинки (KEEP) · reject=1</h4>
+        <table class="mini">
+          <thead><tr><th>Атрибут</th><th>Значение</th><th>Доказ.</th><th>Релев.</th><th>Зачем поиску</th></tr></thead>
+          <tbody><tr><td><strong>Действующее вещество</strong></td><td>Имидаклоприд, Перметрин</td><td>ocr</td><td>high</td><td>Пользователи часто ищут препараты по действующему веществу.</td></tr><tr><td><strong>Спектр действия</strong></td><td>блохи, личинки блох, власоеды, иксодовые клещи, комары, москиты, кровососущие мухи</td><td>ocr</td><td>high</td><td>Уточняет спектр действия, включая личинки, власоедов, москитов и мух, что важно для пользователей.</td></tr><tr><td><strong>Особенности</strong></td><td>Водостойкий</td><td>ocr</td><td>high</td><td>Важная характеристика для капель на холку, пользователи ищут водостойкие средства.</td></tr><tr><td><strong>Особенности</strong></td><td>Репеллентный эффект</td><td>ocr</td><td>medium</td><td>Указывает на дополнительное свойство препарата - отпугивание паразитов.</td></tr></tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</article>
+<article class="case">
+  <div class="case-num">8</div>
+  <a class="case-img" href="https://4lapy.ru/product/gelmintal-sirop-dlya-shchenkov-i-kotyat-so-vkusom-plombira-55-g-10136-1046379" target="_blank" rel="noopener">
+    <img src="https://storage.yandexcloud.net/pim-core/422696.jpeg" alt="Гельминтал Сироп мини от гельминтов для щенков и котят, 10 мл" loading="lazy"/>
+  </a>
+  <div class="case-body">
+    <div class="case-meta">anthelmintic · id 1046379 · Таблетки · 485 ₽</div>
+    <h3>Гельминтал Сироп мини от гельминтов для щенков и котят, 10 мл</h3>
+    <p class="case-line">packshot · OCR: гельминтал, МИНИ СИРОП, для собак, кошек, щенков и котят, толтразурил моксидектин, neoterica, разработано в Германии</p>
+    <div class="case-cols">
+      <div>
+        <h4>Уже в фиде / названии</h4>
+        <table class="mini"><tbody><tr><td>Объем</td><td>0.000</td></tr><tr><td>Возраст питомца</td><td>Для малышей до 1 года</td></tr><tr><td>Страна-производитель</td><td>Россия</td></tr><tr><td>Вес / фасовка, кг</td><td>0.058</td></tr><tr><td>Для кого</td><td>Кошки и собаки</td></tr><tr><td>Форма выпуска</td><td>Суспензия</td></tr><tr><td>Фармакологическая группа</td><td>Антигельминтики</td></tr></tbody></table>
+      </div>
+      <div>
+        <h4>С картинки (KEEP) · reject=2</h4>
+        <table class="mini">
+          <thead><tr><th>Атрибут</th><th>Значение</th><th>Доказ.</th><th>Релев.</th><th>Зачем поиску</th></tr></thead>
+          <tbody><tr><td><strong>Действующее вещество</strong></td><td>толтразурил, моксидектин</td><td>ocr</td><td>high</td><td>Пользователи часто ищут препараты по действующему веществу.</td></tr><tr><td><strong>Назначение</strong></td><td>от кокцидиоза, от кишечных нематодозов</td><td>ocr</td><td>high</td><td>Уточняет спектр действия препарата, что важно для пользователей, ищущих решение конкретных проблем.</td></tr><tr><td><strong>Виды паразитов</strong></td><td>Isospora, Eimeria, Toxocara, Toxascaris, Ancylostoma, Uncinaria, Trichuris</td><td>ocr</td><td>medium</td><td>Детализирует, от каких именно паразитов помогает препарат, что может быть важно для ветеринаров и владельцев животных.</td></tr></tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</article>
+<article class="case">
+  <div class="case-num">9</div>
+  <a class="case-img" href="https://4lapy.ru/product/petbiology-shampun-dermatologicheskij-s-ovsyankoj-i-allantoinom-dlya-koshek-i-sobak-250-ml-99424-1068811" target="_blank" rel="noopener">
+    <img src="https://storage.yandexcloud.net/pim-core/424971.jpeg" alt="Petbiology Шампунь дерматологический с овсянкой и аллантоином для кошек и собак, 250 мл" loading="lazy"/>
+  </a>
+  <div class="case-body">
+    <div class="case-meta">dermatology · id 1068811 · Шампуни · 515 ₽</div>
+    <h3>Petbiology Шампунь дерматологический с овсянкой и аллантоином для кошек и собак, 250 мл</h3>
+    <p class="case-line">packshot · OCR: ЧЕСТНЫЙ ЗНАК, PETBIOLOGY THERAPY, Для собак и кошек, Дерматологический Шампунь, Коллоидная овсянка, Аллантоин</p>
+    <div class="case-cols">
+      <div>
+        <h4>Уже в фиде / названии</h4>
+        <table class="mini"><tbody><tr><td>Возраст питомца</td><td>Все возрасты</td></tr><tr><td>Назначение</td><td>Шампунь</td></tr><tr><td>Страна-производитель</td><td>Россия</td></tr><tr><td>Вес / фасовка, кг</td><td>0.290</td></tr><tr><td>Для кого</td><td>Кошки и собаки</td></tr></tbody></table>
+      </div>
+      <div>
+        <h4>С картинки (KEEP) · reject=1</h4>
+        <table class="mini">
+          <thead><tr><th>Атрибут</th><th>Значение</th><th>Доказ.</th><th>Релев.</th><th>Зачем поиску</th></tr></thead>
+          <tbody><tr><td><strong>Назначение</strong></td><td>от раздражения и зуда</td><td>ocr</td><td>high</td><td>Помогает найти шампунь для животных с проблемами кожи.</td></tr><tr><td><strong>Особенности</strong></td><td>увлажняющий</td><td>ocr</td><td>medium</td><td>Добавляет информацию об увлажняющих свойствах шампуня.</td></tr><tr><td><strong>Действующее вещество</strong></td><td>коллоидная овсянка</td><td>ocr</td><td>high</td><td>Указывает на ключевой компонент, который может быть важен для покупателей.</td></tr></tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</article>
+<article class="case">
+  <div class="case-num">10</div>
+  <a class="case-img" href="https://4lapy.ru/product/vic-klavuksitsin-antibakterialnyj-preparat-dlya-koshek-i-sobak-500-mg-12-tabl-95801-1066747" target="_blank" rel="noopener">
+    <img src="https://storage.yandexcloud.net/pim-core/418667.jpeg" alt="Вик – здоровье животных Клавуксицин Антибактериальный препарат для кошек и собак 500 мг, 12 табл. (по рецепту)" loading="lazy"/>
+  </a>
+  <div class="case-body">
+    <div class="case-meta">antibiotics · id 1066747 · Противомикробные средства · 1075 ₽</div>
+    <h3>Вик – здоровье животных Клавуксицин Антибактериальный препарат для кошек и собак 500 мг, 12 табл. (по рецепту)</h3>
+    <p class="case-line">packshot · OCR: ЧЕСТНЫЙ ЗНАК, VIC, Клавуксицин, таблетки, амоксициллин, клавулановая кислота</p>
+    <div class="case-cols">
+      <div>
+        <h4>Уже в фиде / названии</h4>
+        <table class="mini"><tbody><tr><td>Объем</td><td>0.000</td></tr><tr><td>Размер питомца</td><td>Все размеры</td></tr><tr><td>Страна-производитель</td><td>Россия</td></tr><tr><td>Вес / фасовка, кг</td><td>0.030</td></tr><tr><td>Для кого</td><td>Кошки и собаки</td></tr><tr><td>Форма выпуска</td><td>Порошки</td></tr><tr><td>Фармакологическая группа</td><td>Противомикробные средства</td></tr><tr><td>Доступность</td><td>самовывоз</td></tr></tbody></table>
+      </div>
+      <div>
+        <h4>С картинки (KEEP) · reject=1</h4>
+        <table class="mini">
+          <thead><tr><th>Атрибут</th><th>Значение</th><th>Доказ.</th><th>Релев.</th><th>Зачем поиску</th></tr></thead>
+          <tbody><tr><td><strong>Действующее вещество</strong></td><td>амоксициллин, клавулановая кислота</td><td>ocr</td><td>high</td><td>Позволяет найти товар по действующему веществу, что важно для ветеринарных препаратов.</td></tr><tr><td><strong>Вкус</strong></td><td>мясо</td><td>ocr</td><td>medium</td><td>Помогает найти препарат с вкусовой добавкой для облегчения приема.</td></tr><tr><td><strong>Способ применения</strong></td><td>внутрь</td><td>ocr</td><td>medium</td><td>Уточняет способ применения препарата, что важно для правильного использования.</td></tr></tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</article>
+<article class="case">
+  <div class="case-num">11</div>
+  <a class="case-img" href="https://4lapy.ru/product/krka-prinokat-400-mg-kapli-na-holku-dlya-sobak-vesom-ot-25-40-kg-ot-gelmintov-bloh-vshej-vlasoedov-ushnogo-i-chesotochnyh-kleshchej-1-pipetka-97183-1067231" target="_blank" rel="noopener">
+    <img src="https://storage.yandexcloud.net/pim-core/415020.jpeg" alt="KRKA Принокат Капли на холку от гельминтов, блох, вшей, власоедов, ушного и чесоточных клещей для собак весом от 25-40 кг, 400 мг, 1 пипетка" loading="lazy"/>
+  </a>
+  <div class="case-body">
+    <div class="case-meta">anthelmintic · id 1067231 · Капли · 867 ₽</div>
+    <h3>KRKA Принокат Капли на холку от гельминтов, блох, вшей, власоедов, ушного и чесоточных клещей для собак весом от 25-40 кг, 400 мг, 1 пипетка</h3>
+    <p class="case-line">packshot · OCR: Для собак массой от 25 до 40 кг, &gt; 25 - 40 кг, Chenocephalides felis, Demoder canis, Trichodectes canis, Otodectes cynotis</p>
+    <div class="case-cols">
+      <div>
+        <h4>Уже в фиде / названии</h4>
+        <table class="mini"><tbody><tr><td>Объем</td><td>0.000</td></tr><tr><td>В упаковке</td><td>80.0</td></tr><tr><td>Возраст питомца</td><td>Все возрасты</td></tr><tr><td>Размер питомца</td><td>Все размеры</td></tr><tr><td>Страна-производитель</td><td>Словения</td></tr><tr><td>Вес / фасовка, кг</td><td>0.022</td></tr><tr><td>Для кого</td><td>Собаки</td></tr><tr><td>Форма выпуска</td><td>Капли на холку</td></tr><tr><td>Фармакологическая группа</td><td>Препараты от клещей и паразитов</td></tr></tbody></table>
+      </div>
+      <div>
+        <h4>С картинки (KEEP) · reject=2</h4>
+        <table class="mini">
+          <thead><tr><th>Атрибут</th><th>Значение</th><th>Доказ.</th><th>Релев.</th><th>Зачем поиску</th></tr></thead>
+          <tbody><tr><td><strong>Действующее вещество</strong></td><td>имидаклоприд, моксидектин</td><td>ocr</td><td>high</td><td>Позволяет найти товар по действующему веществу, что важно для ветеринарных препаратов.</td></tr><tr><td><strong>Объем</strong></td><td>4 мл</td><td>ocr</td><td>medium</td><td>Уточняет объем одной пипетки, что может быть важно для дозировки.</td></tr></tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</article>
+<article class="case">
+  <div class="case-num">12</div>
+  <a class="case-img" href="https://4lapy.ru/product/mosagrogen-tsianokobalamin-vitamin-v12-100ml-10806-1037252" target="_blank" rel="noopener">
+    <img src="https://storage.yandexcloud.net/pim-core/422707.jpeg" alt="Мосагроген Цианокобаламин, витамин В12, 100мл" loading="lazy"/>
+  </a>
+  <div class="case-body">
+    <div class="case-meta">vitamins · id 1037252 · Витамины и минералы · 489 ₽</div>
+    <h3>Мосагроген Цианокобаламин, витамин В12, 100мл</h3>
+    <p class="case-line">packshot · OCR: 100 мл, ЦИАНОКОБАЛАМИН, Витамин В12, Внутривенно, Внутримышечно, Подкожно, МОСАГРОГЕН, ЧЕСТНЫЙ ЗНАК</p>
+    <div class="case-cols">
+      <div>
+        <h4>Уже в фиде / названии</h4>
+        <table class="mini"><tbody><tr><td>Объем</td><td>0.000</td></tr><tr><td>Возраст питомца</td><td>Все возрасты</td></tr><tr><td>Размер питомца</td><td>Все размеры</td></tr><tr><td>Страна-производитель</td><td>Россия</td></tr><tr><td>Вес / фасовка, кг</td><td>0.201</td></tr><tr><td>Для кого</td><td>Кошки и собаки</td></tr><tr><td>Форма выпуска</td><td>Раствор</td></tr><tr><td>Фармакологическая группа</td><td>Витаминные и минеральные препараты</td></tr></tbody></table>
+      </div>
+      <div>
+        <h4>С картинки (KEEP) · reject=0</h4>
+        <table class="mini">
+          <thead><tr><th>Атрибут</th><th>Значение</th><th>Доказ.</th><th>Релев.</th><th>Зачем поиску</th></tr></thead>
+          <tbody><tr><td><strong>Способ применения</strong></td><td>Внутривенно, Внутримышечно, Подкожно</td><td>ocr</td><td>high</td><td>Уточняет способ введения препарата, что важно для ветеринарных средств.</td></tr><tr><td><strong>Вид животного</strong></td><td>Крупный рогатый скот, Лошади, Свиньи, Мелкий рогатый скот, Собаки, Кошки</td><td>visual</td><td>high</td><td>Расширяет список животных, для которых предназначен препарат, помимо указанных в фиде.</td></tr></tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</article>
+
+  <h2>5. Деньги</h2>
+  <p class="meta">База CH: search CVR 3.018% · AOV 2,130 ₽ ·
+  search revenue 90д ~34,232,514 ₽. Attr-спрос (оценка) 44,274/90д.</p>
+  <table>
+    <thead><tr><th>Сценарий</th><th>Стрим A ₽/мес</th><th>Стрим B доп. ₽/мес</th><th>Иллюстрация A+B*</th></tr></thead>
+    <tbody>
+      <tr><td>Консервативный</td><td>56,934</td><td>+23,672</td><td>80,606</td></tr>
+      <tr><td><strong>Базовый (партнёру)</strong></td><td><strong>114,818</strong></td><td><strong>+76,326</strong></td><td><strong>191,144</strong></td></tr>
+      <tr><td>Оптимистичный</td><td>199,271</td><td>+125,675</td><td>324,946</td></tr>
+    </tbody>
+  </table>
+  <div class="callout warn">
+    *A+B — верхняя иллюстрация портфеля; партнёру: база = A, доп. потенциал = B.
+    Формулы как в шаблоне двух стримов (запросы × lift CVR; каталог × P(новый attr) × выдача).
+  </div>
+
+  <h2>6. Рекомендация пилота</h2>
+  <ol>
+    <li>Старт: антигельминтики + капли от блох/клещей (макс. поиск + читаемые упаковки).</li>
+    <li>Обязательный OCR-пакет: МНН, спектр, срок защиты, число доз.</li>
+    <li>Не дублировать «Для кого / форма / фармгруппа» — только пробелы и уточнения.</li>
+    <li>Заливка в feed attributes → фильтры и уточнение выдачи по стилевым вет-запросам.</li>
+  </ol>
+
+  <div class="callout">
+    <strong>Что купить (продуктово):</strong> пакет vision+OCR атрибутов для ветаптеки —
+    действующее вещество, спектр паразитов, срок защиты, фасовка доз, уточнения возраста/веса с этикетки —
+    с исключением дублей фида.
+  </div>
+  <div class="callout warn">
+    <strong>Скоуп денег.</strong> Цифры выше — только срез «ветаптека / паразиты»
+    (~58,742 поисков / 90д из 949,958).
+    Корма, наполнители, игрушки — отдельный upside, здесь не смешиваем.
+  </div>
+
+  <footer>
+    Артефакты: portfolio/4lapy_vet/ · Desktop Output\4lapy_8267_vet_pharmacy\
+  </footer>
+</div>
+</body>
+</html>
