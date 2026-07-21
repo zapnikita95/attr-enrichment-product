@@ -1,0 +1,792 @@
+{
+  "offers_total": 663656,
+  "needles": [
+    "принт",
+    "клетк",
+    "полоск",
+    "полосат",
+    "леопард",
+    "горошек",
+    "цветочн",
+    "монограмм",
+    "логотип",
+    "логомани",
+    "animal",
+    "check",
+    "stripe",
+    "striped",
+    "floral",
+    "paisley",
+    "зебр",
+    "абстракт",
+    "орнамент",
+    "узор"
+  ],
+  "per_needle": {
+    "принт": {
+      "in_name": 3068,
+      "in_params": 8489,
+      "in_attribute_details": 393,
+      "in_custom_categories": 8095,
+      "name_only_not_in_params": 3037,
+      "name_pct": 0.462,
+      "params_pct": 1.279,
+      "examples": [
+        {
+          "name": "Шелковый галстук",
+          "in_name": false,
+          "in_params": true,
+          "details": "",
+          "custom": "С принтом"
+        },
+        {
+          "name": "Галстук из шелка и хлопка",
+          "in_name": false,
+          "in_params": true,
+          "details": "",
+          "custom": "С принтом"
+        },
+        {
+          "name": "Шелковый галстук",
+          "in_name": false,
+          "in_params": true,
+          "details": "",
+          "custom": "С принтом"
+        },
+        {
+          "name": "Шелковый галстук",
+          "in_name": false,
+          "in_params": true,
+          "details": "",
+          "custom": "С принтом"
+        },
+        {
+          "name": "Шелковый галстук",
+          "in_name": false,
+          "in_params": true,
+          "details": "",
+          "custom": "С принтом"
+        }
+      ]
+    },
+    "клетк": {
+      "in_name": 294,
+      "in_params": 3,
+      "in_attribute_details": 0,
+      "in_custom_categories": 0,
+      "name_only_not_in_params": 292,
+      "name_pct": 0.044,
+      "params_pct": 0.0,
+      "examples": [
+        {
+          "name": "Шарф в клетку из смеси шелка и шерсти",
+          "in_name": true,
+          "in_params": false,
+          "details": "",
+          "custom": "Шарфы,Шарфы и платки"
+        },
+        {
+          "name": "Пиджак в клетку",
+          "in_name": true,
+          "in_params": false,
+          "details": "",
+          "custom": "Пиджаки,Повседневные"
+        },
+        {
+          "name": "Хлопковая рубашка в клетку",
+          "in_name": true,
+          "in_params": false,
+          "details": "",
+          "custom": "Рубашки,Повседневные"
+        },
+        {
+          "name": "Рубашка в клетку",
+          "in_name": true,
+          "in_params": false,
+          "details": "Без декора",
+          "custom": "Рубашки,Рубашки и блузы"
+        },
+        {
+          "name": "Пальто в клетку",
+          "in_name": true,
+          "in_params": false,
+          "details": "",
+          "custom": "Пальто,Верхняя одежда"
+        }
+      ]
+    },
+    "полоск": {
+      "in_name": 468,
+      "in_params": 0,
+      "in_attribute_details": 0,
+      "in_custom_categories": 0,
+      "name_only_not_in_params": 468,
+      "name_pct": 0.071,
+      "params_pct": 0.0,
+      "examples": [
+        {
+          "name": "Шерстяная шапка с контрастной полоской",
+          "in_name": true,
+          "in_params": false,
+          "details": "",
+          "custom": ""
+        },
+        {
+          "name": "Хлопковый пуловер в полоску",
+          "in_name": true,
+          "in_params": false,
+          "details": "",
+          "custom": "Трикотаж,Пуловеры"
+        },
+        {
+          "name": "Платье в полоску",
+          "in_name": true,
+          "in_params": false,
+          "details": "",
+          "custom": "Платья,Повседневные"
+        },
+        {
+          "name": "Хлопковая пижама в полоску",
+          "in_name": true,
+          "in_params": false,
+          "details": "",
+          "custom": "Пижамы,Домашняя одежда"
+        },
+        {
+          "name": "Шелковый галстук в полоску",
+          "in_name": true,
+          "in_params": false,
+          "details": "",
+          "custom": "С принтом"
+        }
+      ]
+    },
+    "полосат": {
+      "in_name": 0,
+      "in_params": 4,
+      "in_attribute_details": 0,
+      "in_custom_categories": 0,
+      "name_only_not_in_params": 0,
+      "name_pct": 0.0,
+      "params_pct": 0.001,
+      "examples": [
+        {
+          "name": "Сумка Jackie 1961",
+          "in_name": false,
+          "in_params": true,
+          "details": "",
+          "custom": "Сумки top-handle,Сумки"
+        },
+        {
+          "name": "Сумка 1955 Horsebit small из кожи варана",
+          "in_name": false,
+          "in_params": true,
+          "details": "",
+          "custom": "Сумки top-handle,Сумки"
+        },
+        {
+          "name": "Сумка 1955 Horsebit small из кожи варана",
+          "in_name": false,
+          "in_params": true,
+          "details": "",
+          "custom": "Сумки top-handle,Сумки"
+        },
+        {
+          "name": "Сумка-тоут Diana mini из кожи варана",
+          "in_name": false,
+          "in_params": true,
+          "details": "",
+          "custom": "Шоперы,Сумки"
+        }
+      ]
+    },
+    "леопард": {
+      "in_name": 30,
+      "in_params": 1936,
+      "in_attribute_details": 0,
+      "in_custom_categories": 0,
+      "name_only_not_in_params": 11,
+      "name_pct": 0.005,
+      "params_pct": 0.292,
+      "examples": [
+        {
+          "name": "Шерстяная шапка",
+          "in_name": false,
+          "in_params": true,
+          "details": "",
+          "custom": "Шапки"
+        },
+        {
+          "name": "Текстильные туфли Amelia 120",
+          "in_name": false,
+          "in_params": true,
+          "details": "",
+          "custom": "Туфли,Высокий каблук"
+        },
+        {
+          "name": "Сумка Niki medium",
+          "in_name": false,
+          "in_params": true,
+          "details": "",
+          "custom": "Сумки через плечо,Сумки"
+        },
+        {
+          "name": "Косметичка Aline",
+          "in_name": false,
+          "in_params": true,
+          "details": "",
+          "custom": "Косметички,Другое"
+        },
+        {
+          "name": "Сумка Studio small",
+          "in_name": false,
+          "in_params": true,
+          "details": "",
+          "custom": "Сумки top-handle,Сумки"
+        }
+      ]
+    },
+    "горошек": {
+      "in_name": 2,
+      "in_params": 0,
+      "in_attribute_details": 0,
+      "in_custom_categories": 0,
+      "name_only_not_in_params": 2,
+      "name_pct": 0.0,
+      "params_pct": 0.0,
+      "examples": [
+        {
+          "name": "Комплект из трех изделий Любимый горошек",
+          "in_name": true,
+          "in_params": false,
+          "details": "",
+          "custom": ""
+        },
+        {
+          "name": "Комплект из трех изделий Любимый горошек",
+          "in_name": true,
+          "in_params": false,
+          "details": "",
+          "custom": ""
+        }
+      ]
+    },
+    "цветочн": {
+      "in_name": 143,
+      "in_params": 3,
+      "in_attribute_details": 0,
+      "in_custom_categories": 0,
+      "name_only_not_in_params": 140,
+      "name_pct": 0.022,
+      "params_pct": 0.0,
+      "examples": [
+        {
+          "name": "Жилет из смеси шерсти и кашемира с цветочным декором",
+          "in_name": true,
+          "in_params": false,
+          "details": "",
+          "custom": ""
+        },
+        {
+          "name": "Приталенное мини-платье с цветочным принтом и оборками",
+          "in_name": true,
+          "in_params": false,
+          "details": "",
+          "custom": "Платья,Повседневные"
+        },
+        {
+          "name": "Шарф из смеси кашемира и шелка с цветочным принтом",
+          "in_name": true,
+          "in_params": false,
+          "details": "",
+          "custom": "Шарфы,Шарфы и платки"
+        },
+        {
+          "name": "Укороченный топ свободного кроя с цветочным принтом",
+          "in_name": true,
+          "in_params": false,
+          "details": "",
+          "custom": "Топы,Футболки и топы"
+        },
+        {
+          "name": "Многослойное платье с пышной юбкой и цветочной аппликацией",
+          "in_name": true,
+          "in_params": false,
+          "details": "",
+          "custom": "Праздничные"
+        }
+      ]
+    },
+    "монограмм": {
+      "in_name": 1,
+      "in_params": 0,
+      "in_attribute_details": 0,
+      "in_custom_categories": 0,
+      "name_only_not_in_params": 1,
+      "name_pct": 0.0,
+      "params_pct": 0.0,
+      "examples": [
+        {
+          "name": "Шлепанцы GG Thong с монограммой",
+          "in_name": true,
+          "in_params": false,
+          "details": "",
+          "custom": "Шлепанцы,Мюли,Без каблука"
+        }
+      ]
+    },
+    "логотип": {
+      "in_name": 950,
+      "in_params": 0,
+      "in_attribute_details": 0,
+      "in_custom_categories": 0,
+      "name_only_not_in_params": 950,
+      "name_pct": 0.143,
+      "params_pct": 0.0,
+      "examples": [
+        {
+          "name": "Комплект из двух боксеров с логотипом бренда",
+          "in_name": true,
+          "in_params": false,
+          "details": "",
+          "custom": ""
+        },
+        {
+          "name": "Кожаная сумка-планшет с логотипом бренда",
+          "in_name": true,
+          "in_params": false,
+          "details": "",
+          "custom": "Сумки-мессенджеры,Повседневные сумки"
+        },
+        {
+          "name": "Хлопковая бейсболка с логотипом бренда",
+          "in_name": true,
+          "in_params": false,
+          "details": "",
+          "custom": "Бейсболки"
+        },
+        {
+          "name": "Шерстяная шапка с логотипом бренда",
+          "in_name": true,
+          "in_params": false,
+          "details": "",
+          "custom": "Трикотажные,Шапки"
+        },
+        {
+          "name": "Хлопковое поло с контрастной отделкой и логотипом бренда",
+          "in_name": true,
+          "in_params": false,
+          "details": "",
+          "custom": "Поло,Футболки и поло"
+        }
+      ]
+    },
+    "логомани": {
+      "in_name": 0,
+      "in_params": 0,
+      "in_attribute_details": 0,
+      "in_custom_categories": 0,
+      "name_only_not_in_params": 0,
+      "name_pct": 0.0,
+      "params_pct": 0.0,
+      "examples": []
+    },
+    "animal": {
+      "in_name": 71,
+      "in_params": 0,
+      "in_attribute_details": 0,
+      "in_custom_categories": 0,
+      "name_only_not_in_params": 71,
+      "name_pct": 0.011,
+      "params_pct": 0.0,
+      "examples": [
+        {
+          "name": "Клатч Animalier Bee",
+          "in_name": true,
+          "in_params": false,
+          "details": "",
+          "custom": "Клатчи,Маленькие"
+        },
+        {
+          "name": "Серьги Empreinte Animale",
+          "in_name": true,
+          "in_params": false,
+          "details": "",
+          "custom": "Серьги"
+        },
+        {
+          "name": "Кожаные кеды Ralph Sampson Animals V",
+          "in_name": true,
+          "in_params": false,
+          "details": "",
+          "custom": "Кеды и слипоны,Низкие,На липучке"
+        },
+        {
+          "name": "Одежда для игрушки Magic Animals",
+          "in_name": true,
+          "in_params": false,
+          "details": "",
+          "custom": "Игрушки,Другое,Куклы,Одежда"
+        },
+        {
+          "name": "Кожаные кеды Ralph Sampson Animals V",
+          "in_name": true,
+          "in_params": false,
+          "details": "",
+          "custom": "Кеды и слипоны,На липучке"
+        }
+      ]
+    },
+    "check": {
+      "in_name": 50,
+      "in_params": 3,
+      "in_attribute_details": 0,
+      "in_custom_categories": 0,
+      "name_only_not_in_params": 47,
+      "name_pct": 0.008,
+      "params_pct": 0.0,
+      "examples": [
+        {
+          "name": "Сумка-планшет London Check",
+          "in_name": true,
+          "in_params": false,
+          "details": "",
+          "custom": "Сумки-мессенджеры,Повседневные сумки"
+        },
+        {
+          "name": "Косметичка Woodland Camo Check",
+          "in_name": true,
+          "in_params": false,
+          "details": "",
+          "custom": "Косметички,Другое"
+        },
+        {
+          "name": "Текстильный рюкзак Vintage check",
+          "in_name": true,
+          "in_params": false,
+          "details": "",
+          "custom": "Рюкзаки,Повседневные"
+        },
+        {
+          "name": "Рюкзак Pink Smoke Check",
+          "in_name": true,
+          "in_params": false,
+          "details": "",
+          "custom": ""
+        },
+        {
+          "name": "Сумка Alice Check",
+          "in_name": true,
+          "in_params": false,
+          "details": "",
+          "custom": ""
+        }
+      ]
+    },
+    "stripe": {
+      "in_name": 48,
+      "in_params": 0,
+      "in_attribute_details": 0,
+      "in_custom_categories": 0,
+      "name_only_not_in_params": 48,
+      "name_pct": 0.007,
+      "params_pct": 0.0,
+      "examples": [
+        {
+          "name": "Клатч Suitcase Stripe",
+          "in_name": true,
+          "in_params": false,
+          "details": "",
+          "custom": "Клатчи,Маленькие"
+        },
+        {
+          "name": "Сумка Suitcase Stripe",
+          "in_name": true,
+          "in_params": false,
+          "details": "",
+          "custom": "Шоперы,Сумки"
+        },
+        {
+          "name": "Сумка-шопер Suitcase Stripe",
+          "in_name": true,
+          "in_params": false,
+          "details": "",
+          "custom": "Шоперы,Сумки"
+        },
+        {
+          "name": "Клатч Suitcase Stripe",
+          "in_name": true,
+          "in_params": false,
+          "details": "",
+          "custom": "Клатчи,Маленькие"
+        },
+        {
+          "name": "Сумка Suitcase Stripe",
+          "in_name": true,
+          "in_params": false,
+          "details": "",
+          "custom": "Шоперы,Сумки"
+        }
+      ]
+    },
+    "striped": {
+      "in_name": 0,
+      "in_params": 0,
+      "in_attribute_details": 0,
+      "in_custom_categories": 0,
+      "name_only_not_in_params": 0,
+      "name_pct": 0.0,
+      "params_pct": 0.0,
+      "examples": []
+    },
+    "floral": {
+      "in_name": 45,
+      "in_params": 3,
+      "in_attribute_details": 0,
+      "in_custom_categories": 0,
+      "name_only_not_in_params": 42,
+      "name_pct": 0.007,
+      "params_pct": 0.0,
+      "examples": [
+        {
+          "name": "Цветочная вода Floral Spray Mist (100ml)",
+          "in_name": true,
+          "in_params": false,
+          "details": "",
+          "custom": "Тоники / Лосьоны,Для лица,Уход за кожей,Парфюмерия и косметика"
+        },
+        {
+          "name": "Бальзам для губ Glow Play, оттенок Floral Coral (3.5g)",
+          "in_name": true,
+          "in_params": true,
+          "details": "",
+          "custom": "Бальзамы,Для губ,Макияж,Парфюмерия и косметика"
+        },
+        {
+          "name": "Туалетная вода La Petite Robe Noire Black Perfecto Florale (50ml)",
+          "in_name": true,
+          "in_params": false,
+          "details": "",
+          "custom": "Ароматы для женщин,Парфюмерия,Парфюмерия и косметика"
+        },
+        {
+          "name": "Сумка Hammock Floral small",
+          "in_name": true,
+          "in_params": false,
+          "details": "",
+          "custom": "Сумки top-handle,Сумки"
+        },
+        {
+          "name": "Парфюмерная вода Mon Paris Floral (90ml)",
+          "in_name": true,
+          "in_params": false,
+          "details": "",
+          "custom": "Ароматы для женщин,Парфюмерия,Парфюмерия и косметика"
+        }
+      ]
+    },
+    "paisley": {
+      "in_name": 12,
+      "in_params": 0,
+      "in_attribute_details": 0,
+      "in_custom_categories": 0,
+      "name_only_not_in_params": 12,
+      "name_pct": 0.002,
+      "params_pct": 0.0,
+      "examples": [
+        {
+          "name": "Подсвечник с крышкой Platinum Fine Paisley",
+          "in_name": true,
+          "in_params": false,
+          "details": "",
+          "custom": "Подсвечники и свечи,Интерьер,Аксессуары для дома"
+        },
+        {
+          "name": "Подсвечник с крышкой Platinum Fine Paisley",
+          "in_name": true,
+          "in_params": false,
+          "details": "",
+          "custom": "Подсвечники и свечи,Интерьер,Аксессуары для дома"
+        },
+        {
+          "name": "Подсвечник на пять свечей Gold Fine Paisley",
+          "in_name": true,
+          "in_params": false,
+          "details": "",
+          "custom": "Подсвечники и свечи,Интерьер,Аксессуары для дома"
+        },
+        {
+          "name": "Подсвечник на три свечи Gold Fine Paisley",
+          "in_name": true,
+          "in_params": false,
+          "details": "",
+          "custom": "Подсвечники и свечи,Интерьер,Аксессуары для дома"
+        },
+        {
+          "name": "Подсвечник с крышкой Black Fine Paisley",
+          "in_name": true,
+          "in_params": false,
+          "details": "",
+          "custom": "Подсвечники и свечи,Интерьер,Аксессуары для дома"
+        }
+      ]
+    },
+    "зебр": {
+      "in_name": 6,
+      "in_params": 0,
+      "in_attribute_details": 0,
+      "in_custom_categories": 0,
+      "name_only_not_in_params": 6,
+      "name_pct": 0.001,
+      "params_pct": 0.0,
+      "examples": [
+        {
+          "name": "Игрушка Большая Зебра",
+          "in_name": true,
+          "in_params": false,
+          "details": "",
+          "custom": "Игрушки,Другое,Мягкие игрушки"
+        },
+        {
+          "name": "Фигурка Жеребенок зебры",
+          "in_name": true,
+          "in_params": false,
+          "details": "",
+          "custom": "Игрушки,Другое,Фигурки"
+        },
+        {
+          "name": "Колье Зебра",
+          "in_name": true,
+          "in_params": false,
+          "details": "",
+          "custom": "Колье"
+        },
+        {
+          "name": "Колье Зебра",
+          "in_name": true,
+          "in_params": false,
+          "details": "",
+          "custom": "Колье"
+        },
+        {
+          "name": "Раскраска по номерам Зебра и Леопард",
+          "in_name": true,
+          "in_params": false,
+          "details": "",
+          "custom": "Игрушки,Другое,Настольные игры,Развивающие"
+        }
+      ]
+    },
+    "абстракт": {
+      "in_name": 0,
+      "in_params": 0,
+      "in_attribute_details": 0,
+      "in_custom_categories": 0,
+      "name_only_not_in_params": 0,
+      "name_pct": 0.0,
+      "params_pct": 0.0,
+      "examples": []
+    },
+    "орнамент": {
+      "in_name": 35,
+      "in_params": 0,
+      "in_attribute_details": 0,
+      "in_custom_categories": 0,
+      "name_only_not_in_params": 35,
+      "name_pct": 0.005,
+      "params_pct": 0.0,
+      "examples": [
+        {
+          "name": "Шелковый платок Византийский орнамент",
+          "in_name": true,
+          "in_params": false,
+          "details": "",
+          "custom": "Платки,Шарфы и платки"
+        },
+        {
+          "name": "Шелковый платок Восточный орнамент",
+          "in_name": true,
+          "in_params": false,
+          "details": "",
+          "custom": "Платки,Шарфы и платки"
+        },
+        {
+          "name": "Шелковый платок Орнамент цветы",
+          "in_name": true,
+          "in_params": false,
+          "details": "",
+          "custom": "Платки,Шарфы и платки"
+        },
+        {
+          "name": "Шелковая шаль Орнамент Цветы",
+          "in_name": true,
+          "in_params": false,
+          "details": "",
+          "custom": "Шали,Шарфы и платки"
+        },
+        {
+          "name": "Шелковый платок Византийский орнамент",
+          "in_name": true,
+          "in_params": false,
+          "details": "",
+          "custom": "Платки,Шарфы и платки"
+        }
+      ]
+    },
+    "узор": {
+      "in_name": 2843,
+      "in_params": 2265,
+      "in_attribute_details": 0,
+      "in_custom_categories": 2263,
+      "name_only_not_in_params": 628,
+      "name_pct": 0.428,
+      "params_pct": 0.341,
+      "examples": [
+        {
+          "name": "Рефил диффузора 1779 (180ml)",
+          "in_name": true,
+          "in_params": true,
+          "details": "",
+          "custom": "Диффузоры,Для дома,Парфюмерия и косметика"
+        },
+        {
+          "name": "Шелковый галстук-бабочка с узором",
+          "in_name": true,
+          "in_params": false,
+          "details": "",
+          "custom": ""
+        },
+        {
+          "name": "Диффузор My first Baobab Roma (250ml)",
+          "in_name": true,
+          "in_params": true,
+          "details": "",
+          "custom": "Диффузоры,Для дома,Парфюмерия и косметика"
+        },
+        {
+          "name": "Диффузор Malabar Pepper (125ml)",
+          "in_name": true,
+          "in_params": true,
+          "details": "",
+          "custom": "Диффузоры,Для дома,Парфюмерия и косметика"
+        },
+        {
+          "name": "Диффузор 214 Legno di Pepe (250ml)",
+          "in_name": true,
+          "in_params": true,
+          "details": "",
+          "custom": "Диффузоры,Для дома,Парфюмерия и косметика"
+        }
+      ]
+    }
+  },
+  "union_any_needle": {
+    "in_name": 7958,
+    "in_params": 12690,
+    "in_either": 17899,
+    "name_only_not_in_params": 5209,
+    "name_pct": 1.199,
+    "params_pct": 1.912,
+    "either_pct": 2.697
+  }
+}
