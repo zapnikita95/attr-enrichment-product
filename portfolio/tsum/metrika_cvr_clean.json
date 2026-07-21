@@ -1,0 +1,35 @@
+{
+  "api_works": true,
+  "counter_id": 21801616,
+  "counter_name": "tsum.ru",
+  "site": "tsum.ru",
+  "period": {
+    "date1": "2026-04-22",
+    "date2": "2026-07-20"
+  },
+  "search_goal_id": 260498358,
+  "search_goal_name": "Автоцель: поиск по сайту",
+  "overall": {
+    "visits": 5502212.440452,
+    "purchases": 17010.2882232,
+    "revenue": 1946916928.588925,
+    "aov": 114455.25807925833,
+    "cvr_pct": 0.3091536069770986
+  },
+  "with_search": {
+    "visits": 171172.3414968,
+    "purchases": 2073.3961032,
+    "revenue": 221295436.2600624,
+    "aov": 106730.90198178895,
+    "cvr_pct": 1.2112915469107848
+  },
+  "without_search": {
+    "visits": 5331040.0989552,
+    "purchases": 14936.89212,
+    "revenue": 1725621492.3288624,
+    "aov": 115527.47910780669,
+    "cvr_pct": 0.28018720254847446
+  },
+  "search_vs_no_lift_x": 4.323150864469702,
+  "note": "AOV = ecommerceRevenue / ecommercePurchases (avgPurchaseRevenue на счётчике врёт)."
+}

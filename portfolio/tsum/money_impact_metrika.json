@@ -1,0 +1,97 @@
+{
+  "source_cvr": "Yandex Metrika goal 260498358 (Автоцель: поиск по сайту)",
+  "metrika": {
+    "cvr_with_search_pct": 1.2112915469107848,
+    "cvr_without_search_pct": 0.28018720254847446,
+    "aov_with_search": 106730.90198178895,
+    "aov_site": 114455.25807925833,
+    "lift_x": 4.323150864469702
+  },
+  "vs_ch": {
+    "ch_search_cvr_pct": 0.083,
+    "metrika_search_cvr_pct": 1.211,
+    "note": "CH занижал search CVR; для партнёра берём Метрику"
+  },
+  "pool": {
+    "RESERVE": {
+      "searches_90d": 12789,
+      "queries": 356
+    },
+    "NORMAL": {
+      "searches_90d": 305753,
+      "queries": 1148
+    },
+    "ZERO": {
+      "searches_90d": 0
+    }
+  },
+  "scenarios": {
+    "conservative": {
+      "revenue_90d": {
+        "reserve_to_exact": 6944240,
+        "normal_precision": 14823162,
+        "total": 21767403
+      },
+      "revenue_month": {
+        "reserve_to_exact": 2314747,
+        "normal_precision": 4941054,
+        "total": 7255801
+      },
+      "revenue_year": {
+        "total": 87069610
+      },
+      "params": {
+        "cvr_normal_pct": 1.211,
+        "cvr_reserve_old_pct": 0.485,
+        "aov": 106731,
+        "reserve_searches_90d": 12789,
+        "normal_searches_90d": 305753
+      }
+    },
+    "base": {
+      "revenue_90d": {
+        "reserve_to_exact": 7936275,
+        "normal_precision": 27669903,
+        "total": 35606177
+      },
+      "revenue_month": {
+        "reserve_to_exact": 2645425,
+        "normal_precision": 9223301,
+        "total": 11868726
+      },
+      "revenue_year": {
+        "total": 142424710
+      },
+      "params": {
+        "cvr_normal_pct": 1.211,
+        "cvr_reserve_old_pct": 0.485,
+        "aov": 106731,
+        "reserve_searches_90d": 12789,
+        "normal_searches_90d": 305753
+      }
+    },
+    "optimistic": {
+      "revenue_90d": {
+        "reserve_to_exact": 15957451,
+        "normal_precision": 47687844,
+        "total": 63645295
+      },
+      "revenue_month": {
+        "reserve_to_exact": 5319150,
+        "normal_precision": 15895948,
+        "total": 21215098
+      },
+      "revenue_year": {
+        "total": 254581180
+      },
+      "params": {
+        "cvr_normal_pct": 1.211,
+        "cvr_reserve_old_pct": 0.0,
+        "aov": 114455,
+        "reserve_searches_90d": 12789,
+        "normal_searches_90d": 305753
+      }
+    }
+  },
+  "formula": "Δ90д = searches × fixable × ΔCVR × AOV_metrika; мес=/3"
+}

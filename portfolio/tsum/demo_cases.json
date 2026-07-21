@@ -1,0 +1,288 @@
+{
+  "n": 5,
+  "cases": [
+    {
+      "offer_id": "11302590",
+      "name": "Шерстяной костюм",
+      "bucket": "odezhda",
+      "category_name": "Одежда",
+      "vendor": "BOSS",
+      "url": "https://www.tsum.ru/product/he00608131-sherstyanoi-kostyum-boss-seryi/",
+      "picture": "https://st-cdn.tsum.com/sig/49afb62384ea400fddc6fdb814760c64/square/640/i/57/d2/d9/c2/57d2d9c2-5d25-3600-8e56-c3add4fb03e7.jpg",
+      "feed_had": {
+        "Пол": "Мужской",
+        "Материал": "Шерсть: 100%;",
+        "Страна дизайна": "Германия",
+        "Оттенок": "Серый",
+        "Цвет": "Серый",
+        "custom categories": "Костюмы,Повседневные",
+        "attribute_sleeve": "Длинные",
+        "Скидка": "Нет"
+      },
+      "extracted_new": [
+        {
+          "name": "Принт",
+          "value": "Полоска",
+          "evidence": "visual",
+          "search_relevance": "high",
+          "filter_candidate": true
+        },
+        {
+          "name": "Силуэт",
+          "value": "Прямой",
+          "evidence": "visual",
+          "search_relevance": "medium",
+          "filter_candidate": false
+        },
+        {
+          "name": "Тип воротника",
+          "value": "Отложной",
+          "evidence": "visual",
+          "search_relevance": "medium",
+          "filter_candidate": true
+        },
+        {
+          "name": "Тип застежки",
+          "value": "Пуговицы",
+          "evidence": "visual",
+          "search_relevance": "high",
+          "filter_candidate": true
+        },
+        {
+          "name": "Детали",
+          "value": "Карманы",
+          "evidence": "visual",
+          "search_relevance": "medium",
+          "filter_candidate": false
+        },
+        {
+          "name": "Посадка",
+          "value": "Классическая",
+          "evidence": "visual",
+          "search_relevance": "medium",
+          "filter_candidate": true
+        }
+      ],
+      "already_in_feed_visible": [
+        "Длинные рукава",
+        "Серый цвет"
+      ],
+      "partner_one_liner": "На фото полоска и пуговицы — в фиде только цвет/материал, без принта и застёжки."
+    },
+    {
+      "offer_id": "13839154",
+      "name": "Платье",
+      "bucket": "platya",
+      "category_name": "Платья",
+      "vendor": "Diesel",
+      "url": "https://www.tsum.ru/product/7125923-plate-diesel-chernyi/",
+      "picture": "https://st-cdn.tsum.com/sig/1a4561697369781a419a81b0692832d9/square/640/i/00/03/5d/97/2a4affbd-56f7-4194-9971-7d6190c4c7cc.jpg",
+      "feed_had": {
+        "Сезон": "FW 26/27",
+        "Размер": "175cm",
+        "Пол": "Детский",
+        "Материал": "Эластан (Полиуретан): 6%; Вискоза: 55%; Полиамид: 39%;",
+        "Оттенок": "Черный",
+        "Цвет": "Чёрный",
+        "custom categories": "Повседневные",
+        "attribute_sleeve": "Короткие",
+        "Скидка": "Нет"
+      },
+      "extracted_new": [
+        {
+          "name": "Вырез",
+          "value": "Вырез-капля",
+          "evidence": "visual",
+          "search_relevance": "high",
+          "filter_candidate": true
+        },
+        {
+          "name": "Воротник",
+          "value": "Воротник-стойка",
+          "evidence": "visual",
+          "search_relevance": "high",
+          "filter_candidate": true
+        },
+        {
+          "name": "Застежка",
+          "value": "Молния",
+          "evidence": "visual",
+          "search_relevance": "medium",
+          "filter_candidate": true
+        }
+      ],
+      "already_in_feed_visible": [
+        "Короткие рукава",
+        "Черный цвет"
+      ],
+      "partner_one_liner": "Вырез-капля и стойка видны на фото; в params нет воротника/выреза."
+    },
+    {
+      "offer_id": "13661940",
+      "name": "Сумка",
+      "bucket": "sumki",
+      "category_name": "Сумки",
+      "vendor": "Vic Matie",
+      "url": "https://www.tsum.ru/product/7024549-sumka-vic-matie-chernyi/",
+      "picture": "https://st-cdn.tsum.com/sig/d53981e27df0de2788af7a4fb5eba4fb/square/640/i/00/00/c6/88/d91fb729-53fa-4285-ab64-07e7feb35b64.jpg",
+      "feed_had": {
+        "Сезон": "SS 2025",
+        "Пол": "Женский",
+        "Материал": "Кожа натуральная: 100%;",
+        "Страна дизайна": "Италия",
+        "Оттенок": "Черный",
+        "Цвет": "Чёрный",
+        "custom categories": "Сумки через плечо,Сумки",
+        "Скидка": "Нет"
+      },
+      "extracted_new": [
+        {
+          "name": "силуэт сумки",
+          "value": "хобо",
+          "evidence": "visual",
+          "search_relevance": "high",
+          "filter_candidate": true
+        },
+        {
+          "name": "количество ручек",
+          "value": "одна",
+          "evidence": "visual",
+          "search_relevance": "medium",
+          "filter_candidate": true
+        },
+        {
+          "name": "детали",
+          "value": "стёганая",
+          "evidence": "visual",
+          "search_relevance": "medium",
+          "filter_candidate": true
+        }
+      ],
+      "already_in_feed_visible": [
+        "бренд Vic Matie",
+        "черный цвет"
+      ],
+      "partner_one_liner": "Силуэт «хобо» с фото; в фиде нет типа сумки как атрибута."
+    },
+    {
+      "offer_id": "13846153",
+      "name": "Утепленная куртка",
+      "bucket": "kurtki",
+      "category_name": "Куртки",
+      "vendor": "Herno",
+      "url": "https://www.tsum.ru/product/7129546-uteplennaya-kurtka-herno-kremovyi/",
+      "picture": "https://st-cdn.tsum.com/sig/e3000b3cc8b3141e0d86eb6864dfac00/square/640/i/00/0c/49/36/4791717d-06c9-4c4f-a530-81288476607d.jpg",
+      "feed_had": {
+        "Сезон": "FW 26/27",
+        "Размер": "140-142cm",
+        "Пол": "Детский",
+        "Материал": "Полиэстер: 100%; Подкладка-полиамид: 100%; Наполнитель-полиэстер: 100%; Отделка-полиэстер: 100%;",
+        "Оттенок": "Кремовый",
+        "Цвет": "Кремовый",
+        "custom categories": "Верхняя одежда,Утепленные",
+        "attribute_season": "Осень/Весна",
+        "attribute_sleeve": "Длинные",
+        "attribute_type": "Утепленные",
+        "Скидка": "Нет"
+      },
+      "extracted_new": [
+        {
+          "name": "капюшон",
+          "value": "есть",
+          "evidence": "visual",
+          "search_relevance": "high",
+          "filter_candidate": true
+        },
+        {
+          "name": "застежка",
+          "value": "молния",
+          "evidence": "visual",
+          "search_relevance": "high",
+          "filter_candidate": true
+        },
+        {
+          "name": "карманы",
+          "value": "прорезные",
+          "evidence": "visual",
+          "search_relevance": "medium",
+          "filter_candidate": true
+        },
+        {
+          "name": "силуэт",
+          "value": "прямой",
+          "evidence": "visual",
+          "search_relevance": "medium",
+          "filter_candidate": true
+        }
+      ],
+      "already_in_feed_visible": [
+        "утепленная"
+      ],
+      "partner_one_liner": "Капюшон на фото; boolean hood в фиде отсутствует."
+    },
+    {
+      "offer_id": "13594873",
+      "name": "Комплект из пальто и жилета",
+      "bucket": "palto",
+      "category_name": "Пальто",
+      "vendor": "Dolce & Gabbana",
+      "url": "https://www.tsum.ru/product/6981791-komplekt-iz-palto-i-zhileta-dolce-gabbana-bordovyi/",
+      "picture": "https://st-cdn.tsum.com/sig/6853547b5a3e8391fe02f84d70f7ceab/square/640/i/01/9c/cd/eb/30f31003-6677-4df6-b40b-f9b14b4952c2.jpg",
+      "feed_had": {
+        "Сезон": "FW 24/25",
+        "Размер": "144-156cm",
+        "Пол": "Детский",
+        "Материал": "Пальто: Шерсть: 80%; Нейлон: 20%; Подкладка-полиэстер: 100%; Наполнитель-полиэстер: 100%; Шапка-капюшон: Шерсть: 80%; Нейлон: 20%; Подкладка-полиэстер: 100%; Наполнитель-полиэстер: 100%;",
+        "Страна дизайна": "Италия",
+        "Оттенок": "Бордовый",
+        "Цвет": "Бордовый",
+        "custom categories": "Пальто,Верхняя одежда,Школа",
+        "attribute_season": "Осень/Весна",
+        "attribute_sleeve": "Длинные",
+        "attribute_type": "Демисезон",
+        "Скидка": "Нет"
+      },
+      "extracted_new": [
+        {
+          "name": "Детали",
+          "value": "накладные карманы",
+          "evidence": "visual",
+          "search_relevance": "medium",
+          "filter_candidate": true
+        },
+        {
+          "name": "Застежка",
+          "value": "пуговицы-клыки",
+          "evidence": "visual",
+          "search_relevance": "high",
+          "filter_candidate": true
+        },
+        {
+          "name": "Принт/Узор",
+          "value": "клетка тартан",
+          "evidence": "visual",
+          "search_relevance": "high",
+          "filter_candidate": true
+        },
+        {
+          "name": "Детали",
+          "value": "стеганая",
+          "evidence": "visual",
+          "search_relevance": "medium",
+          "filter_candidate": true
+        },
+        {
+          "name": "Застежка",
+          "value": "молния",
+          "evidence": "visual",
+          "search_relevance": "high",
+          "filter_candidate": true
+        }
+      ],
+      "already_in_feed_visible": [
+        "Длинные рукава"
+      ],
+      "partner_one_liner": "Клетка тартан на пальто; в name/params типа узора нет."
+    }
+  ]
+}

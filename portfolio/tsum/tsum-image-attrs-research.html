@@ -31,6 +31,23 @@ th { background:#efeae3; font-weight:600; }
 ul.tight li { margin:4px 0; }
 .tag { display:inline-block; background:#efeae3; padding:2px 8px; font-size:12px; margin-right:6px; }
 footer { margin-top:48px; color:var(--muted); font-size:12px; }
+.case { display:grid; grid-template-columns:56px 200px 1fr; gap:16px; background:var(--card); border:1px solid var(--line); padding:16px; margin:14px 0; align-items:start; }
+.case-num { font-size:22px; font-weight:700; color:var(--accent); }
+.case-img img { width:200px; height:200px; object-fit:cover; display:block; background:#eee; }
+.case-meta { font-size:12px; color:var(--muted); margin-bottom:4px; }
+.case-body h3 { margin:0 0 8px; font-size:17px; }
+.case-line { margin:0 0 12px; font-size:14px; }
+.case-cols { display:grid; grid-template-columns:1fr 1fr; gap:12px; }
+.case-cols h4 { margin:0 0 6px; font-size:13px; color:var(--muted); font-weight:600; }
+table.mini { font-size:12px; }
+.attrs { margin:0; padding-left:18px; font-size:14px; }
+.attrs .ev { color:var(--muted); font-size:12px; }
+@media (max-width:800px) {
+  .case { grid-template-columns:1fr; }
+  .case-img img { width:100%; height:auto; max-height:280px; }
+  .case-cols { grid-template-columns:1fr; }
+}
+
 </style>
 </head>
 <body>
@@ -133,17 +150,144 @@ footer { margin-top:48px; color:var(--muted); font-size:12px; }
     <li>Часть — стилевая лексика (каблук, картхолдер, вечернее, коктейльное, шлепки…) — как раз зона картинок + нормализации типов</li>
   </ul>
 
-  <h2>5. Proof: OpenRouter vision на реальных фото ЦУМ</h2>
-  <p>
-    Модель смотрела только картинку + список уже известных params; просили не дублировать цвет/материал/бренд.
-    Oversight: fashion KEEP подтверждён; единичные коллизии (концентрация уже в названии парфюма) отфильтрованы.
+  
+  <h2>5. Наглядные кейсы: фото → атрибут (чего не было в фиде)</h2>
+  <p class="lead" style="font-size:15px">
+    Пять реальных карточек ЦУМ. Слева — что уже лежит в YML, справа — что vision взял с картинки.
+    Модель: OpenRouter <code>google/gemini-2.5-flash</code>.
   </p>
-  <table>
-    <thead><tr><th>Категория</th><th>Товар</th><th>Атрибут</th><th>Значение</th><th>Evidence</th></tr></thead>
-    <tbody><tr><td>odezhda</td><td>Шерстяной костюм</td><td>Принт</td><td>Полоска</td><td>visual</td></tr><tr><td>odezhda</td><td>Шерстяной костюм</td><td>Силуэт</td><td>Прямой</td><td>visual</td></tr><tr><td>odezhda</td><td>Шерстяной костюм</td><td>Тип воротника</td><td>Отложной</td><td>visual</td></tr><tr><td>odezhda</td><td>Шерстяной костюм</td><td>Тип застежки</td><td>Пуговицы</td><td>visual</td></tr><tr><td>odezhda</td><td>Шерстяной костюм</td><td>Посадка</td><td>Классическая</td><td>visual</td></tr><tr><td>odezhda</td><td>Комплект из трех платьев</td><td>Силуэт</td><td>Прямой</td><td>visual</td></tr><tr><td>odezhda</td><td>Комплект из трех платьев</td><td>Вырез</td><td>Круглый</td><td>visual</td></tr><tr><td>platya</td><td>Платье</td><td>Вырез</td><td>Вырез-капля</td><td>visual</td></tr><tr><td>platya</td><td>Платье</td><td>Воротник</td><td>Воротник-стойка</td><td>visual</td></tr><tr><td>platya</td><td>Платье</td><td>Застежка</td><td>Молния</td><td>visual</td></tr><tr><td>platya</td><td>Хлопковое платье</td><td>Тип воротника</td><td>Отложной</td><td>visual</td></tr><tr><td>platya</td><td>Хлопковое платье</td><td>Принт/Узор</td><td>Логомания</td><td>visual</td></tr><tr><td>obuv</td><td>Комбинированные кроссовки Zac Zac</td><td>Тип застежки</td><td>Шнуровка</td><td>visual</td></tr><tr><td>obuv</td><td>Комбинированные кроссовки Zac Zac</td><td>Фактура</td><td>Сетчатая</td><td>visual</td></tr><tr><td>tufli</td><td>Кожаные монки</td><td>тип застежки</td><td>пряжки</td><td>visual</td></tr><tr><td>tufli</td><td>Кожаные монки</td><td>форма носка</td><td>закругленный</td><td>visual</td></tr><tr><td>tufli</td><td>Кожаные дерби</td><td>тип застежки</td><td>шнуровка</td><td>visual</td></tr><tr><td>tufli</td><td>Кожаные дерби</td><td>фактура</td><td>зернистая кожа</td><td>visual</td></tr><tr><td>sumki</td><td>Борсетка</td><td>силуэт сумки</td><td>прямоугольный</td><td>visual</td></tr><tr><td>sumki</td><td>Борсетка</td><td>тип застежки</td><td>молния</td><td>visual</td></tr><tr><td>sumki</td><td>Сумка</td><td>силуэт сумки</td><td>хобо</td><td>visual</td></tr><tr><td>sumki</td><td>Сумка</td><td>количество ручек</td><td>одна</td><td>visual</td></tr><tr><td>kosmetika</td><td>Матирующий тональный крем Teint Idole Ultra Wear S</td><td>Эффект</td><td>Комфорт</td><td>ocr</td></tr><tr><td>kosmetika</td><td>Маска для волос Elacticizer Extreme (150ml)</td><td>Эффект</td><td>увлажнение</td><td>ocr</td></tr></tbody>
-  </table>
+  
+    <article class="case">
+      <div class="case-num">1</div>
+      <a class="case-img" href="https://www.tsum.ru/product/he00608131-sherstyanoi-kostyum-boss-seryi/" target="_blank" rel="noopener">
+        <img src="https://st-cdn.tsum.com/sig/49afb62384ea400fddc6fdb814760c64/square/640/i/57/d2/d9/c2/57d2d9c2-5d25-3600-8e56-c3add4fb03e7.jpg" alt="Шерстяной костюм" loading="lazy"/>
+      </a>
+      <div class="case-body">
+        <div class="case-meta">odezhda · BOSS · id 11302590</div>
+        <h3>Шерстяной костюм</h3>
+        <p class="case-line">На фото полоска и пуговицы — в фиде только цвет/материал, без принта и застёжки.</p>
+        <div class="case-cols">
+          <div>
+            <h4>Уже было в фиде</h4>
+            <table class="mini"><tbody><tr><td>Пол</td><td>Мужской</td></tr><tr><td>Материал</td><td>Шерсть: 100%;</td></tr><tr><td>Страна дизайна</td><td>Германия</td></tr><tr><td>Оттенок</td><td>Серый</td></tr><tr><td>Цвет</td><td>Серый</td></tr><tr><td>custom categories</td><td>Костюмы,Повседневные</td></tr><tr><td>attribute_sleeve</td><td>Длинные</td></tr><tr><td>Скидка</td><td>Нет</td></tr></tbody></table>
+          </div>
+          <div>
+            <h4>Достали с картинки (не было в фиде)</h4>
+            <ul class="attrs"><li><strong>Принт</strong>: Полоска <span class='ev'>(visual)</span></li><li><strong>Силуэт</strong>: Прямой <span class='ev'>(visual)</span></li><li><strong>Тип воротника</strong>: Отложной <span class='ev'>(visual)</span></li><li><strong>Тип застежки</strong>: Пуговицы <span class='ev'>(visual)</span></li><li><strong>Детали</strong>: Карманы <span class='ev'>(visual)</span></li><li><strong>Посадка</strong>: Классическая <span class='ev'>(visual)</span></li></ul>
+          </div>
+        </div>
+      </div>
+    </article>
+    
 
-  <h2>6. Приоритетные категории каталога</h2>
+    <article class="case">
+      <div class="case-num">2</div>
+      <a class="case-img" href="https://www.tsum.ru/product/7125923-plate-diesel-chernyi/" target="_blank" rel="noopener">
+        <img src="https://st-cdn.tsum.com/sig/1a4561697369781a419a81b0692832d9/square/640/i/00/03/5d/97/2a4affbd-56f7-4194-9971-7d6190c4c7cc.jpg" alt="Платье" loading="lazy"/>
+      </a>
+      <div class="case-body">
+        <div class="case-meta">platya · Diesel · id 13839154</div>
+        <h3>Платье</h3>
+        <p class="case-line">Вырез-капля и стойка видны на фото; в params нет воротника/выреза.</p>
+        <div class="case-cols">
+          <div>
+            <h4>Уже было в фиде</h4>
+            <table class="mini"><tbody><tr><td>Сезон</td><td>FW 26/27</td></tr><tr><td>Размер</td><td>175cm</td></tr><tr><td>Пол</td><td>Детский</td></tr><tr><td>Материал</td><td>Эластан (Полиуретан): 6%; Вискоза: 55%; Полиамид: 39%;</td></tr><tr><td>Оттенок</td><td>Черный</td></tr><tr><td>Цвет</td><td>Чёрный</td></tr><tr><td>custom categories</td><td>Повседневные</td></tr><tr><td>attribute_sleeve</td><td>Короткие</td></tr></tbody></table>
+          </div>
+          <div>
+            <h4>Достали с картинки (не было в фиде)</h4>
+            <ul class="attrs"><li><strong>Вырез</strong>: Вырез-капля <span class='ev'>(visual)</span></li><li><strong>Воротник</strong>: Воротник-стойка <span class='ev'>(visual)</span></li><li><strong>Застежка</strong>: Молния <span class='ev'>(visual)</span></li></ul>
+          </div>
+        </div>
+      </div>
+    </article>
+    
+
+    <article class="case">
+      <div class="case-num">3</div>
+      <a class="case-img" href="https://www.tsum.ru/product/7024549-sumka-vic-matie-chernyi/" target="_blank" rel="noopener">
+        <img src="https://st-cdn.tsum.com/sig/d53981e27df0de2788af7a4fb5eba4fb/square/640/i/00/00/c6/88/d91fb729-53fa-4285-ab64-07e7feb35b64.jpg" alt="Сумка" loading="lazy"/>
+      </a>
+      <div class="case-body">
+        <div class="case-meta">sumki · Vic Matie · id 13661940</div>
+        <h3>Сумка</h3>
+        <p class="case-line">Силуэт «хобо» с фото; в фиде нет типа сумки как атрибута.</p>
+        <div class="case-cols">
+          <div>
+            <h4>Уже было в фиде</h4>
+            <table class="mini"><tbody><tr><td>Сезон</td><td>SS 2025</td></tr><tr><td>Пол</td><td>Женский</td></tr><tr><td>Материал</td><td>Кожа натуральная: 100%;</td></tr><tr><td>Страна дизайна</td><td>Италия</td></tr><tr><td>Оттенок</td><td>Черный</td></tr><tr><td>Цвет</td><td>Чёрный</td></tr><tr><td>custom categories</td><td>Сумки через плечо,Сумки</td></tr><tr><td>Скидка</td><td>Нет</td></tr></tbody></table>
+          </div>
+          <div>
+            <h4>Достали с картинки (не было в фиде)</h4>
+            <ul class="attrs"><li><strong>силуэт сумки</strong>: хобо <span class='ev'>(visual)</span></li><li><strong>количество ручек</strong>: одна <span class='ev'>(visual)</span></li><li><strong>детали</strong>: стёганая <span class='ev'>(visual)</span></li></ul>
+          </div>
+        </div>
+      </div>
+    </article>
+    
+
+    <article class="case">
+      <div class="case-num">4</div>
+      <a class="case-img" href="https://www.tsum.ru/product/7129546-uteplennaya-kurtka-herno-kremovyi/" target="_blank" rel="noopener">
+        <img src="https://st-cdn.tsum.com/sig/e3000b3cc8b3141e0d86eb6864dfac00/square/640/i/00/0c/49/36/4791717d-06c9-4c4f-a530-81288476607d.jpg" alt="Утепленная куртка" loading="lazy"/>
+      </a>
+      <div class="case-body">
+        <div class="case-meta">kurtki · Herno · id 13846153</div>
+        <h3>Утепленная куртка</h3>
+        <p class="case-line">Капюшон на фото; boolean hood в фиде отсутствует.</p>
+        <div class="case-cols">
+          <div>
+            <h4>Уже было в фиде</h4>
+            <table class="mini"><tbody><tr><td>Сезон</td><td>FW 26/27</td></tr><tr><td>Размер</td><td>140-142cm</td></tr><tr><td>Пол</td><td>Детский</td></tr><tr><td>Материал</td><td>Полиэстер: 100%; Подкладка-полиамид: 100%; Наполнитель-полиэстер: 100%; Отделка-полиэстер: 100%;</td></tr><tr><td>Оттенок</td><td>Кремовый</td></tr><tr><td>Цвет</td><td>Кремовый</td></tr><tr><td>custom categories</td><td>Верхняя одежда,Утепленные</td></tr><tr><td>attribute_season</td><td>Осень/Весна</td></tr></tbody></table>
+          </div>
+          <div>
+            <h4>Достали с картинки (не было в фиде)</h4>
+            <ul class="attrs"><li><strong>капюшон</strong>: есть <span class='ev'>(visual)</span></li><li><strong>застежка</strong>: молния <span class='ev'>(visual)</span></li><li><strong>карманы</strong>: прорезные <span class='ev'>(visual)</span></li><li><strong>силуэт</strong>: прямой <span class='ev'>(visual)</span></li></ul>
+          </div>
+        </div>
+      </div>
+    </article>
+    
+
+    <article class="case">
+      <div class="case-num">5</div>
+      <a class="case-img" href="https://www.tsum.ru/product/6981791-komplekt-iz-palto-i-zhileta-dolce-gabbana-bordovyi/" target="_blank" rel="noopener">
+        <img src="https://st-cdn.tsum.com/sig/6853547b5a3e8391fe02f84d70f7ceab/square/640/i/01/9c/cd/eb/30f31003-6677-4df6-b40b-f9b14b4952c2.jpg" alt="Комплект из пальто и жилета" loading="lazy"/>
+      </a>
+      <div class="case-body">
+        <div class="case-meta">palto · Dolce & Gabbana · id 13594873</div>
+        <h3>Комплект из пальто и жилета</h3>
+        <p class="case-line">Клетка тартан на пальто; в name/params типа узора нет.</p>
+        <div class="case-cols">
+          <div>
+            <h4>Уже было в фиде</h4>
+            <table class="mini"><tbody><tr><td>Сезон</td><td>FW 24/25</td></tr><tr><td>Размер</td><td>144-156cm</td></tr><tr><td>Пол</td><td>Детский</td></tr><tr><td>Материал</td><td>Пальто: Шерсть: 80%; Нейлон: 20%; Подкладка-полиэстер: 100%; Наполнитель-полиэстер: 100%; Шапка-капюшон: Шерсть: 80%; Нейлон: 20%; Подкладка-полиэстер: 100%; Наполнитель-полиэстер: 100%;</td></tr><tr><td>Страна дизайна</td><td>Италия</td></tr><tr><td>Оттенок</td><td>Бордовый</td></tr><tr><td>Цвет</td><td>Бордовый</td></tr><tr><td>custom categories</td><td>Пальто,Верхняя одежда,Школа</td></tr></tbody></table>
+          </div>
+          <div>
+            <h4>Достали с картинки (не было в фиде)</h4>
+            <ul class="attrs"><li><strong>Детали</strong>: накладные карманы <span class='ev'>(visual)</span></li><li><strong>Застежка</strong>: пуговицы-клыки <span class='ev'>(visual)</span></li><li><strong>Принт/Узор</strong>: клетка тартан <span class='ev'>(visual)</span></li><li><strong>Детали</strong>: стеганая <span class='ev'>(visual)</span></li><li><strong>Застежка</strong>: молния <span class='ev'>(visual)</span></li></ul>
+          </div>
+        </div>
+      </div>
+    </article>
+    
+
+  <h2>6. Конверсия из Яндекс.Метрики (проверено API)</h2>
+  <p class="meta">Счётчик 21801616 · tsum.ru · период 2026-04-22 — 2026-07-20 · цель «Автоцель: поиск по сайту» 260498358</p>
+  <div class="grid">
+    <div class="stat"><b>0.309%</b><span>CVR сайта (ecommerce / visits)</span></div>
+    <div class="stat"><b>114 455 ₽</b><span>средний чек сайта</span></div>
+    <div class="stat"><b>17 010</b><span>покупок ecommerce / 90д</span></div>
+    <div class="stat"><b>1.211%</b><span>CVR визитов с поиском (цель)</span></div>
+    <div class="stat"><b>0.280%</b><span>CVR без поиска · поиск ×4.3</span></div>
+    <div class="stat"><b>11.9M ₽</b><span>Δ выручка / мес (базовый, Метрика)</span></div>
+  </div>
+  <div class="callout warn">
+    Diginetica CH давал ~0.08% search CVR — занижение атрибуции. Деньги считаем по Метрике:
+    CVR поиска 1.211%, AOV поиска ~106.7k ₽.
+  </div>
+
+<h2>7. Приоритетные категории каталога</h2>
   <p>По объёму offer в фиде (и пересечению с тем, что ищут в CH — бренды + типы одежды/обуви/сумок):</p>
   <table>
     <thead><tr><th>Категория</th><th>Offers</th><th>URL</th></tr></thead>
@@ -154,7 +298,7 @@ footer { margin-top:48px; color:var(--muted); font-size:12px; }
     Там максимальная плотность стилевых запросов и визуально читаемые признаки.
   </p>
 
-  <h2>7. Деньги: на какие запросы влияем и сколько ₽</h2>
+  <h2>8. Деньги: на какие запросы влияем и сколько ₽</h2>
   <p class="lead" style="font-size:15px">
     Классификация через Diginetica API (<code>apiKey=…4208</code>, strategy
     <code>advanced_xname,zero_queries_predictor</code>) на vision-лексике.
@@ -164,19 +308,19 @@ footer { margin-top:48px; color:var(--muted); font-size:12px; }
     <div class="stat"><b>356</b><span>RESERVE (запасные) запросов · 12 789 поисков/90д</span></div>
     <div class="stat"><b>0</b><span>ZERO среди impact (товары есть, матчинг слабый)</span></div>
     <div class="stat"><b>1 148</b><span>NORMAL · 306k поисков — lift точности</span></div>
-    <div class="stat"><b>0%</b><span>CVR запасных в CH (top80 API-RESERVE)</span></div>
-    <div class="stat"><b>0.083%</b><span>CVR точных (цель)</span></div>
-    <div class="stat"><b>~100k ₽</b><span>средний чек search-заказов</span></div>
+    <div class="stat"><b>~0.48%</b><span>CVR запасных (оценка 40% от поиска)</span></div>
+    <div class="stat"><b>1.211%</b><span>CVR точных = поиск Метрика</span></div>
+    <div class="stat"><b>~107k ₽</b><span>AOV поиска (Метрика)</span></div>
   </div>
   <table>
     <thead><tr><th>Сценарий</th><th>₽/мес</th><th>₽/90д</th><th>₽/год</th></tr></thead>
     <tbody>
-      <tr><td>Консервативный</td><td>566 459</td><td>1 699 376</td><td>6 797 505</td></tr>
-      <tr><td><strong>Базовый (партнёру)</strong></td><td><strong>877 622</strong></td><td><strong>2 632 865</strong></td><td><strong>10 531 461</strong></td></tr>
-      <tr><td>Оптимистичный</td><td>1 402 233</td><td>4 206 699</td><td>16 826 796</td></tr>
+      <tr><td>Консервативный</td><td>7.3M</td><td>21.8M</td><td>87.1M</td></tr>
+      <tr><td><strong>Базовый (партнёру)</strong></td><td><strong>11.9M</strong></td><td><strong>35.6M</strong></td><td><strong>142.4M</strong></td></tr>
+      <tr><td>Оптимистичный</td><td>21.2M</td><td>63.6M</td><td>254.6M</td></tr>
     </tbody>
   </table>
-  <p>Базовый: RESERVE→точный <strong>284k ₽/мес</strong> + NORMAL точнее <strong>594k ₽/мес</strong>.</p>
+  <p>Базовый (Метрика CVR 1.211% × AOV ~107k): RESERVE→точный <strong>2.6M ₽/мес</strong> + NORMAL точнее <strong>9.2M ₽/мес</strong>.</p>
   <h3>Топ запасных (API) — примеры</h3>
   <table>
     <thead><tr><th>Запрос</th><th>Поисков/90д</th><th>hits API</th><th>Δ ₽/мес</th></tr></thead>
@@ -189,12 +333,12 @@ footer { margin-top:48px; color:var(--muted); font-size:12px; }
     </tbody>
   </table>
   <div class="callout warn">
-    <strong>Формула:</strong> Δ = searches × fixable × (CVR_new − CVR_old) × AOV.
-    RESERVE измерено CVR=0% → 0.083%; NORMAL +20% относительный lift на 35% объёма.
-    В CH к поиску атрибуцируется мало заказов (1.3k из 15.5k сайта) — оценка консервативна относительно реального чека сайта (~110k ₽).
+    <strong>Формула:</strong> Δ = searches × fixable × (CVR_new − CVR_old) × AOV_Метрика.
+    Цель точных = CVR поиска 1.211%; запасные сейчас ~40% от него; NORMAL +20% relative на 35% объёма.
+    Источник: Яндекс.Метрика API, не Diginetica CH.
   </div>
 
-  <h2>8. Методология (коротко)</h2>
+  <h2>9. Методология (коротко)</h2>
   <ol>
     <li>Инвентаризация YML (stream parse 1.5 GB) — params, fill, выборка по категориям.</li>
     <li>ClickHouse site 203 — топ-30k запросов / 90д + totals.</li>

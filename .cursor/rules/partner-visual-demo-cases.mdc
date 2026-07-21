@@ -1,0 +1,25 @@
+---
+description: В партнёрских отчётах по атрибутам с картинок всегда нужны наглядные кейсы с фото
+globs: portfolio/**/*.html
+alwaysApply: false
+---
+
+# Наглядные кейсы (vision attrs)
+
+В HTML для партнёра **нельзя** ограничиваться таблицей attr/value без фото.
+
+## Минимум
+
+- **5 кейсов** с реальными `picture` URL
+- У каждого: что было в фиде / что достали с картинки / 1 фраза для партнёра
+- Разные категории; только KEEP после feed-collision
+
+## Пайплайн (TSUM-эталон)
+
+1. `_tsum_pick_demo_cases.py` → `portfolio/*/demo_cases.json`
+2. `_tsum_build_demo_html.py` → секция в partner HTML
+3. Шаблон: `portfolio/tsum/PARTNER_DEMO_CASES_TEMPLATE.md`
+
+## Деньги
+
+CVR/AOV для оценки ₽ — из **Яндекс.Метрики** (скилл `skills-portable/skills/metrika`), не только Diginetica CH, если CH search-атрибуция занижает заказы.
