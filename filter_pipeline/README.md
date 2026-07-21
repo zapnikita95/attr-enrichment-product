@@ -33,8 +33,11 @@ py -3.13 filter_pipeline/build_zolla_partner_defense.py
 
 Открой: `portfolio/zolla_filters/zolla-filters-research.html`
 
-Логика типов (boolean/enum): `TYPE_DECISION_METHOD.md` — дерево Q0–Q4.  
-Спрос: CH top queries. Gap: YML params. Деньги: формула с явным ASSUMED lift.
+**§5 обязателен:** реальные фото + «было в фиде» + «достали → фильтр».  
+Сборка кейсов: `py -3.13 filter_pipeline/build_demo_cases.py`
+
+Логика типов: `TYPE_DECISION_METHOD.md` (Q0–Q4).  
+Спрос: CH. Gap: YML. Деньги: ASSUMED lift явно помечен.
 
 ## Demand evidence (обязательно перед «имеет смысл»)
 

@@ -371,6 +371,56 @@ def main() -> None:
         or c["attr_id"] == "silhouette"
     )
 
+    # Real product cases (mandatory for partner defense)
+    cases_path = OUT / "demo_cases.json"
+    if not cases_path.is_file():
+        import subprocess
+        import sys
+
+        subprocess.check_call([sys.executable, str(Path(__file__).parent / "build_demo_cases.py")])
+    cases_data = json.loads(cases_path.read_text(encoding="utf-8")) if cases_path.is_file() else {"cases": []}
+    case_articles = []
+    for c in cases_data.get("cases") or []:
+        feed_rows = "".join(f"<tr><td>{k}</td><td>{v}</td></tr>" for k, v in (c.get("feed") or {}).items())
+        attrs = "".join(
+            "<li{hl}><strong>{lab}</strong>: {val} "
+            "<span class='ev'>({ev})</span> "
+            "<span class='filt'>→ фильтр: {fui}</span></li>".format(
+                hl=" class='focus'" if f.get("focus") else "",
+                lab=f.get("label"),
+                val=f.get("value"),
+                ev=f.get("evidence"),
+                fui=f.get("filter_ui"),
+            )
+            for f in c.get("extracted_filters") or []
+        )
+        case_articles.append(
+            f"""
+    <article class="case">
+      <div class="case-num">{c.get('n')}</div>
+      <a class="case-img" href="{c.get('picture_url')}" target="_blank" rel="noopener">
+        <img src="{c.get('picture_url')}" alt="{c.get('name')}" loading="lazy"/>
+      </a>
+      <div class="case-body">
+        <div class="case-meta">Zolla · offer_id {c.get('offer_id')} · focus <code>{c.get('focus_attr')}</code></div>
+        <h3>{c.get('name')}</h3>
+        <p class="case-line">{c.get('blurb')}</p>
+        <div class="case-cols">
+          <div>
+            <h4>Уже было в фиде / старом extract</h4>
+            <table class="mini"><tbody>{feed_rows}</tbody></table>
+          </div>
+          <div>
+            <h4>Достали → станет фильтром</h4>
+            <ul class="attrs">{attrs}</ul>
+          </div>
+        </div>
+      </div>
+    </article>
+"""
+        )
+    cases_html = "".join(case_articles) or "<p class='meta'>Нет demo_cases.json — запусти build_demo_cases.py</p>"
+
     html = f"""<!DOCTYPE html>
 <html lang="ru">
 <head>
@@ -403,6 +453,24 @@ th {{ background:#efeae3; font-weight:600; }}
 ol.tree {{ max-width:720px; }}
 footer {{ margin-top:48px; color:var(--muted); font-size:12px; }}
 code {{ font-size:12px; }}
+.case {{ display:grid; grid-template-columns:56px 200px 1fr; gap:16px; background:var(--card); border:1px solid var(--line); padding:16px; margin:14px 0; align-items:start; }}
+.case-num {{ font-size:22px; font-weight:700; color:var(--accent); }}
+.case-img img {{ width:200px; height:200px; object-fit:cover; display:block; background:#eee; }}
+.case-meta {{ font-size:12px; color:var(--muted); margin-bottom:4px; }}
+.case-body h3 {{ margin:0 0 8px; font-size:17px; }}
+.case-line {{ margin:0 0 12px; font-size:14px; }}
+.case-cols {{ display:grid; grid-template-columns:1fr 1fr; gap:12px; }}
+.case-cols h4 {{ margin:0 0 6px; font-size:13px; color:var(--muted); font-weight:600; }}
+table.mini {{ font-size:12px; width:100%; }}
+.attrs {{ margin:0; padding-left:18px; font-size:14px; }}
+.attrs .ev {{ color:var(--muted); font-size:12px; }}
+.attrs .filt {{ display:block; color:var(--accent); font-size:12px; margin-top:2px; }}
+.attrs li.focus {{ font-weight:600; }}
+@media (max-width:800px) {{
+  .case {{ grid-template-columns:1fr; }}
+  .case-img img {{ width:100%; height:auto; max-height:280px; }}
+  .case-cols {{ grid-template-columns:1fr; }}
+}}
 </style>
 </head>
 <body>
@@ -503,7 +571,15 @@ code {{ font-size:12px; }}
   </table>
   <p class="meta">Полный файл с примерами запросов: <code>FILTER_DEMAND_EVIDENCE.md</code>.</p>
 
-  <h2>5. Деньги (прозрачно, со статусом ASSUMED)</h2>
+  <h2>5. Наглядные кейсы: фото → фильтр (обязательно)</h2>
+  <p class="lead" style="font-size:15px">
+    Реальные карточки Zolla. Слева — что уже в фиде / старом extract.
+    Справа — что достали с картинки и <strong>как это ляжет в фильтр</strong>
+    (тип + канон значения). Без таких кейсов защита неполная.
+  </p>
+  {cases_html}
+
+  <h2>6. Деньги (прозрачно, со статусом ASSUMED)</h2>
   <div class="callout warn">
     {money['baseline_caveat']}
   </div>
@@ -523,7 +599,7 @@ code {{ font-size:12px; }}
   </table>
   <p>Дальше вместо ASSUMED: замер <code>conv_with_filters</code> vs <code>conv_without_filters</code> по категориям (как в 4lapy filter-conversion).</p>
 
-  <h2>6. Что уже проверили технически (пилот)</h2>
+  <h2>7. Что уже проверили технически (пилот)</h2>
   <ul>
     <li>Closed-set extract через OpenRouter (бюджет: gemma / flash-lite).</li>
     <li>Дедуп по picture URL → один inference → размножение на все offer_id с той же картинкой.</li>

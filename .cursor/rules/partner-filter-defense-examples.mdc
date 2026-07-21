@@ -1,0 +1,35 @@
+---
+description: Partner filter/attribute research MUST include real product photo cases
+alwaysApply: true
+---
+
+# Partner defense: всегда примеры с картинками
+
+Когда готовишь исследование / защиту фильтров или атрибутов для партнёра (Zolla, ЦУМ, Befree…):
+
+## Обязательно
+
+1. **Реальные кейсы** — не только таблицы спроса.
+2. У каждого кейса:
+   - **реальная картинка** товара (`picture_url` CDN / кэш)
+   - **offer_id** + название
+   - **что уже было в фиде** (params / name)
+   - **что достали** (vision/text) с канон-значением
+   - **как станет фильтром** (`label = value`, тип boolean/enum/…)
+3. Минимум **5 кейсов**, разные атрибуты (boolean + enum + multi_enum).
+4. Референс формата: `portfolio/tsum/tsum-image-attrs-research.html` §5 и `portfolio/zolla_filters/zolla-filters-research.html` §5.
+
+## Запрещено
+
+- Сдавать HTML/отчёт только с таблицами «спрос CH» без фото-кейсов
+- Выдумывать картинки / SKU — только из фида, `results.db` или control samples
+- Писать «выделили атрибут» без показа значения и UI-фильтра
+
+## Как собрать для Zolla
+
+```powershell
+py -3.13 filter_pipeline/build_demo_cases.py
+py -3.13 filter_pipeline/build_zolla_partner_defense.py
+```
+
+Артефакт кейсов: `portfolio/zolla_filters/demo_cases.json`

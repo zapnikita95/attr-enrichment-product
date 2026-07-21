@@ -30,6 +30,24 @@ th { background:#efeae3; font-weight:600; }
 ol.tree { max-width:720px; }
 footer { margin-top:48px; color:var(--muted); font-size:12px; }
 code { font-size:12px; }
+.case { display:grid; grid-template-columns:56px 200px 1fr; gap:16px; background:var(--card); border:1px solid var(--line); padding:16px; margin:14px 0; align-items:start; }
+.case-num { font-size:22px; font-weight:700; color:var(--accent); }
+.case-img img { width:200px; height:200px; object-fit:cover; display:block; background:#eee; }
+.case-meta { font-size:12px; color:var(--muted); margin-bottom:4px; }
+.case-body h3 { margin:0 0 8px; font-size:17px; }
+.case-line { margin:0 0 12px; font-size:14px; }
+.case-cols { display:grid; grid-template-columns:1fr 1fr; gap:12px; }
+.case-cols h4 { margin:0 0 6px; font-size:13px; color:var(--muted); font-weight:600; }
+table.mini { font-size:12px; width:100%; }
+.attrs { margin:0; padding-left:18px; font-size:14px; }
+.attrs .ev { color:var(--muted); font-size:12px; }
+.attrs .filt { display:block; color:var(--accent); font-size:12px; margin-top:2px; }
+.attrs li.focus { font-weight:600; }
+@media (max-width:800px) {
+  .case { grid-template-columns:1fr; }
+  .case-img img { width:100%; height:auto; max-height:280px; }
+  .case-cols { grid-template-columns:1fr; }
+}
 </style>
 </head>
 <body>
@@ -130,7 +148,191 @@ code { font-size:12px; }
   </table>
   <p class="meta">Полный файл с примерами запросов: <code>FILTER_DEMAND_EVIDENCE.md</code>.</p>
 
-  <h2>5. Деньги (прозрачно, со статусом ASSUMED)</h2>
+  <h2>5. Наглядные кейсы: фото → фильтр (обязательно)</h2>
+  <p class="lead" style="font-size:15px">
+    Реальные карточки Zolla. Слева — что уже в фиде / старом extract.
+    Справа — что достали с картинки и <strong>как это ляжет в фильтр</strong>
+    (тип + канон значения). Без таких кейсов защита неполная.
+  </p>
+  
+    <article class="case">
+      <div class="case-num">1</div>
+      <a class="case-img" href="https://zolla.com/upload/iplm/images/goods/020345212224_8000.jpg" target="_blank" rel="noopener">
+        <img src="https://zolla.com/upload/iplm/images/goods/020345212224_8000.jpg" alt="Утеплённое пальто с капюшоном и поясом" loading="lazy"/>
+      </a>
+      <div class="case-body">
+        <div class="case-meta">Zolla · offer_id 31629 · focus <code>hood</code></div>
+        <h3>Утеплённое пальто с капюшоном и поясом</h3>
+        <p class="case-line">Капюшон виден на фото → boolean-фильтр «да».</p>
+        <div class="case-cols">
+          <div>
+            <h4>Уже было в фиде / старом extract</h4>
+            <table class="mini"><tbody><tr><td>Цвет / оттенок</td><td>—</td></tr><tr><td>Категория</td><td>—</td></tr><tr><td>Цвет</td><td>коричневый</td></tr><tr><td>Оттенок</td><td>кофейный</td></tr><tr><td>Принт (старый freeform)</td><td>однотонный</td></tr><tr><td>Капюшон (param)</td><td>нет в фиде</td></tr><tr><td>Застёжка (param)</td><td>нет в фиде</td></tr><tr><td>Длина как facet</td><td>нет в фиде</td></tr></tbody></table>
+          </div>
+          <div>
+            <h4>Достали → станет фильтром</h4>
+            <ul class="attrs"><li class='focus'><strong>Капюшон</strong>: да <span class='ev'>(Капюшон виден на голове.)</span> <span class='filt'>→ фильтр: Капюшон = да</span></li></ul>
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <article class="case">
+      <div class="case-num">2</div>
+      <a class="case-img" href="https://zolla.com/upload/iplm/images/goods/022253273153_51S0.jpg" target="_blank" rel="noopener">
+        <img src="https://zolla.com/upload/iplm/images/goods/022253273153_51S0.jpg" alt="Футболка из хлопка на кулиске" loading="lazy"/>
+      </a>
+      <div class="case-body">
+        <div class="case-meta">Zolla · offer_id 177548 · focus <code>print_pattern</code></div>
+        <h3>Футболка из хлопка на кулиске</h3>
+        <p class="case-line">Полоска на футболке → multi_enum фильтр «полоска».</p>
+        <div class="case-cols">
+          <div>
+            <h4>Уже было в фиде / старом extract</h4>
+            <table class="mini"><tbody><tr><td>Цвет / оттенок</td><td>—</td></tr><tr><td>Категория</td><td>Женщины / Футболки и Топы / Футболки</td></tr><tr><td>Принт (старый freeform)</td><td>полоски</td></tr><tr><td>Материал</td><td>хлопок</td></tr><tr><td>Капюшон (param)</td><td>нет в фиде</td></tr><tr><td>Застёжка (param)</td><td>нет в фиде</td></tr><tr><td>Длина как facet</td><td>нет в фиде</td></tr></tbody></table>
+          </div>
+          <div>
+            <h4>Достали → станет фильтром</h4>
+            <ul class="attrs"><li><strong>Воротник / вырез</strong>: отложной <span class='ev'>(На фотографии виден отложной воротник.)</span> <span class='filt'>→ фильтр: Воротник / вырез = отложной</span></li><li><strong>Капюшон</strong>: нет <span class='ev'>(обычный воротник)</span> <span class='filt'>→ фильтр: Капюшон = нет</span></li><li class='focus'><strong>Узор / принт</strong>: полоска <span class='ev'>(На футболке видны горизонтальные полоски голубого и белого цветов.)</span> <span class='filt'>→ фильтр: Узор / принт = полоска</span></li></ul>
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <article class="case">
+      <div class="case-num">3</div>
+      <a class="case-img" href="https://zolla.com/upload/iplm/images/goods/021438259193_59P0.jpg" target="_blank" rel="noopener">
+        <img src="https://zolla.com/upload/iplm/images/goods/021438259193_59P0.jpg" alt="Шифоновое платье мини с бантом" loading="lazy"/>
+      </a>
+      <div class="case-body">
+        <div class="case-meta">Zolla · offer_id 42955 · focus <code>length</code></div>
+        <h3>Шифоновое платье мини с бантом</h3>
+        <p class="case-line">Мини-платье → enum-фильтр длины mini.</p>
+        <div class="case-cols">
+          <div>
+            <h4>Уже было в фиде / старом extract</h4>
+            <table class="mini"><tbody><tr><td>Цвет / оттенок</td><td>—</td></tr><tr><td>Категория</td><td>—</td></tr><tr><td>Цвет</td><td>синий</td></tr><tr><td>Оттенок</td><td>кобальт</td></tr><tr><td>Принт (старый freeform)</td><td>цветочный</td></tr><tr><td>Капюшон (param)</td><td>нет в фиде</td></tr><tr><td>Застёжка (param)</td><td>нет в фиде</td></tr><tr><td>Длина как facet</td><td>нет в фиде</td></tr></tbody></table>
+          </div>
+          <div>
+            <h4>Достали → станет фильтром</h4>
+            <ul class="attrs"><li class='focus'><strong>Длина изделия</strong>: mini <span class='ev'>(Платье имеет короткую длину.)</span> <span class='filt'>→ фильтр: Длина изделия = mini</span></li></ul>
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <article class="case">
+      <div class="case-num">4</div>
+      <a class="case-img" href="https://zolla.com/upload/iplm/images/goods/22324827Y261_7200.jpg" target="_blank" rel="noopener">
+        <img src="https://zolla.com/upload/iplm/images/goods/22324827Y261_7200.jpg" alt="Ярусное платье макси на кулиске с вырезом" loading="lazy"/>
+      </a>
+      <div class="case-body">
+        <div class="case-meta">Zolla · offer_id 83302 · focus <code>length</code></div>
+        <h3>Ярусное платье макси на кулиске с вырезом</h3>
+        <p class="case-line">Макси-платье → enum-фильтр длины maxi.</p>
+        <div class="case-cols">
+          <div>
+            <h4>Уже было в фиде / старом extract</h4>
+            <table class="mini"><tbody><tr><td>Цвет / оттенок</td><td>—</td></tr><tr><td>Категория</td><td>—</td></tr><tr><td>Цвет</td><td>зелёный</td></tr><tr><td>Оттенок</td><td>лайм</td></tr><tr><td>Принт (старый freeform)</td><td>однотонный</td></tr><tr><td>Капюшон (param)</td><td>нет в фиде</td></tr><tr><td>Застёжка (param)</td><td>нет в фиде</td></tr><tr><td>Длина как facet</td><td>нет в фиде</td></tr></tbody></table>
+          </div>
+          <div>
+            <h4>Достали → станет фильтром</h4>
+            <ul class="attrs"><li class='focus'><strong>Длина изделия</strong>: maxi <span class='ev'>(длинное платье)</span> <span class='filt'>→ фильтр: Длина изделия = maxi</span></li></ul>
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <article class="case">
+      <div class="case-num">5</div>
+      <a class="case-img" href="https://zolla.com/upload/iplm/images/goods/221347839061_8100.jpg" target="_blank" rel="noopener">
+        <img src="https://zolla.com/upload/iplm/images/goods/221347839061_8100.jpg" alt="Замшевая мини-юбка на молнии" loading="lazy"/>
+      </a>
+      <div class="case-body">
+        <div class="case-meta">Zolla · offer_id 39070 · focus <code>fastener</code></div>
+        <h3>Замшевая мини-юбка на молнии</h3>
+        <p class="case-line">Молния на юбке → enum-фильтр застёжки.</p>
+        <div class="case-cols">
+          <div>
+            <h4>Уже было в фиде / старом extract</h4>
+            <table class="mini"><tbody><tr><td>Цвет / оттенок</td><td>—</td></tr><tr><td>Категория</td><td>—</td></tr><tr><td>Цвет</td><td>коричневый</td></tr><tr><td>Оттенок</td><td>шатен</td></tr><tr><td>Принт (старый freeform)</td><td>однотонный</td></tr><tr><td>Капюшон (param)</td><td>нет в фиде</td></tr><tr><td>Застёжка (param)</td><td>нет в фиде</td></tr><tr><td>Длина как facet</td><td>нет в фиде</td></tr></tbody></table>
+          </div>
+          <div>
+            <h4>Достали → станет фильтром</h4>
+            <ul class="attrs"><li class='focus'><strong>Застёжка</strong>: молния <span class='ev'>(Видна молния на юбке)</span> <span class='filt'>→ фильтр: Застёжка = молния</span></li></ul>
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <article class="case">
+      <div class="case-num">6</div>
+      <a class="case-img" href="https://zolla.com/upload/iplm/images/goods/011335239304_9900.jpg" target="_blank" rel="noopener">
+        <img src="https://zolla.com/upload/iplm/images/goods/011335239304_9900.jpg" alt="Утеплённый тренчкот с воротником-стойкой" loading="lazy"/>
+      </a>
+      <div class="case-body">
+        <div class="case-meta">Zolla · offer_id 38537 · focus <code>collar</code></div>
+        <h3>Утеплённый тренчкот с воротником-стойкой</h3>
+        <p class="case-line">Воротник-стойка → enum-фильтр воротника.</p>
+        <div class="case-cols">
+          <div>
+            <h4>Уже было в фиде / старом extract</h4>
+            <table class="mini"><tbody><tr><td>Цвет / оттенок</td><td>—</td></tr><tr><td>Категория</td><td>—</td></tr><tr><td>Цвет</td><td>чёрный</td></tr><tr><td>Оттенок</td><td>серый</td></tr><tr><td>Принт (старый freeform)</td><td>однотонный</td></tr><tr><td>Капюшон (param)</td><td>нет в фиде</td></tr><tr><td>Застёжка (param)</td><td>нет в фиде</td></tr><tr><td>Длина как facet</td><td>нет в фиде</td></tr></tbody></table>
+          </div>
+          <div>
+            <h4>Достали → станет фильтром</h4>
+            <ul class="attrs"><li class='focus'><strong>Воротник / вырез</strong>: стойка <span class='ev'>(На модели присутствует воротник-стойка.)</span> <span class='filt'>→ фильтр: Воротник / вырез = стойка</span></li></ul>
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <article class="case">
+      <div class="case-num">7</div>
+      <a class="case-img" href="https://zolla.com/upload/iplm/images/goods/011335114174_59P0.jpg" target="_blank" rel="noopener">
+        <img src="https://zolla.com/upload/iplm/images/goods/011335114174_59P0.jpg" alt="Утеплённая куртка с накладными карманами" loading="lazy"/>
+      </a>
+      <div class="case-body">
+        <div class="case-meta">Zolla · offer_id 39614 · focus <code>pockets</code></div>
+        <h3>Утеплённая куртка с накладными карманами</h3>
+        <p class="case-line">Накладные карманы на куртке → boolean «да».</p>
+        <div class="case-cols">
+          <div>
+            <h4>Уже было в фиде / старом extract</h4>
+            <table class="mini"><tbody><tr><td>Цвет / оттенок</td><td>—</td></tr><tr><td>Категория</td><td>—</td></tr><tr><td>Цвет</td><td>синий</td></tr><tr><td>Оттенок</td><td>синий</td></tr><tr><td>Принт (старый freeform)</td><td>милитари</td></tr><tr><td>Капюшон (param)</td><td>нет в фиде</td></tr><tr><td>Застёжка (param)</td><td>нет в фиде</td></tr><tr><td>Длина как facet</td><td>нет в фиде</td></tr></tbody></table>
+          </div>
+          <div>
+            <h4>Достали → станет фильтром</h4>
+            <ul class="attrs"><li class='focus'><strong>Карманы</strong>: да <span class='ev'>(На куртке видны накладные карманы.)</span> <span class='filt'>→ фильтр: Карманы = да</span></li></ul>
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <article class="case">
+      <div class="case-num">8</div>
+      <a class="case-img" href="https://zolla.com/upload/iplm/images/goods/021233326111_10S0.jpg" target="_blank" rel="noopener">
+        <img src="https://zolla.com/upload/iplm/images/goods/021233326111_10S0.jpg" alt="Футболка без рукавов" loading="lazy"/>
+      </a>
+      <div class="case-body">
+        <div class="case-meta">Zolla · offer_id 15873 · focus <code>sleeve_length</code></div>
+        <h3>Футболка без рукавов</h3>
+        <p class="case-line">Без рукавов → enum «без рукавов».</p>
+        <div class="case-cols">
+          <div>
+            <h4>Уже было в фиде / старом extract</h4>
+            <table class="mini"><tbody><tr><td>Цвет / оттенок</td><td>—</td></tr><tr><td>Категория</td><td>—</td></tr><tr><td>Принт (старый freeform)</td><td>полоска</td></tr><tr><td>Капюшон (param)</td><td>нет в фиде</td></tr><tr><td>Застёжка (param)</td><td>нет в фиде</td></tr><tr><td>Длина как facet</td><td>нет в фиде</td></tr></tbody></table>
+          </div>
+          <div>
+            <h4>Достали → станет фильтром</h4>
+            <ul class="attrs"><li><strong>Узор / принт</strong>: полоска <span class='ev'>(Вертикальные полоски на футболке.)</span> <span class='filt'>→ фильтр: Узор / принт = полоска</span></li><li class='focus'><strong>Длина рукава</strong>: без рукавов <span class='ev'>(На модели футболка без рукавов)</span> <span class='filt'>→ фильтр: Длина рукава = без рукавов</span></li></ul>
+          </div>
+        </div>
+      </div>
+    </article>
+
+
+  <h2>6. Деньги (прозрачно, со статусом ASSUMED)</h2>
   <div class="callout warn">
     В CH у Zolla search_orders за 90д крайне мало (возможен недоучёт withOrder). AOV/CVR из CH используем осторожно; для продажи партнёру нужен замер facet with/without или Метрика после появления фильтров.
   </div>
@@ -150,7 +352,7 @@ code { font-size:12px; }
   </table>
   <p>Дальше вместо ASSUMED: замер <code>conv_with_filters</code> vs <code>conv_without_filters</code> по категориям (как в 4lapy filter-conversion).</p>
 
-  <h2>6. Что уже проверили технически (пилот)</h2>
+  <h2>7. Что уже проверили технически (пилот)</h2>
   <ul>
     <li>Closed-set extract через OpenRouter (бюджет: gemma / flash-lite).</li>
     <li>Дедуп по picture URL → один inference → размножение на все offer_id с той же картинкой.</li>
@@ -159,7 +361,7 @@ code { font-size:12px; }
   </ul>
 
   <footer>
-    Generated 2026-07-21T12:08:10.280761+00:00 · Diginetica filter enrichment defense · Zolla 3826
+    Generated 2026-07-21T12:12:28.948522+00:00 · Diginetica filter enrichment defense · Zolla 3826
   </footer>
 </div>
 </body>

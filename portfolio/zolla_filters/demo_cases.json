@@ -1,0 +1,260 @@
+{
+  "partner": "Zolla",
+  "site_id": 3826,
+  "rule": "Every partner filter defense MUST include real picture + real extracted filter values",
+  "cases": [
+    {
+      "n": 1,
+      "offer_id": "31629",
+      "name": "Утеплённое пальто с капюшоном и поясом",
+      "picture_url": "https://zolla.com/upload/iplm/images/goods/020345212224_8000.jpg",
+      "product_url": "https://zolla.com/catalog/?q=31629",
+      "blurb": "Капюшон виден на фото → boolean-фильтр «да».",
+      "focus_attr": "hood",
+      "feed": {
+        "Цвет / оттенок": "—",
+        "Категория": "—",
+        "Цвет": "коричневый",
+        "Оттенок": "кофейный",
+        "Принт (старый freeform)": "однотонный",
+        "Капюшон (param)": "нет в фиде",
+        "Застёжка (param)": "нет в фиде",
+        "Длина как facet": "нет в фиде"
+      },
+      "extracted_filters": [
+        {
+          "attr_id": "hood",
+          "label": "Капюшон",
+          "value": "да",
+          "filter_ui": "Капюшон = да",
+          "evidence": "Капюшон виден на голове.",
+          "focus": true
+        }
+      ]
+    },
+    {
+      "n": 2,
+      "offer_id": "177548",
+      "name": "Футболка из хлопка на кулиске",
+      "picture_url": "https://zolla.com/upload/iplm/images/goods/022253273153_51S0.jpg",
+      "product_url": "https://zolla.com/catalog/?q=177548",
+      "blurb": "Полоска на футболке → multi_enum фильтр «полоска».",
+      "focus_attr": "print_pattern",
+      "feed": {
+        "Цвет / оттенок": "—",
+        "Категория": "Женщины / Футболки и Топы / Футболки",
+        "Принт (старый freeform)": "полоски",
+        "Материал": "хлопок",
+        "Капюшон (param)": "нет в фиде",
+        "Застёжка (param)": "нет в фиде",
+        "Длина как facet": "нет в фиде"
+      },
+      "extracted_filters": [
+        {
+          "attr_id": "collar",
+          "label": "Воротник / вырез",
+          "value": "отложной",
+          "filter_ui": "Воротник / вырез = отложной",
+          "evidence": "На фотографии виден отложной воротник.",
+          "focus": false
+        },
+        {
+          "attr_id": "hood",
+          "label": "Капюшон",
+          "value": "нет",
+          "filter_ui": "Капюшон = нет",
+          "evidence": "обычный воротник",
+          "focus": false
+        },
+        {
+          "attr_id": "print_pattern",
+          "label": "Узор / принт",
+          "value": "полоска",
+          "filter_ui": "Узор / принт = полоска",
+          "evidence": "На футболке видны горизонтальные полоски голубого и белого цветов.",
+          "focus": true
+        }
+      ]
+    },
+    {
+      "n": 3,
+      "offer_id": "42955",
+      "name": "Шифоновое платье мини с бантом",
+      "picture_url": "https://zolla.com/upload/iplm/images/goods/021438259193_59P0.jpg",
+      "product_url": "https://zolla.com/catalog/?q=42955",
+      "blurb": "Мини-платье → enum-фильтр длины mini.",
+      "focus_attr": "length",
+      "feed": {
+        "Цвет / оттенок": "—",
+        "Категория": "—",
+        "Цвет": "синий",
+        "Оттенок": "кобальт",
+        "Принт (старый freeform)": "цветочный",
+        "Капюшон (param)": "нет в фиде",
+        "Застёжка (param)": "нет в фиде",
+        "Длина как facet": "нет в фиде"
+      },
+      "extracted_filters": [
+        {
+          "attr_id": "length",
+          "label": "Длина изделия",
+          "value": "mini",
+          "filter_ui": "Длина изделия = mini",
+          "evidence": "Платье имеет короткую длину.",
+          "focus": true
+        }
+      ]
+    },
+    {
+      "n": 4,
+      "offer_id": "83302",
+      "name": "Ярусное платье макси на кулиске с вырезом",
+      "picture_url": "https://zolla.com/upload/iplm/images/goods/22324827Y261_7200.jpg",
+      "product_url": "https://zolla.com/catalog/?q=83302",
+      "blurb": "Макси-платье → enum-фильтр длины maxi.",
+      "focus_attr": "length",
+      "feed": {
+        "Цвет / оттенок": "—",
+        "Категория": "—",
+        "Цвет": "зелёный",
+        "Оттенок": "лайм",
+        "Принт (старый freeform)": "однотонный",
+        "Капюшон (param)": "нет в фиде",
+        "Застёжка (param)": "нет в фиде",
+        "Длина как facet": "нет в фиде"
+      },
+      "extracted_filters": [
+        {
+          "attr_id": "length",
+          "label": "Длина изделия",
+          "value": "maxi",
+          "filter_ui": "Длина изделия = maxi",
+          "evidence": "длинное платье",
+          "focus": true
+        }
+      ]
+    },
+    {
+      "n": 5,
+      "offer_id": "39070",
+      "name": "Замшевая мини-юбка на молнии",
+      "picture_url": "https://zolla.com/upload/iplm/images/goods/221347839061_8100.jpg",
+      "product_url": "https://zolla.com/catalog/?q=39070",
+      "blurb": "Молния на юбке → enum-фильтр застёжки.",
+      "focus_attr": "fastener",
+      "feed": {
+        "Цвет / оттенок": "—",
+        "Категория": "—",
+        "Цвет": "коричневый",
+        "Оттенок": "шатен",
+        "Принт (старый freeform)": "однотонный",
+        "Капюшон (param)": "нет в фиде",
+        "Застёжка (param)": "нет в фиде",
+        "Длина как facet": "нет в фиде"
+      },
+      "extracted_filters": [
+        {
+          "attr_id": "fastener",
+          "label": "Застёжка",
+          "value": "молния",
+          "filter_ui": "Застёжка = молния",
+          "evidence": "Видна молния на юбке",
+          "focus": true
+        }
+      ]
+    },
+    {
+      "n": 6,
+      "offer_id": "38537",
+      "name": "Утеплённый тренчкот с воротником-стойкой",
+      "picture_url": "https://zolla.com/upload/iplm/images/goods/011335239304_9900.jpg",
+      "product_url": "https://zolla.com/catalog/?q=38537",
+      "blurb": "Воротник-стойка → enum-фильтр воротника.",
+      "focus_attr": "collar",
+      "feed": {
+        "Цвет / оттенок": "—",
+        "Категория": "—",
+        "Цвет": "чёрный",
+        "Оттенок": "серый",
+        "Принт (старый freeform)": "однотонный",
+        "Капюшон (param)": "нет в фиде",
+        "Застёжка (param)": "нет в фиде",
+        "Длина как facet": "нет в фиде"
+      },
+      "extracted_filters": [
+        {
+          "attr_id": "collar",
+          "label": "Воротник / вырез",
+          "value": "стойка",
+          "filter_ui": "Воротник / вырез = стойка",
+          "evidence": "На модели присутствует воротник-стойка.",
+          "focus": true
+        }
+      ]
+    },
+    {
+      "n": 7,
+      "offer_id": "39614",
+      "name": "Утеплённая куртка с накладными карманами",
+      "picture_url": "https://zolla.com/upload/iplm/images/goods/011335114174_59P0.jpg",
+      "product_url": "https://zolla.com/catalog/?q=39614",
+      "blurb": "Накладные карманы на куртке → boolean «да».",
+      "focus_attr": "pockets",
+      "feed": {
+        "Цвет / оттенок": "—",
+        "Категория": "—",
+        "Цвет": "синий",
+        "Оттенок": "синий",
+        "Принт (старый freeform)": "милитари",
+        "Капюшон (param)": "нет в фиде",
+        "Застёжка (param)": "нет в фиде",
+        "Длина как facet": "нет в фиде"
+      },
+      "extracted_filters": [
+        {
+          "attr_id": "pockets",
+          "label": "Карманы",
+          "value": "да",
+          "filter_ui": "Карманы = да",
+          "evidence": "На куртке видны накладные карманы.",
+          "focus": true
+        }
+      ]
+    },
+    {
+      "n": 8,
+      "offer_id": "15873",
+      "name": "Футболка без рукавов",
+      "picture_url": "https://zolla.com/upload/iplm/images/goods/021233326111_10S0.jpg",
+      "product_url": "https://zolla.com/catalog/?q=15873",
+      "blurb": "Без рукавов → enum «без рукавов».",
+      "focus_attr": "sleeve_length",
+      "feed": {
+        "Цвет / оттенок": "—",
+        "Категория": "—",
+        "Принт (старый freeform)": "полоска",
+        "Капюшон (param)": "нет в фиде",
+        "Застёжка (param)": "нет в фиде",
+        "Длина как facet": "нет в фиде"
+      },
+      "extracted_filters": [
+        {
+          "attr_id": "print_pattern",
+          "label": "Узор / принт",
+          "value": "полоска",
+          "filter_ui": "Узор / принт = полоска",
+          "evidence": "Вертикальные полоски на футболке.",
+          "focus": false
+        },
+        {
+          "attr_id": "sleeve_length",
+          "label": "Длина рукава",
+          "value": "без рукавов",
+          "filter_ui": "Длина рукава = без рукавов",
+          "evidence": "На модели футболка без рукавов",
+          "focus": true
+        }
+      ]
+    }
+  ]
+}
