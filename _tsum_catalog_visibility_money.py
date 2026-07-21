@@ -509,57 +509,65 @@ def patch_html(report: dict) -> None:
         f"<td>{r['attr_demand_searches_90d']:,}</td>"
         f"<td>{r['p_extract']:.0%}</td>"
         f"<td>{r['newly_eligible_sku_share']:.0%}</td>"
-        f"<td>{fmt_m(r['revenue_month'])} ₽</td></tr>"
+        f"<td>+{fmt_m(r['revenue_month'])}</td></tr>"
         for r in rows_c
     )
     tr_o = "".join(
         f"<tr><td>{r['label']}</td><td>{r['offers']:,}</td>"
         f"<td>{r['attr_demand_searches_90d']:,}</td>"
         f"<td>{r['p_extract']:.0%}</td>"
-        f"<td>{fmt_m(r['revenue_month'])} ₽</td></tr>"
+        f"<td>+{fmt_m(r['revenue_month'])}</td></tr>"
         for r in rows_o
     )
-
-    block = f"""  <h2>6b. Стрим B — доп. появление товаров в выдаче (каталог × категории)</h2>
-  <p class="muted">Отдельная гипотеза от RESERVE/NORMAL. Деньги за счёт того, что SKU с новыми vision-атрибутами
-  <strong>начинают показываться</strong> по attr-запросам категории.</p>
+    block = f"""  <h2>8b. Доп. потенциал: товары появляются в выдаче (стрим B)</h2>
+  <p class="lead" style="font-size:15px">
+    Это <strong>не замена</strong> базе стрима A, а <strong>второй слой денег</strong>.
+    Считаем по категориям: сколько ищут → с какой вероятностью на SKU появится новый vision-attr →
+    товар <em>впервые матчится</em> в выдаче → доп. показы / клики / покупки.
+  </p>
   <div class="grid">
-    <div class="stat"><b>{fmt_m(c['revenue_month'])} ₽</b><span>консерватив / мес</span></div>
-    <div class="stat"><b>{fmt_m(o['revenue_month'])} ₽</b><span>оптимист / мес</span></div>
-    <div class="stat"><b>{fmt_m(c['revenue_year'])}–{fmt_m(o['revenue_year'])} ₽</b><span>₽/год диапазон</span></div>
+    <div class="stat"><b>+{fmt_m(c['revenue_month'])} ₽</b><span>консерватив · доп. ₽/мес</span></div>
+    <div class="stat"><b>+{fmt_m(o['revenue_month'])} ₽</b><span>оптимист · доп. ₽/мес</span></div>
+    <div class="stat"><b>+{fmt_m(c['revenue_year'])}–{fmt_m(o['revenue_year'])} ₽</b><span>доп. ₽/год (cons→opt)</span></div>
     <div class="stat"><b>{c['extra_impressions_90d']:,}–{o['extra_impressions_90d']:,}</b><span>доп. показы / 90д</span></div>
   </div>
-  <p><strong>Формула:</strong> <code>attr_demand × P(extract)×(1−coverage) × P(в SERP) × CTR × purchase|click × AOV</code>.
-  Cons = direct_facet спрос; Opt = expanded_style. Не суммировать слепо со стримом A (пересечение).</p>
-  <h3>Conservative по категориям</h3>
+  <div class="callout">
+    <strong>Как читать партнёру.</strong>
+    База (стрим A) = лучше находим то, что уже ищут стилем.
+    Доп. потенциал (стрим B) = каталог «открывается» в выдаче.
+    Не складывать A+B в одну цифру без пометки «частичное пересечение».
+  </div>
+  <h3>Conservative — где лежит доп. потенциал</h3>
   <table>
-    <thead><tr><th>Категория</th><th>SKU</th><th>Поиск кат./90д</th><th>Attr-спрос</th><th>P(extract)</th><th>Eligible%</th><th>₽/мес</th></tr></thead>
+    <thead><tr><th>Категория</th><th>SKU</th><th>Поиск кат./90д</th><th>Attr-спрос</th><th>P(новый attr)</th><th>Eligible%</th><th>доп. ₽/мес</th></tr></thead>
     <tbody>{tr_c}</tbody>
   </table>
   <h3>Optimistic (сжато)</h3>
   <table>
-    <thead><tr><th>Категория</th><th>SKU</th><th>Attr-спрос</th><th>P(extract)</th><th>₽/мес</th></tr></thead>
+    <thead><tr><th>Категория</th><th>SKU</th><th>Attr-спрос</th><th>P(новый attr)</th><th>доп. ₽/мес</th></tr></thead>
     <tbody>{tr_o}</tbody>
   </table>
+  <p class="meta">
+    Формула B: <code>attr_demand × P(extract)×(1−coverage) × P(в SERP) × CTR × purchase|click × AOV</code>.
+    Детали: <code>MONEY_CATALOG_VISIBILITY.md</code>.
+  </p>
 """
     start = "<!-- CATALOG_VISIBILITY_STREAM -->"
     end = "<!-- /CATALOG_VISIBILITY_STREAM -->"
     wrapped = f"{start}\n{block}\n{end}\n"
-    # remove all previous copies
     html = _re.sub(
         _re.escape(start) + r".*?" + _re.escape(end) + r"\n?",
         "",
         html,
         flags=_re.S,
     )
-    # also drop orphan duplicate heading blocks left from older runs
     html = _re.sub(
-        r"<h2>6b\. Стрим B.*?(?=<h2>7\.|\Z)",
+        r"<h2>8b\. Доп\. потенциал:.*?(?=<h2>9\.|\Z)",
         "",
         html,
         flags=_re.S,
     )
-    anchor = "<h2>7. Приоритетные категории каталога</h2>"
+    anchor = "<h2>9. Методология (коротко)</h2>"
     if anchor in html:
         html = html.replace(anchor, wrapped + "\n" + anchor)
     else:

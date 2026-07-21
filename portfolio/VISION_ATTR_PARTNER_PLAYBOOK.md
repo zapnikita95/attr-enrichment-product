@@ -408,7 +408,8 @@ extra_impressions = attr_demand × P(session gets new SKU in SERP)
 - [ ] **5 кейсов с фото** и one-liner  
 - [ ] RESERVE из **API**, не из CH isZero  
 - [ ] CVR/AOV из **Метрики**, AOV = revenue/purchases  
-- [ ] Три сценария ₽; base выделен  
+- [ ] Три сценария ₽ стрима A; base выделен
+- [ ] Стрим B (доп. потенциал выдачи) cons+opt в шапке и секции после A — `MONEY_TWO_STREAMS_TEMPLATE.md`  
 - [ ] Формула написана  
 - [ ] Период данных (90д) и site_id/counter указаны  
 - [ ] Нет секретов в git (токены Метрики не коммитить в публичные доки — только в SKILL)

@@ -1,0 +1,23 @@
+---
+description: В партнёрских vision-attrs отчётах всегда считать два денежных стрима (A запросы + B доп. выдача)
+globs: portfolio/**/*.{html,md,json}
+alwaysApply: false
+---
+
+# Два денежных стрима (обязательно)
+
+В research / HTML / презе по атрибутам с картинок **всегда** два слоя ₽:
+
+1. **Стрим A (база)** — RESERVE/NORMAL × ΔCVR × AOV Метрики  
+2. **Стрим B (доп. потенциал)** — категории × P(новый attr) × появление в выдаче → cons/opt ₽
+
+## Нельзя
+
+- Отдавать партнёру только A без B  
+- Складывать A+B в одну цифру без пометки «пересечение»  
+- Прятать B в appendixх — в шапке HTML и после секции денег A нужна явная секция «доп. потенциал»
+
+## Шаблон
+
+`portfolio/MONEY_TWO_STREAMS_TEMPLATE.md`  
+Эталон: `_tsum_catalog_visibility_money.py` → `portfolio/tsum/MONEY_CATALOG_VISIBILITY.md`

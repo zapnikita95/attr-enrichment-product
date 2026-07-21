@@ -23,3 +23,5 @@ alwaysApply: false
 ## Деньги
 
 CVR/AOV для оценки ₽ — из **Яндекс.Метрики** (скилл `skills-portable/skills/metrika`), не только Diginetica CH, если CH search-атрибуция занижает заказы.
+
+Всегда **два стрима**: A (база по запросам) + B (доп. потенциал выдачи). Шаблон: `portfolio/MONEY_TWO_STREAMS_TEMPLATE.md`.

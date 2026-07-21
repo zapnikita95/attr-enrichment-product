@@ -18,7 +18,9 @@ description: >-
 2. RESERVE/ZERO только из **Diginetica API**, не из CH `isZeroQuery`
 3. CVR/AOV для денег — из **Яндекс.Метрики** (`skills-portable/skills/metrika`), AOV = revenue/purchases
 4. Таблица «доставать / не доставать» после feed collision
-5. Три сценария ₽ (conservative / base / optimistic)
+5. **Два денежных стрима** (см. `portfolio/MONEY_TWO_STREAMS_TEMPLATE.md`):
+   - A = база по запросам (RESERVE/NORMAL × ΔCVR)
+   - B = **доп. потенциал** (категории × P(attr) × выдача) — cons + opt, в шапке презы и секцией после A
 
 ## Эталонные скрипты
 

@@ -14,6 +14,9 @@
 Там по шагам: фид inventory → CH запросы → OpenRouter vision → KEEP/REJECT → Diginetica RESERVE API → **Яндекс.Метрика CVR** → Δ₽ → **5 кейсов с картинками**.  
 Пакет артефактов: `portfolio/tsum/`.
 
+**Деньги всегда двумя стримами:** [`MONEY_TWO_STREAMS_TEMPLATE.md`](./MONEY_TWO_STREAMS_TEMPLATE.md)  
+A = база по запросам · B = доп. потенциал появления в выдаче (cons/opt).
+
 ---
 
 ## 0. Быстрый старт для нового партнёра

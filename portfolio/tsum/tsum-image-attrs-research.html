@@ -69,9 +69,9 @@ table.mini { font-size:12px; }
 
   <div class="grid">
     <div class="stat"><b>663 656</b><span>SKU в фиде, у всех есть picture</span></div>
-    <div class="stat"><b>42</b><span>уникальных имён param (из них часть — id)</span></div>
     <div class="stat"><b>9 260 304</b><span>поисков за 90 дней</span></div>
-    <div class="stat"><b>5.6%</b><span>zero-rate (частотный)</span></div>
+    <div class="stat"><b>11.9M ₽</b><span>стрим A · базовый Δ/мес (запросы)</span></div>
+    <div class="stat"><b>+1.9…12.4M ₽</b><span>стрим B · доп. потенциал / мес (выдача)</span></div>
     <div class="stat"><b>115 553</b><span>прямых facet-запросов под vision-атрибуты</span></div>
     <div class="stat"><b>297 449</b><span>расширенный стиль (каблук/сумки/принт…)</span></div>
   </div>
@@ -82,6 +82,12 @@ table.mini { font-size:12px; }
     принт, посадка, капюшон, застёжка, каблук, силуэт сумки, декор, OCR с флакона/циферблата.
     На пробе из 28 фото OpenRouter нашёл новые searchable-атрибуты у <strong>всех</strong> SKU;
     после фильтра коллизий с фидом — KEEP 89 / REJECT 5.
+  </div>
+  <div class="callout warn">
+    <strong>Два денежных слоя.</strong>
+    <em>Стрим A</em> — сколько ₽ даёт починка уже идущих vision-запросов (RESERVE/NORMAL × CVR Метрики): база <strong>11.9M ₽/мес</strong>.
+    <em>Стрим B</em> — <strong>доп. потенциал</strong>: товары с новыми attr начинают появляться в выдаче по категориям → ещё <strong>+1.9M…+12.4M ₽/мес</strong> (cons → opt).
+    Слои считают по-разному; полный A+B без оговорок завысит — партнёру показываем B как upside сверху базы A.
   </div>
 
   <h2>1. Что уже есть в фиде</h2>
@@ -287,31 +293,6 @@ table.mini { font-size:12px; }
     CVR поиска 1.211%, AOV поиска ~106.7k ₽.
   </div>
 
-<!-- CATALOG_VISIBILITY_STREAM -->
-  <h2>6b. Стрим B — доп. появление товаров в выдаче (каталог × категории)</h2>
-  <p class="muted">Отдельная гипотеза от RESERVE/NORMAL. Деньги за счёт того, что SKU с новыми vision-атрибутами
-  <strong>начинают показываться</strong> по attr-запросам категории.</p>
-  <div class="grid">
-    <div class="stat"><b>1.9M ₽</b><span>консерватив / мес</span></div>
-    <div class="stat"><b>12.4M ₽</b><span>оптимист / мес</span></div>
-    <div class="stat"><b>22.9M–149.0M ₽</b><span>₽/год диапазон</span></div>
-    <div class="stat"><b>26,482–89,502</b><span>доп. показы / 90д</span></div>
-  </div>
-  <p><strong>Формула:</strong> <code>attr_demand × P(extract)×(1−coverage) × P(в SERP) × CTR × purchase|click × AOV</code>.
-  Cons = direct_facet спрос; Opt = expanded_style. Не суммировать слепо со стримом A (пересечение).</p>
-  <h3>Conservative по категориям</h3>
-  <table>
-    <thead><tr><th>Категория</th><th>SKU</th><th>Поиск кат./90д</th><th>Attr-спрос</th><th>P(extract)</th><th>Eligible%</th><th>₽/мес</th></tr></thead>
-    <tbody><tr><td>Обувь</td><td>63,959</td><td>923,875</td><td>45,862</td><td>40%</td><td>34%</td><td>824k ₽</td></tr><tr><td>Сумки</td><td>42,445</td><td>743,707</td><td>20,231</td><td>45%</td><td>37%</td><td>394k ₽</td></tr><tr><td>Одежда (без верхней)</td><td>281,329</td><td>1,267,825</td><td>28,500</td><td>28%</td><td>25%</td><td>379k ₽</td></tr><tr><td>Аксессуары / очки / часы</td><td>81,708</td><td>750,342</td><td>30,013</td><td>20%</td><td>18%</td><td>279k ₽</td></tr><tr><td>Парфюмерия</td><td>9,278</td><td>93,006</td><td>2,877</td><td>15%</td><td>11%</td><td>17k ₽</td></tr><tr><td>Верхняя одежда</td><td>34,650</td><td>148,081</td><td>864</td><td>35%</td><td>31%</td><td>14k ₽</td></tr></tbody>
-  </table>
-  <h3>Optimistic (сжато)</h3>
-  <table>
-    <thead><tr><th>Категория</th><th>SKU</th><th>Attr-спрос</th><th>P(extract)</th><th>₽/мес</th></tr></thead>
-    <tbody><tr><td>Обувь</td><td>63,959</td><td>84,595</td><td>70%</td><td>6.5M ₽</td></tr><tr><td>Аксессуары / очки / часы</td><td>81,708</td><td>75,034</td><td>40%</td><td>4.6M ₽</td></tr><tr><td>Одежда (без верхней)</td><td>281,329</td><td>9,263</td><td>52%</td><td>707k ₽</td></tr><tr><td>Сумки</td><td>42,445</td><td>6,683</td><td>75%</td><td>510k ₽</td></tr><tr><td>Верхняя одежда</td><td>34,650</td><td>879</td><td>60%</td><td>67k ₽</td></tr><tr><td>Парфюмерия</td><td>9,278</td><td>1,269</td><td>35%</td><td>63k ₽</td></tr></tbody>
-  </table>
-
-<!-- /CATALOG_VISIBILITY_STREAM -->
-
 <h2>7. Приоритетные категории каталога</h2>
   <p>По объёму offer в фиде (и пересечению с тем, что ищут в CH — бренды + типы одежды/обуви/сумок):</p>
   <table>
@@ -358,18 +339,57 @@ table.mini { font-size:12px; }
     </tbody>
   </table>
   <div class="callout warn">
-    <strong>Формула:</strong> Δ = searches × fixable × (CVR_new − CVR_old) × AOV_Метрика.
+    <strong>Формула стрима A:</strong> Δ = searches × fixable × (CVR_new − CVR_old) × AOV_Метрика.
     Цель точных = CVR поиска 1.211%; запасные сейчас ~40% от него; NORMAL +20% relative на 35% объёма.
     Источник: Яндекс.Метрика API, не Diginetica CH.
   </div>
 
-  <h2>9. Методология (коротко)</h2>
+
+  <!-- CATALOG_VISIBILITY_STREAM -->
+  <h2>8b. Доп. потенциал: товары появляются в выдаче (стрим B)</h2>
+  <p class="lead" style="font-size:15px">
+    Это <strong>не замена</strong> базе стрима A, а <strong>второй слой денег</strong>.
+    Считаем по категориям: сколько ищут → с какой вероятностью на SKU появится новый vision-attr →
+    товар <em>впервые матчится</em> в выдаче → доп. показы / клики / покупки.
+  </p>
+  <div class="grid">
+    <div class="stat"><b>+1.9M ₽</b><span>консерватив · доп. ₽/мес</span></div>
+    <div class="stat"><b>+12.4M ₽</b><span>оптимист · доп. ₽/мес</span></div>
+    <div class="stat"><b>+22.9M–149.0M ₽</b><span>доп. ₽/год (cons→opt)</span></div>
+    <div class="stat"><b>26,482–89,502</b><span>доп. показы / 90д</span></div>
+  </div>
+  <div class="callout">
+    <strong>Как читать партнёру.</strong>
+    База (стрим A) = лучше находим то, что уже ищут стилем.
+    Доп. потенциал (стрим B) = каталог «открывается» в выдаче.
+    Не складывать A+B в одну цифру без пометки «частичное пересечение».
+  </div>
+  <h3>Conservative — где лежит доп. потенциал</h3>
+  <table>
+    <thead><tr><th>Категория</th><th>SKU</th><th>Поиск кат./90д</th><th>Attr-спрос</th><th>P(новый attr)</th><th>Eligible%</th><th>доп. ₽/мес</th></tr></thead>
+    <tbody><tr><td>Обувь</td><td>63,959</td><td>923,875</td><td>45,862</td><td>40%</td><td>34%</td><td>+824k</td></tr><tr><td>Сумки</td><td>42,445</td><td>743,707</td><td>20,231</td><td>45%</td><td>37%</td><td>+394k</td></tr><tr><td>Одежда (без верхней)</td><td>281,329</td><td>1,267,825</td><td>28,500</td><td>28%</td><td>25%</td><td>+379k</td></tr><tr><td>Аксессуары / очки / часы</td><td>81,708</td><td>750,342</td><td>30,013</td><td>20%</td><td>18%</td><td>+279k</td></tr><tr><td>Парфюмерия</td><td>9,278</td><td>93,006</td><td>2,877</td><td>15%</td><td>11%</td><td>+17k</td></tr><tr><td>Верхняя одежда</td><td>34,650</td><td>148,081</td><td>864</td><td>35%</td><td>31%</td><td>+14k</td></tr></tbody>
+  </table>
+  <h3>Optimistic (сжато)</h3>
+  <table>
+    <thead><tr><th>Категория</th><th>SKU</th><th>Attr-спрос</th><th>P(новый attr)</th><th>доп. ₽/мес</th></tr></thead>
+    <tbody><tr><td>Обувь</td><td>63,959</td><td>84,595</td><td>70%</td><td>+6.5M</td></tr><tr><td>Аксессуары / очки / часы</td><td>81,708</td><td>75,034</td><td>40%</td><td>+4.6M</td></tr><tr><td>Одежда (без верхней)</td><td>281,329</td><td>9,263</td><td>52%</td><td>+707k</td></tr><tr><td>Сумки</td><td>42,445</td><td>6,683</td><td>75%</td><td>+510k</td></tr><tr><td>Верхняя одежда</td><td>34,650</td><td>879</td><td>60%</td><td>+67k</td></tr><tr><td>Парфюмерия</td><td>9,278</td><td>1,269</td><td>35%</td><td>+63k</td></tr></tbody>
+  </table>
+  <p class="meta">
+    Формула B: <code>attr_demand × P(extract)×(1−coverage) × P(в SERP) × CTR × purchase|click × AOV</code>.
+    Детали: <code>MONEY_CATALOG_VISIBILITY.md</code>.
+  </p>
+
+<!-- /CATALOG_VISIBILITY_STREAM -->
+
+<h2>9. Методология (коротко)</h2>
   <ol>
     <li>Инвентаризация YML (stream parse 1.5 GB) — params, fill, выборка по категориям.</li>
     <li>ClickHouse site 203 — топ-30k запросов / 90д + totals.</li>
     <li>Gap: токены запросов vs корпус фида (как lexicon/feed-collision в attributes_extraction).</li>
     <li>Vision-probe через OpenRouter (Gemini 2.5 Flash) — без локальных моделей.</li>
     <li>KEEP/REJECT: коллизия с фидом, негации, низкая search relevance.</li>
+    <li>Стрим A: Diginetica API classify + Метрика CVR/AOV → Δ₽ по запросам.</li>
+    <li>Стрим B: категории × P(новый attr) × доп. появление в выдаче → доп. потенциал ₽.</li>
   </ol>
 
   <div class="callout">
@@ -378,10 +398,14 @@ table.mini { font-size:12px; }
     принт/узор, силуэт/посадка, капюшон, воротник/вырез, застёжка, декор/фактура,
     тип сумки, каблук/форма обуви, OCR парфюма и часов —
     с исключением дублей фида и заливкой в Dashboard feed attributes.
+    <br/><br/>
+    <strong>Ожидаемый эффект в ₽:</strong> база ~<strong>11.9M ₽/мес</strong> (стрим A)
+    + доп. потенциал <strong>+1.9…+12.4M ₽/мес</strong> от расширения выдачи (стрим B).
   </div>
 
   <footer>
-    Артефакты: portfolio/tsum/ · MONEY_IMPACT.md · money_impact.json · api_classify_impact.json ·
+    Артефакты: portfolio/tsum/ · MONEY_IMPACT.md · MONEY_CATALOG_VISIBILITY.md ·
+    money_impact_metrika.json · money_catalog_visibility.json · api_classify_impact.json ·
     feed_inventory.json · gap_analysis.json · vision_probe_results.json
   </footer>
 </div>
