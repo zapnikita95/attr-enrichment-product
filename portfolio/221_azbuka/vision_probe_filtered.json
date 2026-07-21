@@ -1,0 +1,330 @@
+[
+  {
+    "id": "466914",
+    "type": "food_meat_products",
+    "path": "Мясо, птица, колбасы / Мясо / Говядина",
+    "kind": "product_only",
+    "name": "Грудинка говяжья без кости \"Брискет\" АВ. Наши фермы,  Россия",
+    "raw_n": 0,
+    "kept": [],
+    "ocr_n": 0,
+    "skip_reason": "На изображении представлен сам продукт без упаковки и каких-либо надписей, которые могли бы дать новую информацию."
+  },
+  {
+    "id": "467829",
+    "type": "milk_products",
+    "path": "Молочная продукция / Кефир, сметана, творог / Творог и творожная масса",
+    "kind": "packshot",
+    "name": "Творог обезжиренный менее 1,8%, «Мосальский молокозавод», 180 г, Россия, БЗМЖ",
+    "raw_n": 10,
+    "kept": [
+      {
+        "name": "БЗМЖ",
+        "value": "Без заменителя молочного жира",
+        "evidence": "ocr",
+        "search_relevance": "high"
+      }
+    ],
+    "ocr_n": 26,
+    "skip_reason": null
+  },
+  {
+    "id": "461466",
+    "type": "food_beverages_non_alcohol",
+    "path": "Вода, напитки / Холодный чай, кофе, квас / Холодный чай",
+    "kind": "packshot_with_label",
+    "name": "Холодный зелёный чай «Лайм и ромашка», «Просто Азбука», 500 мл, Россия",
+    "raw_n": 3,
+    "kept": [
+      {
+        "name": "тип упаковки",
+        "value": "бутылка",
+        "evidence": "visual",
+        "search_relevance": "high"
+      }
+    ],
+    "ocr_n": 4,
+    "skip_reason": null
+  },
+  {
+    "id": "465303",
+    "type": "bakery_dairy",
+    "path": "Заморозка, мороженое / Мороженое, лёд / Большая упаковка",
+    "kind": "packshot",
+    "name": "Мороженое-пломбир Movenpick с ароматом ванили, с соусом из фундука и нуги и кусочками печенья с какао 552г Швейцария",
+    "raw_n": 3,
+    "kept": [
+      {
+        "name": "вкус",
+        "value": "ваниль",
+        "evidence": "ocr",
+        "search_relevance": "high"
+      },
+      {
+        "name": "вкус",
+        "value": "брауни",
+        "evidence": "ocr",
+        "search_relevance": "high"
+      },
+      {
+        "name": "тип упаковки",
+        "value": "пластиковый контейнер",
+        "evidence": "visual",
+        "search_relevance": "low"
+      }
+    ],
+    "ocr_n": 4,
+    "skip_reason": null
+  },
+  {
+    "id": "404607",
+    "type": "food_fruits_vegetables",
+    "path": "Овощи, фрукты, грибы / Фрукты и ягоды / Виноград",
+    "kind": "product_only",
+    "name": "Виноград Хусайне белый с косточкой",
+    "raw_n": 0,
+    "kept": [],
+    "ocr_n": 0,
+    "skip_reason": "На фотографии изображен сам продукт (виноград), но отсутствуют какие-либо надписи или маркировки на упаковке, которые могли бы предоставить дополнительную информацию для извлечения новых атрибутов. Вся необходимая информация (название, вес, страна происхождения) уже предоставлена."
+  },
+  {
+    "id": "424363",
+    "type": "food_beverages_alcohol",
+    "path": "Алкоголь / Вино / Белое",
+    "kind": "packshot_with_label",
+    "name": "Вино французское белое AOC Cotes d'Auvergne Terre & Lave Desprat Saint Verny, 0.375 L",
+    "raw_n": 3,
+    "kept": [
+      {
+        "name": "Название линейки",
+        "value": "TERRE & LAVES",
+        "evidence": "ocr",
+        "search_relevance": "medium"
+      }
+    ],
+    "ocr_n": 3,
+    "skip_reason": null
+  },
+  {
+    "id": "457050",
+    "type": "bakery_breads_pastries",
+    "path": "Готовая еда / Завтраки / Сырники, запеканки",
+    "kind": "product_only",
+    "name": "Запеканка творожная с грушей и персиком, «Уже готово», 250 г, Россия",
+    "raw_n": 0,
+    "kept": [],
+    "ocr_n": 0,
+    "skip_reason": "На изображении нет никаких надписей или иконок, которые бы содержали информацию, отсутствующую в названии, параметрах фида или уже извлеченных текстовых атрибутах. Визуально товар представляет собой запеканку, что соответствует названию. Фрукты на тарелке (персики) также соответствуют описанию."
+  },
+  {
+    "id": "115322",
+    "type": "food_desserts_cakes",
+    "path": "Сладкое, торты / Торты и пирожные / Торты",
+    "kind": "product_only",
+    "name": "Торт «Ореховый», «Ресторанная коллекция», 1 100 г, Россия",
+    "raw_n": 0,
+    "kept": [],
+    "ocr_n": 0,
+    "skip_reason": "На изображении представлен сам торт без какой-либо упаковки или этикетки с дополнительной информацией. Все видимые элементы (безе, шоколадные украшения) уже отражены в названии или составе."
+  },
+  {
+    "id": "466826",
+    "type": "condiments_oils_spices_sauces",
+    "path": "Бакалея / Масло, соусы, специи, добавки / Соль",
+    "kind": "packshot_with_label",
+    "name": "Приправа для барбекю, Just Greece, 130 г, Россия",
+    "raw_n": 2,
+    "kept": [
+      {
+        "name": "форма выпуска",
+        "value": "мельница",
+        "evidence": "visual",
+        "search_relevance": "high"
+      },
+      {
+        "name": "тип упаковки",
+        "value": "стекло",
+        "evidence": "visual",
+        "search_relevance": "high"
+      }
+    ],
+    "ocr_n": 3,
+    "skip_reason": null
+  },
+  {
+    "id": "442005",
+    "type": "snacks_and_chips",
+    "path": "Снеки / Чипсы, снеки / Картофельные чипсы",
+    "kind": "packshot_with_label",
+    "name": "Чипсы картофельные с ароматом медового барбекю, Hunter's Gourmet, 150 г, Объединённые Арабские Эмираты",
+    "raw_n": 5,
+    "kept": [
+      {
+        "name": "технология приготовления",
+        "value": "Hand Cooked",
+        "evidence": "ocr",
+        "search_relevance": "high"
+      },
+      {
+        "name": "без глутамата натрия",
+        "value": true,
+        "evidence": "icon",
+        "search_relevance": "high"
+      },
+      {
+        "name": "без консервантов",
+        "value": true,
+        "evidence": "icon",
+        "search_relevance": "high"
+      },
+      {
+        "name": "без гмо",
+        "value": true,
+        "evidence": "icon",
+        "search_relevance": "high"
+      },
+      {
+        "name": "без искусственных ароматизаторов",
+        "value": true,
+        "evidence": "icon",
+        "search_relevance": "high"
+      }
+    ],
+    "ocr_n": 7,
+    "skip_reason": null
+  },
+  {
+    "id": "164027",
+    "type": "grains_and_legumes",
+    "path": "Бакалея / Макароны, крупы, мука / Другие гарниры",
+    "kind": "packshot_with_label",
+    "name": "Крупа кукурузная Casale Paradiso Полента с белыми грибами 300 г Италия",
+    "raw_n": 3,
+    "kept": [
+      {
+        "name": "вкус/наполнитель",
+        "value": "белые грибы",
+        "evidence": "ocr",
+        "search_relevance": "high"
+      },
+      {
+        "name": "способ обработки",
+        "value": "сублимированные грибы",
+        "evidence": "visual",
+        "search_relevance": "medium"
+      }
+    ],
+    "ocr_n": 7,
+    "skip_reason": null
+  },
+  {
+    "id": "467220",
+    "type": "meat_and_fish_products",
+    "path": "Готовая еда / Сэндвичи, выпечка, фаст-фуд / Сэндвичи",
+    "kind": "product_only",
+    "name": "Брускетта с пастрами из индейки на ремесленном хлебе, «Уже Готово», 130 г, Россия",
+    "raw_n": 0,
+    "kept": [],
+    "ocr_n": 0,
+    "skip_reason": "На изображении представлен сам продукт, но отсутствуют какие-либо надписи или иконки на упаковке, которые могли бы предоставить новую информацию, отсутствующую в названии и фиде."
+  },
+  {
+    "id": "273305",
+    "type": "alcohol_and_wine",
+    "path": "Алкоголь / Вино / Белое",
+    "kind": "packshot",
+    "name": "Вино французское белое IGP Pays d'Oc Divinum Chardonnay Viognier Vignerons Catalans, 0.75 L",
+    "raw_n": 2,
+    "kept": [
+      {
+        "name": "тип упаковки",
+        "value": "стекло",
+        "evidence": "visual",
+        "search_relevance": "high"
+      }
+    ],
+    "ocr_n": 5,
+    "skip_reason": null
+  },
+  {
+    "id": "194937",
+    "type": "pet_food_wet_dry",
+    "path": "Для животных / Для кошек / Влажные корма для кошек",
+    "kind": "packshot_with_label",
+    "name": "Консервы для кошек Gourmet Perle Кусочки в подливе Лосось, 85 гр Франция",
+    "raw_n": 2,
+    "kept": [
+      {
+        "name": "тип соуса",
+        "value": "в соусе",
+        "evidence": "ocr",
+        "search_relevance": "medium"
+      }
+    ],
+    "ocr_n": 6,
+    "skip_reason": null
+  },
+  {
+    "id": "213402",
+    "type": "bakery_and_sweets",
+    "path": "Овощи, фрукты, грибы / Сухофрукты и орехи / Миксы",
+    "kind": "packshot",
+    "name": "Сухофрукты кокос и манго, Forest Feast, 150 г, Великобритания",
+    "raw_n": 3,
+    "kept": [
+      {
+        "name": "тип упаковки",
+        "value": "дойпак",
+        "evidence": "visual",
+        "search_relevance": "high"
+      },
+      {
+        "name": "способ обработки",
+        "value": "засахаренные",
+        "evidence": "ocr",
+        "search_relevance": "high"
+      },
+      {
+        "name": "нарезка",
+        "value": "ломтики",
+        "evidence": "visual",
+        "search_relevance": "high"
+      }
+    ],
+    "ocr_n": 9,
+    "skip_reason": null
+  },
+  {
+    "id": "313230",
+    "type": "canned_fruits_vegetables_delicacies",
+    "path": "Бакалея / Консервы / Оливки и маслины",
+    "kind": null,
+    "name": "Оливки красные гигантские \"Белла Чериньола\" Bella Contadina 314 мл, Италия",
+    "raw_n": 0,
+    "kept": [],
+    "ocr_n": 0,
+    "skip_reason": null
+  },
+  {
+    "id": "337094",
+    "type": "food_meat_products",
+    "path": "Готовая еда / Салаты, закуски, соусы / Салаты",
+    "kind": "product_only",
+    "name": "Салат из капусты с огурцом от бренд-шефа АВ, Россия",
+    "raw_n": 0,
+    "kept": [],
+    "ocr_n": 0,
+    "skip_reason": "На фото только сам салат, без упаковки с надписями или маркировками. Вся необходимая информация уже есть в фиде."
+  },
+  {
+    "id": "463061",
+    "type": "milk_products",
+    "path": "Готовая еда / Сэндвичи, выпечка, фаст-фуд / Сэндвичи",
+    "kind": "product_only",
+    "name": "Мини-брускетта с лососем и сыром фета Мне нравится  75 г Россия",
+    "raw_n": 0,
+    "kept": [],
+    "ocr_n": 0,
+    "skip_reason": "Вся информация о продукте, которая видна на фото, уже содержится в названии или фиде. На упаковке нет дополнительных маркировок или визуальных элементов, которые могли бы обогатить атрибуты товара."
+  }
+]
