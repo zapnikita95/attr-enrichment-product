@@ -1,0 +1,29 @@
+---
+name: vision-attr-partner-research
+description: >-
+  Партнёрский research «атрибуты с картинок»: фид vs фото vs поиск vs ₽.
+  Триггеры: vision attrs, атрибуты с картинок, показать партнёру, RESERVE,
+  Метрика конверсия, demo cases, playbook ЦУМ, зачем покупать атрибуты.
+---
+
+# Vision attr partner research
+
+## Обязательно прочитать
+
+`portfolio/VISION_ATTR_PARTNER_PLAYBOOK.md` — полный пошаговый эталон (ЦУМ).
+
+## Не пропускать
+
+1. **5 кейсов с фото** в HTML (не таблица без картинок) — `PARTNER_DEMO_CASES_TEMPLATE.md`
+2. RESERVE/ZERO только из **Diginetica API**, не из CH `isZeroQuery`
+3. CVR/AOV для денег — из **Яндекс.Метрики** (`skills-portable/skills/metrika`), AOV = revenue/purchases
+4. Таблица «доставать / не доставать» после feed collision
+5. Три сценария ₽ (conservative / base / optimistic)
+
+## Эталонные скрипты
+
+Префикс `_tsum_*` в корне `attr-enrichment-product` + артефакты `portfolio/tsum/`.
+
+## Deliverable
+
+`portfolio/{partner}/*-image-attrs-research.html` + `MONEY_IMPACT.md` + `demo_cases.json`
