@@ -209,19 +209,31 @@ def match_queries(queries: list[tuple[str, int]], vision_rows: list[dict]) -> li
     inv: dict[str, list[tuple[str, str, str]]] = defaultdict(list)
     phrases: list[tuple[str, str, str, str]] = []
     for r in vision_rows:
-        for t in distinctive_tokens(r["attribute_value"]):
-            inv[t].append((r["attribute_name"], r["attribute_value"], r["external_id"]))
-        vn = normalize(r["attribute_value"])
-        toks = vn.split()
-        # multi-word flavor/form only
-        if len(toks) >= 2 and 6 <= len(vn) <= 36 and not all(t in STOP_MATCH for t in toks):
-            phrases.append((vn, r["attribute_name"], r["attribute_value"], r["external_id"]))
+        av = r["attribute_value"]
+        avn = normalize(av)
+        # never attribute money to negation (we don't upload these either)
+        if avn.startswith("без ") or "не содержит" in avn or "-free" in avn or " free" in avn:
+            continue
+        for t in distinctive_tokens(av):
+            if t in {"глютена", "сахара", "лактозы", "консервантов"}:
+                continue
+            inv[t].append((r["attribute_name"], av, r["external_id"]))
+        toks = avn.split()
+        # multi-word flavor/form: need ≥1 distinctive non-stop token
+        dist = [t for t in toks if t not in STOP_MATCH and len(t) >= 5]
+        if len(toks) >= 2 and 6 <= len(avn) <= 36 and dist:
+            phrases.append((avn, r["attribute_name"], av, r["external_id"]))
+
+    # also drop negation queries from demand side
+    neg_q = {"без глютена", "без сахара", "без лактозы", "без консервантов", "без гмо"}
 
     hits = []
     for q, c in queries:
         qn = normalize(q)
         q_toks = qn.split()
         if len(qn) < 4:
+            continue
+        if qn in neg_q or qn.startswith("без "):
             continue
         # skip pure category head nouns
         if len(q_toks) == 1 and q_toks[0] in STOP_MATCH:
@@ -275,17 +287,20 @@ def money_from_matches(hits: list[dict]) -> dict:
     strong_m = freq_strong / 3
     attr_m = freq_attr / 3
 
+    # Attribution: phrase demand often partly covered by name already → 25%
+    ATTR_SHARE = 0.25
     # Strong pack signals closer to reserve→exact (half uplift)
     rev_strong = strong_m * (UPLIFT_FB * 0.5) * AOV
-    # Multi-token flavor: smaller precision uplift 0.8pp
-    rev_attr = attr_m * 0.008 * AOV
+    # Multi-token flavor: smaller precision uplift 0.8pp × attribution
+    rev_attr = attr_m * ATTR_SHARE * 0.008 * AOV
 
     rev_strong_opt = strong_m * UPLIFT_FB * AOV
-    rev_attr_opt = attr_m * 0.015 * AOV
+    rev_attr_opt = attr_m * ATTR_SHARE * 0.015 * AOV
 
     # Stream B: newly visible SKU on attribute demand
-    rev_b_cons = (strong_m + attr_m * 0.3) * 0.12 * 0.025 * 0.14 * AOV
-    rev_b_opt = (strong_m + attr_m * 0.5) * 0.25 * 0.035 * 0.16 * AOV
+    dem = strong_m + attr_m * ATTR_SHARE
+    rev_b_cons = dem * 0.12 * 0.025 * 0.14 * AOV
+    rev_b_opt = dem * 0.25 * 0.035 * 0.16 * AOV
 
     base = rev_strong + rev_attr
     opt = rev_strong_opt + rev_attr_opt
@@ -314,6 +329,7 @@ def money_from_matches(hits: list[dict]) -> dict:
             "order_fallback": ORDER_FALLBACK,
             "aov_source": "221 text-impact study 2026-06-21..2026-07-20",
             "match_rule": "distinctive tokens only; bare category nouns excluded",
+            "phrase_attribution_share": 0.25,
         },
     }
 

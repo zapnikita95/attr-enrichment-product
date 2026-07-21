@@ -1,18 +1,18 @@
 {
   "money": {
     "aov": 6192.55,
-    "matched_queries": 3309,
-    "freq_90d_total": 36059,
+    "matched_queries": 3213,
+    "freq_90d_total": 34561,
     "freq_90d_strong": 1451,
-    "freq_90d_attr_phrase": 34608,
+    "freq_90d_attr_phrase": 33110,
     "freq_90d_head": 1451,
-    "freq_90d_tail": 34608,
-    "stream_a_base_month": 606391,
-    "stream_a_opt_month": 1141345,
-    "stream_a_base_year": 7276696,
-    "stream_a_opt_year": 13696145,
-    "stream_b_cons_month": 10259,
-    "stream_b_opt_month": 54199,
+    "freq_90d_tail": 33110,
+    "stream_a_base_month": 171583,
+    "stream_a_opt_month": 326081,
+    "stream_a_base_year": 2059002,
+    "stream_a_opt_year": 3912968,
+    "stream_b_cons_month": 8434,
+    "stream_b_opt_month": 28114,
     "text_stream_ref_month": 20804,
     "text_stream_ref_year": 249652,
     "assumptions": {
@@ -22,7 +22,8 @@
       "order_exact": 0.14104,
       "order_fallback": 0.11774,
       "aov_source": "221 text-impact study 2026-06-21..2026-07-20",
-      "match_rule": "distinctive tokens only; bare category nouns excluded"
+      "match_rule": "distinctive tokens only; bare category nouns excluded",
+      "phrase_attribution_share": 0.25
     }
   },
   "baseline": {
@@ -175,17 +176,6 @@
       ]
     },
     {
-      "query": "без глютена",
-      "frequency_90d": 326,
-      "matches": [
-        {
-          "attribute_name": "Вкус, Добавки",
-          "attribute_value": "Без глютена",
-          "offer_id": "537738"
-        }
-      ]
-    },
-    {
       "query": "кофе молотый",
       "frequency_90d": 289,
       "matches": [
@@ -273,27 +263,6 @@
           "attribute_name": "Форма выпуска",
           "attribute_value": "пирожное",
           "offer_id": "477761"
-        }
-      ]
-    },
-    {
-      "query": "без сахара",
-      "frequency_90d": 229,
-      "matches": [
-        {
-          "attribute_name": "Вкус, Добавки",
-          "attribute_value": "без сахара",
-          "offer_id": "480118"
-        },
-        {
-          "attribute_name": "Способ обработки",
-          "attribute_value": "без сахара",
-          "offer_id": "1015953"
-        },
-        {
-          "attribute_name": "Вкус, Добавки",
-          "attribute_value": "без добавления сахара",
-          "offer_id": "426144"
         }
       ]
     },
@@ -796,7 +765,44 @@
           "offer_id": "280787"
         }
       ]
+    },
+    {
+      "query": "сыр нарезка",
+      "frequency_90d": 98,
+      "matches": [
+        {
+          "attribute_name": "Нарезка",
+          "attribute_value": "Не нарезка",
+          "offer_id": "563270"
+        },
+        {
+          "attribute_name": "Форма выпуска",
+          "attribute_value": "Нарезка",
+          "offer_id": "272102"
+        }
+      ]
+    },
+    {
+      "query": "мясо говядина",
+      "frequency_90d": 98,
+      "matches": [
+        {
+          "attribute_name": "Вкус, Добавки",
+          "attribute_value": "говядина с морковью",
+          "offer_id": "500222"
+        },
+        {
+          "attribute_name": "Вкус, Добавки",
+          "attribute_value": "говядина с рубцом и потрошками",
+          "offer_id": "391756"
+        },
+        {
+          "attribute_name": "Вкус, Добавки",
+          "attribute_value": "Говядина-печень-горошек",
+          "offer_id": "1007237"
+        }
+      ]
     }
   ],
-  "generated_at": "2026-07-21T13:26:10+00:00"
+  "generated_at": "2026-07-21T13:27:01+00:00"
 }

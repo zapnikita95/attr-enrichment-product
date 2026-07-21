@@ -58,16 +58,16 @@ ul.tight li { margin:4px 0; }
   <p class="meta">
     Фид 66 259 SKU · vision-прогон 5457 офферов (фокус-категории) ·
     OpenRouter <code>gemini-2.5-flash-lite</code> · заливка Dashboard 2464 строк /
-    1885 SKU · ClickHouse searches 90д · собрано 2026-07-21T13:26:10+00:00
+    1885 SKU · ClickHouse searches 90д · собрано 2026-07-21T13:27:01+00:00
   </p>
 
   <div class="grid">
     <div class="stat"><b>2,464</b><span>строк атрибутов с картинок (залито)</span></div>
     <div class="stat"><b>1,885</b><span>SKU с новыми vision-attrs</span></div>
-    <div class="stat"><b>3,309</b><span>запросов с матчем к vision-значениям</span></div>
-    <div class="stat"><b>606 391 ₽</b><span>стрим A · база Δ/мес (запросы)</span></div>
-    <div class="stat"><b>1 141 345 ₽</b><span>стрим A · оптимист Δ/мес</span></div>
-    <div class="stat"><b>+10 259 ₽…54 199 ₽</b><span>стрим B · доп. потенциал / мес</span></div>
+    <div class="stat"><b>3,213</b><span>запросов с матчем к vision-значениям</span></div>
+    <div class="stat"><b>171 583 ₽</b><span>стрим A · база Δ/мес (запросы)</span></div>
+    <div class="stat"><b>326 081 ₽</b><span>стрим A · оптимист Δ/мес</span></div>
+    <div class="stat"><b>+8 434 ₽…28 114 ₽</b><span>стрим B · доп. потенциал / мес</span></div>
   </div>
 
   <div class="callout">
@@ -75,8 +75,8 @@ ul.tight li { margin:4px 0; }
     Текст из описаний уже закрывает вкус/ноты/рекомендации (~47.7k SKU, оценка ~20 804 ₽/мес).
     Vision даёт <em>другой</em> слой: то, что видно на этикетке и слабо лежит в тексте —
     «мельница», «дойпак», «hand cooked», «ломтики», вкус на пачке, которого нет в name.
-    Вместе: база text + vision A <strong>627 195 ₽/мес</strong>,
-    с upside B ещё <strong>+10 259 ₽…54 199 ₽</strong>.
+    Вместе: база text + vision A <strong>192 387 ₽/мес</strong>,
+    с upside B ещё <strong>+8 434 ₽…28 114 ₽</strong>.
   </div>
   <div class="callout warn">
     <strong>Два денежных слоя (как в методологии ЦУМ / Attr Enrichment).</strong><br/>
@@ -112,19 +112,19 @@ ul.tight li { margin:4px 0; }
       <h3>Стрим A — запросы</h3>
       <table>
         <tr><th>Сценарий</th><th>₽/мес</th><th>₽/год</th></tr>
-        <tr><td>Базовый (консерв.)</td><td class="num">606 391 ₽</td><td class="num">7 276 696 ₽</td></tr>
-        <tr><td>Оптимистичный</td><td class="num">1 141 345 ₽</td><td class="num">13 696 145 ₽</td></tr>
+        <tr><td>Базовый (консерв.)</td><td class="num">171 583 ₽</td><td class="num">2 059 002 ₽</td></tr>
+        <tr><td>Оптимистичный</td><td class="num">326 081 ₽</td><td class="num">3 912 968 ₽</td></tr>
       </table>
-      <p class="meta">Матч (строгий): 3309 запросов · объём 36,059 поисков / 90д
-      (strong-сигналы 1,451 + phrase 34,608).
+      <p class="meta">Матч (строгий): 3213 запросов · объём 34,561 поисков / 90д
+      (strong-сигналы 1,451 + phrase 33,110).
       Без head-nouns вроде «торт/молоко». Uplift: strong 50% от (exact−fallback=2.33 п.п.); phrase +0.8 п.п. AOV=6,193 ₽.</p>
     </div>
     <div>
       <h3>Стрим B — доп. потенциал выдачи</h3>
       <table>
         <tr><th>Сценарий</th><th>₽/мес</th></tr>
-        <tr><td>Conservative</td><td class="num">10 259 ₽</td></tr>
-        <tr><td>Optimistic</td><td class="num">54 199 ₽</td></tr>
+        <tr><td>Conservative</td><td class="num">8 434 ₽</td></tr>
+        <tr><td>Optimistic</td><td class="num">28 114 ₽</td></tr>
       </table>
       <p class="meta">Гипотеза catalog→SERP по хвосту спроса на vision-лексику. Не суммировать 1:1 с A.</p>
     </div>
@@ -135,16 +135,16 @@ ul.tight li { margin:4px 0; }
     <thead><tr><th>Стрим</th><th>Источник</th><th>₽/мес (база)</th><th>Статус</th></tr></thead>
     <tbody>
       <tr><td>Text gold</td><td>описания → custom attrs</td><td class="num">20 804 ₽</td><td>изучено / к заливке</td></tr>
-      <tr><td>Vision KEEP</td><td>упаковка → OCR/visual</td><td class="num">606 391 ₽</td><td><strong>залито в Dashboard</strong></td></tr>
-      <tr><td><strong>Итого база</strong></td><td>text + vision A</td><td class="num"><strong>627 195 ₽</strong></td><td>без стрима B</td></tr>
-      <tr><td>+ upside B</td><td>catalog visibility</td><td class="num">+10 259 ₽…54 199 ₽</td><td>опционально</td></tr>
+      <tr><td>Vision KEEP</td><td>упаковка → OCR/visual</td><td class="num">171 583 ₽</td><td><strong>залито в Dashboard</strong></td></tr>
+      <tr><td><strong>Итого база</strong></td><td>text + vision A</td><td class="num"><strong>192 387 ₽</strong></td><td>без стрима B</td></tr>
+      <tr><td>+ upside B</td><td>catalog visibility</td><td class="num">+8 434 ₽…28 114 ₽</td><td>опционально</td></tr>
     </tbody>
   </table>
 
   <h2>6. Запросы, которые цепляют vision-значения</h2>
   <table>
     <thead><tr><th>Запрос</th><th>Частота 90д</th><th>Совпавшие значения</th><th>Атрибут</th></tr></thead>
-    <tbody><tr><td>масло сливочное</td><td class='num'>752</td><td>сливочное традиционное</td><td>Вкус, Добавки</td></tr><tr><td>оливковое масло</td><td class='num'>581</td><td>оливковое масло, оливковое масло и перец чили</td><td>Вкус, Добавки</td></tr><tr><td>набор пирожных</td><td class='num'>497</td><td>подарочный набор, набор</td><td>Форма выпуска</td></tr><tr><td>набор подарочный</td><td class='num'>496</td><td>подарочный набор, подарочный набор, набор</td><td>Форма выпуска</td></tr><tr><td>икра красная</td><td class='num'>405</td><td>красная икра, боровая матка, красная щетка, красная смородина</td><td>Вкус, Добавки</td></tr><tr><td>кофе зерна</td><td class='num'>388</td><td>зерна</td><td>Форма выпуска</td></tr><tr><td>черная икра</td><td class='num'>364</td><td>куркума, имбирь, черная смородина, лукума, перец черный</td><td>Вкус, Добавки</td></tr><tr><td>без глютена</td><td class='num'>326</td><td>Без глютена</td><td>Вкус, Добавки</td></tr><tr><td>кофе молотый</td><td class='num'>289</td><td>молотый</td><td>Форма выпуска</td></tr><tr><td>хлопья</td><td class='num'>273</td><td>хлопья</td><td>Форма выпуска</td></tr><tr><td>подарочный пакет</td><td class='num'>272</td><td>подарочный набор, подарочный набор</td><td>Форма выпуска</td></tr><tr><td>пюре</td><td class='num'>270</td><td>суп-пюре, мясное пюре с икрой японского тунца, яблочное пюре</td><td>Форма выпуска</td></tr><tr><td>чай черный</td><td class='num'>240</td><td>морская соль и черный перец, черный перец и чеснок, черный перец</td><td>Вкус, Добавки</td></tr><tr><td>пирожное картошка</td><td class='num'>234</td><td>пирожное</td><td>Форма выпуска</td></tr><tr><td>без сахара</td><td class='num'>229</td><td>без сахара, без сахара, без добавления сахара</td><td>Вкус, Добавки</td></tr><tr><td>бумажные полотенца</td><td class='num'>224</td><td>бумажные листы</td><td>Форма выпуска</td></tr><tr><td>шоколадные конфеты</td><td class='num'>216</td><td>конфеты, шоколадные пралине с дробленым фундуком</td><td>Форма выпуска</td></tr><tr><td>яйца куриные</td><td class='num'>207</td><td>Куриные</td><td>Вкус, Добавки</td></tr><tr><td>масло оливковое</td><td class='num'>204</td><td>оливковое масло, оливковое масло и перец чили</td><td>Вкус, Добавки</td></tr><tr><td>печень трески</td><td class='num'>202</td><td>Кролик и печень, Говядина-печень-горошек</td><td>Вкус, Добавки</td></tr><tr><td>кофе в зернах</td><td class='num'>180</td><td>в зернах</td><td>Форма выпуска</td></tr><tr><td>клубника свежая</td><td class='num'>176</td><td>клубника, ананас, клубника, мандарин, дыня, клубника и земляника</td><td>Вкус, Добавки</td></tr><tr><td>салфетки бумажные</td><td class='num'>170</td><td>бумажные листы</td><td>Форма выпуска</td></tr><tr><td>сок апельсиновый</td><td class='num'>161</td><td>Апельсин</td><td>Вкус, Добавки</td></tr><tr><td>сыр козий</td><td class='num'>155</td><td>козий сыр и карамелизированный лук, козий</td><td>Вкус, Добавки</td></tr></tbody>
+    <tbody><tr><td>масло сливочное</td><td class='num'>752</td><td>сливочное традиционное</td><td>Вкус, Добавки</td></tr><tr><td>оливковое масло</td><td class='num'>581</td><td>оливковое масло, оливковое масло и перец чили</td><td>Вкус, Добавки</td></tr><tr><td>набор пирожных</td><td class='num'>497</td><td>подарочный набор, набор</td><td>Форма выпуска</td></tr><tr><td>набор подарочный</td><td class='num'>496</td><td>подарочный набор, подарочный набор, набор</td><td>Форма выпуска</td></tr><tr><td>икра красная</td><td class='num'>405</td><td>красная икра, боровая матка, красная щетка, красная смородина</td><td>Вкус, Добавки</td></tr><tr><td>кофе зерна</td><td class='num'>388</td><td>зерна</td><td>Форма выпуска</td></tr><tr><td>черная икра</td><td class='num'>364</td><td>куркума, имбирь, черная смородина, лукума, перец черный</td><td>Вкус, Добавки</td></tr><tr><td>кофе молотый</td><td class='num'>289</td><td>молотый</td><td>Форма выпуска</td></tr><tr><td>хлопья</td><td class='num'>273</td><td>хлопья</td><td>Форма выпуска</td></tr><tr><td>подарочный пакет</td><td class='num'>272</td><td>подарочный набор, подарочный набор</td><td>Форма выпуска</td></tr><tr><td>пюре</td><td class='num'>270</td><td>суп-пюре, мясное пюре с икрой японского тунца, яблочное пюре</td><td>Форма выпуска</td></tr><tr><td>чай черный</td><td class='num'>240</td><td>морская соль и черный перец, черный перец и чеснок, черный перец</td><td>Вкус, Добавки</td></tr><tr><td>пирожное картошка</td><td class='num'>234</td><td>пирожное</td><td>Форма выпуска</td></tr><tr><td>бумажные полотенца</td><td class='num'>224</td><td>бумажные листы</td><td>Форма выпуска</td></tr><tr><td>шоколадные конфеты</td><td class='num'>216</td><td>конфеты, шоколадные пралине с дробленым фундуком</td><td>Форма выпуска</td></tr><tr><td>яйца куриные</td><td class='num'>207</td><td>Куриные</td><td>Вкус, Добавки</td></tr><tr><td>масло оливковое</td><td class='num'>204</td><td>оливковое масло, оливковое масло и перец чили</td><td>Вкус, Добавки</td></tr><tr><td>печень трески</td><td class='num'>202</td><td>Кролик и печень, Говядина-печень-горошек</td><td>Вкус, Добавки</td></tr><tr><td>кофе в зернах</td><td class='num'>180</td><td>в зернах</td><td>Форма выпуска</td></tr><tr><td>клубника свежая</td><td class='num'>176</td><td>клубника, ананас, клубника, мандарин, дыня, клубника и земляника</td><td>Вкус, Добавки</td></tr><tr><td>салфетки бумажные</td><td class='num'>170</td><td>бумажные листы</td><td>Форма выпуска</td></tr><tr><td>сок апельсиновый</td><td class='num'>161</td><td>Апельсин</td><td>Вкус, Добавки</td></tr><tr><td>сыр козий</td><td class='num'>155</td><td>козий сыр и карамелизированный лук, козий</td><td>Вкус, Добавки</td></tr><tr><td>миндальное молоко</td><td class='num'>152</td><td>миндаль</td><td>Вкус, Добавки</td></tr><tr><td>чай зеленый</td><td class='num'>151</td><td>зелёный болгарский перец, синий баклажан, зеленый овощной перец, зеленый лук</td><td>Вкус, Добавки</td></tr></tbody>
   </table>
 
   <h2>7. Примеры с фото</h2>
