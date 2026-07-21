@@ -1,0 +1,18 @@
+---
+description: Broken CH search CVR → Metrika or peer fashion benchmark for money
+alwaysApply: true
+---
+
+# Деньги: битый CH CVR
+
+Если в partner defense search CVR из ClickHouse &lt; **0.05%** при нормальном объёме поиска — **не** писать это как рабочую базу и не оставлять «возможно недоучёт» без замены.
+
+Порядок базы для ₽:
+
+1. Яндекс.Метрика партнёра (search goal + ecommerce)
+2. Медиана похожих (Airtable вертикаль + Metrika/CH peers, CVR ≥ 0.05%)
+3. ASSUMED vertical floor — только если 1–2 пусто, явно пометить
+
+Lift фильтров может оставаться ASSUMED; уровень CVR/AOV — нет.
+
+См. `filter_pipeline/MONEY_BASELINE_RULE.md`. Zolla: `zolla_money_benchmark.py`.

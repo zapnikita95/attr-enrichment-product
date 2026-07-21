@@ -1,0 +1,329 @@
+{
+  "generated_for": "Zolla 3826 money baseline repair",
+  "period": {
+    "date1": "2026-04-22",
+    "date2": "2026-07-20"
+  },
+  "metrika_zolla": {
+    "source": "yandex_metrika",
+    "counter_id": 79438447,
+    "search_goal_id": 294554663,
+    "period": {
+      "date1": "2026-04-22",
+      "date2": "2026-07-20"
+    },
+    "overall": {
+      "visits": 1795494.0,
+      "purchases": 21517.0,
+      "revenue": 60309309.0,
+      "cvr_pct": 1.198,
+      "aov": 2802.9
+    },
+    "with_search": {
+      "visits": 179910.0,
+      "purchases": 8652.0,
+      "revenue": 22606594.0,
+      "cvr_pct": 4.809,
+      "aov": 2612.9
+    },
+    "without_search": {
+      "visits": 1615584.0,
+      "purchases": 12865.0,
+      "revenue": 37702715.0,
+      "cvr_pct": 0.796,
+      "aov": 2930.6
+    }
+  },
+  "peer_metrika": [
+    {
+      "site_id": 1378,
+      "name": "zarina.ru",
+      "counter": 22537834,
+      "search_goal": 6271953,
+      "overall": {
+        "visits": 7158805.6191504,
+        "purchases": 120410.3873496,
+        "revenue": 512937694.2076176,
+        "cvr_pct": 1.682,
+        "aov": 4259.9
+      },
+      "with_search": {
+        "visits": 10752.3980688,
+        "purchases": 455.120316,
+        "revenue": 2385927.0790776,
+        "cvr_pct": 4.233,
+        "aov": 5242.4
+      }
+    },
+    {
+      "site_id": 7433,
+      "name": "elis.ru",
+      "counter": 27914622,
+      "search_goal": null,
+      "overall": {
+        "visits": 775012.0,
+        "purchases": 3708.0,
+        "revenue": 51387424.73998601,
+        "cvr_pct": 0.478,
+        "aov": 13858.5
+      },
+      "with_search": null,
+      "note": "no search_goal in mapping"
+    },
+    {
+      "site_id": 3083,
+      "name": "rendez-vous.ru",
+      "counter": 11099911,
+      "search_goal": null,
+      "overall": {
+        "visits": 11261490.0,
+        "purchases": 82102.0,
+        "revenue": 1735438640.0,
+        "cvr_pct": 0.729,
+        "aov": 21137.6
+      },
+      "with_search": null,
+      "note": "no search_goal in mapping"
+    },
+    {
+      "site_id": 2297,
+      "name": "ecco.ru",
+      "counter": 21455827,
+      "search_goal": 480745779,
+      "overall": {
+        "visits": 4293475.0,
+        "purchases": 36733.0,
+        "revenue": 548650355.0,
+        "cvr_pct": 0.856,
+        "aov": 14936.2
+      },
+      "with_search": {
+        "visits": 44579.0,
+        "purchases": 2766.0,
+        "revenue": 43168570.0,
+        "cvr_pct": 6.205,
+        "aov": 15606.9
+      }
+    },
+    {
+      "site_id": 2580,
+      "name": "superstep.ru",
+      "counter": 29297810,
+      "search_goal": 304093607,
+      "overall": {
+        "visits": 852636.0,
+        "purchases": 6644.0,
+        "revenue": 58155531.3,
+        "cvr_pct": 0.779,
+        "aov": 8753.1
+      },
+      "error": "list index out of range"
+    },
+    {
+      "site_id": 7735,
+      "name": "peakstore.ru",
+      "counter": 79456705,
+      "search_goal": null,
+      "overall": {
+        "visits": 1347832.0,
+        "purchases": 461.0,
+        "revenue": 9195190.0,
+        "cvr_pct": 0.034,
+        "aov": 19946.2
+      },
+      "with_search": null,
+      "note": "no search_goal in mapping"
+    },
+    {
+      "site_id": 2878,
+      "name": "shoppinglive.ru",
+      "counter": 9754324,
+      "search_goal": 460055339,
+      "overall": {
+        "visits": 89653.0,
+        "purchases": 0.0,
+        "revenue": 0.0,
+        "cvr_pct": 0.0,
+        "aov": 0.0
+      },
+      "with_search": {
+        "visits": 15.0,
+        "purchases": 0.0,
+        "revenue": 0.0,
+        "cvr_pct": 0.0,
+        "aov": 0.0
+      }
+    },
+    {
+      "site_id": 203,
+      "name": "tsum.ru",
+      "counter": 21801616,
+      "search_goal": 260498358,
+      "overall": {
+        "visits": 5502210.0997016,
+        "purchases": 17010.2912866,
+        "revenue": 1946917279.2111623,
+        "cvr_pct": 0.309,
+        "aov": 114455.3
+      },
+      "with_search": {
+        "visits": 171172.3723234,
+        "purchases": 2073.3964766,
+        "revenue": 221295476.11338118,
+        "cvr_pct": 1.211,
+        "aov": 106730.9
+      }
+    }
+  ],
+  "airtable": {
+    "ok": false,
+    "error": "tokens 401/403 — CRM vertical list unavailable; used curated fashion peers",
+    "curated_peers": [
+      {
+        "site_id": 203,
+        "name": "tsum.ru"
+      },
+      {
+        "site_id": 1378,
+        "name": "zarina.ru"
+      },
+      {
+        "site_id": 1458,
+        "name": "gloria-jeans"
+      },
+      {
+        "site_id": 1967,
+        "name": "befree"
+      },
+      {
+        "site_id": 2297,
+        "name": "ecco.ru"
+      },
+      {
+        "site_id": 2580,
+        "name": "superstep.ru"
+      },
+      {
+        "site_id": 2878,
+        "name": "shoppinglive.ru"
+      },
+      {
+        "site_id": 3083,
+        "name": "rendez-vous.ru"
+      },
+      {
+        "site_id": 7433,
+        "name": "elis.ru"
+      }
+    ],
+    "note": "Peers from Metrika skill fashion map + known apparel (Gloria Jeans, Befree, Zarina, Elis, RV, Ecco, Superstep, TSUM)."
+  },
+  "peer_ch": [
+    {
+      "siteId": 203,
+      "total_sessions": 6057202,
+      "search_sessions": 1761075,
+      "search_orders": 1343,
+      "search_cvr_pct": 0.076,
+      "aov_search": 100276.14,
+      "name": "tsum.ru"
+    },
+    {
+      "siteId": 3083,
+      "total_sessions": 10809932,
+      "search_sessions": 1714277,
+      "search_orders": 96381,
+      "search_cvr_pct": 5.622,
+      "aov_search": 19910.12,
+      "name": "rendez-vous.ru"
+    },
+    {
+      "siteId": 1967,
+      "total_sessions": 11332152,
+      "search_sessions": 1189935,
+      "search_orders": 33247,
+      "search_cvr_pct": 2.794,
+      "aov_search": 2965.63,
+      "name": "befree"
+    },
+    {
+      "siteId": 2878,
+      "total_sessions": 5908207,
+      "search_sessions": 836223,
+      "search_orders": 51382,
+      "search_cvr_pct": 6.145,
+      "aov_search": 8614.85,
+      "name": "shoppinglive.ru"
+    },
+    {
+      "siteId": 1378,
+      "total_sessions": 7531657,
+      "search_sessions": 414290,
+      "search_orders": 12101,
+      "search_cvr_pct": 2.921,
+      "aov_search": 4933.29,
+      "name": "zarina.ru"
+    },
+    {
+      "siteId": 1458,
+      "total_sessions": 3004490,
+      "search_sessions": 305161,
+      "search_orders": 8915,
+      "search_cvr_pct": 2.921,
+      "aov_search": 2339.26,
+      "name": "gloria-jeans"
+    },
+    {
+      "siteId": 3826,
+      "total_sessions": 1171945,
+      "search_sessions": 195259,
+      "search_orders": 10,
+      "search_cvr_pct": 0.005,
+      "aov_search": 3395.7,
+      "name": "zolla.com"
+    },
+    {
+      "siteId": 2580,
+      "total_sessions": 782698,
+      "search_sessions": 60764,
+      "search_orders": 709,
+      "search_cvr_pct": 1.167,
+      "aov_search": 10093.97,
+      "name": "superstep.ru"
+    },
+    {
+      "siteId": 2297,
+      "total_sessions": 2520643,
+      "search_sessions": 59784,
+      "search_orders": 2335,
+      "search_cvr_pct": 3.906,
+      "aov_search": 16558.97,
+      "name": "ecco.ru"
+    },
+    {
+      "siteId": 7433,
+      "total_sessions": 490669,
+      "search_sessions": 466,
+      "search_orders": 4,
+      "search_cvr_pct": 0.858,
+      "aov_search": 11327.32,
+      "name": "elis.ru"
+    }
+  ],
+  "decision": {
+    "ch_zolla_broken": true,
+    "ch_zolla_cvr_pct": 0.005,
+    "metrika_zolla_ok": true,
+    "peer_metrika_median_cvr_pct": 4.233,
+    "peer_ch_median_cvr_pct": 2.921,
+    "chosen": {
+      "cvr_source": "zolla_metrika_search",
+      "search_cvr_pct": 4.809,
+      "aov": 2612.9,
+      "visits_or_sessions": 179910.0,
+      "purchases": 8652.0,
+      "why": "У Zolla есть Метрика (counter+search goal); ecommerce с сегментом поиска надёжнее CH withOrder."
+    },
+    "rule": "Если CH search_cvr < 0.05% (явный недоучёт заказов) — не использовать для денег. Порядок: (1) Метрика партнёра search segment, (2) медиана Метрики похожих fashion, (3) медиана CH похожих с CVR≥0.05%, (4) ASSUMED vertical floor."
+  }
+}

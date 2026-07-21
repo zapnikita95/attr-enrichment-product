@@ -80,7 +80,7 @@ table.mini { font-size:12px; width:100%; }
     <div class="stat"><b>46 331</b><span>уникальных запросов</span></div>
     <div class="stat"><b>18 811</b><span>поисков в топе под filter-кандидаты*</span></div>
     <div class="stat"><b>0</b><span>style-params в YML (капюшон/принт/рукав…)</span></div>
-    <div class="stat"><b>16 612 ₽</b><span>sketch Δ/мес (ASSUMED lift)</span></div>
+    <div class="stat"><b>12 782 ₽</b><span>sketch Δ/мес (ASSUMED lift)</span></div>
     <div class="stat"><b>100%</b><span>цвет и размер уже в фиде</span></div>
   </div>
   <p class="meta">* сумма объёмов интентов (пересечения возможны) — upper-bound охвата facet-формулировок в top-5000.</p>
@@ -363,25 +363,34 @@ table.mini { font-size:12px; width:100%; }
     </article>
 
 
-  <h2>6. Деньги (прозрачно, со статусом ASSUMED)</h2>
+  <h2>6. Деньги (база Metrika/peers · lift ASSUMED)</h2>
   <div class="callout warn">
-    В CH у Zolla search_orders за 90д крайне мало (возможен недоучёт withOrder). AOV/CVR из CH используем осторожно; для продажи партнёру нужен замер facet with/without или Метрика после появления фильтров.
+    CH search CVR Zolla = 0.005% — BROKEN (недоучёт withOrder), для денег НЕ используем. База денег: zolla_metrika_search → search CVR 4.809%, AOV 2612.9 ₽. У Zolla есть Метрика (counter+search goal); ecommerce с сегментом поиска надёжнее CH withOrder. Peer sanity: Metrika fashion median≈4.233% · CH fashion median≈2.921% (excl. broken).
   </div>
   <table>
     <thead><tr><th>Поле</th><th>Значение</th></tr></thead>
     <tbody>
-      <tr><td>Search sessions 90д (CH)</td><td>195 259</td></tr>
-      <tr><td>Search CVR (CH)</td><td>0.005% — возможно недоучёт заказов</td></tr>
-      <tr><td>AOV search (CH)</td><td>3395.7 ₽</td></tr>
+      <tr><td>Search sessions 90д (CH)</td><td>195 259 — объём поиска ок</td></tr>
+      <tr><td>Search CVR raw (CH)</td><td>0.005% — <strong>не использовать</strong> (10 заказов / 195k сессий)</td></tr>
+      <tr><td>Search CVR money baseline</td><td><strong>4.809%</strong>
+        · source <code>zolla_metrika_search</code>
+        · Metrika visits=179 910,
+        purchases=8 652</td></tr>
+      <tr><td>AOV money baseline</td><td>2612.9 ₽ (Metrika search ecommerce)</td></tr>
+      <tr><td>Peer sanity Metrika / CH</td><td>median search CVR
+        4.233% /
+        2.921%
+        (fashion: Zarina, Befree, Gloria Jeans, RV, Ecco…)</td></tr>
       <tr><td>Intent volume (filter-кандидаты, top-5k sum)</td><td>19 568</td></tr>
       <tr><td>ASSUMED adoption</td><td>0.15</td></tr>
       <tr><td>ASSUMED lift</td><td>+0.5 п.п. CVR</td></tr>
-      <tr><td>Формула</td><td><code>Δ₽/мес ≈ (intent_searches_90d/3) × adoption × (lift_pp/100) × AOV_search_CH</code></td></tr>
-      <tr><td><strong>Sketch Δ ₽/мес</strong></td><td><strong>16 612 ₽</strong></td></tr>
-      <tr><td>Sketch Δ ₽/90д</td><td>49 835 ₽</td></tr>
+      <tr><td>Формула</td><td><code>Δ₽/мес ≈ (intent_searches_90d/3) × adoption × (lift_pp/100) × AOV_money_baseline</code></td></tr>
+      <tr><td><strong>Sketch Δ ₽/мес</strong></td><td><strong>12 782 ₽</strong></td></tr>
+      <tr><td>Sketch Δ ₽/90д</td><td>38 347 ₽</td></tr>
     </tbody>
   </table>
-  <p>Дальше вместо ASSUMED: замер <code>conv_with_filters</code> vs <code>conv_without_filters</code> по категориям (как в 4lapy filter-conversion).</p>
+  <p class="meta">Правило: <code>MONEY_BASELINE_RULE.md</code> · артефакт <code>money_baseline_benchmark.json</code>.
+  Дальше вместо ASSUMED lift: замер facet with/without.</p>
 
   <h2>7. Что уже проверили технически (пилот)</h2>
   <ul>
@@ -392,7 +401,7 @@ table.mini { font-size:12px; width:100%; }
   </ul>
 
   <footer>
-    Generated 2026-07-21T12:24:54.043402+00:00 · Diginetica filter enrichment defense · Zolla 3826
+    Generated 2026-07-21T12:35:27.241757+00:00 · Diginetica filter enrichment defense · Zolla 3826
   </footer>
 </div>
 </body>

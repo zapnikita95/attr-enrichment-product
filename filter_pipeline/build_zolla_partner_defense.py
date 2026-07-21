@@ -144,10 +144,16 @@ def intent_by_id(demand: dict) -> dict:
     return out
 
 
+def load_money_benchmark() -> dict:
+    p = OUT / "money_baseline_benchmark.json"
+    if p.is_file():
+        return json.loads(p.read_text(encoding="utf-8"))
+    return {}
+
+
 def build_money(demand: dict, baseline: dict) -> dict:
-    """Transparent money sketch. ASSUMED lifts labeled."""
+    """Money sketch: Metrika/peer baseline when CH order CVR is broken."""
     intents = intent_by_id(demand)
-    # Direct filter-candidate families only (exclude gender/color/material collision class)
     keep_ids = [
         "print_pattern",
         "sleeve_length",
@@ -159,24 +165,55 @@ def build_money(demand: dict, baseline: dict) -> dict:
         "fit_waist",
         "pockets",
     ]
-    # volumes can overlap across intents — use sum as UPPER bound, also report unique conservative pool
     vol_sum = sum(intents.get(i, {}).get("search_volume_in_top", 0) for i in keep_ids)
-    # From evidence total top slice
     top_total = (demand.get("classification") or {}).get("total_search_events_in_top") or 1
 
-    search_sessions = int(baseline.get("search_sessions") or 0)
-    # CH search orders look undercounted for Zolla — flag it
-    ch_cvr = float(baseline.get("search_cvr_pct") or 0) / 100.0
-    aov = float(baseline.get("aov_search") or 0)
+    bench = load_money_benchmark()
+    decision = bench.get("decision") or {}
+    chosen = decision.get("chosen") or {}
+    met = (bench.get("metrika_zolla") or {}).get("with_search") or {}
 
-    # ASSUMED: share of affected search sessions that use new filters after rollout
-    assumed_filter_adoption = 0.15  # 15% of sessions that hit these intents
-    # ASSUMED: absolute CVR lift when filter used (pp) — placeholder until facet with/without measured
-    assumed_lift_pp = 0.5  # +0.5 percentage points — conservative sketch
-    # Intent share of top
+    ch_cvr = float(baseline.get("search_cvr_pct") or 0)
+    ch_broken = ch_cvr < 0.05 or bool(decision.get("ch_zolla_broken"))
+
+    # Prefer chosen Metrika / peer benchmark; never use broken CH CVR for money
+    if chosen.get("search_cvr_pct"):
+        cvr_pct = float(chosen["search_cvr_pct"])
+        aov = float(chosen.get("aov") or baseline.get("aov_search") or 0)
+        cvr_source = chosen.get("cvr_source") or "benchmark"
+        baseline_label = chosen.get("why") or ""
+    elif met.get("cvr_pct"):
+        cvr_pct = float(met["cvr_pct"])
+        aov = float(met.get("aov") or 0)
+        cvr_source = "zolla_metrika_search"
+        baseline_label = "Метрика search ecommerce"
+    else:
+        cvr_pct = float(baseline.get("search_cvr_pct") or 0)
+        aov = float(baseline.get("aov_search") or 0)
+        cvr_source = "ch_agg_sessions"
+        baseline_label = "CH only (no Metrika file)"
+
+    # Peer sanity (for HTML)
+    peer_ch = [
+        r
+        for r in (bench.get("peer_ch") or [])
+        if int(r.get("siteId") or 0) != 3826 and float(r.get("search_cvr_pct") or 0) >= 0.05
+    ]
+    peer_ch_median = None
+    if peer_ch:
+        vals = sorted(float(r["search_cvr_pct"]) for r in peer_ch)
+        peer_ch_median = vals[len(vals) // 2]
+
+    peer_m_cvrs = []
+    for p in bench.get("peer_metrika") or []:
+        ws = p.get("with_search") or {}
+        if ws.get("cvr_pct") and float(ws["cvr_pct"]) >= 0.05:
+            peer_m_cvrs.append(float(ws["cvr_pct"]))
+    peer_m_median = sorted(peer_m_cvrs)[len(peer_m_cvrs) // 2] if peer_m_cvrs else None
+
+    assumed_filter_adoption = 0.15
+    assumed_lift_pp = 0.5  # absolute pp — ASSUMED until facet with/without
     intent_share = vol_sum / top_total
-
-    # Monthly approx: 90d searches / 3
     monthly_intent_searches = vol_sum / 3.0
     delta_rev_mo = (
         monthly_intent_searches
@@ -185,22 +222,43 @@ def build_money(demand: dict, baseline: dict) -> dict:
         * aov
     )
 
+    caveat = (
+        f"CH search CVR Zolla = {ch_cvr}% "
+        + ("— BROKEN (недоучёт withOrder), для денег НЕ используем. " if ch_broken else ". ")
+        + f"База денег: {cvr_source} → search CVR {cvr_pct}%, AOV {aov} ₽. "
+        + (baseline_label + " " if baseline_label else "")
+        + (
+            f"Peer sanity: Metrika fashion median≈{peer_m_median}% · "
+            f"CH fashion median≈{peer_ch_median}% (excl. broken)."
+            if peer_m_median or peer_ch_median
+            else ""
+        )
+    )
+
     return {
         "baseline_ch": baseline,
-        "baseline_caveat": (
-            "В CH у Zolla search_orders за 90д крайне мало (возможен недоучёт withOrder). "
-            "AOV/CVR из CH используем осторожно; для продажи партнёру нужен замер facet with/without "
-            "или Метрика после появления фильтров."
-        ),
+        "baseline_money": {
+            "cvr_source": cvr_source,
+            "search_cvr_pct": cvr_pct,
+            "aov": aov,
+            "metrika_search_visits": met.get("visits"),
+            "metrika_search_purchases": met.get("purchases"),
+            "ch_search_cvr_pct_raw": ch_cvr,
+            "ch_broken": ch_broken,
+            "peer_metrika_median_cvr_pct": peer_m_median,
+            "peer_ch_median_cvr_pct": peer_ch_median,
+            "rule_ref": "MONEY_BASELINE_RULE.md",
+        },
+        "baseline_caveat": caveat,
         "direct_filter_intent_volume_90d_top5k": vol_sum,
         "intent_share_of_top_pct": round(100 * intent_share, 2),
         "assumptions": {
             "filter_adoption_among_intent_searches": assumed_filter_adoption,
             "cvr_lift_pp_absolute": assumed_lift_pp,
-            "label": "ASSUMED — не измерено на Zolla facet usage",
+            "label": "ASSUMED lift — не измерено на Zolla facet usage; CVR/AOV база — Metrika/peers",
         },
         "formula": (
-            "Δ₽/мес ≈ (intent_searches_90d/3) × adoption × (lift_pp/100) × AOV_search_CH"
+            "Δ₽/мес ≈ (intent_searches_90d/3) × adoption × (lift_pp/100) × AOV_money_baseline"
         ),
         "delta_revenue_rub_per_month_sketch": round(delta_rev_mo, 0),
         "delta_revenue_rub_per_90d_sketch": round(delta_rev_mo * 3, 0),
@@ -617,16 +675,24 @@ table.mini {{ font-size:12px; width:100%; }}
   </p>
   {cases_html}
 
-  <h2>6. Деньги (прозрачно, со статусом ASSUMED)</h2>
+  <h2>6. Деньги (база Metrika/peers · lift ASSUMED)</h2>
   <div class="callout warn">
     {money['baseline_caveat']}
   </div>
   <table>
     <thead><tr><th>Поле</th><th>Значение</th></tr></thead>
     <tbody>
-      <tr><td>Search sessions 90д (CH)</td><td>{num(baseline.get('search_sessions') or 0)}</td></tr>
-      <tr><td>Search CVR (CH)</td><td>{baseline.get('search_cvr_pct')}% — возможно недоучёт заказов</td></tr>
-      <tr><td>AOV search (CH)</td><td>{baseline.get('aov_search')} ₽</td></tr>
+      <tr><td>Search sessions 90д (CH)</td><td>{num(baseline.get('search_sessions') or 0)} — объём поиска ок</td></tr>
+      <tr><td>Search CVR raw (CH)</td><td>{baseline.get('search_cvr_pct')}% — <strong>не использовать</strong> (10 заказов / 195k сессий)</td></tr>
+      <tr><td>Search CVR money baseline</td><td><strong>{(money.get('baseline_money') or {}).get('search_cvr_pct')}%</strong>
+        · source <code>{(money.get('baseline_money') or {}).get('cvr_source')}</code>
+        · Metrika visits={num((money.get('baseline_money') or {}).get('metrika_search_visits') or 0)},
+        purchases={num((money.get('baseline_money') or {}).get('metrika_search_purchases') or 0)}</td></tr>
+      <tr><td>AOV money baseline</td><td>{(money.get('baseline_money') or {}).get('aov')} ₽ (Metrika search ecommerce)</td></tr>
+      <tr><td>Peer sanity Metrika / CH</td><td>median search CVR
+        {(money.get('baseline_money') or {}).get('peer_metrika_median_cvr_pct')}% /
+        {(money.get('baseline_money') or {}).get('peer_ch_median_cvr_pct')}%
+        (fashion: Zarina, Befree, Gloria Jeans, RV, Ecco…)</td></tr>
       <tr><td>Intent volume (filter-кандидаты, top-5k sum)</td><td>{num(money['direct_filter_intent_volume_90d_top5k'])}</td></tr>
       <tr><td>ASSUMED adoption</td><td>{money['assumptions']['filter_adoption_among_intent_searches']}</td></tr>
       <tr><td>ASSUMED lift</td><td>+{money['assumptions']['cvr_lift_pp_absolute']} п.п. CVR</td></tr>
@@ -635,7 +701,8 @@ table.mini {{ font-size:12px; width:100%; }}
       <tr><td>Sketch Δ ₽/90д</td><td>{num(money['delta_revenue_rub_per_90d_sketch'])} ₽</td></tr>
     </tbody>
   </table>
-  <p>Дальше вместо ASSUMED: замер <code>conv_with_filters</code> vs <code>conv_without_filters</code> по категориям (как в 4lapy filter-conversion).</p>
+  <p class="meta">Правило: <code>MONEY_BASELINE_RULE.md</code> · артефакт <code>money_baseline_benchmark.json</code>.
+  Дальше вместо ASSUMED lift: замер facet with/without.</p>
 
   <h2>7. Что уже проверили технически (пилот)</h2>
   <ul>

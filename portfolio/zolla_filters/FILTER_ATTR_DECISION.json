@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-21T12:24:54.043402+00:00",
+  "generated_at": "2026-07-21T12:35:27.241757+00:00",
   "partner": "Zolla",
   "site_id": 3826,
   "method_type": "TYPE_DECISION_METHOD.md Q0–Q4",
@@ -511,17 +511,29 @@
       "searches_90d": 473003,
       "uniq_queries_90d": 46331
     },
-    "baseline_caveat": "В CH у Zolla search_orders за 90д крайне мало (возможен недоучёт withOrder). AOV/CVR из CH используем осторожно; для продажи партнёру нужен замер facet with/without или Метрика после появления фильтров.",
+    "baseline_money": {
+      "cvr_source": "zolla_metrika_search",
+      "search_cvr_pct": 4.809,
+      "aov": 2612.9,
+      "metrika_search_visits": 179910.0,
+      "metrika_search_purchases": 8652.0,
+      "ch_search_cvr_pct_raw": 0.005,
+      "ch_broken": true,
+      "peer_metrika_median_cvr_pct": 4.233,
+      "peer_ch_median_cvr_pct": 2.921,
+      "rule_ref": "MONEY_BASELINE_RULE.md"
+    },
+    "baseline_caveat": "CH search CVR Zolla = 0.005% — BROKEN (недоучёт withOrder), для денег НЕ используем. База денег: zolla_metrika_search → search CVR 4.809%, AOV 2612.9 ₽. У Zolla есть Метрика (counter+search goal); ecommerce с сегментом поиска надёжнее CH withOrder. Peer sanity: Metrika fashion median≈4.233% · CH fashion median≈2.921% (excl. broken).",
     "direct_filter_intent_volume_90d_top5k": 19568,
     "intent_share_of_top_pct": 4.86,
     "assumptions": {
       "filter_adoption_among_intent_searches": 0.15,
       "cvr_lift_pp_absolute": 0.5,
-      "label": "ASSUMED — не измерено на Zolla facet usage"
+      "label": "ASSUMED lift — не измерено на Zolla facet usage; CVR/AOV база — Metrika/peers"
     },
-    "formula": "Δ₽/мес ≈ (intent_searches_90d/3) × adoption × (lift_pp/100) × AOV_search_CH",
-    "delta_revenue_rub_per_month_sketch": 16612.0,
-    "delta_revenue_rub_per_90d_sketch": 49835.0,
+    "formula": "Δ₽/мес ≈ (intent_searches_90d/3) × adoption × (lift_pp/100) × AOV_money_baseline",
+    "delta_revenue_rub_per_month_sketch": 12782.0,
+    "delta_revenue_rub_per_90d_sketch": 38347.0,
     "what_we_will_measure_next": [
       "conv_with_filters vs conv_without_filters по категориям (CH events)",
       "SKU coverage после typed extract",

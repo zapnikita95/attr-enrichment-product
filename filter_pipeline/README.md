@@ -37,7 +37,8 @@ py -3.13 filter_pipeline/build_zolla_partner_defense.py
 Сборка кейсов: `py -3.13 filter_pipeline/build_demo_cases.py`
 
 Логика типов: `TYPE_DECISION_METHOD.md` (Q0–Q4).  
-Спрос: CH. Gap: YML. Деньги: ASSUMED lift явно помечен.
+Спрос: CH. Gap: YML. Деньги: CVR/AOV из Метрики (или peer-бенчмарк), если CH orders broken; lift ASSUMED.  
+См. `MONEY_BASELINE_RULE.md`, скрипт `zolla_money_benchmark.py`.
 
 ## Demand evidence (обязательно перед «имеет смысл»)
 
