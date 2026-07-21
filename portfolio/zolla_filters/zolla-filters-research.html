@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Zolla — фильтры из картинок/описаний: защита</title>
+<title>Zolla — фильтры из картинок и описаний</title>
 <style>
 :root {
   --bg:#f7f5f2; --ink:#1a1a1a; --muted:#5c5c5c; --line:#ddd6cc;
@@ -58,108 +58,97 @@ table.mini { font-size:12px; width:100%; }
 </head>
 <body>
 <div class="wrap">
-  <div class="tag">site_id 3826 · Zolla</div>
-  <div class="tag">фильтры · vision + text</div>
-  <div class="tag">защита для партнёра</div>
+  <div class="tag">Zolla</div>
+  <div class="tag">фильтры из фото и описаний</div>
+  <div class="tag">исследование</div>
   <h1>Zolla: фильтры из картинок и описаний</h1>
   <p class="lead">
-    Защита решения: <strong>какие атрибуты делать фильтрами</strong>,
-    <strong>в каком типе значения</strong> (boolean / enum / multi_enum),
-    <strong>почему их нет в фиде</strong>, <strong>что ищут пользователи</strong>
-    и <strong>как это бьёт в деньги</strong>.
-    Формат близкий к исследованию ЦУМ по атрибутам с картинок.
+    Какие атрибуты стоит сделать <strong>фильтрами поиска</strong>,
+    в каком формате значений, чего не хватает в фиде,
+    <strong>что уже ищут покупатели</strong> и какой эффект на выручку можно ожидать.
   </p>
   <p class="meta">
-    ClickHouse <code>sessions.searches</code> 90д · top-5000 запросов ·
-    YML sample 8k / name coverage 20k ·
-    тип значения — дерево Q0–Q4 (<code>TYPE_DECISION_METHOD.md</code>), не «мнение модели».
+    Данные: поиск Zolla за 90 дней · топ запросов · фид каталога · Яндекс.Метрика.
   </p>
 
   <div class="grid">
     <div class="stat"><b>473 003</b><span>поисков за 90 дней</span></div>
     <div class="stat"><b>46 331</b><span>уникальных запросов</span></div>
-    <div class="stat"><b>18 811</b><span>поисков в топе под filter-кандидаты*</span></div>
-    <div class="stat"><b>0</b><span>style-params в YML (капюшон/принт/рукав…)</span></div>
-    <div class="stat"><b>45 213 ₽</b><span>оценка Δ/мес · 0.6% выручки поиска</span></div>
+    <div class="stat"><b>18 811</b><span>поисков под кандидатов в фильтры*</span></div>
+    <div class="stat"><b>0</b><span>стилевых фильтров в фиде (капюшон, принт, рукав…)</span></div>
+    <div class="stat"><b>45 213 ₽</b><span>оценка доп. выручки / мес · 0.6% выручки поиска</span></div>
     <div class="stat"><b>100%</b><span>цвет и размер уже в фиде</span></div>
   </div>
-  <p class="meta">* сумма объёмов интентов (пересечения возможны) — upper-bound охвата facet-формулировок в top-5000.</p>
+  <p class="meta">* сумма объёмов по формулировкам в топе запросов; пересечения между интентами возможны.</p>
 
   <div class="callout">
-    <strong>Вывод для партнёра.</strong> Фид Zolla закрывает карточку (цвет, размер, скидка),
-    но <em>не даёт facet-ов визуального стиля</em>, которые люди уже пишут в поиск:
+    <strong>Короткий вывод.</strong> Фид Zolla хорошо закрывает карточку (цвет, размер, скидка),
+    но не даёт фильтров визуального стиля, которые люди уже пишут в поиск:
     принт, рукав, длина, капюшон, застёжка, силуэт.
-    Мы нормализуем их в фильтры с жёстким типом значения, чтобы UI и индекс не расползались
-    («да/нет», а не «капюшон есть / с капюшоном»).
+    Мы нормализуем их в фильтры с фиксированным набором значений
+    («да/нет», а не свободный текст вроде «с капюшоном / капюшон есть»).
   </div>
 
-  <h2>0. Как мы решаем тип фильтра (логика, не «с потолка»)</h2>
-  <ol class="tree">
-    <li><strong>Q0.</strong> Это вообще фильтр? (спрос + не дубль фида + нормализуемо)</li>
-    <li><strong>Q1.</strong> Вопрос «есть/нет» про деталь? → <code>boolean</code> = да/нет.
-      <br/>Пример: капюшон, карманы.</li>
-    <li><strong>Q2.</strong> Есть стандартный набор взаимоисключающих вариантов fashion? → <code>enum</code>.
-      <br/>Пример: длина mini/midi/maxi; рукав короткий/длинный/3/4/без рукавов.</li>
-    <li><strong>Q3.</strong> Несколько значений сразу возможны? → <code>multi_enum</code>.
-      <br/>Пример: принт полоска+люрекс.</li>
-    <li><strong>Q4.</strong> Число? → bins, не сырой float в facet.</li>
-  </ol>
-  <div class="callout warn">
-    Тип boolean для капюшона выбран <strong>не потому что «так сказала модель»</strong>, а потому что
-    онтология атрибута — наличие детали. Спрос в CH подтверждает, что вопрос бинарный
-    («куртка с капюшоном»), но спрос <em>не выбирает тип</em> — тип выбирает дерево Q1–Q4.
-  </div>
-
-  <h2>1. Что уже есть в фиде (и что НЕ трогаем)</h2>
-  <p>Sample 8 000 offer YML Zolla. Человекочитаемые params:</p>
+  <h2>1. Какие атрибуты сколько ищут</h2>
+  <p>
+    Поиск Zolla за 90 дней: всего <strong>473 003</strong> поисков,
+    <strong>46 331</strong> уникальных запросов.
+    Ниже — что покупатели формулируют в поиске (топ запросов).
+  </p>
   <table>
-    <thead><tr><th>Param</th><th>Fill (sample)</th><th>Решение</th></tr></thead>
+    <thead><tr><th>Атрибут</th><th>Объём в топе</th><th>Доля</th><th>Уник. запросов</th><th>Вывод</th></tr></thead>
+    <tbody><tr><td>Пол</td><td>164 329</td><td>40.8%</td><td>1242</td><td>спрос есть, уже закрыто фидом/навигацией</td></tr><tr><td>Цвет</td><td>27 737</td><td>6.89%</td><td>531</td><td>спрос есть, уже закрыто фидом/навигацией</td></tr><tr><td>Материал</td><td>25 744</td><td>6.39%</td><td>330</td><td>спрос есть, уже закрыто фидом/навигацией</td></tr><tr><td>Короткий рукав (как тип изделия)</td><td>8 875</td><td>2.2%</td><td>132</td><td>скорее тип товара, не отдельный фильтр</td></tr><tr><td>Узор / принт</td><td>7 757</td><td>1.93%</td><td>151</td><td>сильный кандидат в фильтр</td></tr><tr><td>Длина рукава</td><td>4 735</td><td>1.18%</td><td>107</td><td>сильный кандидат в фильтр</td></tr><tr><td>Длина изделия</td><td>2 512</td><td>0.62%</td><td>74</td><td>сильный кандидат в фильтр</td></tr><tr><td>Капюшон</td><td>1 570</td><td>0.39%</td><td>44</td><td>сильный кандидат в фильтр</td></tr><tr><td>Застёжка</td><td>1 238</td><td>0.31%</td><td>50</td><td>сильный кандидат в фильтр</td></tr><tr><td>Силуэт / крой</td><td>999</td><td>0.25%</td><td>29</td><td>сильный кандидат в фильтр</td></tr><tr><td>Воротник / вырез</td><td>570</td><td>0.14%</td><td>21</td><td>слабый / редкий спрос</td></tr><tr><td>Пояс / талия</td><td>137</td><td>0.03%</td><td>7</td><td>слабый / редкий спрос</td></tr><tr><td>Карманы</td><td>50</td><td>0.01%</td><td>2</td><td>слабый / редкий спрос</td></tr></tbody>
+  </table>
+
+  <h2>2. Что уже есть в фиде (и что не трогаем)</h2>
+  <p>По выборке каталога Zolla:</p>
+  <table>
+    <thead><tr><th>Параметр</th><th>Заполненность</th><th>Решение</th></tr></thead>
     <tbody>
-      <tr><td>Цвет</td><td>100%</td><td>не enrichment-фильтр</td></tr>
-      <tr><td>Размер</td><td>100%</td><td>variant, не vision</td></tr>
-      <tr><td>Новинка / Скидка / barcode</td><td>~99–100%</td><td>операционка</td></tr>
-      <tr><td>Капюшон / принт / рукав / застёжка / воротник / силуэт</td><td><strong>нет param</strong></td><td>зона фильтров из фото/описаний</td></tr>
+      <tr><td>Цвет</td><td>100%</td><td>не дублируем фильтром из фото</td></tr>
+      <tr><td>Размер</td><td>100%</td><td>уже в вариантах товара</td></tr>
+      <tr><td>Новинка / Скидка</td><td>~99–100%</td><td>операционные поля</td></tr>
+      <tr><td>Капюшон / принт / рукав / застёжка / воротник / силуэт</td><td><strong>нет в фиде</strong></td><td>зона новых фильтров из фото и описаний</td></tr>
     </tbody>
   </table>
-  <p class="meta">Лексика в названии (sample 20k): принт ~16%, рукав ~13%, капюшон ~4.7%, застёжка ~2% —
-  это не замена facet: часть карточек с деталью на фото без слова в name.</p>
+  <p class="meta">В названиях товаров слова вроде «принт», «рукав», «капюшон» встречаются,
+  но это не замена фильтра: на части карточек деталь видна на фото, а в названии её нет.</p>
 
-  <h2>2. Не делать фильтрами / не тащить с фото</h2>
+  <h2>3. Не предлагаем как новые фильтры</h2>
   <table>
-    <thead><tr><th>Атрибут</th><th>Почему</th><th>CH note</th></tr></thead>
-    <tbody><tr><td>Цвет</td><td>Fill ~100% в YML param «Цвет». Спрос в CH высокий, но это не gap enrichment.</td><td>strong_demand_but_check_feed_nav_collision</td></tr><tr><td>Размер</td><td>Variant-level в фиде (100%). Не vision/text filter enrichment.</td><td>n/a</td></tr><tr><td>Пол (gender_target)</td><td>В запросах часто «женские/мужские» как модификатор типа изделия; обычно закрывается навигацией/фидом. Не назначаем новым facet без проверки UI.</td><td>strong_demand_but_check_feed_nav_collision</td></tr><tr><td>Материал / состав %</td><td>Состав должен идти из params/описания партнёра; vision по составу ненадёжен. Collision risk.</td><td>strong_demand_but_check_feed_nav_collision</td></tr><tr><td>Ощущения ткани / маркетинг</td><td>Не нормализуется в closed-set; не facet.</td><td>no CH facet signal required</td></tr></tbody>
+    <thead><tr><th>Атрибут</th><th>Почему</th></tr></thead>
+    <tbody><tr><td>Цвет</td><td>Уже заполнен в фиде (~100%). Спрос в поиске высокий, но это не новый gap.</td></tr><tr><td>Размер</td><td>Уже есть в вариантах товара (100%). Не извлекаем с фото.</td></tr><tr><td>Пол</td><td>В запросах часто «женские / мужские» как уточнение типа изделия; обычно уже закрыто навигацией и фидом.</td></tr><tr><td>Материал / состав %</td><td>Состав надёжнее брать из параметров и описания; с фото проценты состава ненадёжны.</td></tr><tr><td>Ощущения ткани / маркетинг</td><td>Не сводится к фиксированному списку значений — плохой фильтр.</td></tr></tbody>
   </table>
 
-  <h2>3. Делать фильтрами: тип + спрос + gap</h2>
+  <h2>4. Предлагаем сделать фильтрами</h2>
   <table>
     <thead>
       <tr>
-        <th>Фильтр</th><th>Тип (дерево)</th><th>Почему такой тип</th>
-        <th>Спрос CH (top-5k)</th><th>Примеры запросов</th><th>Фид / действие</th>
+        <th>Фильтр</th><th>Формат</th><th>Почему такой формат</th>
+        <th>Спрос в поиске</th><th>Примеры запросов</th><th>Статус</th>
       </tr>
     </thead>
-    <tbody><tr><td><strong>Капюшон</strong><br/><code>hood</code></td><td><code>boolean</code><br/><span style='font-size:12px;color:#5c5c5c'>Q1=yes → boolean (деталь есть/нет)</span></td><td>Капюшон — дискретная деталь изделия: либо присутствует, либо нет. Покупательский вопрос бинарный («с капюшоном»). Подвиды (съёмный/мех) — отдельные атрибуты, если появятся в спросе.</td><td>1 570 · 0.39%<br/><span style='font-size:12px'>strong_filter_candidate</span></td><td style='font-size:12px'>худи (194), и худи женские (153), куртка женская с капюшоном (123)</td><td>missing_structured_param<br/>extract+filter</td></tr><tr><td><strong>Карманы</strong><br/><code>pockets</code></td><td><code>boolean</code><br/><span style='font-size:12px;color:#5c5c5c'>Q1=yes → boolean</span></td><td>Наличие карманов — факт присутствия детали, не шкала вариантов.</td><td>50 · 0.01%<br/><span style='font-size:12px'>weak_or_sparse</span></td><td style='font-size:12px'>брюки мужские с карманами карго (42), джоггеры мужские с карманами (8)</td><td>missing_structured_param<br/>extract+filter</td></tr><tr><td><strong>Длина изделия</strong><br/><code>length</code></td><td><code>enum</code><br/><span style='font-size:12px;color:#5c5c5c'>Q1=no → Q2=yes → enum (стандарт fashion)</span></td><td>В fashion есть устоявшиеся взаимоисключающие длины (mini/midi/maxi…). Один SKU = одно значение длины.</td><td>2 512 · 0.62%<br/><span style='font-size:12px'>strong_filter_candidate</span></td><td style='font-size:12px'>платье макси (263), юбка миди (188), платье миди (164)</td><td>missing_structured_param<br/>extract+filter</td></tr><tr><td><strong>Длина рукава</strong><br/><code>sleeve_length</code></td><td><code>enum</code><br/><span style='font-size:12px;color:#5c5c5c'>Q1=no → Q2=yes → enum</span></td><td>Стандартные взаимоисключающие варианты рукава в каталогах одежды.</td><td>4 735 · 1.18%<br/><span style='font-size:12px'>strong_filter_candidate</span></td><td style='font-size:12px'>рубашка мужская с коротким рукавом (660), джемпер женский с коротким рукавом (301), рубашка мужская с длинным рукавом (239)</td><td>missing_structured_param<br/>extract+filter</td></tr><tr><td><strong>Застёжка</strong><br/><code>fastener</code></td><td><code>enum</code><br/><span style='font-size:12px;color:#5c5c5c'>Q1=no → Q2=yes → enum</span></td><td>Тип застёжки — закрытый набор mutually exclusive вариантов.</td><td>1 238 · 0.31%<br/><span style='font-size:12px'>strong_filter_candidate</span></td><td style='font-size:12px'>толстовка женская на молнии (130), кардиган на пуговицах женский (121), кардиган мужской на пуговицах (99)</td><td>missing_structured_param<br/>extract+filter</td></tr><tr><td><strong>Воротник / вырез</strong><br/><code>collar</code></td><td><code>enum</code><br/><span style='font-size:12px;color:#5c5c5c'>Q1=no → Q2=yes → enum</span></td><td>Ограниченный набор конструкций горловины; один основной вариант на SKU.</td><td>570 · 0.14%<br/><span style='font-size:12px'>weak_or_sparse</span></td><td style='font-size:12px'>водолазка женская (140), с воротником поло мужской (97), водолазка мужская (89)</td><td>missing_structured_param<br/>extract+filter</td></tr><tr><td><strong>Узор / принт</strong><br/><code>print_pattern</code></td><td><code>multi_enum</code><br/><span style='font-size:12px;color:#5c5c5c'>Q1=no → Q2=partial → Q3=yes → multi_enum</span></td><td>На ткани могут сосуществовать несколько признаков (полоска+люрекс). Closed-set ограничивает кардинальность facet.</td><td>7 757 · 1.93%<br/><span style='font-size:12px'>strong_filter_candidate</span></td><td style='font-size:12px'>рубашка женская в полоску (649), футболка с принтом женская (647), рубашка в клетку женская (524)</td><td>missing_structured_param<br/>extract+filter</td></tr><tr><td><strong>Силуэт / крой</strong><br/><code>silhouette</code></td><td><code>enum</code><br/><span style='font-size:12px;color:#5c5c5c'>Q1=no → Q2=yes → enum</span></td><td>Стандартные силуэты fashion; взаимоисключающие на уровне основного кроя.</td><td>999 · 0.25%<br/><span style='font-size:12px'>strong_filter_candidate</span></td><td style='font-size:12px'>джинсы женские клеш (206), мужская футболка оверсайз (130), джинсы клеш (122)</td><td>missing_structured_param<br/>extract+filter</td></tr></tbody>
+    <tbody><tr><td><strong>Капюшон</strong></td><td>да / нет</td><td>Капюшон — дискретная деталь изделия: либо присутствует, либо нет. Покупательский вопрос бинарный («с капюшоном»). Подвиды (съёмный/мех) — отдельные атрибуты, если появятся в спросе.</td><td>1 570 (0.39%)<br/><span style='font-size:12px;color:#5c5c5c'>сильный кандидат в фильтр</span></td><td style='font-size:12px'>худи (194), и худи женские (153), куртка женская с капюшоном (123)</td><td>нет в фиде как фильтр<br/>достаём и делаем фильтром</td></tr><tr><td><strong>Карманы</strong></td><td>да / нет</td><td>Наличие карманов — факт присутствия детали, не шкала вариантов.</td><td>50 (0.01%)<br/><span style='font-size:12px;color:#5c5c5c'>слабый / редкий спрос</span></td><td style='font-size:12px'>брюки мужские с карманами карго (42), джоггеры мужские с карманами (8)</td><td>нет в фиде как фильтр<br/>достаём и делаем фильтром</td></tr><tr><td><strong>Длина изделия</strong></td><td>один из списка</td><td>В fashion есть устоявшиеся взаимоисключающие длины (mini/midi/maxi…). Один SKU = одно значение длины.</td><td>2 512 (0.62%)<br/><span style='font-size:12px;color:#5c5c5c'>сильный кандидат в фильтр</span></td><td style='font-size:12px'>платье макси (263), юбка миди (188), платье миди (164)</td><td>нет в фиде как фильтр<br/>достаём и делаем фильтром</td></tr><tr><td><strong>Длина рукава</strong></td><td>один из списка</td><td>Стандартные взаимоисключающие варианты рукава в каталогах одежды.</td><td>4 735 (1.18%)<br/><span style='font-size:12px;color:#5c5c5c'>сильный кандидат в фильтр</span></td><td style='font-size:12px'>рубашка мужская с коротким рукавом (660), джемпер женский с коротким рукавом (301), рубашка мужская с длинным рукавом (239)</td><td>нет в фиде как фильтр<br/>достаём и делаем фильтром</td></tr><tr><td><strong>Застёжка</strong></td><td>один из списка</td><td>Тип застёжки — закрытый набор mutually exclusive вариантов.</td><td>1 238 (0.31%)<br/><span style='font-size:12px;color:#5c5c5c'>сильный кандидат в фильтр</span></td><td style='font-size:12px'>толстовка женская на молнии (130), кардиган на пуговицах женский (121), кардиган мужской на пуговицах (99)</td><td>нет в фиде как фильтр<br/>достаём и делаем фильтром</td></tr><tr><td><strong>Воротник / вырез</strong></td><td>один из списка</td><td>Ограниченный набор конструкций горловины; один основной вариант на SKU.</td><td>570 (0.14%)<br/><span style='font-size:12px;color:#5c5c5c'>слабый / редкий спрос</span></td><td style='font-size:12px'>водолазка женская (140), с воротником поло мужской (97), водолазка мужская (89)</td><td>нет в фиде как фильтр<br/>достаём и делаем фильтром</td></tr><tr><td><strong>Узор / принт</strong></td><td>несколько из списка</td><td>На ткани могут сосуществовать несколько признаков (полоска+люрекс). Closed-set ограничивает кардинальность facet.</td><td>7 757 (1.93%)<br/><span style='font-size:12px;color:#5c5c5c'>сильный кандидат в фильтр</span></td><td style='font-size:12px'>рубашка женская в полоску (649), футболка с принтом женская (647), рубашка в клетку женская (524)</td><td>нет в фиде как фильтр<br/>достаём и делаем фильтром</td></tr><tr><td><strong>Силуэт / крой</strong></td><td>один из списка</td><td>Стандартные силуэты fashion; взаимоисключающие на уровне основного кроя.</td><td>999 (0.25%)<br/><span style='font-size:12px;color:#5c5c5c'>сильный кандидат в фильтр</span></td><td style='font-size:12px'>джинсы женские клеш (206), мужская футболка оверсайз (130), джинсы клеш (122)</td><td>нет в фиде как фильтр<br/>достаём и делаем фильтром</td></tr></tbody>
   </table>
 
-  <h2>4. Поиск: полный ranking интентов (пруф)</h2>
-  <p>
-    Источник: ClickHouse <code>sessions.searches</code>, siteId=3826, 90 дней.
-    Всего поисков <strong>473 003</strong>,
-    uniq <strong>46 331</strong>.
-    Ниже — матчинг по top-5000 (срез объёма в JSON evidence).
-  </p>
-  <table>
-    <thead><tr><th>Intent</th><th>Volume</th><th>Share%</th><th>Uniq</th><th>Verdict</th></tr></thead>
-    <tbody><tr><td><code>gender_target</code></td><td>164 329</td><td>40.8%</td><td>1242</td><td>strong_demand_but_check_feed_nav_collision</td></tr><tr><td><code>color</code></td><td>27 737</td><td>6.89%</td><td>531</td><td>strong_demand_but_check_feed_nav_collision</td></tr><tr><td><code>material</code></td><td>25 744</td><td>6.39%</td><td>330</td><td>strong_demand_but_check_feed_nav_collision</td></tr><tr><td><code>sleeve_length_product_proxy</code></td><td>8 875</td><td>2.2%</td><td>132</td><td>proxy_product_type_not_facet</td></tr><tr><td><code>print_pattern</code></td><td>7 757</td><td>1.93%</td><td>151</td><td>strong_filter_candidate</td></tr><tr><td><code>sleeve_length</code></td><td>4 735</td><td>1.18%</td><td>107</td><td>strong_filter_candidate</td></tr><tr><td><code>length</code></td><td>2 512</td><td>0.62%</td><td>74</td><td>strong_filter_candidate</td></tr><tr><td><code>hood</code></td><td>1 570</td><td>0.39%</td><td>44</td><td>strong_filter_candidate</td></tr><tr><td><code>fastener</code></td><td>1 238</td><td>0.31%</td><td>50</td><td>strong_filter_candidate</td></tr><tr><td><code>silhouette</code></td><td>999</td><td>0.25%</td><td>29</td><td>strong_filter_candidate</td></tr><tr><td><code>collar</code></td><td>570</td><td>0.14%</td><td>21</td><td>weak_or_sparse</td></tr><tr><td><code>fit_waist</code></td><td>137</td><td>0.03%</td><td>7</td><td>weak_or_sparse</td></tr><tr><td><code>pockets</code></td><td>50</td><td>0.01%</td><td>2</td><td>weak_or_sparse</td></tr></tbody>
-  </table>
-  <p class="meta">Полный файл с примерами запросов: <code>FILTER_DEMAND_EVIDENCE.md</code>.</p>
+  <h2>5. Как выбираем формат фильтра</h2>
+  <ol class="tree">
+    <li>Есть спрос и значения ещё нет в фиде как нормальный фильтр?</li>
+    <li>Вопрос «есть / нет» про деталь? → формат <strong>да / нет</strong> (капюшон, карманы).</li>
+    <li>Есть стандартный набор взаимоисключающих вариантов? → <strong>один из списка</strong>
+      (длина mini/midi/maxi; рукав короткий/длинный/без рукавов).</li>
+    <li>Несколько значений сразу возможны? → <strong>несколько из списка</strong> (принт).</li>
+  </ol>
+  <div class="callout">
+    Пример: капюшон — не свободный текст, а фильтр «да / нет», потому что покупательский вопрос бинарный
+    («куртка с капюшоном»).
+  </div>
 
-  <h2>5. Наглядные кейсы: фото → фильтр (обязательно)</h2>
+  <h2>6. Примеры: фото → фильтр</h2>
   <p class="lead" style="font-size:15px">
-    Реальные карточки Zolla. Слева — фид / старый extract и «уже знали» (не gap).
-    Справа — <strong>максимум фильтров с фото</strong>: сначала то, что <strong>ищут</strong>
-    (CH top-5k + примеры), затем то, что всё равно <strong>достаём как facet</strong>
-    без сильного intent. Один атрибут на карточку — брак демо.
+    Реальные карточки Zolla. Слева — что уже в фиде.
+    Справа — что достаём с фото: сначала то, что <strong>ищут</strong>,
+    затем то, что можно дать <strong>как фильтр на вырост</strong>.
   </p>
   
     <article class="case">
@@ -168,20 +157,20 @@ table.mini { font-size:12px; width:100%; }
         <img src="https://zolla.com/upload/iplm/images/goods/020345212224_8000.jpg" alt="Утеплённое пальто с капюшоном и поясом" loading="lazy"/>
       </a>
       <div class="case-body">
-        <div class="case-meta">Zolla · offer_id 31629 · <strong>5 фильтров с фото</strong></div>
+        <div class="case-meta">Артикул 31629 · <strong>5 фильтров с фото</strong></div>
         <h3>Утеплённое пальто с капюшоном и поясом</h3>
-        <p class="case-line">Утеплённое пальто: капюшон + пояс + длина + стёжка, не один boolean.</p>
+        <p class="case-line">Утеплённое пальто: капюшон + пояс + длина + стёжка, не один фильтр да/нет.</p>
         <div class="case-cols">
           <div>
-            <h4>Уже было в фиде / старом extract</h4>
-            <table class="mini"><tbody><tr><td>Категория</td><td>—</td></tr><tr><td>Цвет</td><td>коричневый</td></tr><tr><td>Оттенок</td><td>кофейный</td></tr><tr><td>Принт (старый freeform)</td><td>однотонный</td></tr><tr><td>Материал</td><td>—</td></tr><tr><td>Капюшон (param)</td><td>нет в фиде</td></tr><tr><td>Застёжка (param)</td><td>нет в фиде</td></tr><tr><td>Длина как facet</td><td>нет в фиде</td></tr><tr><td>Пояс/кулиска (param)</td><td>нет в фиде</td></tr></tbody></table>
-            <h4>Уже знали (не gap)</h4><ul class='attrs'><li class='coll'><strong>Узор / принт</strong>: однотонный <span class='ev'>— Уже было в старом extract — не gap, в фильтр как «новинку» не продаём.</span></li></ul>
+            <h4>Сейчас в фиде / карточке</h4>
+            <table class="mini"><tbody><tr><td>Категория</td><td>—</td></tr><tr><td>Цвет</td><td>коричневый</td></tr><tr><td>Оттенок</td><td>кофейный</td></tr><tr><td>Принт</td><td>однотонный</td></tr><tr><td>Материал</td><td>—</td></tr><tr><td>Капюшон</td><td>нет в фиде</td></tr><tr><td>Застёжка</td><td>нет в фиде</td></tr><tr><td>Длина</td><td>нет в фиде</td></tr><tr><td>Пояс/кулиска</td><td>нет в фиде</td></tr></tbody></table>
+            <h4>Уже было в карточке</h4><ul class='attrs'><li class='coll'><strong>Узор / принт</strong>: однотонный <span class='ev'>— уже было в данных карточки, не считаем новым gap</span></li></ul>
           </div>
           <div>
-            <h4>Ищут в поиске → фильтр</h4>
-            <ul class="attrs"><li class='searched'><strong>Капюшон</strong>: да <span class='ev'>(видно капюшон)</span> <span class='filt'>→ фильтр: Капюшон = да</span><span class='dem ok'>ищут: 1570 в top-5k · худи (194), и худи женские (153)</span></li><li class='searched'><strong>Длина изделия</strong>: midi <span class='ev'>(длина пальто ниже колена, но выше щиколотки)</span> <span class='filt'>→ фильтр: Длина изделия = midi</span><span class='dem ok'>ищут: 2512 в top-5k · платье макси (263), юбка миди (188)</span></li><li class='searched'><strong>Длина рукава</strong>: длинный <span class='ev'>(длинный рукав пальто)</span> <span class='filt'>→ фильтр: Длина рукава = длинный</span><span class='dem ok'>ищут: 4735 в top-5k · рубашка мужская с коротким рукавом (660), джемпер женский с коротким рукавом (301)</span></li></ul>
-            <h4>Достаём с фото (facet на вырост)</h4>
-            <ul class="attrs"><li class='extra'><strong>Пояс / кулиска</strong>: да <span class='ev'>(на талии есть пояс-завязка)</span> <span class='filt'>→ фильтр: Пояс / кулиска = да</span><span class='dem weak'>слабый intent (137) — facet всё равно полезен</span></li><li class='extra'><strong>Стёганый</strong>: да <span class='ev'>(на пальто видна стежка)</span> <span class='filt'>→ фильтр: Стёганый = да</span><span class='dem extra'>достаём как facet; сильного поиска пока не видно</span></li></ul>
+            <h4>Ищут в поиске → станет фильтром</h4>
+            <ul class="attrs"><li class='searched'><strong>Капюшон</strong>: да <span class='ev'>(видно капюшон)</span> <span class='filt'>→ фильтр: Капюшон = да</span><span class='dem ok'>ищут в поиске Zolla · примеры: худи (194), и худи женские (153)</span></li><li class='searched'><strong>Длина изделия</strong>: midi <span class='ev'>(длина пальто ниже колена, но выше щиколотки)</span> <span class='filt'>→ фильтр: Длина изделия = midi</span><span class='dem ok'>ищут в поиске Zolla · примеры: платье макси (263), юбка миди (188)</span></li><li class='searched'><strong>Длина рукава</strong>: длинный <span class='ev'>(длинный рукав пальто)</span> <span class='filt'>→ фильтр: Длина рукава = длинный</span><span class='dem ok'>ищут в поиске Zolla · примеры: рубашка мужская с коротким рукавом (660), джемпер женский с коротким рукавом (301)</span></li></ul>
+            <h4>Достаём с фото (на вырост)</h4>
+            <ul class="attrs"><li class='extra'><strong>Пояс / кулиска</strong>: да <span class='ev'>(на талии есть пояс-завязка)</span> <span class='filt'>→ фильтр: Пояс / кулиска = да</span><span class='dem weak'>спрос слабее — фильтр всё равно полезен на витрине</span></li><li class='extra'><strong>Стёганый</strong>: да <span class='ev'>(на пальто видна стежка)</span> <span class='filt'>→ фильтр: Стёганый = да</span><span class='dem extra'>видно на фото — можно дать как фильтр на вырост</span></li></ul>
           </div>
         </div>
       </div>
@@ -193,20 +182,20 @@ table.mini { font-size:12px; width:100%; }
         <img src="https://zolla.com/upload/iplm/images/goods/022253273153_51S0.jpg" alt="Футболка из хлопка на кулиске" loading="lazy"/>
       </a>
       <div class="case-body">
-        <div class="case-meta">Zolla · offer_id 177548 · <strong>2 фильтров с фото</strong></div>
+        <div class="case-meta">Артикул 177548 · <strong>2 фильтров с фото</strong></div>
         <h3>Футболка из хлопка на кулиске</h3>
-        <p class="case-line">Футболка: кулиска/рукав/вырез; полоска не gap если уже в extract.</p>
+        <p class="case-line">Футболка: кулиска/рукав/вырез; полоска не новинка если уже в карточке.</p>
         <div class="case-cols">
           <div>
-            <h4>Уже было в фиде / старом extract</h4>
-            <table class="mini"><tbody><tr><td>Категория</td><td>Женщины / Футболки и Топы / Футболки</td></tr><tr><td>Цвет</td><td>—</td></tr><tr><td>Оттенок</td><td>—</td></tr><tr><td>Принт (старый freeform)</td><td>полоски</td></tr><tr><td>Материал</td><td>хлопок</td></tr><tr><td>Капюшон (param)</td><td>нет в фиде</td></tr><tr><td>Застёжка (param)</td><td>нет в фиде</td></tr><tr><td>Длина как facet</td><td>нет в фиде</td></tr><tr><td>Пояс/кулиска (param)</td><td>нет в фиде</td></tr><tr><td>Материал (title)</td><td>хлопок (в name/extract)</td></tr></tbody></table>
-            <h4>Уже знали (не gap)</h4><ul class='attrs'><li class='coll'><strong>Узор / принт</strong>: полоска <span class='ev'>— Уже было в старом extract — не gap, в фильтр как «новинку» не продаём.</span></li><li class='coll'><strong>Длина рукава</strong>: короткий <span class='ev'>— Уже было в старом extract — не gap, в фильтр как «новинку» не продаём.</span></li><li class='coll'><strong>Воротник / вырез</strong>: круглый <span class='ev'>— Уже было в старом extract — не gap, в фильтр как «новинку» не продаём.</span></li></ul>
+            <h4>Сейчас в фиде / карточке</h4>
+            <table class="mini"><tbody><tr><td>Категория</td><td>Женщины / Футболки и Топы / Футболки</td></tr><tr><td>Цвет</td><td>—</td></tr><tr><td>Оттенок</td><td>—</td></tr><tr><td>Принт</td><td>полоски</td></tr><tr><td>Материал</td><td>хлопок</td></tr><tr><td>Капюшон</td><td>нет в фиде</td></tr><tr><td>Застёжка</td><td>нет в фиде</td></tr><tr><td>Длина</td><td>нет в фиде</td></tr><tr><td>Пояс/кулиска</td><td>нет в фиде</td></tr></tbody></table>
+            <h4>Уже было в карточке</h4><ul class='attrs'><li class='coll'><strong>Узор / принт</strong>: полоска <span class='ev'>— уже было в данных карточки, не считаем новым gap</span></li><li class='coll'><strong>Длина рукава</strong>: короткий <span class='ev'>— уже было в данных карточки, не считаем новым gap</span></li><li class='coll'><strong>Воротник / вырез</strong>: круглый <span class='ev'>— уже было в данных карточки, не считаем новым gap</span></li></ul>
           </div>
           <div>
-            <h4>Ищут в поиске → фильтр</h4>
-            <ul class="attrs"><li class='searched'><strong>Длина изделия</strong>: укороченный <span class='ev'>(Футболка укороченная, заканчивается на уровне талии.)</span> <span class='filt'>→ фильтр: Длина изделия = укороченный</span><span class='dem ok'>ищут: 2512 в top-5k · платье макси (263), юбка миди (188)</span></li></ul>
-            <h4>Достаём с фото (facet на вырост)</h4>
-            <ul class="attrs"><li class='extra'><strong>Пояс / кулиска</strong>: да <span class='ev'>(На футболке есть кулиска с завязкой на талии.)</span> <span class='filt'>→ фильтр: Пояс / кулиска = да</span><span class='dem weak'>слабый intent (137) — facet всё равно полезен</span></li></ul>
+            <h4>Ищут в поиске → станет фильтром</h4>
+            <ul class="attrs"><li class='searched'><strong>Длина изделия</strong>: укороченный <span class='ev'>(Футболка укороченная, заканчивается на уровне талии.)</span> <span class='filt'>→ фильтр: Длина изделия = укороченный</span><span class='dem ok'>ищут в поиске Zolla · примеры: платье макси (263), юбка миди (188)</span></li></ul>
+            <h4>Достаём с фото (на вырост)</h4>
+            <ul class="attrs"><li class='extra'><strong>Пояс / кулиска</strong>: да <span class='ev'>(На футболке есть кулиска с завязкой на талии.)</span> <span class='filt'>→ фильтр: Пояс / кулиска = да</span><span class='dem weak'>спрос слабее — фильтр всё равно полезен на витрине</span></li></ul>
           </div>
         </div>
       </div>
@@ -218,20 +207,20 @@ table.mini { font-size:12px; width:100%; }
         <img src="https://zolla.com/upload/iplm/images/goods/021438259193_59P0.jpg" alt="Шифоновое платье мини с бантом" loading="lazy"/>
       </a>
       <div class="case-body">
-        <div class="case-meta">Zolla · offer_id 42955 · <strong>3 фильтров с фото</strong></div>
+        <div class="case-meta">Артикул 42955 · <strong>3 фильтров с фото</strong></div>
         <h3>Шифоновое платье мини с бантом</h3>
         <p class="case-line">Мини-платье: длина + рукав + застёжка/бант; материал шифон — из name/фида.</p>
         <div class="case-cols">
           <div>
-            <h4>Уже было в фиде / старом extract</h4>
-            <table class="mini"><tbody><tr><td>Категория</td><td>—</td></tr><tr><td>Цвет</td><td>синий</td></tr><tr><td>Оттенок</td><td>кобальт</td></tr><tr><td>Принт (старый freeform)</td><td>цветочный</td></tr><tr><td>Материал</td><td>—</td></tr><tr><td>Капюшон (param)</td><td>нет в фиде</td></tr><tr><td>Застёжка (param)</td><td>нет в фиде</td></tr><tr><td>Длина как facet</td><td>нет в фиде</td></tr><tr><td>Пояс/кулиска (param)</td><td>нет в фиде</td></tr><tr><td>Материал (title)</td><td>шифон (в name)</td></tr></tbody></table>
-            <h4>Уже знали (не gap)</h4><ul class='attrs'><li class='coll'><strong>Узор / принт</strong>: цветочный <span class='ev'>— Уже было в старом extract — не gap, в фильтр как «новинку» не продаём.</span></li></ul>
+            <h4>Сейчас в фиде / карточке</h4>
+            <table class="mini"><tbody><tr><td>Категория</td><td>—</td></tr><tr><td>Цвет</td><td>синий</td></tr><tr><td>Оттенок</td><td>кобальт</td></tr><tr><td>Принт</td><td>цветочный</td></tr><tr><td>Материал</td><td>шифон</td></tr><tr><td>Капюшон</td><td>нет в фиде</td></tr><tr><td>Застёжка</td><td>нет в фиде</td></tr><tr><td>Длина</td><td>нет в фиде</td></tr><tr><td>Пояс/кулиска</td><td>нет в фиде</td></tr></tbody></table>
+            <h4>Уже было в карточке</h4><ul class='attrs'><li class='coll'><strong>Узор / принт</strong>: цветочный <span class='ev'>— уже было в данных карточки, не считаем новым gap</span></li></ul>
           </div>
           <div>
-            <h4>Ищут в поиске → фильтр</h4>
-            <ul class="attrs"><li class='searched'><strong>Длина изделия</strong>: mini <span class='ev'>(Длина платья — мини.)</span> <span class='filt'>→ фильтр: Длина изделия = mini</span><span class='dem ok'>ищут: 2512 в top-5k · платье макси (263), юбка миди (188)</span></li><li class='searched'><strong>Длина рукава</strong>: длинный <span class='ev'>(У платья длинные рукава.)</span> <span class='filt'>→ фильтр: Длина рукава = длинный</span><span class='dem ok'>ищут: 4735 в top-5k · рубашка мужская с коротким рукавом (660), джемпер женский с коротким рукавом (301)</span></li></ul>
-            <h4>Достаём с фото (facet на вырост)</h4>
-            <ul class="attrs"><li class='extra'><strong>Пояс / кулиска</strong>: да <span class='ev'>(На шее у платья есть бант, который можно считать элементом пояса/завязки.)</span> <span class='filt'>→ фильтр: Пояс / кулиска = да</span><span class='dem weak'>слабый intent (137) — facet всё равно полезен</span></li></ul>
+            <h4>Ищут в поиске → станет фильтром</h4>
+            <ul class="attrs"><li class='searched'><strong>Длина изделия</strong>: mini <span class='ev'>(Длина платья — мини.)</span> <span class='filt'>→ фильтр: Длина изделия = mini</span><span class='dem ok'>ищут в поиске Zolla · примеры: платье макси (263), юбка миди (188)</span></li><li class='searched'><strong>Длина рукава</strong>: длинный <span class='ev'>(У платья длинные рукава.)</span> <span class='filt'>→ фильтр: Длина рукава = длинный</span><span class='dem ok'>ищут в поиске Zolla · примеры: рубашка мужская с коротким рукавом (660), джемпер женский с коротким рукавом (301)</span></li></ul>
+            <h4>Достаём с фото (на вырост)</h4>
+            <ul class="attrs"><li class='extra'><strong>Пояс / кулиска</strong>: да <span class='ev'>(На шее у платья есть бант, который можно считать элементом пояса/завязки.)</span> <span class='filt'>→ фильтр: Пояс / кулиска = да</span><span class='dem weak'>спрос слабее — фильтр всё равно полезен на витрине</span></li></ul>
           </div>
         </div>
       </div>
@@ -243,20 +232,20 @@ table.mini { font-size:12px; width:100%; }
         <img src="https://zolla.com/upload/iplm/images/goods/22324827Y261_7200.jpg" alt="Ярусное платье макси на кулиске с вырезом" loading="lazy"/>
       </a>
       <div class="case-body">
-        <div class="case-meta">Zolla · offer_id 83302 · <strong>4 фильтров с фото</strong></div>
+        <div class="case-meta">Артикул 83302 · <strong>4 фильтров с фото</strong></div>
         <h3>Ярусное платье макси на кулиске с вырезом</h3>
         <p class="case-line">Макси-платье: длина + кулиска + вырез + рукав, не только maxi.</p>
         <div class="case-cols">
           <div>
-            <h4>Уже было в фиде / старом extract</h4>
-            <table class="mini"><tbody><tr><td>Категория</td><td>—</td></tr><tr><td>Цвет</td><td>зелёный</td></tr><tr><td>Оттенок</td><td>лайм</td></tr><tr><td>Принт (старый freeform)</td><td>однотонный</td></tr><tr><td>Материал</td><td>—</td></tr><tr><td>Капюшон (param)</td><td>нет в фиде</td></tr><tr><td>Застёжка (param)</td><td>нет в фиде</td></tr><tr><td>Длина как facet</td><td>нет в фиде</td></tr><tr><td>Пояс/кулиска (param)</td><td>нет в фиде</td></tr></tbody></table>
-            <h4>Уже знали (не gap)</h4><ul class='attrs'><li class='coll'><strong>Узор / принт</strong>: однотонный <span class='ev'>— Уже было в старом extract — не gap, в фильтр как «новинку» не продаём.</span></li></ul>
+            <h4>Сейчас в фиде / карточке</h4>
+            <table class="mini"><tbody><tr><td>Категория</td><td>—</td></tr><tr><td>Цвет</td><td>зелёный</td></tr><tr><td>Оттенок</td><td>лайм</td></tr><tr><td>Принт</td><td>однотонный</td></tr><tr><td>Материал</td><td>—</td></tr><tr><td>Капюшон</td><td>нет в фиде</td></tr><tr><td>Застёжка</td><td>нет в фиде</td></tr><tr><td>Длина</td><td>нет в фиде</td></tr><tr><td>Пояс/кулиска</td><td>нет в фиде</td></tr></tbody></table>
+            <h4>Уже было в карточке</h4><ul class='attrs'><li class='coll'><strong>Узор / принт</strong>: однотонный <span class='ev'>— уже было в данных карточки, не считаем новым gap</span></li></ul>
           </div>
           <div>
-            <h4>Ищут в поиске → фильтр</h4>
-            <ul class="attrs"><li class='searched'><strong>Длина изделия</strong>: maxi <span class='ev'>(платье ниже колен, почти до щиколоток)</span> <span class='filt'>→ фильтр: Длина изделия = maxi</span><span class='dem ok'>ищут: 2512 в top-5k · платье макси (263), юбка миди (188)</span></li><li class='searched'><strong>Длина рукава</strong>: короткий <span class='ev'>(рукава короткие, до середины бицепса)</span> <span class='filt'>→ фильтр: Длина рукава = короткий</span><span class='dem ok'>ищут: 4735 в top-5k · рубашка мужская с коротким рукавом (660), джемпер женский с коротким рукавом (301)</span></li></ul>
-            <h4>Достаём с фото (facet на вырост)</h4>
-            <ul class="attrs"><li class='extra'><strong>Пояс / кулиска</strong>: да <span class='ev'>(на талии платья есть кулиска с завязкой)</span> <span class='filt'>→ фильтр: Пояс / кулиска = да</span><span class='dem weak'>слабый intent (137) — facet всё равно полезен</span></li><li class='extra'><strong>Воротник / вырез</strong>: V-образный <span class='ev'>(у платья V-образный вырез горловины)</span> <span class='filt'>→ фильтр: Воротник / вырез = V-образный</span><span class='dem weak'>слабый intent (570) — facet всё равно полезен</span></li></ul>
+            <h4>Ищут в поиске → станет фильтром</h4>
+            <ul class="attrs"><li class='searched'><strong>Длина изделия</strong>: maxi <span class='ev'>(платье ниже колен, почти до щиколоток)</span> <span class='filt'>→ фильтр: Длина изделия = maxi</span><span class='dem ok'>ищут в поиске Zolla · примеры: платье макси (263), юбка миди (188)</span></li><li class='searched'><strong>Длина рукава</strong>: короткий <span class='ev'>(рукава короткие, до середины бицепса)</span> <span class='filt'>→ фильтр: Длина рукава = короткий</span><span class='dem ok'>ищут в поиске Zolla · примеры: рубашка мужская с коротким рукавом (660), джемпер женский с коротким рукавом (301)</span></li></ul>
+            <h4>Достаём с фото (на вырост)</h4>
+            <ul class="attrs"><li class='extra'><strong>Пояс / кулиска</strong>: да <span class='ev'>(на талии платья есть кулиска с завязкой)</span> <span class='filt'>→ фильтр: Пояс / кулиска = да</span><span class='dem weak'>спрос слабее — фильтр всё равно полезен на витрине</span></li><li class='extra'><strong>Воротник / вырез</strong>: V-образный <span class='ev'>(у платья V-образный вырез горловины)</span> <span class='filt'>→ фильтр: Воротник / вырез = V-образный</span><span class='dem weak'>спрос слабее — фильтр всё равно полезен на витрине</span></li></ul>
           </div>
         </div>
       </div>
@@ -268,20 +257,20 @@ table.mini { font-size:12px; width:100%; }
         <img src="https://zolla.com/upload/iplm/images/goods/221347839061_8100.jpg" alt="Замшевая мини-юбка на молнии" loading="lazy"/>
       </a>
       <div class="case-body">
-        <div class="case-meta">Zolla · offer_id 39070 · <strong>3 фильтров с фото</strong></div>
+        <div class="case-meta">Артикул 39070 · <strong>3 фильтров с фото</strong></div>
         <h3>Замшевая мини-юбка на молнии</h3>
         <p class="case-line">Мини-юбка: молния + длина + пояс; замша — material из name.</p>
         <div class="case-cols">
           <div>
-            <h4>Уже было в фиде / старом extract</h4>
-            <table class="mini"><tbody><tr><td>Категория</td><td>—</td></tr><tr><td>Цвет</td><td>коричневый</td></tr><tr><td>Оттенок</td><td>шатен</td></tr><tr><td>Принт (старый freeform)</td><td>однотонный</td></tr><tr><td>Материал</td><td>—</td></tr><tr><td>Капюшон (param)</td><td>нет в фиде</td></tr><tr><td>Застёжка (param)</td><td>нет в фиде</td></tr><tr><td>Длина как facet</td><td>нет в фиде</td></tr><tr><td>Пояс/кулиска (param)</td><td>нет в фиде</td></tr><tr><td>Материал (title)</td><td>замша (в name)</td></tr></tbody></table>
-            <h4>Уже знали (не gap)</h4><ul class='attrs'><li class='coll'><strong>Узор / принт</strong>: однотонный <span class='ev'>— Уже было в старом extract — не gap, в фильтр как «новинку» не продаём.</span></li></ul>
+            <h4>Сейчас в фиде / карточке</h4>
+            <table class="mini"><tbody><tr><td>Категория</td><td>—</td></tr><tr><td>Цвет</td><td>коричневый</td></tr><tr><td>Оттенок</td><td>шатен</td></tr><tr><td>Принт</td><td>однотонный</td></tr><tr><td>Материал</td><td>замша</td></tr><tr><td>Капюшон</td><td>нет в фиде</td></tr><tr><td>Застёжка</td><td>нет в фиде</td></tr><tr><td>Длина</td><td>нет в фиде</td></tr><tr><td>Пояс/кулиска</td><td>нет в фиде</td></tr></tbody></table>
+            <h4>Уже было в карточке</h4><ul class='attrs'><li class='coll'><strong>Узор / принт</strong>: однотонный <span class='ev'>— уже было в данных карточки, не считаем новым gap</span></li></ul>
           </div>
           <div>
-            <h4>Ищут в поиске → фильтр</h4>
-            <ul class="attrs"><li class='searched'><strong>Застёжка</strong>: молния <span class='ev'>(На юбке видна молния.)</span> <span class='filt'>→ фильтр: Застёжка = молния</span><span class='dem ok'>ищут: 1238 в top-5k · толстовка женская на молнии (130), кардиган на пуговицах женский (121)</span></li><li class='searched'><strong>Длина изделия</strong>: mini <span class='ev'>(Видна мини-юбка.)</span> <span class='filt'>→ фильтр: Длина изделия = mini</span><span class='dem ok'>ищут: 2512 в top-5k · платье макси (263), юбка миди (188)</span></li></ul>
-            <h4>Достаём с фото (facet на вырост)</h4>
-            <ul class="attrs"><li class='extra'><strong>Пояс / кулиска</strong>: да <span class='ev'>(На юбке есть пояс.)</span> <span class='filt'>→ фильтр: Пояс / кулиска = да</span><span class='dem weak'>слабый intent (137) — facet всё равно полезен</span></li></ul>
+            <h4>Ищут в поиске → станет фильтром</h4>
+            <ul class="attrs"><li class='searched'><strong>Застёжка</strong>: молния <span class='ev'>(На юбке видна молния.)</span> <span class='filt'>→ фильтр: Застёжка = молния</span><span class='dem ok'>ищут в поиске Zolla · примеры: толстовка женская на молнии (130), кардиган на пуговицах женский (121)</span></li><li class='searched'><strong>Длина изделия</strong>: mini <span class='ev'>(Видна мини-юбка.)</span> <span class='filt'>→ фильтр: Длина изделия = mini</span><span class='dem ok'>ищут в поиске Zolla · примеры: платье макси (263), юбка миди (188)</span></li></ul>
+            <h4>Достаём с фото (на вырост)</h4>
+            <ul class="attrs"><li class='extra'><strong>Пояс / кулиска</strong>: да <span class='ev'>(На юбке есть пояс.)</span> <span class='filt'>→ фильтр: Пояс / кулиска = да</span><span class='dem weak'>спрос слабее — фильтр всё равно полезен на витрине</span></li></ul>
           </div>
         </div>
       </div>
@@ -293,20 +282,20 @@ table.mini { font-size:12px; width:100%; }
         <img src="https://zolla.com/upload/iplm/images/goods/011335239304_9900.jpg" alt="Утеплённый тренчкот с воротником-стойкой" loading="lazy"/>
       </a>
       <div class="case-body">
-        <div class="case-meta">Zolla · offer_id 38537 · <strong>5 фильтров с фото</strong></div>
+        <div class="case-meta">Артикул 38537 · <strong>5 фильтров с фото</strong></div>
         <h3>Утеплённый тренчкот с воротником-стойкой</h3>
         <p class="case-line">Тренчкот: стойка + застёжка + длина + карманы при видимости.</p>
         <div class="case-cols">
           <div>
-            <h4>Уже было в фиде / старом extract</h4>
-            <table class="mini"><tbody><tr><td>Категория</td><td>—</td></tr><tr><td>Цвет</td><td>чёрный</td></tr><tr><td>Оттенок</td><td>серый</td></tr><tr><td>Принт (старый freeform)</td><td>однотонный</td></tr><tr><td>Материал</td><td>—</td></tr><tr><td>Капюшон (param)</td><td>нет в фиде</td></tr><tr><td>Застёжка (param)</td><td>нет в фиде</td></tr><tr><td>Длина как facet</td><td>нет в фиде</td></tr><tr><td>Пояс/кулиска (param)</td><td>нет в фиде</td></tr></tbody></table>
-            <h4>Уже знали (не gap)</h4><ul class='attrs'><li class='coll'><strong>Узор / принт</strong>: однотонный <span class='ev'>— Уже было в старом extract — не gap, в фильтр как «новинку» не продаём.</span></li></ul>
+            <h4>Сейчас в фиде / карточке</h4>
+            <table class="mini"><tbody><tr><td>Категория</td><td>—</td></tr><tr><td>Цвет</td><td>чёрный</td></tr><tr><td>Оттенок</td><td>серый</td></tr><tr><td>Принт</td><td>однотонный</td></tr><tr><td>Материал</td><td>—</td></tr><tr><td>Капюшон</td><td>нет в фиде</td></tr><tr><td>Застёжка</td><td>нет в фиде</td></tr><tr><td>Длина</td><td>нет в фиде</td></tr><tr><td>Пояс/кулиска</td><td>нет в фиде</td></tr></tbody></table>
+            <h4>Уже было в карточке</h4><ul class='attrs'><li class='coll'><strong>Узор / принт</strong>: однотонный <span class='ev'>— уже было в данных карточки, не считаем новым gap</span></li></ul>
           </div>
           <div>
-            <h4>Ищут в поиске → фильтр</h4>
-            <ul class="attrs"><li class='searched'><strong>Застёжка</strong>: пуговицы <span class='ev'>(Видны пуговицы на куртке)</span> <span class='filt'>→ фильтр: Застёжка = пуговицы</span><span class='dem ok'>ищут: 1238 в top-5k · толстовка женская на молнии (130), кардиган на пуговицах женский (121)</span></li><li class='searched'><strong>Длина изделия</strong>: до колена <span class='ev'>(Длина изделия примерно до колена)</span> <span class='filt'>→ фильтр: Длина изделия = до колена</span><span class='dem ok'>ищут: 2512 в top-5k · платье макси (263), юбка миди (188)</span></li><li class='searched'><strong>Длина рукава</strong>: длинный <span class='ev'>(Длинные рукава)</span> <span class='filt'>→ фильтр: Длина рукава = длинный</span><span class='dem ok'>ищут: 4735 в top-5k · рубашка мужская с коротким рукавом (660), джемпер женский с коротким рукавом (301)</span></li></ul>
-            <h4>Достаём с фото (facet на вырост)</h4>
-            <ul class="attrs"><li class='extra'><strong>Воротник / вырез</strong>: стойка <span class='ev'>(Воротник-стойка)</span> <span class='filt'>→ фильтр: Воротник / вырез = стойка</span><span class='dem weak'>слабый intent (570) — facet всё равно полезен</span></li><li class='extra'><strong>Карманы</strong>: да <span class='ev'>(Видны карманы на куртке)</span> <span class='filt'>→ фильтр: Карманы = да</span><span class='dem weak'>слабый intent (50) — facet всё равно полезен</span></li></ul>
+            <h4>Ищут в поиске → станет фильтром</h4>
+            <ul class="attrs"><li class='searched'><strong>Застёжка</strong>: пуговицы <span class='ev'>(Видны пуговицы на куртке)</span> <span class='filt'>→ фильтр: Застёжка = пуговицы</span><span class='dem ok'>ищут в поиске Zolla · примеры: толстовка женская на молнии (130), кардиган на пуговицах женский (121)</span></li><li class='searched'><strong>Длина изделия</strong>: до колена <span class='ev'>(Длина изделия примерно до колена)</span> <span class='filt'>→ фильтр: Длина изделия = до колена</span><span class='dem ok'>ищут в поиске Zolla · примеры: платье макси (263), юбка миди (188)</span></li><li class='searched'><strong>Длина рукава</strong>: длинный <span class='ev'>(Длинные рукава)</span> <span class='filt'>→ фильтр: Длина рукава = длинный</span><span class='dem ok'>ищут в поиске Zolla · примеры: рубашка мужская с коротким рукавом (660), джемпер женский с коротким рукавом (301)</span></li></ul>
+            <h4>Достаём с фото (на вырост)</h4>
+            <ul class="attrs"><li class='extra'><strong>Воротник / вырез</strong>: стойка <span class='ev'>(Воротник-стойка)</span> <span class='filt'>→ фильтр: Воротник / вырез = стойка</span><span class='dem weak'>спрос слабее — фильтр всё равно полезен на витрине</span></li><li class='extra'><strong>Карманы</strong>: да <span class='ev'>(Видны карманы на куртке)</span> <span class='filt'>→ фильтр: Карманы = да</span><span class='dem weak'>спрос слабее — фильтр всё равно полезен на витрине</span></li></ul>
           </div>
         </div>
       </div>
@@ -318,20 +307,20 @@ table.mini { font-size:12px; width:100%; }
         <img src="https://zolla.com/upload/iplm/images/goods/011335114174_59P0.jpg" alt="Утеплённая куртка с накладными карманами" loading="lazy"/>
       </a>
       <div class="case-body">
-        <div class="case-meta">Zolla · offer_id 39614 · <strong>6 фильтров с фото</strong></div>
+        <div class="case-meta">Артикул 39614 · <strong>6 фильтров с фото</strong></div>
         <h3>Утеплённая куртка с накладными карманами</h3>
         <p class="case-line">Куртка: карманы + капюшон/застёжка/длина — полный набор с фото.</p>
         <div class="case-cols">
           <div>
-            <h4>Уже было в фиде / старом extract</h4>
-            <table class="mini"><tbody><tr><td>Категория</td><td>—</td></tr><tr><td>Цвет</td><td>синий</td></tr><tr><td>Оттенок</td><td>синий</td></tr><tr><td>Принт (старый freeform)</td><td>милитари</td></tr><tr><td>Материал</td><td>—</td></tr><tr><td>Капюшон (param)</td><td>нет в фиде</td></tr><tr><td>Застёжка (param)</td><td>нет в фиде</td></tr><tr><td>Длина как facet</td><td>нет в фиде</td></tr><tr><td>Пояс/кулиска (param)</td><td>нет в фиде</td></tr></tbody></table>
+            <h4>Сейчас в фиде / карточке</h4>
+            <table class="mini"><tbody><tr><td>Категория</td><td>—</td></tr><tr><td>Цвет</td><td>синий</td></tr><tr><td>Оттенок</td><td>синий</td></tr><tr><td>Принт</td><td>милитари</td></tr><tr><td>Материал</td><td>—</td></tr><tr><td>Капюшон</td><td>нет в фиде</td></tr><tr><td>Застёжка</td><td>нет в фиде</td></tr><tr><td>Длина</td><td>нет в фиде</td></tr><tr><td>Пояс/кулиска</td><td>нет в фиде</td></tr></tbody></table>
             
           </div>
           <div>
-            <h4>Ищут в поиске → фильтр</h4>
-            <ul class="attrs"><li class='searched'><strong>Застёжка</strong>: молния <span class='ev'>(Предположительно, куртка застегивается на молнию, но она не видна полностью)</span> <span class='filt'>→ фильтр: Застёжка = молния</span><span class='dem ok'>ищут: 1238 в top-5k · толстовка женская на молнии (130), кардиган на пуговицах женский (121)</span></li><li class='searched'><strong>Длина изделия</strong>: до колена <span class='ev'>(Длина куртки примерно до середины бедра)</span> <span class='filt'>→ фильтр: Длина изделия = до колена</span><span class='dem ok'>ищут: 2512 в top-5k · платье макси (263), юбка миди (188)</span></li><li class='searched'><strong>Узор / принт</strong>: камуфляж <span class='ev'>(На куртке принт, похожий на камуфляж)</span> <span class='filt'>→ фильтр: Узор / принт = камуфляж</span><span class='dem ok'>ищут: 7757 в top-5k · рубашка женская в полоску (649), футболка с принтом женская (647)</span></li><li class='searched'><strong>Длина рукава</strong>: длинный <span class='ev'>(Видны длинные рукава куртки)</span> <span class='filt'>→ фильтр: Длина рукава = длинный</span><span class='dem ok'>ищут: 4735 в top-5k · рубашка мужская с коротким рукавом (660), джемпер женский с коротким рукавом (301)</span></li></ul>
-            <h4>Достаём с фото (facet на вырост)</h4>
-            <ul class="attrs"><li class='extra'><strong>Воротник / вырез</strong>: стойка <span class='ev'>(У куртки воротник-стойка)</span> <span class='filt'>→ фильтр: Воротник / вырез = стойка</span><span class='dem weak'>слабый intent (570) — facet всё равно полезен</span></li><li class='extra'><strong>Карманы</strong>: да <span class='ev'>(На куртке есть накладные карманы)</span> <span class='filt'>→ фильтр: Карманы = да</span><span class='dem weak'>слабый intent (50) — facet всё равно полезен</span></li></ul>
+            <h4>Ищут в поиске → станет фильтром</h4>
+            <ul class="attrs"><li class='searched'><strong>Застёжка</strong>: молния <span class='ev'>(Предположительно, куртка застегивается на молнию, но она не видна полностью)</span> <span class='filt'>→ фильтр: Застёжка = молния</span><span class='dem ok'>ищут в поиске Zolla · примеры: толстовка женская на молнии (130), кардиган на пуговицах женский (121)</span></li><li class='searched'><strong>Длина изделия</strong>: до колена <span class='ev'>(Длина куртки примерно до середины бедра)</span> <span class='filt'>→ фильтр: Длина изделия = до колена</span><span class='dem ok'>ищут в поиске Zolla · примеры: платье макси (263), юбка миди (188)</span></li><li class='searched'><strong>Узор / принт</strong>: камуфляж <span class='ev'>(На куртке принт, похожий на камуфляж)</span> <span class='filt'>→ фильтр: Узор / принт = камуфляж</span><span class='dem ok'>ищут в поиске Zolla · примеры: рубашка женская в полоску (649), футболка с принтом женская (647)</span></li><li class='searched'><strong>Длина рукава</strong>: длинный <span class='ev'>(Видны длинные рукава куртки)</span> <span class='filt'>→ фильтр: Длина рукава = длинный</span><span class='dem ok'>ищут в поиске Zolla · примеры: рубашка мужская с коротким рукавом (660), джемпер женский с коротким рукавом (301)</span></li></ul>
+            <h4>Достаём с фото (на вырост)</h4>
+            <ul class="attrs"><li class='extra'><strong>Воротник / вырез</strong>: стойка <span class='ev'>(У куртки воротник-стойка)</span> <span class='filt'>→ фильтр: Воротник / вырез = стойка</span><span class='dem weak'>спрос слабее — фильтр всё равно полезен на витрине</span></li><li class='extra'><strong>Карманы</strong>: да <span class='ev'>(На куртке есть накладные карманы)</span> <span class='filt'>→ фильтр: Карманы = да</span><span class='dem weak'>спрос слабее — фильтр всё равно полезен на витрине</span></li></ul>
           </div>
         </div>
       </div>
@@ -343,29 +332,29 @@ table.mini { font-size:12px; width:100%; }
         <img src="https://zolla.com/upload/iplm/images/goods/021233326111_10S0.jpg" alt="Футболка без рукавов" loading="lazy"/>
       </a>
       <div class="case-body">
-        <div class="case-meta">Zolla · offer_id 15873 · <strong>3 фильтров с фото</strong></div>
+        <div class="case-meta">Артикул 15873 · <strong>3 фильтров с фото</strong></div>
         <h3>Футболка без рукавов</h3>
         <p class="case-line">Топ без рукавов: рукав + вырез + длина/принт если видно.</p>
         <div class="case-cols">
           <div>
-            <h4>Уже было в фиде / старом extract</h4>
-            <table class="mini"><tbody><tr><td>Категория</td><td>—</td></tr><tr><td>Цвет</td><td>—</td></tr><tr><td>Оттенок</td><td>—</td></tr><tr><td>Принт (старый freeform)</td><td>полоска</td></tr><tr><td>Материал</td><td>—</td></tr><tr><td>Капюшон (param)</td><td>нет в фиде</td></tr><tr><td>Застёжка (param)</td><td>нет в фиде</td></tr><tr><td>Длина как facet</td><td>нет в фиде</td></tr><tr><td>Пояс/кулиска (param)</td><td>нет в фиде</td></tr></tbody></table>
-            <h4>Уже знали (не gap)</h4><ul class='attrs'><li class='coll'><strong>Узор / принт</strong>: полоска <span class='ev'>— Уже было в старом extract — не gap, в фильтр как «новинку» не продаём.</span></li></ul>
+            <h4>Сейчас в фиде / карточке</h4>
+            <table class="mini"><tbody><tr><td>Категория</td><td>—</td></tr><tr><td>Цвет</td><td>—</td></tr><tr><td>Оттенок</td><td>—</td></tr><tr><td>Принт</td><td>полоска</td></tr><tr><td>Материал</td><td>—</td></tr><tr><td>Капюшон</td><td>нет в фиде</td></tr><tr><td>Застёжка</td><td>нет в фиде</td></tr><tr><td>Длина</td><td>нет в фиде</td></tr><tr><td>Пояс/кулиска</td><td>нет в фиде</td></tr></tbody></table>
+            <h4>Уже было в карточке</h4><ul class='attrs'><li class='coll'><strong>Узор / принт</strong>: полоска <span class='ev'>— уже было в данных карточки, не считаем новым gap</span></li></ul>
           </div>
           <div>
-            <h4>Ищут в поиске → фильтр</h4>
-            <ul class="attrs"><li class='searched'><strong>Длина изделия</strong>: укороченный <span class='ev'>(Длина топа укороченная)</span> <span class='filt'>→ фильтр: Длина изделия = укороченный</span><span class='dem ok'>ищут: 2512 в top-5k · платье макси (263), юбка миди (188)</span></li><li class='searched'><strong>Длина рукава</strong>: без рукавов <span class='ev'>(На топе отсутствуют рукава)</span> <span class='filt'>→ фильтр: Длина рукава = без рукавов</span><span class='dem ok'>ищут: 4735 в top-5k · рубашка мужская с коротким рукавом (660), джемпер женский с коротким рукавом (301)</span></li></ul>
-            <h4>Достаём с фото (facet на вырост)</h4>
-            <ul class="attrs"><li class='extra'><strong>Воротник / вырез</strong>: V-образный <span class='ev'>(У топа V-образный вырез)</span> <span class='filt'>→ фильтр: Воротник / вырез = V-образный</span><span class='dem weak'>слабый intent (570) — facet всё равно полезен</span></li></ul>
+            <h4>Ищут в поиске → станет фильтром</h4>
+            <ul class="attrs"><li class='searched'><strong>Длина изделия</strong>: укороченный <span class='ev'>(Длина топа укороченная)</span> <span class='filt'>→ фильтр: Длина изделия = укороченный</span><span class='dem ok'>ищут в поиске Zolla · примеры: платье макси (263), юбка миди (188)</span></li><li class='searched'><strong>Длина рукава</strong>: без рукавов <span class='ev'>(На топе отсутствуют рукава)</span> <span class='filt'>→ фильтр: Длина рукава = без рукавов</span><span class='dem ok'>ищут в поиске Zolla · примеры: рубашка мужская с коротким рукавом (660), джемпер женский с коротким рукавом (301)</span></li></ul>
+            <h4>Достаём с фото (на вырост)</h4>
+            <ul class="attrs"><li class='extra'><strong>Воротник / вырез</strong>: V-образный <span class='ev'>(У топа V-образный вырез)</span> <span class='filt'>→ фильтр: Воротник / вырез = V-образный</span><span class='dem weak'>спрос слабее — фильтр всё равно полезен на витрине</span></li></ul>
           </div>
         </div>
       </div>
     </article>
 
 
-  <h2>6. Деньги</h2>
+  <h2>7. Деньги</h2>
   <div class="callout">
-    База — Яндекс.Метрика: визиты с поиском 179 910, CVR 4.809%, средний чек 2 612 ₽, выручка из поиска 22.6 млн ₽ за 90 дней. Ожидаемый прирост CVR — от бенчмарка Diginetica «сессии с фильтрами vs без» (+15…+25% относительно на затронутых сессиях). После запуска фильтров замерим with/without уже на Zolla.
+    База — Яндекс.Метрика Zolla: визиты с поиском 179 910, конверсия 4.809%, средний чек 2 612 ₽, выручка из поиска 22.6 млн ₽ за 90 дней. Ожидаемый прирост конверсии — от бенчмарка «сессии с фильтрами vs без» (+15…+25% относительно на затронутых сессиях). После запуска фильтров замерим эффект уже на ваших данных.
   </div>
   <table>
     <thead><tr><th>Показатель</th><th>Значение</th></tr></thead>
@@ -374,36 +363,35 @@ table.mini { font-size:12px; width:100%; }
       <tr><td>Конверсия поиска</td><td>4.809%</td></tr>
       <tr><td>Средний чек (поиск)</td><td>2 612 ₽</td></tr>
       <tr><td>Выручка из поиска (90 дней)</td><td>22 606 594 ₽</td></tr>
-      <tr><td>Ожидаемый прирост CVR на затронутых сессиях</td><td>+20% относительно
+      <tr><td>Ожидаемый прирост конверсии на затронутых визитах</td><td>+20% относительно
         (≈ +0.962 п.п. к текущим 4.809%)
-        — бенчмарк Diginetica «с фильтрами / без»</td></tr>
-      <tr><td>Доля затронутых search-визитов (base)</td><td>15%</td></tr>
-      <tr><td>Adoption новых фильтров среди затронутых (base)</td><td>20%</td></tr>
-      <tr><td>Формула</td><td>Δ₽_90д = выручка_поиска_90д × доля_затронутых × adoption × относительный_lift_CVR</td></tr>
-      <tr><td><strong>Оценка доп. выручки / мес (base)</strong></td><td><strong>45 213 ₽</strong>
-        · это <strong>0.6%</strong> выручки из поиска</td></tr>
-      <tr><td>Оценка доп. выручки / 90 дней (base)</td><td>135 640 ₽
+        — бенчмарк «сессии с фильтрами / без»</td></tr>
+      <tr><td>Доля затронутых визитов с поиском (базовый сценарий)</td><td>15%</td></tr>
+      <tr><td>Доля пользователей новых фильтров среди затронутых</td><td>20%</td></tr>
+      <tr><td>Как считаем</td><td>Доп. выручка за 90 дней = выручка из поиска × доля затронутых визитов × доля пользователей фильтров × относительный прирост конверсии</td></tr>
+      <tr><td><strong>Оценка доп. выручки / мес</strong></td><td><strong>45 213 ₽</strong>
+        · <strong>0.6%</strong> выручки из поиска</td></tr>
+      <tr><td>Оценка доп. выручки / 90 дней</td><td>135 640 ₽
         · ≈ 52 доп. заказов</td></tr>
       <tr><td>Диапазон сценариев / мес</td><td>
-        conservative 13 564 ₽
+        осторожный 13 564 ₽
         (0.18%) ·
-        optimistic 141 291 ₽
+        оптимистичный 141 291 ₽
         (1.88%)
       </td></tr>
     </tbody>
   </table>
-  <p class="meta">После появления фильтров заменим оценку на замер конверсии with/without на Zolla.</p>
+  <p class="meta">После запуска фильтров заменим оценку на замер конверсии с фильтрами и без на данных Zolla.</p>
 
-  <h2>7. Что уже проверили технически (пилот)</h2>
+  <h2>8. Что уже готово</h2>
   <ul>
-    <li>Closed-set extract через OpenRouter (бюджет: gemma / flash-lite).</li>
-    <li>Дедуп по picture URL → один inference → размножение на все offer_id с той же картинкой.</li>
-    <li>Boolean капюшон: 100% канон <code>да|нет</code> на unique pics пилота.</li>
-    <li>Артефакты: <code>vision_summary.json</code>, <code>TYPE_DECISION_METHOD.md</code>, <code>FILTER_DEMAND_EVIDENCE.md</code>.</li>
+    <li>Нормализованные значения фильтров (закрытый список, без «каши» из формулировок).</li>
+    <li>Один раз разбираем картинку — значения переносятся на все размеры с тем же фото.</li>
+    <li>Пилот по ключевым фильтрам (капюшон, длина, рукав, принт, застёжка и др.) на реальных карточках Zolla.</li>
   </ul>
 
   <footer>
-    Generated 2026-07-21T12:55:01.033381+00:00 · Diginetica filter enrichment defense · Zolla 3826
+    Подготовлено для Zolla · фильтры из фото и описаний
   </footer>
 </div>
 </body>

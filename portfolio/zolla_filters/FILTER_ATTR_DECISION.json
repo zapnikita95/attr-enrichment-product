@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-21T12:55:01.033381+00:00",
+  "generated_at": "2026-07-21T14:00:10.558650+00:00",
   "partner": "Zolla",
   "site_id": 3826,
   "method_type": "TYPE_DECISION_METHOD.md Q0–Q4",
@@ -476,28 +476,28 @@
   "do_not": [
     {
       "attr": "Цвет",
-      "why": "Fill ~100% в YML param «Цвет». Спрос в CH высокий, но это не gap enrichment.",
+      "why": "Уже заполнен в фиде (~100%). Спрос в поиске высокий, но это не новый gap.",
       "demand_note": "strong_demand_but_check_feed_nav_collision"
     },
     {
       "attr": "Размер",
-      "why": "Variant-level в фиде (100%). Не vision/text filter enrichment.",
+      "why": "Уже есть в вариантах товара (100%). Не извлекаем с фото.",
       "demand_note": "n/a"
     },
     {
-      "attr": "Пол (gender_target)",
-      "why": "В запросах часто «женские/мужские» как модификатор типа изделия; обычно закрывается навигацией/фидом. Не назначаем новым facet без проверки UI.",
+      "attr": "Пол",
+      "why": "В запросах часто «женские / мужские» как уточнение типа изделия; обычно уже закрыто навигацией и фидом.",
       "demand_note": "strong_demand_but_check_feed_nav_collision"
     },
     {
       "attr": "Материал / состав %",
-      "why": "Состав должен идти из params/описания партнёра; vision по составу ненадёжен. Collision risk.",
+      "why": "Состав надёжнее брать из параметров и описания; с фото проценты состава ненадёжны.",
       "demand_note": "strong_demand_but_check_feed_nav_collision"
     },
     {
       "attr": "Ощущения ткани / маркетинг",
-      "why": "Не нормализуется в closed-set; не facet.",
-      "demand_note": "no CH facet signal required"
+      "why": "Не сводится к фиксированному списку значений — плохой фильтр.",
+      "demand_note": "n/a"
     }
   ],
   "money": {
@@ -520,7 +520,7 @@
       "source_partner_label": "Яндекс.Метрика · визиты с поиском"
     },
     "lift_benchmark": {
-      "source": "filter with/without на проектах Diginetica + полоса relative lift 15–25%",
+      "source": "бенчмарк сессий с фильтрами vs без + полоса relative lift 15–25%",
       "measured_positive_relative_median": 0.822,
       "measured_positive_pp_median": 1.29,
       "partner_sketch_relative": 0.25,
@@ -531,7 +531,7 @@
       },
       "n_positive_categories": 2
     },
-    "partner_lead": "База — Яндекс.Метрика: визиты с поиском 179 910, CVR 4.809%, средний чек 2 612 ₽, выручка из поиска 22.6 млн ₽ за 90 дней. Ожидаемый прирост CVR — от бенчмарка Diginetica «сессии с фильтрами vs без» (+15…+25% относительно на затронутых сессиях). После запуска фильтров замерим with/without уже на Zolla.",
+    "partner_lead": "База — Яндекс.Метрика Zolla: визиты с поиском 179 910, конверсия 4.809%, средний чек 2 612 ₽, выручка из поиска 22.6 млн ₽ за 90 дней. Ожидаемый прирост конверсии — от бенчмарка «сессии с фильтрами vs без» (+15…+25% относительно на затронутых сессиях). После запуска фильтров замерим эффект уже на ваших данных.",
     "direct_filter_intent_volume_90d_top5k": 19568,
     "intent_share_of_searches_pct": 4.14,
     "intent_share_of_top_pct": 4.86,
@@ -575,9 +575,9 @@
       "adoption_base": 0.2,
       "relative_cvr_lift_base": 0.2,
       "cvr_lift_pp_base": 0.962,
-      "label": "relative lift from Diginetica filter benches; addressable/adoption — sketch until Zolla facet measure"
+      "label": "relative lift from filter with/without benches; sketch until Zolla facet measure"
     },
-    "formula": "Δ₽_90д = выручка_поиска_90д × доля_затронутых × adoption × относительный_lift_CVR",
+    "formula": "Доп. выручка за 90 дней = выручка из поиска × доля затронутых визитов × доля пользователей фильтров × относительный прирост конверсии",
     "delta_revenue_rub_per_month_sketch": 45213.0,
     "delta_revenue_rub_per_90d_sketch": 135640.0,
     "pct_of_search_revenue_90d": 0.6,
