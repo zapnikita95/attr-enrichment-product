@@ -13,17 +13,22 @@ alwaysApply: true
 2. У каждого кейса:
    - **реальная картинка** товара (`picture_url` CDN / кэш)
    - **offer_id** + название
-   - **что уже было в фиде** (params / name)
-   - **что достали** (vision/text) с канон-значением
+   - **что уже было в фиде** (params / name / старый extract)
+   - **максимум фильтров с фото** (не один focus-атрибут)
    - **как станет фильтром** (`label = value`, тип boolean/enum/…)
-3. Минимум **5 кейсов**, разные атрибуты (boolean + enum + multi_enum).
-4. Референс формата: `portfolio/tsum/tsum-image-attrs-research.html` §5 и `portfolio/zolla_filters/zolla-filters-research.html` §5.
+   - **спрос**: блок «ищут в CH» vs «достаём как facet на вырост»
+3. Минимум **5 кейсов**, разные типы (boolean / enum / multi_enum).
+4. Референс: `portfolio/tsum/tsum-image-attrs-research.html` §5 и `portfolio/zolla_filters/zolla-filters-research.html` §5.
+5. Принципы демо: `filter_pipeline/DEMO_CASE_PRINCIPLES.md`.
 
 ## Запрещено
 
-- Сдавать HTML/отчёт только с таблицами «спрос CH» без фото-кейсов
-- Выдумывать картинки / SKU — только из фида, `results.db` или control samples
-- Писать «выделили атрибут» без показа значения и UI-фильтра
+- Сдавать HTML только с таблицами CH без фото-кейсов
+- Карточка с **одним** атрибутом, когда на фото видно 4–5 facet-полей
+- Продавать как gap значение, уже есть в старом extract (полоски↔полоска)
+- Путать `круглый` вырез с `отложным` воротником
+- Выдумывать картинки / SKU
+- Врать про спрос без цифр из `query_demand_evidence.json`
 
 ## Как собрать для Zolla
 
@@ -32,4 +37,4 @@ py -3.13 filter_pipeline/build_demo_cases.py
 py -3.13 filter_pipeline/build_zolla_partner_defense.py
 ```
 
-Артефакт кейсов: `portfolio/zolla_filters/demo_cases.json`
+Артефакт: `portfolio/zolla_filters/demo_cases.json` (multi-attr + demand split).

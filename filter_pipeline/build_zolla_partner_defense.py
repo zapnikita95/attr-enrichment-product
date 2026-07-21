@@ -379,21 +379,49 @@ def main() -> None:
 
         subprocess.check_call([sys.executable, str(Path(__file__).parent / "build_demo_cases.py")])
     cases_data = json.loads(cases_path.read_text(encoding="utf-8")) if cases_path.is_file() else {"cases": []}
+    def _attr_li(f: dict, *, cls: str = "") -> str:
+        dem = f.get("demand_bucket") or ""
+        vol = f.get("demand_volume_top5k") or 0
+        ex = ", ".join(
+            f"{e.get('q')} ({e.get('n')})" for e in (f.get("demand_examples") or [])[:2]
+        )
+        dem_line = ""
+        if dem == "searched_strong":
+            dem_line = f"<span class='dem ok'>ищут: {vol} в top-5k" + (f" · {ex}" if ex else "") + "</span>"
+        elif dem == "searched_weak":
+            dem_line = f"<span class='dem weak'>слабый intent ({vol}) — facet всё равно полезен</span>"
+        else:
+            dem_line = "<span class='dem extra'>достаём как facet; сильного поиска пока не видно</span>"
+        return (
+            f"<li class='{cls}'><strong>{f.get('label')}</strong>: {f.get('value')} "
+            f"<span class='ev'>({f.get('evidence')})</span> "
+            f"<span class='filt'>→ фильтр: {f.get('filter_ui')}</span>"
+            f"{dem_line}</li>"
+        )
+
     case_articles = []
     for c in cases_data.get("cases") or []:
         feed_rows = "".join(f"<tr><td>{k}</td><td>{v}</td></tr>" for k, v in (c.get("feed") or {}).items())
-        attrs = "".join(
-            "<li{hl}><strong>{lab}</strong>: {val} "
-            "<span class='ev'>({ev})</span> "
-            "<span class='filt'>→ фильтр: {fui}</span></li>".format(
-                hl=" class='focus'" if f.get("focus") else "",
-                lab=f.get("label"),
-                val=f.get("value"),
-                ev=f.get("evidence"),
-                fui=f.get("filter_ui"),
-            )
-            for f in c.get("extracted_filters") or []
+        searched = c.get("searched_filters") or [
+            f for f in (c.get("extracted_filters") or []) if f.get("demand_bucket") == "searched_strong"
+        ]
+        extra = c.get("extra_filters") or [
+            f for f in (c.get("extracted_filters") or []) if f.get("demand_bucket") != "searched_strong"
+        ]
+        if not searched and not extra:
+            # legacy one-attr cards
+            searched = list(c.get("extracted_filters") or [])
+        attrs_s = "".join(_attr_li(f, cls="searched") for f in searched)
+        attrs_e = "".join(_attr_li(f, cls="extra") for f in extra)
+        cols = "".join(
+            f"<li class='coll'><strong>{x.get('label')}</strong>: {x.get('value')} "
+            f"<span class='ev'>— {x.get('why')}</span></li>"
+            for x in (c.get("collisions_not_gap") or [])
         )
+        cols_block = (
+            f"<h4>Уже знали (не gap)</h4><ul class='attrs'>{cols}</ul>" if cols else ""
+        )
+        n_keep = c.get("keep_count") or len(searched) + len(extra)
         case_articles.append(
             f"""
     <article class="case">
@@ -402,17 +430,20 @@ def main() -> None:
         <img src="{c.get('picture_url')}" alt="{c.get('name')}" loading="lazy"/>
       </a>
       <div class="case-body">
-        <div class="case-meta">Zolla · offer_id {c.get('offer_id')} · focus <code>{c.get('focus_attr')}</code></div>
+        <div class="case-meta">Zolla · offer_id {c.get('offer_id')} · <strong>{n_keep} фильтров с фото</strong></div>
         <h3>{c.get('name')}</h3>
         <p class="case-line">{c.get('blurb')}</p>
         <div class="case-cols">
           <div>
             <h4>Уже было в фиде / старом extract</h4>
             <table class="mini"><tbody>{feed_rows}</tbody></table>
+            {cols_block}
           </div>
           <div>
-            <h4>Достали → станет фильтром</h4>
-            <ul class="attrs">{attrs}</ul>
+            <h4>Ищут в поиске → фильтр</h4>
+            <ul class="attrs">{attrs_s or "<li class='ev'>нет сильного intent из этого набора</li>"}</ul>
+            <h4>Достаём с фото (facet на вырост)</h4>
+            <ul class="attrs">{attrs_e or "<li class='ev'>—</li>"}</ul>
           </div>
         </div>
       </div>
@@ -465,6 +496,12 @@ table.mini {{ font-size:12px; width:100%; }}
 .attrs {{ margin:0; padding-left:18px; font-size:14px; }}
 .attrs .ev {{ color:var(--muted); font-size:12px; }}
 .attrs .filt {{ display:block; color:var(--accent); font-size:12px; margin-top:2px; }}
+.attrs .dem {{ display:block; font-size:11px; margin-top:2px; }}
+.attrs .dem.ok {{ color:#1f3a2e; }}
+.attrs .dem.weak {{ color:#7a3e1d; }}
+.attrs .dem.extra {{ color:#5c5c5c; }}
+.attrs li.searched {{ font-weight:600; }}
+.attrs li.coll {{ color:var(--muted); }}
 .attrs li.focus {{ font-weight:600; }}
 @media (max-width:800px) {{
   .case {{ grid-template-columns:1fr; }}
@@ -573,9 +610,10 @@ table.mini {{ font-size:12px; width:100%; }}
 
   <h2>5. Наглядные кейсы: фото → фильтр (обязательно)</h2>
   <p class="lead" style="font-size:15px">
-    Реальные карточки Zolla. Слева — что уже в фиде / старом extract.
-    Справа — что достали с картинки и <strong>как это ляжет в фильтр</strong>
-    (тип + канон значения). Без таких кейсов защита неполная.
+    Реальные карточки Zolla. Слева — фид / старый extract и «уже знали» (не gap).
+    Справа — <strong>максимум фильтров с фото</strong>: сначала то, что <strong>ищут</strong>
+    (CH top-5k + примеры), затем то, что всё равно <strong>достаём как facet</strong>
+    без сильного intent. Один атрибут на карточку — брак демо.
   </p>
   {cases_html}
 

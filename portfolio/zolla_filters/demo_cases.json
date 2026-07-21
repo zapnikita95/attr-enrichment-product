@@ -1,7 +1,15 @@
 {
   "partner": "Zolla",
   "site_id": 3826,
-  "rule": "Every partner filter defense MUST include real picture + real extracted filter values",
+  "rule": "Per photo: MAX closed-set filters; skip old-extract collisions; split searched vs extractable-no-facet; never one-attr demo cards.",
+  "principles": [
+    "Один кейс = все видимые filter-атрибуты с фото, не focus на один.",
+    "Если значение уже в старом extract (полоски→полоска) — не продаём как gap.",
+    "Title mention (капюшон в name) — ок как structured facet, помечаем mention_in_title.",
+    "Делим: ищут в CH (searched_strong) vs можем достать как facet без сильного intent.",
+    "Boolean «нет» / однотонный не засоряют карточку демо.",
+    "Воротник: круглый ≠ отложной (crew vs shirt collar)."
+  ],
   "cases": [
     {
       "n": 1,
@@ -9,28 +17,271 @@
       "name": "Утеплённое пальто с капюшоном и поясом",
       "picture_url": "https://zolla.com/upload/iplm/images/goods/020345212224_8000.jpg",
       "product_url": "https://zolla.com/catalog/?q=31629",
-      "blurb": "Капюшон виден на фото → boolean-фильтр «да».",
-      "focus_attr": "hood",
+      "blurb": "Утеплённое пальто: капюшон + пояс + длина + стёжка, не один boolean.",
+      "focus_attr": "multi",
       "feed": {
-        "Цвет / оттенок": "—",
         "Категория": "—",
         "Цвет": "коричневый",
         "Оттенок": "кофейный",
         "Принт (старый freeform)": "однотонный",
+        "Материал": "—",
         "Капюшон (param)": "нет в фиде",
         "Застёжка (param)": "нет в фиде",
-        "Длина как facet": "нет в фиде"
+        "Длина как facet": "нет в фиде",
+        "Пояс/кулиска (param)": "нет в фиде"
       },
       "extracted_filters": [
         {
           "attr_id": "hood",
           "label": "Капюшон",
           "value": "да",
+          "value_type": "boolean",
           "filter_ui": "Капюшон = да",
-          "evidence": "Капюшон виден на голове.",
-          "focus": true
+          "evidence": "видно капюшон",
+          "status": "mention_in_title",
+          "demand_bucket": "searched_strong",
+          "demand_volume_top5k": 1570,
+          "demand_examples": [
+            {
+              "q": "худи",
+              "n": 194
+            },
+            {
+              "q": "и худи женские",
+              "n": 153
+            },
+            {
+              "q": "куртка женская с капюшоном",
+              "n": 123
+            }
+          ],
+          "demand_note": "strong_filter_candidate"
+        },
+        {
+          "attr_id": "length",
+          "label": "Длина изделия",
+          "value": "midi",
+          "value_type": "enum",
+          "filter_ui": "Длина изделия = midi",
+          "evidence": "длина пальто ниже колена, но выше щиколотки",
+          "status": "keep",
+          "demand_bucket": "searched_strong",
+          "demand_volume_top5k": 2512,
+          "demand_examples": [
+            {
+              "q": "платье макси",
+              "n": 263
+            },
+            {
+              "q": "юбка миди",
+              "n": 188
+            },
+            {
+              "q": "платье миди",
+              "n": 164
+            }
+          ],
+          "demand_note": "strong_filter_candidate"
+        },
+        {
+          "attr_id": "sleeve_length",
+          "label": "Длина рукава",
+          "value": "длинный",
+          "value_type": "enum",
+          "filter_ui": "Длина рукава = длинный",
+          "evidence": "длинный рукав пальто",
+          "status": "keep",
+          "demand_bucket": "searched_strong",
+          "demand_volume_top5k": 4735,
+          "demand_examples": [
+            {
+              "q": "рубашка мужская с коротким рукавом",
+              "n": 660
+            },
+            {
+              "q": "джемпер женский с коротким рукавом",
+              "n": 301
+            },
+            {
+              "q": "рубашка мужская с длинным рукавом",
+              "n": 239
+            }
+          ],
+          "demand_note": "strong_filter_candidate"
+        },
+        {
+          "attr_id": "belt_drawstring",
+          "label": "Пояс / кулиска",
+          "value": "да",
+          "value_type": "boolean",
+          "filter_ui": "Пояс / кулиска = да",
+          "evidence": "на талии есть пояс-завязка",
+          "status": "mention_in_title",
+          "demand_bucket": "searched_weak",
+          "demand_volume_top5k": 137,
+          "demand_examples": [
+            {
+              "q": "джинсы женские прямого с высокой посадкой",
+              "n": 53
+            },
+            {
+              "q": "женские джинсы wide с высокой посадкой",
+              "n": 37
+            },
+            {
+              "q": "джинсы силуэта bootcut со средней посадкой утепленные",
+              "n": 11
+            }
+          ],
+          "demand_note": "weak_or_sparse"
+        },
+        {
+          "attr_id": "quilted",
+          "label": "Стёганый",
+          "value": "да",
+          "value_type": "boolean",
+          "filter_ui": "Стёганый = да",
+          "evidence": "на пальто видна стежка",
+          "status": "mention_in_title",
+          "demand_bucket": "extractable_no_facet_yet",
+          "demand_volume_top5k": 0,
+          "demand_examples": [],
+          "demand_note": "В top-5000 запросов Zolla явного intent мало; всё равно полезный facet с фото."
         }
-      ]
+      ],
+      "searched_filters": [
+        {
+          "attr_id": "hood",
+          "label": "Капюшон",
+          "value": "да",
+          "value_type": "boolean",
+          "filter_ui": "Капюшон = да",
+          "evidence": "видно капюшон",
+          "status": "mention_in_title",
+          "demand_bucket": "searched_strong",
+          "demand_volume_top5k": 1570,
+          "demand_examples": [
+            {
+              "q": "худи",
+              "n": 194
+            },
+            {
+              "q": "и худи женские",
+              "n": 153
+            },
+            {
+              "q": "куртка женская с капюшоном",
+              "n": 123
+            }
+          ],
+          "demand_note": "strong_filter_candidate"
+        },
+        {
+          "attr_id": "length",
+          "label": "Длина изделия",
+          "value": "midi",
+          "value_type": "enum",
+          "filter_ui": "Длина изделия = midi",
+          "evidence": "длина пальто ниже колена, но выше щиколотки",
+          "status": "keep",
+          "demand_bucket": "searched_strong",
+          "demand_volume_top5k": 2512,
+          "demand_examples": [
+            {
+              "q": "платье макси",
+              "n": 263
+            },
+            {
+              "q": "юбка миди",
+              "n": 188
+            },
+            {
+              "q": "платье миди",
+              "n": 164
+            }
+          ],
+          "demand_note": "strong_filter_candidate"
+        },
+        {
+          "attr_id": "sleeve_length",
+          "label": "Длина рукава",
+          "value": "длинный",
+          "value_type": "enum",
+          "filter_ui": "Длина рукава = длинный",
+          "evidence": "длинный рукав пальто",
+          "status": "keep",
+          "demand_bucket": "searched_strong",
+          "demand_volume_top5k": 4735,
+          "demand_examples": [
+            {
+              "q": "рубашка мужская с коротким рукавом",
+              "n": 660
+            },
+            {
+              "q": "джемпер женский с коротким рукавом",
+              "n": 301
+            },
+            {
+              "q": "рубашка мужская с длинным рукавом",
+              "n": 239
+            }
+          ],
+          "demand_note": "strong_filter_candidate"
+        }
+      ],
+      "extra_filters": [
+        {
+          "attr_id": "belt_drawstring",
+          "label": "Пояс / кулиска",
+          "value": "да",
+          "value_type": "boolean",
+          "filter_ui": "Пояс / кулиска = да",
+          "evidence": "на талии есть пояс-завязка",
+          "status": "mention_in_title",
+          "demand_bucket": "searched_weak",
+          "demand_volume_top5k": 137,
+          "demand_examples": [
+            {
+              "q": "джинсы женские прямого с высокой посадкой",
+              "n": 53
+            },
+            {
+              "q": "женские джинсы wide с высокой посадкой",
+              "n": 37
+            },
+            {
+              "q": "джинсы силуэта bootcut со средней посадкой утепленные",
+              "n": 11
+            }
+          ],
+          "demand_note": "weak_or_sparse"
+        },
+        {
+          "attr_id": "quilted",
+          "label": "Стёганый",
+          "value": "да",
+          "value_type": "boolean",
+          "filter_ui": "Стёганый = да",
+          "evidence": "на пальто видна стежка",
+          "status": "mention_in_title",
+          "demand_bucket": "extractable_no_facet_yet",
+          "demand_volume_top5k": 0,
+          "demand_examples": [],
+          "demand_note": "В top-5000 запросов Zolla явного intent мало; всё равно полезный facet с фото."
+        }
+      ],
+      "collisions_not_gap": [
+        {
+          "attr_id": "print_pattern",
+          "label": "Узор / принт",
+          "value": "однотонный",
+          "why": "Уже было в старом extract — не gap, в фильтр как «новинку» не продаём."
+        }
+      ],
+      "keep_count": 5,
+      "model": "google/gemini-2.5-flash-lite",
+      "elapsed_s": 4.49,
+      "error": null
     },
     {
       "n": 2,
@@ -38,43 +289,154 @@
       "name": "Футболка из хлопка на кулиске",
       "picture_url": "https://zolla.com/upload/iplm/images/goods/022253273153_51S0.jpg",
       "product_url": "https://zolla.com/catalog/?q=177548",
-      "blurb": "Полоска на футболке → multi_enum фильтр «полоска».",
-      "focus_attr": "print_pattern",
+      "blurb": "Футболка: кулиска/рукав/вырез; полоска не gap если уже в extract.",
+      "focus_attr": "multi",
       "feed": {
-        "Цвет / оттенок": "—",
         "Категория": "Женщины / Футболки и Топы / Футболки",
+        "Цвет": "—",
+        "Оттенок": "—",
         "Принт (старый freeform)": "полоски",
         "Материал": "хлопок",
         "Капюшон (param)": "нет в фиде",
         "Застёжка (param)": "нет в фиде",
-        "Длина как facet": "нет в фиде"
+        "Длина как facet": "нет в фиде",
+        "Пояс/кулиска (param)": "нет в фиде",
+        "Материал (title)": "хлопок (в name/extract)"
       },
       "extracted_filters": [
         {
-          "attr_id": "collar",
-          "label": "Воротник / вырез",
-          "value": "отложной",
-          "filter_ui": "Воротник / вырез = отложной",
-          "evidence": "На фотографии виден отложной воротник.",
-          "focus": false
+          "attr_id": "length",
+          "label": "Длина изделия",
+          "value": "укороченный",
+          "value_type": "enum",
+          "filter_ui": "Длина изделия = укороченный",
+          "evidence": "Футболка укороченная, заканчивается на уровне талии.",
+          "status": "keep",
+          "demand_bucket": "searched_strong",
+          "demand_volume_top5k": 2512,
+          "demand_examples": [
+            {
+              "q": "платье макси",
+              "n": 263
+            },
+            {
+              "q": "юбка миди",
+              "n": 188
+            },
+            {
+              "q": "платье миди",
+              "n": 164
+            }
+          ],
+          "demand_note": "strong_filter_candidate"
         },
         {
-          "attr_id": "hood",
-          "label": "Капюшон",
-          "value": "нет",
-          "filter_ui": "Капюшон = нет",
-          "evidence": "обычный воротник",
-          "focus": false
-        },
+          "attr_id": "belt_drawstring",
+          "label": "Пояс / кулиска",
+          "value": "да",
+          "value_type": "boolean",
+          "filter_ui": "Пояс / кулиска = да",
+          "evidence": "На футболке есть кулиска с завязкой на талии.",
+          "status": "mention_in_title",
+          "demand_bucket": "searched_weak",
+          "demand_volume_top5k": 137,
+          "demand_examples": [
+            {
+              "q": "джинсы женские прямого с высокой посадкой",
+              "n": 53
+            },
+            {
+              "q": "женские джинсы wide с высокой посадкой",
+              "n": 37
+            },
+            {
+              "q": "джинсы силуэта bootcut со средней посадкой утепленные",
+              "n": 11
+            }
+          ],
+          "demand_note": "weak_or_sparse"
+        }
+      ],
+      "searched_filters": [
+        {
+          "attr_id": "length",
+          "label": "Длина изделия",
+          "value": "укороченный",
+          "value_type": "enum",
+          "filter_ui": "Длина изделия = укороченный",
+          "evidence": "Футболка укороченная, заканчивается на уровне талии.",
+          "status": "keep",
+          "demand_bucket": "searched_strong",
+          "demand_volume_top5k": 2512,
+          "demand_examples": [
+            {
+              "q": "платье макси",
+              "n": 263
+            },
+            {
+              "q": "юбка миди",
+              "n": 188
+            },
+            {
+              "q": "платье миди",
+              "n": 164
+            }
+          ],
+          "demand_note": "strong_filter_candidate"
+        }
+      ],
+      "extra_filters": [
+        {
+          "attr_id": "belt_drawstring",
+          "label": "Пояс / кулиска",
+          "value": "да",
+          "value_type": "boolean",
+          "filter_ui": "Пояс / кулиска = да",
+          "evidence": "На футболке есть кулиска с завязкой на талии.",
+          "status": "mention_in_title",
+          "demand_bucket": "searched_weak",
+          "demand_volume_top5k": 137,
+          "demand_examples": [
+            {
+              "q": "джинсы женские прямого с высокой посадкой",
+              "n": 53
+            },
+            {
+              "q": "женские джинсы wide с высокой посадкой",
+              "n": 37
+            },
+            {
+              "q": "джинсы силуэта bootcut со средней посадкой утепленные",
+              "n": 11
+            }
+          ],
+          "demand_note": "weak_or_sparse"
+        }
+      ],
+      "collisions_not_gap": [
         {
           "attr_id": "print_pattern",
           "label": "Узор / принт",
           "value": "полоска",
-          "filter_ui": "Узор / принт = полоска",
-          "evidence": "На футболке видны горизонтальные полоски голубого и белого цветов.",
-          "focus": true
+          "why": "Уже было в старом extract — не gap, в фильтр как «новинку» не продаём."
+        },
+        {
+          "attr_id": "sleeve_length",
+          "label": "Длина рукава",
+          "value": "короткий",
+          "why": "Уже было в старом extract — не gap, в фильтр как «новинку» не продаём."
+        },
+        {
+          "attr_id": "collar",
+          "label": "Воротник / вырез",
+          "value": "круглый",
+          "why": "Уже было в старом extract — не gap, в фильтр как «новинку» не продаём."
         }
-      ]
+      ],
+      "keep_count": 2,
+      "model": "google/gemini-2.5-flash-lite",
+      "elapsed_s": 4.79,
+      "error": null
     },
     {
       "n": 3,
@@ -82,28 +444,194 @@
       "name": "Шифоновое платье мини с бантом",
       "picture_url": "https://zolla.com/upload/iplm/images/goods/021438259193_59P0.jpg",
       "product_url": "https://zolla.com/catalog/?q=42955",
-      "blurb": "Мини-платье → enum-фильтр длины mini.",
-      "focus_attr": "length",
+      "blurb": "Мини-платье: длина + рукав + застёжка/бант; материал шифон — из name/фида.",
+      "focus_attr": "multi",
       "feed": {
-        "Цвет / оттенок": "—",
         "Категория": "—",
         "Цвет": "синий",
         "Оттенок": "кобальт",
         "Принт (старый freeform)": "цветочный",
+        "Материал": "—",
         "Капюшон (param)": "нет в фиде",
         "Застёжка (param)": "нет в фиде",
-        "Длина как facet": "нет в фиде"
+        "Длина как facet": "нет в фиде",
+        "Пояс/кулиска (param)": "нет в фиде",
+        "Материал (title)": "шифон (в name)"
       },
       "extracted_filters": [
         {
           "attr_id": "length",
           "label": "Длина изделия",
           "value": "mini",
+          "value_type": "enum",
           "filter_ui": "Длина изделия = mini",
-          "evidence": "Платье имеет короткую длину.",
-          "focus": true
+          "evidence": "Длина платья — мини.",
+          "status": "mention_in_title",
+          "demand_bucket": "searched_strong",
+          "demand_volume_top5k": 2512,
+          "demand_examples": [
+            {
+              "q": "платье макси",
+              "n": 263
+            },
+            {
+              "q": "юбка миди",
+              "n": 188
+            },
+            {
+              "q": "платье миди",
+              "n": 164
+            }
+          ],
+          "demand_note": "strong_filter_candidate"
+        },
+        {
+          "attr_id": "sleeve_length",
+          "label": "Длина рукава",
+          "value": "длинный",
+          "value_type": "enum",
+          "filter_ui": "Длина рукава = длинный",
+          "evidence": "У платья длинные рукава.",
+          "status": "keep",
+          "demand_bucket": "searched_strong",
+          "demand_volume_top5k": 4735,
+          "demand_examples": [
+            {
+              "q": "рубашка мужская с коротким рукавом",
+              "n": 660
+            },
+            {
+              "q": "джемпер женский с коротким рукавом",
+              "n": 301
+            },
+            {
+              "q": "рубашка мужская с длинным рукавом",
+              "n": 239
+            }
+          ],
+          "demand_note": "strong_filter_candidate"
+        },
+        {
+          "attr_id": "belt_drawstring",
+          "label": "Пояс / кулиска",
+          "value": "да",
+          "value_type": "boolean",
+          "filter_ui": "Пояс / кулиска = да",
+          "evidence": "На шее у платья есть бант, который можно считать элементом пояса/завязки.",
+          "status": "mention_in_title",
+          "demand_bucket": "searched_weak",
+          "demand_volume_top5k": 137,
+          "demand_examples": [
+            {
+              "q": "джинсы женские прямого с высокой посадкой",
+              "n": 53
+            },
+            {
+              "q": "женские джинсы wide с высокой посадкой",
+              "n": 37
+            },
+            {
+              "q": "джинсы силуэта bootcut со средней посадкой утепленные",
+              "n": 11
+            }
+          ],
+          "demand_note": "weak_or_sparse"
         }
-      ]
+      ],
+      "searched_filters": [
+        {
+          "attr_id": "length",
+          "label": "Длина изделия",
+          "value": "mini",
+          "value_type": "enum",
+          "filter_ui": "Длина изделия = mini",
+          "evidence": "Длина платья — мини.",
+          "status": "mention_in_title",
+          "demand_bucket": "searched_strong",
+          "demand_volume_top5k": 2512,
+          "demand_examples": [
+            {
+              "q": "платье макси",
+              "n": 263
+            },
+            {
+              "q": "юбка миди",
+              "n": 188
+            },
+            {
+              "q": "платье миди",
+              "n": 164
+            }
+          ],
+          "demand_note": "strong_filter_candidate"
+        },
+        {
+          "attr_id": "sleeve_length",
+          "label": "Длина рукава",
+          "value": "длинный",
+          "value_type": "enum",
+          "filter_ui": "Длина рукава = длинный",
+          "evidence": "У платья длинные рукава.",
+          "status": "keep",
+          "demand_bucket": "searched_strong",
+          "demand_volume_top5k": 4735,
+          "demand_examples": [
+            {
+              "q": "рубашка мужская с коротким рукавом",
+              "n": 660
+            },
+            {
+              "q": "джемпер женский с коротким рукавом",
+              "n": 301
+            },
+            {
+              "q": "рубашка мужская с длинным рукавом",
+              "n": 239
+            }
+          ],
+          "demand_note": "strong_filter_candidate"
+        }
+      ],
+      "extra_filters": [
+        {
+          "attr_id": "belt_drawstring",
+          "label": "Пояс / кулиска",
+          "value": "да",
+          "value_type": "boolean",
+          "filter_ui": "Пояс / кулиска = да",
+          "evidence": "На шее у платья есть бант, который можно считать элементом пояса/завязки.",
+          "status": "mention_in_title",
+          "demand_bucket": "searched_weak",
+          "demand_volume_top5k": 137,
+          "demand_examples": [
+            {
+              "q": "джинсы женские прямого с высокой посадкой",
+              "n": 53
+            },
+            {
+              "q": "женские джинсы wide с высокой посадкой",
+              "n": 37
+            },
+            {
+              "q": "джинсы силуэта bootcut со средней посадкой утепленные",
+              "n": 11
+            }
+          ],
+          "demand_note": "weak_or_sparse"
+        }
+      ],
+      "collisions_not_gap": [
+        {
+          "attr_id": "print_pattern",
+          "label": "Узор / принт",
+          "value": "цветочный",
+          "why": "Уже было в старом extract — не gap, в фильтр как «новинку» не продаём."
+        }
+      ],
+      "keep_count": 3,
+      "model": "google/gemini-2.5-flash-lite",
+      "elapsed_s": 3.88,
+      "error": null
     },
     {
       "n": 4,
@@ -111,28 +639,245 @@
       "name": "Ярусное платье макси на кулиске с вырезом",
       "picture_url": "https://zolla.com/upload/iplm/images/goods/22324827Y261_7200.jpg",
       "product_url": "https://zolla.com/catalog/?q=83302",
-      "blurb": "Макси-платье → enum-фильтр длины maxi.",
-      "focus_attr": "length",
+      "blurb": "Макси-платье: длина + кулиска + вырез + рукав, не только maxi.",
+      "focus_attr": "multi",
       "feed": {
-        "Цвет / оттенок": "—",
         "Категория": "—",
         "Цвет": "зелёный",
         "Оттенок": "лайм",
         "Принт (старый freeform)": "однотонный",
+        "Материал": "—",
         "Капюшон (param)": "нет в фиде",
         "Застёжка (param)": "нет в фиде",
-        "Длина как facet": "нет в фиде"
+        "Длина как facet": "нет в фиде",
+        "Пояс/кулиска (param)": "нет в фиде"
       },
       "extracted_filters": [
         {
           "attr_id": "length",
           "label": "Длина изделия",
           "value": "maxi",
+          "value_type": "enum",
           "filter_ui": "Длина изделия = maxi",
-          "evidence": "длинное платье",
-          "focus": true
+          "evidence": "платье ниже колен, почти до щиколоток",
+          "status": "mention_in_title",
+          "demand_bucket": "searched_strong",
+          "demand_volume_top5k": 2512,
+          "demand_examples": [
+            {
+              "q": "платье макси",
+              "n": 263
+            },
+            {
+              "q": "юбка миди",
+              "n": 188
+            },
+            {
+              "q": "платье миди",
+              "n": 164
+            }
+          ],
+          "demand_note": "strong_filter_candidate"
+        },
+        {
+          "attr_id": "sleeve_length",
+          "label": "Длина рукава",
+          "value": "короткий",
+          "value_type": "enum",
+          "filter_ui": "Длина рукава = короткий",
+          "evidence": "рукава короткие, до середины бицепса",
+          "status": "keep",
+          "demand_bucket": "searched_strong",
+          "demand_volume_top5k": 4735,
+          "demand_examples": [
+            {
+              "q": "рубашка мужская с коротким рукавом",
+              "n": 660
+            },
+            {
+              "q": "джемпер женский с коротким рукавом",
+              "n": 301
+            },
+            {
+              "q": "рубашка мужская с длинным рукавом",
+              "n": 239
+            }
+          ],
+          "demand_note": "strong_filter_candidate"
+        },
+        {
+          "attr_id": "belt_drawstring",
+          "label": "Пояс / кулиска",
+          "value": "да",
+          "value_type": "boolean",
+          "filter_ui": "Пояс / кулиска = да",
+          "evidence": "на талии платья есть кулиска с завязкой",
+          "status": "mention_in_title",
+          "demand_bucket": "searched_weak",
+          "demand_volume_top5k": 137,
+          "demand_examples": [
+            {
+              "q": "джинсы женские прямого с высокой посадкой",
+              "n": 53
+            },
+            {
+              "q": "женские джинсы wide с высокой посадкой",
+              "n": 37
+            },
+            {
+              "q": "джинсы силуэта bootcut со средней посадкой утепленные",
+              "n": 11
+            }
+          ],
+          "demand_note": "weak_or_sparse"
+        },
+        {
+          "attr_id": "collar",
+          "label": "Воротник / вырез",
+          "value": "V-образный",
+          "value_type": "enum",
+          "filter_ui": "Воротник / вырез = V-образный",
+          "evidence": "у платья V-образный вырез горловины",
+          "status": "keep",
+          "demand_bucket": "searched_weak",
+          "demand_volume_top5k": 570,
+          "demand_examples": [
+            {
+              "q": "водолазка женская",
+              "n": 140
+            },
+            {
+              "q": "с воротником поло мужской",
+              "n": 97
+            },
+            {
+              "q": "водолазка мужская",
+              "n": 89
+            }
+          ],
+          "demand_note": "weak_or_sparse"
         }
-      ]
+      ],
+      "searched_filters": [
+        {
+          "attr_id": "length",
+          "label": "Длина изделия",
+          "value": "maxi",
+          "value_type": "enum",
+          "filter_ui": "Длина изделия = maxi",
+          "evidence": "платье ниже колен, почти до щиколоток",
+          "status": "mention_in_title",
+          "demand_bucket": "searched_strong",
+          "demand_volume_top5k": 2512,
+          "demand_examples": [
+            {
+              "q": "платье макси",
+              "n": 263
+            },
+            {
+              "q": "юбка миди",
+              "n": 188
+            },
+            {
+              "q": "платье миди",
+              "n": 164
+            }
+          ],
+          "demand_note": "strong_filter_candidate"
+        },
+        {
+          "attr_id": "sleeve_length",
+          "label": "Длина рукава",
+          "value": "короткий",
+          "value_type": "enum",
+          "filter_ui": "Длина рукава = короткий",
+          "evidence": "рукава короткие, до середины бицепса",
+          "status": "keep",
+          "demand_bucket": "searched_strong",
+          "demand_volume_top5k": 4735,
+          "demand_examples": [
+            {
+              "q": "рубашка мужская с коротким рукавом",
+              "n": 660
+            },
+            {
+              "q": "джемпер женский с коротким рукавом",
+              "n": 301
+            },
+            {
+              "q": "рубашка мужская с длинным рукавом",
+              "n": 239
+            }
+          ],
+          "demand_note": "strong_filter_candidate"
+        }
+      ],
+      "extra_filters": [
+        {
+          "attr_id": "belt_drawstring",
+          "label": "Пояс / кулиска",
+          "value": "да",
+          "value_type": "boolean",
+          "filter_ui": "Пояс / кулиска = да",
+          "evidence": "на талии платья есть кулиска с завязкой",
+          "status": "mention_in_title",
+          "demand_bucket": "searched_weak",
+          "demand_volume_top5k": 137,
+          "demand_examples": [
+            {
+              "q": "джинсы женские прямого с высокой посадкой",
+              "n": 53
+            },
+            {
+              "q": "женские джинсы wide с высокой посадкой",
+              "n": 37
+            },
+            {
+              "q": "джинсы силуэта bootcut со средней посадкой утепленные",
+              "n": 11
+            }
+          ],
+          "demand_note": "weak_or_sparse"
+        },
+        {
+          "attr_id": "collar",
+          "label": "Воротник / вырез",
+          "value": "V-образный",
+          "value_type": "enum",
+          "filter_ui": "Воротник / вырез = V-образный",
+          "evidence": "у платья V-образный вырез горловины",
+          "status": "keep",
+          "demand_bucket": "searched_weak",
+          "demand_volume_top5k": 570,
+          "demand_examples": [
+            {
+              "q": "водолазка женская",
+              "n": 140
+            },
+            {
+              "q": "с воротником поло мужской",
+              "n": 97
+            },
+            {
+              "q": "водолазка мужская",
+              "n": 89
+            }
+          ],
+          "demand_note": "weak_or_sparse"
+        }
+      ],
+      "collisions_not_gap": [
+        {
+          "attr_id": "print_pattern",
+          "label": "Узор / принт",
+          "value": "однотонный",
+          "why": "Уже было в старом extract — не gap, в фильтр как «новинку» не продаём."
+        }
+      ],
+      "keep_count": 4,
+      "model": "google/gemini-2.5-flash-lite",
+      "elapsed_s": 4.63,
+      "error": null
     },
     {
       "n": 5,
@@ -140,28 +885,194 @@
       "name": "Замшевая мини-юбка на молнии",
       "picture_url": "https://zolla.com/upload/iplm/images/goods/221347839061_8100.jpg",
       "product_url": "https://zolla.com/catalog/?q=39070",
-      "blurb": "Молния на юбке → enum-фильтр застёжки.",
-      "focus_attr": "fastener",
+      "blurb": "Мини-юбка: молния + длина + пояс; замша — material из name.",
+      "focus_attr": "multi",
       "feed": {
-        "Цвет / оттенок": "—",
         "Категория": "—",
         "Цвет": "коричневый",
         "Оттенок": "шатен",
         "Принт (старый freeform)": "однотонный",
+        "Материал": "—",
         "Капюшон (param)": "нет в фиде",
         "Застёжка (param)": "нет в фиде",
-        "Длина как facet": "нет в фиде"
+        "Длина как facet": "нет в фиде",
+        "Пояс/кулиска (param)": "нет в фиде",
+        "Материал (title)": "замша (в name)"
       },
       "extracted_filters": [
         {
           "attr_id": "fastener",
           "label": "Застёжка",
           "value": "молния",
+          "value_type": "enum",
           "filter_ui": "Застёжка = молния",
-          "evidence": "Видна молния на юбке",
-          "focus": true
+          "evidence": "На юбке видна молния.",
+          "status": "mention_in_title",
+          "demand_bucket": "searched_strong",
+          "demand_volume_top5k": 1238,
+          "demand_examples": [
+            {
+              "q": "толстовка женская на молнии",
+              "n": 130
+            },
+            {
+              "q": "кардиган на пуговицах женский",
+              "n": 121
+            },
+            {
+              "q": "кардиган мужской на пуговицах",
+              "n": 99
+            }
+          ],
+          "demand_note": "strong_filter_candidate"
+        },
+        {
+          "attr_id": "length",
+          "label": "Длина изделия",
+          "value": "mini",
+          "value_type": "enum",
+          "filter_ui": "Длина изделия = mini",
+          "evidence": "Видна мини-юбка.",
+          "status": "mention_in_title",
+          "demand_bucket": "searched_strong",
+          "demand_volume_top5k": 2512,
+          "demand_examples": [
+            {
+              "q": "платье макси",
+              "n": 263
+            },
+            {
+              "q": "юбка миди",
+              "n": 188
+            },
+            {
+              "q": "платье миди",
+              "n": 164
+            }
+          ],
+          "demand_note": "strong_filter_candidate"
+        },
+        {
+          "attr_id": "belt_drawstring",
+          "label": "Пояс / кулиска",
+          "value": "да",
+          "value_type": "boolean",
+          "filter_ui": "Пояс / кулиска = да",
+          "evidence": "На юбке есть пояс.",
+          "status": "keep",
+          "demand_bucket": "searched_weak",
+          "demand_volume_top5k": 137,
+          "demand_examples": [
+            {
+              "q": "джинсы женские прямого с высокой посадкой",
+              "n": 53
+            },
+            {
+              "q": "женские джинсы wide с высокой посадкой",
+              "n": 37
+            },
+            {
+              "q": "джинсы силуэта bootcut со средней посадкой утепленные",
+              "n": 11
+            }
+          ],
+          "demand_note": "weak_or_sparse"
         }
-      ]
+      ],
+      "searched_filters": [
+        {
+          "attr_id": "fastener",
+          "label": "Застёжка",
+          "value": "молния",
+          "value_type": "enum",
+          "filter_ui": "Застёжка = молния",
+          "evidence": "На юбке видна молния.",
+          "status": "mention_in_title",
+          "demand_bucket": "searched_strong",
+          "demand_volume_top5k": 1238,
+          "demand_examples": [
+            {
+              "q": "толстовка женская на молнии",
+              "n": 130
+            },
+            {
+              "q": "кардиган на пуговицах женский",
+              "n": 121
+            },
+            {
+              "q": "кардиган мужской на пуговицах",
+              "n": 99
+            }
+          ],
+          "demand_note": "strong_filter_candidate"
+        },
+        {
+          "attr_id": "length",
+          "label": "Длина изделия",
+          "value": "mini",
+          "value_type": "enum",
+          "filter_ui": "Длина изделия = mini",
+          "evidence": "Видна мини-юбка.",
+          "status": "mention_in_title",
+          "demand_bucket": "searched_strong",
+          "demand_volume_top5k": 2512,
+          "demand_examples": [
+            {
+              "q": "платье макси",
+              "n": 263
+            },
+            {
+              "q": "юбка миди",
+              "n": 188
+            },
+            {
+              "q": "платье миди",
+              "n": 164
+            }
+          ],
+          "demand_note": "strong_filter_candidate"
+        }
+      ],
+      "extra_filters": [
+        {
+          "attr_id": "belt_drawstring",
+          "label": "Пояс / кулиска",
+          "value": "да",
+          "value_type": "boolean",
+          "filter_ui": "Пояс / кулиска = да",
+          "evidence": "На юбке есть пояс.",
+          "status": "keep",
+          "demand_bucket": "searched_weak",
+          "demand_volume_top5k": 137,
+          "demand_examples": [
+            {
+              "q": "джинсы женские прямого с высокой посадкой",
+              "n": 53
+            },
+            {
+              "q": "женские джинсы wide с высокой посадкой",
+              "n": 37
+            },
+            {
+              "q": "джинсы силуэта bootcut со средней посадкой утепленные",
+              "n": 11
+            }
+          ],
+          "demand_note": "weak_or_sparse"
+        }
+      ],
+      "collisions_not_gap": [
+        {
+          "attr_id": "print_pattern",
+          "label": "Узор / принт",
+          "value": "однотонный",
+          "why": "Уже было в старом extract — не gap, в фильтр как «новинку» не продаём."
+        }
+      ],
+      "keep_count": 3,
+      "model": "google/gemini-2.5-flash-lite",
+      "elapsed_s": 3.94,
+      "error": null
     },
     {
       "n": 6,
@@ -169,28 +1080,289 @@
       "name": "Утеплённый тренчкот с воротником-стойкой",
       "picture_url": "https://zolla.com/upload/iplm/images/goods/011335239304_9900.jpg",
       "product_url": "https://zolla.com/catalog/?q=38537",
-      "blurb": "Воротник-стойка → enum-фильтр воротника.",
-      "focus_attr": "collar",
+      "blurb": "Тренчкот: стойка + застёжка + длина + карманы при видимости.",
+      "focus_attr": "multi",
       "feed": {
-        "Цвет / оттенок": "—",
         "Категория": "—",
         "Цвет": "чёрный",
         "Оттенок": "серый",
         "Принт (старый freeform)": "однотонный",
+        "Материал": "—",
         "Капюшон (param)": "нет в фиде",
         "Застёжка (param)": "нет в фиде",
-        "Длина как facet": "нет в фиде"
+        "Длина как facet": "нет в фиде",
+        "Пояс/кулиска (param)": "нет в фиде"
       },
       "extracted_filters": [
+        {
+          "attr_id": "fastener",
+          "label": "Застёжка",
+          "value": "пуговицы",
+          "value_type": "enum",
+          "filter_ui": "Застёжка = пуговицы",
+          "evidence": "Видны пуговицы на куртке",
+          "status": "keep",
+          "demand_bucket": "searched_strong",
+          "demand_volume_top5k": 1238,
+          "demand_examples": [
+            {
+              "q": "толстовка женская на молнии",
+              "n": 130
+            },
+            {
+              "q": "кардиган на пуговицах женский",
+              "n": 121
+            },
+            {
+              "q": "кардиган мужской на пуговицах",
+              "n": 99
+            }
+          ],
+          "demand_note": "strong_filter_candidate"
+        },
+        {
+          "attr_id": "length",
+          "label": "Длина изделия",
+          "value": "до колена",
+          "value_type": "enum",
+          "filter_ui": "Длина изделия = до колена",
+          "evidence": "Длина изделия примерно до колена",
+          "status": "keep",
+          "demand_bucket": "searched_strong",
+          "demand_volume_top5k": 2512,
+          "demand_examples": [
+            {
+              "q": "платье макси",
+              "n": 263
+            },
+            {
+              "q": "юбка миди",
+              "n": 188
+            },
+            {
+              "q": "платье миди",
+              "n": 164
+            }
+          ],
+          "demand_note": "strong_filter_candidate"
+        },
+        {
+          "attr_id": "sleeve_length",
+          "label": "Длина рукава",
+          "value": "длинный",
+          "value_type": "enum",
+          "filter_ui": "Длина рукава = длинный",
+          "evidence": "Длинные рукава",
+          "status": "keep",
+          "demand_bucket": "searched_strong",
+          "demand_volume_top5k": 4735,
+          "demand_examples": [
+            {
+              "q": "рубашка мужская с коротким рукавом",
+              "n": 660
+            },
+            {
+              "q": "джемпер женский с коротким рукавом",
+              "n": 301
+            },
+            {
+              "q": "рубашка мужская с длинным рукавом",
+              "n": 239
+            }
+          ],
+          "demand_note": "strong_filter_candidate"
+        },
         {
           "attr_id": "collar",
           "label": "Воротник / вырез",
           "value": "стойка",
+          "value_type": "enum",
           "filter_ui": "Воротник / вырез = стойка",
-          "evidence": "На модели присутствует воротник-стойка.",
-          "focus": true
+          "evidence": "Воротник-стойка",
+          "status": "keep",
+          "demand_bucket": "searched_weak",
+          "demand_volume_top5k": 570,
+          "demand_examples": [
+            {
+              "q": "водолазка женская",
+              "n": 140
+            },
+            {
+              "q": "с воротником поло мужской",
+              "n": 97
+            },
+            {
+              "q": "водолазка мужская",
+              "n": 89
+            }
+          ],
+          "demand_note": "weak_or_sparse"
+        },
+        {
+          "attr_id": "pockets",
+          "label": "Карманы",
+          "value": "да",
+          "value_type": "boolean",
+          "filter_ui": "Карманы = да",
+          "evidence": "Видны карманы на куртке",
+          "status": "keep",
+          "demand_bucket": "searched_weak",
+          "demand_volume_top5k": 50,
+          "demand_examples": [
+            {
+              "q": "брюки мужские с карманами карго",
+              "n": 42
+            },
+            {
+              "q": "джоггеры мужские с карманами",
+              "n": 8
+            }
+          ],
+          "demand_note": "weak_or_sparse"
         }
-      ]
+      ],
+      "searched_filters": [
+        {
+          "attr_id": "fastener",
+          "label": "Застёжка",
+          "value": "пуговицы",
+          "value_type": "enum",
+          "filter_ui": "Застёжка = пуговицы",
+          "evidence": "Видны пуговицы на куртке",
+          "status": "keep",
+          "demand_bucket": "searched_strong",
+          "demand_volume_top5k": 1238,
+          "demand_examples": [
+            {
+              "q": "толстовка женская на молнии",
+              "n": 130
+            },
+            {
+              "q": "кардиган на пуговицах женский",
+              "n": 121
+            },
+            {
+              "q": "кардиган мужской на пуговицах",
+              "n": 99
+            }
+          ],
+          "demand_note": "strong_filter_candidate"
+        },
+        {
+          "attr_id": "length",
+          "label": "Длина изделия",
+          "value": "до колена",
+          "value_type": "enum",
+          "filter_ui": "Длина изделия = до колена",
+          "evidence": "Длина изделия примерно до колена",
+          "status": "keep",
+          "demand_bucket": "searched_strong",
+          "demand_volume_top5k": 2512,
+          "demand_examples": [
+            {
+              "q": "платье макси",
+              "n": 263
+            },
+            {
+              "q": "юбка миди",
+              "n": 188
+            },
+            {
+              "q": "платье миди",
+              "n": 164
+            }
+          ],
+          "demand_note": "strong_filter_candidate"
+        },
+        {
+          "attr_id": "sleeve_length",
+          "label": "Длина рукава",
+          "value": "длинный",
+          "value_type": "enum",
+          "filter_ui": "Длина рукава = длинный",
+          "evidence": "Длинные рукава",
+          "status": "keep",
+          "demand_bucket": "searched_strong",
+          "demand_volume_top5k": 4735,
+          "demand_examples": [
+            {
+              "q": "рубашка мужская с коротким рукавом",
+              "n": 660
+            },
+            {
+              "q": "джемпер женский с коротким рукавом",
+              "n": 301
+            },
+            {
+              "q": "рубашка мужская с длинным рукавом",
+              "n": 239
+            }
+          ],
+          "demand_note": "strong_filter_candidate"
+        }
+      ],
+      "extra_filters": [
+        {
+          "attr_id": "collar",
+          "label": "Воротник / вырез",
+          "value": "стойка",
+          "value_type": "enum",
+          "filter_ui": "Воротник / вырез = стойка",
+          "evidence": "Воротник-стойка",
+          "status": "keep",
+          "demand_bucket": "searched_weak",
+          "demand_volume_top5k": 570,
+          "demand_examples": [
+            {
+              "q": "водолазка женская",
+              "n": 140
+            },
+            {
+              "q": "с воротником поло мужской",
+              "n": 97
+            },
+            {
+              "q": "водолазка мужская",
+              "n": 89
+            }
+          ],
+          "demand_note": "weak_or_sparse"
+        },
+        {
+          "attr_id": "pockets",
+          "label": "Карманы",
+          "value": "да",
+          "value_type": "boolean",
+          "filter_ui": "Карманы = да",
+          "evidence": "Видны карманы на куртке",
+          "status": "keep",
+          "demand_bucket": "searched_weak",
+          "demand_volume_top5k": 50,
+          "demand_examples": [
+            {
+              "q": "брюки мужские с карманами карго",
+              "n": 42
+            },
+            {
+              "q": "джоггеры мужские с карманами",
+              "n": 8
+            }
+          ],
+          "demand_note": "weak_or_sparse"
+        }
+      ],
+      "collisions_not_gap": [
+        {
+          "attr_id": "print_pattern",
+          "label": "Узор / принт",
+          "value": "однотонный",
+          "why": "Уже было в старом extract — не gap, в фильтр как «новинку» не продаём."
+        }
+      ],
+      "keep_count": 5,
+      "model": "google/gemini-2.5-flash-lite",
+      "elapsed_s": 5.17,
+      "error": null
     },
     {
       "n": 7,
@@ -198,28 +1370,334 @@
       "name": "Утеплённая куртка с накладными карманами",
       "picture_url": "https://zolla.com/upload/iplm/images/goods/011335114174_59P0.jpg",
       "product_url": "https://zolla.com/catalog/?q=39614",
-      "blurb": "Накладные карманы на куртке → boolean «да».",
-      "focus_attr": "pockets",
+      "blurb": "Куртка: карманы + капюшон/застёжка/длина — полный набор с фото.",
+      "focus_attr": "multi",
       "feed": {
-        "Цвет / оттенок": "—",
         "Категория": "—",
         "Цвет": "синий",
         "Оттенок": "синий",
         "Принт (старый freeform)": "милитари",
+        "Материал": "—",
         "Капюшон (param)": "нет в фиде",
         "Застёжка (param)": "нет в фиде",
-        "Длина как facet": "нет в фиде"
+        "Длина как facet": "нет в фиде",
+        "Пояс/кулиска (param)": "нет в фиде"
       },
       "extracted_filters": [
+        {
+          "attr_id": "fastener",
+          "label": "Застёжка",
+          "value": "молния",
+          "value_type": "enum",
+          "filter_ui": "Застёжка = молния",
+          "evidence": "Предположительно, куртка застегивается на молнию, но она не видна полностью",
+          "status": "keep",
+          "demand_bucket": "searched_strong",
+          "demand_volume_top5k": 1238,
+          "demand_examples": [
+            {
+              "q": "толстовка женская на молнии",
+              "n": 130
+            },
+            {
+              "q": "кардиган на пуговицах женский",
+              "n": 121
+            },
+            {
+              "q": "кардиган мужской на пуговицах",
+              "n": 99
+            }
+          ],
+          "demand_note": "strong_filter_candidate"
+        },
+        {
+          "attr_id": "length",
+          "label": "Длина изделия",
+          "value": "до колена",
+          "value_type": "enum",
+          "filter_ui": "Длина изделия = до колена",
+          "evidence": "Длина куртки примерно до середины бедра",
+          "status": "keep",
+          "demand_bucket": "searched_strong",
+          "demand_volume_top5k": 2512,
+          "demand_examples": [
+            {
+              "q": "платье макси",
+              "n": 263
+            },
+            {
+              "q": "юбка миди",
+              "n": 188
+            },
+            {
+              "q": "платье миди",
+              "n": 164
+            }
+          ],
+          "demand_note": "strong_filter_candidate"
+        },
+        {
+          "attr_id": "print_pattern",
+          "label": "Узор / принт",
+          "value": "камуфляж",
+          "value_type": "multi_enum",
+          "filter_ui": "Узор / принт = камуфляж",
+          "evidence": "На куртке принт, похожий на камуфляж",
+          "status": "keep",
+          "demand_bucket": "searched_strong",
+          "demand_volume_top5k": 7757,
+          "demand_examples": [
+            {
+              "q": "рубашка женская в полоску",
+              "n": 649
+            },
+            {
+              "q": "футболка с принтом женская",
+              "n": 647
+            },
+            {
+              "q": "рубашка в клетку женская",
+              "n": 524
+            }
+          ],
+          "demand_note": "strong_filter_candidate"
+        },
+        {
+          "attr_id": "sleeve_length",
+          "label": "Длина рукава",
+          "value": "длинный",
+          "value_type": "enum",
+          "filter_ui": "Длина рукава = длинный",
+          "evidence": "Видны длинные рукава куртки",
+          "status": "keep",
+          "demand_bucket": "searched_strong",
+          "demand_volume_top5k": 4735,
+          "demand_examples": [
+            {
+              "q": "рубашка мужская с коротким рукавом",
+              "n": 660
+            },
+            {
+              "q": "джемпер женский с коротким рукавом",
+              "n": 301
+            },
+            {
+              "q": "рубашка мужская с длинным рукавом",
+              "n": 239
+            }
+          ],
+          "demand_note": "strong_filter_candidate"
+        },
+        {
+          "attr_id": "collar",
+          "label": "Воротник / вырез",
+          "value": "стойка",
+          "value_type": "enum",
+          "filter_ui": "Воротник / вырез = стойка",
+          "evidence": "У куртки воротник-стойка",
+          "status": "keep",
+          "demand_bucket": "searched_weak",
+          "demand_volume_top5k": 570,
+          "demand_examples": [
+            {
+              "q": "водолазка женская",
+              "n": 140
+            },
+            {
+              "q": "с воротником поло мужской",
+              "n": 97
+            },
+            {
+              "q": "водолазка мужская",
+              "n": 89
+            }
+          ],
+          "demand_note": "weak_or_sparse"
+        },
         {
           "attr_id": "pockets",
           "label": "Карманы",
           "value": "да",
+          "value_type": "boolean",
           "filter_ui": "Карманы = да",
-          "evidence": "На куртке видны накладные карманы.",
-          "focus": true
+          "evidence": "На куртке есть накладные карманы",
+          "status": "keep",
+          "demand_bucket": "searched_weak",
+          "demand_volume_top5k": 50,
+          "demand_examples": [
+            {
+              "q": "брюки мужские с карманами карго",
+              "n": 42
+            },
+            {
+              "q": "джоггеры мужские с карманами",
+              "n": 8
+            }
+          ],
+          "demand_note": "weak_or_sparse"
         }
-      ]
+      ],
+      "searched_filters": [
+        {
+          "attr_id": "fastener",
+          "label": "Застёжка",
+          "value": "молния",
+          "value_type": "enum",
+          "filter_ui": "Застёжка = молния",
+          "evidence": "Предположительно, куртка застегивается на молнию, но она не видна полностью",
+          "status": "keep",
+          "demand_bucket": "searched_strong",
+          "demand_volume_top5k": 1238,
+          "demand_examples": [
+            {
+              "q": "толстовка женская на молнии",
+              "n": 130
+            },
+            {
+              "q": "кардиган на пуговицах женский",
+              "n": 121
+            },
+            {
+              "q": "кардиган мужской на пуговицах",
+              "n": 99
+            }
+          ],
+          "demand_note": "strong_filter_candidate"
+        },
+        {
+          "attr_id": "length",
+          "label": "Длина изделия",
+          "value": "до колена",
+          "value_type": "enum",
+          "filter_ui": "Длина изделия = до колена",
+          "evidence": "Длина куртки примерно до середины бедра",
+          "status": "keep",
+          "demand_bucket": "searched_strong",
+          "demand_volume_top5k": 2512,
+          "demand_examples": [
+            {
+              "q": "платье макси",
+              "n": 263
+            },
+            {
+              "q": "юбка миди",
+              "n": 188
+            },
+            {
+              "q": "платье миди",
+              "n": 164
+            }
+          ],
+          "demand_note": "strong_filter_candidate"
+        },
+        {
+          "attr_id": "print_pattern",
+          "label": "Узор / принт",
+          "value": "камуфляж",
+          "value_type": "multi_enum",
+          "filter_ui": "Узор / принт = камуфляж",
+          "evidence": "На куртке принт, похожий на камуфляж",
+          "status": "keep",
+          "demand_bucket": "searched_strong",
+          "demand_volume_top5k": 7757,
+          "demand_examples": [
+            {
+              "q": "рубашка женская в полоску",
+              "n": 649
+            },
+            {
+              "q": "футболка с принтом женская",
+              "n": 647
+            },
+            {
+              "q": "рубашка в клетку женская",
+              "n": 524
+            }
+          ],
+          "demand_note": "strong_filter_candidate"
+        },
+        {
+          "attr_id": "sleeve_length",
+          "label": "Длина рукава",
+          "value": "длинный",
+          "value_type": "enum",
+          "filter_ui": "Длина рукава = длинный",
+          "evidence": "Видны длинные рукава куртки",
+          "status": "keep",
+          "demand_bucket": "searched_strong",
+          "demand_volume_top5k": 4735,
+          "demand_examples": [
+            {
+              "q": "рубашка мужская с коротким рукавом",
+              "n": 660
+            },
+            {
+              "q": "джемпер женский с коротким рукавом",
+              "n": 301
+            },
+            {
+              "q": "рубашка мужская с длинным рукавом",
+              "n": 239
+            }
+          ],
+          "demand_note": "strong_filter_candidate"
+        }
+      ],
+      "extra_filters": [
+        {
+          "attr_id": "collar",
+          "label": "Воротник / вырез",
+          "value": "стойка",
+          "value_type": "enum",
+          "filter_ui": "Воротник / вырез = стойка",
+          "evidence": "У куртки воротник-стойка",
+          "status": "keep",
+          "demand_bucket": "searched_weak",
+          "demand_volume_top5k": 570,
+          "demand_examples": [
+            {
+              "q": "водолазка женская",
+              "n": 140
+            },
+            {
+              "q": "с воротником поло мужской",
+              "n": 97
+            },
+            {
+              "q": "водолазка мужская",
+              "n": 89
+            }
+          ],
+          "demand_note": "weak_or_sparse"
+        },
+        {
+          "attr_id": "pockets",
+          "label": "Карманы",
+          "value": "да",
+          "value_type": "boolean",
+          "filter_ui": "Карманы = да",
+          "evidence": "На куртке есть накладные карманы",
+          "status": "keep",
+          "demand_bucket": "searched_weak",
+          "demand_volume_top5k": 50,
+          "demand_examples": [
+            {
+              "q": "брюки мужские с карманами карго",
+              "n": 42
+            },
+            {
+              "q": "джоггеры мужские с карманами",
+              "n": 8
+            }
+          ],
+          "demand_note": "weak_or_sparse"
+        }
+      ],
+      "collisions_not_gap": [],
+      "keep_count": 6,
+      "model": "google/gemini-2.5-flash-lite",
+      "elapsed_s": 4.4,
+      "error": null
     },
     {
       "n": 8,
@@ -227,34 +1705,193 @@
       "name": "Футболка без рукавов",
       "picture_url": "https://zolla.com/upload/iplm/images/goods/021233326111_10S0.jpg",
       "product_url": "https://zolla.com/catalog/?q=15873",
-      "blurb": "Без рукавов → enum «без рукавов».",
-      "focus_attr": "sleeve_length",
+      "blurb": "Топ без рукавов: рукав + вырез + длина/принт если видно.",
+      "focus_attr": "multi",
       "feed": {
-        "Цвет / оттенок": "—",
         "Категория": "—",
+        "Цвет": "—",
+        "Оттенок": "—",
         "Принт (старый freeform)": "полоска",
+        "Материал": "—",
         "Капюшон (param)": "нет в фиде",
         "Застёжка (param)": "нет в фиде",
-        "Длина как facet": "нет в фиде"
+        "Длина как facet": "нет в фиде",
+        "Пояс/кулиска (param)": "нет в фиде"
       },
       "extracted_filters": [
         {
-          "attr_id": "print_pattern",
-          "label": "Узор / принт",
-          "value": "полоска",
-          "filter_ui": "Узор / принт = полоска",
-          "evidence": "Вертикальные полоски на футболке.",
-          "focus": false
+          "attr_id": "length",
+          "label": "Длина изделия",
+          "value": "укороченный",
+          "value_type": "enum",
+          "filter_ui": "Длина изделия = укороченный",
+          "evidence": "Длина топа укороченная",
+          "status": "keep",
+          "demand_bucket": "searched_strong",
+          "demand_volume_top5k": 2512,
+          "demand_examples": [
+            {
+              "q": "платье макси",
+              "n": 263
+            },
+            {
+              "q": "юбка миди",
+              "n": 188
+            },
+            {
+              "q": "платье миди",
+              "n": 164
+            }
+          ],
+          "demand_note": "strong_filter_candidate"
         },
         {
           "attr_id": "sleeve_length",
           "label": "Длина рукава",
           "value": "без рукавов",
+          "value_type": "enum",
           "filter_ui": "Длина рукава = без рукавов",
-          "evidence": "На модели футболка без рукавов",
-          "focus": true
+          "evidence": "На топе отсутствуют рукава",
+          "status": "mention_in_title",
+          "demand_bucket": "searched_strong",
+          "demand_volume_top5k": 4735,
+          "demand_examples": [
+            {
+              "q": "рубашка мужская с коротким рукавом",
+              "n": 660
+            },
+            {
+              "q": "джемпер женский с коротким рукавом",
+              "n": 301
+            },
+            {
+              "q": "рубашка мужская с длинным рукавом",
+              "n": 239
+            }
+          ],
+          "demand_note": "strong_filter_candidate"
+        },
+        {
+          "attr_id": "collar",
+          "label": "Воротник / вырез",
+          "value": "V-образный",
+          "value_type": "enum",
+          "filter_ui": "Воротник / вырез = V-образный",
+          "evidence": "У топа V-образный вырез",
+          "status": "keep",
+          "demand_bucket": "searched_weak",
+          "demand_volume_top5k": 570,
+          "demand_examples": [
+            {
+              "q": "водолазка женская",
+              "n": 140
+            },
+            {
+              "q": "с воротником поло мужской",
+              "n": 97
+            },
+            {
+              "q": "водолазка мужская",
+              "n": 89
+            }
+          ],
+          "demand_note": "weak_or_sparse"
         }
-      ]
+      ],
+      "searched_filters": [
+        {
+          "attr_id": "length",
+          "label": "Длина изделия",
+          "value": "укороченный",
+          "value_type": "enum",
+          "filter_ui": "Длина изделия = укороченный",
+          "evidence": "Длина топа укороченная",
+          "status": "keep",
+          "demand_bucket": "searched_strong",
+          "demand_volume_top5k": 2512,
+          "demand_examples": [
+            {
+              "q": "платье макси",
+              "n": 263
+            },
+            {
+              "q": "юбка миди",
+              "n": 188
+            },
+            {
+              "q": "платье миди",
+              "n": 164
+            }
+          ],
+          "demand_note": "strong_filter_candidate"
+        },
+        {
+          "attr_id": "sleeve_length",
+          "label": "Длина рукава",
+          "value": "без рукавов",
+          "value_type": "enum",
+          "filter_ui": "Длина рукава = без рукавов",
+          "evidence": "На топе отсутствуют рукава",
+          "status": "mention_in_title",
+          "demand_bucket": "searched_strong",
+          "demand_volume_top5k": 4735,
+          "demand_examples": [
+            {
+              "q": "рубашка мужская с коротким рукавом",
+              "n": 660
+            },
+            {
+              "q": "джемпер женский с коротким рукавом",
+              "n": 301
+            },
+            {
+              "q": "рубашка мужская с длинным рукавом",
+              "n": 239
+            }
+          ],
+          "demand_note": "strong_filter_candidate"
+        }
+      ],
+      "extra_filters": [
+        {
+          "attr_id": "collar",
+          "label": "Воротник / вырез",
+          "value": "V-образный",
+          "value_type": "enum",
+          "filter_ui": "Воротник / вырез = V-образный",
+          "evidence": "У топа V-образный вырез",
+          "status": "keep",
+          "demand_bucket": "searched_weak",
+          "demand_volume_top5k": 570,
+          "demand_examples": [
+            {
+              "q": "водолазка женская",
+              "n": 140
+            },
+            {
+              "q": "с воротником поло мужской",
+              "n": 97
+            },
+            {
+              "q": "водолазка мужская",
+              "n": 89
+            }
+          ],
+          "demand_note": "weak_or_sparse"
+        }
+      ],
+      "collisions_not_gap": [
+        {
+          "attr_id": "print_pattern",
+          "label": "Узор / принт",
+          "value": "полоска",
+          "why": "Уже было в старом extract — не gap, в фильтр как «новинку» не продаём."
+        }
+      ],
+      "keep_count": 3,
+      "model": "google/gemini-2.5-flash-lite",
+      "elapsed_s": 3.57,
+      "error": null
     }
   ]
 }
