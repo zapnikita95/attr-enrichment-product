@@ -1,11 +1,8 @@
 {
-  "generated_at": "2026-07-21T13:54:32+00:00",
+  "generated_at": "21.07.2026",
   "stream_a_base_month": 158403.0,
   "stream_a_opt_month": 300965.7,
-  "stream_b_cons_month": 7920.150000000001,
-  "stream_b_opt_month": 23760.45,
   "text_stream_ref_month": 20804.0,
   "facet_total_searches_90d": 9284,
-  "metrika_available": false,
-  "source": "vision_facet_demand.json"
+  "partner_facing": true
 }
