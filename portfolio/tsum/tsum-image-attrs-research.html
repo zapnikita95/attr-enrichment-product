@@ -36,8 +36,8 @@ footer { margin-top:48px; color:var(--muted); font-size:12px; }
 <body>
 <div class="wrap">
   <div class="tag">site_id 203 · Diginetica</div>
-  <div class="tag">без прайсинга</div>
-  <h1>ЦУМ: зачем нужны атрибуты с картинок</h1>
+  <div class="tag">+ оценка ₽</div>
+  <h1>ЦУМ: атрибуты с картинок — разрыв и выручка</h1>
   <p class="lead">
     Исследование разрыва между поисковыми запросами, текущим YML-фидом и тем,
     что реально видно на фото. Цель — показать, <strong>какие атрибуты уже есть</strong>
@@ -154,7 +154,47 @@ footer { margin-top:48px; color:var(--muted); font-size:12px; }
     Там максимальная плотность стилевых запросов и визуально читаемые признаки.
   </p>
 
-  <h2>7. Методология (коротко)</h2>
+  <h2>7. Деньги: на какие запросы влияем и сколько ₽</h2>
+  <p class="lead" style="font-size:15px">
+    Классификация через Diginetica API (<code>apiKey=…4208</code>, strategy
+    <code>advanced_xname,zero_queries_predictor</code>) на vision-лексике.
+    CH <code>isZeroQuery</code> запасные считает иначе — для денег берём API.
+  </p>
+  <div class="grid">
+    <div class="stat"><b>356</b><span>RESERVE (запасные) запросов · 12 789 поисков/90д</span></div>
+    <div class="stat"><b>0</b><span>ZERO среди impact (товары есть, матчинг слабый)</span></div>
+    <div class="stat"><b>1 148</b><span>NORMAL · 306k поисков — lift точности</span></div>
+    <div class="stat"><b>0%</b><span>CVR запасных в CH (top80 API-RESERVE)</span></div>
+    <div class="stat"><b>0.083%</b><span>CVR точных (цель)</span></div>
+    <div class="stat"><b>~100k ₽</b><span>средний чек search-заказов</span></div>
+  </div>
+  <table>
+    <thead><tr><th>Сценарий</th><th>₽/мес</th><th>₽/90д</th><th>₽/год</th></tr></thead>
+    <tbody>
+      <tr><td>Консервативный</td><td>566 459</td><td>1 699 376</td><td>6 797 505</td></tr>
+      <tr><td><strong>Базовый (партнёру)</strong></td><td><strong>877 622</strong></td><td><strong>2 632 865</strong></td><td><strong>10 531 461</strong></td></tr>
+      <tr><td>Оптимистичный</td><td>1 402 233</td><td>4 206 699</td><td>16 826 796</td></tr>
+    </tbody>
+  </table>
+  <p>Базовый: RESERVE→точный <strong>284k ₽/мес</strong> + NORMAL точнее <strong>594k ₽/мес</strong>.</p>
+  <h3>Топ запасных (API) — примеры</h3>
+  <table>
+    <thead><tr><th>Запрос</th><th>Поисков/90д</th><th>hits API</th><th>Δ ₽/мес</th></tr></thead>
+    <tbody>
+      <tr><td>вьетнамки на каблуке</td><td>783</td><td>4273</td><td>~17k</td></tr>
+      <tr><td>сумка багет</td><td>465</td><td>5490</td><td>~10k</td></tr>
+      <tr><td>шлепки на каблуке</td><td>305</td><td>4273</td><td>~7k</td></tr>
+      <tr><td>туфли на толстом каблуке</td><td>275</td><td>5020</td><td>~6k</td></tr>
+      <tr><td>сумка кроссбоди</td><td>214</td><td>5486</td><td>~5k</td></tr>
+    </tbody>
+  </table>
+  <div class="callout warn">
+    <strong>Формула:</strong> Δ = searches × fixable × (CVR_new − CVR_old) × AOV.
+    RESERVE измерено CVR=0% → 0.083%; NORMAL +20% относительный lift на 35% объёма.
+    В CH к поиску атрибуцируется мало заказов (1.3k из 15.5k сайта) — оценка консервативна относительно реального чека сайта (~110k ₽).
+  </div>
+
+  <h2>8. Методология (коротко)</h2>
   <ol>
     <li>Инвентаризация YML (stream parse 1.5 GB) — params, fill, выборка по категориям.</li>
     <li>ClickHouse site 203 — топ-30k запросов / 90д + totals.</li>
@@ -172,8 +212,8 @@ footer { margin-top:48px; color:var(--muted); font-size:12px; }
   </div>
 
   <footer>
-    Артефакты: portfolio/tsum/ · feed_inventory.json · gap_analysis.json ·
-    query_impact_refined.json · vision_probe_results.json · vision_attr_decision.json · VISION_ATTR_DECISION.md
+    Артефакты: portfolio/tsum/ · MONEY_IMPACT.md · money_impact.json · api_classify_impact.json ·
+    feed_inventory.json · gap_analysis.json · vision_probe_results.json
   </footer>
 </div>
 </body>

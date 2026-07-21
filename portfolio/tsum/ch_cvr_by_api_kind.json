@@ -1,0 +1,18 @@
+{
+  "reserve": {
+    "sessions": 1021,
+    "orders": 0,
+    "cvr_pct": 0,
+    "aov": null,
+    "label": "RESERVE_top80",
+    "n_terms": 80
+  },
+  "normal": {
+    "sessions": 42256,
+    "orders": 28,
+    "cvr_pct": 0.0663,
+    "aov": 167028.67,
+    "label": "NORMAL_top80",
+    "n_terms": 80
+  }
+}

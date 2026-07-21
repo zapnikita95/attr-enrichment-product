@@ -1,0 +1,444 @@
+{
+  "site_id": 203,
+  "period_days": 90,
+  "overall": {
+    "total_sessions": 6057202,
+    "search_sessions": 1761075,
+    "search_order_sessions": 1343,
+    "search_session_cvr_pct": 0.076,
+    "avg_check_search_rub": 100276.14,
+    "search_revenue_90d": 134670868
+  },
+  "by_session_zero_flag": [
+    {
+      "bucket": "only_normal_flag",
+      "sessions": 1592297,
+      "orders": 1327,
+      "cvr_pct": 0.083,
+      "aov": 100543.78
+    },
+    {
+      "bucket": "only_zero_flag",
+      "sessions": 92912,
+      "orders": 0,
+      "cvr_pct": 0,
+      "aov": null
+    },
+    {
+      "bucket": "mixed",
+      "sessions": 65663,
+      "orders": 0,
+      "cvr_pct": 0,
+      "aov": null
+    }
+  ],
+  "search_zero_flag_rate": {
+    "searches": 9259452,
+    "zero_flag_searches": 521998,
+    "normal_flag_searches": 8327714,
+    "null_flag": 0,
+    "zero_flag_pct": 5.64
+  },
+  "top_zero_flag_queries": [
+    {
+      "q": "on running",
+      "cnt": 4200
+    },
+    {
+      "q": "сумка для телефона",
+      "cnt": 2727
+    },
+    {
+      "q": "on кроссовки",
+      "cnt": 2578
+    },
+    {
+      "q": "dr vranjes",
+      "cnt": 1897
+    },
+    {
+      "q": "брючный костюм",
+      "cnt": 1768
+    },
+    {
+      "q": "swatch",
+      "cnt": 1718
+    },
+    {
+      "q": "alexander mcqueen кеды",
+      "cnt": 1606
+    },
+    {
+      "q": "сумка coach",
+      "cnt": 1299
+    },
+    {
+      "q": "louis vuitton духи",
+      "cnt": 1237
+    },
+    {
+      "q": "кроссовки on",
+      "cnt": 1209
+    },
+    {
+      "q": "серьги chanel",
+      "cnt": 1087
+    },
+    {
+      "q": "кроссовки on cloud",
+      "cnt": 966
+    },
+    {
+      "q": "liu jo",
+      "cnt": 927
+    },
+    {
+      "q": "longchapm",
+      "cnt": 926
+    },
+    {
+      "q": "on cloud",
+      "cnt": 898
+    },
+    {
+      "q": "платье на выпускной",
+      "cnt": 897
+    },
+    {
+      "q": "шляпа летняя",
+      "cnt": 862
+    },
+    {
+      "q": "чехол на iphone 17 pro max",
+      "cnt": 843
+    },
+    {
+      "q": "louis vuitton парфюм",
+      "cnt": 829
+    },
+    {
+      "q": "серьги dior",
+      "cnt": 795
+    },
+    {
+      "q": "sandro",
+      "cnt": 764
+    },
+    {
+      "q": "вьетнамки на каблуке",
+      "cnt": 760
+    },
+    {
+      "q": "polene",
+      "cnt": 743
+    },
+    {
+      "q": "духи louis vuitton",
+      "cnt": 728
+    },
+    {
+      "q": "очки aviator",
+      "cnt": 700
+    },
+    {
+      "q": "ароматизатор для автомобиля",
+      "cnt": 651
+    },
+    {
+      "q": "nike обувь",
+      "cnt": 650
+    },
+    {
+      "q": "свадебные туфли",
+      "cnt": 646
+    },
+    {
+      "q": "fendi сумки женские",
+      "cnt": 630
+    },
+    {
+      "q": "cedar chic",
+      "cnt": 622
+    },
+    {
+      "q": "birkin",
+      "cnt": 621
+    },
+    {
+      "q": "кошельки louis vuitton",
+      "cnt": 607
+    },
+    {
+      "q": "gentle monster очки",
+      "cnt": 605
+    },
+    {
+      "q": "кроссовки on running",
+      "cnt": 591
+    },
+    {
+      "q": "gucci косметика",
+      "cnt": 568
+    },
+    {
+      "q": "zielinski",
+      "cnt": 557
+    },
+    {
+      "q": "премяти кроссовки мужские",
+      "cnt": 537
+    },
+    {
+      "q": "обложка на паспорт louis vuitton",
+      "cnt": 505
+    },
+    {
+      "q": "adcted",
+      "cnt": 482
+    },
+    {
+      "q": "creed aventus",
+      "cnt": 478
+    },
+    {
+      "q": "monster очки",
+      "cnt": 473
+    },
+    {
+      "q": "кроссовки nike",
+      "cnt": 471
+    },
+    {
+      "q": "dior backstage палетка хайлайтеров",
+      "cnt": 465
+    },
+    {
+      "q": "брюки алладины",
+      "cnt": 463
+    },
+    {
+      "q": "acne studios футболка",
+      "cnt": 457
+    },
+    {
+      "q": "chanel серьги",
+      "cnt": 439
+    },
+    {
+      "q": "скидки",
+      "cnt": 439
+    },
+    {
+      "q": "vivienne westwood",
+      "cnt": 436
+    },
+    {
+      "q": "кроссовки alexander mcqueen",
+      "cnt": 436
+    },
+    {
+      "q": "elisabetta franchi платье",
+      "cnt": 435
+    },
+    {
+      "q": "кожаные мюли",
+      "cnt": 434
+    },
+    {
+      "q": "сумка багет",
+      "cnt": 431
+    },
+    {
+      "q": "юбка летняя",
+      "cnt": 424
+    },
+    {
+      "q": "очки furla",
+      "cnt": 408
+    },
+    {
+      "q": "lanvin обувь",
+      "cnt": 400
+    },
+    {
+      "q": "blue de chanel",
+      "cnt": 399
+    },
+    {
+      "q": "dior серьги",
+      "cnt": 391
+    },
+    {
+      "q": "футболка поло мужская",
+      "cnt": 389
+    },
+    {
+      "q": "furla очки",
+      "cnt": 385
+    },
+    {
+      "q": "free age",
+      "cnt": 379
+    },
+    {
+      "q": "чехол на iphone 17 pro",
+      "cnt": 378
+    },
+    {
+      "q": "чайная пара",
+      "cnt": 374
+    },
+    {
+      "q": "coach сумка",
+      "cnt": 373
+    },
+    {
+      "q": "пляжные шлепки",
+      "cnt": 370
+    },
+    {
+      "q": "dr dr dr vranjes firenze firenze firenze диффузор",
+      "cnt": 366
+    },
+    {
+      "q": "тапочки hermes",
+      "cnt": 366
+    },
+    {
+      "q": "браслет hermes",
+      "cnt": 357
+    },
+    {
+      "q": "летние легкие платья",
+      "cnt": 343
+    },
+    {
+      "q": "juicy couture",
+      "cnt": 339
+    },
+    {
+      "q": "bleu de chanel",
+      "cnt": 338
+    },
+    {
+      "q": "сумка ведро",
+      "cnt": 337
+    },
+    {
+      "q": "louis vuitton imagination",
+      "cnt": 333
+    },
+    {
+      "q": "летние сапоги",
+      "cnt": 332
+    },
+    {
+      "q": "джинсы co стразами",
+      "cnt": 327
+    },
+    {
+      "q": "костюм брючный",
+      "cnt": 327
+    },
+    {
+      "q": "alo yoga легинсы",
+      "cnt": 325
+    },
+    {
+      "q": "лоре пьяно обувь",
+      "cnt": 323
+    },
+    {
+      "q": "sprayground одежда",
+      "cnt": 322
+    },
+    {
+      "q": "парфюм louis vuitton",
+      "cnt": 321
+    },
+    {
+      "q": "алладины",
+      "cnt": 317
+    },
+    {
+      "q": "пляжная обувь",
+      "cnt": 311
+    },
+    {
+      "q": "sprayground рюкзак",
+      "cnt": 310
+    },
+    {
+      "q": "крабик для волос",
+      "cnt": 308
+    },
+    {
+      "q": "кроссовки женские on",
+      "cnt": 307
+    },
+    {
+      "q": "givenchy обувь",
+      "cnt": 298
+    },
+    {
+      "q": "хром hearts",
+      "cnt": 297
+    },
+    {
+      "q": "botrois платье",
+      "cnt": 296
+    },
+    {
+      "q": "tous",
+      "cnt": 295
+    },
+    {
+      "q": "шлепки на каблуке",
+      "cnt": 295
+    },
+    {
+      "q": "женские пляжные шлепки",
+      "cnt": 293
+    },
+    {
+      "q": "flower mountains",
+      "cnt": 288
+    },
+    {
+      "q": "платья на выпускной",
+      "cnt": 287
+    },
+    {
+      "q": "love moschino",
+      "cnt": 287
+    },
+    {
+      "q": "рюкзак prada",
+      "cnt": 286
+    },
+    {
+      "q": "джинсы клеш",
+      "cnt": 286
+    },
+    {
+      "q": "умный купальник",
+      "cnt": 286
+    },
+    {
+      "q": "saint laurent косметика",
+      "cnt": 285
+    },
+    {
+      "q": "украшение на шею",
+      "cnt": 282
+    },
+    {
+      "q": "летний костюм",
+      "cnt": 281
+    },
+    {
+      "q": "шлепанцы пляжные",
+      "cnt": 279
+    }
+  ]
+}

@@ -1,0 +1,484 @@
+{
+  "partner": "TSUM",
+  "site_id": 203,
+  "period_days": 90,
+  "api": {
+    "key_suffix": "4208",
+    "strategy": "advanced_xname,zero_queries_predictor",
+    "note": "CH isZeroQuery ≠ API RESERVE: на impact-запросах API дал 0 ZERO, 356 RESERVE. CH zero-flag часто спорит с API (см. strategy_compare)."
+  },
+  "baselines_ch": {
+    "search_sessions_90d": 1761075,
+    "search_session_cvr_pct": 0.076,
+    "normal_session_cvr_pct": 0.083,
+    "normal_flag_cvr_pct": 0.083,
+    "normal_impact_top80_cvr_pct": 0.0663,
+    "zero_session_cvr_pct": 0.0,
+    "reserve_impact_top80_cvr_pct": 0.0,
+    "reserve_note": "Измерено в CH на top80 API-RESERVE: CVR=0%. В Δ RESERVE→точный: 0 → normal.",
+    "avg_check_search_rub": 100276.14,
+    "avg_check_site_rub": 110403.17,
+    "search_revenue_90d": 134670868.0,
+    "site_orders_90d": 15580,
+    "site_revenue_90d": 1720081481,
+    "site_cvr_pct": 0.257,
+    "caveat": "В CH к поиску атрибуцируется мало заказов (1.3k из 15.5k). Для Δ используем search-session CVR нормальных сессий (0.083%) и AOV поиска (~100k ₽) — это консервативно."
+  },
+  "impact_pool_api": {
+    "RESERVE": {
+      "queries": 356,
+      "searches_90d": 12789
+    },
+    "ZERO": {
+      "queries": 0,
+      "searches_90d": 0
+    },
+    "NORMAL": {
+      "queries": 1148,
+      "searches_90d": 305753
+    }
+  },
+  "formula": "ΔВыручка_90д = searches × fixable × (CVR_new − CVR_old) × AOV; месяц = /3. RESERVE→точный: CVR_measured(0%) → normal(0.083%). NORMAL→точный: +15…25% относительный lift на долю fixable. ZERO→найдено: 0 → 0.5×normal (консерв.).",
+  "strategy_compare_sample": [
+    {
+      "q": "кожаные мюли",
+      "cnt": 613,
+      "predictor": {
+        "totalHits": 847,
+        "zeroQueries": false,
+        "kind": "NORMAL"
+      },
+      "classic": {
+        "totalHits": 847,
+        "zeroQueries": false,
+        "kind": "NORMAL"
+      },
+      "ch_zero_pct": 70.8
+    },
+    {
+      "q": "мюли gucci",
+      "cnt": 463,
+      "predictor": {
+        "totalHits": 19,
+        "zeroQueries": false,
+        "kind": "NORMAL"
+      },
+      "classic": {
+        "totalHits": 19,
+        "zeroQueries": false,
+        "kind": "NORMAL"
+      },
+      "ch_zero_pct": 55.72
+    },
+    {
+      "q": "лоферы летние",
+      "cnt": 266,
+      "predictor": {
+        "totalHits": 1,
+        "zeroQueries": false,
+        "kind": "NORMAL"
+      },
+      "classic": {
+        "totalHits": 1,
+        "zeroQueries": false,
+        "kind": "NORMAL"
+      },
+      "ch_zero_pct": 95.49
+    },
+    {
+      "q": "олимпийка на молнии",
+      "cnt": 249,
+      "predictor": {
+        "totalHits": 2,
+        "zeroQueries": false,
+        "kind": "NORMAL"
+      },
+      "classic": {
+        "totalHits": 2,
+        "zeroQueries": false,
+        "kind": "NORMAL"
+      },
+      "ch_zero_pct": 85.54
+    },
+    {
+      "q": "поясная сумка gucci",
+      "cnt": 137,
+      "predictor": {
+        "totalHits": 3,
+        "zeroQueries": false,
+        "kind": "NORMAL"
+      },
+      "classic": {
+        "totalHits": 3,
+        "zeroQueries": false,
+        "kind": "NORMAL"
+      },
+      "ch_zero_pct": 56.93
+    },
+    {
+      "q": "туфли на маленьком каблуке",
+      "cnt": 111,
+      "predictor": {
+        "totalHits": 1,
+        "zeroQueries": false,
+        "kind": "NORMAL"
+      },
+      "classic": {
+        "totalHits": 1,
+        "zeroQueries": false,
+        "kind": "NORMAL"
+      },
+      "ch_zero_pct": 92.79
+    },
+    {
+      "q": "кружев",
+      "cnt": 92,
+      "predictor": {
+        "totalHits": 1,
+        "zeroQueries": false,
+        "kind": "NORMAL"
+      },
+      "classic": {
+        "totalHits": 1,
+        "zeroQueries": false,
+        "kind": "NORMAL"
+      },
+      "ch_zero_pct": 94.57
+    },
+    {
+      "q": "свитшот на молнии",
+      "cnt": 83,
+      "predictor": {
+        "totalHits": 12,
+        "zeroQueries": false,
+        "kind": "NORMAL"
+      },
+      "classic": {
+        "totalHits": 12,
+        "zeroQueries": false,
+        "kind": "NORMAL"
+      },
+      "ch_zero_pct": 90.36
+    },
+    {
+      "q": "футболка с капюшоном",
+      "cnt": 75,
+      "predictor": {
+        "totalHits": 3,
+        "zeroQueries": false,
+        "kind": "NORMAL"
+      },
+      "classic": {
+        "totalHits": 3,
+        "zeroQueries": false,
+        "kind": "NORMAL"
+      },
+      "ch_zero_pct": 64.0
+    },
+    {
+      "q": "пиджак в полоску",
+      "cnt": 70,
+      "predictor": {
+        "totalHits": 67,
+        "zeroQueries": false,
+        "kind": "NORMAL"
+      },
+      "classic": {
+        "totalHits": 67,
+        "zeroQueries": false,
+        "kind": "NORMAL"
+      },
+      "ch_zero_pct": 52.86
+    },
+    {
+      "q": "обувь женская лоферы туфли",
+      "cnt": 69,
+      "predictor": {
+        "totalHits": 1,
+        "zeroQueries": false,
+        "kind": "NORMAL"
+      },
+      "classic": {
+        "totalHits": 1,
+        "zeroQueries": false,
+        "kind": "NORMAL"
+      },
+      "ch_zero_pct": 100.0
+    },
+    {
+      "q": "пени лоферы",
+      "cnt": 69,
+      "predictor": {
+        "totalHits": 579,
+        "zeroQueries": false,
+        "kind": "NORMAL"
+      },
+      "classic": {
+        "totalHits": 579,
+        "zeroQueries": false,
+        "kind": "NORMAL"
+      },
+      "ch_zero_pct": 91.3
+    }
+  ],
+  "scenarios": {
+    "conservative": {
+      "label": "Консервативный",
+      "aov": 100276.14,
+      "reserve_fixable": 0.7,
+      "zero_fixable": 0.4,
+      "normal_fixable": 0.25,
+      "normal_relative_lift": 0.15,
+      "reserve_new_cvr": 0.00083,
+      "zero_new_cvr": 0.000415,
+      "calc": {
+        "reserve_delta_cvr_pp": 0.083,
+        "zero_delta_cvr_pp": 0.0415,
+        "normal_delta_cvr_pp": 0.0124,
+        "revenue_90d": {
+          "reserve_to_exact": 745093,
+          "zero_to_found": 0,
+          "normal_precision": 954284,
+          "total": 1699377
+        },
+        "revenue_month": {
+          "reserve_to_exact": 248364,
+          "zero_to_found": 0,
+          "normal_precision": 318095,
+          "total": 566459
+        },
+        "revenue_year": {
+          "total": 6797507
+        }
+      }
+    },
+    "base": {
+      "label": "Базовый (рекомендуем партнёру)",
+      "aov": 100276.14,
+      "reserve_fixable": 0.8,
+      "zero_fixable": 0.5,
+      "normal_fixable": 0.35,
+      "normal_relative_lift": 0.2,
+      "reserve_new_cvr": 0.00083,
+      "zero_new_cvr": 0.000415,
+      "calc": {
+        "reserve_delta_cvr_pp": 0.083,
+        "zero_delta_cvr_pp": 0.0415,
+        "normal_delta_cvr_pp": 0.0166,
+        "revenue_90d": {
+          "reserve_to_exact": 851535,
+          "zero_to_found": 0,
+          "normal_precision": 1781330,
+          "total": 2632865
+        },
+        "revenue_month": {
+          "reserve_to_exact": 283845,
+          "zero_to_found": 0,
+          "normal_precision": 593777,
+          "total": 877622
+        },
+        "revenue_year": {
+          "total": 10531460
+        }
+      }
+    },
+    "optimistic": {
+      "label": "Оптимистичный",
+      "aov": 110403.17,
+      "reserve_fixable": 0.9,
+      "zero_fixable": 0.6,
+      "normal_fixable": 0.45,
+      "normal_relative_lift": 0.25,
+      "reserve_new_cvr": 0.00083,
+      "zero_new_cvr": 0.00083,
+      "calc": {
+        "reserve_delta_cvr_pp": 0.083,
+        "zero_delta_cvr_pp": 0.083,
+        "normal_delta_cvr_pp": 0.0208,
+        "revenue_90d": {
+          "reserve_to_exact": 1054724,
+          "zero_to_found": 0,
+          "normal_precision": 3151976,
+          "total": 4206700
+        },
+        "revenue_month": {
+          "reserve_to_exact": 351575,
+          "zero_to_found": 0,
+          "normal_precision": 1050659,
+          "total": 1402233
+        },
+        "revenue_year": {
+          "total": 16826799
+        }
+      }
+    }
+  },
+  "top_reserve_queries_money_base": [
+    {
+      "q": "вьетнамки на каблуке",
+      "searches_90d": 783,
+      "searches_mo": 261.0,
+      "api_hits": 4273,
+      "family": "Обувь: каблук / платформа",
+      "delta_rub_mo": 17378
+    },
+    {
+      "q": "сумка багет",
+      "searches_90d": 465,
+      "searches_mo": 155.0,
+      "api_hits": 5490,
+      "family": "Тип сумки",
+      "delta_rub_mo": 10320
+    },
+    {
+      "q": "шлепки на каблуке",
+      "searches_90d": 305,
+      "searches_mo": 101.7,
+      "api_hits": 4273,
+      "family": "Обувь: каблук / платформа",
+      "delta_rub_mo": 6769
+    },
+    {
+      "q": "туфли на толстом каблуке",
+      "searches_90d": 275,
+      "searches_mo": 91.7,
+      "api_hits": 5020,
+      "family": "Обувь: каблук / платформа",
+      "delta_rub_mo": 6103
+    },
+    {
+      "q": "сумка кроссбоди",
+      "searches_90d": 214,
+      "searches_mo": 71.3,
+      "api_hits": 5486,
+      "family": "Тип сумки",
+      "delta_rub_mo": 4750
+    },
+    {
+      "q": "сабо без каблука",
+      "searches_90d": 203,
+      "searches_mo": 67.7,
+      "api_hits": 4684,
+      "family": "Обувь: каблук / платформа",
+      "delta_rub_mo": 4505
+    },
+    {
+      "q": "мюли мужские",
+      "searches_90d": 195,
+      "searches_mo": 65.0,
+      "api_hits": 10000,
+      "family": "Обувь: каблук / платформа",
+      "delta_rub_mo": 4328
+    },
+    {
+      "q": "босоножки co стразами",
+      "searches_90d": 183,
+      "searches_mo": 61.0,
+      "api_hits": 2067,
+      "family": "Обувь: каблук / платформа",
+      "delta_rub_mo": 4062
+    },
+    {
+      "q": "лоферы на платформе",
+      "searches_90d": 170,
+      "searches_mo": 56.7,
+      "api_hits": 1704,
+      "family": "Обувь: каблук / платформа",
+      "delta_rub_mo": 3773
+    },
+    {
+      "q": "босоножки на низком каблуке",
+      "searches_90d": 153,
+      "searches_mo": 51.0,
+      "api_hits": 7973,
+      "family": "Обувь: каблук / платформа",
+      "delta_rub_mo": 3396
+    },
+    {
+      "q": "мюли с закрытым носом",
+      "searches_90d": 140,
+      "searches_mo": 46.7,
+      "api_hits": 977,
+      "family": "Обувь: каблук / платформа",
+      "delta_rub_mo": 3107
+    },
+    {
+      "q": "лоре пьяно обувь лоферы",
+      "searches_90d": 139,
+      "searches_mo": 46.3,
+      "api_hits": 1753,
+      "family": "Обувь: каблук / платформа",
+      "delta_rub_mo": 3085
+    },
+    {
+      "q": "босоножки на маленьком каблуке",
+      "searches_90d": 134,
+      "searches_mo": 44.7,
+      "api_hits": 4196,
+      "family": "Обувь: каблук / платформа",
+      "delta_rub_mo": 2974
+    },
+    {
+      "q": "туфли в горошек",
+      "searches_90d": 123,
+      "searches_mo": 41.0,
+      "api_hits": 3757,
+      "family": "Принт / узор",
+      "delta_rub_mo": 2730
+    },
+    {
+      "q": "мюли через палец",
+      "searches_90d": 111,
+      "searches_mo": 37.0,
+      "api_hits": 961,
+      "family": "Обувь: каблук / платформа",
+      "delta_rub_mo": 2464
+    },
+    {
+      "q": "сабо на шпильке",
+      "searches_90d": 104,
+      "searches_mo": 34.7,
+      "api_hits": 757,
+      "family": "Обувь: каблук / платформа",
+      "delta_rub_mo": 2308
+    },
+    {
+      "q": "босоножки с камнями",
+      "searches_90d": 104,
+      "searches_mo": 34.7,
+      "api_hits": 1513,
+      "family": "Обувь: каблук / платформа",
+      "delta_rub_mo": 2308
+    },
+    {
+      "q": "замшевые лоферы летние",
+      "searches_90d": 100,
+      "searches_mo": 33.3,
+      "api_hits": 8686,
+      "family": "Обувь: каблук / платформа",
+      "delta_rub_mo": 2219
+    },
+    {
+      "q": "носки для лоферов",
+      "searches_90d": 98,
+      "searches_mo": 32.7,
+      "api_hits": 3771,
+      "family": "Обувь: каблук / платформа",
+      "delta_rub_mo": 2175
+    },
+    {
+      "q": "туфли каблук 6 см",
+      "searches_90d": 95,
+      "searches_mo": 31.7,
+      "api_hits": 1849,
+      "family": "Обувь: каблук / платформа",
+      "delta_rub_mo": 2108
+    }
+  ],
+  "partner_headline_base": {
+    "reserve_to_exact": 283845,
+    "zero_to_found": 0,
+    "normal_precision": 593777,
+    "total": 877622
+  }
+}
