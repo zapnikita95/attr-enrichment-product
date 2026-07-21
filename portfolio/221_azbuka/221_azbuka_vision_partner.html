@@ -3,153 +3,261 @@
 <head>
 <meta charset="utf-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Азбука Вкуса — атрибуты с картинок: value для партнёра</title>
+<title>Азбука Вкуса — атрибуты с картинок: спрос и value</title>
 <style>
 :root {
-  --bg:#f4f1ea; --ink:#1c1711; --muted:#6b5e52; --line:#ddd6cc;
-  --card:#fff; --accent:#1f6f4a; --warn:#9a4a1a; --ok:#1f6f4a;
+  --bg:#f7f4ef; --ink:#1a1510; --muted:#6a5d52; --line:#d9d1c6;
+  --card:#fff; --accent:#0f5c3c; --warn:#9a4a1a; --hi:#143d2a;
 }
 * { box-sizing:border-box; }
 body { margin:0; font:16px/1.5 "Segoe UI", system-ui, sans-serif; color:var(--ink); background:var(--bg); }
-.wrap { max-width:1100px; margin:0 auto; padding:36px 20px 90px; }
+.wrap { max-width:1120px; margin:0 auto; padding:36px 20px 90px; }
 h1 { font-size:30px; font-weight:700; letter-spacing:-0.02em; margin:0 0 10px; }
-h2 { font-size:21px; margin:42px 0 12px; color:var(--accent); }
-h3 { font-size:17px; margin:0 0 8px; }
-.lead { color:var(--muted); font-size:17px; max-width:760px; }
-.meta { margin:14px 0 26px; color:var(--muted); font-size:13px; }
-.tag { display:inline-block; background:#e7efe9; color:var(--accent); padding:3px 10px; font-size:12px; margin:0 6px 6px 0; border-radius:4px; }
-.grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(170px,1fr)); gap:12px; margin:18px 0; }
+h2 { font-size:22px; margin:44px 0 12px; color:var(--accent); border-bottom:2px solid #cfe0d5; padding-bottom:6px; }
+h3 { font-size:17px; margin:0 0 6px; color:var(--hi); }
+.lead { color:var(--muted); font-size:17px; max-width:820px; }
+.meta { margin:10px 0 18px; color:var(--muted); font-size:13px; }
+.tag { display:inline-block; background:#e4efe8; color:var(--accent); padding:3px 10px; font-size:12px; margin:0 6px 6px 0; border-radius:4px; }
+.grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(160px,1fr)); gap:12px; margin:18px 0; }
 .stat { background:var(--card); border:1px solid var(--line); padding:16px 14px; border-radius:8px; }
 .stat b { display:block; font-size:22px; font-weight:700; margin-bottom:4px; color:var(--accent); }
 .stat span { color:var(--muted); font-size:13px; }
 .callout { background:var(--card); border-left:4px solid var(--accent); padding:14px 16px; margin:18px 0; border-radius:0 8px 8px 0; }
 .callout.warn { border-left-color:var(--warn); }
-table { width:100%; border-collapse:collapse; background:var(--card); font-size:14px; }
+table { width:100%; border-collapse:collapse; background:var(--card); font-size:14px; margin:10px 0 18px; }
 th, td { border:1px solid var(--line); padding:8px 10px; text-align:left; vertical-align:top; }
 th { background:#efeae3; font-weight:600; }
-.num { text-align:right; font-variant-numeric:tabular-nums; }
+.num { text-align:right; font-variant-numeric:tabular-nums; white-space:nowrap; }
+.fam { background:var(--card); border:1px solid var(--line); border-radius:8px; padding:14px 16px; margin:14px 0; }
 .two { display:grid; grid-template-columns:1fr 1fr; gap:16px; }
 @media (max-width:800px) { .two { grid-template-columns:1fr; } }
 .case { display:grid; grid-template-columns:48px 180px 1fr; gap:14px; background:var(--card); border:1px solid var(--line); padding:14px; margin:12px 0; border-radius:8px; }
 .case-num { font-size:20px; font-weight:700; color:var(--accent); }
 .case-img img { width:180px; height:180px; object-fit:contain; background:#faf8f5; display:block; }
-.noimg { width:180px; height:180px; background:#eee; display:flex; align-items:center; justify-content:center; color:#999; font-size:12px; }
 .case-meta { font-size:12px; color:var(--muted); margin-bottom:4px; }
 .case-line { margin:0 0 6px; }
 @media (max-width:800px) {
   .case { grid-template-columns:1fr; }
-  .case-img img, .noimg { width:100%; height:auto; max-height:260px; }
+  .case-img img { width:100%; height:auto; max-height:260px; }
 }
 footer { margin-top:48px; color:var(--muted); font-size:12px; }
-ul.tight li { margin:4px 0; }
+ul.tight li { margin:5px 0; }
+.hirow { background:#f0f7f3; }
 </style>
 </head>
 <body>
 <div class="wrap">
-  <div class="tag">site_id 221 · Азбука Вкуса</div>
+  <div class="tag">site_id 221 · Азбука Вкуса (av.ru)</div>
   <div class="tag">vision → Dashboard · залито</div>
-  <div class="tag">+ оценка ₽</div>
-  <h1>Атрибуты с картинок: что дали и сколько это стоит</h1>
+  <div class="tag">как у ЦУМ: facet-спрос</div>
+  <h1>Атрибуты с картинок: пруфы спроса и влияние на поиск</h1>
   <p class="lead">
-    После текстового gold по описаниям — отдельный vision-стрим с упаковок.
-    На фото берём только <strong>позитивную поисковую лексику</strong> (форма выпуска, вкус-label, нарезка, технология).
-    «Без X / не содержит» сознательно <strong>не льём</strong> — ломает поиск.
+    Не «красивые лейблы», а <strong>прямые facet-запросы</strong> из поиска Diginetica за 90 дней —
+    сколько раз люди ищут форму выпуска, нарезку, hand cooked и т.д., и на какие ₽ это влияет после заливки.
   </p>
   <p class="meta">
-    Фид 66 259 SKU · vision-прогон 5457 офферов (фокус-категории) ·
-    OpenRouter <code>gemini-2.5-flash-lite</code> · заливка Dashboard 2464 строк /
-    1885 SKU · ClickHouse searches 90д · собрано 2026-07-21T13:27:01+00:00
+    Фид 66 259 SKU · vision 5 457 офферов · залито 2 464 строк /
+    ~1 885 SKU · источник спроса: ClickHouse <code>sessions.searches</code> · собрано 2026-07-21T13:54:32+00:00
   </p>
 
   <div class="grid">
-    <div class="stat"><b>2,464</b><span>строк атрибутов с картинок (залито)</span></div>
-    <div class="stat"><b>1,885</b><span>SKU с новыми vision-attrs</span></div>
-    <div class="stat"><b>3,213</b><span>запросов с матчем к vision-значениям</span></div>
-    <div class="stat"><b>171 583 ₽</b><span>стрим A · база Δ/мес (запросы)</span></div>
-    <div class="stat"><b>326 081 ₽</b><span>стрим A · оптимист Δ/мес</span></div>
-    <div class="stat"><b>+8 434 ₽…28 114 ₽</b><span>стрим B · доп. потенциал / мес</span></div>
+    <div class="stat"><b>9 284</b><span>прямых facet-поисков под vision-атрибуты / 90д</span></div>
+    <div class="stat"><b>1 873</b><span>уникальных формулировок</span></div>
+    <div class="stat"><b>476 247</b><span>всех поисков сайта / 90д</span></div>
+    <div class="stat"><b>158 403 ₽</b><span>стрим A · база Δ/мес (по facet-семьям)</span></div>
+    <div class="stat"><b>300 966 ₽</b><span>стрим A · оптимист Δ/мес</span></div>
+    <div class="stat"><b>179 207 ₽</b><span>text gold + vision A / мес</span></div>
   </div>
 
   <div class="callout">
-    <strong>Вывод для партнёра.</strong>
-    Текст из описаний уже закрывает вкус/ноты/рекомендации (~47.7k SKU, оценка ~20 804 ₽/мес).
-    Vision даёт <em>другой</em> слой: то, что видно на этикетке и слабо лежит в тексте —
-    «мельница», «дойпак», «hand cooked», «ломтики», вкус на пачке, которого нет в name.
-    Вместе: база text + vision A <strong>192 387 ₽/мес</strong>,
-    с upside B ещё <strong>+8 434 ₽…28 114 ₽</strong>.
-  </div>
-  <div class="callout warn">
-    <strong>Два денежных слоя (как в методологии ЦУМ / Attr Enrichment).</strong><br/>
-    <em>A — запросы:</em> уже идущий спрос, который лучше матчится после индексации attrs.<br/>
-    <em>B — выдача:</em> доп. потенциал — SKU с новыми attrs чаще попадают в SERP по категорийному спросу.
-    B сверху A, не вместо; полный A+B без оговорки завысит.
+    <strong>Главный вывод.</strong>
+    По поиску уже есть спрос на packshot-лексику: суммарно
+    <strong>9 284</strong> поисков / 90д по 8 KEEP-атрибутам
+    (топ — форма выпуска 4 396,
+    вкус-label, нарезка, способ обработки).
+    Vision заливает значения <em>с этикетки</em>, которых нет в name → эти запросы чаще получают точный матч.
   </div>
 
-  <h2>1. Что достали с картинок (KEEP → Dashboard)</h2>
+  <h2>1. Пруфы: какие атрибуты сколько ищут (как у ЦУМ)</h2>
+  <p class="meta">
+    Источник: ClickHouse Diginetica, siteId=221, 90 дней.
+    Считаем <em>прямые facet-формулировки</em> (мельница, пауч, hand cooked, ломтики, вяленые…),
+    не «масло» / «торт» как category head.
+    Всего поисков сайта: <strong>476 247</strong>;
+    top-50k запросов покрывают 437 979.
+  </p>
   <table>
-    <thead><tr><th>Атрибут</th><th>Строк</th><th>Зачем партнёру</th></tr></thead>
-    <tbody><tr><td>Форма выпуска</td><td class='num'>956</td><td>Поиск «мельница», «пауч», форма фасовки — редко в тексте</td></tr><tr><td>Вкус, Добавки</td><td class='num'>734</td><td>Label на пачке, которого нет в name (напр. brownie)</td></tr><tr><td>Тип упаковки</td><td class='num'>532</td><td>Дойпак / стекло для специй — фильтруемый признак</td></tr><tr><td>Технология приготовления</td><td class='num'>90</td><td>Hand cooked и аналоги с этикетки</td></tr><tr><td>Способ обработки</td><td class='num'>81</td><td>Засахаренные / сушка — позитивный OCR</td></tr><tr><td>Нарезка</td><td class='num'>58</td><td>Ломтики / кусочки — визуал + этикетка</td></tr><tr><td>Тип соуса</td><td class='num'>11</td><td>Pet: в соусе / в желе с пауча</td></tr><tr><td>Текстура корма</td><td class='num'>2</td><td>Pet: филе / паштет с этикетки</td></tr></tbody>
+    <thead>
+      <tr>
+        <th>Атрибут (KEEP)</th>
+        <th>Строк залито</th>
+        <th>Поисков / 90д</th>
+        <th>Уник. запросов</th>
+        <th>Примеры запросов</th>
+        <th>Δ ₽/мес (база)</th>
+      </tr>
+    </thead>
+    <tbody><tr><td>Форма выпуска</td><td class='num'>956</td><td class='num'>4 396</td><td class='num'>698</td><td>набор подарочный, кофе зерна, кофе молотый</td><td class='num'>105 714 ₽</td></tr><tr><td>Вкус, Добавки</td><td class='num'>734</td><td class='num'>3 256</td><td class='num'>590</td><td>пармезан, медовик, трюфель</td><td class='num'>13 442 ₽</td></tr><tr><td>Нарезка</td><td class='num'>58</td><td class='num'>810</td><td class='num'>296</td><td>сыр нарезка, нарезка, колбаса нарезка</td><td class='num'>19 479 ₽</td></tr><tr><td>Способ обработки</td><td class='num'>81</td><td class='num'>535</td><td class='num'>182</td><td>вяленые томаты, манго сушеное, томаты вяленые</td><td class='num'>12 866 ₽</td></tr><tr><td>Тип упаковки</td><td class='num'>532</td><td class='num'>256</td><td class='num'>91</td><td>боржоми стекло, вода san pellegrino сан пеллегрино минеральная газированная 0 25л стекло х 24 шт, вода стекло</td><td class='num'>6 156 ₽</td></tr><tr><td>Тип соуса</td><td class='num'>11</td><td class='num'>14</td><td class='num'>9</td><td>корм влажный felix аппетитные кусочки с индейкой в желе для взрослых кошек 85г, корм влажный вкусная миска для кошек с кроликом в соусе, корм влажный dingo сочные кусочки мяса с говядиной в желе для взрослых собак 850г</td><td class='num'>337 ₽</td></tr><tr><td>Технология приготовления</td><td class='num'>90</td><td class='num'>12</td><td class='num'>2</td><td>real handcooked, real hand cooked</td><td class='num'>289 ₽</td></tr><tr><td>Текстура корма</td><td class='num'>2</td><td class='num'>5</td><td class='num'>5</td><td>корм whiskas мини филе с говядиной для кошек 85г, корм pedigree паштет с курицей для щенков от 1 мес полнорационный 80г, паштет кошачий</td><td class='num'>120 ₽</td></tr></tbody>
+    <tfoot>
+      <tr class="hirow">
+        <td><strong>Итого facet</strong></td>
+        <td class="num"><strong>2 464</strong></td>
+        <td class="num"><strong>9 284</strong></td>
+        <td class="num"><strong>1 873</strong></td>
+        <td></td>
+        <td class="num"><strong>158 403 ₽</strong></td>
+      </tr>
+    </tfoot>
   </table>
 
-  <h2>2. С картинок доставать НЕ нужно</h2>
-  <p class="lead" style="font-size:15px">Уже в описаниях / фиде / ломает поиск — в rejected log, не в индекс.</p>
+  <h2>2. Что именно повлияет на поиск (attr → эффект)</h2>
+  <table>
+    <thead>
+      <tr>
+        <th>Атрибут</th>
+        <th>На что влияет в поиске</th>
+        <th>Спрос / 90д</th>
+        <th>Δ ₽/мес</th>
+        <th>Почему с картинки</th>
+      </tr>
+    </thead>
+    <tbody><tr><td><strong>Форма выпуска</strong></td><td>Поднимает точность выдачи по форме (мельница/пауч/зёрна) → меньше fallback</td><td class='num'>4 396</td><td class='num'>105 714 ₽</td><td>Форма фасовки с упаковки: мельница, пауч, зёрна, хлопья — редко в name</td></tr><tr><td><strong>Вкус, Добавки</strong></td><td>Label-вкус цепляет long-tail («чипсы brownie», «с трюфелем»)</td><td class='num'>3 256</td><td class='num'>13 442 ₽</td><td>Вкус/label с этикетки, которого нет в названии (brownie, чили…)</td></tr><tr><td><strong>Нарезка</strong></td><td>Уточнение формы нарезки в выдаче</td><td class='num'>810</td><td class='num'>19 479 ₽</td><td>Ломтики / кусочки / слайсы</td></tr><tr><td><strong>Способ обработки</strong></td><td>Запрос «вяленые / засахаренные» → SKU с OCR-атрибутом</td><td class='num'>535</td><td class='num'>12 866 ₽</td><td>Позитивный OCR: засахаренные, вяленые, сушёные</td></tr><tr><td><strong>Тип упаковки</strong></td><td>Фильтр/матч по таре — пользователь ищет «в стекле», «дойпак»</td><td class='num'>256</td><td class='num'>6 156 ₽</td><td>Тип тары как фильтр: дойпак, стекло, банка, саше</td></tr><tr><td><strong>Тип соуса</strong></td><td>Узкий pet-facet, но прямой матч</td><td class='num'>14</td><td class='num'>337 ₽</td><td>Pet: в соусе / в желе с пауча</td></tr><tr><td><strong>Технология приготовления</strong></td><td>Премиум-сигнал на чипсах/снеках — прямой facet</td><td class='num'>12</td><td class='num'>289 ₽</td><td>Hand cooked / kettle с этикетки</td></tr><tr><td><strong>Текстура корма</strong></td><td>Текстура корма как facet</td><td class='num'>5</td><td class='num'>120 ₽</td><td>Pet: филе / паштет / мусс с этикетки</td></tr></tbody>
+  </table>
+  <div class="callout warn">
+    <strong>Формула стрима A (как ЦУМ, но без Метрики CVR):</strong>
+    Δ = searches_facet × uplift × AOV.
+    Strong-сигналы (форма/нарезка/обработка): uplift ≈ 1.17 п.п. (½ от exact−fallback Digi study).
+    Вкус-label: uplift ≈ 0.2 п.п. (phrase × 25% attribution).
+    AOV = 6 193 ₽ из partner text-impact study 221.
+  </div>
+
+  <h2>3. База партнёра — Яндекс.Метрика</h2>
+  <div class="callout warn">
+    <strong>Метрика Diginetica для av.ru недоступна.</strong><br/>
+    В реестре Diginetica top50 для av.ru: has_metrika=false, counter_id=null. OAuth Метрики Digi (409 счётчиков) — совпадений av.ru / Азбука нет. Поэтому базу ecommerce и CVR берём из Diginetica CH + partner study (как для остальных no-metrika партнёров). Чтобы перейти на Метрику как у ЦУМ — нужен доступ партнёра к счётчику.<br/><br/>
+    Сайт отдаёт HTTP 450 на наш fetch (счётчик со страницы не снять).
+    У ЦУМ был counter <code>21801616</code> в OAuth Digi — у Азбуки такого нет.
+    <em>Нужен guest-доступ партнёра к счётчику Метрики</em> — тогда пересчитаем CVR/AOV/ecommerce 1:1 как в презе ЦУМ.
+  </div>
+  <p class="meta">Ниже — proxy-база из Diginetica ClickHouse (тот же период 90д), пока Метрики нет:</p>
+  <div class="grid">
+    <div class="stat"><b>476 247</b><span>поисков / 90д (CH)</span></div>
+    <div class="stat"><b>242 634</b><span>сессий с поиском</span></div>
+    <div class="stat"><b>35 575</b><span>заказов (withOrder)</span></div>
+    <div class="stat"><b>222 175 311 ₽</b><span>выручка / 90д (CH)</span></div>
+    <div class="stat"><b>6 193 ₽</b><span>AOV (partner study)</span></div>
+    <div class="stat"><b>—</b><span>CVR Метрики: нет доступа</span></div>
+  </div>
+
+  <h2>4. Разбор по атрибутам: запросы с частотами</h2>
+  
+      <div class="fam">
+        <h3>Форма выпуска · 4 396 поисков / 90д · 698 формулировок</h3>
+        <p class="meta">Форма фасовки с упаковки: мельница, пауч, зёрна, хлопья — редко в name · <em>Поднимает точность выдачи по форме (мельница/пауч/зёрна) → меньше fallback</em> · залито строк: 956 · оценка ~105 714 ₽/мес</p>
+        <table>
+          <thead><tr><th>Запрос (пример)</th><th>Поисков / 90д</th></tr></thead>
+          <tbody><tr><td>набор подарочный</td><td class='num'>496</td></tr><tr><td>кофе зерна</td><td class='num'>388</td></tr><tr><td>кофе молотый</td><td class='num'>289</td></tr><tr><td>хлопья</td><td class='num'>273</td></tr><tr><td>пюре</td><td class='num'>270</td></tr><tr><td>кофе в зернах</td><td class='num'>180</td></tr><tr><td>овсяные хлопья</td><td class='num'>140</td></tr><tr><td>картофельное пюре</td><td class='num'>126</td></tr></tbody>
+        </table>
+      </div>
+      <div class="fam">
+        <h3>Вкус, Добавки · 3 256 поисков / 90д · 590 формулировок</h3>
+        <p class="meta">Вкус/label с этикетки, которого нет в названии (brownie, чили…) · <em>Label-вкус цепляет long-tail («чипсы brownie», «с трюфелем»)</em> · залито строк: 734 · оценка ~13 442 ₽/мес</p>
+        <table>
+          <thead><tr><th>Запрос (пример)</th><th>Поисков / 90д</th></tr></thead>
+          <tbody><tr><td>пармезан</td><td class='num'>484</td></tr><tr><td>медовик</td><td class='num'>398</td></tr><tr><td>трюфель</td><td class='num'>294</td></tr><tr><td>бекон</td><td class='num'>153</td></tr><tr><td>торт медовик</td><td class='num'>125</td></tr><tr><td>сыр пармезан</td><td class='num'>87</td></tr><tr><td>конфеты трюфель</td><td class='num'>85</td></tr><tr><td>сыр с трюфелем</td><td class='num'>65</td></tr></tbody>
+        </table>
+      </div>
+      <div class="fam">
+        <h3>Нарезка · 810 поисков / 90д · 296 формулировок</h3>
+        <p class="meta">Ломтики / кусочки / слайсы · <em>Уточнение формы нарезки в выдаче</em> · залито строк: 58 · оценка ~19 479 ₽/мес</p>
+        <table>
+          <thead><tr><th>Запрос (пример)</th><th>Поисков / 90д</th></tr></thead>
+          <tbody><tr><td>сыр нарезка</td><td class='num'>98</td></tr><tr><td>нарезка</td><td class='num'>72</td></tr><tr><td>колбаса нарезка</td><td class='num'>34</td></tr><tr><td>нарезка мясная</td><td class='num'>31</td></tr><tr><td>слайсы</td><td class='num'>30</td></tr><tr><td>фруктовая нарезка</td><td class='num'>19</td></tr><tr><td>фрукты нарезка</td><td class='num'>14</td></tr><tr><td>сырная нарезка</td><td class='num'>11</td></tr></tbody>
+        </table>
+      </div>
+      <div class="fam">
+        <h3>Способ обработки · 535 поисков / 90д · 182 формулировок</h3>
+        <p class="meta">Позитивный OCR: засахаренные, вяленые, сушёные · <em>Запрос «вяленые / засахаренные» → SKU с OCR-атрибутом</em> · залито строк: 81 · оценка ~12 866 ₽/мес</p>
+        <table>
+          <thead><tr><th>Запрос (пример)</th><th>Поисков / 90д</th></tr></thead>
+          <tbody><tr><td>вяленые томаты</td><td class='num'>51</td></tr><tr><td>манго сушеное</td><td class='num'>34</td></tr><tr><td>томаты вяленые</td><td class='num'>22</td></tr><tr><td>грибы сушеные</td><td class='num'>22</td></tr><tr><td>рыба вяленая</td><td class='num'>18</td></tr><tr><td>абрикос сушеный</td><td class='num'>13</td></tr><tr><td>вяленые помидоры</td><td class='num'>11</td></tr><tr><td>грибы сушеные белые</td><td class='num'>10</td></tr></tbody>
+        </table>
+      </div>
+      <div class="fam">
+        <h3>Тип упаковки · 256 поисков / 90д · 91 формулировок</h3>
+        <p class="meta">Тип тары как фильтр: дойпак, стекло, банка, саше · <em>Фильтр/матч по таре — пользователь ищет «в стекле», «дойпак»</em> · залито строк: 532 · оценка ~6 156 ₽/мес</p>
+        <table>
+          <thead><tr><th>Запрос (пример)</th><th>Поисков / 90д</th></tr></thead>
+          <tbody><tr><td>боржоми стекло</td><td class='num'>39</td></tr><tr><td>вода san pellegrino сан пеллегрино минеральная газированная 0 25л стекло х 24 шт</td><td class='num'>14</td></tr><tr><td>вода стекло</td><td class='num'>12</td></tr><tr><td>вода baikal стекло</td><td class='num'>10</td></tr><tr><td>baikal стекло</td><td class='num'>9</td></tr><tr><td>саше</td><td class='num'>8</td></tr><tr><td>вода фьюджи fiuggi минеральная негазированная стекло 1 л 1 шт</td><td class='num'>6</td></tr><tr><td>напиток безалкогольный газированный bundaberg маракуйя bundaberg brewed drinks pty ltd 0 375л стеклянная бутылка австралия</td><td class='num'>6</td></tr></tbody>
+        </table>
+      </div>
+      <div class="fam">
+        <h3>Тип соуса · 14 поисков / 90д · 9 формулировок</h3>
+        <p class="meta">Pet: в соусе / в желе с пауча · <em>Узкий pet-facet, но прямой матч</em> · залито строк: 11 · оценка ~337 ₽/мес</p>
+        <table>
+          <thead><tr><th>Запрос (пример)</th><th>Поисков / 90д</th></tr></thead>
+          <tbody><tr><td>корм влажный felix аппетитные кусочки с индейкой в желе для взрослых кошек 85г</td><td class='num'>3</td></tr><tr><td>корм влажный вкусная миска для кошек с кроликом в соусе</td><td class='num'>2</td></tr><tr><td>корм влажный dingo сочные кусочки мяса с говядиной в желе для взрослых собак 850г</td><td class='num'>2</td></tr><tr><td>корм katty pro с курицей в соусе для стерилизованных кошек</td><td class='num'>2</td></tr><tr><td>корм влажный kitekat с кроликом в соусе для кошек 85г</td><td class='num'>1</td></tr><tr><td>корм влажный pedigree с говядиной в соусе для собак</td><td class='num'>1</td></tr><tr><td>консервы stuzzy dog с говядиной в соусе для собак 100г</td><td class='num'>1</td></tr><tr><td>корм влажный mr buffalo нежный цыпленок в соусе для котят 85г</td><td class='num'>1</td></tr></tbody>
+        </table>
+      </div>
+      <div class="fam">
+        <h3>Технология приготовления · 12 поисков / 90д · 2 формулировок</h3>
+        <p class="meta">Hand cooked / kettle с этикетки · <em>Премиум-сигнал на чипсах/снеках — прямой facet</em> · залито строк: 90 · оценка ~289 ₽/мес</p>
+        <table>
+          <thead><tr><th>Запрос (пример)</th><th>Поисков / 90д</th></tr></thead>
+          <tbody><tr><td>real handcooked</td><td class='num'>9</td></tr><tr><td>real hand cooked</td><td class='num'>3</td></tr></tbody>
+        </table>
+      </div>
+      <div class="fam">
+        <h3>Текстура корма · 5 поисков / 90д · 5 формулировок</h3>
+        <p class="meta">Pet: филе / паштет / мусс с этикетки · <em>Текстура корма как facet</em> · залито строк: 2 · оценка ~120 ₽/мес</p>
+        <table>
+          <thead><tr><th>Запрос (пример)</th><th>Поисков / 90д</th></tr></thead>
+          <tbody><tr><td>корм whiskas мини филе с говядиной для кошек 85г</td><td class='num'>1</td></tr><tr><td>корм pedigree паштет с курицей для щенков от 1 мес полнорационный 80г</td><td class='num'>1</td></tr><tr><td>паштет кошачий</td><td class='num'>1</td></tr><tr><td>паштет brit воздушный говядина для стерилизованных кошек 100г</td><td class='num'>1</td></tr><tr><td>корм влажный katty pro паштет с говядиной и печень для взрослых кошек 75г</td><td class='num'>1</td></tr></tbody>
+        </table>
+      </div>
+
+  <h2>5. Что достали с картинок (KEEP → Dashboard)</h2>
+  <table>
+    <thead><tr><th>Атрибут</th><th>Строк</th><th>Зачем</th></tr></thead>
+    <tbody><tr><td>Форма выпуска</td><td class='num'>956</td><td>Форма фасовки с упаковки: мельница, пауч, зёрна, хлопья — редко в name</td></tr><tr><td>Вкус, Добавки</td><td class='num'>734</td><td>Вкус/label с этикетки, которого нет в названии (brownie, чили…)</td></tr><tr><td>Тип упаковки</td><td class='num'>532</td><td>Тип тары как фильтр: дойпак, стекло, банка, саше</td></tr><tr><td>Технология приготовления</td><td class='num'>90</td><td>Hand cooked / kettle с этикетки</td></tr><tr><td>Способ обработки</td><td class='num'>81</td><td>Позитивный OCR: засахаренные, вяленые, сушёные</td></tr><tr><td>Нарезка</td><td class='num'>58</td><td>Ломтики / кусочки / слайсы</td></tr><tr><td>Тип соуса</td><td class='num'>11</td><td>Pet: в соусе / в желе с пауча</td></tr><tr><td>Текстура корма</td><td class='num'>2</td><td>Pet: филе / паштет / мусс с этикетки</td></tr></tbody>
+  </table>
+
+  <h2>6. С картинок доставать НЕ нужно</h2>
   <table>
     <thead><tr><th>Класс</th><th>Почему skip</th></tr></thead>
-    <tbody><tr><td>Ноты аромата / вкус и послевкусие / характер вкуса</td><td>Уже массово в text gold (~1–2k строк на имя); с фото модель выдумывает</td></tr><tr><td>Рекомендации по применению / подаче</td><td>Текст описаний; на packshot обычно нет</td></tr><tr><td>КБЖУ, срок годности, температура хранения</td><td>Уже в YML params почти на всех SKU</td></tr><tr><td>Бренд / вес / страна / vendor</td><td>В name + params; коллизия с фидом</td></tr><tr><td>Апелласьон / регион / сорт винограда</td><td>Сильные params фида (тысячи заполнений)</td></tr><tr><td>Не содержит / без X / MSG-free / Non-GMO / БЗМЖ</td><td>Негация ломает поиск («сахар»→товар без сахара); rejected CSV</td></tr><tr><td>Тип обработки из описания (охлаждённый, сырокопчёный…)</td><td>Часто уже в text gold / name — не дублировать с фото</td></tr><tr><td>Product-only lifestyle (мясо на доске, торт на тарелке)</td><td>OCR=0; vision бесполезен</td></tr></tbody>
-  </table>
-
-  <h2>3. База партнёра (ClickHouse, 90 дней)</h2>
-  <div class="grid">
-    <div class="stat"><b>476,247</b><span>поисков за 90 дней</span></div>
-    <div class="stat"><b>242,634</b><span>сессий с поиском</span></div>
-    <div class="stat"><b>222 175 311 ₽</b><span>выручка с заказами (90д, CH)</span></div>
-    <div class="stat"><b>6 193 ₽</b><span>AOV (из partner study)</span></div>
-  </div>
-
-  <h2>4. Деньги: vision-стрим</h2>
-  <div class="two">
-    <div>
-      <h3>Стрим A — запросы</h3>
-      <table>
-        <tr><th>Сценарий</th><th>₽/мес</th><th>₽/год</th></tr>
-        <tr><td>Базовый (консерв.)</td><td class="num">171 583 ₽</td><td class="num">2 059 002 ₽</td></tr>
-        <tr><td>Оптимистичный</td><td class="num">326 081 ₽</td><td class="num">3 912 968 ₽</td></tr>
-      </table>
-      <p class="meta">Матч (строгий): 3213 запросов · объём 34,561 поисков / 90д
-      (strong-сигналы 1,451 + phrase 33,110).
-      Без head-nouns вроде «торт/молоко». Uplift: strong 50% от (exact−fallback=2.33 п.п.); phrase +0.8 п.п. AOV=6,193 ₽.</p>
-    </div>
-    <div>
-      <h3>Стрим B — доп. потенциал выдачи</h3>
-      <table>
-        <tr><th>Сценарий</th><th>₽/мес</th></tr>
-        <tr><td>Conservative</td><td class="num">8 434 ₽</td></tr>
-        <tr><td>Optimistic</td><td class="num">28 114 ₽</td></tr>
-      </table>
-      <p class="meta">Гипотеза catalog→SERP по хвосту спроса на vision-лексику. Не суммировать 1:1 с A.</p>
-    </div>
-  </div>
-
-  <h2>5. Стек value: text + vision</h2>
-  <table>
-    <thead><tr><th>Стрим</th><th>Источник</th><th>₽/мес (база)</th><th>Статус</th></tr></thead>
     <tbody>
-      <tr><td>Text gold</td><td>описания → custom attrs</td><td class="num">20 804 ₽</td><td>изучено / к заливке</td></tr>
-      <tr><td>Vision KEEP</td><td>упаковка → OCR/visual</td><td class="num">171 583 ₽</td><td><strong>залито в Dashboard</strong></td></tr>
-      <tr><td><strong>Итого база</strong></td><td>text + vision A</td><td class="num"><strong>192 387 ₽</strong></td><td>без стрима B</td></tr>
-      <tr><td>+ upside B</td><td>catalog visibility</td><td class="num">+8 434 ₽…28 114 ₽</td><td>опционально</td></tr>
+      <tr><td>Ноты аромата / вкус и послевкусие</td><td>Уже в text gold; с фото модель выдумывает</td></tr>
+      <tr><td>КБЖУ, срок, температура</td><td>Уже в YML params</td></tr>
+      <tr><td>Бренд / вес / страна</td><td>Коллизия с фидом</td></tr>
+      <tr><td>Не содержит / без X / -free</td><td>Негация ломает поиск — только rejected CSV</td></tr>
+      <tr><td>Вино: апелласьон / сорт</td><td>Сильные params фида</td></tr>
     </tbody>
   </table>
 
-  <h2>6. Запросы, которые цепляют vision-значения</h2>
-  <table>
-    <thead><tr><th>Запрос</th><th>Частота 90д</th><th>Совпавшие значения</th><th>Атрибут</th></tr></thead>
-    <tbody><tr><td>масло сливочное</td><td class='num'>752</td><td>сливочное традиционное</td><td>Вкус, Добавки</td></tr><tr><td>оливковое масло</td><td class='num'>581</td><td>оливковое масло, оливковое масло и перец чили</td><td>Вкус, Добавки</td></tr><tr><td>набор пирожных</td><td class='num'>497</td><td>подарочный набор, набор</td><td>Форма выпуска</td></tr><tr><td>набор подарочный</td><td class='num'>496</td><td>подарочный набор, подарочный набор, набор</td><td>Форма выпуска</td></tr><tr><td>икра красная</td><td class='num'>405</td><td>красная икра, боровая матка, красная щетка, красная смородина</td><td>Вкус, Добавки</td></tr><tr><td>кофе зерна</td><td class='num'>388</td><td>зерна</td><td>Форма выпуска</td></tr><tr><td>черная икра</td><td class='num'>364</td><td>куркума, имбирь, черная смородина, лукума, перец черный</td><td>Вкус, Добавки</td></tr><tr><td>кофе молотый</td><td class='num'>289</td><td>молотый</td><td>Форма выпуска</td></tr><tr><td>хлопья</td><td class='num'>273</td><td>хлопья</td><td>Форма выпуска</td></tr><tr><td>подарочный пакет</td><td class='num'>272</td><td>подарочный набор, подарочный набор</td><td>Форма выпуска</td></tr><tr><td>пюре</td><td class='num'>270</td><td>суп-пюре, мясное пюре с икрой японского тунца, яблочное пюре</td><td>Форма выпуска</td></tr><tr><td>чай черный</td><td class='num'>240</td><td>морская соль и черный перец, черный перец и чеснок, черный перец</td><td>Вкус, Добавки</td></tr><tr><td>пирожное картошка</td><td class='num'>234</td><td>пирожное</td><td>Форма выпуска</td></tr><tr><td>бумажные полотенца</td><td class='num'>224</td><td>бумажные листы</td><td>Форма выпуска</td></tr><tr><td>шоколадные конфеты</td><td class='num'>216</td><td>конфеты, шоколадные пралине с дробленым фундуком</td><td>Форма выпуска</td></tr><tr><td>яйца куриные</td><td class='num'>207</td><td>Куриные</td><td>Вкус, Добавки</td></tr><tr><td>масло оливковое</td><td class='num'>204</td><td>оливковое масло, оливковое масло и перец чили</td><td>Вкус, Добавки</td></tr><tr><td>печень трески</td><td class='num'>202</td><td>Кролик и печень, Говядина-печень-горошек</td><td>Вкус, Добавки</td></tr><tr><td>кофе в зернах</td><td class='num'>180</td><td>в зернах</td><td>Форма выпуска</td></tr><tr><td>клубника свежая</td><td class='num'>176</td><td>клубника, ананас, клубника, мандарин, дыня, клубника и земляника</td><td>Вкус, Добавки</td></tr><tr><td>салфетки бумажные</td><td class='num'>170</td><td>бумажные листы</td><td>Форма выпуска</td></tr><tr><td>сок апельсиновый</td><td class='num'>161</td><td>Апельсин</td><td>Вкус, Добавки</td></tr><tr><td>сыр козий</td><td class='num'>155</td><td>козий сыр и карамелизированный лук, козий</td><td>Вкус, Добавки</td></tr><tr><td>миндальное молоко</td><td class='num'>152</td><td>миндаль</td><td>Вкус, Добавки</td></tr><tr><td>чай зеленый</td><td class='num'>151</td><td>зелёный болгарский перец, синий баклажан, зеленый овощной перец, зеленый лук</td><td>Вкус, Добавки</td></tr></tbody>
-  </table>
+  <h2>7. Деньги: vision + text</h2>
+  <div class="two">
+    <div>
+      <h3>Стрим A — facet-запросы</h3>
+      <table>
+        <tr><th>Сценарий</th><th>₽/мес</th><th>₽/год</th></tr>
+        <tr><td>Базовый (facet families)</td><td class="num">158 403 ₽</td><td class="num">1 900 836 ₽</td></tr>
+        <tr><td>Оптимистичный (~1.9×)</td><td class="num">300 966 ₽</td><td class="num">3 611 588 ₽</td></tr>
+      </table>
+    </div>
+    <div>
+      <h3>Стек</h3>
+      <table>
+        <tr><th>Стрим</th><th>₽/мес</th></tr>
+        <tr><td>Text gold</td><td class="num">20 804 ₽</td></tr>
+        <tr><td>Vision KEEP (A)</td><td class="num">158 403 ₽</td></tr>
+        <tr class="hirow"><td><strong>Итого база</strong></td><td class="num"><strong>179 207 ₽</strong></td></tr>
+        <tr><td>+ upside B (выдача)</td><td class="num">+7 920 ₽…23 760 ₽</td></tr>
+      </table>
+    </div>
+  </div>
 
-  <h2>7. Примеры с фото</h2>
-  
-<div class="case">
+  <h2>8. Примеры с фото</h2>
+  <div class="case">
   <div class="case-num">01</div>
   <div class="case-img"><img src="https://images.av.ru/av.ru/product/h1f/hc1/9069596606494.jpg" alt="" loading="lazy"/></div>
   <div>
@@ -230,18 +338,17 @@ ul.tight li { margin:4px 0; }
   </div>
 </div>
 
-  <h2>8. Что сделать дальше</h2>
+  <h2>9. Что нужно от партнёра</h2>
   <ul class="tight">
-    <li>Дождаться переиндексации feed-attribute / FIT после заливки vision.</li>
+    <li><strong>Доступ к Яндекс.Метрике av.ru</strong> (guest / представитель) — пересчитать §3 и CVR как у ЦУМ.</li>
+    <li>Дождаться переиндексации feed-attribute после заливки vision.</li>
     <li>Не заливать негации из <code>221_azbuka_vision_rejected.csv</code>.</li>
-    <li>Расширить vision на оставшуюся молочку/напитки (сейчас сэмпл) — там же packshot-uplift.</li>
-    <li>Склеить с text-deck: партнёру одна история «описания + этикетка».</li>
   </ul>
 
   <footer>
-    Методология: Attr Enrichment / MONEY_TWO_STREAMS_TEMPLATE · конверсия order из partner study 221
-    (exact 14.10% / fallback 11.77%) ·
-    файлы: <code>221_azbuka_vision_dashboard_upload.csv</code>, <code>vision_partner_money.json</code>
+    Пруфы запросов: Diginetica ClickHouse site 221 · 90д · facet families в
+    <code>vision_facet_demand.json</code>.
+    Метрика: недоступна Digi (has_metrika=false). Методология денег: MONEY_TWO_STREAMS + uplift из partner study 221.
   </footer>
 </div>
 </body>
