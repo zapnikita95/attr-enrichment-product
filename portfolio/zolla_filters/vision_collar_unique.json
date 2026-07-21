@@ -1,0 +1,176 @@
+{
+  "attr_id": "collar",
+  "model": "google/gemma-3-4b-it",
+  "n": 5,
+  "coerced_ok": 5,
+  "coerced_rate": 1.0,
+  "expected_n": 5,
+  "expected_match": 4,
+  "expected_match_rate": 0.8,
+  "ood_or_fail": 0,
+  "rows": [
+    {
+      "offer_id": "38537",
+      "name": "Утеплённый тренчкот с воротником-стойкой",
+      "attr_id": "collar",
+      "model": "google/gemma-3-4b-it",
+      "elapsed_s": 4.18,
+      "error": null,
+      "raw_text": "```json\n{\n  \"attr_id\": \"collar\",\n  \"value\": \"стойка\",\n  \"confidence\": 95,\n  \"evidence\": \"На модели присутствует воротник-стойка.\"\n}\n```",
+      "parsed": {
+        "attr_id": "collar",
+        "value": "стойка",
+        "confidence": 95,
+        "evidence": "На модели присутствует воротник-стойка."
+      },
+      "raw_value": "стойка",
+      "coerced_ok": true,
+      "coerced_value": "стойка",
+      "coerce_reason": "",
+      "mapped_from": "",
+      "lurex_verify": null,
+      "expected": "стойка",
+      "match_expected": true,
+      "confidence": 95,
+      "evidence": "На модели присутствует воротник-стойка.",
+      "local_image": "C:\\Users\\1\\OneDrive\\Desktop\\image_description-main\\projects\\Zolla\\image_cache\\842673822a485caeb8ac0f0f.jpg",
+      "picture_url": "https://zolla.com/upload/iplm/images/goods/011335239304_9900.jpg",
+      "picture_key": "https://zolla.com/upload/iplm/images/goods/011335239304_9900.jpg",
+      "member_offer_ids": [
+        "38537"
+      ],
+      "group_size": 1
+    },
+    {
+      "offer_id": "38399",
+      "name": "Джемпер с воротником-стойкой",
+      "attr_id": "collar",
+      "model": "google/gemma-3-4b-it",
+      "elapsed_s": 4.1,
+      "error": null,
+      "raw_text": "```json\n{\n  \"attr_id\": \"collar\",\n  \"value\": \"стойка\",\n  \"confidence\": 95,\n  \"evidence\": \"На модели воротник-стойка\"\n}\n```",
+      "parsed": {
+        "attr_id": "collar",
+        "value": "стойка",
+        "confidence": 95,
+        "evidence": "На модели воротник-стойка"
+      },
+      "raw_value": "стойка",
+      "coerced_ok": true,
+      "coerced_value": "стойка",
+      "coerce_reason": "",
+      "mapped_from": "",
+      "lurex_verify": null,
+      "expected": "стойка",
+      "match_expected": true,
+      "confidence": 95,
+      "evidence": "На модели воротник-стойка",
+      "local_image": "C:\\Users\\1\\OneDrive\\Desktop\\image_description-main\\projects\\Zolla\\image_cache\\167646e98424d626ed131f3c.jpg",
+      "picture_url": "https://zolla.com/upload/iplm/images/goods/021346149362_91M0.jpg",
+      "picture_key": "https://zolla.com/upload/iplm/images/goods/021346149362_91M0.jpg",
+      "member_offer_ids": [
+        "38399"
+      ],
+      "group_size": 1
+    },
+    {
+      "offer_id": "38376",
+      "name": "Тёплое пальто с воротником-стойкой",
+      "attr_id": "collar",
+      "model": "google/gemma-3-4b-it",
+      "elapsed_s": 3.63,
+      "error": null,
+      "raw_text": "```json\n{\n  \"attr_id\": \"collar\",\n  \"value\": \"стойка\",\n  \"confidence\": 95,\n  \"evidence\": \"На модели присутствует воротник-стойка.\"\n}\n```",
+      "parsed": {
+        "attr_id": "collar",
+        "value": "стойка",
+        "confidence": 95,
+        "evidence": "На модели присутствует воротник-стойка."
+      },
+      "raw_value": "стойка",
+      "coerced_ok": true,
+      "coerced_value": "стойка",
+      "coerce_reason": "",
+      "mapped_from": "",
+      "lurex_verify": null,
+      "expected": "стойка",
+      "match_expected": true,
+      "confidence": 95,
+      "evidence": "На модели присутствует воротник-стойка.",
+      "local_image": "C:\\Users\\1\\OneDrive\\Desktop\\image_description-main\\projects\\Zolla\\image_cache\\4ba09ebd835cf6e96edaf37c.jpg",
+      "picture_url": "https://zolla.com/upload/iplm/images/goods/021345202144_9100.jpg",
+      "picture_key": "https://zolla.com/upload/iplm/images/goods/021345202144_9100.jpg",
+      "member_offer_ids": [
+        "38376"
+      ],
+      "group_size": 1
+    },
+    {
+      "offer_id": "39484",
+      "name": "Тёплое пальто с воротником-стойкой",
+      "attr_id": "collar",
+      "model": "google/gemma-3-4b-it",
+      "elapsed_s": 3.52,
+      "error": null,
+      "raw_text": "```json\n{\n  \"attr_id\": \"collar\",\n  \"value\": \"стойка\",\n  \"confidence\": 95,\n  \"evidence\": \"На изображении виден воротник-стойка.\"\n}\n```",
+      "parsed": {
+        "attr_id": "collar",
+        "value": "стойка",
+        "confidence": 95,
+        "evidence": "На изображении виден воротник-стойка."
+      },
+      "raw_value": "стойка",
+      "coerced_ok": true,
+      "coerced_value": "стойка",
+      "coerce_reason": "",
+      "mapped_from": "",
+      "lurex_verify": null,
+      "expected": "стойка",
+      "match_expected": true,
+      "confidence": 95,
+      "evidence": "На изображении виден воротник-стойка.",
+      "local_image": "C:\\Users\\1\\OneDrive\\Desktop\\image_description-main\\projects\\Zolla\\image_cache\\23507522fd30ed4323eba403.jpg",
+      "picture_url": "https://zolla.com/upload/iplm/images/goods/011335839014_95J0.jpg",
+      "picture_key": "https://zolla.com/upload/iplm/images/goods/011335839014_95J0.jpg",
+      "member_offer_ids": [
+        "39484"
+      ],
+      "group_size": 1
+    },
+    {
+      "offer_id": "177548",
+      "name": "Футболка из хлопка на кулиске",
+      "attr_id": "collar",
+      "model": "google/gemma-3-4b-it",
+      "elapsed_s": 3.14,
+      "error": null,
+      "raw_text": "```json\n{\n  \"attr_id\": \"collar\",\n  \"value\": \"отложной\",\n  \"confidence\": 95,\n  \"evidence\": \"На фотографии виден отложной воротник.\"\n}\n```",
+      "parsed": {
+        "attr_id": "collar",
+        "value": "отложной",
+        "confidence": 95,
+        "evidence": "На фотографии виден отложной воротник."
+      },
+      "raw_value": "отложной",
+      "coerced_ok": true,
+      "coerced_value": "отложной",
+      "coerce_reason": "",
+      "mapped_from": "",
+      "lurex_verify": null,
+      "expected": "круглый",
+      "match_expected": false,
+      "confidence": 95,
+      "evidence": "На фотографии виден отложной воротник.",
+      "local_image": "C:\\Users\\1\\OneDrive\\Desktop\\image_description-main\\projects\\Zolla\\image_cache\\c79cdd1e8024380657a976e7.jpg",
+      "picture_url": "https://zolla.com/upload/iplm/images/goods/022253273153_51S0.jpg",
+      "picture_key": "https://zolla.com/upload/iplm/images/goods/022253273153_51S0.jpg",
+      "member_offer_ids": [
+        "177548",
+        "177549",
+        "177550",
+        "177551"
+      ],
+      "group_size": 4
+    }
+  ]
+}

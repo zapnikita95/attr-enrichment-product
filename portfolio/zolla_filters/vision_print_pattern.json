@@ -1,149 +1,156 @@
 {
   "attr_id": "print_pattern",
-  "model": "google/gemini-2.5-flash",
-  "n": 9,
-  "coerced_ok": 9,
-  "coerced_rate": 1.0,
-  "expected_n": 9,
+  "model": "google/gemini-2.5-flash-lite",
+  "n": 12,
+  "coerced_ok": 11,
+  "coerced_rate": 0.917,
+  "expected_n": 11,
   "expected_match": 9,
-  "expected_match_rate": 1.0,
-  "ood_or_fail": 0,
+  "expected_match_rate": 0.818,
+  "ood_or_fail": 1,
   "rows": [
     {
       "offer_id": "96863",
       "name": "control lurex_jumper_96863.jpg",
       "attr_id": "print_pattern",
-      "model": "google/gemini-2.5-flash",
-      "elapsed_s": 3.81,
+      "model": "google/gemini-2.5-flash-lite",
+      "elapsed_s": 3.08,
       "error": null,
-      "raw_text": "```json\n{\n  \"attr_id\": \"print_pattern\",\n  \"value\": \"меланж\",\n  \"confidence\": 100,\n  \"evidence\": \"смесь нитей разных цветов создает меланжевый эффект\"\n}\n```",
+      "raw_text": "```json\n{\n  \"attr_id\": \"print_pattern\",\n  \"value\": \"меланж\",\n  \"confidence\": 90,\n  \"evidence\": \"светлая пряжа с вкраплениями темных нитей, без явного блеска\"\n}\n```",
       "parsed": {
         "attr_id": "print_pattern",
         "value": "меланж",
-        "confidence": 100,
-        "evidence": "смесь нитей разных цветов создает меланжевый эффект"
+        "confidence": 90,
+        "evidence": "светлая пряжа с вкраплениями темных нитей, без явного блеска"
       },
       "raw_value": "меланж",
       "coerced_ok": true,
       "coerced_value": "меланж",
       "coerce_reason": "",
       "mapped_from": "",
-      "lurex_verify": {
-        "model": "google/gemini-2.5-flash-lite",
-        "parsed": {
-          "has_lurex": false,
-          "confidence": 100
-        },
-        "raw": "```json\n{\"has_lurex\": false, \"confidence\": 100}\n```"
-      },
+      "lurex_verify": null,
       "expected": "меланж",
       "match_expected": true,
-      "confidence": 100,
-      "evidence": "смесь нитей разных цветов создает меланжевый эффект",
+      "confidence": 90,
+      "evidence": "светлая пряжа с вкраплениями темных нитей, без явного блеска",
       "local_image": "C:\\Users\\1\\OneDrive\\Desktop\\image_description-main\\_audit_samples\\zolla_pattern\\lurex_jumper_96863.jpg",
-      "picture_url": ""
+      "picture_url": "",
+      "picture_key": "__local__:C:\\Users\\1\\OneDrive\\Desktop\\image_description-main\\_audit_samples\\zolla_pattern\\lurex_jumper_96863.jpg",
+      "member_offer_ids": [
+        "96863"
+      ],
+      "group_size": 1,
+      "propagated": false,
+      "propagated_from": null
     },
     {
       "offer_id": "96705",
       "name": "control cardigan_96705.jpg",
       "attr_id": "print_pattern",
-      "model": "google/gemini-2.5-flash",
-      "elapsed_s": 3.67,
+      "model": "google/gemini-2.5-flash-lite",
+      "elapsed_s": 3.52,
       "error": null,
-      "raw_text": "```json\n{\n  \"attr_id\": \"print_pattern\",\n  \"value\": \"меланж\",\n  \"confidence\": 100,\n  \"evidence\": \"На кардигане видна матовая смесь цветов пряжи, характерная для меланжа.\"\n}\n```",
+      "raw_text": "```json\n{\n  \"attr_id\": \"print_pattern\",\n  \"value\": \"меланж\",\n  \"confidence\": 90,\n  \"evidence\": \"Светлая пряжа с вкраплениями более темных нитей, создающая эффект меланжа.\"\n}\n```",
       "parsed": {
         "attr_id": "print_pattern",
         "value": "меланж",
-        "confidence": 100,
-        "evidence": "На кардигане видна матовая смесь цветов пряжи, характерная для меланжа."
+        "confidence": 90,
+        "evidence": "Светлая пряжа с вкраплениями более темных нитей, создающая эффект меланжа."
       },
       "raw_value": "меланж",
       "coerced_ok": true,
       "coerced_value": "меланж",
       "coerce_reason": "",
       "mapped_from": "",
-      "lurex_verify": {
-        "model": "google/gemini-2.5-flash-lite",
-        "parsed": {
-          "has_lurex": false,
-          "confidence": 100
-        },
-        "raw": "{\"has_lurex\": false, \"confidence\": 100}"
-      },
+      "lurex_verify": null,
       "expected": "меланж",
       "match_expected": true,
-      "confidence": 100,
-      "evidence": "На кардигане видна матовая смесь цветов пряжи, характерная для меланжа.",
+      "confidence": 90,
+      "evidence": "Светлая пряжа с вкраплениями более темных нитей, создающая эффект меланжа.",
       "local_image": "C:\\Users\\1\\OneDrive\\Desktop\\image_description-main\\_audit_samples\\zolla_pattern\\cardigan_96705.jpg",
-      "picture_url": ""
+      "picture_url": "",
+      "picture_key": "__local__:C:\\Users\\1\\OneDrive\\Desktop\\image_description-main\\_audit_samples\\zolla_pattern\\cardigan_96705.jpg",
+      "member_offer_ids": [
+        "96705"
+      ],
+      "group_size": 1,
+      "propagated": false,
+      "propagated_from": null
     },
     {
       "offer_id": "94603",
       "name": "control socks_94603.jpg",
       "attr_id": "print_pattern",
-      "model": "google/gemini-2.5-flash",
-      "elapsed_s": 3.85,
+      "model": "google/gemini-2.5-flash-lite",
+      "elapsed_s": 3.7,
       "error": null,
-      "raw_text": "```json\n{\n  \"attr_id\": \"print_pattern\",\n  \"value\": \"графика\",\n  \"confidence\": 100,\n  \"evidence\": \"На носках изображены олени и снежинки, что является графическим принтом.\"\n}\n```",
+      "raw_text": "```json\n{\n  \"attr_id\": \"print_pattern\",\n  \"value\": \"меланж\",\n  \"confidence\": 90,\n  \"evidence\": \"серый меланжевый фон с красным узором в виде снежинок и аппликацией оленя\"\n}\n```",
       "parsed": {
         "attr_id": "print_pattern",
-        "value": "графика",
-        "confidence": 100,
-        "evidence": "На носках изображены олени и снежинки, что является графическим принтом."
+        "value": "меланж",
+        "confidence": 90,
+        "evidence": "серый меланжевый фон с красным узором в виде снежинок и аппликацией оленя"
       },
-      "raw_value": "графика",
+      "raw_value": "меланж",
       "coerced_ok": true,
-      "coerced_value": "графика",
+      "coerced_value": "меланж",
       "coerce_reason": "",
       "mapped_from": "",
       "lurex_verify": null,
       "expected": "графика",
-      "match_expected": true,
-      "confidence": 100,
-      "evidence": "На носках изображены олени и снежинки, что является графическим принтом.",
+      "match_expected": false,
+      "confidence": 90,
+      "evidence": "серый меланжевый фон с красным узором в виде снежинок и аппликацией оленя",
       "local_image": "C:\\Users\\1\\OneDrive\\Desktop\\image_description-main\\_audit_samples\\zolla_pattern\\socks_94603.jpg",
-      "picture_url": ""
+      "picture_url": "",
+      "picture_key": "__local__:C:\\Users\\1\\OneDrive\\Desktop\\image_description-main\\_audit_samples\\zolla_pattern\\socks_94603.jpg",
+      "member_offer_ids": [
+        "94603"
+      ],
+      "group_size": 1,
+      "propagated": false,
+      "propagated_from": null
     },
     {
       "offer_id": "100889",
       "name": "control maybe_lurex_100889.jpg",
       "attr_id": "print_pattern",
-      "model": "google/gemini-2.5-flash",
-      "elapsed_s": 3.33,
+      "model": "google/gemini-2.5-flash-lite",
+      "elapsed_s": 2.56,
       "error": null,
-      "raw_text": "```json\n{\n  \"attr_id\": \"print_pattern\",\n  \"value\": \"меланж\",\n  \"confidence\": 90,\n  \"evidence\": \"На свитере видна неоднородная текстура, характерная для меланжевой пряжи, без явного блеска люрекса.\"\n}\n```",
+      "raw_text": "```json\n{\n  \"attr_id\": \"print_pattern\",\n  \"value\": \"люрекс\",\n  \"confidence\": 90,\n  \"evidence\": \"На ткани видны блестящие нити\"\n}\n```",
       "parsed": {
         "attr_id": "print_pattern",
-        "value": "меланж",
+        "value": "люрекс",
         "confidence": 90,
-        "evidence": "На свитере видна неоднородная текстура, характерная для меланжевой пряжи, без явного блеска люрекса."
+        "evidence": "На ткани видны блестящие нити"
       },
-      "raw_value": "меланж+lurex_verify",
+      "raw_value": "люрекс",
       "coerced_ok": true,
       "coerced_value": "люрекс",
       "coerce_reason": "",
       "mapped_from": "",
-      "lurex_verify": {
-        "model": "google/gemini-2.5-flash-lite",
-        "parsed": {
-          "has_lurex": true,
-          "confidence": 95
-        },
-        "raw": "```json\n{\"has_lurex\": true, \"confidence\": 95}\n```"
-      },
+      "lurex_verify": null,
       "expected": "люрекс",
       "match_expected": true,
       "confidence": 90,
-      "evidence": "На свитере видна неоднородная текстура, характерная для меланжевой пряжи, без явного блеска люрекса.",
+      "evidence": "На ткани видны блестящие нити",
       "local_image": "C:\\Users\\1\\OneDrive\\Desktop\\image_description-main\\_audit_samples\\zolla_pattern\\maybe_lurex_100889.jpg",
-      "picture_url": ""
+      "picture_url": "",
+      "picture_key": "__local__:C:\\Users\\1\\OneDrive\\Desktop\\image_description-main\\_audit_samples\\zolla_pattern\\maybe_lurex_100889.jpg",
+      "member_offer_ids": [
+        "100889"
+      ],
+      "group_size": 1,
+      "propagated": false,
+      "propagated_from": null
     },
     {
       "offer_id": "101742",
       "name": "control maybe_lurex_101742.jpg",
       "attr_id": "print_pattern",
-      "model": "google/gemini-2.5-flash",
-      "elapsed_s": 4.12,
+      "model": "google/gemini-2.5-flash-lite",
+      "elapsed_s": 3.43,
       "error": null,
       "raw_text": "```json\n{\n  \"attr_id\": \"print_pattern\",\n  \"value\": \"однотонный\",\n  \"confidence\": 100,\n  \"evidence\": \"свитер однотонный, без узоров и принтов\"\n}\n```",
       "parsed": {
@@ -157,34 +164,34 @@
       "coerced_value": "однотонный",
       "coerce_reason": "",
       "mapped_from": "",
-      "lurex_verify": {
-        "model": "google/gemini-2.5-flash-lite",
-        "parsed": {
-          "has_lurex": false,
-          "confidence": 100
-        },
-        "raw": "{\"has_lurex\": false, \"confidence\": 100}"
-      },
+      "lurex_verify": null,
       "expected": "однотонный",
       "match_expected": true,
       "confidence": 100,
       "evidence": "свитер однотонный, без узоров и принтов",
       "local_image": "C:\\Users\\1\\OneDrive\\Desktop\\image_description-main\\_audit_samples\\zolla_pattern\\maybe_lurex_101742.jpg",
-      "picture_url": ""
+      "picture_url": "",
+      "picture_key": "__local__:C:\\Users\\1\\OneDrive\\Desktop\\image_description-main\\_audit_samples\\zolla_pattern\\maybe_lurex_101742.jpg",
+      "member_offer_ids": [
+        "101742"
+      ],
+      "group_size": 1,
+      "propagated": false,
+      "propagated_from": null
     },
     {
       "offer_id": "177548",
       "name": "Футболка из хлопка на кулиске",
       "attr_id": "print_pattern",
-      "model": "google/gemini-2.5-flash",
-      "elapsed_s": 3.32,
+      "model": "google/gemini-2.5-flash-lite",
+      "elapsed_s": 4.18,
       "error": null,
-      "raw_text": "```json\n{\n  \"attr_id\": \"print_pattern\",\n  \"value\": \"полоска\",\n  \"confidence\": 100,\n  \"evidence\": \"На футболке четко видны горизонтальные полоски.\"\n}\n```",
+      "raw_text": "```json\n{\n  \"attr_id\": \"print_pattern\",\n  \"value\": \"полоска\",\n  \"confidence\": 100,\n  \"evidence\": \"На футболке видны горизонтальные полоски голубого и белого цветов.\"\n}\n```",
       "parsed": {
         "attr_id": "print_pattern",
         "value": "полоска",
         "confidence": 100,
-        "evidence": "На футболке четко видны горизонтальные полоски."
+        "evidence": "На футболке видны горизонтальные полоски голубого и белого цветов."
       },
       "raw_value": "полоска",
       "coerced_ok": true,
@@ -195,23 +202,34 @@
       "expected": "полоска",
       "match_expected": true,
       "confidence": 100,
-      "evidence": "На футболке четко видны горизонтальные полоски.",
+      "evidence": "На футболке видны горизонтальные полоски голубого и белого цветов.",
       "local_image": "C:\\Users\\1\\OneDrive\\Desktop\\image_description-main\\projects\\Zolla\\image_cache\\c79cdd1e8024380657a976e7.jpg",
-      "picture_url": "https://zolla.com/upload/iplm/images/goods/022253273153_51S0.jpg"
+      "picture_url": "https://zolla.com/upload/iplm/images/goods/022253273153_51S0.jpg",
+      "picture_key": "https://zolla.com/upload/iplm/images/goods/022253273153_51S0.jpg",
+      "member_offer_ids": [
+        "177548",
+        "177549",
+        "177550",
+        "177551",
+        "177552"
+      ],
+      "group_size": 5,
+      "propagated": false,
+      "propagated_from": null
     },
     {
       "offer_id": "177549",
       "name": "Футболка из хлопка на кулиске",
       "attr_id": "print_pattern",
-      "model": "google/gemini-2.5-flash",
-      "elapsed_s": 3.46,
+      "model": "google/gemini-2.5-flash-lite",
+      "elapsed_s": 4.18,
       "error": null,
-      "raw_text": "```json\n{\n  \"attr_id\": \"print_pattern\",\n  \"value\": \"полоска\",\n  \"confidence\": 100,\n  \"evidence\": \"На футболке четко видны горизонтальные полоски.\"\n}\n```",
+      "raw_text": "```json\n{\n  \"attr_id\": \"print_pattern\",\n  \"value\": \"полоска\",\n  \"confidence\": 100,\n  \"evidence\": \"На футболке видны горизонтальные полоски голубого и белого цветов.\"\n}\n```",
       "parsed": {
         "attr_id": "print_pattern",
         "value": "полоска",
         "confidence": 100,
-        "evidence": "На футболке четко видны горизонтальные полоски."
+        "evidence": "На футболке видны горизонтальные полоски голубого и белого цветов."
       },
       "raw_value": "полоска",
       "coerced_ok": true,
@@ -222,23 +240,34 @@
       "expected": "полоска",
       "match_expected": true,
       "confidence": 100,
-      "evidence": "На футболке четко видны горизонтальные полоски.",
+      "evidence": "На футболке видны горизонтальные полоски голубого и белого цветов.",
       "local_image": "C:\\Users\\1\\OneDrive\\Desktop\\image_description-main\\projects\\Zolla\\image_cache\\c79cdd1e8024380657a976e7.jpg",
-      "picture_url": "https://zolla.com/upload/iplm/images/goods/022253273153_51S0.jpg"
+      "picture_url": "https://zolla.com/upload/iplm/images/goods/022253273153_51S0.jpg",
+      "picture_key": "https://zolla.com/upload/iplm/images/goods/022253273153_51S0.jpg",
+      "member_offer_ids": [
+        "177548",
+        "177549",
+        "177550",
+        "177551",
+        "177552"
+      ],
+      "group_size": 5,
+      "propagated": true,
+      "propagated_from": "177548"
     },
     {
       "offer_id": "177550",
       "name": "Футболка из хлопка на кулиске",
       "attr_id": "print_pattern",
-      "model": "google/gemini-2.5-flash",
-      "elapsed_s": 3.83,
+      "model": "google/gemini-2.5-flash-lite",
+      "elapsed_s": 4.18,
       "error": null,
-      "raw_text": "```json\n{\n  \"attr_id\": \"print_pattern\",\n  \"value\": \"полоска\",\n  \"confidence\": 100,\n  \"evidence\": \"На футболке четко видны горизонтальные полоски.\"\n}\n```",
+      "raw_text": "```json\n{\n  \"attr_id\": \"print_pattern\",\n  \"value\": \"полоска\",\n  \"confidence\": 100,\n  \"evidence\": \"На футболке видны горизонтальные полоски голубого и белого цветов.\"\n}\n```",
       "parsed": {
         "attr_id": "print_pattern",
         "value": "полоска",
         "confidence": 100,
-        "evidence": "На футболке четко видны горизонтальные полоски."
+        "evidence": "На футболке видны горизонтальные полоски голубого и белого цветов."
       },
       "raw_value": "полоска",
       "coerced_ok": true,
@@ -249,23 +278,34 @@
       "expected": "полоска",
       "match_expected": true,
       "confidence": 100,
-      "evidence": "На футболке четко видны горизонтальные полоски.",
+      "evidence": "На футболке видны горизонтальные полоски голубого и белого цветов.",
       "local_image": "C:\\Users\\1\\OneDrive\\Desktop\\image_description-main\\projects\\Zolla\\image_cache\\c79cdd1e8024380657a976e7.jpg",
-      "picture_url": "https://zolla.com/upload/iplm/images/goods/022253273153_51S0.jpg"
+      "picture_url": "https://zolla.com/upload/iplm/images/goods/022253273153_51S0.jpg",
+      "picture_key": "https://zolla.com/upload/iplm/images/goods/022253273153_51S0.jpg",
+      "member_offer_ids": [
+        "177548",
+        "177549",
+        "177550",
+        "177551",
+        "177552"
+      ],
+      "group_size": 5,
+      "propagated": true,
+      "propagated_from": "177548"
     },
     {
       "offer_id": "177551",
       "name": "Футболка из хлопка на кулиске",
       "attr_id": "print_pattern",
-      "model": "google/gemini-2.5-flash",
-      "elapsed_s": 3.12,
+      "model": "google/gemini-2.5-flash-lite",
+      "elapsed_s": 4.18,
       "error": null,
-      "raw_text": "```json\n{\n  \"attr_id\": \"print_pattern\",\n  \"value\": \"полоска\",\n  \"confidence\": 100,\n  \"evidence\": \"На футболке четко видны горизонтальные полоски.\"\n}\n```",
+      "raw_text": "```json\n{\n  \"attr_id\": \"print_pattern\",\n  \"value\": \"полоска\",\n  \"confidence\": 100,\n  \"evidence\": \"На футболке видны горизонтальные полоски голубого и белого цветов.\"\n}\n```",
       "parsed": {
         "attr_id": "print_pattern",
         "value": "полоска",
         "confidence": 100,
-        "evidence": "На футболке четко видны горизонтальные полоски."
+        "evidence": "На футболке видны горизонтальные полоски голубого и белого цветов."
       },
       "raw_value": "полоска",
       "coerced_ok": true,
@@ -276,9 +316,712 @@
       "expected": "полоска",
       "match_expected": true,
       "confidence": 100,
-      "evidence": "На футболке четко видны горизонтальные полоски.",
+      "evidence": "На футболке видны горизонтальные полоски голубого и белого цветов.",
       "local_image": "C:\\Users\\1\\OneDrive\\Desktop\\image_description-main\\projects\\Zolla\\image_cache\\c79cdd1e8024380657a976e7.jpg",
-      "picture_url": "https://zolla.com/upload/iplm/images/goods/022253273153_51S0.jpg"
+      "picture_url": "https://zolla.com/upload/iplm/images/goods/022253273153_51S0.jpg",
+      "picture_key": "https://zolla.com/upload/iplm/images/goods/022253273153_51S0.jpg",
+      "member_offer_ids": [
+        "177548",
+        "177549",
+        "177550",
+        "177551",
+        "177552"
+      ],
+      "group_size": 5,
+      "propagated": true,
+      "propagated_from": "177548"
+    },
+    {
+      "offer_id": "177552",
+      "name": "Футболка из хлопка на кулиске",
+      "attr_id": "print_pattern",
+      "model": "google/gemini-2.5-flash-lite",
+      "elapsed_s": 4.18,
+      "error": null,
+      "raw_text": "```json\n{\n  \"attr_id\": \"print_pattern\",\n  \"value\": \"полоска\",\n  \"confidence\": 100,\n  \"evidence\": \"На футболке видны горизонтальные полоски голубого и белого цветов.\"\n}\n```",
+      "parsed": {
+        "attr_id": "print_pattern",
+        "value": "полоска",
+        "confidence": 100,
+        "evidence": "На футболке видны горизонтальные полоски голубого и белого цветов."
+      },
+      "raw_value": "полоска",
+      "coerced_ok": true,
+      "coerced_value": "полоска",
+      "coerce_reason": "",
+      "mapped_from": "",
+      "lurex_verify": null,
+      "expected": "полоска",
+      "match_expected": true,
+      "confidence": 100,
+      "evidence": "На футболке видны горизонтальные полоски голубого и белого цветов.",
+      "local_image": "C:\\Users\\1\\OneDrive\\Desktop\\image_description-main\\projects\\Zolla\\image_cache\\c79cdd1e8024380657a976e7.jpg",
+      "picture_url": "https://zolla.com/upload/iplm/images/goods/022253273153_51S0.jpg",
+      "picture_key": "https://zolla.com/upload/iplm/images/goods/022253273153_51S0.jpg",
+      "member_offer_ids": [
+        "177548",
+        "177549",
+        "177550",
+        "177551",
+        "177552"
+      ],
+      "group_size": 5,
+      "propagated": true,
+      "propagated_from": "177548"
+    },
+    {
+      "offer_id": "18781",
+      "name": "Трусы",
+      "attr_id": "print_pattern",
+      "model": "google/gemini-2.5-flash-lite",
+      "elapsed_s": 3.4,
+      "error": null,
+      "raw_text": "```json\n[\n  {\n    \"attr_id\": \"print_pattern\",\n    \"value\": \"полоска\",\n    \"confidence\": 100,\n    \"evidence\": \"верхние трусы в сине-бело-красную полоску\"\n  },\n  {\n    \"attr_id\": \"print_pattern\",\n    \"value\": \"геометрия\",\n    \"confidence\": 100,\n    \"evidence\": \"нижние трусы с принтом в виде парусников\"\n  }\n]\n```",
+      "parsed": {
+        "_list": [
+          {
+            "attr_id": "print_pattern",
+            "value": "полоска",
+            "confidence": 100,
+            "evidence": "верхние трусы в сине-бело-красную полоску"
+          },
+          {
+            "attr_id": "print_pattern",
+            "value": "геометрия",
+            "confidence": 100,
+            "evidence": "нижние трусы с принтом в виде парусников"
+          }
+        ]
+      },
+      "raw_value": null,
+      "coerced_ok": false,
+      "coerced_value": null,
+      "coerce_reason": "empty",
+      "mapped_from": "",
+      "lurex_verify": null,
+      "expected": "полоска",
+      "match_expected": null,
+      "confidence": null,
+      "evidence": null,
+      "local_image": "C:\\Users\\1\\OneDrive\\Desktop\\image_description-main\\projects\\Zolla\\image_cache\\5a8b5bcd48e713415134c464.jpg",
+      "picture_url": "https://zolla.com/upload/iblock/68c/lagoxma1g4heez99l1n05y9sodgh4r5b.jpg",
+      "picture_key": "https://zolla.com/upload/iblock/68c/lagoxma1g4heez99l1n05y9sodgh4r5b.jpg",
+      "member_offer_ids": [
+        "18781"
+      ],
+      "group_size": 1,
+      "propagated": false,
+      "propagated_from": null
+    },
+    {
+      "offer_id": "9675",
+      "name": "Платье",
+      "attr_id": "print_pattern",
+      "model": "google/gemini-2.5-flash-lite",
+      "elapsed_s": 2.91,
+      "error": null,
+      "raw_text": "```json\n{\n  \"attr_id\": \"print_pattern\",\n  \"value\": \"полоска\",\n  \"confidence\": 100,\n  \"evidence\": \"на ткани видны вертикальные черные полосы на белом фоне\"\n}\n```",
+      "parsed": {
+        "attr_id": "print_pattern",
+        "value": "полоска",
+        "confidence": 100,
+        "evidence": "на ткани видны вертикальные черные полосы на белом фоне"
+      },
+      "raw_value": "полоска",
+      "coerced_ok": true,
+      "coerced_value": "полоска",
+      "coerce_reason": "",
+      "mapped_from": "",
+      "lurex_verify": null,
+      "expected": "полоска",
+      "match_expected": true,
+      "confidence": 100,
+      "evidence": "на ткани видны вертикальные черные полосы на белом фоне",
+      "local_image": "C:\\Users\\1\\OneDrive\\Desktop\\image_description-main\\projects\\Zolla\\image_cache\\63cd7465f18fc54accba4651.jpg",
+      "picture_url": "https://zolla.com/upload/iplm/images/goods/020248230773_01P0_3.jpg",
+      "picture_key": "https://zolla.com/upload/iplm/images/goods/020248230773_01P0_3.jpg",
+      "member_offer_ids": [
+        "9675"
+      ],
+      "group_size": 1,
+      "propagated": false,
+      "propagated_from": null
+    },
+    {
+      "offer_id": "6877",
+      "name": "Блузка с  длинными рукавами",
+      "attr_id": "print_pattern",
+      "model": "google/gemini-2.5-flash-lite",
+      "elapsed_s": 3.68,
+      "error": null,
+      "raw_text": "```json\n{\n  \"attr_id\": \"print_pattern\",\n  \"value\": \"полоска\",\n  \"confidence\": 100,\n  \"evidence\": \"На блузке виден вертикальный узор в виде полосок черного и белого цветов.\"\n}\n```",
+      "parsed": {
+        "attr_id": "print_pattern",
+        "value": "полоска",
+        "confidence": 100,
+        "evidence": "На блузке виден вертикальный узор в виде полосок черного и белого цветов."
+      },
+      "raw_value": "полоска",
+      "coerced_ok": true,
+      "coerced_value": "полоска",
+      "coerce_reason": "",
+      "mapped_from": "",
+      "lurex_verify": null,
+      "expected": "полоска",
+      "match_expected": true,
+      "confidence": 100,
+      "evidence": "На блузке виден вертикальный узор в виде полосок черного и белого цветов.",
+      "local_image": "C:\\Users\\1\\OneDrive\\Desktop\\image_description-main\\projects\\Zolla\\image_cache\\e3fe7d1b364a30fcb82aa1ca.jpg",
+      "picture_url": "https://zolla.com/upload/iplm/images/goods/02021114Y153_99P0.jpg",
+      "picture_key": "https://zolla.com/upload/iplm/images/goods/02021114Y153_99P0.jpg",
+      "member_offer_ids": [
+        "6877"
+      ],
+      "group_size": 1,
+      "propagated": false,
+      "propagated_from": null
+    },
+    {
+      "offer_id": "15873",
+      "name": "Футболка без рукавов",
+      "attr_id": "print_pattern",
+      "model": "google/gemini-2.5-flash-lite",
+      "elapsed_s": 2.57,
+      "error": null,
+      "raw_text": "```json\n{\n  \"attr_id\": \"print_pattern\",\n  \"value\": \"полоска\",\n  \"confidence\": 100,\n  \"evidence\": \"Вертикальные полоски на футболке.\"\n}\n```",
+      "parsed": {
+        "attr_id": "print_pattern",
+        "value": "полоска",
+        "confidence": 100,
+        "evidence": "Вертикальные полоски на футболке."
+      },
+      "raw_value": "полоска",
+      "coerced_ok": true,
+      "coerced_value": "полоска",
+      "coerce_reason": "",
+      "mapped_from": "",
+      "lurex_verify": null,
+      "expected": "полоска",
+      "match_expected": true,
+      "confidence": 100,
+      "evidence": "Вертикальные полоски на футболке.",
+      "local_image": "C:\\Users\\1\\OneDrive\\Desktop\\image_description-main\\projects\\Zolla\\image_cache\\ea3e20449ca04664d78e2d87.jpg",
+      "picture_url": "https://zolla.com/upload/iplm/images/goods/021233326111_10S0.jpg",
+      "picture_key": "https://zolla.com/upload/iplm/images/goods/021233326111_10S0.jpg",
+      "member_offer_ids": [
+        "15873"
+      ],
+      "group_size": 1,
+      "propagated": false,
+      "propagated_from": null
+    },
+    {
+      "offer_id": "9609",
+      "name": "Футболка с короткими  рукавами",
+      "attr_id": "print_pattern",
+      "model": "google/gemini-2.5-flash-lite",
+      "elapsed_s": 3.2,
+      "error": null,
+      "raw_text": "```json\n{\n  \"attr_id\": \"print_pattern\",\n  \"value\": \"клетка\",\n  \"confidence\": 90,\n  \"evidence\": \"Видны пересекающиеся полосы, образующие клетчатый узор.\"\n}\n```",
+      "parsed": {
+        "attr_id": "print_pattern",
+        "value": "клетка",
+        "confidence": 90,
+        "evidence": "Видны пересекающиеся полосы, образующие клетчатый узор."
+      },
+      "raw_value": "клетка",
+      "coerced_ok": true,
+      "coerced_value": "клетка",
+      "coerce_reason": "",
+      "mapped_from": "",
+      "lurex_verify": null,
+      "expected": "полоска",
+      "match_expected": false,
+      "confidence": 90,
+      "evidence": "Видны пересекающиеся полосы, образующие клетчатый узор.",
+      "local_image": "C:\\Users\\1\\OneDrive\\Desktop\\image_description-main\\projects\\Zolla\\image_cache\\650005f68c1c46773ebbcab2.jpg",
+      "picture_url": "https://zolla.com/upload/iplm/images/goods/220233273433_01A0.jpg",
+      "picture_key": "https://zolla.com/upload/iplm/images/goods/220233273433_01A0.jpg",
+      "member_offer_ids": [
+        "9609"
+      ],
+      "group_size": 1,
+      "propagated": false,
+      "propagated_from": null
+    },
+    {
+      "offer_id": "7145",
+      "name": "Брюки длинные",
+      "attr_id": "print_pattern",
+      "model": "google/gemini-2.5-flash-lite",
+      "elapsed_s": 2.81,
+      "error": null,
+      "raw_text": "```json\n{\n  \"attr_id\": \"print_pattern\",\n  \"value\": \"полоска\",\n  \"confidence\": 100,\n  \"evidence\": \"на ткани видны тонкие вертикальные полоски\"\n}\n```",
+      "parsed": {
+        "attr_id": "print_pattern",
+        "value": "полоска",
+        "confidence": 100,
+        "evidence": "на ткани видны тонкие вертикальные полоски"
+      },
+      "raw_value": "полоска",
+      "coerced_ok": true,
+      "coerced_value": "полоска",
+      "coerce_reason": "",
+      "mapped_from": "",
+      "lurex_verify": null,
+      "expected": "полоска",
+      "match_expected": true,
+      "confidence": 100,
+      "evidence": "на ткани видны тонкие вертикальные полоски",
+      "local_image": "C:\\Users\\1\\OneDrive\\Desktop\\image_description-main\\projects\\Zolla\\image_cache\\05ccd4e19cdac97e31c310f9.jpg",
+      "picture_url": "https://zolla.com/upload/iplm/images/goods/020217372342_1900.jpg",
+      "picture_key": "https://zolla.com/upload/iplm/images/goods/020217372342_1900.jpg",
+      "member_offer_ids": [
+        "7145",
+        "7146"
+      ],
+      "group_size": 2,
+      "propagated": false,
+      "propagated_from": null
+    },
+    {
+      "offer_id": "7146",
+      "name": "Брюки длинные",
+      "attr_id": "print_pattern",
+      "model": "google/gemini-2.5-flash-lite",
+      "elapsed_s": 2.81,
+      "error": null,
+      "raw_text": "```json\n{\n  \"attr_id\": \"print_pattern\",\n  \"value\": \"полоска\",\n  \"confidence\": 100,\n  \"evidence\": \"на ткани видны тонкие вертикальные полоски\"\n}\n```",
+      "parsed": {
+        "attr_id": "print_pattern",
+        "value": "полоска",
+        "confidence": 100,
+        "evidence": "на ткани видны тонкие вертикальные полоски"
+      },
+      "raw_value": "полоска",
+      "coerced_ok": true,
+      "coerced_value": "полоска",
+      "coerce_reason": "",
+      "mapped_from": "",
+      "lurex_verify": null,
+      "expected": "полоска",
+      "match_expected": true,
+      "confidence": 100,
+      "evidence": "на ткани видны тонкие вертикальные полоски",
+      "local_image": "C:\\Users\\1\\OneDrive\\Desktop\\image_description-main\\projects\\Zolla\\image_cache\\05ccd4e19cdac97e31c310f9.jpg",
+      "picture_url": "https://zolla.com/upload/iplm/images/goods/020217372342_1900.jpg",
+      "picture_key": "https://zolla.com/upload/iplm/images/goods/020217372342_1900.jpg",
+      "member_offer_ids": [
+        "7145",
+        "7146"
+      ],
+      "group_size": 2,
+      "propagated": true,
+      "propagated_from": "7145"
     }
-  ]
+  ],
+  "rows_unique": [
+    {
+      "offer_id": "96863",
+      "name": "control lurex_jumper_96863.jpg",
+      "attr_id": "print_pattern",
+      "model": "google/gemini-2.5-flash-lite",
+      "elapsed_s": 3.08,
+      "error": null,
+      "raw_text": "```json\n{\n  \"attr_id\": \"print_pattern\",\n  \"value\": \"меланж\",\n  \"confidence\": 90,\n  \"evidence\": \"светлая пряжа с вкраплениями темных нитей, без явного блеска\"\n}\n```",
+      "parsed": {
+        "attr_id": "print_pattern",
+        "value": "меланж",
+        "confidence": 90,
+        "evidence": "светлая пряжа с вкраплениями темных нитей, без явного блеска"
+      },
+      "raw_value": "меланж",
+      "coerced_ok": true,
+      "coerced_value": "меланж",
+      "coerce_reason": "",
+      "mapped_from": "",
+      "lurex_verify": null,
+      "expected": "меланж",
+      "match_expected": true,
+      "confidence": 90,
+      "evidence": "светлая пряжа с вкраплениями темных нитей, без явного блеска",
+      "local_image": "C:\\Users\\1\\OneDrive\\Desktop\\image_description-main\\_audit_samples\\zolla_pattern\\lurex_jumper_96863.jpg",
+      "picture_url": "",
+      "picture_key": "__local__:C:\\Users\\1\\OneDrive\\Desktop\\image_description-main\\_audit_samples\\zolla_pattern\\lurex_jumper_96863.jpg",
+      "member_offer_ids": [
+        "96863"
+      ],
+      "group_size": 1
+    },
+    {
+      "offer_id": "96705",
+      "name": "control cardigan_96705.jpg",
+      "attr_id": "print_pattern",
+      "model": "google/gemini-2.5-flash-lite",
+      "elapsed_s": 3.52,
+      "error": null,
+      "raw_text": "```json\n{\n  \"attr_id\": \"print_pattern\",\n  \"value\": \"меланж\",\n  \"confidence\": 90,\n  \"evidence\": \"Светлая пряжа с вкраплениями более темных нитей, создающая эффект меланжа.\"\n}\n```",
+      "parsed": {
+        "attr_id": "print_pattern",
+        "value": "меланж",
+        "confidence": 90,
+        "evidence": "Светлая пряжа с вкраплениями более темных нитей, создающая эффект меланжа."
+      },
+      "raw_value": "меланж",
+      "coerced_ok": true,
+      "coerced_value": "меланж",
+      "coerce_reason": "",
+      "mapped_from": "",
+      "lurex_verify": null,
+      "expected": "меланж",
+      "match_expected": true,
+      "confidence": 90,
+      "evidence": "Светлая пряжа с вкраплениями более темных нитей, создающая эффект меланжа.",
+      "local_image": "C:\\Users\\1\\OneDrive\\Desktop\\image_description-main\\_audit_samples\\zolla_pattern\\cardigan_96705.jpg",
+      "picture_url": "",
+      "picture_key": "__local__:C:\\Users\\1\\OneDrive\\Desktop\\image_description-main\\_audit_samples\\zolla_pattern\\cardigan_96705.jpg",
+      "member_offer_ids": [
+        "96705"
+      ],
+      "group_size": 1
+    },
+    {
+      "offer_id": "94603",
+      "name": "control socks_94603.jpg",
+      "attr_id": "print_pattern",
+      "model": "google/gemini-2.5-flash-lite",
+      "elapsed_s": 3.7,
+      "error": null,
+      "raw_text": "```json\n{\n  \"attr_id\": \"print_pattern\",\n  \"value\": \"меланж\",\n  \"confidence\": 90,\n  \"evidence\": \"серый меланжевый фон с красным узором в виде снежинок и аппликацией оленя\"\n}\n```",
+      "parsed": {
+        "attr_id": "print_pattern",
+        "value": "меланж",
+        "confidence": 90,
+        "evidence": "серый меланжевый фон с красным узором в виде снежинок и аппликацией оленя"
+      },
+      "raw_value": "меланж",
+      "coerced_ok": true,
+      "coerced_value": "меланж",
+      "coerce_reason": "",
+      "mapped_from": "",
+      "lurex_verify": null,
+      "expected": "графика",
+      "match_expected": false,
+      "confidence": 90,
+      "evidence": "серый меланжевый фон с красным узором в виде снежинок и аппликацией оленя",
+      "local_image": "C:\\Users\\1\\OneDrive\\Desktop\\image_description-main\\_audit_samples\\zolla_pattern\\socks_94603.jpg",
+      "picture_url": "",
+      "picture_key": "__local__:C:\\Users\\1\\OneDrive\\Desktop\\image_description-main\\_audit_samples\\zolla_pattern\\socks_94603.jpg",
+      "member_offer_ids": [
+        "94603"
+      ],
+      "group_size": 1
+    },
+    {
+      "offer_id": "100889",
+      "name": "control maybe_lurex_100889.jpg",
+      "attr_id": "print_pattern",
+      "model": "google/gemini-2.5-flash-lite",
+      "elapsed_s": 2.56,
+      "error": null,
+      "raw_text": "```json\n{\n  \"attr_id\": \"print_pattern\",\n  \"value\": \"люрекс\",\n  \"confidence\": 90,\n  \"evidence\": \"На ткани видны блестящие нити\"\n}\n```",
+      "parsed": {
+        "attr_id": "print_pattern",
+        "value": "люрекс",
+        "confidence": 90,
+        "evidence": "На ткани видны блестящие нити"
+      },
+      "raw_value": "люрекс",
+      "coerced_ok": true,
+      "coerced_value": "люрекс",
+      "coerce_reason": "",
+      "mapped_from": "",
+      "lurex_verify": null,
+      "expected": "люрекс",
+      "match_expected": true,
+      "confidence": 90,
+      "evidence": "На ткани видны блестящие нити",
+      "local_image": "C:\\Users\\1\\OneDrive\\Desktop\\image_description-main\\_audit_samples\\zolla_pattern\\maybe_lurex_100889.jpg",
+      "picture_url": "",
+      "picture_key": "__local__:C:\\Users\\1\\OneDrive\\Desktop\\image_description-main\\_audit_samples\\zolla_pattern\\maybe_lurex_100889.jpg",
+      "member_offer_ids": [
+        "100889"
+      ],
+      "group_size": 1
+    },
+    {
+      "offer_id": "101742",
+      "name": "control maybe_lurex_101742.jpg",
+      "attr_id": "print_pattern",
+      "model": "google/gemini-2.5-flash-lite",
+      "elapsed_s": 3.43,
+      "error": null,
+      "raw_text": "```json\n{\n  \"attr_id\": \"print_pattern\",\n  \"value\": \"однотонный\",\n  \"confidence\": 100,\n  \"evidence\": \"свитер однотонный, без узоров и принтов\"\n}\n```",
+      "parsed": {
+        "attr_id": "print_pattern",
+        "value": "однотонный",
+        "confidence": 100,
+        "evidence": "свитер однотонный, без узоров и принтов"
+      },
+      "raw_value": "однотонный",
+      "coerced_ok": true,
+      "coerced_value": "однотонный",
+      "coerce_reason": "",
+      "mapped_from": "",
+      "lurex_verify": null,
+      "expected": "однотонный",
+      "match_expected": true,
+      "confidence": 100,
+      "evidence": "свитер однотонный, без узоров и принтов",
+      "local_image": "C:\\Users\\1\\OneDrive\\Desktop\\image_description-main\\_audit_samples\\zolla_pattern\\maybe_lurex_101742.jpg",
+      "picture_url": "",
+      "picture_key": "__local__:C:\\Users\\1\\OneDrive\\Desktop\\image_description-main\\_audit_samples\\zolla_pattern\\maybe_lurex_101742.jpg",
+      "member_offer_ids": [
+        "101742"
+      ],
+      "group_size": 1
+    },
+    {
+      "offer_id": "177548",
+      "name": "Футболка из хлопка на кулиске",
+      "attr_id": "print_pattern",
+      "model": "google/gemini-2.5-flash-lite",
+      "elapsed_s": 4.18,
+      "error": null,
+      "raw_text": "```json\n{\n  \"attr_id\": \"print_pattern\",\n  \"value\": \"полоска\",\n  \"confidence\": 100,\n  \"evidence\": \"На футболке видны горизонтальные полоски голубого и белого цветов.\"\n}\n```",
+      "parsed": {
+        "attr_id": "print_pattern",
+        "value": "полоска",
+        "confidence": 100,
+        "evidence": "На футболке видны горизонтальные полоски голубого и белого цветов."
+      },
+      "raw_value": "полоска",
+      "coerced_ok": true,
+      "coerced_value": "полоска",
+      "coerce_reason": "",
+      "mapped_from": "",
+      "lurex_verify": null,
+      "expected": "полоска",
+      "match_expected": true,
+      "confidence": 100,
+      "evidence": "На футболке видны горизонтальные полоски голубого и белого цветов.",
+      "local_image": "C:\\Users\\1\\OneDrive\\Desktop\\image_description-main\\projects\\Zolla\\image_cache\\c79cdd1e8024380657a976e7.jpg",
+      "picture_url": "https://zolla.com/upload/iplm/images/goods/022253273153_51S0.jpg",
+      "picture_key": "https://zolla.com/upload/iplm/images/goods/022253273153_51S0.jpg",
+      "member_offer_ids": [
+        "177548",
+        "177549",
+        "177550",
+        "177551",
+        "177552"
+      ],
+      "group_size": 5
+    },
+    {
+      "offer_id": "18781",
+      "name": "Трусы",
+      "attr_id": "print_pattern",
+      "model": "google/gemini-2.5-flash-lite",
+      "elapsed_s": 3.4,
+      "error": null,
+      "raw_text": "```json\n[\n  {\n    \"attr_id\": \"print_pattern\",\n    \"value\": \"полоска\",\n    \"confidence\": 100,\n    \"evidence\": \"верхние трусы в сине-бело-красную полоску\"\n  },\n  {\n    \"attr_id\": \"print_pattern\",\n    \"value\": \"геометрия\",\n    \"confidence\": 100,\n    \"evidence\": \"нижние трусы с принтом в виде парусников\"\n  }\n]\n```",
+      "parsed": {
+        "_list": [
+          {
+            "attr_id": "print_pattern",
+            "value": "полоска",
+            "confidence": 100,
+            "evidence": "верхние трусы в сине-бело-красную полоску"
+          },
+          {
+            "attr_id": "print_pattern",
+            "value": "геометрия",
+            "confidence": 100,
+            "evidence": "нижние трусы с принтом в виде парусников"
+          }
+        ]
+      },
+      "raw_value": null,
+      "coerced_ok": false,
+      "coerced_value": null,
+      "coerce_reason": "empty",
+      "mapped_from": "",
+      "lurex_verify": null,
+      "expected": "полоска",
+      "match_expected": null,
+      "confidence": null,
+      "evidence": null,
+      "local_image": "C:\\Users\\1\\OneDrive\\Desktop\\image_description-main\\projects\\Zolla\\image_cache\\5a8b5bcd48e713415134c464.jpg",
+      "picture_url": "https://zolla.com/upload/iblock/68c/lagoxma1g4heez99l1n05y9sodgh4r5b.jpg",
+      "picture_key": "https://zolla.com/upload/iblock/68c/lagoxma1g4heez99l1n05y9sodgh4r5b.jpg",
+      "member_offer_ids": [
+        "18781"
+      ],
+      "group_size": 1
+    },
+    {
+      "offer_id": "9675",
+      "name": "Платье",
+      "attr_id": "print_pattern",
+      "model": "google/gemini-2.5-flash-lite",
+      "elapsed_s": 2.91,
+      "error": null,
+      "raw_text": "```json\n{\n  \"attr_id\": \"print_pattern\",\n  \"value\": \"полоска\",\n  \"confidence\": 100,\n  \"evidence\": \"на ткани видны вертикальные черные полосы на белом фоне\"\n}\n```",
+      "parsed": {
+        "attr_id": "print_pattern",
+        "value": "полоска",
+        "confidence": 100,
+        "evidence": "на ткани видны вертикальные черные полосы на белом фоне"
+      },
+      "raw_value": "полоска",
+      "coerced_ok": true,
+      "coerced_value": "полоска",
+      "coerce_reason": "",
+      "mapped_from": "",
+      "lurex_verify": null,
+      "expected": "полоска",
+      "match_expected": true,
+      "confidence": 100,
+      "evidence": "на ткани видны вертикальные черные полосы на белом фоне",
+      "local_image": "C:\\Users\\1\\OneDrive\\Desktop\\image_description-main\\projects\\Zolla\\image_cache\\63cd7465f18fc54accba4651.jpg",
+      "picture_url": "https://zolla.com/upload/iplm/images/goods/020248230773_01P0_3.jpg",
+      "picture_key": "https://zolla.com/upload/iplm/images/goods/020248230773_01P0_3.jpg",
+      "member_offer_ids": [
+        "9675"
+      ],
+      "group_size": 1
+    },
+    {
+      "offer_id": "6877",
+      "name": "Блузка с  длинными рукавами",
+      "attr_id": "print_pattern",
+      "model": "google/gemini-2.5-flash-lite",
+      "elapsed_s": 3.68,
+      "error": null,
+      "raw_text": "```json\n{\n  \"attr_id\": \"print_pattern\",\n  \"value\": \"полоска\",\n  \"confidence\": 100,\n  \"evidence\": \"На блузке виден вертикальный узор в виде полосок черного и белого цветов.\"\n}\n```",
+      "parsed": {
+        "attr_id": "print_pattern",
+        "value": "полоска",
+        "confidence": 100,
+        "evidence": "На блузке виден вертикальный узор в виде полосок черного и белого цветов."
+      },
+      "raw_value": "полоска",
+      "coerced_ok": true,
+      "coerced_value": "полоска",
+      "coerce_reason": "",
+      "mapped_from": "",
+      "lurex_verify": null,
+      "expected": "полоска",
+      "match_expected": true,
+      "confidence": 100,
+      "evidence": "На блузке виден вертикальный узор в виде полосок черного и белого цветов.",
+      "local_image": "C:\\Users\\1\\OneDrive\\Desktop\\image_description-main\\projects\\Zolla\\image_cache\\e3fe7d1b364a30fcb82aa1ca.jpg",
+      "picture_url": "https://zolla.com/upload/iplm/images/goods/02021114Y153_99P0.jpg",
+      "picture_key": "https://zolla.com/upload/iplm/images/goods/02021114Y153_99P0.jpg",
+      "member_offer_ids": [
+        "6877"
+      ],
+      "group_size": 1
+    },
+    {
+      "offer_id": "15873",
+      "name": "Футболка без рукавов",
+      "attr_id": "print_pattern",
+      "model": "google/gemini-2.5-flash-lite",
+      "elapsed_s": 2.57,
+      "error": null,
+      "raw_text": "```json\n{\n  \"attr_id\": \"print_pattern\",\n  \"value\": \"полоска\",\n  \"confidence\": 100,\n  \"evidence\": \"Вертикальные полоски на футболке.\"\n}\n```",
+      "parsed": {
+        "attr_id": "print_pattern",
+        "value": "полоска",
+        "confidence": 100,
+        "evidence": "Вертикальные полоски на футболке."
+      },
+      "raw_value": "полоска",
+      "coerced_ok": true,
+      "coerced_value": "полоска",
+      "coerce_reason": "",
+      "mapped_from": "",
+      "lurex_verify": null,
+      "expected": "полоска",
+      "match_expected": true,
+      "confidence": 100,
+      "evidence": "Вертикальные полоски на футболке.",
+      "local_image": "C:\\Users\\1\\OneDrive\\Desktop\\image_description-main\\projects\\Zolla\\image_cache\\ea3e20449ca04664d78e2d87.jpg",
+      "picture_url": "https://zolla.com/upload/iplm/images/goods/021233326111_10S0.jpg",
+      "picture_key": "https://zolla.com/upload/iplm/images/goods/021233326111_10S0.jpg",
+      "member_offer_ids": [
+        "15873"
+      ],
+      "group_size": 1
+    },
+    {
+      "offer_id": "9609",
+      "name": "Футболка с короткими  рукавами",
+      "attr_id": "print_pattern",
+      "model": "google/gemini-2.5-flash-lite",
+      "elapsed_s": 3.2,
+      "error": null,
+      "raw_text": "```json\n{\n  \"attr_id\": \"print_pattern\",\n  \"value\": \"клетка\",\n  \"confidence\": 90,\n  \"evidence\": \"Видны пересекающиеся полосы, образующие клетчатый узор.\"\n}\n```",
+      "parsed": {
+        "attr_id": "print_pattern",
+        "value": "клетка",
+        "confidence": 90,
+        "evidence": "Видны пересекающиеся полосы, образующие клетчатый узор."
+      },
+      "raw_value": "клетка",
+      "coerced_ok": true,
+      "coerced_value": "клетка",
+      "coerce_reason": "",
+      "mapped_from": "",
+      "lurex_verify": null,
+      "expected": "полоска",
+      "match_expected": false,
+      "confidence": 90,
+      "evidence": "Видны пересекающиеся полосы, образующие клетчатый узор.",
+      "local_image": "C:\\Users\\1\\OneDrive\\Desktop\\image_description-main\\projects\\Zolla\\image_cache\\650005f68c1c46773ebbcab2.jpg",
+      "picture_url": "https://zolla.com/upload/iplm/images/goods/220233273433_01A0.jpg",
+      "picture_key": "https://zolla.com/upload/iplm/images/goods/220233273433_01A0.jpg",
+      "member_offer_ids": [
+        "9609"
+      ],
+      "group_size": 1
+    },
+    {
+      "offer_id": "7145",
+      "name": "Брюки длинные",
+      "attr_id": "print_pattern",
+      "model": "google/gemini-2.5-flash-lite",
+      "elapsed_s": 2.81,
+      "error": null,
+      "raw_text": "```json\n{\n  \"attr_id\": \"print_pattern\",\n  \"value\": \"полоска\",\n  \"confidence\": 100,\n  \"evidence\": \"на ткани видны тонкие вертикальные полоски\"\n}\n```",
+      "parsed": {
+        "attr_id": "print_pattern",
+        "value": "полоска",
+        "confidence": 100,
+        "evidence": "на ткани видны тонкие вертикальные полоски"
+      },
+      "raw_value": "полоска",
+      "coerced_ok": true,
+      "coerced_value": "полоска",
+      "coerce_reason": "",
+      "mapped_from": "",
+      "lurex_verify": null,
+      "expected": "полоска",
+      "match_expected": true,
+      "confidence": 100,
+      "evidence": "на ткани видны тонкие вертикальные полоски",
+      "local_image": "C:\\Users\\1\\OneDrive\\Desktop\\image_description-main\\projects\\Zolla\\image_cache\\05ccd4e19cdac97e31c310f9.jpg",
+      "picture_url": "https://zolla.com/upload/iplm/images/goods/020217372342_1900.jpg",
+      "picture_key": "https://zolla.com/upload/iplm/images/goods/020217372342_1900.jpg",
+      "member_offer_ids": [
+        "7145",
+        "7146"
+      ],
+      "group_size": 2
+    }
+  ],
+  "n_offers": 17,
+  "n_unique_pics": 12,
+  "n_propagated": 5
 }

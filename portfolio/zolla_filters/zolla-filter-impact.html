@@ -16,7 +16,7 @@
 </head>
 <body>
 <h1>Zolla — фильтры из описаний и картинок</h1>
-<p class="muted">Pilot report · 2026-07-21 11:16 UTC · site_id 3826</p>
+<p class="muted">Pilot report · 2026-07-21 11:50 UTC · site_id 3826</p>
 
 <div class="card">
   <h2>Методология</h2>
@@ -33,52 +33,118 @@
 <h2>Фильтры по схеме</h2>
 <table>
 <thead><tr><th>Фильтр</th><th>id</th><th>Тип</th><th>Allowed</th><th>Категории</th><th>Почему фильтр</th></tr></thead>
-<tbody><tr><td>Капюшон</td><td><code>hood</code></td><td>boolean</td><td>да, нет</td><td>Верхняя одежда, Толстовки и свитшоты, Платья и сарафаны, Костюмы</td><td>Бинарный facet с низкой кардинальностью; часто нужен в UI верхней одежды.</td></tr><tr><td>Длина изделия</td><td><code>length</code></td><td>enum</td><td>mini, midi, maxi, до колена, укороченный</td><td>Платья и сарафаны, Юбки, Шорты, Брюки, Верхняя одежда</td><td>Ограниченный набор длин — классический facet fashion; не свободный текст.</td></tr><tr><td>Узор / принт</td><td><code>print_pattern</code></td><td>multi_enum</td><td>однотонный, полоска, клетка, горошек, цветочный, геометрия, леопард, зебра, тигровый, камуфляж, абстракция, гусиная лапка, меланж, люрекс, графика</td><td>Платья и сарафаны, Блузки и рубашки, Футболки и топы, Юбки, Брюки, Верхняя одежда</td><td>Facet по визуальному узору; кардинальность ограничена closed-set.</td></tr></tbody>
+<tbody><tr><td>Капюшон</td><td><code>hood</code></td><td>boolean</td><td>да, нет</td><td>Верхняя одежда, Платья, Толстовки, Свитшоты</td><td>Бинарный facet с низкой кардинальностью; часто нужен в UI верхней одежды.</td></tr><tr><td>Длина изделия</td><td><code>length</code></td><td>enum</td><td>mini, midi, maxi, до колена, укороченный</td><td>Платья, Юбки, Брюки, Верхняя одежда, Верх</td><td>Ограниченный набор длин — классический facet fashion; не свободный текст.</td></tr><tr><td>Узор / принт</td><td><code>print_pattern</code></td><td>multi_enum</td><td>однотонный, полоска, клетка, горошек, цветочный, геометрия, леопард, зебра, тигровый, камуфляж, абстракция, гусиная лапка, меланж, люрекс, графика</td><td>Верхняя одежда, Платья, Юбки, Брюки, Верх, Аксессуары</td><td>Facet по визуальному узору; кардинальность ограничена closed-set.</td></tr><tr><td>Длина рукава</td><td><code>sleeve_length</code></td><td>enum</td><td>короткий, длинный, 3/4, без рукавов</td><td>Верхняя одежда, Платья, Верх, Толстовки, Свитшоты</td><td>Классический facet; 4 значения, хорошо видно на фото.</td></tr><tr><td>Карманы</td><td><code>pockets</code></td><td>boolean</td><td>да, нет</td><td>Верхняя одежда, Брюки, Юбки, Платья</td><td>Бинарный facet; важен для брюк/верхней одежды.</td></tr><tr><td>Застёжка</td><td><code>fastener</code></td><td>enum</td><td>молния, пуговицы, кнопки, завязки, нет</td><td>Верхняя одежда, Платья, Рубашки, Брюки</td><td>Ограниченный набор типов застёжки — удобный facet.</td></tr><tr><td>Воротник / вырез</td><td><code>collar</code></td><td>enum</td><td>круглый, V-образный, стойка, отложной, капюшон, без воротника</td><td>Верхняя одежда, Платья, Верх, Рубашки, Толстовки, Свитшоты</td><td>Визуальный facet с разумной кардинальностью.</td></tr><tr><td>Пол</td><td><code>gender_target</code></td><td>enum</td><td>женский, мужской, унисекс, детский</td><td>Все категории</td><td>Базовый facet каталога; часто уже в фиде — candidacy может reject.</td></tr></tbody>
 </table>
 
 <h2>Vision pilot (OpenRouter)</h2>
 <table>
 <thead><tr><th>attr</th><th>model</th><th>n</th><th>coerced_rate</th><th>expected_match</th><th>fail</th></tr></thead>
-<tbody><tr><td>hood</td><td>google/gemini-2.5-flash</td><td>12</td><td>1.0</td><td>1.0</td><td>0</td></tr><tr><td>length</td><td>google/gemini-2.5-flash</td><td>10</td><td>1.0</td><td>1.0</td><td>0</td></tr><tr><td>print_pattern</td><td>google/gemini-2.5-flash</td><td>9</td><td>1.0</td><td>1.0</td><td>0</td></tr></tbody>
+<tbody><tr><td>sleeve_length</td><td>google/gemma-3-4b-it</td><td>None</td><td>1.0</td><td>0.8</td><td>0</td></tr></tbody>
 </table>
 
 <h2>Text gold coerce (3826)</h2>
 <pre>{
-  "length": {
-    "seen": 22,
-    "ok": 13,
+  "collar": {
+    "seen": 113,
+    "ok": 90,
     "collision": 0,
-    "ood": 9
+    "ood": 23
   },
-  "print_pattern": {
-    "seen": 178,
-    "ok": 83,
+  "pockets": {
+    "seen": 27,
+    "ok": 1,
     "collision": 0,
-    "ood": 95
+    "ood": 26
+  },
+  "sleeve_length": {
+    "seen": 57,
+    "ok": 43,
+    "collision": 0,
+    "ood": 14
+  },
+  "length": {
+    "seen": 3,
+    "ok": 3,
+    "collision": 0,
+    "ood": 0
   }
 }</pre>
 
 <h2>Model bakeoff</h2>
 <pre>{
-  "hood": {
-    "models": {
-      "google/gemini-2.5-flash": {
-        "coerced_rate": 1.0,
-        "expected_match_rate": 1.0,
-        "n": 6
-      },
-      "google/gemini-2.5-flash-lite": {
-        "coerced_rate": 1.0,
-        "expected_match_rate": 1.0,
-        "n": 6
-      },
-      "openai/gpt-4o-mini": {
-        "coerced_rate": 1.0,
-        "expected_match_rate": 1.0,
-        "n": 6
-      }
+  "cost_notes": {
+    "google/gemma-3-4b-it": {
+      "tier": "cheap",
+      "in_per_m": 0.05,
+      "out_per_m": 0.1
     },
-    "best": "google/gemini-2.5-flash"
+    "google/gemini-2.5-flash-lite": {
+      "tier": "mid",
+      "in_per_m": 0.1,
+      "out_per_m": 0.4
+    },
+    "google/gemini-2.5-flash": {
+      "tier": "premium",
+      "in_per_m": 0.3,
+      "out_per_m": 2.5
+    },
+    "openai/gpt-4o-mini": {
+      "tier": "mid-high",
+      "note": "research only, avoid bulk"
+    }
+  },
+  "attrs": {
+    "hood": {
+      "models": {
+        "google/gemma-3-4b-it": {
+          "coerced_rate": 1.0,
+          "expected_match_rate": 1.0,
+          "n": 4,
+          "tier": "cheap"
+        },
+        "google/gemini-2.5-flash-lite": {
+          "coerced_rate": 1.0,
+          "expected_match_rate": 1.0,
+          "n": 4,
+          "tier": "mid"
+        }
+      },
+      "best": "google/gemma-3-4b-it"
+    },
+    "print_pattern": {
+      "models": {
+        "google/gemma-3-4b-it": {
+          "coerced_rate": 1.0,
+          "expected_match_rate": 0.0,
+          "n": 4,
+          "tier": "cheap"
+        },
+        "google/gemini-2.5-flash-lite": {
+          "coerced_rate": 1.0,
+          "expected_match_rate": 0.75,
+          "n": 4,
+          "tier": "mid"
+        }
+      },
+      "best": "google/gemini-2.5-flash-lite"
+    },
+    "length": {
+      "models": {
+        "google/gemma-3-4b-it": {
+          "coerced_rate": 1.0,
+          "expected_match_rate": 1.0,
+          "n": 4,
+          "tier": "cheap"
+        },
+        "google/gemini-2.5-flash-lite": {
+          "coerced_rate": 0.75,
+          "expected_match_rate": 1.0,
+          "n": 4,
+          "tier": "mid"
+        }
+      },
+      "best": "google/gemma-3-4b-it"
+    }
   }
 }</pre>
 

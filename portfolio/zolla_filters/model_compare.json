@@ -1,22 +1,76 @@
 {
-  "hood": {
-    "models": {
-      "google/gemini-2.5-flash": {
-        "coerced_rate": 1.0,
-        "expected_match_rate": 1.0,
-        "n": 6
-      },
-      "google/gemini-2.5-flash-lite": {
-        "coerced_rate": 1.0,
-        "expected_match_rate": 1.0,
-        "n": 6
-      },
-      "openai/gpt-4o-mini": {
-        "coerced_rate": 1.0,
-        "expected_match_rate": 1.0,
-        "n": 6
-      }
+  "cost_notes": {
+    "google/gemma-3-4b-it": {
+      "tier": "cheap",
+      "in_per_m": 0.05,
+      "out_per_m": 0.1
     },
-    "best": "google/gemini-2.5-flash"
+    "google/gemini-2.5-flash-lite": {
+      "tier": "mid",
+      "in_per_m": 0.1,
+      "out_per_m": 0.4
+    },
+    "google/gemini-2.5-flash": {
+      "tier": "premium",
+      "in_per_m": 0.3,
+      "out_per_m": 2.5
+    },
+    "openai/gpt-4o-mini": {
+      "tier": "mid-high",
+      "note": "research only, avoid bulk"
+    }
+  },
+  "attrs": {
+    "hood": {
+      "models": {
+        "google/gemma-3-4b-it": {
+          "coerced_rate": 1.0,
+          "expected_match_rate": 1.0,
+          "n": 4,
+          "tier": "cheap"
+        },
+        "google/gemini-2.5-flash-lite": {
+          "coerced_rate": 1.0,
+          "expected_match_rate": 1.0,
+          "n": 4,
+          "tier": "mid"
+        }
+      },
+      "best": "google/gemma-3-4b-it"
+    },
+    "print_pattern": {
+      "models": {
+        "google/gemma-3-4b-it": {
+          "coerced_rate": 1.0,
+          "expected_match_rate": 0.0,
+          "n": 4,
+          "tier": "cheap"
+        },
+        "google/gemini-2.5-flash-lite": {
+          "coerced_rate": 1.0,
+          "expected_match_rate": 0.75,
+          "n": 4,
+          "tier": "mid"
+        }
+      },
+      "best": "google/gemini-2.5-flash-lite"
+    },
+    "length": {
+      "models": {
+        "google/gemma-3-4b-it": {
+          "coerced_rate": 1.0,
+          "expected_match_rate": 1.0,
+          "n": 4,
+          "tier": "cheap"
+        },
+        "google/gemini-2.5-flash-lite": {
+          "coerced_rate": 0.75,
+          "expected_match_rate": 1.0,
+          "n": 4,
+          "tier": "mid"
+        }
+      },
+      "best": "google/gemma-3-4b-it"
+    }
   }
 }

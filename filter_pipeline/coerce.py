@@ -64,13 +64,9 @@ def coerce_value(spec: FilterAttributeSpec, raw: Any) -> CoerceResult:
     if not n:
         return CoerceResult(False, None, text, reason="empty")
 
-    # Negation phrasing for non-boolean attrs is usually junk for facets
-    if spec.value_type != "boolean" and any(p in n for p in _NEG):
-        return CoerceResult(False, None, text, reason="negation")
-
     allowed_norm = {_norm(a): a for a in spec.allowed_values}
 
-    # Exact allowed
+    # Exact allowed FIRST (e.g. «без рукавов» contains «без» but is a valid enum)
     if n in allowed_norm:
         return CoerceResult(True, allowed_norm[n], text)
 
@@ -84,10 +80,13 @@ def coerce_value(spec: FilterAttributeSpec, raw: Any) -> CoerceResult:
             if target in spec.allowed_values:
                 return CoerceResult(True, target, text, mapped_from=syn)
 
+    # Negation phrasing for freeform OOD (after allowed/synonym hits)
+    if spec.value_type != "boolean" and any(p in n for p in _NEG):
+        return CoerceResult(False, None, text, reason="negation")
+
     # Boolean soft parse
     if spec.value_type == "boolean":
         if n in {"1", "да", "yes", "true", "есть", "есть капюшон", "с капюшоном", "капюшон"}:
-            # bare "капюшон" alone is ambiguous — reject unless synonym says да
             if n == "капюшон":
                 return CoerceResult(False, None, text, reason="ambiguous_label_as_value")
             if "да" in allowed_norm:

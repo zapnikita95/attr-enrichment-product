@@ -7,14 +7,25 @@ import time
 from pathlib import Path
 from typing import Any
 
+import os
+
 from .coerce import coerce_value
-from .llm_client import DEFAULT_VISION_MODEL, chat_vision, parse_json_object
+from .llm_client import DEFAULT_VISION_MODEL, LUREX_VERIFY_MODEL, chat_vision, parse_json_object
 from .models import FilterAttributeSpec
 
-LUREX_VERIFY_MODEL = "google/gemini-2.5-flash-lite"
 LUREX_VERIFY_PROMPT = """На фото трикотаж/одежда. Есть ли металлический блеск нитей (люрекс: серебро/золото)?
 Меланж (матовая смесь цветов без металла) — это НЕ люрекс.
 Ответ только JSON: {"has_lurex": true/false, "confidence": 0-100}"""
+
+
+def _lurex_verify_enabled() -> bool:
+    # Default ON for quality; set FILTER_LUREX_VERIFY=0 to save mid-tier calls.
+    return (os.environ.get("FILTER_LUREX_VERIFY") or "1").strip().lower() not in (
+        "0",
+        "false",
+        "off",
+        "no",
+    )
 
 SYSTEM = (
     "Ты vision-экстрактор facet-фильтров для fashion. "
@@ -91,9 +102,10 @@ def extract_one(
     coerced = coerce_value(spec, raw_val)
     lurex_verify = None
 
-    # Second pass: flash-lite lurex check when primary said melange/solid
+    # Second pass (mid-tier): lurex check when primary said melange/solid
     if (
-        not err
+        _lurex_verify_enabled()
+        and not err
         and spec.attr_id == "print_pattern"
         and coerced.ok
         and str(coerced.value) in {"меланж", "однотонный"}
@@ -156,6 +168,9 @@ def extract_one(
         "evidence": parsed.get("evidence"),
         "local_image": local,
         "picture_url": url,
+        "picture_key": sample.get("picture_key"),
+        "member_offer_ids": sample.get("member_offer_ids") or [sample.get("offer_id")],
+        "group_size": sample.get("group_size") or 1,
     }
 
 

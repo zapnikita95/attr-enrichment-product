@@ -23,3 +23,15 @@ py -3.13 filter_pipeline/run_zolla_pilot.py --stage compare_models --attrs hood
 Журнал багов: `filter_pipeline/observations.md`
 
 OpenRouter key берётся из `image_description-main/.env`.
+
+## Бюджет моделей
+
+| Роль | Модель | Tier |
+|------|--------|------|
+| Text candidacy/schema | `google/gemini-2.5-flash-lite` | mid |
+| Vision bulk (boolean/enum) | `google/gemma-3-4b-it` | **cheap** |
+| Vision print_pattern | `google/gemini-2.5-flash-lite` | mid |
+| Lurex verify (optional) | flash-lite | mid, `FILTER_LUREX_VERIFY=0` to skip |
+| Premium flash / gpt-4o-mini | только research | не bulk |
+
+Дедуп: 1 vision-вызов на `picture_url` → propagate на все offer_id с той же картинкой.

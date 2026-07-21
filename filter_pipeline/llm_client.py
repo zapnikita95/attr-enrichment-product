@@ -1,4 +1,4 @@
-"""OpenRouter client — reuses image_description openrouter_llm + local .env."""
+"""OpenRouter client — budget-first defaults (cheap/mid), research bakeoff recorded separately."""
 
 from __future__ import annotations
 
@@ -14,21 +14,35 @@ from typing import Any
 ROOT = Path(__file__).resolve().parents[1]
 IMG_DESC = Path(r"C:\Users\1\OneDrive\Desktop\image_description-main")
 
-# Prefer gemini flash for schema quality; flash-lite for cheap vision bulk later.
-DEFAULT_TEXT_MODEL = "google/gemini-2.5-flash"
-DEFAULT_VISION_MODEL = "google/gemini-2.5-flash"
-# print_pattern: flash-lite лучше отличает люрекс от меланжа (pilot 100889).
+# Budget defaults: avoid premium flash / gpt-4o for bulk.
+DEFAULT_TEXT_MODEL = "google/gemini-2.5-flash-lite"  # mid text, ~3x cheaper than flash
+DEFAULT_VISION_MODEL = "google/gemma-3-4b-it"  # cheap vision bulk
+LUREX_VERIFY_MODEL = "google/gemini-2.5-flash-lite"  # mid only for hard lurex check
+
+# Bakeoff 2026-07-21: gemma OK for boolean/length; print_pattern needs flash-lite.
 VISION_MODEL_BY_ATTR = {
-    "hood": "google/gemini-2.5-flash",
-    "length": "google/gemini-2.5-flash",
-    # primary pattern model; lurex verify uses flash-lite in extract_vision
-    "print_pattern": "google/gemini-2.5-flash",
+    "hood": "google/gemma-3-4b-it",
+    "length": "google/gemma-3-4b-it",
+    "print_pattern": "google/gemini-2.5-flash-lite",
+    "sleeve_length": "google/gemma-3-4b-it",
+    "pockets": "google/gemma-3-4b-it",
+    "fastener": "google/gemma-3-4b-it",
+    "collar": "google/gemma-3-4b-it",
+    "gender_target": "google/gemma-3-4b-it",
 }
+
+# Research bakeoff only (not default bulk). Prices relative: gemma << flash-lite << flash.
 COMPARE_VISION_MODELS = (
-    "google/gemini-2.5-flash",
+    "google/gemma-3-4b-it",
     "google/gemini-2.5-flash-lite",
-    "openai/gpt-4o-mini",
 )
+
+MODEL_COST_NOTES = {
+    "google/gemma-3-4b-it": {"tier": "cheap", "in_per_m": 0.05, "out_per_m": 0.10},
+    "google/gemini-2.5-flash-lite": {"tier": "mid", "in_per_m": 0.10, "out_per_m": 0.40},
+    "google/gemini-2.5-flash": {"tier": "premium", "in_per_m": 0.30, "out_per_m": 2.50},
+    "openai/gpt-4o-mini": {"tier": "mid-high", "note": "research only, avoid bulk"},
+}
 
 
 def vision_model_for_attr(attr_id: str, override: str | None = None) -> str:
@@ -76,7 +90,8 @@ def chat_text(
     )
 
 
-def _image_to_jpeg_b64(path: Path, max_side: int = 768, quality: int = 80) -> str:
+def _image_to_jpeg_b64(path: Path, max_side: int = 512, quality: int = 75) -> str:
+    """Smaller JPEG by default — cheaper vision tokens + less egress."""
     from PIL import Image
 
     img = Image.open(path).convert("RGB")
@@ -99,7 +114,6 @@ def chat_vision(
     max_tokens: int = 512,
     temperature: float = 0.0,
 ) -> str:
-    """Vision via OpenRouter. Prefer local file → base64; else pass URL through image_description path."""
     load_openrouter_key()
     _ensure_img_desc_path()
     from openrouter_llm import openrouter_chat
@@ -116,7 +130,6 @@ def chat_vision(
             "Referer": "https://zolla.com/",
         }
         try:
-            # Direct to CDN — do not use OpenRouter proxy for product images
             r = requests.get(image_url, timeout=(15, 90), headers=headers)
             r.raise_for_status()
             tmp = Path(ROOT) / "filter_pipeline" / "_tmp_img.jpg"

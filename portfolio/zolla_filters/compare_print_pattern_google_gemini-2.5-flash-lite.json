@@ -1,0 +1,141 @@
+{
+  "attr_id": "print_pattern",
+  "model": "google/gemini-2.5-flash-lite",
+  "n": 4,
+  "coerced_ok": 4,
+  "coerced_rate": 1.0,
+  "expected_n": 4,
+  "expected_match": 3,
+  "expected_match_rate": 0.75,
+  "ood_or_fail": 0,
+  "rows": [
+    {
+      "offer_id": "96863",
+      "name": "control lurex_jumper_96863.jpg",
+      "attr_id": "print_pattern",
+      "model": "google/gemini-2.5-flash-lite",
+      "elapsed_s": 2.96,
+      "error": null,
+      "raw_text": "```json\n{\n  \"attr_id\": \"print_pattern\",\n  \"value\": \"меланж\",\n  \"confidence\": 90,\n  \"evidence\": \"светлая пряжа с вкраплениями более темных нитей, без явного блеска\"\n}\n```",
+      "parsed": {
+        "attr_id": "print_pattern",
+        "value": "меланж",
+        "confidence": 90,
+        "evidence": "светлая пряжа с вкраплениями более темных нитей, без явного блеска"
+      },
+      "raw_value": "меланж",
+      "coerced_ok": true,
+      "coerced_value": "меланж",
+      "coerce_reason": "",
+      "mapped_from": "",
+      "lurex_verify": null,
+      "expected": "меланж",
+      "match_expected": true,
+      "confidence": 90,
+      "evidence": "светлая пряжа с вкраплениями более темных нитей, без явного блеска",
+      "local_image": "C:\\Users\\1\\OneDrive\\Desktop\\image_description-main\\_audit_samples\\zolla_pattern\\lurex_jumper_96863.jpg",
+      "picture_url": "",
+      "picture_key": "__local__:C:\\Users\\1\\OneDrive\\Desktop\\image_description-main\\_audit_samples\\zolla_pattern\\lurex_jumper_96863.jpg",
+      "member_offer_ids": [
+        "96863"
+      ],
+      "group_size": 1
+    },
+    {
+      "offer_id": "96705",
+      "name": "control cardigan_96705.jpg",
+      "attr_id": "print_pattern",
+      "model": "google/gemini-2.5-flash-lite",
+      "elapsed_s": 4.19,
+      "error": null,
+      "raw_text": "```json\n{\n  \"attr_id\": \"print_pattern\",\n  \"value\": \"меланж\",\n  \"confidence\": 90,\n  \"evidence\": \"Светло-серый кардиган с мелкой текстурой, созданной смешением нитей разных оттенков серого, без видимого блеска.\"\n}\n```",
+      "parsed": {
+        "attr_id": "print_pattern",
+        "value": "меланж",
+        "confidence": 90,
+        "evidence": "Светло-серый кардиган с мелкой текстурой, созданной смешением нитей разных оттенков серого, без видимого блеска."
+      },
+      "raw_value": "меланж",
+      "coerced_ok": true,
+      "coerced_value": "меланж",
+      "coerce_reason": "",
+      "mapped_from": "",
+      "lurex_verify": null,
+      "expected": "меланж",
+      "match_expected": true,
+      "confidence": 90,
+      "evidence": "Светло-серый кардиган с мелкой текстурой, созданной смешением нитей разных оттенков серого, без видимого блеска.",
+      "local_image": "C:\\Users\\1\\OneDrive\\Desktop\\image_description-main\\_audit_samples\\zolla_pattern\\cardigan_96705.jpg",
+      "picture_url": "",
+      "picture_key": "__local__:C:\\Users\\1\\OneDrive\\Desktop\\image_description-main\\_audit_samples\\zolla_pattern\\cardigan_96705.jpg",
+      "member_offer_ids": [
+        "96705"
+      ],
+      "group_size": 1
+    },
+    {
+      "offer_id": "94603",
+      "name": "control socks_94603.jpg",
+      "attr_id": "print_pattern",
+      "model": "google/gemini-2.5-flash-lite",
+      "elapsed_s": 3.03,
+      "error": null,
+      "raw_text": "```json\n{\n  \"attr_id\": \"print_pattern\",\n  \"value\": \"меланж\",\n  \"confidence\": 90,\n  \"evidence\": \"серый меланжевый фон носков с красным узором в виде снежинок и аппликацией в виде оленя\"\n}\n```",
+      "parsed": {
+        "attr_id": "print_pattern",
+        "value": "меланж",
+        "confidence": 90,
+        "evidence": "серый меланжевый фон носков с красным узором в виде снежинок и аппликацией в виде оленя"
+      },
+      "raw_value": "меланж",
+      "coerced_ok": true,
+      "coerced_value": "меланж",
+      "coerce_reason": "",
+      "mapped_from": "",
+      "lurex_verify": null,
+      "expected": "графика",
+      "match_expected": false,
+      "confidence": 90,
+      "evidence": "серый меланжевый фон носков с красным узором в виде снежинок и аппликацией в виде оленя",
+      "local_image": "C:\\Users\\1\\OneDrive\\Desktop\\image_description-main\\_audit_samples\\zolla_pattern\\socks_94603.jpg",
+      "picture_url": "",
+      "picture_key": "__local__:C:\\Users\\1\\OneDrive\\Desktop\\image_description-main\\_audit_samples\\zolla_pattern\\socks_94603.jpg",
+      "member_offer_ids": [
+        "94603"
+      ],
+      "group_size": 1
+    },
+    {
+      "offer_id": "100889",
+      "name": "control maybe_lurex_100889.jpg",
+      "attr_id": "print_pattern",
+      "model": "google/gemini-2.5-flash-lite",
+      "elapsed_s": 2.56,
+      "error": null,
+      "raw_text": "```json\n{\n  \"attr_id\": \"print_pattern\",\n  \"value\": \"люрекс\",\n  \"confidence\": 90,\n  \"evidence\": \"На ткани видны блестящие нити\"\n}\n```",
+      "parsed": {
+        "attr_id": "print_pattern",
+        "value": "люрекс",
+        "confidence": 90,
+        "evidence": "На ткани видны блестящие нити"
+      },
+      "raw_value": "люрекс",
+      "coerced_ok": true,
+      "coerced_value": "люрекс",
+      "coerce_reason": "",
+      "mapped_from": "",
+      "lurex_verify": null,
+      "expected": "люрекс",
+      "match_expected": true,
+      "confidence": 90,
+      "evidence": "На ткани видны блестящие нити",
+      "local_image": "C:\\Users\\1\\OneDrive\\Desktop\\image_description-main\\_audit_samples\\zolla_pattern\\maybe_lurex_100889.jpg",
+      "picture_url": "",
+      "picture_key": "__local__:C:\\Users\\1\\OneDrive\\Desktop\\image_description-main\\_audit_samples\\zolla_pattern\\maybe_lurex_100889.jpg",
+      "member_offer_ids": [
+        "100889"
+      ],
+      "group_size": 1
+    }
+  ]
+}

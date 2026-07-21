@@ -1,4 +1,4 @@
-"""Pick Zolla pilot SKUs from results.db + control images."""
+"""Pick Zolla pilot SKUs from results.db + control images (keeps picture duplicates for propagate)."""
 
 from __future__ import annotations
 
@@ -31,7 +31,7 @@ def resolve_local_image(offer_id: str, picture_url: str) -> Path | None:
     return None
 
 
-def _fetch_by_name_like(pattern: str, limit: int = 8) -> list[dict[str, Any]]:
+def _fetch_by_name_like(pattern: str, limit: int = 8, *, allow_dup_pics: bool = True) -> list[dict[str, Any]]:
     if not ZOLLA_RESULTS.is_file():
         return []
     con = sqlite3.connect(str(ZOLLA_RESULTS))
@@ -42,16 +42,17 @@ def _fetch_by_name_like(pattern: str, limit: int = 8) -> list[dict[str, Any]]:
         WHERE name LIKE ?
         LIMIT ?
         """,
-        (pattern, limit * 3),
+        (pattern, limit * 4 if allow_dup_pics else limit * 3),
     ).fetchall()
     con.close()
     out: list[dict[str, Any]] = []
     seen_pic: set[str] = set()
     for oid, name, cat, pic, aj in rows:
         pic = pic or ""
-        if pic in seen_pic:
-            continue
-        seen_pic.add(pic)
+        if not allow_dup_pics:
+            if pic in seen_pic:
+                continue
+            seen_pic.add(pic)
         local = resolve_local_image(str(oid), pic)
         out.append(
             {
@@ -69,14 +70,15 @@ def _fetch_by_name_like(pattern: str, limit: int = 8) -> list[dict[str, Any]]:
     return out
 
 
-def samples_for_hood(n_yes: int = 6, n_no: int = 6) -> list[dict[str, Any]]:
-    yes = _fetch_by_name_like("%капюшон%", n_yes)
+def samples_for_hood(n_yes: int = 8, n_no: int = 6) -> list[dict[str, Any]]:
+    # allow_dup_pics: same coat photo across sizes → test propagate
+    yes = _fetch_by_name_like("%капюшон%", n_yes, allow_dup_pics=True)
     for s in yes:
         s["expected"] = "да"
         s["attr_id"] = "hood"
     no: list[dict[str, Any]] = []
     for pat in ("%Футболка%", "%Блузка%", "%Юбка%"):
-        for s in _fetch_by_name_like(pat, max(2, n_no // 2)):
+        for s in _fetch_by_name_like(pat, max(2, n_no // 2), allow_dup_pics=True):
             if "капюшон" in (s["name"] or "").lower():
                 continue
             s["expected"] = "нет"
@@ -89,7 +91,7 @@ def samples_for_hood(n_yes: int = 6, n_no: int = 6) -> list[dict[str, Any]]:
     return yes + no[:n_no]
 
 
-def samples_for_length(n: int = 10) -> list[dict[str, Any]]:
+def samples_for_length(n: int = 12) -> list[dict[str, Any]]:
     out: list[dict[str, Any]] = []
     for pat, expect in (
         ("%платье%мини%", "mini"),
@@ -99,7 +101,7 @@ def samples_for_length(n: int = 10) -> list[dict[str, Any]]:
         ("%платье%", None),
         ("%юбк%", None),
     ):
-        for s in _fetch_by_name_like(pat, 4):
+        for s in _fetch_by_name_like(pat, 5, allow_dup_pics=True):
             s["attr_id"] = "length"
             s["expected"] = expect
             out.append(s)
@@ -109,9 +111,8 @@ def samples_for_length(n: int = 10) -> list[dict[str, Any]]:
 
 
 def samples_for_print_pattern() -> list[dict[str, Any]]:
-    """Control set from _audit_samples + a few DB patterns."""
     control = [
-        ("96863", "lurex_jumper_96863.jpg", "меланж", "title may say lurex — expect melange/not false lurex"),
+        ("96863", "lurex_jumper_96863.jpg", "меланж", "title may say lurex — expect melange"),
         ("96705", "cardigan_96705.jpg", "меланж", "melange cardigan"),
         ("94603", "socks_94603.jpg", "графика", "christmas socks — not houndstooth"),
         ("100889", "maybe_lurex_100889.jpg", "люрекс", "real lurex"),
@@ -132,7 +133,7 @@ def samples_for_print_pattern() -> list[dict[str, Any]]:
                 "note": note,
             }
         )
-    # DB stripes etc.
+    # Keep duplicate picture URLs (same stripe tee, different offer_id) for propagate demo
     if ZOLLA_RESULTS.is_file():
         con = sqlite3.connect(str(ZOLLA_RESULTS))
         rows = con.execute(
@@ -140,12 +141,11 @@ def samples_for_print_pattern() -> list[dict[str, Any]]:
             SELECT offer_id, name, category, picture_url, attributes_json
             FROM results
             WHERE attributes_json LIKE '%полоск%'
-            LIMIT 40
+            LIMIT 20
             """
         ).fetchall()
         con.close()
-        seen = 0
-        for oid, name, cat, pic, aj in rows:
+        for oid, name, cat, pic, aj in rows[:12]:
             local = resolve_local_image(str(oid), pic or "")
             if not local and not pic:
                 continue
@@ -158,13 +158,63 @@ def samples_for_print_pattern() -> list[dict[str, Any]]:
                     "local_image": str(local) if local else None,
                     "attr_id": "print_pattern",
                     "expected": "полоска",
-                    "note": "db prior stripe",
+                    "note": "db prior stripe (may share picture)",
                 }
             )
-            seen += 1
-            if seen >= 4:
-                break
     return out
+
+
+def samples_for_sleeve(n: int = 10) -> list[dict[str, Any]]:
+    out: list[dict[str, Any]] = []
+    for pat, expect in (
+        ("%без рукавов%", "без рукавов"),
+        ("%коротким рукавом%", "короткий"),
+        ("%длинным рукавом%", "длинный"),
+        ("%Футболка%", "короткий"),
+    ):
+        for s in _fetch_by_name_like(pat, 4, allow_dup_pics=True):
+            s["attr_id"] = "sleeve_length"
+            s["expected"] = expect
+            out.append(s)
+            if len(out) >= n:
+                return out
+    return out[:n]
+
+
+def samples_for_pockets(n: int = 8) -> list[dict[str, Any]]:
+    out: list[dict[str, Any]] = []
+    for pat, expect in (("%карман%", "да"), ("%Джинсы%", None), ("%Брюки%", None)):
+        for s in _fetch_by_name_like(pat, 4, allow_dup_pics=True):
+            s["attr_id"] = "pockets"
+            s["expected"] = expect
+            out.append(s)
+            if len(out) >= n:
+                return out
+    return out[:n]
+
+
+def samples_for_fastener(n: int = 8) -> list[dict[str, Any]]:
+    out: list[dict[str, Any]] = []
+    for pat, expect in (("%молни%", "молния"), ("%пуговиц%", "пуговицы"), ("%Куртка%", None)):
+        for s in _fetch_by_name_like(pat, 4, allow_dup_pics=True):
+            s["attr_id"] = "fastener"
+            s["expected"] = expect
+            out.append(s)
+            if len(out) >= n:
+                return out
+    return out[:n]
+
+
+def samples_for_collar(n: int = 8) -> list[dict[str, Any]]:
+    out: list[dict[str, Any]] = []
+    for pat, expect in (("%стойк%", "стойка"), ("%V-вырез%", "V-образный"), ("%Футболка%", "круглый")):
+        for s in _fetch_by_name_like(pat, 4, allow_dup_pics=True):
+            s["attr_id"] = "collar"
+            s["expected"] = expect
+            out.append(s)
+            if len(out) >= n:
+                return out
+    return out[:n]
 
 
 def dump_samples(path: Path) -> dict[str, Any]:
@@ -172,6 +222,10 @@ def dump_samples(path: Path) -> dict[str, Any]:
         "hood": samples_for_hood(),
         "length": samples_for_length(),
         "print_pattern": samples_for_print_pattern(),
+        "sleeve_length": samples_for_sleeve(),
+        "pockets": samples_for_pockets(),
+        "fastener": samples_for_fastener(),
+        "collar": samples_for_collar(),
     }
     path.parent.mkdir(parents=True, exist_ok=True)
     path.write_text(json.dumps(data, ensure_ascii=False, indent=2), encoding="utf-8")

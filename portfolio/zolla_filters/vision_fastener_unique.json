@@ -1,0 +1,207 @@
+{
+  "attr_id": "fastener",
+  "model": "google/gemma-3-4b-it",
+  "n": 6,
+  "coerced_ok": 6,
+  "coerced_rate": 1.0,
+  "expected_n": 6,
+  "expected_match": 6,
+  "expected_match_rate": 1.0,
+  "ood_or_fail": 0,
+  "rows": [
+    {
+      "offer_id": "39070",
+      "name": "Замшевая мини-юбка на молнии",
+      "attr_id": "fastener",
+      "model": "google/gemma-3-4b-it",
+      "elapsed_s": 4.3,
+      "error": null,
+      "raw_text": "```json\n{\n  \"attr_id\": \"fastener\",\n  \"value\": \"молния\",\n  \"confidence\": 95,\n  \"evidence\": \"Видна молния на юбке\"\n}\n```",
+      "parsed": {
+        "attr_id": "fastener",
+        "value": "молния",
+        "confidence": 95,
+        "evidence": "Видна молния на юбке"
+      },
+      "raw_value": "молния",
+      "coerced_ok": true,
+      "coerced_value": "молния",
+      "coerce_reason": "",
+      "mapped_from": "",
+      "lurex_verify": null,
+      "expected": "молния",
+      "match_expected": true,
+      "confidence": 95,
+      "evidence": "Видна молния на юбке",
+      "local_image": "C:\\Users\\1\\OneDrive\\Desktop\\image_description-main\\projects\\Zolla\\image_cache\\70ad3f441478db419a29b78b.jpg",
+      "picture_url": "https://zolla.com/upload/iplm/images/goods/221347839061_8100.jpg",
+      "picture_key": "https://zolla.com/upload/iplm/images/goods/221347839061_8100.jpg",
+      "member_offer_ids": [
+        "39070",
+        "39071",
+        "39074"
+      ],
+      "group_size": 3
+    },
+    {
+      "offer_id": "40328",
+      "name": "Платье мини из комбинированного материала с молниями",
+      "attr_id": "fastener",
+      "model": "google/gemma-3-4b-it",
+      "elapsed_s": 5.0,
+      "error": null,
+      "raw_text": "```json\n{\n  \"attr_id\": \"fastener\",\n  \"value\": \"молния\",\n  \"confidence\": 95,\n  \"evidence\": \"Видна молния на платье\"\n}\n```",
+      "parsed": {
+        "attr_id": "fastener",
+        "value": "молния",
+        "confidence": 95,
+        "evidence": "Видна молния на платье"
+      },
+      "raw_value": "молния",
+      "coerced_ok": true,
+      "coerced_value": "молния",
+      "coerce_reason": "",
+      "mapped_from": "",
+      "lurex_verify": null,
+      "expected": "молния",
+      "match_expected": true,
+      "confidence": 95,
+      "evidence": "Видна молния на платье",
+      "local_image": "C:\\Users\\1\\OneDrive\\Desktop\\image_description-main\\projects\\Zolla\\image_cache\\10aa91e73aa758a6991e14b4.jpg",
+      "picture_url": "https://zolla.com/upload/iplm/images/goods/02134814Y153_9900.jpg",
+      "picture_key": "https://zolla.com/upload/iplm/images/goods/02134814Y153_9900.jpg",
+      "member_offer_ids": [
+        "40328"
+      ],
+      "group_size": 1
+    },
+    {
+      "offer_id": "39372",
+      "name": "Свитер с декоративными пуговицами на рукавах",
+      "attr_id": "fastener",
+      "model": "google/gemma-3-4b-it",
+      "elapsed_s": 5.58,
+      "error": null,
+      "raw_text": "```json\n{\n  \"attr_id\": \"fastener\",\n  \"value\": \"пуговицы\",\n  \"confidence\": 95,\n  \"evidence\": \"На свитере видны декоративные пуговицы на рукавах.\"\n}\n```",
+      "parsed": {
+        "attr_id": "fastener",
+        "value": "пуговицы",
+        "confidence": 95,
+        "evidence": "На свитере видны декоративные пуговицы на рукавах."
+      },
+      "raw_value": "пуговицы",
+      "coerced_ok": true,
+      "coerced_value": "пуговицы",
+      "coerce_reason": "",
+      "mapped_from": "",
+      "lurex_verify": null,
+      "expected": "пуговицы",
+      "match_expected": true,
+      "confidence": 95,
+      "evidence": "На свитере видны декоративные пуговицы на рукавах.",
+      "local_image": "C:\\Users\\1\\OneDrive\\Desktop\\image_description-main\\projects\\Zolla\\image_cache\\ee74a2220dd6c332861a3912.jpg",
+      "picture_url": "https://zolla.com/upload/iplm/images/goods/021346198313_19M0.jpg",
+      "picture_key": "https://zolla.com/upload/iplm/images/goods/021346198313_19M0.jpg",
+      "member_offer_ids": [
+        "39372"
+      ],
+      "group_size": 1
+    },
+    {
+      "offer_id": "39749",
+      "name": "Свитер с декоративными пуговицами на рукавах",
+      "attr_id": "fastener",
+      "model": "google/gemma-3-4b-it",
+      "elapsed_s": 4.5,
+      "error": null,
+      "raw_text": "```json\n{\n  \"attr_id\": \"fastener\",\n  \"value\": \"пуговицы\",\n  \"confidence\": 95,\n  \"evidence\": \"На рукавах свитера видны пуговицы.\"\n}\n```",
+      "parsed": {
+        "attr_id": "fastener",
+        "value": "пуговицы",
+        "confidence": 95,
+        "evidence": "На рукавах свитера видны пуговицы."
+      },
+      "raw_value": "пуговицы",
+      "coerced_ok": true,
+      "coerced_value": "пуговицы",
+      "coerce_reason": "",
+      "mapped_from": "",
+      "lurex_verify": null,
+      "expected": "пуговицы",
+      "match_expected": true,
+      "confidence": 95,
+      "evidence": "На рукавах свитера видны пуговицы.",
+      "local_image": "C:\\Users\\1\\OneDrive\\Desktop\\image_description-main\\projects\\Zolla\\image_cache\\bea47b2601549042243a2bc0.jpg",
+      "picture_url": "https://zolla.com/upload/iplm/images/goods/021346198313_9900.jpg",
+      "picture_key": "https://zolla.com/upload/iplm/images/goods/021346198313_9900.jpg",
+      "member_offer_ids": [
+        "39749"
+      ],
+      "group_size": 1
+    },
+    {
+      "offer_id": "40404",
+      "name": "Кардиган на пуговицах",
+      "attr_id": "fastener",
+      "model": "google/gemma-3-4b-it",
+      "elapsed_s": 4.05,
+      "error": null,
+      "raw_text": "```json\n{\n  \"attr_id\": \"fastener\",\n  \"value\": \"пуговицы\",\n  \"confidence\": 95,\n  \"evidence\": \"Кардиган на пуговицах\"\n}\n```",
+      "parsed": {
+        "attr_id": "fastener",
+        "value": "пуговицы",
+        "confidence": 95,
+        "evidence": "Кардиган на пуговицах"
+      },
+      "raw_value": "пуговицы",
+      "coerced_ok": true,
+      "coerced_value": "пуговицы",
+      "coerce_reason": "",
+      "mapped_from": "",
+      "lurex_verify": null,
+      "expected": "пуговицы",
+      "match_expected": true,
+      "confidence": 95,
+      "evidence": "Кардиган на пуговицах",
+      "local_image": "C:\\Users\\1\\OneDrive\\Desktop\\image_description-main\\projects\\Zolla\\image_cache\\21bacfbffa076fc1fcf2a249.jpg",
+      "picture_url": "https://zolla.com/upload/iplm/images/goods/011426463011_91N2.jpg",
+      "picture_key": "https://zolla.com/upload/iplm/images/goods/011426463011_91N2.jpg",
+      "member_offer_ids": [
+        "40404"
+      ],
+      "group_size": 1
+    },
+    {
+      "offer_id": "47757",
+      "name": "Юбка-шорты с пуговицами",
+      "attr_id": "fastener",
+      "model": "google/gemma-3-4b-it",
+      "elapsed_s": 4.02,
+      "error": null,
+      "raw_text": "```json\n{\n  \"attr_id\": \"fastener\",\n  \"value\": \"пуговицы\",\n  \"confidence\": 95,\n  \"evidence\": \"На юбке видны пуговицы.\"\n}\n```",
+      "parsed": {
+        "attr_id": "fastener",
+        "value": "пуговицы",
+        "confidence": 95,
+        "evidence": "На юбке видны пуговицы."
+      },
+      "raw_value": "пуговицы",
+      "coerced_ok": true,
+      "coerced_value": "пуговицы",
+      "coerce_reason": "",
+      "mapped_from": "",
+      "lurex_verify": null,
+      "expected": "пуговицы",
+      "match_expected": true,
+      "confidence": 95,
+      "evidence": "На юбке видны пуговицы.",
+      "local_image": "C:\\Users\\1\\OneDrive\\Desktop\\image_description-main\\projects\\Zolla\\image_cache\\cff9102f27829f6dbfe0f473.jpg",
+      "picture_url": "https://zolla.com/upload/iplm/images/goods/022127570021_9900.jpg",
+      "picture_key": "https://zolla.com/upload/iplm/images/goods/022127570021_9900.jpg",
+      "member_offer_ids": [
+        "47757"
+      ],
+      "group_size": 1
+    }
+  ]
+}

@@ -1,0 +1,159 @@
+{
+  "attr_id": "print_pattern",
+  "model": "google/gemma-3-4b-it",
+  "n": 4,
+  "coerced_ok": 4,
+  "coerced_rate": 1.0,
+  "expected_n": 4,
+  "expected_match": 0,
+  "expected_match_rate": 0.0,
+  "ood_or_fail": 0,
+  "rows": [
+    {
+      "offer_id": "96863",
+      "name": "control lurex_jumper_96863.jpg",
+      "attr_id": "print_pattern",
+      "model": "google/gemma-3-4b-it",
+      "elapsed_s": 3.26,
+      "error": null,
+      "raw_text": "```json\n{\n  \"attr_id\": \"print_pattern\",\n  \"value\": [\"однотонный\"],\n  \"confidence\": 95,\n  \"evidence\": \"Нет видимых узоров\"\n}\n```",
+      "parsed": {
+        "attr_id": "print_pattern",
+        "value": [
+          "однотонный"
+        ],
+        "confidence": 95,
+        "evidence": "Нет видимых узоров"
+      },
+      "raw_value": [
+        "однотонный"
+      ],
+      "coerced_ok": true,
+      "coerced_value": [
+        "однотонный"
+      ],
+      "coerce_reason": "",
+      "mapped_from": "",
+      "lurex_verify": null,
+      "expected": "меланж",
+      "match_expected": false,
+      "confidence": 95,
+      "evidence": "Нет видимых узоров",
+      "local_image": "C:\\Users\\1\\OneDrive\\Desktop\\image_description-main\\_audit_samples\\zolla_pattern\\lurex_jumper_96863.jpg",
+      "picture_url": "",
+      "picture_key": "__local__:C:\\Users\\1\\OneDrive\\Desktop\\image_description-main\\_audit_samples\\zolla_pattern\\lurex_jumper_96863.jpg",
+      "member_offer_ids": [
+        "96863"
+      ],
+      "group_size": 1
+    },
+    {
+      "offer_id": "96705",
+      "name": "control cardigan_96705.jpg",
+      "attr_id": "print_pattern",
+      "model": "google/gemma-3-4b-it",
+      "elapsed_s": 5.19,
+      "error": null,
+      "raw_text": "```json\n{\n  \"attr_id\": \"print_pattern\",\n  \"value\": [\"однотонный\"],\n  \"confidence\": 95,\n  \"evidence\": \"Кардиган однотонный\"\n}\n```",
+      "parsed": {
+        "attr_id": "print_pattern",
+        "value": [
+          "однотонный"
+        ],
+        "confidence": 95,
+        "evidence": "Кардиган однотонный"
+      },
+      "raw_value": [
+        "однотонный"
+      ],
+      "coerced_ok": true,
+      "coerced_value": [
+        "однотонный"
+      ],
+      "coerce_reason": "",
+      "mapped_from": "",
+      "lurex_verify": null,
+      "expected": "меланж",
+      "match_expected": false,
+      "confidence": 95,
+      "evidence": "Кардиган однотонный",
+      "local_image": "C:\\Users\\1\\OneDrive\\Desktop\\image_description-main\\_audit_samples\\zolla_pattern\\cardigan_96705.jpg",
+      "picture_url": "",
+      "picture_key": "__local__:C:\\Users\\1\\OneDrive\\Desktop\\image_description-main\\_audit_samples\\zolla_pattern\\cardigan_96705.jpg",
+      "member_offer_ids": [
+        "96705"
+      ],
+      "group_size": 1
+    },
+    {
+      "offer_id": "94603",
+      "name": "control socks_94603.jpg",
+      "attr_id": "print_pattern",
+      "model": "google/gemma-3-4b-it",
+      "elapsed_s": 3.96,
+      "error": null,
+      "raw_text": "```json\n{\n  \"attr_id\": \"print_pattern\",\n  \"value\": [\"геометрия\"],\n  \"confidence\": 95,\n  \"evidence\": \"На носках присутствует геометрический узор в виде рога оленя.\"\n}\n```",
+      "parsed": {
+        "attr_id": "print_pattern",
+        "value": [
+          "геометрия"
+        ],
+        "confidence": 95,
+        "evidence": "На носках присутствует геометрический узор в виде рога оленя."
+      },
+      "raw_value": [
+        "геометрия"
+      ],
+      "coerced_ok": true,
+      "coerced_value": [
+        "геометрия"
+      ],
+      "coerce_reason": "",
+      "mapped_from": "",
+      "lurex_verify": null,
+      "expected": "графика",
+      "match_expected": false,
+      "confidence": 95,
+      "evidence": "На носках присутствует геометрический узор в виде рога оленя.",
+      "local_image": "C:\\Users\\1\\OneDrive\\Desktop\\image_description-main\\_audit_samples\\zolla_pattern\\socks_94603.jpg",
+      "picture_url": "",
+      "picture_key": "__local__:C:\\Users\\1\\OneDrive\\Desktop\\image_description-main\\_audit_samples\\zolla_pattern\\socks_94603.jpg",
+      "member_offer_ids": [
+        "94603"
+      ],
+      "group_size": 1
+    },
+    {
+      "offer_id": "100889",
+      "name": "control maybe_lurex_100889.jpg",
+      "attr_id": "print_pattern",
+      "model": "google/gemma-3-4b-it",
+      "elapsed_s": 3.62,
+      "error": null,
+      "raw_text": "```json\n{\n  \"attr_id\": \"print_pattern\",\n  \"value\": \"однотонный\",\n  \"confidence\": 95,\n  \"evidence\": \"На изображении нет видимых узоров или принтов.\"\n}\n```",
+      "parsed": {
+        "attr_id": "print_pattern",
+        "value": "однотонный",
+        "confidence": 95,
+        "evidence": "На изображении нет видимых узоров или принтов."
+      },
+      "raw_value": "однотонный",
+      "coerced_ok": true,
+      "coerced_value": "однотонный",
+      "coerce_reason": "",
+      "mapped_from": "",
+      "lurex_verify": null,
+      "expected": "люрекс",
+      "match_expected": false,
+      "confidence": 95,
+      "evidence": "На изображении нет видимых узоров или принтов.",
+      "local_image": "C:\\Users\\1\\OneDrive\\Desktop\\image_description-main\\_audit_samples\\zolla_pattern\\maybe_lurex_100889.jpg",
+      "picture_url": "",
+      "picture_key": "__local__:C:\\Users\\1\\OneDrive\\Desktop\\image_description-main\\_audit_samples\\zolla_pattern\\maybe_lurex_100889.jpg",
+      "member_offer_ids": [
+        "100889"
+      ],
+      "group_size": 1
+    }
+  ]
+}

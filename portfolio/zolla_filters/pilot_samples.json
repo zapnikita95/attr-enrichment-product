@@ -67,6 +67,28 @@
       "attr_id": "hood"
     },
     {
+      "offer_id": "38503",
+      "name": "Тёплая куртка-парка с капюшоном",
+      "category": "",
+      "picture_url": "https://zolla.com/upload/iplm/images/goods/010345123194_7500.jpg",
+      "local_image": "C:\\Users\\1\\OneDrive\\Desktop\\image_description-main\\projects\\Zolla\\image_cache\\2f29e862387a939e6d9ccf61.jpg",
+      "attributes_json": "{\"clothing\": {\"error\": null, \"print_pattern\": {\"value\": \"однотонный\", \"confidence\": 99, \"label\": \"Паттерн / принт\"}, \"color\": {\"value\": \"серый\", \"confidence\": 99, \"label\": \"Цвет (базовый)\"}, \"color_shade\": {\"value\": \"стальной\", \"confidence\": 99, \"label\": \"Оттенок\"}}}",
+      "expect_hint": "%капюшон%",
+      "expected": "да",
+      "attr_id": "hood"
+    },
+    {
+      "offer_id": "38506",
+      "name": "Тёплая куртка-парка с капюшоном",
+      "category": "",
+      "picture_url": "https://zolla.com/upload/iplm/images/goods/010345123194_7500.jpg",
+      "local_image": "C:\\Users\\1\\OneDrive\\Desktop\\image_description-main\\projects\\Zolla\\image_cache\\2f29e862387a939e6d9ccf61.jpg",
+      "attributes_json": "{\"clothing\": {\"error\": null, \"print_pattern\": {\"value\": \"однотонный\", \"confidence\": 99, \"label\": \"Паттерн / принт\"}, \"color\": {\"value\": \"серый\", \"confidence\": 99, \"label\": \"Цвет (базовый)\"}, \"color_shade\": {\"value\": \"стальной\", \"confidence\": 99, \"label\": \"Оттенок\"}}}",
+      "expect_hint": "%капюшон%",
+      "expected": "да",
+      "attr_id": "hood"
+    },
+    {
       "offer_id": "177548",
       "name": "Футболка из хлопка на кулиске",
       "category": "Женщины / Футболки и Топы / Футболки",
@@ -78,23 +100,23 @@
       "attr_id": "hood"
     },
     {
-      "offer_id": "15873",
-      "name": "Футболка без рукавов",
-      "category": "",
-      "picture_url": "https://zolla.com/upload/iplm/images/goods/021233326111_10S0.jpg",
-      "local_image": "C:\\Users\\1\\OneDrive\\Desktop\\image_description-main\\projects\\Zolla\\image_cache\\ea3e20449ca04664d78e2d87.jpg",
-      "attributes_json": "{\"clothing\": {\"error\": null, \"print_pattern\": {\"value\": \"полоска\", \"confidence\": 95, \"label\": \"Паттерн / принт\"}}, \"other\": {\"error\": null}}",
+      "offer_id": "177549",
+      "name": "Футболка из хлопка на кулиске",
+      "category": "Женщины / Футболки и Топы / Футболки",
+      "picture_url": "https://zolla.com/upload/iplm/images/goods/022253273153_51S0.jpg",
+      "local_image": "C:\\Users\\1\\OneDrive\\Desktop\\image_description-main\\projects\\Zolla\\image_cache\\c79cdd1e8024380657a976e7.jpg",
+      "attributes_json": "{\"clothing\": {\"error\": null, \"sleeve_length\": {\"value\": \"короткий\", \"confidence\": 95, \"label\": \"Длина рукава\"}, \"collar\": {\"value\": \"круглый\", \"confidence\": 95, \"label\": \"Воротник\"}, \"print_pattern\": {\"value\": \"полоски\", \"confidence\": 99, \"label\": \"Паттерн / принт\"}, \"material\": {\"value\": \"хлопок\", \"confidence\": 90, \"label\": \"Материал (основной)\"}, \"gender_target\": {\"value\": \"женский\", \"confidence\": 95, \"label\": \"Целевой пол\"}}}",
       "expect_hint": "%Футболка%",
       "expected": "нет",
       "attr_id": "hood"
     },
     {
-      "offer_id": "7741",
-      "name": "Футболка с короткими  рукавами",
-      "category": "",
-      "picture_url": "https://zolla.com/upload/iplm/images/goods/220223273012_01A0.jpg",
-      "local_image": "C:\\Users\\1\\OneDrive\\Desktop\\image_description-main\\projects\\Zolla\\image_cache\\521363432ef46a59b2b9caf0.jpg",
-      "attributes_json": "{\"other\": {\"error\": null}, \"clothing\": {\"error\": null, \"print_pattern\": {\"value\": \"однотонный\", \"confidence\": 90, \"label\": \"Паттерн / принт\"}}}",
+      "offer_id": "177550",
+      "name": "Футболка из хлопка на кулиске",
+      "category": "Женщины / Футболки и Топы / Футболки",
+      "picture_url": "https://zolla.com/upload/iplm/images/goods/022253273153_51S0.jpg",
+      "local_image": "C:\\Users\\1\\OneDrive\\Desktop\\image_description-main\\projects\\Zolla\\image_cache\\c79cdd1e8024380657a976e7.jpg",
+      "attributes_json": "{\"clothing\": {\"error\": null, \"sleeve_length\": {\"value\": \"короткий\", \"confidence\": 95, \"label\": \"Длина рукава\"}, \"collar\": {\"value\": \"круглый\", \"confidence\": 95, \"label\": \"Воротник\"}, \"print_pattern\": {\"value\": \"полоски\", \"confidence\": 99, \"label\": \"Паттерн / принт\"}, \"material\": {\"value\": \"хлопок\", \"confidence\": 90, \"label\": \"Материал (основной)\"}, \"gender_target\": {\"value\": \"женский\", \"confidence\": 95, \"label\": \"Целевой пол\"}}}",
       "expect_hint": "%Футболка%",
       "expected": "нет",
       "attr_id": "hood"
@@ -111,23 +133,23 @@
       "attr_id": "hood"
     },
     {
-      "offer_id": "6938",
+      "offer_id": "6949",
       "name": "Блузка с  длинными рукавами",
       "category": "",
-      "picture_url": "https://zolla.com/upload/iplm/images/goods/220221159032_01S0.jpg",
-      "local_image": "C:\\Users\\1\\OneDrive\\Desktop\\image_description-main\\projects\\Zolla\\image_cache\\c73dd7d0a8ca56bb90da7fd4.jpg",
-      "attributes_json": "{\"clothing\": {\"error\": null, \"print_pattern\": {\"value\": \"нет принта\", \"confidence\": 95, \"label\": \"Паттерн / принт\"}}, \"other\": {\"error\": null}}",
+      "picture_url": "https://zolla.com/upload/iplm/images/goods/020231147062_0100.jpg",
+      "local_image": "C:\\Users\\1\\OneDrive\\Desktop\\image_description-main\\projects\\Zolla\\image_cache\\365913cb4ed9afc4c6bb8ee2.jpg",
+      "attributes_json": "{\"clothing\": {\"error\": null, \"print_pattern\": {\"value\": \"не найдено\", \"confidence\": 80, \"label\": \"Паттерн / принт\"}}, \"other\": {\"error\": null}}",
       "expect_hint": "%Блузка%",
       "expected": "нет",
       "attr_id": "hood"
     },
     {
-      "offer_id": "6907",
+      "offer_id": "6951",
       "name": "Блузка с  длинными рукавами",
       "category": "",
-      "picture_url": "https://zolla.com/upload/iplm/images/goods/020211159132_10P0.jpg",
-      "local_image": "C:\\Users\\1\\OneDrive\\Desktop\\image_description-main\\projects\\Zolla\\image_cache\\3837ee168580c75644b8bd15.jpg",
-      "attributes_json": "{\"clothing\": {\"error\": null}, \"other\": {\"error\": null}}",
+      "picture_url": "https://zolla.com/upload/iplm/images/goods/020231147062_0100.jpg",
+      "local_image": "C:\\Users\\1\\OneDrive\\Desktop\\image_description-main\\projects\\Zolla\\image_cache\\365913cb4ed9afc4c6bb8ee2.jpg",
+      "attributes_json": "{\"clothing\": {\"error\": null, \"print_pattern\": {\"value\": \"не найдено\", \"confidence\": 80, \"label\": \"Паттерн / принт\"}}, \"other\": {\"error\": null}}",
       "expect_hint": "%Блузка%",
       "expected": "нет",
       "attr_id": "hood"
@@ -136,6 +158,28 @@
   "length": [
     {
       "offer_id": "42955",
+      "name": "Шифоновое платье мини с бантом",
+      "category": "",
+      "picture_url": "https://zolla.com/upload/iplm/images/goods/021438259193_59P0.jpg",
+      "local_image": "C:\\Users\\1\\OneDrive\\Desktop\\image_description-main\\projects\\Zolla\\image_cache\\19265abf4210abed2126fd4b.jpg",
+      "attributes_json": "{\"clothing\": {\"error\": null, \"print_pattern\": {\"value\": \"цветочный\", \"confidence\": 95, \"label\": \"Паттерн / принт\"}, \"color\": {\"value\": \"синий\", \"confidence\": 95, \"label\": \"Цвет (базовый)\"}, \"color_shade\": {\"value\": \"кобальт\", \"confidence\": 90, \"label\": \"Оттенок\"}}}",
+      "expect_hint": "%платье%мини%",
+      "attr_id": "length",
+      "expected": "mini"
+    },
+    {
+      "offer_id": "42956",
+      "name": "Шифоновое платье мини с бантом",
+      "category": "",
+      "picture_url": "https://zolla.com/upload/iplm/images/goods/021438259193_59P0.jpg",
+      "local_image": "C:\\Users\\1\\OneDrive\\Desktop\\image_description-main\\projects\\Zolla\\image_cache\\19265abf4210abed2126fd4b.jpg",
+      "attributes_json": "{\"clothing\": {\"error\": null, \"print_pattern\": {\"value\": \"цветочный\", \"confidence\": 95, \"label\": \"Паттерн / принт\"}, \"color\": {\"value\": \"синий\", \"confidence\": 95, \"label\": \"Цвет (базовый)\"}, \"color_shade\": {\"value\": \"кобальт\", \"confidence\": 90, \"label\": \"Оттенок\"}}}",
+      "expect_hint": "%платье%мини%",
+      "attr_id": "length",
+      "expected": "mini"
+    },
+    {
+      "offer_id": "42957",
       "name": "Шифоновое платье мини с бантом",
       "category": "",
       "picture_url": "https://zolla.com/upload/iplm/images/goods/021438259193_59P0.jpg",
@@ -157,18 +201,40 @@
       "expected": "mini"
     },
     {
-      "offer_id": "43910",
-      "name": "Бархатное платье мини с запахом",
+      "offer_id": "43389",
+      "name": "Кружевное платье мини",
       "category": "",
-      "picture_url": "https://zolla.com/upload/iplm/images/goods/02145812L163_4900.jpg",
-      "local_image": "C:\\Users\\1\\OneDrive\\Desktop\\image_description-main\\projects\\Zolla\\image_cache\\5c83fbc14b135febb3439ae3.jpg",
-      "attributes_json": "{\"clothing\": {\"error\": null, \"print_pattern\": {\"value\": \"однотонный\", \"confidence\": 100, \"label\": \"Паттерн / принт\"}, \"color\": {\"value\": \"синий\", \"confidence\": 100, \"label\": \"Цвет (базовый)\"}, \"color_shade\": {\"value\": \"голубой\", \"confidence\": 80, \"label\": \"Оттенок\"}}}",
+      "picture_url": "https://zolla.com/upload/iplm/images/goods/02144829F101_9900.jpg",
+      "local_image": "C:\\Users\\1\\OneDrive\\Desktop\\image_description-main\\projects\\Zolla\\image_cache\\e7cc2c790e0058ebb27a5042.jpg",
+      "attributes_json": "{\"clothing\": {\"error\": null, \"print_pattern\": {\"value\": \"кружевной\", \"confidence\": 85, \"label\": \"Паттерн / принт\"}, \"color\": {\"value\": \"черный\", \"confidence\": 95, \"label\": \"Цвет (базовый)\"}}}",
       "expect_hint": "%платье%мини%",
       "attr_id": "length",
       "expected": "mini"
     },
     {
       "offer_id": "41880",
+      "name": "Принтованное мини платье",
+      "category": "",
+      "picture_url": "https://zolla.com/upload/iplm/images/goods/221238259021_99P0.jpg",
+      "local_image": "C:\\Users\\1\\OneDrive\\Desktop\\image_description-main\\projects\\Zolla\\image_cache\\69af0df1db3ebf9773d29d6e.jpg",
+      "attributes_json": "{\"clothing\": {\"error\": null, \"print_pattern\": {\"value\": \"цветочный\", \"confidence\": 100, \"label\": \"Паттерн / принт\"}, \"color\": {\"value\": \"черный\", \"confidence\": 90, \"label\": \"Цвет (базовый)\"}, \"color_shade\": {\"value\": \"пыльная роза\", \"confidence\": 80, \"label\": \"Оттенок\"}}}",
+      "expect_hint": "%мини%плать%",
+      "attr_id": "length",
+      "expected": "mini"
+    },
+    {
+      "offer_id": "41881",
+      "name": "Принтованное мини платье",
+      "category": "",
+      "picture_url": "https://zolla.com/upload/iplm/images/goods/221238259021_99P0.jpg",
+      "local_image": "C:\\Users\\1\\OneDrive\\Desktop\\image_description-main\\projects\\Zolla\\image_cache\\69af0df1db3ebf9773d29d6e.jpg",
+      "attributes_json": "{\"clothing\": {\"error\": null, \"print_pattern\": {\"value\": \"цветочный\", \"confidence\": 100, \"label\": \"Паттерн / принт\"}, \"color\": {\"value\": \"черный\", \"confidence\": 90, \"label\": \"Цвет (базовый)\"}, \"color_shade\": {\"value\": \"пыльная роза\", \"confidence\": 80, \"label\": \"Оттенок\"}}}",
+      "expect_hint": "%мини%плать%",
+      "attr_id": "length",
+      "expected": "mini"
+    },
+    {
+      "offer_id": "41882",
       "name": "Принтованное мини платье",
       "category": "",
       "picture_url": "https://zolla.com/upload/iplm/images/goods/221238259021_99P0.jpg",
@@ -190,23 +256,12 @@
       "expected": "mini"
     },
     {
-      "offer_id": "61648",
-      "name": "Ярусное мини платье с коротким рукавом",
+      "offer_id": "50008",
+      "name": "Шифоновое мини платье с длинным рукавом",
       "category": "",
-      "picture_url": "https://zolla.com/upload/iplm/images/goods/022238291062_30P0.jpg",
-      "local_image": "C:\\Users\\1\\OneDrive\\Desktop\\image_description-main\\projects\\Zolla\\image_cache\\0f23567a46186e1723efeb2a.jpg",
-      "attributes_json": "{\"clothing\": {\"error\": null, \"print_pattern\": {\"value\": \"дочернее\", \"confidence\": 90, \"label\": \"Паттерн / принт\"}, \"color\": {\"value\": \"красный\", \"confidence\": 90, \"label\": \"Цвет (базовый)\"}}}",
-      "expect_hint": "%мини%плать%",
-      "attr_id": "length",
-      "expected": "mini"
-    },
-    {
-      "offer_id": "73359",
-      "name": "Ярусное мини платье с принтом",
-      "category": "",
-      "picture_url": "https://zolla.com/upload/iplm/images/goods/22312827Y272_99P0.jpg",
-      "local_image": "C:\\Users\\1\\OneDrive\\Desktop\\image_description-main\\projects\\Zolla\\image_cache\\54c9055189a0ca8f78f331c0.jpg",
-      "attributes_json": "{\"clothing\": {\"error\": null, \"print_pattern\": {\"value\": \"графити\", \"confidence\": 90, \"label\": \"Паттерн / принт\"}, \"color\": {\"value\": \"чёрный\", \"confidence\": 90, \"label\": \"Цвет (базовый)\"}}}",
+      "picture_url": "https://zolla.com/upload/iplm/images/goods/022118262292_59P0.jpg",
+      "local_image": "C:\\Users\\1\\OneDrive\\Desktop\\image_description-main\\projects\\Zolla\\image_cache\\0b8615c6b00782b42dbbb632.jpg",
+      "attributes_json": "{\"clothing\": {\"error\": null, \"print_pattern\": {\"value\": \"цветочный узор\", \"confidence\": 90, \"label\": \"Паттерн / принт\"}, \"color\": {\"value\": \"синий\", \"confidence\": 90, \"label\": \"Цвет (базовый)\"}, \"color_shade\": {\"value\": \"голубой\", \"confidence\": 80, \"label\": \"Оттенок\"}}}",
       "expect_hint": "%мини%плать%",
       "attr_id": "length",
       "expected": "mini"
@@ -223,23 +278,12 @@
       "expected": "maxi"
     },
     {
-      "offer_id": "83806",
-      "name": "Ярусное платье длины макси",
+      "offer_id": "83303",
+      "name": "Ярусное платье макси на кулиске с вырезом",
       "category": "",
-      "picture_url": "https://zolla.com/upload/iplm/images/goods/023248291101_3500.jpg",
-      "local_image": "C:\\Users\\1\\OneDrive\\Desktop\\image_description-main\\projects\\Zolla\\image_cache\\e56ee98b339927fe91b8e31a.jpg",
-      "attributes_json": "{\"clothing\": {\"error\": null, \"color\": {\"value\": \"розовый\", \"confidence\": 100, \"label\": \"Цвет (базовый)\"}, \"color_shade\": {\"value\": \"пыльная роза\", \"confidence\": 100, \"label\": \"Оттенок\"}, \"print_pattern\": {\"value\": \"однотонный\", \"confidence\": 100, \"label\": \"Паттерн / принт\"}}}",
-      "expect_hint": "%платье%макси%",
-      "attr_id": "length",
-      "expected": "maxi"
-    },
-    {
-      "offer_id": "97852",
-      "name": "Прилегающее платье макси с разрезом на подоле и блёстками",
-      "category": "",
-      "picture_url": "https://zolla.com/upload/iplm/images/goods/023458139083_9500.jpg",
-      "local_image": "C:\\Users\\1\\OneDrive\\Desktop\\image_description-main\\projects\\Zolla\\image_cache\\dd810804f7d88582b331d63c.jpg",
-      "attributes_json": "{\"clothing\": {\"error\": null, \"print_pattern\": {\"value\": \"с блёстками\", \"confidence\": 90, \"label\": \"Паттерн / принт\"}, \"color\": {\"value\": \"серый\", \"confidence\": 90, \"label\": \"Цвет (базовый)\"}}}",
+      "picture_url": "https://zolla.com/upload/iplm/images/goods/22324827Y261_7200.jpg",
+      "local_image": "C:\\Users\\1\\OneDrive\\Desktop\\image_description-main\\projects\\Zolla\\image_cache\\3e59c2e89f7ae376f0133ab6.jpg",
+      "attributes_json": "{\"clothing\": {\"error\": null, \"print_pattern\": {\"value\": \"однотонный\", \"confidence\": 90, \"label\": \"Паттерн / принт\"}, \"color\": {\"value\": \"зелёный\", \"confidence\": 90, \"label\": \"Цвет (базовый)\"}, \"color_shade\": {\"value\": \"лайм\", \"confidence\": 90, \"label\": \"Оттенок\"}}}",
       "expect_hint": "%платье%макси%",
       "attr_id": "length",
       "expected": "maxi"
@@ -254,7 +298,7 @@
       "local_image": "C:\\Users\\1\\OneDrive\\Desktop\\image_description-main\\_audit_samples\\zolla_pattern\\lurex_jumper_96863.jpg",
       "attr_id": "print_pattern",
       "expected": "меланж",
-      "note": "title may say lurex — expect melange/not false lurex"
+      "note": "title may say lurex — expect melange"
     },
     {
       "offer_id": "96705",
@@ -304,7 +348,7 @@
       "local_image": "C:\\Users\\1\\OneDrive\\Desktop\\image_description-main\\projects\\Zolla\\image_cache\\c79cdd1e8024380657a976e7.jpg",
       "attr_id": "print_pattern",
       "expected": "полоска",
-      "note": "db prior stripe"
+      "note": "db prior stripe (may share picture)"
     },
     {
       "offer_id": "177549",
@@ -314,7 +358,7 @@
       "local_image": "C:\\Users\\1\\OneDrive\\Desktop\\image_description-main\\projects\\Zolla\\image_cache\\c79cdd1e8024380657a976e7.jpg",
       "attr_id": "print_pattern",
       "expected": "полоска",
-      "note": "db prior stripe"
+      "note": "db prior stripe (may share picture)"
     },
     {
       "offer_id": "177550",
@@ -324,7 +368,7 @@
       "local_image": "C:\\Users\\1\\OneDrive\\Desktop\\image_description-main\\projects\\Zolla\\image_cache\\c79cdd1e8024380657a976e7.jpg",
       "attr_id": "print_pattern",
       "expected": "полоска",
-      "note": "db prior stripe"
+      "note": "db prior stripe (may share picture)"
     },
     {
       "offer_id": "177551",
@@ -334,7 +378,469 @@
       "local_image": "C:\\Users\\1\\OneDrive\\Desktop\\image_description-main\\projects\\Zolla\\image_cache\\c79cdd1e8024380657a976e7.jpg",
       "attr_id": "print_pattern",
       "expected": "полоска",
-      "note": "db prior stripe"
+      "note": "db prior stripe (may share picture)"
+    },
+    {
+      "offer_id": "177552",
+      "name": "Футболка из хлопка на кулиске",
+      "category": "Женщины / Футболки и Топы / Футболки",
+      "picture_url": "https://zolla.com/upload/iplm/images/goods/022253273153_51S0.jpg",
+      "local_image": "C:\\Users\\1\\OneDrive\\Desktop\\image_description-main\\projects\\Zolla\\image_cache\\c79cdd1e8024380657a976e7.jpg",
+      "attr_id": "print_pattern",
+      "expected": "полоска",
+      "note": "db prior stripe (may share picture)"
+    },
+    {
+      "offer_id": "18781",
+      "name": "Трусы",
+      "category": "",
+      "picture_url": "https://zolla.com/upload/iblock/68c/lagoxma1g4heez99l1n05y9sodgh4r5b.jpg",
+      "local_image": "C:\\Users\\1\\OneDrive\\Desktop\\image_description-main\\projects\\Zolla\\image_cache\\5a8b5bcd48e713415134c464.jpg",
+      "attr_id": "print_pattern",
+      "expected": "полоска",
+      "note": "db prior stripe (may share picture)"
+    },
+    {
+      "offer_id": "9675",
+      "name": "Платье",
+      "category": "",
+      "picture_url": "https://zolla.com/upload/iplm/images/goods/020248230773_01P0_3.jpg",
+      "local_image": "C:\\Users\\1\\OneDrive\\Desktop\\image_description-main\\projects\\Zolla\\image_cache\\63cd7465f18fc54accba4651.jpg",
+      "attr_id": "print_pattern",
+      "expected": "полоска",
+      "note": "db prior stripe (may share picture)"
+    },
+    {
+      "offer_id": "6877",
+      "name": "Блузка с  длинными рукавами",
+      "category": "",
+      "picture_url": "https://zolla.com/upload/iplm/images/goods/02021114Y153_99P0.jpg",
+      "local_image": "C:\\Users\\1\\OneDrive\\Desktop\\image_description-main\\projects\\Zolla\\image_cache\\e3fe7d1b364a30fcb82aa1ca.jpg",
+      "attr_id": "print_pattern",
+      "expected": "полоска",
+      "note": "db prior stripe (may share picture)"
+    },
+    {
+      "offer_id": "15873",
+      "name": "Футболка без рукавов",
+      "category": "",
+      "picture_url": "https://zolla.com/upload/iplm/images/goods/021233326111_10S0.jpg",
+      "local_image": "C:\\Users\\1\\OneDrive\\Desktop\\image_description-main\\projects\\Zolla\\image_cache\\ea3e20449ca04664d78e2d87.jpg",
+      "attr_id": "print_pattern",
+      "expected": "полоска",
+      "note": "db prior stripe (may share picture)"
+    },
+    {
+      "offer_id": "9609",
+      "name": "Футболка с короткими  рукавами",
+      "category": "",
+      "picture_url": "https://zolla.com/upload/iplm/images/goods/220233273433_01A0.jpg",
+      "local_image": "C:\\Users\\1\\OneDrive\\Desktop\\image_description-main\\projects\\Zolla\\image_cache\\650005f68c1c46773ebbcab2.jpg",
+      "attr_id": "print_pattern",
+      "expected": "полоска",
+      "note": "db prior stripe (may share picture)"
+    },
+    {
+      "offer_id": "7145",
+      "name": "Брюки длинные",
+      "category": "",
+      "picture_url": "https://zolla.com/upload/iplm/images/goods/020217372342_1900.jpg",
+      "local_image": "C:\\Users\\1\\OneDrive\\Desktop\\image_description-main\\projects\\Zolla\\image_cache\\05ccd4e19cdac97e31c310f9.jpg",
+      "attr_id": "print_pattern",
+      "expected": "полоска",
+      "note": "db prior stripe (may share picture)"
+    },
+    {
+      "offer_id": "7146",
+      "name": "Брюки длинные",
+      "category": "",
+      "picture_url": "https://zolla.com/upload/iplm/images/goods/020217372342_1900.jpg",
+      "local_image": "C:\\Users\\1\\OneDrive\\Desktop\\image_description-main\\projects\\Zolla\\image_cache\\05ccd4e19cdac97e31c310f9.jpg",
+      "attr_id": "print_pattern",
+      "expected": "полоска",
+      "note": "db prior stripe (may share picture)"
+    }
+  ],
+  "sleeve_length": [
+    {
+      "offer_id": "15873",
+      "name": "Футболка без рукавов",
+      "category": "",
+      "picture_url": "https://zolla.com/upload/iplm/images/goods/021233326111_10S0.jpg",
+      "local_image": "C:\\Users\\1\\OneDrive\\Desktop\\image_description-main\\projects\\Zolla\\image_cache\\ea3e20449ca04664d78e2d87.jpg",
+      "attributes_json": "{\"clothing\": {\"error\": null, \"print_pattern\": {\"value\": \"полоска\", \"confidence\": 95, \"label\": \"Паттерн / принт\"}}, \"other\": {\"error\": null}}",
+      "expect_hint": "%без рукавов%",
+      "attr_id": "sleeve_length",
+      "expected": "без рукавов"
+    },
+    {
+      "offer_id": "23708",
+      "name": "Блузка без рукавов",
+      "category": "",
+      "picture_url": "https://zolla.com/upload/iplm/images/goods/02026138Y013_0100.jpg",
+      "local_image": "C:\\Users\\1\\OneDrive\\Desktop\\image_description-main\\projects\\Zolla\\image_cache\\a9444c518eab5e66853996a9.jpg",
+      "attributes_json": "{\"other\": {\"error\": null}, \"clothing\": {\"error\": null, \"print_pattern\": {\"value\": \"клетка\", \"confidence\": 90, \"label\": \"Паттерн / принт\"}}}",
+      "expect_hint": "%без рукавов%",
+      "attr_id": "sleeve_length",
+      "expected": "без рукавов"
+    },
+    {
+      "offer_id": "23709",
+      "name": "Блузка без рукавов",
+      "category": "",
+      "picture_url": "https://zolla.com/upload/iplm/images/goods/02026138Y013_0100.jpg",
+      "local_image": "C:\\Users\\1\\OneDrive\\Desktop\\image_description-main\\projects\\Zolla\\image_cache\\a9444c518eab5e66853996a9.jpg",
+      "attributes_json": "{\"other\": {\"error\": null}, \"clothing\": {\"error\": null, \"print_pattern\": {\"value\": \"клетка\", \"confidence\": 90, \"label\": \"Паттерн / принт\"}}}",
+      "expect_hint": "%без рукавов%",
+      "attr_id": "sleeve_length",
+      "expected": "без рукавов"
+    },
+    {
+      "offer_id": "23710",
+      "name": "Блузка без рукавов",
+      "category": "",
+      "picture_url": "https://zolla.com/upload/iplm/images/goods/02026138Y013_0100.jpg",
+      "local_image": "C:\\Users\\1\\OneDrive\\Desktop\\image_description-main\\projects\\Zolla\\image_cache\\a9444c518eab5e66853996a9.jpg",
+      "attributes_json": "{\"other\": {\"error\": null}, \"clothing\": {\"error\": null, \"print_pattern\": {\"value\": \"клетка\", \"confidence\": 90, \"label\": \"Паттерн / принт\"}}}",
+      "expect_hint": "%без рукавов%",
+      "attr_id": "sleeve_length",
+      "expected": "без рукавов"
+    },
+    {
+      "offer_id": "46941",
+      "name": "Платье с коротким рукавом",
+      "category": "",
+      "picture_url": "https://zolla.com/upload/iplm/images/goods/02212819F192_9900.jpg",
+      "local_image": "C:\\Users\\1\\OneDrive\\Desktop\\image_description-main\\projects\\Zolla\\image_cache\\e939abd503c46eeea8357b23.jpg",
+      "attributes_json": "{\"clothing\": {\"error\": null, \"print_pattern\": {\"value\": \"однотонный\", \"confidence\": 100, \"label\": \"Паттерн / принт\"}, \"color\": {\"value\": \"чёрный\", \"confidence\": 100, \"label\": \"Цвет (базовый)\"}}}",
+      "expect_hint": "%коротким рукавом%",
+      "attr_id": "sleeve_length",
+      "expected": "короткий"
+    },
+    {
+      "offer_id": "47482",
+      "name": "Футболка с коротким рукавом",
+      "category": "",
+      "picture_url": "https://zolla.com/upload/iplm/images/goods/02212322L013_75A0.jpg",
+      "local_image": "C:\\Users\\1\\OneDrive\\Desktop\\image_description-main\\projects\\Zolla\\image_cache\\9dd5318f64f7b4eb88c46613.jpg",
+      "attributes_json": "{\"clothing\": {\"error\": null, \"print_pattern\": {\"value\": \"с декоративной вышивкой\", \"confidence\": 90, \"label\": \"Паттерн / принт\"}, \"color\": {\"value\": \"зелёный\", \"confidence\": 95, \"label\": \"Цвет (базовый)\"}, \"color_shade\": {\"value\": \"оливковый\", \"confidence\": 90, \"label\": \"Оттенок\"}}}",
+      "expect_hint": "%коротким рукавом%",
+      "attr_id": "sleeve_length",
+      "expected": "короткий"
+    },
+    {
+      "offer_id": "47483",
+      "name": "Футболка с коротким рукавом",
+      "category": "",
+      "picture_url": "https://zolla.com/upload/iplm/images/goods/02212322L013_75A0.jpg",
+      "local_image": "C:\\Users\\1\\OneDrive\\Desktop\\image_description-main\\projects\\Zolla\\image_cache\\9dd5318f64f7b4eb88c46613.jpg",
+      "attributes_json": "{\"clothing\": {\"error\": null, \"print_pattern\": {\"value\": \"с декоративной вышивкой\", \"confidence\": 90, \"label\": \"Паттерн / принт\"}, \"color\": {\"value\": \"зелёный\", \"confidence\": 95, \"label\": \"Цвет (базовый)\"}, \"color_shade\": {\"value\": \"оливковый\", \"confidence\": 90, \"label\": \"Оттенок\"}}}",
+      "expect_hint": "%коротким рукавом%",
+      "attr_id": "sleeve_length",
+      "expected": "короткий"
+    },
+    {
+      "offer_id": "47484",
+      "name": "Футболка с коротким рукавом",
+      "category": "",
+      "picture_url": "https://zolla.com/upload/iplm/images/goods/02212322L013_75A0.jpg",
+      "local_image": "C:\\Users\\1\\OneDrive\\Desktop\\image_description-main\\projects\\Zolla\\image_cache\\9dd5318f64f7b4eb88c46613.jpg",
+      "attributes_json": "{\"clothing\": {\"error\": null, \"print_pattern\": {\"value\": \"с декоративной вышивкой\", \"confidence\": 90, \"label\": \"Паттерн / принт\"}, \"color\": {\"value\": \"зелёный\", \"confidence\": 95, \"label\": \"Цвет (базовый)\"}, \"color_shade\": {\"value\": \"оливковый\", \"confidence\": 90, \"label\": \"Оттенок\"}}}",
+      "expect_hint": "%коротким рукавом%",
+      "attr_id": "sleeve_length",
+      "expected": "короткий"
+    },
+    {
+      "offer_id": "42923",
+      "name": "Вязаный джемпер с длинным рукавом",
+      "category": "",
+      "picture_url": "https://zolla.com/upload/iplm/images/goods/221426143252_10M0.jpg",
+      "local_image": "C:\\Users\\1\\OneDrive\\Desktop\\image_description-main\\projects\\Zolla\\image_cache\\f73b192497dfd6bc4a789012.jpg",
+      "attributes_json": "{\"clothing\": {\"error\": null, \"print_pattern\": {\"value\": \"однотонный\", \"confidence\": 100, \"label\": \"Паттерн / принт\"}, \"color\": {\"value\": \"белый\", \"confidence\": 100, \"label\": \"Цвет (базовый)\"}}}",
+      "expect_hint": "%длинным рукавом%",
+      "attr_id": "sleeve_length",
+      "expected": "длинный"
+    },
+    {
+      "offer_id": "42926",
+      "name": "Вязаный джемпер с длинным рукавом",
+      "category": "",
+      "picture_url": "https://zolla.com/upload/iplm/images/goods/221426143252_10M0.jpg",
+      "local_image": "C:\\Users\\1\\OneDrive\\Desktop\\image_description-main\\projects\\Zolla\\image_cache\\f73b192497dfd6bc4a789012.jpg",
+      "attributes_json": "{\"clothing\": {\"error\": null, \"print_pattern\": {\"value\": \"однотонный\", \"confidence\": 100, \"label\": \"Паттерн / принт\"}, \"color\": {\"value\": \"белый\", \"confidence\": 100, \"label\": \"Цвет (базовый)\"}}}",
+      "expect_hint": "%длинным рукавом%",
+      "attr_id": "sleeve_length",
+      "expected": "длинный"
+    }
+  ],
+  "pockets": [
+    {
+      "offer_id": "39614",
+      "name": "Утеплённая куртка с накладными карманами",
+      "category": "",
+      "picture_url": "https://zolla.com/upload/iplm/images/goods/011335114174_59P0.jpg",
+      "local_image": "C:\\Users\\1\\OneDrive\\Desktop\\image_description-main\\projects\\Zolla\\image_cache\\e94adf16a75df3854d3db120.jpg",
+      "attributes_json": "{\"clothing\": {\"error\": null, \"print_pattern\": {\"value\": \"милитари\", \"confidence\": 95, \"label\": \"Паттерн / принт\"}, \"color\": {\"value\": \"синий\", \"confidence\": 90, \"label\": \"Цвет (базовый)\"}, \"color_shade\": {\"value\": \"синий\", \"confidence\": 85, \"label\": \"Оттенок\"}}}",
+      "expect_hint": "%карман%",
+      "attr_id": "pockets",
+      "expected": "да"
+    },
+    {
+      "offer_id": "39615",
+      "name": "Утеплённая куртка с накладными карманами",
+      "category": "",
+      "picture_url": "https://zolla.com/upload/iplm/images/goods/011335114174_59P0.jpg",
+      "local_image": "C:\\Users\\1\\OneDrive\\Desktop\\image_description-main\\projects\\Zolla\\image_cache\\e94adf16a75df3854d3db120.jpg",
+      "attributes_json": "{\"clothing\": {\"error\": null, \"print_pattern\": {\"value\": \"милитари\", \"confidence\": 95, \"label\": \"Паттерн / принт\"}, \"color\": {\"value\": \"синий\", \"confidence\": 90, \"label\": \"Цвет (базовый)\"}, \"color_shade\": {\"value\": \"синий\", \"confidence\": 85, \"label\": \"Оттенок\"}}}",
+      "expect_hint": "%карман%",
+      "attr_id": "pockets",
+      "expected": "да"
+    },
+    {
+      "offer_id": "39616",
+      "name": "Утеплённая куртка с накладными карманами",
+      "category": "",
+      "picture_url": "https://zolla.com/upload/iplm/images/goods/011335114174_59P0.jpg",
+      "local_image": "C:\\Users\\1\\OneDrive\\Desktop\\image_description-main\\projects\\Zolla\\image_cache\\e94adf16a75df3854d3db120.jpg",
+      "attributes_json": "{\"clothing\": {\"error\": null, \"print_pattern\": {\"value\": \"милитари\", \"confidence\": 95, \"label\": \"Паттерн / принт\"}, \"color\": {\"value\": \"синий\", \"confidence\": 90, \"label\": \"Цвет (базовый)\"}, \"color_shade\": {\"value\": \"синий\", \"confidence\": 85, \"label\": \"Оттенок\"}}}",
+      "expect_hint": "%карман%",
+      "attr_id": "pockets",
+      "expected": "да"
+    },
+    {
+      "offer_id": "39617",
+      "name": "Утеплённая куртка с накладными карманами",
+      "category": "",
+      "picture_url": "https://zolla.com/upload/iplm/images/goods/011335114174_59P0.jpg",
+      "local_image": "C:\\Users\\1\\OneDrive\\Desktop\\image_description-main\\projects\\Zolla\\image_cache\\e94adf16a75df3854d3db120.jpg",
+      "attributes_json": "{\"clothing\": {\"error\": null, \"print_pattern\": {\"value\": \"милитари\", \"confidence\": 95, \"label\": \"Паттерн / принт\"}, \"color\": {\"value\": \"синий\", \"confidence\": 90, \"label\": \"Цвет (базовый)\"}, \"color_shade\": {\"value\": \"синий\", \"confidence\": 85, \"label\": \"Оттенок\"}}}",
+      "expect_hint": "%карман%",
+      "attr_id": "pockets",
+      "expected": "да"
+    },
+    {
+      "offer_id": "187410",
+      "name": "Джинсы силуэта Skinny со средней посадкой",
+      "category": "Женщины / Джинсы / Скинни",
+      "picture_url": "https://zolla.com/upload/iplm/images/goods/N2531714S112_99D0.jpg",
+      "local_image": "C:\\Users\\1\\OneDrive\\Desktop\\image_description-main\\projects\\Zolla\\image_cache\\033fe737396b96d6ef730f26.jpg",
+      "attributes_json": "{\"other\": {\"error\": null}, \"clothing\": {\"error\": null, \"fastener\": {\"value\": \"застежка молния\", \"confidence\": 85, \"label\": \"Застёжка\"}, \"pockets\": {\"value\": \"да\", \"confidence\": 95, \"label\": \"Карманы\"}, \"print_pattern\": {\"value\": \"однотонный\", \"confidence\": 95, \"label\": \"Паттерн / принт\"}, \"material\": {\"value\": \"деним\", \"confidence\": 90, \"label\": \"Материал (основной)\"}, \"gender_target\": {\"value\": \"женский\", \"confidence\": 95, \"label\": \"Целевой пол\"}}}",
+      "expect_hint": "%Джинсы%",
+      "attr_id": "pockets",
+      "expected": null
+    },
+    {
+      "offer_id": "187411",
+      "name": "Джинсы силуэта Skinny со средней посадкой",
+      "category": "Женщины / Джинсы / Скинни",
+      "picture_url": "https://zolla.com/upload/iplm/images/goods/N2531714S112_99D0.jpg",
+      "local_image": "C:\\Users\\1\\OneDrive\\Desktop\\image_description-main\\projects\\Zolla\\image_cache\\033fe737396b96d6ef730f26.jpg",
+      "attributes_json": "{\"other\": {\"error\": null}, \"clothing\": {\"error\": null, \"fastener\": {\"value\": \"застежка молния\", \"confidence\": 85, \"label\": \"Застёжка\"}, \"pockets\": {\"value\": \"да\", \"confidence\": 95, \"label\": \"Карманы\"}, \"print_pattern\": {\"value\": \"однотонный\", \"confidence\": 95, \"label\": \"Паттерн / принт\"}, \"material\": {\"value\": \"деним\", \"confidence\": 90, \"label\": \"Материал (основной)\"}, \"gender_target\": {\"value\": \"женский\", \"confidence\": 95, \"label\": \"Целевой пол\"}}}",
+      "expect_hint": "%Джинсы%",
+      "attr_id": "pockets",
+      "expected": null
+    },
+    {
+      "offer_id": "187412",
+      "name": "Джинсы силуэта Skinny со средней посадкой",
+      "category": "Женщины / Джинсы / Скинни",
+      "picture_url": "https://zolla.com/upload/iplm/images/goods/N2531714S112_99D0.jpg",
+      "local_image": "C:\\Users\\1\\OneDrive\\Desktop\\image_description-main\\projects\\Zolla\\image_cache\\033fe737396b96d6ef730f26.jpg",
+      "attributes_json": "{\"other\": {\"error\": null}, \"clothing\": {\"error\": null, \"fastener\": {\"value\": \"застежка молния\", \"confidence\": 85, \"label\": \"Застёжка\"}, \"pockets\": {\"value\": \"да\", \"confidence\": 95, \"label\": \"Карманы\"}, \"print_pattern\": {\"value\": \"однотонный\", \"confidence\": 95, \"label\": \"Паттерн / принт\"}, \"material\": {\"value\": \"деним\", \"confidence\": 90, \"label\": \"Материал (основной)\"}, \"gender_target\": {\"value\": \"женский\", \"confidence\": 95, \"label\": \"Целевой пол\"}}}",
+      "expect_hint": "%Джинсы%",
+      "attr_id": "pockets",
+      "expected": null
+    },
+    {
+      "offer_id": "187413",
+      "name": "Джинсы силуэта Skinny со средней посадкой",
+      "category": "Женщины / Джинсы / Скинни",
+      "picture_url": "https://zolla.com/upload/iplm/images/goods/N2531714S112_99D0.jpg",
+      "local_image": "C:\\Users\\1\\OneDrive\\Desktop\\image_description-main\\projects\\Zolla\\image_cache\\033fe737396b96d6ef730f26.jpg",
+      "attributes_json": "{\"other\": {\"error\": null}, \"clothing\": {\"error\": null, \"fastener\": {\"value\": \"застежка молния\", \"confidence\": 85, \"label\": \"Застёжка\"}, \"pockets\": {\"value\": \"да\", \"confidence\": 95, \"label\": \"Карманы\"}, \"print_pattern\": {\"value\": \"однотонный\", \"confidence\": 95, \"label\": \"Паттерн / принт\"}, \"material\": {\"value\": \"деним\", \"confidence\": 90, \"label\": \"Материал (основной)\"}, \"gender_target\": {\"value\": \"женский\", \"confidence\": 95, \"label\": \"Целевой пол\"}}}",
+      "expect_hint": "%Джинсы%",
+      "attr_id": "pockets",
+      "expected": null
+    }
+  ],
+  "fastener": [
+    {
+      "offer_id": "39070",
+      "name": "Замшевая мини-юбка на молнии",
+      "category": "",
+      "picture_url": "https://zolla.com/upload/iplm/images/goods/221347839061_8100.jpg",
+      "local_image": "C:\\Users\\1\\OneDrive\\Desktop\\image_description-main\\projects\\Zolla\\image_cache\\70ad3f441478db419a29b78b.jpg",
+      "attributes_json": "{\"clothing\": {\"error\": null, \"print_pattern\": {\"value\": \"однотонный\", \"confidence\": 95, \"label\": \"Паттерн / принт\"}, \"color\": {\"value\": \"коричневый\", \"confidence\": 98, \"label\": \"Цвет (базовый)\"}, \"color_shade\": {\"value\": \"шатен\", \"confidence\": 90, \"label\": \"Оттенок\"}}}",
+      "expect_hint": "%молни%",
+      "attr_id": "fastener",
+      "expected": "молния"
+    },
+    {
+      "offer_id": "39071",
+      "name": "Замшевая мини-юбка на молнии",
+      "category": "",
+      "picture_url": "https://zolla.com/upload/iplm/images/goods/221347839061_8100.jpg",
+      "local_image": "C:\\Users\\1\\OneDrive\\Desktop\\image_description-main\\projects\\Zolla\\image_cache\\70ad3f441478db419a29b78b.jpg",
+      "attributes_json": "{\"clothing\": {\"error\": null, \"print_pattern\": {\"value\": \"однотонный\", \"confidence\": 95, \"label\": \"Паттерн / принт\"}, \"color\": {\"value\": \"коричневый\", \"confidence\": 98, \"label\": \"Цвет (базовый)\"}, \"color_shade\": {\"value\": \"шатен\", \"confidence\": 90, \"label\": \"Оттенок\"}}}",
+      "expect_hint": "%молни%",
+      "attr_id": "fastener",
+      "expected": "молния"
+    },
+    {
+      "offer_id": "39074",
+      "name": "Замшевая мини-юбка на молнии",
+      "category": "",
+      "picture_url": "https://zolla.com/upload/iplm/images/goods/221347839061_8100.jpg",
+      "local_image": "C:\\Users\\1\\OneDrive\\Desktop\\image_description-main\\projects\\Zolla\\image_cache\\70ad3f441478db419a29b78b.jpg",
+      "attributes_json": "{\"clothing\": {\"error\": null, \"print_pattern\": {\"value\": \"однотонный\", \"confidence\": 95, \"label\": \"Паттерн / принт\"}, \"color\": {\"value\": \"коричневый\", \"confidence\": 98, \"label\": \"Цвет (базовый)\"}, \"color_shade\": {\"value\": \"шатен\", \"confidence\": 90, \"label\": \"Оттенок\"}}}",
+      "expect_hint": "%молни%",
+      "attr_id": "fastener",
+      "expected": "молния"
+    },
+    {
+      "offer_id": "40328",
+      "name": "Платье мини из комбинированного материала с молниями",
+      "category": "",
+      "picture_url": "https://zolla.com/upload/iplm/images/goods/02134814Y153_9900.jpg",
+      "local_image": "C:\\Users\\1\\OneDrive\\Desktop\\image_description-main\\projects\\Zolla\\image_cache\\10aa91e73aa758a6991e14b4.jpg",
+      "attributes_json": "{\"clothing\": {\"error\": null, \"print_pattern\": {\"value\": \"геометрический\", \"confidence\": 90, \"label\": \"Паттерн / принт\"}, \"color\": {\"value\": \"чёрный\", \"confidence\": 90, \"label\": \"Цвет (базовый)\"}}}",
+      "expect_hint": "%молни%",
+      "attr_id": "fastener",
+      "expected": "молния"
+    },
+    {
+      "offer_id": "39372",
+      "name": "Свитер с декоративными пуговицами на рукавах",
+      "category": "",
+      "picture_url": "https://zolla.com/upload/iplm/images/goods/021346198313_19M0.jpg",
+      "local_image": "C:\\Users\\1\\OneDrive\\Desktop\\image_description-main\\projects\\Zolla\\image_cache\\ee74a2220dd6c332861a3912.jpg",
+      "attributes_json": "{\"clothing\": {\"error\": null, \"print_pattern\": {\"value\": \"однотонный\", \"confidence\": 100, \"label\": \"Паттерн / принт\"}, \"color\": {\"value\": \"бежевый\", \"confidence\": 100, \"label\": \"Цвет (базовый)\"}}}",
+      "expect_hint": "%пуговиц%",
+      "attr_id": "fastener",
+      "expected": "пуговицы"
+    },
+    {
+      "offer_id": "39749",
+      "name": "Свитер с декоративными пуговицами на рукавах",
+      "category": "",
+      "picture_url": "https://zolla.com/upload/iplm/images/goods/021346198313_9900.jpg",
+      "local_image": "C:\\Users\\1\\OneDrive\\Desktop\\image_description-main\\projects\\Zolla\\image_cache\\bea47b2601549042243a2bc0.jpg",
+      "attributes_json": "{\"clothing\": {\"error\": null, \"print_pattern\": {\"value\": \"однотонный\", \"confidence\": 100, \"label\": \"Паттерн / принт\"}, \"color\": {\"value\": \"чёрный\", \"confidence\": 100, \"label\": \"Цвет (базовый)\"}, \"color_shade\": {\"value\": \"неодрёжный\", \"confidence\": 95, \"label\": \"Оттенок\"}}}",
+      "expect_hint": "%пуговиц%",
+      "attr_id": "fastener",
+      "expected": "пуговицы"
+    },
+    {
+      "offer_id": "40404",
+      "name": "Кардиган на пуговицах",
+      "category": "",
+      "picture_url": "https://zolla.com/upload/iplm/images/goods/011426463011_91N2.jpg",
+      "local_image": "C:\\Users\\1\\OneDrive\\Desktop\\image_description-main\\projects\\Zolla\\image_cache\\21bacfbffa076fc1fcf2a249.jpg",
+      "attributes_json": "{\"clothing\": {\"error\": null, \"print_pattern\": {\"value\": \"без принта\", \"confidence\": 95, \"label\": \"Паттерн / принт\"}, \"color\": {\"value\": \"серый\", \"confidence\": 95, \"label\": \"Цвет (базовый)\"}, \"color_shade\": {\"value\": \"известий\", \"confidence\": 90, \"label\": \"Оттенок\"}}}",
+      "expect_hint": "%пуговиц%",
+      "attr_id": "fastener",
+      "expected": "пуговицы"
+    },
+    {
+      "offer_id": "47757",
+      "name": "Юбка-шорты с пуговицами",
+      "category": "",
+      "picture_url": "https://zolla.com/upload/iplm/images/goods/022127570021_9900.jpg",
+      "local_image": "C:\\Users\\1\\OneDrive\\Desktop\\image_description-main\\projects\\Zolla\\image_cache\\cff9102f27829f6dbfe0f473.jpg",
+      "attributes_json": "{\"clothing\": {\"error\": null, \"color\": {\"value\": \"чёрный\", \"confidence\": 100, \"label\": \"Цвет (базовый)\"}, \"print_pattern\": {\"value\": \"однотонный\", \"confidence\": 100, \"label\": \"Паттерн / принт\"}}}",
+      "expect_hint": "%пуговиц%",
+      "attr_id": "fastener",
+      "expected": "пуговицы"
+    }
+  ],
+  "collar": [
+    {
+      "offer_id": "38537",
+      "name": "Утеплённый тренчкот с воротником-стойкой",
+      "category": "",
+      "picture_url": "https://zolla.com/upload/iplm/images/goods/011335239304_9900.jpg",
+      "local_image": "C:\\Users\\1\\OneDrive\\Desktop\\image_description-main\\projects\\Zolla\\image_cache\\842673822a485caeb8ac0f0f.jpg",
+      "attributes_json": "{\"clothing\": {\"error\": null, \"print_pattern\": {\"value\": \"однотонный\", \"confidence\": 99, \"label\": \"Паттерн / принт\"}, \"color\": {\"value\": \"чёрный\", \"confidence\": 98, \"label\": \"Цвет (базовый)\"}, \"color_shade\": {\"value\": \"серый\", \"confidence\": 85, \"label\": \"Оттенок\"}}}",
+      "expect_hint": "%стойк%",
+      "attr_id": "collar",
+      "expected": "стойка"
+    },
+    {
+      "offer_id": "38399",
+      "name": "Джемпер с воротником-стойкой",
+      "category": "",
+      "picture_url": "https://zolla.com/upload/iplm/images/goods/021346149362_91M0.jpg",
+      "local_image": "C:\\Users\\1\\OneDrive\\Desktop\\image_description-main\\projects\\Zolla\\image_cache\\167646e98424d626ed131f3c.jpg",
+      "attributes_json": "{\"clothing\": {\"error\": null, \"print_pattern\": {\"value\": \"однотонный\", \"confidence\": 95, \"label\": \"Паттерн / принт\"}, \"color\": {\"value\": \"серый\", \"confidence\": 95, \"label\": \"Цвет (базовый)\"}, \"color_shade\": {\"value\": \"светло серый\", \"confidence\": 90, \"label\": \"Оттенок\"}}}",
+      "expect_hint": "%стойк%",
+      "attr_id": "collar",
+      "expected": "стойка"
+    },
+    {
+      "offer_id": "38376",
+      "name": "Тёплое пальто с воротником-стойкой",
+      "category": "",
+      "picture_url": "https://zolla.com/upload/iplm/images/goods/021345202144_9100.jpg",
+      "local_image": "C:\\Users\\1\\OneDrive\\Desktop\\image_description-main\\projects\\Zolla\\image_cache\\4ba09ebd835cf6e96edaf37c.jpg",
+      "attributes_json": "{\"clothing\": {\"error\": null, \"print_pattern\": {\"value\": \"однотонный\", \"confidence\": 90, \"label\": \"Паттерн / принт\"}, \"color\": {\"value\": \"серый\", \"confidence\": 90, \"label\": \"Цвет (базовый)\"}, \"color_shade\": {\"value\": \"светло серый\", \"confidence\": 90, \"label\": \"Оттенок\"}}}",
+      "expect_hint": "%стойк%",
+      "attr_id": "collar",
+      "expected": "стойка"
+    },
+    {
+      "offer_id": "39484",
+      "name": "Тёплое пальто с воротником-стойкой",
+      "category": "",
+      "picture_url": "https://zolla.com/upload/iplm/images/goods/011335839014_95J0.jpg",
+      "local_image": "C:\\Users\\1\\OneDrive\\Desktop\\image_description-main\\projects\\Zolla\\image_cache\\23507522fd30ed4323eba403.jpg",
+      "attributes_json": "{\"clothing\": {\"error\": null, \"print_pattern\": {\"value\": \"однотонный\", \"confidence\": 100, \"label\": \"Паттерн / принт\"}, \"color\": {\"value\": \"чёрный\", \"confidence\": 100, \"label\": \"Цвет (базовый)\"}}}",
+      "expect_hint": "%стойк%",
+      "attr_id": "collar",
+      "expected": "стойка"
+    },
+    {
+      "offer_id": "177548",
+      "name": "Футболка из хлопка на кулиске",
+      "category": "Женщины / Футболки и Топы / Футболки",
+      "picture_url": "https://zolla.com/upload/iplm/images/goods/022253273153_51S0.jpg",
+      "local_image": "C:\\Users\\1\\OneDrive\\Desktop\\image_description-main\\projects\\Zolla\\image_cache\\c79cdd1e8024380657a976e7.jpg",
+      "attributes_json": "{\"clothing\": {\"error\": null, \"sleeve_length\": {\"value\": \"короткий\", \"confidence\": 95, \"label\": \"Длина рукава\"}, \"collar\": {\"value\": \"круглый\", \"confidence\": 95, \"label\": \"Воротник\"}, \"print_pattern\": {\"value\": \"полоски\", \"confidence\": 99, \"label\": \"Паттерн / принт\"}, \"material\": {\"value\": \"хлопок\", \"confidence\": 90, \"label\": \"Материал (основной)\"}, \"gender_target\": {\"value\": \"женский\", \"confidence\": 95, \"label\": \"Целевой пол\"}}}",
+      "expect_hint": "%Футболка%",
+      "attr_id": "collar",
+      "expected": "круглый"
+    },
+    {
+      "offer_id": "177549",
+      "name": "Футболка из хлопка на кулиске",
+      "category": "Женщины / Футболки и Топы / Футболки",
+      "picture_url": "https://zolla.com/upload/iplm/images/goods/022253273153_51S0.jpg",
+      "local_image": "C:\\Users\\1\\OneDrive\\Desktop\\image_description-main\\projects\\Zolla\\image_cache\\c79cdd1e8024380657a976e7.jpg",
+      "attributes_json": "{\"clothing\": {\"error\": null, \"sleeve_length\": {\"value\": \"короткий\", \"confidence\": 95, \"label\": \"Длина рукава\"}, \"collar\": {\"value\": \"круглый\", \"confidence\": 95, \"label\": \"Воротник\"}, \"print_pattern\": {\"value\": \"полоски\", \"confidence\": 99, \"label\": \"Паттерн / принт\"}, \"material\": {\"value\": \"хлопок\", \"confidence\": 90, \"label\": \"Материал (основной)\"}, \"gender_target\": {\"value\": \"женский\", \"confidence\": 95, \"label\": \"Целевой пол\"}}}",
+      "expect_hint": "%Футболка%",
+      "attr_id": "collar",
+      "expected": "круглый"
+    },
+    {
+      "offer_id": "177550",
+      "name": "Футболка из хлопка на кулиске",
+      "category": "Женщины / Футболки и Топы / Футболки",
+      "picture_url": "https://zolla.com/upload/iplm/images/goods/022253273153_51S0.jpg",
+      "local_image": "C:\\Users\\1\\OneDrive\\Desktop\\image_description-main\\projects\\Zolla\\image_cache\\c79cdd1e8024380657a976e7.jpg",
+      "attributes_json": "{\"clothing\": {\"error\": null, \"sleeve_length\": {\"value\": \"короткий\", \"confidence\": 95, \"label\": \"Длина рукава\"}, \"collar\": {\"value\": \"круглый\", \"confidence\": 95, \"label\": \"Воротник\"}, \"print_pattern\": {\"value\": \"полоски\", \"confidence\": 99, \"label\": \"Паттерн / принт\"}, \"material\": {\"value\": \"хлопок\", \"confidence\": 90, \"label\": \"Материал (основной)\"}, \"gender_target\": {\"value\": \"женский\", \"confidence\": 95, \"label\": \"Целевой пол\"}}}",
+      "expect_hint": "%Футболка%",
+      "attr_id": "collar",
+      "expected": "круглый"
+    },
+    {
+      "offer_id": "177551",
+      "name": "Футболка из хлопка на кулиске",
+      "category": "Женщины / Футболки и Топы / Футболки",
+      "picture_url": "https://zolla.com/upload/iplm/images/goods/022253273153_51S0.jpg",
+      "local_image": "C:\\Users\\1\\OneDrive\\Desktop\\image_description-main\\projects\\Zolla\\image_cache\\c79cdd1e8024380657a976e7.jpg",
+      "attributes_json": "{\"clothing\": {\"error\": null, \"sleeve_length\": {\"value\": \"короткий\", \"confidence\": 95, \"label\": \"Длина рукава\"}, \"collar\": {\"value\": \"круглый\", \"confidence\": 95, \"label\": \"Воротник\"}, \"print_pattern\": {\"value\": \"полоски\", \"confidence\": 99, \"label\": \"Паттерн / принт\"}, \"material\": {\"value\": \"хлопок\", \"confidence\": 90, \"label\": \"Материал (основной)\"}, \"gender_target\": {\"value\": \"женский\", \"confidence\": 95, \"label\": \"Целевой пол\"}}}",
+      "expect_hint": "%Футболка%",
+      "attr_id": "collar",
+      "expected": "круглый"
     }
   ]
 }

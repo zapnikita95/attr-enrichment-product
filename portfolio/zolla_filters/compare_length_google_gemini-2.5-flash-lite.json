@@ -1,0 +1,145 @@
+{
+  "attr_id": "length",
+  "model": "google/gemini-2.5-flash-lite",
+  "n": 4,
+  "coerced_ok": 3,
+  "coerced_rate": 0.75,
+  "expected_n": 3,
+  "expected_match": 3,
+  "expected_match_rate": 1.0,
+  "ood_or_fail": 1,
+  "rows": [
+    {
+      "offer_id": "42955",
+      "name": "Шифоновое платье мини с бантом",
+      "attr_id": "length",
+      "model": "google/gemini-2.5-flash-lite",
+      "elapsed_s": 2.81,
+      "error": null,
+      "raw_text": "```json\n{\n  \"attr_id\": \"length\",\n  \"value\": \"mini\",\n  \"confidence",
+      "parsed": {
+        "parse_error": true,
+        "raw_text": "```json\n{\n  \"attr_id\": \"length\",\n  \"value\": \"mini\",\n  \"confidence"
+      },
+      "raw_value": null,
+      "coerced_ok": false,
+      "coerced_value": null,
+      "coerce_reason": "empty",
+      "mapped_from": "",
+      "lurex_verify": null,
+      "expected": "mini",
+      "match_expected": null,
+      "confidence": null,
+      "evidence": null,
+      "local_image": "C:\\Users\\1\\OneDrive\\Desktop\\image_description-main\\projects\\Zolla\\image_cache\\19265abf4210abed2126fd4b.jpg",
+      "picture_url": "https://zolla.com/upload/iplm/images/goods/021438259193_59P0.jpg",
+      "picture_key": "https://zolla.com/upload/iplm/images/goods/021438259193_59P0.jpg",
+      "member_offer_ids": [
+        "42955",
+        "42956",
+        "42957"
+      ],
+      "group_size": 3
+    },
+    {
+      "offer_id": "43388",
+      "name": "Кружевное платье мини",
+      "attr_id": "length",
+      "model": "google/gemini-2.5-flash-lite",
+      "elapsed_s": 2.76,
+      "error": null,
+      "raw_text": "```json\n{\n  \"attr_id\": \"length\",\n  \"value\": \"mini\",\n  \"confidence\": 95,\n  \"evidence\": \"Платье заканчивается выше колена, что соответствует категории 'mini'.\"\n}\n```",
+      "parsed": {
+        "attr_id": "length",
+        "value": "mini",
+        "confidence": 95,
+        "evidence": "Платье заканчивается выше колена, что соответствует категории 'mini'."
+      },
+      "raw_value": "mini",
+      "coerced_ok": true,
+      "coerced_value": "mini",
+      "coerce_reason": "",
+      "mapped_from": "",
+      "lurex_verify": null,
+      "expected": "mini",
+      "match_expected": true,
+      "confidence": 95,
+      "evidence": "Платье заканчивается выше колена, что соответствует категории 'mini'.",
+      "local_image": "C:\\Users\\1\\OneDrive\\Desktop\\image_description-main\\projects\\Zolla\\image_cache\\e7cc2c790e0058ebb27a5042.jpg",
+      "picture_url": "https://zolla.com/upload/iplm/images/goods/02144829F101_9900.jpg",
+      "picture_key": "https://zolla.com/upload/iplm/images/goods/02144829F101_9900.jpg",
+      "member_offer_ids": [
+        "43388",
+        "43389"
+      ],
+      "group_size": 2
+    },
+    {
+      "offer_id": "41880",
+      "name": "Принтованное мини платье",
+      "attr_id": "length",
+      "model": "google/gemini-2.5-flash-lite",
+      "elapsed_s": 2.8,
+      "error": null,
+      "raw_text": "```json\n{\n  \"attr_id\": \"length\",\n  \"value\": \"mini\",\n  \"confidence\": 95,\n  \"evidence\": \"платье заканчивается выше колена\"\n}\n```",
+      "parsed": {
+        "attr_id": "length",
+        "value": "mini",
+        "confidence": 95,
+        "evidence": "платье заканчивается выше колена"
+      },
+      "raw_value": "mini",
+      "coerced_ok": true,
+      "coerced_value": "mini",
+      "coerce_reason": "",
+      "mapped_from": "",
+      "lurex_verify": null,
+      "expected": "mini",
+      "match_expected": true,
+      "confidence": 95,
+      "evidence": "платье заканчивается выше колена",
+      "local_image": "C:\\Users\\1\\OneDrive\\Desktop\\image_description-main\\projects\\Zolla\\image_cache\\69af0df1db3ebf9773d29d6e.jpg",
+      "picture_url": "https://zolla.com/upload/iplm/images/goods/221238259021_99P0.jpg",
+      "picture_key": "https://zolla.com/upload/iplm/images/goods/221238259021_99P0.jpg",
+      "member_offer_ids": [
+        "41880",
+        "41881",
+        "41882"
+      ],
+      "group_size": 3
+    },
+    {
+      "offer_id": "50007",
+      "name": "Шифоновое мини платье с длинным рукавом",
+      "attr_id": "length",
+      "model": "google/gemini-2.5-flash-lite",
+      "elapsed_s": 2.67,
+      "error": null,
+      "raw_text": "```json\n{\n  \"attr_id\": \"length\",\n  \"value\": \"mini\",\n  \"confidence\": 95,\n  \"evidence\": \"Платье заканчивается выше колен\"\n}\n```",
+      "parsed": {
+        "attr_id": "length",
+        "value": "mini",
+        "confidence": 95,
+        "evidence": "Платье заканчивается выше колен"
+      },
+      "raw_value": "mini",
+      "coerced_ok": true,
+      "coerced_value": "mini",
+      "coerce_reason": "",
+      "mapped_from": "",
+      "lurex_verify": null,
+      "expected": "mini",
+      "match_expected": true,
+      "confidence": 95,
+      "evidence": "Платье заканчивается выше колен",
+      "local_image": "C:\\Users\\1\\OneDrive\\Desktop\\image_description-main\\projects\\Zolla\\image_cache\\0b8615c6b00782b42dbbb632.jpg",
+      "picture_url": "https://zolla.com/upload/iplm/images/goods/022118262292_59P0.jpg",
+      "picture_key": "https://zolla.com/upload/iplm/images/goods/022118262292_59P0.jpg",
+      "member_offer_ids": [
+        "50007",
+        "50008"
+      ],
+      "group_size": 2
+    }
+  ]
+}
