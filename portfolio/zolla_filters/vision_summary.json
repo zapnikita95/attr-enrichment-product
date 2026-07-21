@@ -1,0 +1,32 @@
+{
+  "hood": {
+    "attr_id": "hood",
+    "model": "google/gemini-2.5-flash",
+    "n": 12,
+    "coerced_ok": 12,
+    "coerced_rate": 1.0,
+    "expected_match": 12,
+    "expected_match_rate": 1.0,
+    "ood_or_fail": 0
+  },
+  "length": {
+    "attr_id": "length",
+    "model": "google/gemini-2.5-flash",
+    "n": 10,
+    "coerced_ok": 10,
+    "coerced_rate": 1.0,
+    "expected_match": 10,
+    "expected_match_rate": 1.0,
+    "ood_or_fail": 0
+  },
+  "print_pattern": {
+    "attr_id": "print_pattern",
+    "model": "google/gemini-2.5-flash",
+    "n": 9,
+    "coerced_ok": 9,
+    "coerced_rate": 1.0,
+    "expected_match": 9,
+    "expected_match_rate": 1.0,
+    "ood_or_fail": 0
+  }
+}

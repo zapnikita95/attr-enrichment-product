@@ -1,0 +1,22 @@
+{
+  "hood": {
+    "models": {
+      "google/gemini-2.5-flash": {
+        "coerced_rate": 1.0,
+        "expected_match_rate": 1.0,
+        "n": 6
+      },
+      "google/gemini-2.5-flash-lite": {
+        "coerced_rate": 1.0,
+        "expected_match_rate": 1.0,
+        "n": 6
+      },
+      "openai/gpt-4o-mini": {
+        "coerced_rate": 1.0,
+        "expected_match_rate": 1.0,
+        "n": 6
+      }
+    },
+    "best": "google/gemini-2.5-flash"
+  }
+}

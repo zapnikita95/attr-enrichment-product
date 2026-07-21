@@ -1,0 +1,27 @@
+{
+  "zolla_site_id": 3826,
+  "status": "demo_formula_on_4lapy_sample — replace with CH pull for 3826",
+  "demo": {
+    "Лотки": {
+      "filter_lift_pp": 1.29,
+      "filter_share": 0.1076,
+      "delta_revenue": 3140.57,
+      "filters_per_query_proxy": 0.1076,
+      "note": "measured lift; use max(0, lift) for upside forecast"
+    },
+    "Переноски": {
+      "filter_lift_pp": -0.55,
+      "filter_share": 0.1743,
+      "delta_revenue": 0.0,
+      "filters_per_query_proxy": 0.1743,
+      "note": "measured lift; use max(0, lift) for upside forecast"
+    },
+    "Лежанки": {
+      "filter_lift_pp": 0.32,
+      "filter_share": 0.2058,
+      "delta_revenue": 1307.46,
+      "filters_per_query_proxy": 0.2058,
+      "note": "measured lift; use max(0, lift) for upside forecast"
+    }
+  }
+}

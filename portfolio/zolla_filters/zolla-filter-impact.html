@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8"/>
+<title>Zolla — Filter Enrichment Pilot</title>
+<style>
+  body { font-family: "Segoe UI", system-ui, sans-serif; margin: 2rem; background: #0d1117; color: #e6edf3; }
+  h1,h2 { color: #f0f6fc; }
+  table { border-collapse: collapse; width: 100%; margin: 1rem 0 2rem; }
+  th,td { border: 1px solid #30363d; padding: 0.5rem 0.75rem; text-align: left; vertical-align: top; }
+  th { background: #161b22; }
+  code { color: #79c0ff; }
+  .muted { color: #8b949e; }
+  .card { background: #161b22; border: 1px solid #30363d; padding: 1rem 1.25rem; margin: 1rem 0; border-radius: 6px; }
+</style>
+</head>
+<body>
+<h1>Zolla — фильтры из описаний и картинок</h1>
+<p class="muted">Pilot report · 2026-07-21 11:16 UTC · site_id 3826</p>
+
+<div class="card">
+  <h2>Методология</h2>
+  <ol>
+    <li>Filter candidacy (LLM): filter vs search-only vs reject</li>
+    <li>Schema: value_type + closed allowed_values</li>
+    <li>Typed extract (vision OpenRouter / text gold) — только канон</li>
+    <li>Hard coerce + feed collision</li>
+    <li>Impact: coverage × query demand × CR with/without filters (ClickHouse)</li>
+  </ol>
+  <p>Search lexicon и facet-фильтры считаются <b>отдельно</b>.</p>
+</div>
+
+<h2>Фильтры по схеме</h2>
+<table>
+<thead><tr><th>Фильтр</th><th>id</th><th>Тип</th><th>Allowed</th><th>Категории</th><th>Почему фильтр</th></tr></thead>
+<tbody><tr><td>Капюшон</td><td><code>hood</code></td><td>boolean</td><td>да, нет</td><td>Верхняя одежда, Толстовки и свитшоты, Платья и сарафаны, Костюмы</td><td>Бинарный facet с низкой кардинальностью; часто нужен в UI верхней одежды.</td></tr><tr><td>Длина изделия</td><td><code>length</code></td><td>enum</td><td>mini, midi, maxi, до колена, укороченный</td><td>Платья и сарафаны, Юбки, Шорты, Брюки, Верхняя одежда</td><td>Ограниченный набор длин — классический facet fashion; не свободный текст.</td></tr><tr><td>Узор / принт</td><td><code>print_pattern</code></td><td>multi_enum</td><td>однотонный, полоска, клетка, горошек, цветочный, геометрия, леопард, зебра, тигровый, камуфляж, абстракция, гусиная лапка, меланж, люрекс, графика</td><td>Платья и сарафаны, Блузки и рубашки, Футболки и топы, Юбки, Брюки, Верхняя одежда</td><td>Facet по визуальному узору; кардинальность ограничена closed-set.</td></tr></tbody>
+</table>
+
+<h2>Vision pilot (OpenRouter)</h2>
+<table>
+<thead><tr><th>attr</th><th>model</th><th>n</th><th>coerced_rate</th><th>expected_match</th><th>fail</th></tr></thead>
+<tbody><tr><td>hood</td><td>google/gemini-2.5-flash</td><td>12</td><td>1.0</td><td>1.0</td><td>0</td></tr><tr><td>length</td><td>google/gemini-2.5-flash</td><td>10</td><td>1.0</td><td>1.0</td><td>0</td></tr><tr><td>print_pattern</td><td>google/gemini-2.5-flash</td><td>9</td><td>1.0</td><td>1.0</td><td>0</td></tr></tbody>
+</table>
+
+<h2>Text gold coerce (3826)</h2>
+<pre>{
+  "length": {
+    "seen": 22,
+    "ok": 13,
+    "collision": 0,
+    "ood": 9
+  },
+  "print_pattern": {
+    "seen": 178,
+    "ok": 83,
+    "collision": 0,
+    "ood": 95
+  }
+}</pre>
+
+<h2>Model bakeoff</h2>
+<pre>{
+  "hood": {
+    "models": {
+      "google/gemini-2.5-flash": {
+        "coerced_rate": 1.0,
+        "expected_match_rate": 1.0,
+        "n": 6
+      },
+      "google/gemini-2.5-flash-lite": {
+        "coerced_rate": 1.0,
+        "expected_match_rate": 1.0,
+        "n": 6
+      },
+      "openai/gpt-4o-mini": {
+        "coerced_rate": 1.0,
+        "expected_match_rate": 1.0,
+        "n": 6
+      }
+    },
+    "best": "google/gemini-2.5-flash"
+  }
+}</pre>
+
+<div class="card">
+  <h2>ClickHouse impact (next)</h2>
+  <p>Метрики для партнёра (после появления facet usage / или baseline категории):</p>
+  <ul>
+    <li><code>conv_with_filters_pct</code> vs <code>conv_without_filters_pct</code> → <code>filter_lift_pp</code></li>
+    <li>SKU coverage по каждому facet</li>
+    <li>доля search sessions с ≥1 filter</li>
+    <li>filters per query</li>
+    <li>Δвыручка = sessions × filter_share × max(0, lift_pp) × avg_check</li>
+  </ul>
+  <p class="muted">Скелет как в 4lapy <code>filter-conversion-data.json</code>. Для Zolla site_id=3826 нужен CH pull.</p>
+</div>
+</body>
+</html>
