@@ -1,0 +1,1736 @@
+{
+  "18327": {
+    "id": "18327",
+    "parentId": "",
+    "name": "Мужское",
+    "url": "https://www.tsum.ru/catalog/muzhskoe-2408/"
+  },
+  "18328": {
+    "id": "18328",
+    "parentId": "18327",
+    "name": "Одежда",
+    "url": "https://www.tsum.ru/catalog/odezhda-2409/"
+  },
+  "18330": {
+    "id": "18330",
+    "parentId": "",
+    "name": "Косметика",
+    "url": "https://www.tsum.ru/catalog/kosmetika-3326/"
+  },
+  "18331": {
+    "id": "18331",
+    "parentId": "18330",
+    "name": "Макияж",
+    "url": "https://www.tsum.ru/catalog/makiyazh-10691/"
+  },
+  "18332": {
+    "id": "18332",
+    "parentId": "18331",
+    "name": "Для губ",
+    "url": "https://www.tsum.ru/catalog/dlya_gub-10697/"
+  },
+  "18333": {
+    "id": "18333",
+    "parentId": "18330",
+    "name": "Уход за полостью рта",
+    "url": "https://www.tsum.ru/catalog/ukhod_za_polostyu_rta-10761/"
+  },
+  "18335": {
+    "id": "18335",
+    "parentId": "18330",
+    "name": "Уход за кожей",
+    "url": "https://www.tsum.ru/catalog/ukhod_za_kozhey-10684/"
+  },
+  "18336": {
+    "id": "18336",
+    "parentId": "18335",
+    "name": "Солнечная линия",
+    "url": "https://www.tsum.ru/catalog/solnechnaya-liniya-18336/"
+  },
+  "18338": {
+    "id": "18338",
+    "parentId": "",
+    "name": "Детское",
+    "url": "https://www.tsum.ru/catalog/detskie_tovary-2518/"
+  },
+  "18339": {
+    "id": "18339",
+    "parentId": "18338",
+    "name": "Одежда для девочек",
+    "url": "https://www.tsum.ru/catalog/odezhda_dlya_devochek-3403/"
+  },
+  "18340": {
+    "id": "18340",
+    "parentId": "18339",
+    "name": "Пляжная одежда",
+    "url": "https://www.tsum.ru/catalog/plyazhnaya-odezhda-18340/"
+  },
+  "18341": {
+    "id": "18341",
+    "parentId": "",
+    "name": "Apple",
+    "url": "https://www.tsum.ru/catalog/apple-9783/"
+  },
+  "18342": {
+    "id": "18342",
+    "parentId": "18341",
+    "name": "Apple Watch",
+    "url": "https://www.tsum.ru/catalog/apple-watch-18342/"
+  },
+  "18345": {
+    "id": "18345",
+    "parentId": "18341",
+    "name": "iPhone",
+    "url": "https://www.tsum.ru/catalog/iphone-18345/"
+  },
+  "18347": {
+    "id": "18347",
+    "parentId": "18338",
+    "name": "Для малышей",
+    "url": "https://www.tsum.ru/catalog/dlya_novorozhdyennykh-2579/"
+  },
+  "18348": {
+    "id": "18348",
+    "parentId": "18347",
+    "name": "Одежда",
+    "url": "https://www.tsum.ru/catalog/odezhda-18348/"
+  },
+  "18349": {
+    "id": "18349",
+    "parentId": "18348",
+    "name": "Другое",
+    "url": "https://www.tsum.ru/catalog/drugoe-18349/"
+  },
+  "18350": {
+    "id": "18350",
+    "parentId": "18327",
+    "name": "Аксессуары",
+    "url": "https://www.tsum.ru/catalog/aksessuary-4031/"
+  },
+  "18351": {
+    "id": "18351",
+    "parentId": "18350",
+    "name": "Ремни",
+    "url": "https://www.tsum.ru/catalog/remni-18351/"
+  },
+  "18353": {
+    "id": "18353",
+    "parentId": "18338",
+    "name": "Аксессуары",
+    "url": "https://www.tsum.ru/catalog/aksessuary-2519/"
+  },
+  "18354": {
+    "id": "18354",
+    "parentId": "18353",
+    "name": "Бижутерия",
+    "url": "https://www.tsum.ru/catalog/bizhuteriya-18354/"
+  },
+  "18355": {
+    "id": "18355",
+    "parentId": "18354",
+    "name": "Кольца",
+    "url": "https://www.tsum.ru/catalog/koltca-18355/"
+  },
+  "18357": {
+    "id": "18357",
+    "parentId": "18327",
+    "name": "Часы",
+    "url": "https://www.tsum.ru/catalog/chasy-18357/"
+  },
+  "18358": {
+    "id": "18358",
+    "parentId": "18339",
+    "name": "Бельё и домашняя одежда",
+    "url": "https://www.tsum.ru/catalog/bele-i-domashnyaya-odezhda-18358/"
+  },
+  "18359": {
+    "id": "18359",
+    "parentId": "18358",
+    "name": "Халаты",
+    "url": "https://www.tsum.ru/catalog/khalaty-18359/"
+  },
+  "18360": {
+    "id": "18360",
+    "parentId": "18330",
+    "name": "Уход за ногтями",
+    "url": "https://www.tsum.ru/catalog/ukhod_za_nogtyami-10742/"
+  },
+  "18361": {
+    "id": "18361",
+    "parentId": "18335",
+    "name": "Для лица",
+    "url": "https://www.tsum.ru/catalog/dlya_litsa-10685/"
+  },
+  "18363": {
+    "id": "18363",
+    "parentId": "18350",
+    "name": "Аксессуары из кожи",
+    "url": "https://www.tsum.ru/catalog/aksessuary-iz-kozhi-18363/"
+  },
+  "18364": {
+    "id": "18364",
+    "parentId": "18347",
+    "name": "Аксессуары",
+    "url": "https://www.tsum.ru/catalog/aksessuary-18364/"
+  },
+  "18365": {
+    "id": "18365",
+    "parentId": "18364",
+    "name": "Нагрудники",
+    "url": "https://www.tsum.ru/catalog/nagrudniki-18365/"
+  },
+  "18368": {
+    "id": "18368",
+    "parentId": "",
+    "name": "Женское",
+    "url": "https://www.tsum.ru/catalog/zhenskoe-18368/"
+  },
+  "18369": {
+    "id": "18369",
+    "parentId": "18368",
+    "name": "Винтаж",
+    "url": "https://www.tsum.ru/catalog/vintazh-18005/"
+  },
+  "18370": {
+    "id": "18370",
+    "parentId": "18369",
+    "name": "Одежда",
+    "url": "https://www.tsum.ru/catalog/odezhda-18023/"
+  },
+  "18371": {
+    "id": "18371",
+    "parentId": "18370",
+    "name": "Шубы",
+    "url": "https://www.tsum.ru/catalog/dublyenki_i_shuby-18029/"
+  },
+  "18372": {
+    "id": "18372",
+    "parentId": "18370",
+    "name": "Юбки",
+    "url": "https://www.tsum.ru/catalog/yubki-18372/"
+  },
+  "18373": {
+    "id": "18373",
+    "parentId": "18328",
+    "name": "Бельё и домашняя одежда",
+    "url": "https://www.tsum.ru/catalog/belye-2448/"
+  },
+  "18377": {
+    "id": "18377",
+    "parentId": "18350",
+    "name": "Украшения",
+    "url": "https://www.tsum.ru/catalog/bizhuteriya-18377/"
+  },
+  "18380": {
+    "id": "18380",
+    "parentId": "18368",
+    "name": "Аксессуары",
+    "url": "https://www.tsum.ru/catalog/aksessuary-2404/"
+  },
+  "18382": {
+    "id": "18382",
+    "parentId": "",
+    "name": "Интерьер",
+    "url": "https://www.tsum.ru/catalog/interer-3933/"
+  },
+  "18383": {
+    "id": "18383",
+    "parentId": "18382",
+    "name": "Скульптуры",
+    "url": "https://www.tsum.ru/catalog/skulptury-18383/"
+  },
+  "18385": {
+    "id": "18385",
+    "parentId": "18341",
+    "name": "Аксессуары",
+    "url": "https://www.tsum.ru/catalog/aksessuary-18385/"
+  },
+  "18386": {
+    "id": "18386",
+    "parentId": "18385",
+    "name": "Чехлы для MacBook",
+    "url": "https://www.tsum.ru/catalog/chekhly-dlya-macbook-18386/"
+  },
+  "18388": {
+    "id": "18388",
+    "parentId": "18331",
+    "name": "Для глаз",
+    "url": "https://www.tsum.ru/catalog/dlya_glaz-10699/"
+  },
+  "18390": {
+    "id": "18390",
+    "parentId": "18341",
+    "name": "MacBook",
+    "url": "https://www.tsum.ru/catalog/macbook-18390/"
+  },
+  "18393": {
+    "id": "18393",
+    "parentId": "18327",
+    "name": "Косметика",
+    "url": "https://www.tsum.ru/catalog/kosmetika-18393/"
+  },
+  "18396": {
+    "id": "18396",
+    "parentId": "18341",
+    "name": "iMac",
+    "url": "https://www.tsum.ru/catalog/imac-18396/"
+  },
+  "18397": {
+    "id": "18397",
+    "parentId": "18327",
+    "name": "Сумки",
+    "url": "https://www.tsum.ru/catalog/muzhskie_sumki-4051/"
+  },
+  "18399": {
+    "id": "18399",
+    "parentId": "18350",
+    "name": "Головные уборы",
+    "url": "https://www.tsum.ru/catalog/golovnye-ubory-18399/"
+  },
+  "18400": {
+    "id": "18400",
+    "parentId": "18341",
+    "name": "iPad",
+    "url": "https://www.tsum.ru/catalog/ipad-18400/"
+  },
+  "18402": {
+    "id": "18402",
+    "parentId": "18382",
+    "name": "Новый год",
+    "url": "https://www.tsum.ru/catalog/novyi-god-18402/"
+  },
+  "18404": {
+    "id": "18404",
+    "parentId": "18353",
+    "name": "Перчатки",
+    "url": "https://www.tsum.ru/catalog/perchatki-18404/"
+  },
+  "18405": {
+    "id": "18405",
+    "parentId": "18368",
+    "name": "Обувь",
+    "url": "https://www.tsum.ru/catalog/obuv-18405/"
+  },
+  "18407": {
+    "id": "18407",
+    "parentId": "18385",
+    "name": "Чехлы для iPhone",
+    "url": "https://www.tsum.ru/catalog/chekhly-dlya-iphone-18407/"
+  },
+  "18409": {
+    "id": "18409",
+    "parentId": "18328",
+    "name": "Спорт",
+    "url": "https://www.tsum.ru/catalog/sport-18409/"
+  },
+  "18411": {
+    "id": "18411",
+    "parentId": "18368",
+    "name": "Часы",
+    "url": "https://www.tsum.ru/catalog/chasy-18411/"
+  },
+  "18413": {
+    "id": "18413",
+    "parentId": "18368",
+    "name": "Одежда",
+    "url": "https://www.tsum.ru/catalog/odezhda-18413/"
+  },
+  "18414": {
+    "id": "18414",
+    "parentId": "18413",
+    "name": "Бельё",
+    "url": "https://www.tsum.ru/catalog/belye-2532/"
+  },
+  "18418": {
+    "id": "18418",
+    "parentId": "18363",
+    "name": "Ключницы",
+    "url": "https://www.tsum.ru/catalog/klyuchnitcy-18418/"
+  },
+  "18419": {
+    "id": "18419",
+    "parentId": "18350",
+    "name": "Галстуки и платки",
+    "url": "https://www.tsum.ru/catalog/galstuki-i-platki-18419/"
+  },
+  "18422": {
+    "id": "18422",
+    "parentId": "18385",
+    "name": "Чехлы для iPad",
+    "url": "https://www.tsum.ru/catalog/chekhly-dlya-ipad-18422/"
+  },
+  "18424": {
+    "id": "18424",
+    "parentId": "18413",
+    "name": "Верхняя одежда",
+    "url": "https://www.tsum.ru/catalog/verkhnyaya-odezhda-18424/"
+  },
+  "18426": {
+    "id": "18426",
+    "parentId": "18364",
+    "name": "Комплекты и наборы",
+    "url": "https://www.tsum.ru/catalog/komplekty-i-nabory-18426/"
+  },
+  "18429": {
+    "id": "18429",
+    "parentId": "18338",
+    "name": "Одежда для мальчиков",
+    "url": "https://www.tsum.ru/catalog/odezhda_dlya_malchikov-3434/"
+  },
+  "18430": {
+    "id": "18430",
+    "parentId": "18429",
+    "name": "Бельё и домашняя одежда",
+    "url": "https://www.tsum.ru/catalog/bele-i-domashnyaya-odezhda-18430/"
+  },
+  "18431": {
+    "id": "18431",
+    "parentId": "18430",
+    "name": "Пижамы",
+    "url": "https://www.tsum.ru/catalog/pizhamy-18431/"
+  },
+  "18433": {
+    "id": "18433",
+    "parentId": "18330",
+    "name": "Аксессуары",
+    "url": "https://www.tsum.ru/catalog/aksessuary-10712/"
+  },
+  "18435": {
+    "id": "18435",
+    "parentId": "18380",
+    "name": "Зонты",
+    "url": "https://www.tsum.ru/catalog/zonty-18435/"
+  },
+  "18438": {
+    "id": "18438",
+    "parentId": "18368",
+    "name": "Сумки",
+    "url": "https://www.tsum.ru/catalog/sumki-18438/"
+  },
+  "18440": {
+    "id": "18440",
+    "parentId": "18327",
+    "name": "Обувь",
+    "url": "https://www.tsum.ru/catalog/obuv-18440/"
+  },
+  "18441": {
+    "id": "18441",
+    "parentId": "18440",
+    "name": "Ботинки и полусапоги",
+    "url": "https://www.tsum.ru/catalog/botinki-i-polusapogi-18441/"
+  },
+  "18442": {
+    "id": "18442",
+    "parentId": "18354",
+    "name": "Браслеты",
+    "url": "https://www.tsum.ru/catalog/braslety-18442/"
+  },
+  "18443": {
+    "id": "18443",
+    "parentId": "18399",
+    "name": "Другое",
+    "url": "https://www.tsum.ru/catalog/drugoe-18443/"
+  },
+  "18447": {
+    "id": "18447",
+    "parentId": "18338",
+    "name": "Обувь для мальчиков",
+    "url": "https://www.tsum.ru/catalog/obuv_dlya_malchikov-3425/"
+  },
+  "18449": {
+    "id": "18449",
+    "parentId": "18433",
+    "name": "Для лица",
+    "url": "https://www.tsum.ru/catalog/dlya-litca-18449/"
+  },
+  "18451": {
+    "id": "18451",
+    "parentId": "18331",
+    "name": "Для лица",
+    "url": "https://www.tsum.ru/catalog/dlya_litsa-10692/"
+  },
+  "18454": {
+    "id": "18454",
+    "parentId": "18328",
+    "name": "Верхняя одежда",
+    "url": "https://www.tsum.ru/catalog/verkhnyaya-odezhda-18454/"
+  },
+  "18457": {
+    "id": "18457",
+    "parentId": "18380",
+    "name": "Очки",
+    "url": "https://www.tsum.ru/catalog/ochki-18457/"
+  },
+  "18462": {
+    "id": "18462",
+    "parentId": "18339",
+    "name": "Блузы",
+    "url": "https://www.tsum.ru/catalog/bluzy-18462/"
+  },
+  "18463": {
+    "id": "18463",
+    "parentId": "18397",
+    "name": "Дорожные сумки",
+    "url": "https://www.tsum.ru/catalog/dorozhnye-sumki-18463/"
+  },
+  "18465": {
+    "id": "18465",
+    "parentId": "18350",
+    "name": "Зонты",
+    "url": "https://www.tsum.ru/catalog/zonty-18465/"
+  },
+  "18466": {
+    "id": "18466",
+    "parentId": "18465",
+    "name": "Складные",
+    "url": "https://www.tsum.ru/catalog/skladnye-18466/"
+  },
+  "18468": {
+    "id": "18468",
+    "parentId": "18382",
+    "name": "Вазы",
+    "url": "https://www.tsum.ru/catalog/vazy-18468/"
+  },
+  "18472": {
+    "id": "18472",
+    "parentId": "18380",
+    "name": "Украшения",
+    "url": "https://www.tsum.ru/catalog/zhenskaya_bizhuteriya-2450/"
+  },
+  "18473": {
+    "id": "18473",
+    "parentId": "18472",
+    "name": "Кольца",
+    "url": "https://www.tsum.ru/catalog/koltca-18473/"
+  },
+  "18474": {
+    "id": "18474",
+    "parentId": "18393",
+    "name": "Парфюмерия",
+    "url": "https://www.tsum.ru/catalog/parfyumeriya-18474/"
+  },
+  "18475": {
+    "id": "18475",
+    "parentId": "18353",
+    "name": "Сумки",
+    "url": "https://www.tsum.ru/catalog/sumki-18475/"
+  },
+  "18476": {
+    "id": "18476",
+    "parentId": "18475",
+    "name": "Чемоданы",
+    "url": "https://www.tsum.ru/catalog/chemodany-18476/"
+  },
+  "18477": {
+    "id": "18477",
+    "parentId": "18363",
+    "name": "Картхолдеры",
+    "url": "https://www.tsum.ru/catalog/futlyary-dlya-plastikovykh-kart-18477/"
+  },
+  "18478": {
+    "id": "18478",
+    "parentId": "18339",
+    "name": "Брюки",
+    "url": "https://www.tsum.ru/catalog/bryuki-18478/"
+  },
+  "18480": {
+    "id": "18480",
+    "parentId": "18353",
+    "name": "Головные уборы",
+    "url": "https://www.tsum.ru/catalog/golovnye-ubory-18480/"
+  },
+  "18481": {
+    "id": "18481",
+    "parentId": "18480",
+    "name": "Кепки",
+    "url": "https://www.tsum.ru/catalog/kepki-18481/"
+  },
+  "18483": {
+    "id": "18483",
+    "parentId": "18338",
+    "name": "Обувь для девочек",
+    "url": "https://www.tsum.ru/catalog/obuv_dlya_devochek-3442/"
+  },
+  "18484": {
+    "id": "18484",
+    "parentId": "18483",
+    "name": "Туфли",
+    "url": "https://www.tsum.ru/catalog/tufli-18484/"
+  },
+  "18488": {
+    "id": "18488",
+    "parentId": "18380",
+    "name": "Аксессуары для волос",
+    "url": "https://www.tsum.ru/catalog/aksessuary-dlya-volos-18488/"
+  },
+  "18491": {
+    "id": "18491",
+    "parentId": "18413",
+    "name": "Джинсы",
+    "url": "https://www.tsum.ru/catalog/dzhinsy-18491/"
+  },
+  "18499": {
+    "id": "18499",
+    "parentId": "18339",
+    "name": "Верхняя одежда",
+    "url": "https://www.tsum.ru/catalog/girls-verkhnyaya-odezhda-18499/"
+  },
+  "18500": {
+    "id": "18500",
+    "parentId": "18330",
+    "name": "Уход за волосами",
+    "url": "https://www.tsum.ru/catalog/ukhod_za_volosami-10706/"
+  },
+  "18502": {
+    "id": "18502",
+    "parentId": "18335",
+    "name": "Для тела",
+    "url": "https://www.tsum.ru/catalog/dlya_tela-10695/"
+  },
+  "18508": {
+    "id": "18508",
+    "parentId": "18369",
+    "name": "Аксессуары",
+    "url": "https://www.tsum.ru/catalog/aksessuary-18006/"
+  },
+  "18509": {
+    "id": "18509",
+    "parentId": "18508",
+    "name": "Бижутерия",
+    "url": "https://www.tsum.ru/catalog/bizhuteriya-18509/"
+  },
+  "18510": {
+    "id": "18510",
+    "parentId": "18509",
+    "name": "Колье",
+    "url": "https://www.tsum.ru/catalog/kole-18011/"
+  },
+  "18513": {
+    "id": "18513",
+    "parentId": "18472",
+    "name": "Комплекты",
+    "url": "https://www.tsum.ru/catalog/komplekty-18513/"
+  },
+  "18515": {
+    "id": "18515",
+    "parentId": "18382",
+    "name": "Сервировка",
+    "url": "https://www.tsum.ru/catalog/nabory-12229/"
+  },
+  "18517": {
+    "id": "18517",
+    "parentId": "18364",
+    "name": "Постельные принадлежности",
+    "url": "https://www.tsum.ru/catalog/postelnye-prinadlezhnosti-18517/"
+  },
+  "18519": {
+    "id": "18519",
+    "parentId": "18328",
+    "name": "Пляжная одежда",
+    "url": "https://www.tsum.ru/catalog/plyazhnye_prinadlezhnosti-2466/"
+  },
+  "18521": {
+    "id": "18521",
+    "parentId": "",
+    "name": "TEST AG",
+    "url": "https://www.tsum.ru/catalog/test-18521/"
+  },
+  "18522": {
+    "id": "18522",
+    "parentId": "18521",
+    "name": "TEST",
+    "url": "https://www.tsum.ru/catalog/test-18522/"
+  },
+  "18523": {
+    "id": "18523",
+    "parentId": "18522",
+    "name": "TEST",
+    "url": "https://www.tsum.ru/catalog/test-18523/"
+  },
+  "18528": {
+    "id": "18528",
+    "parentId": "18438",
+    "name": "Дорожные сумки",
+    "url": "https://www.tsum.ru/catalog/dorozhnye-sumki-18528/"
+  },
+  "18532": {
+    "id": "18532",
+    "parentId": "18433",
+    "name": "Для волос",
+    "url": "https://www.tsum.ru/catalog/dlya-volos-18532/"
+  },
+  "18536": {
+    "id": "18536",
+    "parentId": "18370",
+    "name": "Блузы",
+    "url": "https://www.tsum.ru/catalog/bluzy-18028/"
+  },
+  "18538": {
+    "id": "18538",
+    "parentId": "18480",
+    "name": "Береты",
+    "url": "https://www.tsum.ru/catalog/berety-18538/"
+  },
+  "18539": {
+    "id": "18539",
+    "parentId": "18339",
+    "name": "Джинсы",
+    "url": "https://www.tsum.ru/catalog/dzhinsy-18539/"
+  },
+  "18544": {
+    "id": "18544",
+    "parentId": "18328",
+    "name": "Поло джерси",
+    "url": "https://www.tsum.ru/catalog/polo-18544/"
+  },
+  "18546": {
+    "id": "18546",
+    "parentId": "18480",
+    "name": "Бейсболки",
+    "url": "https://www.tsum.ru/catalog/beisbolki-18546/"
+  },
+  "18547": {
+    "id": "18547",
+    "parentId": "18429",
+    "name": "Пляжная одежда",
+    "url": "https://www.tsum.ru/catalog/plyazhnaya-odezhda-18547/"
+  },
+  "18552": {
+    "id": "18552",
+    "parentId": "18413",
+    "name": "Пляжная одежда",
+    "url": "https://www.tsum.ru/catalog/plyazhnaya-odezhda-18552/"
+  },
+  "18553": {
+    "id": "18553",
+    "parentId": "18552",
+    "name": "Купальники",
+    "url": "https://www.tsum.ru/catalog/kupalniki-18553/"
+  },
+  "18554": {
+    "id": "18554",
+    "parentId": "18553",
+    "name": "Слитные купальники",
+    "url": "https://www.tsum.ru/catalog/slitnye-kupalniki-18554/"
+  },
+  "18555": {
+    "id": "18555",
+    "parentId": "18369",
+    "name": "Обувь",
+    "url": "https://www.tsum.ru/catalog/obuv-18008/"
+  },
+  "18559": {
+    "id": "18559",
+    "parentId": "18364",
+    "name": "Конверты",
+    "url": "https://www.tsum.ru/catalog/konverty-18559/"
+  },
+  "18562": {
+    "id": "18562",
+    "parentId": "18472",
+    "name": "Браслеты",
+    "url": "https://www.tsum.ru/catalog/braslety-18562/"
+  },
+  "18564": {
+    "id": "18564",
+    "parentId": "18348",
+    "name": "Толстовки",
+    "url": "https://www.tsum.ru/catalog/tolstovki-18564/"
+  },
+  "18565": {
+    "id": "18565",
+    "parentId": "18438",
+    "name": "Рюкзаки",
+    "url": "https://www.tsum.ru/catalog/ryukzaki-18565/"
+  },
+  "18566": {
+    "id": "18566",
+    "parentId": "18380",
+    "name": "Аксессуары из кожи",
+    "url": "https://www.tsum.ru/catalog/aksessuary-iz-kozhi-18566/"
+  },
+  "18569": {
+    "id": "18569",
+    "parentId": "18508",
+    "name": "Головные уборы",
+    "url": "https://www.tsum.ru/catalog/golovnye_ubory-18021/"
+  },
+  "18576": {
+    "id": "18576",
+    "parentId": "18331",
+    "name": "Для бровей",
+    "url": "https://www.tsum.ru/catalog/dlya_brovey-10733/"
+  },
+  "18578": {
+    "id": "18578",
+    "parentId": "18555",
+    "name": "Босоножки",
+    "url": "https://www.tsum.ru/catalog/bosonozhki-18578/"
+  },
+  "18579": {
+    "id": "18579",
+    "parentId": "18499",
+    "name": "Пальто",
+    "url": "https://www.tsum.ru/catalog/palto-18579/"
+  },
+  "18593": {
+    "id": "18593",
+    "parentId": "18488",
+    "name": "Повязки",
+    "url": "https://www.tsum.ru/catalog/povyazki-18593/"
+  },
+  "18603": {
+    "id": "18603",
+    "parentId": "18430",
+    "name": "Трусы",
+    "url": "https://www.tsum.ru/catalog/trusy-18603/"
+  },
+  "18604": {
+    "id": "18604",
+    "parentId": "18353",
+    "name": "Для волос",
+    "url": "https://www.tsum.ru/catalog/dlya-volos-18604/"
+  },
+  "18605": {
+    "id": "18605",
+    "parentId": "18604",
+    "name": "Ободки",
+    "url": "https://www.tsum.ru/catalog/obodki-18605/"
+  },
+  "18606": {
+    "id": "18606",
+    "parentId": "18341",
+    "name": "Аудио",
+    "url": "https://www.tsum.ru/catalog/audio-18606/"
+  },
+  "18609": {
+    "id": "18609",
+    "parentId": "18399",
+    "name": "Бейсболки",
+    "url": "https://www.tsum.ru/catalog/beisbolki-18609/"
+  },
+  "18611": {
+    "id": "18611",
+    "parentId": "18447",
+    "name": "Сапоги",
+    "url": "https://www.tsum.ru/catalog/sapogi-18611/"
+  },
+  "18613": {
+    "id": "18613",
+    "parentId": "18370",
+    "name": "Пальто",
+    "url": "https://www.tsum.ru/catalog/palto-18613/"
+  },
+  "18616": {
+    "id": "18616",
+    "parentId": "18341",
+    "name": "Apple TV",
+    "url": "https://www.tsum.ru/catalog/apple-tv-18616/"
+  },
+  "18625": {
+    "id": "18625",
+    "parentId": "18363",
+    "name": "Зажимы для денег",
+    "url": "https://www.tsum.ru/catalog/zazhimy-dlya-deneg-18625/"
+  },
+  "18626": {
+    "id": "18626",
+    "parentId": "18429",
+    "name": "Шорты",
+    "url": "https://www.tsum.ru/catalog/shorty-18626/"
+  },
+  "18633": {
+    "id": "18633",
+    "parentId": "18358",
+    "name": "Бюстгальтеры",
+    "url": "https://www.tsum.ru/catalog/byustgaltery-18633/"
+  },
+  "18636": {
+    "id": "18636",
+    "parentId": "18430",
+    "name": "Комплекты",
+    "url": "https://www.tsum.ru/catalog/komplekty-18636/"
+  },
+  "18641": {
+    "id": "18641",
+    "parentId": "18385",
+    "name": "Стёкла",
+    "url": "https://www.tsum.ru/catalog/stekla-18641/"
+  },
+  "18646": {
+    "id": "18646",
+    "parentId": "18419",
+    "name": "Бабочки",
+    "url": "https://www.tsum.ru/catalog/babochki-18646/"
+  },
+  "18647": {
+    "id": "18647",
+    "parentId": "18358",
+    "name": "Майки",
+    "url": "https://www.tsum.ru/catalog/maiki-18647/"
+  },
+  "18650": {
+    "id": "18650",
+    "parentId": "18354",
+    "name": "Броши",
+    "url": "https://www.tsum.ru/catalog/broshi-18650/"
+  },
+  "18651": {
+    "id": "18651",
+    "parentId": "18429",
+    "name": "Брюки",
+    "url": "https://www.tsum.ru/catalog/bryuki-18651/"
+  },
+  "18653": {
+    "id": "18653",
+    "parentId": "18382",
+    "name": "Ароматы для дома",
+    "url": "https://www.tsum.ru/catalog/aromaty-dlya-doma-18653/"
+  },
+  "18655": {
+    "id": "18655",
+    "parentId": "18354",
+    "name": "Колье",
+    "url": "https://www.tsum.ru/catalog/kole-18655/"
+  },
+  "18657": {
+    "id": "18657",
+    "parentId": "18338",
+    "name": "Косметика",
+    "url": "https://www.tsum.ru/catalog/kosmetika-18657/"
+  },
+  "18658": {
+    "id": "18658",
+    "parentId": "18657",
+    "name": "Парфюмерия",
+    "url": "https://www.tsum.ru/catalog/parfyumeriya-18658/"
+  },
+  "18665": {
+    "id": "18665",
+    "parentId": "18429",
+    "name": "Верхняя одежда",
+    "url": "https://www.tsum.ru/catalog/verkhnyaya-odezhda-18665/"
+  },
+  "18671": {
+    "id": "18671",
+    "parentId": "18413",
+    "name": "Комбинезоны",
+    "url": "https://www.tsum.ru/catalog/kombinezony-18671/"
+  },
+  "18674": {
+    "id": "18674",
+    "parentId": "18440",
+    "name": "Туфли",
+    "url": "https://www.tsum.ru/catalog/tufli-18674/"
+  },
+  "18679": {
+    "id": "18679",
+    "parentId": "18480",
+    "name": "Наушники",
+    "url": "https://www.tsum.ru/catalog/naushniki-18679/"
+  },
+  "18680": {
+    "id": "18680",
+    "parentId": "18328",
+    "name": "Рубашки",
+    "url": "https://www.tsum.ru/catalog/rubashki-18680/"
+  },
+  "18684": {
+    "id": "18684",
+    "parentId": "18368",
+    "name": "Ювелирные украшения",
+    "url": "https://www.tsum.ru/catalog/yuvelirnye-ukrasheniya-18684/"
+  },
+  "18689": {
+    "id": "18689",
+    "parentId": "18472",
+    "name": "Запонки",
+    "url": "https://www.tsum.ru/catalog/zaponki-18689/"
+  },
+  "18690": {
+    "id": "18690",
+    "parentId": "18380",
+    "name": "Головные уборы",
+    "url": "https://www.tsum.ru/catalog/golovnye-ubory-18690/"
+  },
+  "18691": {
+    "id": "18691",
+    "parentId": "18690",
+    "name": "Другое",
+    "url": "https://www.tsum.ru/catalog/pompony-18691/"
+  },
+  "18700": {
+    "id": "18700",
+    "parentId": "18370",
+    "name": "Топы",
+    "url": "https://www.tsum.ru/catalog/topy-18026/"
+  },
+  "18708": {
+    "id": "18708",
+    "parentId": "18472",
+    "name": "Броши",
+    "url": "https://www.tsum.ru/catalog/broshi-18708/"
+  },
+  "18715": {
+    "id": "18715",
+    "parentId": "18657",
+    "name": "Уход за кожей",
+    "url": "https://www.tsum.ru/catalog/ukhod-za-kozhei-18715/"
+  },
+  "18718": {
+    "id": "18718",
+    "parentId": "18353",
+    "name": "Платки",
+    "url": "https://www.tsum.ru/catalog/platki-18718/"
+  },
+  "18727": {
+    "id": "18727",
+    "parentId": "18604",
+    "name": "Резинки",
+    "url": "https://www.tsum.ru/catalog/rezinki-18727/"
+  },
+  "18728": {
+    "id": "18728",
+    "parentId": "18488",
+    "name": "Резинки",
+    "url": "https://www.tsum.ru/catalog/rezinki-18728/"
+  },
+  "18729": {
+    "id": "18729",
+    "parentId": "18566",
+    "name": "Кошельки",
+    "url": "https://www.tsum.ru/catalog/koshelki-18729/"
+  },
+  "18734": {
+    "id": "18734",
+    "parentId": "18364",
+    "name": "Варежки",
+    "url": "https://www.tsum.ru/catalog/varezhki-18734/"
+  },
+  "18741": {
+    "id": "18741",
+    "parentId": "18330",
+    "name": "Парфюмерия",
+    "url": "https://www.tsum.ru/catalog/parfyumeriya-18741/"
+  },
+  "18743": {
+    "id": "18743",
+    "parentId": "18690",
+    "name": "Козырьки",
+    "url": "https://www.tsum.ru/catalog/kozyrki-18743/"
+  },
+  "18744": {
+    "id": "18744",
+    "parentId": "18606",
+    "name": "Наушники",
+    "url": "https://www.tsum.ru/catalog/naushniki-18744/"
+  },
+  "18753": {
+    "id": "18753",
+    "parentId": "18369",
+    "name": "Сумки",
+    "url": "https://www.tsum.ru/catalog/sumki-18753/"
+  },
+  "18758": {
+    "id": "18758",
+    "parentId": "18480",
+    "name": "Шапки",
+    "url": "https://www.tsum.ru/catalog/shapki-18758/"
+  },
+  "18763": {
+    "id": "18763",
+    "parentId": "18399",
+    "name": "Кепки",
+    "url": "https://www.tsum.ru/catalog/kepki-18763/"
+  },
+  "18765": {
+    "id": "18765",
+    "parentId": "18657",
+    "name": "Аксессуары",
+    "url": "https://www.tsum.ru/catalog/aksessuary-18765/"
+  },
+  "18767": {
+    "id": "18767",
+    "parentId": "18370",
+    "name": "Жакеты",
+    "url": "https://www.tsum.ru/catalog/zhakety-18027/"
+  },
+  "18768": {
+    "id": "18768",
+    "parentId": "18348",
+    "name": "Худи",
+    "url": "https://www.tsum.ru/catalog/khudi-18768/"
+  },
+  "18779": {
+    "id": "18779",
+    "parentId": "18358",
+    "name": "Комплекты",
+    "url": "https://www.tsum.ru/catalog/komplekty-18779/"
+  },
+  "18787": {
+    "id": "18787",
+    "parentId": "18370",
+    "name": "Накидки",
+    "url": "https://www.tsum.ru/catalog/nakidki-18206/"
+  },
+  "18793": {
+    "id": "18793",
+    "parentId": "18475",
+    "name": "Сумки",
+    "url": "https://www.tsum.ru/catalog/sumki-18793/"
+  },
+  "18794": {
+    "id": "18794",
+    "parentId": "18657",
+    "name": "Уход за полостью рта",
+    "url": "https://www.tsum.ru/catalog/ukhod-za-polostyu-rta-18794/"
+  },
+  "18796": {
+    "id": "18796",
+    "parentId": "18430",
+    "name": "Майки",
+    "url": "https://www.tsum.ru/catalog/maiki-18796/"
+  },
+  "18797": {
+    "id": "18797",
+    "parentId": "18419",
+    "name": "Платки",
+    "url": "https://www.tsum.ru/catalog/platki-18797/"
+  },
+  "18801": {
+    "id": "18801",
+    "parentId": "18399",
+    "name": "Шляпы",
+    "url": "https://www.tsum.ru/catalog/shlyapy-18801/"
+  },
+  "18807": {
+    "id": "18807",
+    "parentId": "18475",
+    "name": "Рюкзаки",
+    "url": "https://www.tsum.ru/catalog/ryukzaki-18807/"
+  },
+  "18814": {
+    "id": "18814",
+    "parentId": "18480",
+    "name": "Панамы",
+    "url": "https://www.tsum.ru/catalog/panamy-18814/"
+  },
+  "18822": {
+    "id": "18822",
+    "parentId": "18566",
+    "name": "Ключницы",
+    "url": "https://www.tsum.ru/catalog/klyuchnitcy-18822/"
+  },
+  "18823": {
+    "id": "18823",
+    "parentId": "18472",
+    "name": "Другое",
+    "url": "https://www.tsum.ru/catalog/drugoe-18823/"
+  },
+  "18828": {
+    "id": "18828",
+    "parentId": "18690",
+    "name": "Капюшоны",
+    "url": "https://www.tsum.ru/catalog/kapyushony-18828/"
+  },
+  "18829": {
+    "id": "18829",
+    "parentId": "18413",
+    "name": "Спорт",
+    "url": "https://www.tsum.ru/catalog/sport-18829/"
+  },
+  "18830": {
+    "id": "18830",
+    "parentId": "18829",
+    "name": "Костюмы",
+    "url": "https://www.tsum.ru/catalog/kostyumy-18830/"
+  },
+  "18842": {
+    "id": "18842",
+    "parentId": "18480",
+    "name": "Шляпы",
+    "url": "https://www.tsum.ru/catalog/shlyapy-18842/"
+  },
+  "18843": {
+    "id": "18843",
+    "parentId": "18399",
+    "name": "Шапки",
+    "url": "https://www.tsum.ru/catalog/shapki-18843/"
+  },
+  "18861": {
+    "id": "18861",
+    "parentId": "18405",
+    "name": "Домашняя обувь",
+    "url": "https://www.tsum.ru/catalog/domashnyaya-obuv-18861/"
+  },
+  "18865": {
+    "id": "18865",
+    "parentId": "18370",
+    "name": "Кардиганы",
+    "url": "https://www.tsum.ru/catalog/kardigany-18187/"
+  },
+  "18873": {
+    "id": "18873",
+    "parentId": "18480",
+    "name": "Повязки",
+    "url": "https://www.tsum.ru/catalog/povyazki-18873/"
+  },
+  "18878": {
+    "id": "18878",
+    "parentId": "18354",
+    "name": "Запонки",
+    "url": "https://www.tsum.ru/catalog/zaponki-18878/"
+  },
+  "18880": {
+    "id": "18880",
+    "parentId": "18404",
+    "name": "Перчатки",
+    "url": "https://www.tsum.ru/catalog/perchatki-18880/"
+  },
+  "18881": {
+    "id": "18881",
+    "parentId": "18438",
+    "name": "Пляжные сумки",
+    "url": "https://www.tsum.ru/catalog/plyazhnye-sumki-18881/"
+  },
+  "18882": {
+    "id": "18882",
+    "parentId": "18665",
+    "name": "Куртки",
+    "url": "https://www.tsum.ru/catalog/kurtki-18882/"
+  },
+  "18883": {
+    "id": "18883",
+    "parentId": "18358",
+    "name": "Трусы",
+    "url": "https://www.tsum.ru/catalog/trusy-18883/"
+  },
+  "18887": {
+    "id": "18887",
+    "parentId": "18435",
+    "name": "Зонты-трости",
+    "url": "https://www.tsum.ru/catalog/zonty-trosti-18887/"
+  },
+  "18889": {
+    "id": "18889",
+    "parentId": "18508",
+    "name": "Для волос",
+    "url": "https://www.tsum.ru/catalog/dlya_volos-18020/"
+  },
+  "18898": {
+    "id": "18898",
+    "parentId": "18363",
+    "name": "Кошельки",
+    "url": "https://www.tsum.ru/catalog/koshelki-18898/"
+  },
+  "18900": {
+    "id": "18900",
+    "parentId": "18438",
+    "name": "Аксессуары для сумок",
+    "url": "https://www.tsum.ru/catalog/aksessuary-dlya-sumok-18900/"
+  },
+  "18903": {
+    "id": "18903",
+    "parentId": "18604",
+    "name": "Заколки",
+    "url": "https://www.tsum.ru/catalog/zakolki-18903/"
+  },
+  "18906": {
+    "id": "18906",
+    "parentId": "18499",
+    "name": "Куртки",
+    "url": "https://www.tsum.ru/catalog/kurtki-18906/"
+  },
+  "18914": {
+    "id": "18914",
+    "parentId": "18419",
+    "name": "Комплекты",
+    "url": "https://www.tsum.ru/catalog/komplekty-18914/"
+  },
+  "18915": {
+    "id": "18915",
+    "parentId": "18508",
+    "name": "Ремни",
+    "url": "https://www.tsum.ru/catalog/remni-18007/"
+  },
+  "18919": {
+    "id": "18919",
+    "parentId": "18354",
+    "name": "Серьги",
+    "url": "https://www.tsum.ru/catalog/sergi-18919/"
+  },
+  "18921": {
+    "id": "18921",
+    "parentId": "18354",
+    "name": "Часы",
+    "url": "https://www.tsum.ru/catalog/chasy-18921/"
+  },
+  "18924": {
+    "id": "18924",
+    "parentId": "18472",
+    "name": "Подвески",
+    "url": "https://www.tsum.ru/catalog/podveski-18924/"
+  },
+  "18928": {
+    "id": "18928",
+    "parentId": "18399",
+    "name": "Панамы",
+    "url": "https://www.tsum.ru/catalog/panamy-18928/"
+  },
+  "18942": {
+    "id": "18942",
+    "parentId": "18690",
+    "name": "Шляпы",
+    "url": "https://www.tsum.ru/catalog/shlyapy-18942/"
+  },
+  "18946": {
+    "id": "18946",
+    "parentId": "18404",
+    "name": "Варежки",
+    "url": "https://www.tsum.ru/catalog/varezhki-18946/"
+  },
+  "18950": {
+    "id": "18950",
+    "parentId": "18509",
+    "name": "Подвески",
+    "url": "https://www.tsum.ru/catalog/podveski-18045/"
+  },
+  "18954": {
+    "id": "18954",
+    "parentId": "18370",
+    "name": "Платья",
+    "url": "https://www.tsum.ru/catalog/platya-18025/"
+  },
+  "18956": {
+    "id": "18956",
+    "parentId": "18509",
+    "name": "Браслеты",
+    "url": "https://www.tsum.ru/catalog/braslety-18956/"
+  },
+  "18959": {
+    "id": "18959",
+    "parentId": "18350",
+    "name": "Очки",
+    "url": "https://www.tsum.ru/catalog/ochki-18959/"
+  },
+  "18961": {
+    "id": "18961",
+    "parentId": "18440",
+    "name": "Домашняя обувь",
+    "url": "https://www.tsum.ru/catalog/domashnyaya-obuv-18961/"
+  },
+  "18962": {
+    "id": "18962",
+    "parentId": "18690",
+    "name": "Наушники",
+    "url": "https://www.tsum.ru/catalog/naushniki-18962/"
+  },
+  "18963": {
+    "id": "18963",
+    "parentId": "18339",
+    "name": "Шорты",
+    "url": "https://www.tsum.ru/catalog/shorty-18963/"
+  },
+  "18964": {
+    "id": "18964",
+    "parentId": "18404",
+    "name": "Муфты",
+    "url": "https://www.tsum.ru/catalog/mufty-18964/"
+  },
+  "18965": {
+    "id": "18965",
+    "parentId": "18555",
+    "name": "Туфли",
+    "url": "https://www.tsum.ru/catalog/tufli-18965/"
+  },
+  "18970": {
+    "id": "18970",
+    "parentId": "18508",
+    "name": "Воротники",
+    "url": "https://www.tsum.ru/catalog/vorotniki-18017/"
+  },
+  "18976": {
+    "id": "18976",
+    "parentId": "18413",
+    "name": "Шорты",
+    "url": "https://www.tsum.ru/catalog/shorty-18976/"
+  },
+  "18979": {
+    "id": "18979",
+    "parentId": "18419",
+    "name": "Аксессуары для галстука",
+    "url": "https://www.tsum.ru/catalog/aksessuary-dlya-galstuka-18979/"
+  },
+  "18980": {
+    "id": "18980",
+    "parentId": "18690",
+    "name": "Кепки",
+    "url": "https://www.tsum.ru/catalog/kepki-18980/"
+  },
+  "18982": {
+    "id": "18982",
+    "parentId": "18523",
+    "name": "TEST34",
+    "url": "https://www.tsum.ru/catalog/test-18982/"
+  },
+  "18985": {
+    "id": "18985",
+    "parentId": "18429",
+    "name": "Джинсы",
+    "url": "https://www.tsum.ru/catalog/dzhinsy-18985/"
+  },
+  "18986": {
+    "id": "18986",
+    "parentId": "18328",
+    "name": "Джинсы",
+    "url": "https://www.tsum.ru/catalog/dzhinsy-18986/"
+  },
+  "18990": {
+    "id": "18990",
+    "parentId": "18509",
+    "name": "Кольца",
+    "url": "https://www.tsum.ru/catalog/koltsa-18019/"
+  },
+  "19001": {
+    "id": "19001",
+    "parentId": "18405",
+    "name": "Ботинки",
+    "url": "https://www.tsum.ru/catalog/botinki-19001/"
+  },
+  "19016": {
+    "id": "19016",
+    "parentId": "18483",
+    "name": "Сапоги",
+    "url": "https://www.tsum.ru/catalog/sapogi-19016/"
+  },
+  "19028": {
+    "id": "19028",
+    "parentId": "18438",
+    "name": "Поясные сумки",
+    "url": "https://www.tsum.ru/catalog/poyasnye-sumki-19028/"
+  },
+  "19039": {
+    "id": "19039",
+    "parentId": "18348",
+    "name": "Лонгсливы",
+    "url": "https://www.tsum.ru/catalog/longslivy-19039/"
+  },
+  "19044": {
+    "id": "19044",
+    "parentId": "18465",
+    "name": "Зонты-трости",
+    "url": "https://www.tsum.ru/catalog/zonty-trosti-19044/"
+  },
+  "19049": {
+    "id": "19049",
+    "parentId": "18472",
+    "name": "Серьги",
+    "url": "https://www.tsum.ru/catalog/sergi-19049/"
+  },
+  "19050": {
+    "id": "19050",
+    "parentId": "18555",
+    "name": "Мюли",
+    "url": "https://www.tsum.ru/catalog/myuli-19050/"
+  },
+  "19058": {
+    "id": "19058",
+    "parentId": "18348",
+    "name": "Бельё",
+    "url": "https://www.tsum.ru/catalog/bele-19058/"
+  },
+  "19060": {
+    "id": "19060",
+    "parentId": "18350",
+    "name": "Перчатки",
+    "url": "https://www.tsum.ru/catalog/perchatki-19060/"
+  },
+  "19065": {
+    "id": "19065",
+    "parentId": "18430",
+    "name": "Халаты",
+    "url": "https://www.tsum.ru/catalog/khalaty-19065/"
+  },
+  "19066": {
+    "id": "19066",
+    "parentId": "18657",
+    "name": "Уход за волосами",
+    "url": "https://www.tsum.ru/catalog/ukhod-za-volosami-19066/"
+  },
+  "19081": {
+    "id": "19081",
+    "parentId": "18555",
+    "name": "Сандалии",
+    "url": "https://www.tsum.ru/catalog/sandalii-19081/"
+  },
+  "19088": {
+    "id": "19088",
+    "parentId": "18488",
+    "name": "Заколки",
+    "url": "https://www.tsum.ru/catalog/zakolki-19088/"
+  },
+  "19094": {
+    "id": "19094",
+    "parentId": "18339",
+    "name": "Платья",
+    "url": "https://www.tsum.ru/catalog/platya-19094/"
+  },
+  "19095": {
+    "id": "19095",
+    "parentId": "18413",
+    "name": "Юбки",
+    "url": "https://www.tsum.ru/catalog/yubki-19095/"
+  },
+  "19104": {
+    "id": "19104",
+    "parentId": "18488",
+    "name": "Ободки",
+    "url": "https://www.tsum.ru/catalog/obodki-19104/"
+  },
+  "19117": {
+    "id": "19117",
+    "parentId": "18472",
+    "name": "Колье",
+    "url": "https://www.tsum.ru/catalog/kole-19117/"
+  },
+  "19118": {
+    "id": "19118",
+    "parentId": "18690",
+    "name": "Береты",
+    "url": "https://www.tsum.ru/catalog/berety-19118/"
+  },
+  "19119": {
+    "id": "19119",
+    "parentId": "18555",
+    "name": "Ботильоны",
+    "url": "https://www.tsum.ru/catalog/botilony-18022/"
+  },
+  "19120": {
+    "id": "19120",
+    "parentId": "18508",
+    "name": "Очки",
+    "url": "https://www.tsum.ru/catalog/ochki-18016/"
+  },
+  "19123": {
+    "id": "19123",
+    "parentId": "18553",
+    "name": "Раздельные купальники",
+    "url": "https://www.tsum.ru/catalog/razdelnye-kupalniki-19123/"
+  },
+  "19126": {
+    "id": "19126",
+    "parentId": "18435",
+    "name": "Складные",
+    "url": "https://www.tsum.ru/catalog/skladnye-19126/"
+  },
+  "19153": {
+    "id": "19153",
+    "parentId": "18509",
+    "name": "Серьги",
+    "url": "https://www.tsum.ru/catalog/sergi-19153/"
+  },
+  "19326": {
+    "id": "19326",
+    "parentId": "18327",
+    "name": "Ювелирные аксессуары",
+    "url": "https://www.tsum.ru/catalog/yuvelirnye-izdeliya-19326/"
+  },
+  "19327": {
+    "id": "19327",
+    "parentId": "19326",
+    "name": "Запонки",
+    "url": "https://www.tsum.ru/catalog/zaponki-19327/"
+  },
+  "19328": {
+    "id": "19328",
+    "parentId": "18641",
+    "name": "Стёкла для Macbook",
+    "url": "https://www.tsum.ru/catalog/stekla-dlya-macbook-19328/"
+  },
+  "19337": {
+    "id": "19337",
+    "parentId": "19326",
+    "name": "Кольца",
+    "url": "https://www.tsum.ru/catalog/koltca-19337/"
+  },
+  "19340": {
+    "id": "19340",
+    "parentId": "19326",
+    "name": "Браслеты",
+    "url": "https://www.tsum.ru/catalog/braslety-19340/"
+  },
+  "19370": {
+    "id": "19370",
+    "parentId": "19326",
+    "name": "Аксессуары",
+    "url": "https://www.tsum.ru/catalog/aksessuary-19370/"
+  },
+  "19502": {
+    "id": "19502",
+    "parentId": "19326",
+    "name": "Кулоны",
+    "url": "https://www.tsum.ru/catalog/kulony-19502/"
+  },
+  "19503": {
+    "id": "19503",
+    "parentId": "19326",
+    "name": "Серьги",
+    "url": "https://www.tsum.ru/catalog/sergi-19503/"
+  },
+  "19606": {
+    "id": "19606",
+    "parentId": "",
+    "name": "Интерьер v1",
+    "url": "https://www.tsum.ru/catalog/interier-19606/"
+  },
+  "19608": {
+    "id": "19608",
+    "parentId": "19606",
+    "name": "Другое",
+    "url": "https://www.tsum.ru/catalog/drugoe-19608/"
+  },
+  "19610": {
+    "id": "19610",
+    "parentId": "19606",
+    "name": "Текстиль",
+    "url": "https://www.tsum.ru/catalog/tekstil-19610/"
+  },
+  "19611": {
+    "id": "19611",
+    "parentId": "19606",
+    "name": "Новый год",
+    "url": "https://www.tsum.ru/catalog/novyi-god-19611/"
+  },
+  "19612": {
+    "id": "19612",
+    "parentId": "19611",
+    "name": "Елочные украшения",
+    "url": "https://www.tsum.ru/catalog/elochnye-ukrasheniya-19612/"
+  },
+  "19613": {
+    "id": "19613",
+    "parentId": "19611",
+    "name": "Символы года",
+    "url": "https://www.tsum.ru/catalog/simvoly-goda-19613/"
+  },
+  "19614": {
+    "id": "19614",
+    "parentId": "19611",
+    "name": "Новогодние скульптуры",
+    "url": "https://www.tsum.ru/catalog/novogodnie-skulptury-19614/"
+  },
+  "19615": {
+    "id": "19615",
+    "parentId": "19606",
+    "name": "Скульптуры",
+    "url": "https://www.tsum.ru/catalog/skulptury-19615/"
+  },
+  "19622": {
+    "id": "19622",
+    "parentId": "19606",
+    "name": "Аксессуары для дома",
+    "url": "https://www.tsum.ru/catalog/aksessuary-dlya-doma-19622/"
+  },
+  "19628": {
+    "id": "19628",
+    "parentId": "19606",
+    "name": "Аксессуары для кабинета",
+    "url": "https://www.tsum.ru/catalog/aksessuary-dlya-kabineta-19628/"
+  },
+  "19634": {
+    "id": "19634",
+    "parentId": "19606",
+    "name": "Барная посуда",
+    "url": "https://www.tsum.ru/catalog/barnaya-posuda-19634/"
+  },
+  "19639": {
+    "id": "19639",
+    "parentId": "19634",
+    "name": "Бокалы для коньяка",
+    "url": "https://www.tsum.ru/catalog/bokaly-dlya-konyaka-19639/"
+  },
+  "19650": {
+    "id": "19650",
+    "parentId": "19606",
+    "name": "Вазы",
+    "url": "https://www.tsum.ru/catalog/vazy-19650/"
+  },
+  "19652": {
+    "id": "19652",
+    "parentId": "19606",
+    "name": "Освещение",
+    "url": "https://www.tsum.ru/catalog/osveshchenie-19652/"
+  },
+  "19658": {
+    "id": "19658",
+    "parentId": "19606",
+    "name": "Сервировка",
+    "url": "https://www.tsum.ru/catalog/servirovka-19658/"
+  },
+  "19663": {
+    "id": "19663",
+    "parentId": "19606",
+    "name": "Столовые приборы",
+    "url": "https://www.tsum.ru/catalog/stolovye-pribory-19663/"
+  },
+  "19666": {
+    "id": "19666",
+    "parentId": "19606",
+    "name": "Ароматы для дома",
+    "url": "https://www.tsum.ru/catalog/aromaty-dlya-doma-19666/"
+  },
+  "20573": {
+    "id": "20573",
+    "parentId": "",
+    "name": "Unisex",
+    "url": "https://www.tsum.ru/catalog/unisex-20573/"
+  },
+  "20637": {
+    "id": "20637",
+    "parentId": "",
+    "name": "Shop-In-Shop",
+    "url": "https://www.tsum.ru/catalog/shop-in-shop-20637/"
+  },
+  "20779": {
+    "id": "20779",
+    "parentId": "18411",
+    "name": "Ювелирные",
+    "url": "https://www.tsum.ru/catalog/yuvelirnye-20779/"
+  },
+  "20780": {
+    "id": "20780",
+    "parentId": "18411",
+    "name": "Не ювелирные",
+    "url": "https://www.tsum.ru/catalog/stalnye-20780/"
+  },
+  "20781": {
+    "id": "20781",
+    "parentId": "18357",
+    "name": "Не ювелирные",
+    "url": "https://www.tsum.ru/catalog/stalnye-20781/"
+  },
+  "20782": {
+    "id": "20782",
+    "parentId": "18357",
+    "name": "Ювелирные",
+    "url": "https://www.tsum.ru/catalog/yuvelirnye-20782/"
+  },
+  "20985": {
+    "id": "20985",
+    "parentId": "",
+    "name": "Unisex kids",
+    "url": "https://www.tsum.ru/catalog/unisex-kids-20985/"
+  },
+  "21189": {
+    "id": "21189",
+    "parentId": "18472",
+    "name": "Каффы",
+    "url": "https://www.tsum.ru/catalog/kaffy-21189/"
+  },
+  "21355": {
+    "id": "21355",
+    "parentId": "18472",
+    "name": "Анклеты",
+    "url": "https://www.tsum.ru/catalog/anklety-21355/"
+  }
+}

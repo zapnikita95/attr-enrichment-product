@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>ЦУМ — атрибуты с картинок: исследование разрыва</title>
+<style>
+:root {
+  --bg:#f7f5f2; --ink:#1a1a1a; --muted:#5c5c5c; --line:#ddd6cc;
+  --card:#fff; --accent:#1f3a2e; --warn:#7a3e1d; --ok:#1f3a2e;
+}
+* { box-sizing:border-box; }
+body { margin:0; font:16px/1.5 "Segoe UI", system-ui, sans-serif; color:var(--ink); background:var(--bg); }
+.wrap { max-width:1080px; margin:0 auto; padding:32px 20px 80px; }
+h1 { font-size:28px; font-weight:650; letter-spacing:-0.02em; margin:0 0 8px; }
+h2 { font-size:20px; margin:40px 0 12px; color:var(--accent); }
+h3 { font-size:16px; margin:24px 0 8px; }
+.lead { color:var(--muted); font-size:17px; max-width:720px; }
+.meta { margin:16px 0 28px; color:var(--muted); font-size:13px; }
+.grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(180px,1fr)); gap:12px; margin:20px 0; }
+.stat { background:var(--card); border:1px solid var(--line); padding:16px 14px; }
+.stat b { display:block; font-size:22px; font-weight:650; margin-bottom:4px; }
+.stat span { color:var(--muted); font-size:13px; }
+.callout { background:var(--card); border-left:3px solid var(--accent); padding:14px 16px; margin:18px 0; }
+.callout.warn { border-left-color:var(--warn); }
+table { width:100%; border-collapse:collapse; background:var(--card); font-size:14px; }
+th, td { border:1px solid var(--line); padding:8px 10px; text-align:left; vertical-align:top; }
+th { background:#efeae3; font-weight:600; }
+.two { display:grid; grid-template-columns:1fr 1fr; gap:16px; }
+@media (max-width:800px) { .two { grid-template-columns:1fr; } }
+ul.tight li { margin:4px 0; }
+.tag { display:inline-block; background:#efeae3; padding:2px 8px; font-size:12px; margin-right:6px; }
+footer { margin-top:48px; color:var(--muted); font-size:12px; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="tag">site_id 203 · Diginetica</div>
+  <div class="tag">без прайсинга</div>
+  <h1>ЦУМ: зачем нужны атрибуты с картинок</h1>
+  <p class="lead">
+    Исследование разрыва между поисковыми запросами, текущим YML-фидом и тем,
+    что реально видно на фото. Цель — показать, <strong>какие атрибуты уже есть</strong>
+    и <strong>какие нужно доставать с изображений</strong>, чтобы закрывать стилевые запросы
+    (принт, силуэт, каблук, тип сумки, декор, парфюмерные ноты).
+  </p>
+  <p class="meta">
+    Фид: tsum.xml от 2026-07-21 · 663 656 offer · ClickHouse sessions, 90 дней ·
+    Vision-probe: OpenRouter <code>google/gemini-2.5-flash</code>, 28 SKU
+    (одежда, платья, обувь, сумки, парфюм, косметика, часы, украшения) · локальные модели не использовались.
+  </p>
+
+  <div class="grid">
+    <div class="stat"><b>663 656</b><span>SKU в фиде, у всех есть picture</span></div>
+    <div class="stat"><b>42</b><span>уникальных имён param (из них часть — id)</span></div>
+    <div class="stat"><b>9 260 304</b><span>поисков за 90 дней</span></div>
+    <div class="stat"><b>5.6%</b><span>zero-rate (частотный)</span></div>
+    <div class="stat"><b>115 553</b><span>прямых facet-запросов под vision-атрибуты</span></div>
+    <div class="stat"><b>297 449</b><span>расширенный стиль (каблук/сумки/принт…)</span></div>
+  </div>
+
+  <div class="callout">
+    <strong>Вывод для партнёра.</strong> Фид ЦУМа силён в «карточных» полях — бренд, цвет, материал, пол, размер.
+    Слабое место — <em>визуальный стиль</em>, который покупатель формулирует в поиске и ждёт в фильтрах:
+    принт, посадка, капюшон, застёжка, каблук, силуэт сумки, декор, OCR с флакона/циферблата.
+    На пробе из 28 фото OpenRouter нашёл новые searchable-атрибуты у <strong>всех</strong> SKU;
+    после фильтра коллизий с фидом — KEEP 89 / REJECT 5.
+  </div>
+
+  <h2>1. Что уже есть в фиде</h2>
+  <p class="lead" style="font-size:15px">Только человекочитаемые params (без brand_id / color_*_id / size_id и т.п.).</p>
+  <table>
+    <thead><tr><th>Параметр</th><th>Fill</th><th>Примеры</th></tr></thead>
+    <tbody><tr><td>Пол</td><td>105.8%</td><td>Женский, Мужской, Детский</td></tr><tr><td>Оттенок</td><td>100.0%</td><td>Серебряный, 026, Черный</td></tr><tr><td>Цвет</td><td>100.0%</td><td>Серебряный, Бесцветный, Чёрный</td></tr><tr><td>Скидка</td><td>100.0%</td><td>Нет, Да</td></tr><tr><td>custom categories</td><td>94.5%</td><td>Солнцезащитные очки, Тональные средства,Для лица,Макияж,Парфюмерия и косметика, Борсетки,Повседневные сумки</td></tr><tr><td>Материал</td><td>90.8%</td><td>Оправа-металл; Линзы-пластик;, Кожа натуральная: 100%;, Шерсть: 100%;</td></tr><tr><td>Страна дизайна</td><td>76.9%</td><td>Италия, Франция, Германия</td></tr><tr><td>Размер</td><td>72.0%</td><td>42, 44, 46</td></tr><tr><td>attribute_length</td><td>35.1%</td><td>Миди, Стандартные, До середины бедра</td></tr><tr><td>attribute_sleeve</td><td>32.6%</td><td>Длинные, Короткие, На бретелях</td></tr><tr><td>Сезон</td><td>30.9%</td><td>SS 2025, SS 2024, FW 25/26</td></tr><tr><td>attribute_type</td><td>21.5%</td><td>Куртка, Утепленные,Куртка,бомбер, Пуховик</td></tr><tr><td>Бонус 30%</td><td>7.7%</td><td>Да</td></tr><tr><td>attribute_details</td><td>7.6%</td><td>Без декора, Потертости,Декор, Декор</td></tr><tr><td>attribute_base</td><td>6.6%</td><td>Массивная, Платформа, Плоская</td></tr><tr><td>attribute_season</td><td>3.3%</td><td>Зима, Осень/Весна, Лето</td></tr><tr><td>Big sizes</td><td>2.3%</td><td>Да</td></tr><tr><td>attribute_clasp</td><td>2.3%</td><td>Пуговицы, Молния, Открытый ворот</td></tr><tr><td>Только online</td><td>1.6%</td><td>Да</td></tr><tr><td>attribute_gems_jewelry</td><td>1.0%</td><td>Бриллианты, Без драгоценных камней, Другие,Бриллианты</td></tr><tr><td>attribute_material_jewelry</td><td>1.0%</td><td>Желтое золото, Розовое золото, Белое золото</td></tr><tr><td>Эксклюзивно в ЦУМе</td><td>0.9%</td><td>Да</td></tr><tr><td>Best-seller</td><td>0.9%</td><td>Да</td></tr><tr><td>Предоплата</td><td>0.5%</td><td>Да</td></tr><tr><td>Fashion Show</td><td>0.4%</td><td>Да</td></tr><tr><td>attribute_case_watches</td><td>0.2%</td><td>Сталь,Розовое золото, Сталь, Breitlight®</td></tr><tr><td>attribute_mechanism_watches</td><td>0.2%</td><td>Автомат, Кварц, Механика</td></tr><tr><td>attribute_color_dial_watches</td><td>0.2%</td><td>Чёрный, Серый, Зелёный</td></tr><tr><td>Третья вещь в подарок</td><td>0.2%</td><td>Да</td></tr><tr><td>Суббренд</td><td>0.1%</td><td>Emporio Armani</td></tr><tr><td>Лимитированный выпуск</td><td>0.1%</td><td>Да</td></tr><tr><td>Новинка</td><td>0.0%</td><td>Да</td></tr></tbody>
+  </table>
+
+  <h2>2. С картинок выделять НЕ нужно</h2>
+  <table>
+    <thead><tr><th>Атрибут</th><th>Почему не берём с фото</th></tr></thead>
+    <tbody><tr><td>Цвет / Оттенок</td><td>fill ~100% в фиде</td></tr><tr><td>Материал (состав %)</td><td>fill ~91% в фиде</td></tr><tr><td>Пол</td><td>всегда в фиде</td></tr><tr><td>Размер</td><td>в фиде (SKU-level)</td></tr><tr><td>Бренд / vendor</td><td>в name; топ запросов — брендовые</td></tr><tr><td>Артикул / id / штрихкод</td><td>технические поля</td></tr><tr><td>Страна дизайна</td><td>уже в фиде (~77%)</td></tr><tr><td>Сезон SS/FW</td><td>уже в фиде; слабо ищут как фильтр</td></tr><tr><td>attribute_length (мини/миди/макси)</td><td>частично заполнен (~35%); не дублировать</td></tr><tr><td>attribute_sleeve</td><td>частично заполнен (~33%); дополнять только пробелы</td></tr><tr><td>Негации (без X)</td><td>ломают поиск</td></tr></tbody>
+  </table>
+
+  <h2>3. С картинок выделять НУЖНО</h2>
+  <table>
+    <thead><tr><th>Атрибут</th><th>Почему это gap</th></tr></thead>
+    <tbody><tr><td><strong>Принт / узор</strong></td><td>в фиде нет отдельного паттерна; attribute_details ~8% и почти без клеток/полосок</td></tr><tr><td><strong>Силуэт / посадка</strong></td><td>нет structured fit; запросы оверсайз/slim/клёш</td></tr><tr><td><strong>Капюшон</strong></td><td>нет boolean hood в фиде</td></tr><tr><td><strong>Воротник / вырез</strong></td><td>нет отдельного атрибута</td></tr><tr><td><strong>Застёжка (визуальная)</strong></td><td>attribute_clasp только ~2%</td></tr><tr><td><strong>Детали / декор / фактура</strong></td><td>attribute_details sparse; стёжка, плиссе, пайетки видны на фото</td></tr><tr><td><strong>Тип сумки (тоут/кроссбоди/багет)</strong></td><td>custom categories частично; визуальный силуэт стабильнее</td></tr><tr><td><strong>Обувь: каблук / форма носка</strong></td><td>attribute_base есть, но каблук/шпилька в запросах без покрытия</td></tr><tr><td><strong>Парфюм: концентрация + ноты (OCR)</strong></td><td>в params нет нот; на флаконе часто EDP/EDT и ноты</td></tr><tr><td><strong>Часы: функции / циферблат / ремешок</strong></td><td>watch attrs sparse (<0.2%); OCR с циферблата сильный</td></tr></tbody>
+  </table>
+
+  <h2>4. Поиск: на сколько запросов можно повлиять</h2>
+  <p>
+    Источник: ClickHouse <code>sessions.searches</code>, siteId=203, 90 дней.
+    Всего <strong>9 260 304</strong> поисков,
+    <strong>280 260</strong> уникальных запросов.
+    Топ-30k покрывает 8 643 144 поисков (~93.3% объёма).
+  </p>
+
+  <div class="two">
+    <div>
+      <h3>Консервативно — прямые facet-формулировки</h3>
+      <p>Запросы, которые буквально содержат недостающие facet-слова.</p>
+      <div class="stat"><b>115 553</b><span>708 уникальных · 1.34% top-30k</span></div>
+      <table>
+        <thead><tr><th>Семейство</th><th>Поисков</th><th>Запросов</th><th>Примеры</th></tr></thead>
+        <tbody><tr><td>Обувь: каблук / платформа</td><td>53 956</td><td>154</td><td>туфли женские на каблуке, мюли на каблуке, босоножки на каблуке</td></tr><tr><td>Тип сумки</td><td>23 802</td><td>104</td><td>сумка тоут, клатч, сумка клатч</td></tr><tr><td>Застёжка / детали</td><td>13 104</td><td>117</td><td>толстовка на молнии, худи на молнии, кофта на молнии</td></tr><tr><td>Принт / узор</td><td>9 790</td><td>123</td><td>рубашка в клетку, леопард, леопардовый принт</td></tr><tr><td>Силуэт / посадка</td><td>8 049</td><td>96</td><td>джинсы клеш, футболка оверсайз, футболка мужская оверсайз</td></tr><tr><td>Парфюм: ноты / концентрация</td><td>3 385</td><td>71</td><td>туалетная вода, туалетная вода мужская, парфюмерная вода</td></tr><tr><td>Воротник / вырез</td><td>2 587</td><td>24</td><td>водолазка, водолазка женская, кашемировая водолазка</td></tr><tr><td>Капюшон</td><td>1 017</td><td>22</td><td>капюшон, толстовка на молнии с капюшоном, рубашка с капюшоном</td></tr></tbody>
+      </table>
+    </div>
+    <div>
+      <h3>Рабочая оценка — расширенный стиль</h3>
+      <p>Каблук/платформа, типы сумок, принт, посадка, декор, парфюмерная лексика.</p>
+      <div class="stat"><b>297 449</b><span>1371 уникальных · 3.44% top-30k</span></div>
+      <table>
+        <thead><tr><th>Семейство</th><th>Поисков</th><th>Запросов</th></tr></thead>
+        <tbody><tr><td>Каблук и обувные формы</td><td>241 700</td><td>783</td></tr><tr><td>Сумки по силуэту</td><td>19 097</td><td>106</td></tr><tr><td>Декор и фактура</td><td>12 567</td><td>150</td></tr><tr><td>Принт и орнамент</td><td>12 395</td><td>155</td></tr><tr><td>Посадка и силуэт одежды</td><td>8 122</td><td>100</td></tr><tr><td>Парфюмерия descriptive</td><td>3 628</td><td>80</td></tr></tbody>
+      </table>
+    </div>
+  </div>
+
+  <div class="callout warn">
+    <strong>Важно про масштаб.</strong> Даже при брендовом поиске («Gucci», «Premiata») атрибуты с картинок
+    работают как <em>фильтры и уточнение выдачи</em> — это не отражено полностью в facet-запросах выше.
+    В фиде <code>attribute_details</code> заполнен только ~8%, <code>attribute_clasp</code> ~2%:
+    визуальные детали есть на фото каталога (663 656 картинок), но не в индексе.
+  </div>
+
+  <h3>Token-gap (механика attributes_extraction)</h3>
+  <p>
+    Сопоставили токены top-30k запросов с корпусом name+params на выборке 80k offer
+    (без id-полей и «Лого»-URL). Остаток (residual) — слова запроса, которых нет в индексируемом фиде:
+  </p>
+  <ul class="tight">
+    <li>Поисков с residual: <strong>1 632 601</strong> (18.92% top-30k)</li>
+    <li>Часть residual — бренды/род («женские», транслит брендов) — это не vision</li>
+    <li>Часть — стилевая лексика (каблук, картхолдер, вечернее, коктейльное, шлепки…) — как раз зона картинок + нормализации типов</li>
+  </ul>
+
+  <h2>5. Proof: OpenRouter vision на реальных фото ЦУМ</h2>
+  <p>
+    Модель смотрела только картинку + список уже известных params; просили не дублировать цвет/материал/бренд.
+    Oversight: fashion KEEP подтверждён; единичные коллизии (концентрация уже в названии парфюма) отфильтрованы.
+  </p>
+  <table>
+    <thead><tr><th>Категория</th><th>Товар</th><th>Атрибут</th><th>Значение</th><th>Evidence</th></tr></thead>
+    <tbody><tr><td>odezhda</td><td>Шерстяной костюм</td><td>Принт</td><td>Полоска</td><td>visual</td></tr><tr><td>odezhda</td><td>Шерстяной костюм</td><td>Силуэт</td><td>Прямой</td><td>visual</td></tr><tr><td>odezhda</td><td>Шерстяной костюм</td><td>Тип воротника</td><td>Отложной</td><td>visual</td></tr><tr><td>odezhda</td><td>Шерстяной костюм</td><td>Тип застежки</td><td>Пуговицы</td><td>visual</td></tr><tr><td>odezhda</td><td>Шерстяной костюм</td><td>Посадка</td><td>Классическая</td><td>visual</td></tr><tr><td>odezhda</td><td>Комплект из трех платьев</td><td>Силуэт</td><td>Прямой</td><td>visual</td></tr><tr><td>odezhda</td><td>Комплект из трех платьев</td><td>Вырез</td><td>Круглый</td><td>visual</td></tr><tr><td>platya</td><td>Платье</td><td>Вырез</td><td>Вырез-капля</td><td>visual</td></tr><tr><td>platya</td><td>Платье</td><td>Воротник</td><td>Воротник-стойка</td><td>visual</td></tr><tr><td>platya</td><td>Платье</td><td>Застежка</td><td>Молния</td><td>visual</td></tr><tr><td>platya</td><td>Хлопковое платье</td><td>Тип воротника</td><td>Отложной</td><td>visual</td></tr><tr><td>platya</td><td>Хлопковое платье</td><td>Принт/Узор</td><td>Логомания</td><td>visual</td></tr><tr><td>obuv</td><td>Комбинированные кроссовки Zac Zac</td><td>Тип застежки</td><td>Шнуровка</td><td>visual</td></tr><tr><td>obuv</td><td>Комбинированные кроссовки Zac Zac</td><td>Фактура</td><td>Сетчатая</td><td>visual</td></tr><tr><td>tufli</td><td>Кожаные монки</td><td>тип застежки</td><td>пряжки</td><td>visual</td></tr><tr><td>tufli</td><td>Кожаные монки</td><td>форма носка</td><td>закругленный</td><td>visual</td></tr><tr><td>tufli</td><td>Кожаные дерби</td><td>тип застежки</td><td>шнуровка</td><td>visual</td></tr><tr><td>tufli</td><td>Кожаные дерби</td><td>фактура</td><td>зернистая кожа</td><td>visual</td></tr><tr><td>sumki</td><td>Борсетка</td><td>силуэт сумки</td><td>прямоугольный</td><td>visual</td></tr><tr><td>sumki</td><td>Борсетка</td><td>тип застежки</td><td>молния</td><td>visual</td></tr><tr><td>sumki</td><td>Сумка</td><td>силуэт сумки</td><td>хобо</td><td>visual</td></tr><tr><td>sumki</td><td>Сумка</td><td>количество ручек</td><td>одна</td><td>visual</td></tr><tr><td>kosmetika</td><td>Матирующий тональный крем Teint Idole Ultra Wear S</td><td>Эффект</td><td>Комфорт</td><td>ocr</td></tr><tr><td>kosmetika</td><td>Маска для волос Elacticizer Extreme (150ml)</td><td>Эффект</td><td>увлажнение</td><td>ocr</td></tr></tbody>
+  </table>
+
+  <h2>6. Приоритетные категории каталога</h2>
+  <p>По объёму offer в фиде (и пересечению с тем, что ищут в CH — бренды + типы одежды/обуви/сумок):</p>
+  <table>
+    <thead><tr><th>Категория</th><th>Offers</th><th>URL</th></tr></thead>
+    <tbody><tr><td>Одежда</td><td>90 800</td><td>https://www.tsum.ru/catalog/odezhda-18413/</td></tr><tr><td>Одежда</td><td>68 303</td><td>https://www.tsum.ru/catalog/odezhda-2409/</td></tr><tr><td>Сумки</td><td>29 619</td><td>https://www.tsum.ru/catalog/sumki-18438/</td></tr><tr><td>Обувь</td><td>26 767</td><td>https://www.tsum.ru/catalog/obuv-18405/</td></tr><tr><td>Бельё</td><td>21 711</td><td>https://www.tsum.ru/catalog/belye-2532/</td></tr><tr><td>Очки</td><td>18 500</td><td>https://www.tsum.ru/catalog/ochki-18457/</td></tr><tr><td>Обувь</td><td>18 113</td><td>https://www.tsum.ru/catalog/obuv-18440/</td></tr><tr><td>Верхняя одежда</td><td>15 875</td><td>https://www.tsum.ru/catalog/verkhnyaya-odezhda-18424/</td></tr><tr><td>Аксессуары</td><td>14 993</td><td>https://www.tsum.ru/catalog/aksessuary-2404/</td></tr><tr><td>Одежда для мальчиков</td><td>14 977</td><td>https://www.tsum.ru/catalog/odezhda_dlya_malchikov-3434/</td></tr><tr><td>Верхняя одежда</td><td>14 008</td><td>https://www.tsum.ru/catalog/verkhnyaya-odezhda-18454/</td></tr><tr><td>Рубашки</td><td>13 297</td><td>https://www.tsum.ru/catalog/rubashki-18680/</td></tr></tbody>
+  </table>
+  <p>
+    Для пилота рекомендуем порядок: <strong>женская одежда / платья → обувь → сумки → верхняя одежда → парфюм → часы</strong>.
+    Там максимальная плотность стилевых запросов и визуально читаемые признаки.
+  </p>
+
+  <h2>7. Методология (коротко)</h2>
+  <ol>
+    <li>Инвентаризация YML (stream parse 1.5 GB) — params, fill, выборка по категориям.</li>
+    <li>ClickHouse site 203 — топ-30k запросов / 90д + totals.</li>
+    <li>Gap: токены запросов vs корпус фида (как lexicon/feed-collision в attributes_extraction).</li>
+    <li>Vision-probe через OpenRouter (Gemini 2.5 Flash) — без локальных моделей.</li>
+    <li>KEEP/REJECT: коллизия с фидом, негации, низкая search relevance.</li>
+  </ol>
+
+  <div class="callout">
+    <strong>Что купить у нас (продуктово, без цены):</strong>
+    пакет vision-атрибутов для поиска и фильтров —
+    принт/узор, силуэт/посадка, капюшон, воротник/вырез, застёжка, декор/фактура,
+    тип сумки, каблук/форма обуви, OCR парфюма и часов —
+    с исключением дублей фида и заливкой в Dashboard feed attributes.
+  </div>
+
+  <footer>
+    Артефакты: portfolio/tsum/ · feed_inventory.json · gap_analysis.json ·
+    query_impact_refined.json · vision_probe_results.json · vision_attr_decision.json · VISION_ATTR_DECISION.md
+  </footer>
+</div>
+</body>
+</html>

@@ -1,0 +1,2845 @@
+{
+  "summary": {
+    "site_id": 203,
+    "partner": "TSUM",
+    "model": "google/gemini-2.5-flash",
+    "n_probed": 28,
+    "attr_name_hits": [
+      [
+        "Детали",
+        14
+      ],
+      [
+        "Тип застежки",
+        6
+      ],
+      [
+        "Функции часов",
+        5
+      ],
+      [
+        "Силуэт",
+        4
+      ],
+      [
+        "Тип воротника",
+        4
+      ],
+      [
+        "Застежка",
+        4
+      ],
+      [
+        "детали",
+        4
+      ],
+      [
+        "Эффект",
+        4
+      ],
+      [
+        "Тип циферблата",
+        4
+      ],
+      [
+        "Посадка",
+        3
+      ],
+      [
+        "тип застежки",
+        3
+      ],
+      [
+        "Принт",
+        2
+      ],
+      [
+        "Вырез",
+        2
+      ],
+      [
+        "Принт/Узор",
+        2
+      ],
+      [
+        "Фактура",
+        2
+      ],
+      [
+        "силуэт сумки",
+        2
+      ],
+      [
+        "Тип индикации",
+        2
+      ],
+      [
+        "Материал ремешка",
+        2
+      ],
+      [
+        "Форма корпуса",
+        2
+      ],
+      [
+        "Воротник",
+        1
+      ],
+      [
+        "Длина",
+        1
+      ],
+      [
+        "форма носка",
+        1
+      ],
+      [
+        "фактура",
+        1
+      ],
+      [
+        "количество ручек",
+        1
+      ],
+      [
+        "Концентрация",
+        1
+      ],
+      [
+        "Объем",
+        1
+      ],
+      [
+        "Линия",
+        1
+      ],
+      [
+        "Стойкость",
+        1
+      ],
+      [
+        "Особенность",
+        1
+      ],
+      [
+        "Тип волос",
+        1
+      ],
+      [
+        "форма оправы",
+        1
+      ],
+      [
+        "тип линз",
+        1
+      ],
+      [
+        "Тип браслета",
+        1
+      ],
+      [
+        "Цвет ремешка",
+        1
+      ],
+      [
+        "Тип плетения",
+        1
+      ],
+      [
+        "форма подвески",
+        1
+      ],
+      [
+        "тип цепочки",
+        1
+      ],
+      [
+        "Материал браслета",
+        1
+      ],
+      [
+        "капюшон",
+        1
+      ],
+      [
+        "застежка",
+        1
+      ],
+      [
+        "карманы",
+        1
+      ],
+      [
+        "силуэт",
+        1
+      ]
+    ],
+    "with_new_attrs": 28,
+    "empty_new": 0,
+    "errors": 0
+  },
+  "results": [
+    {
+      "product": {
+        "offer_id": "11302590",
+        "name": "Шерстяной костюм",
+        "bucket": "odezhda",
+        "category_name": "Одежда",
+        "vendor": "BOSS",
+        "picture": "https://st-cdn.tsum.com/sig/49afb62384ea400fddc6fdb814760c64/square/640/i/57/d2/d9/c2/57d2d9c2-5d25-3600-8e56-c3add4fb03e7.jpg",
+        "url": "https://www.tsum.ru/product/he00608131-sherstyanoi-kostyum-boss-seryi/",
+        "params_keys": [
+          "Пол",
+          "date_create",
+          "Материал",
+          "Страна дизайна",
+          "Оттенок",
+          "Цвет",
+          "brand_id",
+          "model_id",
+          "product_id",
+          "Артикул",
+          "color_concrete_id",
+          "color_base_id",
+          "custom categories",
+          "Лого",
+          "attribute_sleeve",
+          "Скидка"
+        ]
+      },
+      "model": "google/gemini-2.5-flash",
+      "elapsed_s": 4.96,
+      "usage": {
+        "prompt_tokens": 2174,
+        "completion_tokens": 413,
+        "total_tokens": 2587,
+        "cost": 0.0016847,
+        "is_byok": false,
+        "prompt_tokens_details": {
+          "cached_tokens": 0,
+          "cache_write_tokens": 0,
+          "audio_tokens": 0,
+          "video_tokens": 0
+        },
+        "cost_details": {
+          "upstream_inference_cost": 0.0016847,
+          "upstream_inference_prompt_cost": 0.0006522,
+          "upstream_inference_completions_cost": 0.0010325
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 0,
+          "image_tokens": 0,
+          "audio_tokens": 0
+        }
+      },
+      "vision": {
+        "image_kind": "on_model",
+        "ocr_labels": [],
+        "skip_reason": null,
+        "new_attributes": [
+          {
+            "name": "Принт",
+            "value": "Полоска",
+            "evidence": "visual",
+            "search_relevance": "high",
+            "filter_candidate": true
+          },
+          {
+            "name": "Силуэт",
+            "value": "Прямой",
+            "evidence": "visual",
+            "search_relevance": "medium",
+            "filter_candidate": false
+          },
+          {
+            "name": "Тип воротника",
+            "value": "Отложной",
+            "evidence": "visual",
+            "search_relevance": "medium",
+            "filter_candidate": true
+          },
+          {
+            "name": "Тип застежки",
+            "value": "Пуговицы",
+            "evidence": "visual",
+            "search_relevance": "high",
+            "filter_candidate": true
+          },
+          {
+            "name": "Детали",
+            "value": "Карманы",
+            "evidence": "visual",
+            "search_relevance": "medium",
+            "filter_candidate": false
+          },
+          {
+            "name": "Посадка",
+            "value": "Классическая",
+            "evidence": "visual",
+            "search_relevance": "medium",
+            "filter_candidate": true
+          }
+        ],
+        "already_in_feed_visible": [
+          "Длинные рукава",
+          "Серый цвет"
+        ],
+        "not_useful_from_image": []
+      }
+    },
+    {
+      "product": {
+        "offer_id": "13694506",
+        "name": "Комплект из трех платьев",
+        "bucket": "odezhda",
+        "category_name": "Одежда",
+        "vendor": "Jil Sander",
+        "picture": "https://st-cdn.tsum.com/sig/9e2c73d904faac4c663f9cd595005a83/square/640/i/00/00/74/00/5d8d4078-7746-4023-91aa-48adcf66b94f.jpg",
+        "url": "https://www.tsum.ru/product/7040367-komplekt-iz-trekh-platev-jil-sander-khaki/",
+        "params_keys": [
+          "Сезон",
+          "Размер",
+          "Штрихкод",
+          "size_id",
+          "Пол",
+          "date_create",
+          "Материал",
+          "Оттенок",
+          "Цвет",
+          "brand_id",
+          "model_id",
+          "product_id",
+          "Артикул",
+          "color_concrete_id",
+          "color_base_id",
+          "custom categories",
+          "Лого",
+          "attribute_sleeve",
+          "attribute_length",
+          "Скидка",
+          "Бонус 30%"
+        ]
+      },
+      "model": "google/gemini-2.5-flash",
+      "elapsed_s": 3.23,
+      "usage": {
+        "prompt_tokens": 2203,
+        "completion_tokens": 259,
+        "total_tokens": 2462,
+        "cost": 0.0013084,
+        "is_byok": false,
+        "prompt_tokens_details": {
+          "cached_tokens": 0,
+          "cache_write_tokens": 0,
+          "audio_tokens": 0,
+          "video_tokens": 0
+        },
+        "cost_details": {
+          "upstream_inference_cost": 0.0013084,
+          "upstream_inference_prompt_cost": 0.0006609,
+          "upstream_inference_completions_cost": 0.0006475
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 0,
+          "image_tokens": 0,
+          "audio_tokens": 0
+        }
+      },
+      "vision": {
+        "image_kind": "packshot",
+        "ocr_labels": [],
+        "skip_reason": null,
+        "new_attributes": [
+          {
+            "name": "Силуэт",
+            "value": "Прямой",
+            "evidence": "visual",
+            "search_relevance": "high",
+            "filter_candidate": true
+          },
+          {
+            "name": "Вырез",
+            "value": "Круглый",
+            "evidence": "visual",
+            "search_relevance": "high",
+            "filter_candidate": true
+          },
+          {
+            "name": "Детали",
+            "value": "Многослойность",
+            "evidence": "visual",
+            "search_relevance": "medium",
+            "filter_candidate": true
+          }
+        ],
+        "already_in_feed_visible": [
+          "Длинные рукава",
+          "Длина миди",
+          "Цвет хаки"
+        ],
+        "not_useful_from_image": []
+      }
+    },
+    {
+      "product": {
+        "offer_id": "13839154",
+        "name": "Платье",
+        "bucket": "platya",
+        "category_name": "Платья",
+        "vendor": "Diesel",
+        "picture": "https://st-cdn.tsum.com/sig/1a4561697369781a419a81b0692832d9/square/640/i/00/03/5d/97/2a4affbd-56f7-4194-9971-7d6190c4c7cc.jpg",
+        "url": "https://www.tsum.ru/product/7125923-plate-diesel-chernyi/",
+        "params_keys": [
+          "Сезон",
+          "Размер",
+          "Штрихкод",
+          "size_id",
+          "Пол",
+          "date_create",
+          "Материал",
+          "Оттенок",
+          "Цвет",
+          "brand_id",
+          "model_id",
+          "product_id",
+          "Артикул",
+          "color_concrete_id",
+          "color_base_id",
+          "custom categories",
+          "Лого",
+          "attribute_sleeve",
+          "Скидка"
+        ]
+      },
+      "model": "google/gemini-2.5-flash",
+      "elapsed_s": 5.48,
+      "usage": {
+        "prompt_tokens": 2199,
+        "completion_tokens": 304,
+        "total_tokens": 2503,
+        "cost": 0.0014197,
+        "is_byok": false,
+        "prompt_tokens_details": {
+          "cached_tokens": 0,
+          "cache_write_tokens": 0,
+          "audio_tokens": 0,
+          "video_tokens": 0
+        },
+        "cost_details": {
+          "upstream_inference_cost": 0.0014197,
+          "upstream_inference_prompt_cost": 0.0006597,
+          "upstream_inference_completions_cost": 0.00076
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 0,
+          "image_tokens": 0,
+          "audio_tokens": 0
+        }
+      },
+      "vision": {
+        "image_kind": "packshot",
+        "ocr_labels": [],
+        "skip_reason": null,
+        "new_attributes": [
+          {
+            "name": "Вырез",
+            "value": "Вырез-капля",
+            "evidence": "visual",
+            "search_relevance": "high",
+            "filter_candidate": true
+          },
+          {
+            "name": "Воротник",
+            "value": "Воротник-стойка",
+            "evidence": "visual",
+            "search_relevance": "high",
+            "filter_candidate": true
+          },
+          {
+            "name": "Застежка",
+            "value": "Молния",
+            "evidence": "visual",
+            "search_relevance": "medium",
+            "filter_candidate": true
+          },
+          {
+            "name": "Длина",
+            "value": "Мини",
+            "evidence": "visual",
+            "search_relevance": "high",
+            "filter_candidate": true
+          }
+        ],
+        "already_in_feed_visible": [
+          "Короткие рукава",
+          "Черный цвет"
+        ],
+        "not_useful_from_image": []
+      }
+    },
+    {
+      "product": {
+        "offer_id": "12507670",
+        "name": "Хлопковое платье",
+        "bucket": "platya",
+        "category_name": "Платья",
+        "vendor": "Ralph Lauren",
+        "picture": "https://st-cdn.tsum.com/sig/d83fbd0acb8705cbd495d60c889da06b/square/640/i/44/6c/3b/2e/446c3b2e-5616-3f90-b304-f3698b21f74d.jpg",
+        "url": "https://www.tsum.ru/product/5615948-khlopkovoe-plate-ralph-lauren-sinii/",
+        "params_keys": [
+          "Пол",
+          "date_create",
+          "Материал",
+          "Страна дизайна",
+          "Оттенок",
+          "Цвет",
+          "brand_id",
+          "model_id",
+          "product_id",
+          "Артикул",
+          "color_concrete_id",
+          "color_base_id",
+          "Лого",
+          "attribute_sleeve",
+          "Скидка"
+        ]
+      },
+      "model": "google/gemini-2.5-flash",
+      "elapsed_s": 4.09,
+      "usage": {
+        "prompt_tokens": 2170,
+        "completion_tokens": 280,
+        "total_tokens": 2450,
+        "cost": 0.001351,
+        "is_byok": false,
+        "prompt_tokens_details": {
+          "cached_tokens": 0,
+          "cache_write_tokens": 0,
+          "audio_tokens": 0,
+          "video_tokens": 0
+        },
+        "cost_details": {
+          "upstream_inference_cost": 0.001351,
+          "upstream_inference_prompt_cost": 0.000651,
+          "upstream_inference_completions_cost": 0.0007
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 0,
+          "image_tokens": 0,
+          "audio_tokens": 0
+        }
+      },
+      "vision": {
+        "image_kind": "packshot",
+        "ocr_labels": [
+          "POLO",
+          "RALPH LAUREN",
+          "2/2T"
+        ],
+        "skip_reason": null,
+        "new_attributes": [
+          {
+            "name": "Тип воротника",
+            "value": "Отложной",
+            "evidence": "visual",
+            "search_relevance": "high",
+            "filter_candidate": true
+          },
+          {
+            "name": "Детали",
+            "value": "Пуговицы",
+            "evidence": "visual",
+            "search_relevance": "medium",
+            "filter_candidate": true
+          },
+          {
+            "name": "Принт/Узор",
+            "value": "Логомания",
+            "evidence": "visual",
+            "search_relevance": "high",
+            "filter_candidate": true
+          }
+        ],
+        "already_in_feed_visible": [
+          "Короткие рукава",
+          "Синий цвет"
+        ],
+        "not_useful_from_image": []
+      }
+    },
+    {
+      "product": {
+        "offer_id": "11934438",
+        "name": "Комбинированные кроссовки Zac Zac",
+        "bucket": "obuv",
+        "category_name": "Обувь",
+        "vendor": "Premiata",
+        "picture": "https://st-cdn.tsum.com/sig/36ab4eb96762c6bfe8e06f044e3246a1/square/640/i/4c/fe/c1/ce/4cfec1ce-15a3-3ee4-8a6f-1dc7a788bc11.jpg",
+        "url": "https://www.tsum.ru/product/5566445-kombinirovannye-krossovki-zac-zac-premiata-goluboi/",
+        "params_keys": [
+          "Пол",
+          "date_create",
+          "Материал",
+          "Страна дизайна",
+          "Оттенок",
+          "Цвет",
+          "brand_id",
+          "model_id",
+          "product_id",
+          "Артикул",
+          "color_concrete_id",
+          "color_base_id",
+          "custom categories",
+          "Лого",
+          "attribute_type",
+          "attribute_base",
+          "Скидка"
+        ]
+      },
+      "model": "google/gemini-2.5-flash",
+      "elapsed_s": 3.94,
+      "usage": {
+        "prompt_tokens": 2247,
+        "completion_tokens": 299,
+        "total_tokens": 2546,
+        "cost": 0.0014216,
+        "is_byok": false,
+        "prompt_tokens_details": {
+          "cached_tokens": 0,
+          "cache_write_tokens": 0,
+          "audio_tokens": 0,
+          "video_tokens": 0
+        },
+        "cost_details": {
+          "upstream_inference_cost": 0.0014216,
+          "upstream_inference_prompt_cost": 0.0006741,
+          "upstream_inference_completions_cost": 0.0007475
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 0,
+          "image_tokens": 0,
+          "audio_tokens": 0
+        }
+      },
+      "vision": {
+        "image_kind": "packshot",
+        "ocr_labels": [
+          "PREMIATA",
+          "483",
+          "ORIGINAL",
+          "WHITE AIR",
+          "AIRLUS",
+          "RIEN",
+          "AIR"
+        ],
+        "skip_reason": null,
+        "new_attributes": [
+          {
+            "name": "Тип застежки",
+            "value": "Шнуровка",
+            "evidence": "visual",
+            "search_relevance": "high",
+            "filter_candidate": true
+          },
+          {
+            "name": "Детали",
+            "value": "Логотип",
+            "evidence": "visual",
+            "search_relevance": "high",
+            "filter_candidate": true
+          },
+          {
+            "name": "Фактура",
+            "value": "Сетчатая",
+            "evidence": "visual",
+            "search_relevance": "medium",
+            "filter_candidate": true
+          }
+        ],
+        "already_in_feed_visible": [
+          "Массивная подошва",
+          "Низкие"
+        ],
+        "not_useful_from_image": []
+      }
+    },
+    {
+      "product": {
+        "offer_id": "2658720",
+        "name": "Комбинированные кроссовки на шнуровке",
+        "bucket": "obuv",
+        "category_name": "Обувь",
+        "vendor": "Hogan",
+        "picture": "https://st-cdn.tsum.com/sig/d04e169d4572676adb184f762f450001/square/640/i/1d/a8/61/c0/1da861c0-327a-3a43-82dc-b5097665ba2c.jpg",
+        "url": "https://www.tsum.ru/product/5233040-kombinirovannye-krossovki-na-shnurovke-hogan-bezhevyi/",
+        "params_keys": [
+          "Пол",
+          "date_create",
+          "Материал",
+          "Страна дизайна",
+          "Оттенок",
+          "Цвет",
+          "brand_id",
+          "model_id",
+          "product_id",
+          "Артикул",
+          "color_concrete_id",
+          "color_base_id",
+          "custom categories",
+          "Лого",
+          "attribute_type",
+          "attribute_base",
+          "Скидка"
+        ]
+      },
+      "model": "google/gemini-2.5-flash",
+      "elapsed_s": 3.48,
+      "usage": {
+        "prompt_tokens": 2230,
+        "completion_tokens": 221,
+        "total_tokens": 2451,
+        "cost": 0.0012215,
+        "is_byok": false,
+        "prompt_tokens_details": {
+          "cached_tokens": 0,
+          "cache_write_tokens": 0,
+          "audio_tokens": 0,
+          "video_tokens": 0
+        },
+        "cost_details": {
+          "upstream_inference_cost": 0.0012215,
+          "upstream_inference_prompt_cost": 0.000669,
+          "upstream_inference_completions_cost": 0.0005525
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 0,
+          "image_tokens": 0,
+          "audio_tokens": 0
+        }
+      },
+      "vision": {
+        "image_kind": "packshot",
+        "ocr_labels": [
+          "HOGAN"
+        ],
+        "skip_reason": null,
+        "new_attributes": [
+          {
+            "name": "Детали",
+            "value": "Логотип",
+            "evidence": "ocr",
+            "search_relevance": "medium",
+            "filter_candidate": false
+          },
+          {
+            "name": "Детали",
+            "value": "Металлизированные вставки",
+            "evidence": "visual",
+            "search_relevance": "low",
+            "filter_candidate": false
+          }
+        ],
+        "already_in_feed_visible": [
+          "Шнуровка",
+          "Платформа",
+          "Замша",
+          "Текстиль"
+        ],
+        "not_useful_from_image": []
+      }
+    },
+    {
+      "product": {
+        "offer_id": "12062602",
+        "name": "Кожаные монки",
+        "bucket": "tufli",
+        "category_name": "Туфли",
+        "vendor": "Barrett",
+        "picture": "https://st-cdn.tsum.com/sig/65b5e8b237c988d0a0acbf57fd1cd3e5/square/640/i/6f/dc/00/f4/6fdc00f4-6e71-3e37-8107-87b9974504e1.jpg",
+        "url": "https://www.tsum.ru/product/5576638-kozhanye-monki-barrett-bordovyi/",
+        "params_keys": [
+          "Пол",
+          "date_create",
+          "Материал",
+          "Страна дизайна",
+          "Оттенок",
+          "Цвет",
+          "brand_id",
+          "model_id",
+          "product_id",
+          "Артикул",
+          "color_concrete_id",
+          "color_base_id",
+          "custom categories",
+          "Лого",
+          "Скидка"
+        ]
+      },
+      "model": "google/gemini-2.5-flash",
+      "elapsed_s": 3.08,
+      "usage": {
+        "prompt_tokens": 2202,
+        "completion_tokens": 204,
+        "total_tokens": 2406,
+        "cost": 0.0011706,
+        "is_byok": false,
+        "prompt_tokens_details": {
+          "cached_tokens": 0,
+          "cache_write_tokens": 0,
+          "audio_tokens": 0,
+          "video_tokens": 0
+        },
+        "cost_details": {
+          "upstream_inference_cost": 0.0011706,
+          "upstream_inference_prompt_cost": 0.0006606,
+          "upstream_inference_completions_cost": 0.00051
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 0,
+          "image_tokens": 0,
+          "audio_tokens": 0
+        }
+      },
+      "vision": {
+        "image_kind": "packshot",
+        "ocr_labels": [],
+        "skip_reason": null,
+        "new_attributes": [
+          {
+            "name": "тип застежки",
+            "value": "пряжки",
+            "evidence": "visual",
+            "search_relevance": "high",
+            "filter_candidate": true
+          },
+          {
+            "name": "форма носка",
+            "value": "закругленный",
+            "evidence": "visual",
+            "search_relevance": "medium",
+            "filter_candidate": true
+          }
+        ],
+        "already_in_feed_visible": [
+          "кожа",
+          "резиновая подошва",
+          "бордовый цвет"
+        ],
+        "not_useful_from_image": []
+      }
+    },
+    {
+      "product": {
+        "offer_id": "12133926",
+        "name": "Кожаные дерби",
+        "bucket": "tufli",
+        "category_name": "Туфли",
+        "vendor": "Canali",
+        "picture": "https://st-cdn.tsum.com/sig/31323ca9952794ff08cb70b16584785e/square/640/i/34/37/f1/9f/3437f19f-51b1-34e3-9ec4-e95b1bbf0ad2.jpg",
+        "url": "https://www.tsum.ru/product/5579565-kozhanye-derbi-canali-chernyi/",
+        "params_keys": [
+          "Пол",
+          "date_create",
+          "Материал",
+          "Страна дизайна",
+          "Оттенок",
+          "Цвет",
+          "brand_id",
+          "model_id",
+          "product_id",
+          "Артикул",
+          "color_concrete_id",
+          "color_base_id",
+          "custom categories",
+          "Лого",
+          "Скидка"
+        ]
+      },
+      "model": "google/gemini-2.5-flash",
+      "elapsed_s": 3.98,
+      "usage": {
+        "prompt_tokens": 2205,
+        "completion_tokens": 252,
+        "total_tokens": 2457,
+        "cost": 0.0012915,
+        "is_byok": false,
+        "prompt_tokens_details": {
+          "cached_tokens": 0,
+          "cache_write_tokens": 0,
+          "audio_tokens": 0,
+          "video_tokens": 0
+        },
+        "cost_details": {
+          "upstream_inference_cost": 0.0012915,
+          "upstream_inference_prompt_cost": 0.0006615,
+          "upstream_inference_completions_cost": 0.00063
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 0,
+          "image_tokens": 0,
+          "audio_tokens": 0
+        }
+      },
+      "vision": {
+        "image_kind": "packshot",
+        "ocr_labels": [],
+        "skip_reason": null,
+        "new_attributes": [
+          {
+            "name": "детали",
+            "value": "перфорация",
+            "evidence": "visual",
+            "search_relevance": "high",
+            "filter_candidate": true
+          },
+          {
+            "name": "тип застежки",
+            "value": "шнуровка",
+            "evidence": "visual",
+            "search_relevance": "high",
+            "filter_candidate": true
+          },
+          {
+            "name": "фактура",
+            "value": "зернистая кожа",
+            "evidence": "visual",
+            "search_relevance": "medium",
+            "filter_candidate": true
+          }
+        ],
+        "already_in_feed_visible": [
+          "дерби",
+          "кожа",
+          "черный"
+        ],
+        "not_useful_from_image": []
+      }
+    },
+    {
+      "product": {
+        "offer_id": "13679520",
+        "name": "Борсетка",
+        "bucket": "sumki",
+        "category_name": "Сумки",
+        "vendor": "Kiton",
+        "picture": "https://st-cdn.tsum.com/sig/921f36ce06367a5e4707a29e36d6e7e8/square/640/i/00/00/2e/e8/5fc9683c-cd1a-4fd4-95cb-28c2c91fb2c2.jpg",
+        "url": "https://www.tsum.ru/product/7031936-borsetka-kiton-chernyi/",
+        "params_keys": [
+          "Сезон",
+          "Пол",
+          "date_create",
+          "Материал",
+          "Оттенок",
+          "Цвет",
+          "brand_id",
+          "model_id",
+          "product_id",
+          "Артикул",
+          "color_concrete_id",
+          "color_base_id",
+          "custom categories",
+          "Лого",
+          "Скидка"
+        ]
+      },
+      "model": "google/gemini-2.5-flash",
+      "elapsed_s": 4.14,
+      "usage": {
+        "prompt_tokens": 2170,
+        "completion_tokens": 308,
+        "total_tokens": 2478,
+        "cost": 0.001421,
+        "is_byok": false,
+        "prompt_tokens_details": {
+          "cached_tokens": 0,
+          "cache_write_tokens": 0,
+          "audio_tokens": 0,
+          "video_tokens": 0
+        },
+        "cost_details": {
+          "upstream_inference_cost": 0.001421,
+          "upstream_inference_prompt_cost": 0.000651,
+          "upstream_inference_completions_cost": 0.00077
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 0,
+          "image_tokens": 0,
+          "audio_tokens": 0
+        }
+      },
+      "vision": {
+        "image_kind": "packshot",
+        "ocr_labels": [],
+        "skip_reason": null,
+        "new_attributes": [
+          {
+            "name": "силуэт сумки",
+            "value": "прямоугольный",
+            "evidence": "visual",
+            "search_relevance": "medium",
+            "filter_candidate": true
+          },
+          {
+            "name": "тип застежки",
+            "value": "молния",
+            "evidence": "visual",
+            "search_relevance": "high",
+            "filter_candidate": true
+          },
+          {
+            "name": "детали",
+            "value": "внешний карман на молнии",
+            "evidence": "visual",
+            "search_relevance": "medium",
+            "filter_candidate": true
+          },
+          {
+            "name": "детали",
+            "value": "красная строчка",
+            "evidence": "visual",
+            "search_relevance": "low",
+            "filter_candidate": false
+          }
+        ],
+        "already_in_feed_visible": [
+          "черный цвет",
+          "натуральная кожа"
+        ],
+        "not_useful_from_image": []
+      }
+    },
+    {
+      "product": {
+        "offer_id": "13661940",
+        "name": "Сумка",
+        "bucket": "sumki",
+        "category_name": "Сумки",
+        "vendor": "Vic Matie",
+        "picture": "https://st-cdn.tsum.com/sig/d53981e27df0de2788af7a4fb5eba4fb/square/640/i/00/00/c6/88/d91fb729-53fa-4285-ab64-07e7feb35b64.jpg",
+        "url": "https://www.tsum.ru/product/7024549-sumka-vic-matie-chernyi/",
+        "params_keys": [
+          "Сезон",
+          "Пол",
+          "date_create",
+          "Материал",
+          "Страна дизайна",
+          "Оттенок",
+          "Цвет",
+          "brand_id",
+          "model_id",
+          "product_id",
+          "Артикул",
+          "color_concrete_id",
+          "color_base_id",
+          "custom categories",
+          "Лого",
+          "Скидка"
+        ]
+      },
+      "model": "google/gemini-2.5-flash",
+      "elapsed_s": 4.15,
+      "usage": {
+        "prompt_tokens": 2177,
+        "completion_tokens": 259,
+        "total_tokens": 2436,
+        "cost": 0.0013006,
+        "is_byok": false,
+        "prompt_tokens_details": {
+          "cached_tokens": 0,
+          "cache_write_tokens": 0,
+          "audio_tokens": 0,
+          "video_tokens": 0
+        },
+        "cost_details": {
+          "upstream_inference_cost": 0.0013006,
+          "upstream_inference_prompt_cost": 0.0006531,
+          "upstream_inference_completions_cost": 0.0006475
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 0,
+          "image_tokens": 0,
+          "audio_tokens": 0
+        }
+      },
+      "vision": {
+        "image_kind": "packshot",
+        "ocr_labels": [
+          "VIC MATIE"
+        ],
+        "skip_reason": null,
+        "new_attributes": [
+          {
+            "name": "силуэт сумки",
+            "value": "хобо",
+            "evidence": "visual",
+            "search_relevance": "high",
+            "filter_candidate": true
+          },
+          {
+            "name": "количество ручек",
+            "value": "одна",
+            "evidence": "visual",
+            "search_relevance": "medium",
+            "filter_candidate": true
+          },
+          {
+            "name": "детали",
+            "value": "стёганая",
+            "evidence": "visual",
+            "search_relevance": "medium",
+            "filter_candidate": true
+          }
+        ],
+        "already_in_feed_visible": [
+          "бренд Vic Matie",
+          "черный цвет"
+        ],
+        "not_useful_from_image": []
+      }
+    },
+    {
+      "product": {
+        "offer_id": "13524108",
+        "name": "Парфюмерная вода Bois de Babylone (100ml)",
+        "bucket": "parfyumeriya",
+        "category_name": "Парфюмерия",
+        "vendor": "Welton London",
+        "picture": "https://st-cdn.tsum.com/sig/b59904c37bc30eab22f74fb198095afd/square/640/i/00/04/c8/59/b90c2bf5-fa7b-409f-917b-e5f496559ee6.jpg",
+        "url": "https://www.tsum.ru/product/he00877651-parfyumernaya-voda-bois-de-babylone-100ml-welton-london-bestcvetnyi/",
+        "params_keys": [
+          "Размер",
+          "Штрихкод",
+          "size_id",
+          "Пол",
+          "date_create",
+          "Страна дизайна",
+          "Оттенок",
+          "Цвет",
+          "brand_id",
+          "model_id",
+          "product_id",
+          "Артикул",
+          "color_concrete_id",
+          "color_base_id",
+          "custom categories",
+          "Лого",
+          "Скидка"
+        ]
+      },
+      "model": "google/gemini-2.5-flash",
+      "elapsed_s": 3.07,
+      "usage": {
+        "prompt_tokens": 2206,
+        "completion_tokens": 230,
+        "total_tokens": 2436,
+        "cost": 0.0012368,
+        "is_byok": false,
+        "prompt_tokens_details": {
+          "cached_tokens": 0,
+          "cache_write_tokens": 0,
+          "audio_tokens": 0,
+          "video_tokens": 0
+        },
+        "cost_details": {
+          "upstream_inference_cost": 0.0012368,
+          "upstream_inference_prompt_cost": 0.0006618,
+          "upstream_inference_completions_cost": 0.000575
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 0,
+          "image_tokens": 0,
+          "audio_tokens": 0
+        }
+      },
+      "vision": {
+        "image_kind": "packshot",
+        "ocr_labels": [
+          "WELTON",
+          "LONDON",
+          "Bois de Babylone"
+        ],
+        "skip_reason": null,
+        "new_attributes": [
+          {
+            "name": "Концентрация",
+            "value": "Парфюмерная вода",
+            "evidence": "ocr",
+            "search_relevance": "high",
+            "filter_candidate": true
+          },
+          {
+            "name": "Объем",
+            "value": "100 мл",
+            "evidence": "ocr",
+            "search_relevance": "high",
+            "filter_candidate": true
+          }
+        ],
+        "already_in_feed_visible": [
+          "Бренд: Welton London",
+          "Название: Bois de Babylone"
+        ],
+        "not_useful_from_image": []
+      }
+    },
+    {
+      "product": {
+        "offer_id": "1658680",
+        "name": "Туалетная вода Ginepro di Sardegna (150ml)",
+        "bucket": "parfyumeriya",
+        "category_name": "Парфюмерия",
+        "vendor": "Acqua di Parma",
+        "picture": "https://st-cdn.tsum.com/sig/bcebc092ccb98226a71dc429ad99d689/square/640/i/01/3a/49/18/013a4918-4ee4-3e40-b1c4-e5a892d4b845.jpg",
+        "url": "https://www.tsum.ru/product/p081175-tualetnaya-voda-ginepro-di-sardegna-150ml-acqua-di-parma-bestcvetnyi/",
+        "params_keys": [
+          "Пол",
+          "date_create",
+          "Страна дизайна",
+          "Оттенок",
+          "Цвет",
+          "brand_id",
+          "model_id",
+          "product_id",
+          "Артикул",
+          "color_concrete_id",
+          "color_base_id",
+          "custom categories",
+          "Лого",
+          "Скидка"
+        ]
+      },
+      "model": "google/gemini-2.5-flash",
+      "elapsed_s": 2.66,
+      "usage": {
+        "prompt_tokens": 2194,
+        "completion_tokens": 192,
+        "total_tokens": 2386,
+        "cost": 0.0011382,
+        "is_byok": false,
+        "prompt_tokens_details": {
+          "cached_tokens": 0,
+          "cache_write_tokens": 0,
+          "audio_tokens": 0,
+          "video_tokens": 0
+        },
+        "cost_details": {
+          "upstream_inference_cost": 0.0011382,
+          "upstream_inference_prompt_cost": 0.0006582,
+          "upstream_inference_completions_cost": 0.00048
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 0,
+          "image_tokens": 0,
+          "audio_tokens": 0
+        }
+      },
+      "vision": {
+        "image_kind": "packshot",
+        "ocr_labels": [
+          "ACQUA",
+          "DI",
+          "PARMA",
+          "Blu Mediterraneo",
+          "GINEPRO",
+          "di SARDEGNA"
+        ],
+        "skip_reason": null,
+        "new_attributes": [
+          {
+            "name": "Линия",
+            "value": "Blu Mediterraneo",
+            "evidence": "ocr",
+            "search_relevance": "high",
+            "filter_candidate": true
+          }
+        ],
+        "already_in_feed_visible": [
+          "Бренд: Acqua di Parma",
+          "Объем: 150ml"
+        ],
+        "not_useful_from_image": []
+      }
+    },
+    {
+      "product": {
+        "offer_id": "11094281",
+        "name": "Матирующий тональный крем Teint Idole Ultra Wear SPF15, оттенок 026 (30ml)",
+        "bucket": "kosmetika",
+        "category_name": "Для лица",
+        "vendor": "Lancome",
+        "picture": "https://st-cdn.tsum.com/sig/902119bac0f0c491c5e15c0a51d1705c/square/640/i/d2/0f/43/89/d20f4389-17cf-3296-a401-1a173bca9f23.jpg",
+        "url": "https://www.tsum.ru/product/he00490000-matiruyushchii-tonalnyi-krem-teint-idole-ultra-wear-spf15-ottenok-026-30ml-lancome-026/",
+        "params_keys": [
+          "Пол",
+          "date_create",
+          "Страна дизайна",
+          "Оттенок",
+          "Цвет",
+          "brand_id",
+          "model_id",
+          "product_id",
+          "Артикул",
+          "color_concrete_id",
+          "color_base_id",
+          "custom categories",
+          "Лого",
+          "Скидка"
+        ]
+      },
+      "model": "google/gemini-2.5-flash",
+      "elapsed_s": 3.35,
+      "usage": {
+        "prompt_tokens": 2191,
+        "completion_tokens": 352,
+        "total_tokens": 2543,
+        "cost": 0.0015373,
+        "is_byok": false,
+        "prompt_tokens_details": {
+          "cached_tokens": 0,
+          "cache_write_tokens": 0,
+          "audio_tokens": 0,
+          "video_tokens": 0
+        },
+        "cost_details": {
+          "upstream_inference_cost": 0.0015373,
+          "upstream_inference_prompt_cost": 0.0006573,
+          "upstream_inference_completions_cost": 0.00088
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 0,
+          "image_tokens": 0,
+          "audio_tokens": 0
+        }
+      },
+      "vision": {
+        "image_kind": "packshot",
+        "ocr_labels": [
+          "LANCÔME",
+          "TEINT",
+          "IDOLE",
+          "ULTRA",
+          "WEAR",
+          "24H TENUE & CONFORT",
+          "SANS RETOUCHE",
+          "24H WEAR & COMFORT",
+          "RETOUCH FREE",
+          "SPF 15"
+        ],
+        "skip_reason": null,
+        "new_attributes": [
+          {
+            "name": "Стойкость",
+            "value": "24 часа",
+            "evidence": "ocr",
+            "search_relevance": "high",
+            "filter_candidate": true
+          },
+          {
+            "name": "Эффект",
+            "value": "Комфорт",
+            "evidence": "ocr",
+            "search_relevance": "medium",
+            "filter_candidate": true
+          },
+          {
+            "name": "Особенность",
+            "value": "Без необходимости поправлять макияж",
+            "evidence": "ocr",
+            "search_relevance": "medium",
+            "filter_candidate": false
+          }
+        ],
+        "already_in_feed_visible": [
+          "SPF 15",
+          "Матирующий",
+          "Тональный крем",
+          "30ml"
+        ],
+        "not_useful_from_image": []
+      }
+    },
+    {
+      "product": {
+        "offer_id": "1899405",
+        "name": "Маска для волос Elacticizer Extreme (150ml)",
+        "bucket": "kosmetika",
+        "category_name": "Уход за волосами",
+        "vendor": "Philip Kingsley",
+        "picture": "https://st-cdn.tsum.com/sig/c4181ef42892188eed42ddd91c32634d/square/640/i/85/7a/cc/80/857acc80-ad67-3d97-8cf8-6ab722d52fe4.jpg",
+        "url": "https://www.tsum.ru/product/p055364-maska-dlya-volos-elacticizer-extreme-150ml-philip-kingsley-bestcvetnyi/",
+        "params_keys": [
+          "Пол",
+          "date_create",
+          "Страна дизайна",
+          "Оттенок",
+          "Цвет",
+          "brand_id",
+          "model_id",
+          "product_id",
+          "Артикул",
+          "color_concrete_id",
+          "color_base_id",
+          "custom categories",
+          "Скидка"
+        ]
+      },
+      "model": "google/gemini-2.5-flash",
+      "elapsed_s": 4.05,
+      "usage": {
+        "prompt_tokens": 2180,
+        "completion_tokens": 336,
+        "total_tokens": 2516,
+        "cost": 0.001494,
+        "is_byok": false,
+        "prompt_tokens_details": {
+          "cached_tokens": 0,
+          "cache_write_tokens": 0,
+          "audio_tokens": 0,
+          "video_tokens": 0
+        },
+        "cost_details": {
+          "upstream_inference_cost": 0.001494,
+          "upstream_inference_prompt_cost": 0.000654,
+          "upstream_inference_completions_cost": 0.00084
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 0,
+          "image_tokens": 0,
+          "audio_tokens": 0
+        }
+      },
+      "vision": {
+        "image_kind": "packshot",
+        "ocr_labels": [
+          "PHILIP KINGSLEY",
+          "ELASTICIZER EXTREME",
+          "Intensive, super moisturizing treatment for over processed, porous hair types",
+          "Adds elasticity, manageability, bounce and shine"
+        ],
+        "skip_reason": null,
+        "new_attributes": [
+          {
+            "name": "Тип волос",
+            "value": "для поврежденных",
+            "evidence": "ocr",
+            "search_relevance": "high",
+            "filter_candidate": true
+          },
+          {
+            "name": "Эффект",
+            "value": "увлажнение",
+            "evidence": "ocr",
+            "search_relevance": "high",
+            "filter_candidate": true
+          },
+          {
+            "name": "Эффект",
+            "value": "эластичность",
+            "evidence": "ocr",
+            "search_relevance": "high",
+            "filter_candidate": true
+          },
+          {
+            "name": "Эффект",
+            "value": "блеск",
+            "evidence": "ocr",
+            "search_relevance": "high",
+            "filter_candidate": true
+          }
+        ],
+        "already_in_feed_visible": [],
+        "not_useful_from_image": []
+      }
+    },
+    {
+      "product": {
+        "offer_id": "10890394",
+        "name": "Солнцезащитные очки",
+        "bucket": "aksessuary",
+        "category_name": "Очки",
+        "vendor": "McQ Swallow",
+        "picture": "https://st-cdn.tsum.com/sig/e85eab69c640d7875fbf3530d1293f1d/square/640/i/aa/4d/0b/de/aa4d0bde-1182-37c0-9787-f8fc1976125e.jpg",
+        "url": "https://www.tsum.ru/product/00042519-solntcezashchitnye-ochki-mcq-swallow-serebryanyi/",
+        "params_keys": [
+          "Пол",
+          "date_create",
+          "Материал",
+          "Страна дизайна",
+          "Оттенок",
+          "Цвет",
+          "brand_id",
+          "model_id",
+          "product_id",
+          "Артикул",
+          "color_concrete_id",
+          "color_base_id",
+          "custom categories",
+          "Скидка"
+        ]
+      },
+      "model": "google/gemini-2.5-flash",
+      "elapsed_s": 2.87,
+      "usage": {
+        "prompt_tokens": 2169,
+        "completion_tokens": 216,
+        "total_tokens": 2385,
+        "cost": 0.0011907,
+        "is_byok": false,
+        "prompt_tokens_details": {
+          "cached_tokens": 0,
+          "cache_write_tokens": 0,
+          "audio_tokens": 0,
+          "video_tokens": 0
+        },
+        "cost_details": {
+          "upstream_inference_cost": 0.0011907,
+          "upstream_inference_prompt_cost": 0.0006507,
+          "upstream_inference_completions_cost": 0.00054
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 0,
+          "image_tokens": 0,
+          "audio_tokens": 0
+        }
+      },
+      "vision": {
+        "image_kind": "packshot",
+        "ocr_labels": [],
+        "skip_reason": null,
+        "new_attributes": [
+          {
+            "name": "форма оправы",
+            "value": "кошачий глаз",
+            "evidence": "visual",
+            "search_relevance": "high",
+            "filter_candidate": true
+          },
+          {
+            "name": "тип линз",
+            "value": "градиентные",
+            "evidence": "visual",
+            "search_relevance": "high",
+            "filter_candidate": true
+          }
+        ],
+        "already_in_feed_visible": [
+          "цвет серебряный",
+          "материал оправы металл",
+          "материал линз пластик"
+        ],
+        "not_useful_from_image": []
+      }
+    },
+    {
+      "product": {
+        "offer_id": "12236916",
+        "name": "Шарф из шерсти и кашемира",
+        "bucket": "aksessuary",
+        "category_name": "Аксессуары",
+        "vendor": "Il Trenino",
+        "picture": "https://st-cdn.tsum.com/sig/ed4272c3e7825dec7134bd8ca58e27b8/square/640/i/0c/32/1d/ea/0c321dea-1c41-34af-8341-fb8fcadbf2e5.jpg",
+        "url": "https://www.tsum.ru/product/5590193-sharf-iz-shersti-i-kashemira-il-trenino-bezhevyi/",
+        "params_keys": [
+          "Пол",
+          "date_create",
+          "Материал",
+          "Страна дизайна",
+          "Оттенок",
+          "Цвет",
+          "brand_id",
+          "model_id",
+          "product_id",
+          "Артикул",
+          "color_concrete_id",
+          "color_base_id",
+          "custom categories",
+          "Лого",
+          "Скидка"
+        ]
+      },
+      "model": "google/gemini-2.5-flash",
+      "elapsed_s": 2.94,
+      "usage": {
+        "prompt_tokens": 2182,
+        "completion_tokens": 203,
+        "total_tokens": 2385,
+        "cost": 0.0011621,
+        "is_byok": false,
+        "prompt_tokens_details": {
+          "cached_tokens": 0,
+          "cache_write_tokens": 0,
+          "audio_tokens": 0,
+          "video_tokens": 0
+        },
+        "cost_details": {
+          "upstream_inference_cost": 0.0011621,
+          "upstream_inference_prompt_cost": 0.0006546,
+          "upstream_inference_completions_cost": 0.0005075
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 0,
+          "image_tokens": 0,
+          "audio_tokens": 0
+        }
+      },
+      "vision": {
+        "image_kind": "packshot",
+        "ocr_labels": [],
+        "skip_reason": null,
+        "new_attributes": [
+          {
+            "name": "Фактура",
+            "value": "Вязка",
+            "evidence": "visual",
+            "search_relevance": "medium",
+            "filter_candidate": true
+          },
+          {
+            "name": "Детали",
+            "value": "Металлическая нашивка",
+            "evidence": "visual",
+            "search_relevance": "low",
+            "filter_candidate": false
+          }
+        ],
+        "already_in_feed_visible": [
+          "Шерсть",
+          "Кашемир",
+          "Бежевый"
+        ],
+        "not_useful_from_image": []
+      }
+    },
+    {
+      "product": {
+        "offer_id": "11093797",
+        "name": "Часы Aviator 8 B01 Chronograph 43",
+        "bucket": "chasy",
+        "category_name": "Не ювелирные",
+        "vendor": "Breitling",
+        "picture": "https://st-cdn.tsum.com/sig/825eff700634568fa1fa476db8ae8b69/square/640/i/b9/2d/b0/5a/b92db05a-7ede-3e6a-a2a4-63d40b0d2781.jpg",
+        "url": "https://www.tsum.ru/product/apt0117511-chasy-aviator-8-b01-chronograph-43-breitling-bestcvetnyi/",
+        "params_keys": [
+          "Размер",
+          "Штрихкод",
+          "size_id",
+          "Пол",
+          "date_create",
+          "Оттенок",
+          "Цвет",
+          "brand_id",
+          "model_id",
+          "product_id",
+          "Артикул",
+          "color_concrete_id",
+          "color_base_id",
+          "Лого",
+          "attribute_color_dial_watches",
+          "attribute_case_watches",
+          "attribute_mechanism_watches",
+          "Скидка",
+          "Предоплата"
+        ]
+      },
+      "model": "google/gemini-2.5-flash",
+      "elapsed_s": 4.5,
+      "usage": {
+        "prompt_tokens": 2188,
+        "completion_tokens": 436,
+        "total_tokens": 2624,
+        "cost": 0.0017464,
+        "is_byok": false,
+        "prompt_tokens_details": {
+          "cached_tokens": 0,
+          "cache_write_tokens": 0,
+          "audio_tokens": 0,
+          "video_tokens": 0
+        },
+        "cost_details": {
+          "upstream_inference_cost": 0.0017464,
+          "upstream_inference_prompt_cost": 0.0006564,
+          "upstream_inference_completions_cost": 0.00109
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 0,
+          "image_tokens": 0,
+          "audio_tokens": 0
+        }
+      },
+      "vision": {
+        "image_kind": "packshot",
+        "ocr_labels": [
+          "55",
+          "45",
+          "10",
+          "50",
+          "II",
+          "12",
+          "BREITLING",
+          "18 4",
+          "CHRON METER",
+          "5",
+          "40",
+          "20",
+          "8",
+          "7",
+          "35",
+          "993",
+          "6",
+          "Swiss 30 MADE",
+          "25",
+          "4",
+          "1",
+          "2"
+        ],
+        "skip_reason": null,
+        "new_attributes": [
+          {
+            "name": "Тип браслета",
+            "value": "Кожаный",
+            "evidence": "visual",
+            "search_relevance": "high",
+            "filter_candidate": true
+          },
+          {
+            "name": "Тип застежки",
+            "value": "Пряжка",
+            "evidence": "visual",
+            "search_relevance": "medium",
+            "filter_candidate": true
+          },
+          {
+            "name": "Функции часов",
+            "value": "Хронограф",
+            "evidence": "ocr",
+            "search_relevance": "high",
+            "filter_candidate": true
+          }
+        ],
+        "already_in_feed_visible": [
+          "Цвет: Бесцветный",
+          "Оттенок: Бесцветный",
+          "attribute_color_dial_watches: Серый",
+          "attribute_case_watches: Сталь",
+          "attribute_mechanism_watches: Автомат"
+        ],
+        "not_useful_from_image": []
+      }
+    },
+    {
+      "product": {
+        "offer_id": "12651124",
+        "name": "Часы Super Avi B04 Chronograph GMT 46 Curtiss Warhawk",
+        "bucket": "chasy",
+        "category_name": "Не ювелирные",
+        "vendor": "Breitling",
+        "picture": "https://st-cdn.tsum.com/sig/a0dccd1c2aae458470481c1a27a837f4/square/640/i/cf/ba/41/c7/cfba41c7-7093-3641-a7a3-2650b5eb43f1.jpg",
+        "url": "https://www.tsum.ru/product/apt0138130-chasy-super-avi-b04-chronograph-gmt-46-curtiss-warhawk-breitling-bestcvetnyi/",
+        "params_keys": [
+          "Размер",
+          "Штрихкод",
+          "size_id",
+          "Пол",
+          "date_create",
+          "Оттенок",
+          "Цвет",
+          "brand_id",
+          "model_id",
+          "product_id",
+          "Артикул",
+          "color_concrete_id",
+          "color_base_id",
+          "Лого",
+          "attribute_color_dial_watches",
+          "attribute_case_watches",
+          "attribute_mechanism_watches",
+          "Скидка",
+          "Предоплата"
+        ]
+      },
+      "model": "google/gemini-2.5-flash",
+      "elapsed_s": 4.07,
+      "usage": {
+        "prompt_tokens": 2192,
+        "completion_tokens": 513,
+        "total_tokens": 2705,
+        "cost": 0.0019401,
+        "is_byok": false,
+        "prompt_tokens_details": {
+          "cached_tokens": 0,
+          "cache_write_tokens": 0,
+          "audio_tokens": 0,
+          "video_tokens": 0
+        },
+        "cost_details": {
+          "upstream_inference_cost": 0.0019401,
+          "upstream_inference_prompt_cost": 0.0006576,
+          "upstream_inference_completions_cost": 0.0012825
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 0,
+          "image_tokens": 0,
+          "audio_tokens": 0
+        }
+      },
+      "vision": {
+        "image_kind": "packshot",
+        "ocr_labels": [
+          "BREITLING",
+          "1834",
+          "SWISS",
+          "MADE"
+        ],
+        "skip_reason": null,
+        "new_attributes": [
+          {
+            "name": "Тип индикации",
+            "value": "Аналоговый",
+            "evidence": "visual",
+            "search_relevance": "medium",
+            "filter_candidate": true
+          },
+          {
+            "name": "Функции часов",
+            "value": "Хронограф",
+            "evidence": "visual",
+            "search_relevance": "high",
+            "filter_candidate": true
+          },
+          {
+            "name": "Функции часов",
+            "value": "GMT",
+            "evidence": "visual",
+            "search_relevance": "high",
+            "filter_candidate": true
+          },
+          {
+            "name": "Тип циферблата",
+            "value": "Арабские цифры",
+            "evidence": "visual",
+            "search_relevance": "medium",
+            "filter_candidate": true
+          },
+          {
+            "name": "Тип циферблата",
+            "value": "Метки",
+            "evidence": "visual",
+            "search_relevance": "medium",
+            "filter_candidate": true
+          },
+          {
+            "name": "Материал ремешка",
+            "value": "Кожа",
+            "evidence": "visual",
+            "search_relevance": "high",
+            "filter_candidate": true
+          },
+          {
+            "name": "Цвет ремешка",
+            "value": "Коричневый",
+            "evidence": "visual",
+            "search_relevance": "high",
+            "filter_candidate": true
+          }
+        ],
+        "already_in_feed_visible": [
+          "Цвет циферблата: Зелёный",
+          "Материал корпуса: Сталь"
+        ],
+        "not_useful_from_image": []
+      }
+    },
+    {
+      "product": {
+        "offer_id": "13802361",
+        "name": "Колье",
+        "bucket": "ukrasheniya",
+        "category_name": "Ювелирные украшения",
+        "vendor": "Messika",
+        "picture": "https://st-cdn.tsum.com/sig/a75346f9f6904efc01c4850b4024115c/square/640/i/00/06/9d/e9/a542cacd-69e1-429a-bf19-393f9ccb256e.jpg",
+        "url": "https://www.tsum.ru/product/apt0147534-kole-messika-bestcvetnyi/",
+        "params_keys": [
+          "Размер",
+          "Штрихкод",
+          "size_id",
+          "Пол",
+          "date_create",
+          "Материал",
+          "Оттенок",
+          "Цвет",
+          "brand_id",
+          "model_id",
+          "product_id",
+          "Артикул",
+          "color_concrete_id",
+          "color_base_id",
+          "custom categories",
+          "Лого",
+          "attribute_material_jewelry",
+          "attribute_gems_jewelry",
+          "Скидка"
+        ]
+      },
+      "model": "google/gemini-2.5-flash",
+      "elapsed_s": 3.07,
+      "usage": {
+        "prompt_tokens": 2182,
+        "completion_tokens": 197,
+        "total_tokens": 2379,
+        "cost": 0.0011471,
+        "is_byok": false,
+        "prompt_tokens_details": {
+          "cached_tokens": 0,
+          "cache_write_tokens": 0,
+          "audio_tokens": 0,
+          "video_tokens": 0
+        },
+        "cost_details": {
+          "upstream_inference_cost": 0.0011471,
+          "upstream_inference_prompt_cost": 0.0006546,
+          "upstream_inference_completions_cost": 0.0004925
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 0,
+          "image_tokens": 0,
+          "audio_tokens": 0
+        }
+      },
+      "vision": {
+        "image_kind": "packshot",
+        "ocr_labels": [],
+        "skip_reason": null,
+        "new_attributes": [
+          {
+            "name": "Тип плетения",
+            "value": "Якорное",
+            "evidence": "visual",
+            "search_relevance": "medium",
+            "filter_candidate": true
+          },
+          {
+            "name": "Детали",
+            "value": "Подвеска",
+            "evidence": "visual",
+            "search_relevance": "high",
+            "filter_candidate": true
+          }
+        ],
+        "already_in_feed_visible": [
+          "Желтое золото",
+          "Бриллианты"
+        ],
+        "not_useful_from_image": []
+      }
+    },
+    {
+      "product": {
+        "offer_id": "13567720",
+        "name": "Колье",
+        "bucket": "ukrasheniya",
+        "category_name": "Ювелирные украшения",
+        "vendor": "Vanrycke",
+        "picture": "https://st-cdn.tsum.com/sig/1656020333ff0b5a4e4ec0f975ba0097/square/640/i/00/15/13/e7/bc375e5a-98bf-442f-996b-ae5cfabe092e.jpg",
+        "url": "https://www.tsum.ru/product/apt0144470-kole-vanrycke-bestcvetnyi/",
+        "params_keys": [
+          "Размер",
+          "Штрихкод",
+          "size_id",
+          "Пол",
+          "date_create",
+          "Материал",
+          "Оттенок",
+          "Цвет",
+          "brand_id",
+          "model_id",
+          "product_id",
+          "Артикул",
+          "color_concrete_id",
+          "color_base_id",
+          "custom categories",
+          "Лого",
+          "attribute_material_jewelry",
+          "attribute_gems_jewelry",
+          "Скидка"
+        ]
+      },
+      "model": "google/gemini-2.5-flash",
+      "elapsed_s": 2.83,
+      "usage": {
+        "prompt_tokens": 2186,
+        "completion_tokens": 188,
+        "total_tokens": 2374,
+        "cost": 0.0011258,
+        "is_byok": false,
+        "prompt_tokens_details": {
+          "cached_tokens": 0,
+          "cache_write_tokens": 0,
+          "audio_tokens": 0,
+          "video_tokens": 0
+        },
+        "cost_details": {
+          "upstream_inference_cost": 0.0011258,
+          "upstream_inference_prompt_cost": 0.0006558,
+          "upstream_inference_completions_cost": 0.00047
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 0,
+          "image_tokens": 0,
+          "audio_tokens": 0
+        }
+      },
+      "vision": {
+        "image_kind": "packshot",
+        "ocr_labels": [],
+        "skip_reason": null,
+        "new_attributes": [
+          {
+            "name": "форма подвески",
+            "value": "буква N",
+            "evidence": "visual",
+            "search_relevance": "high",
+            "filter_candidate": true
+          },
+          {
+            "name": "тип цепочки",
+            "value": "якорная",
+            "evidence": "visual",
+            "search_relevance": "medium",
+            "filter_candidate": false
+          }
+        ],
+        "already_in_feed_visible": [
+          "розовое золото"
+        ],
+        "not_useful_from_image": []
+      }
+    },
+    {
+      "product": {
+        "offer_id": "13492478",
+        "name": "Часы Turbine Tourbillon",
+        "bucket": "yuvelirnye",
+        "category_name": "Ювелирные",
+        "vendor": "Perrelet",
+        "picture": "https://st-cdn.tsum.com/sig/71813fc679ac992b313a9e89f8e3d9fe/square/640/i/00/67/f0/00/40e9b365-1888-49ae-9e02-1a8d0dc95028.jpg",
+        "url": "https://www.tsum.ru/product/apt0144723-chasy-turbine-tourbillon-perrelet-bestcvetnyi/",
+        "params_keys": [
+          "Размер",
+          "Штрихкод",
+          "size_id",
+          "Пол",
+          "date_create",
+          "Оттенок",
+          "Цвет",
+          "brand_id",
+          "model_id",
+          "product_id",
+          "Артикул",
+          "color_concrete_id",
+          "color_base_id",
+          "attribute_color_dial_watches",
+          "attribute_case_watches",
+          "attribute_mechanism_watches",
+          "Скидка"
+        ]
+      },
+      "model": "google/gemini-2.5-flash",
+      "elapsed_s": 4.15,
+      "usage": {
+        "prompt_tokens": 2181,
+        "completion_tokens": 456,
+        "total_tokens": 2637,
+        "cost": 0.0017943,
+        "is_byok": false,
+        "prompt_tokens_details": {
+          "cached_tokens": 0,
+          "cache_write_tokens": 0,
+          "audio_tokens": 0,
+          "video_tokens": 0
+        },
+        "cost_details": {
+          "upstream_inference_cost": 0.0017943,
+          "upstream_inference_prompt_cost": 0.0006543,
+          "upstream_inference_completions_cost": 0.00114
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 0,
+          "image_tokens": 0,
+          "audio_tokens": 0
+        }
+      },
+      "vision": {
+        "image_kind": "packshot",
+        "ocr_labels": [
+          "10",
+          "2",
+          "4",
+          "6",
+          "8",
+          "AUTOMATIC",
+          "PERRELET",
+          "1777",
+          "TOURBILLON"
+        ],
+        "skip_reason": null,
+        "new_attributes": [
+          {
+            "name": "Тип индикации",
+            "value": "Аналоговый",
+            "evidence": "visual",
+            "search_relevance": "high",
+            "filter_candidate": true
+          },
+          {
+            "name": "Тип циферблата",
+            "value": "Скелетон",
+            "evidence": "visual",
+            "search_relevance": "high",
+            "filter_candidate": true
+          },
+          {
+            "name": "Материал браслета",
+            "value": "Каучук",
+            "evidence": "visual",
+            "search_relevance": "high",
+            "filter_candidate": true
+          },
+          {
+            "name": "Тип застежки",
+            "value": "Пряжка",
+            "evidence": "visual",
+            "search_relevance": "medium",
+            "filter_candidate": true
+          },
+          {
+            "name": "Форма корпуса",
+            "value": "Круглая",
+            "evidence": "visual",
+            "search_relevance": "high",
+            "filter_candidate": true
+          }
+        ],
+        "already_in_feed_visible": [
+          "Цвет циферблата: Чёрный",
+          "Материал корпуса: Сталь",
+          "Материал корпуса: Розовое золото",
+          "Механизм: Автомат"
+        ],
+        "not_useful_from_image": []
+      }
+    },
+    {
+      "product": {
+        "offer_id": "12782662",
+        "name": "Часы Endurance Pro",
+        "bucket": "yuvelirnye",
+        "category_name": "Ювелирные",
+        "vendor": "Breitling",
+        "picture": "https://st-cdn.tsum.com/sig/e51b2594c2dc404f9def3f18b4b7bb20/square/640/i/d2/fc/66/e0/d2fc66e0-ec0f-3452-be12-8d467fdd67a4.jpg",
+        "url": "https://www.tsum.ru/product/apt0125910-chasy-endurance-pro-breitling-bestcvetnyi/",
+        "params_keys": [
+          "Размер",
+          "size_id",
+          "Пол",
+          "date_create",
+          "Оттенок",
+          "Цвет",
+          "brand_id",
+          "model_id",
+          "product_id",
+          "Артикул",
+          "color_concrete_id",
+          "color_base_id",
+          "Лого",
+          "attribute_color_dial_watches",
+          "attribute_case_watches",
+          "attribute_mechanism_watches",
+          "Скидка"
+        ]
+      },
+      "model": "google/gemini-2.5-flash",
+      "elapsed_s": 4.97,
+      "usage": {
+        "prompt_tokens": 2175,
+        "completion_tokens": 635,
+        "total_tokens": 2810,
+        "cost": 0.00224,
+        "is_byok": false,
+        "prompt_tokens_details": {
+          "cached_tokens": 0,
+          "cache_write_tokens": 0,
+          "audio_tokens": 0,
+          "video_tokens": 0
+        },
+        "cost_details": {
+          "upstream_inference_cost": 0.00224,
+          "upstream_inference_prompt_cost": 0.0006525,
+          "upstream_inference_completions_cost": 0.0015875
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 0,
+          "image_tokens": 0,
+          "audio_tokens": 0
+        }
+      },
+      "vision": {
+        "image_kind": "packshot",
+        "ocr_labels": [
+          "B",
+          "330N-150",
+          "SO PULSATIONS SCALE",
+          "BREITLING",
+          "1834",
+          "8",
+          "1",
+          "2-",
+          "W",
+          "Ob",
+          "145",
+          "1,300",
+          "PULSOMETER",
+          "20",
+          "6",
+          "43",
+          "S",
+          "240",
+          "ENDURANCE",
+          "8",
+          "210",
+          "SWISS",
+          "4020",
+          "D",
+          "30",
+          "200-160 140-20",
+          "E",
+          "CHRONOMETER",
+          "4",
+          "65",
+          "120",
+          "17075 80 85 90 100",
+          "Π",
+          "BR"
+        ],
+        "skip_reason": null,
+        "new_attributes": [
+          {
+            "name": "Тип циферблата",
+            "value": "Аналоговый",
+            "evidence": "visual",
+            "search_relevance": "medium",
+            "filter_candidate": true
+          },
+          {
+            "name": "Функции часов",
+            "value": "Хронограф",
+            "evidence": "ocr",
+            "search_relevance": "high",
+            "filter_candidate": true
+          },
+          {
+            "name": "Функции часов",
+            "value": "Пульсометр",
+            "evidence": "ocr",
+            "search_relevance": "high",
+            "filter_candidate": true
+          },
+          {
+            "name": "Материал ремешка",
+            "value": "Каучук",
+            "evidence": "visual",
+            "search_relevance": "high",
+            "filter_candidate": true
+          },
+          {
+            "name": "Форма корпуса",
+            "value": "Круглая",
+            "evidence": "visual",
+            "search_relevance": "high",
+            "filter_candidate": true
+          }
+        ],
+        "already_in_feed_visible": [
+          "Цвет: Бесцветный",
+          "Оттенок: Бесцветный",
+          "attribute_color_dial_watches: Чёрный"
+        ],
+        "not_useful_from_image": []
+      }
+    },
+    {
+      "product": {
+        "offer_id": "13846153",
+        "name": "Утепленная куртка",
+        "bucket": "kurtki",
+        "category_name": "Куртки",
+        "vendor": "Herno",
+        "picture": "https://st-cdn.tsum.com/sig/e3000b3cc8b3141e0d86eb6864dfac00/square/640/i/00/0c/49/36/4791717d-06c9-4c4f-a530-81288476607d.jpg",
+        "url": "https://www.tsum.ru/product/7129546-uteplennaya-kurtka-herno-kremovyi/",
+        "params_keys": [
+          "Сезон",
+          "Размер",
+          "Штрихкод",
+          "size_id",
+          "Пол",
+          "date_create",
+          "Материал",
+          "Оттенок",
+          "Цвет",
+          "brand_id",
+          "model_id",
+          "product_id",
+          "Артикул",
+          "color_concrete_id",
+          "color_base_id",
+          "custom categories",
+          "Лого",
+          "attribute_season",
+          "attribute_sleeve",
+          "attribute_type",
+          "Скидка"
+        ]
+      },
+      "model": "google/gemini-2.5-flash",
+      "elapsed_s": 2.9,
+      "usage": {
+        "prompt_tokens": 2253,
+        "completion_tokens": 290,
+        "total_tokens": 2543,
+        "cost": 0.0014009,
+        "is_byok": false,
+        "prompt_tokens_details": {
+          "cached_tokens": 0,
+          "cache_write_tokens": 0,
+          "audio_tokens": 0,
+          "video_tokens": 0
+        },
+        "cost_details": {
+          "upstream_inference_cost": 0.0014009,
+          "upstream_inference_prompt_cost": 0.0006759,
+          "upstream_inference_completions_cost": 0.000725
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 0,
+          "image_tokens": 0,
+          "audio_tokens": 0
+        }
+      },
+      "vision": {
+        "image_kind": "packshot",
+        "ocr_labels": [],
+        "skip_reason": null,
+        "new_attributes": [
+          {
+            "name": "капюшон",
+            "value": "есть",
+            "evidence": "visual",
+            "search_relevance": "high",
+            "filter_candidate": true
+          },
+          {
+            "name": "застежка",
+            "value": "молния",
+            "evidence": "visual",
+            "search_relevance": "high",
+            "filter_candidate": true
+          },
+          {
+            "name": "карманы",
+            "value": "прорезные",
+            "evidence": "visual",
+            "search_relevance": "medium",
+            "filter_candidate": true
+          },
+          {
+            "name": "силуэт",
+            "value": "прямой",
+            "evidence": "visual",
+            "search_relevance": "medium",
+            "filter_candidate": true
+          }
+        ],
+        "already_in_feed_visible": [
+          "утепленная"
+        ],
+        "not_useful_from_image": []
+      }
+    },
+    {
+      "product": {
+        "offer_id": "2637975",
+        "name": "Куртка-бомбер на молнии",
+        "bucket": "kurtki",
+        "category_name": "Куртки",
+        "vendor": "Designers, Remix girls",
+        "picture": "https://st-cdn.tsum.com/sig/01fbc3d7cfa60afa7e05a4bbee82a00f/square/640/i/cd/31/6d/10/cd316d10-0f18-3e09-93bc-258d135fc365.jpg",
+        "url": "https://www.tsum.ru/product/5237032-kurtka-bomber-na-molnii-designers-remix-girls-chernyi/",
+        "params_keys": [
+          "Пол",
+          "date_create",
+          "Материал",
+          "Страна дизайна",
+          "Оттенок",
+          "Цвет",
+          "brand_id",
+          "model_id",
+          "product_id",
+          "Артикул",
+          "color_concrete_id",
+          "color_base_id",
+          "custom categories",
+          "attribute_sleeve",
+          "attribute_type",
+          "Скидка",
+          "Только online"
+        ]
+      },
+      "model": "google/gemini-2.5-flash",
+      "elapsed_s": 2.98,
+      "usage": {
+        "prompt_tokens": 2209,
+        "completion_tokens": 246,
+        "total_tokens": 2455,
+        "cost": 0.0012777,
+        "is_byok": false,
+        "prompt_tokens_details": {
+          "cached_tokens": 0,
+          "cache_write_tokens": 0,
+          "audio_tokens": 0,
+          "video_tokens": 0
+        },
+        "cost_details": {
+          "upstream_inference_cost": 0.0012777,
+          "upstream_inference_prompt_cost": 0.0006627,
+          "upstream_inference_completions_cost": 0.000615
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 0,
+          "image_tokens": 0,
+          "audio_tokens": 0
+        }
+      },
+      "vision": {
+        "image_kind": "packshot",
+        "ocr_labels": [],
+        "skip_reason": null,
+        "new_attributes": [
+          {
+            "name": "Тип воротника",
+            "value": "Воротник-стойка",
+            "evidence": "visual",
+            "search_relevance": "high",
+            "filter_candidate": true
+          },
+          {
+            "name": "Детали",
+            "value": "Карманы",
+            "evidence": "visual",
+            "search_relevance": "high",
+            "filter_candidate": true
+          },
+          {
+            "name": "Тип застежки",
+            "value": "Молния",
+            "evidence": "visual",
+            "search_relevance": "high",
+            "filter_candidate": true
+          }
+        ],
+        "already_in_feed_visible": [
+          "Черный цвет"
+        ],
+        "not_useful_from_image": []
+      }
+    },
+    {
+      "product": {
+        "offer_id": "11406128",
+        "name": "Шерстяное пальто",
+        "bucket": "palto",
+        "category_name": "Пальто",
+        "vendor": "Gucci",
+        "picture": "https://st-cdn.tsum.com/sig/866f850acc1175d9279c5a9448fe76da/square/640/i/c8/ba/6c/b7/c8ba6cb7-b8f4-3a66-89be-549d546080e4.jpg",
+        "url": "https://www.tsum.ru/product/5525364-sherstyanoe-palto-gucci-sinii/",
+        "params_keys": [
+          "Пол",
+          "date_create",
+          "Материал",
+          "Страна дизайна",
+          "Оттенок",
+          "Цвет",
+          "brand_id",
+          "model_id",
+          "product_id",
+          "Артикул",
+          "color_concrete_id",
+          "color_base_id",
+          "custom categories",
+          "Лого",
+          "attribute_sleeve",
+          "attribute_length",
+          "attribute_type",
+          "Скидка"
+        ]
+      },
+      "model": "google/gemini-2.5-flash",
+      "elapsed_s": 4.1,
+      "usage": {
+        "prompt_tokens": 2205,
+        "completion_tokens": 322,
+        "total_tokens": 2527,
+        "cost": 0.0014665,
+        "is_byok": false,
+        "prompt_tokens_details": {
+          "cached_tokens": 0,
+          "cache_write_tokens": 0,
+          "audio_tokens": 0,
+          "video_tokens": 0
+        },
+        "cost_details": {
+          "upstream_inference_cost": 0.0014665,
+          "upstream_inference_prompt_cost": 0.0006615,
+          "upstream_inference_completions_cost": 0.000805
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 0,
+          "image_tokens": 0,
+          "audio_tokens": 0
+        }
+      },
+      "vision": {
+        "image_kind": "packshot",
+        "ocr_labels": [
+          "GUCCI"
+        ],
+        "skip_reason": null,
+        "new_attributes": [
+          {
+            "name": "Тип воротника",
+            "value": "Отложной",
+            "evidence": "visual",
+            "search_relevance": "medium",
+            "filter_candidate": true
+          },
+          {
+            "name": "Детали",
+            "value": "Карманы",
+            "evidence": "visual",
+            "search_relevance": "medium",
+            "filter_candidate": true
+          },
+          {
+            "name": "Застежка",
+            "value": "Пуговицы",
+            "evidence": "visual",
+            "search_relevance": "high",
+            "filter_candidate": true
+          },
+          {
+            "name": "Силуэт",
+            "value": "Прямой",
+            "evidence": "visual",
+            "search_relevance": "medium",
+            "filter_candidate": true
+          }
+        ],
+        "already_in_feed_visible": [
+          "Длинные рукава",
+          "Длинное пальто",
+          "Шерсть"
+        ],
+        "not_useful_from_image": []
+      }
+    },
+    {
+      "product": {
+        "offer_id": "13594873",
+        "name": "Комплект из пальто и жилета",
+        "bucket": "palto",
+        "category_name": "Пальто",
+        "vendor": "Dolce & Gabbana",
+        "picture": "https://st-cdn.tsum.com/sig/6853547b5a3e8391fe02f84d70f7ceab/square/640/i/01/9c/cd/eb/30f31003-6677-4df6-b40b-f9b14b4952c2.jpg",
+        "url": "https://www.tsum.ru/product/6981791-komplekt-iz-palto-i-zhileta-dolce-gabbana-bordovyi/",
+        "params_keys": [
+          "Сезон",
+          "Размер",
+          "Штрихкод",
+          "size_id",
+          "Пол",
+          "date_create",
+          "Материал",
+          "Страна дизайна",
+          "Оттенок",
+          "Цвет",
+          "brand_id",
+          "model_id",
+          "product_id",
+          "Артикул",
+          "color_concrete_id",
+          "color_base_id",
+          "custom categories",
+          "Лого",
+          "attribute_season",
+          "attribute_sleeve",
+          "attribute_type",
+          "Скидка"
+        ]
+      },
+      "model": "google/gemini-2.5-flash",
+      "elapsed_s": 3.46,
+      "usage": {
+        "prompt_tokens": 2317,
+        "completion_tokens": 409,
+        "total_tokens": 2726,
+        "cost": 0.0017176,
+        "is_byok": false,
+        "prompt_tokens_details": {
+          "cached_tokens": 0,
+          "cache_write_tokens": 0,
+          "audio_tokens": 0,
+          "video_tokens": 0
+        },
+        "cost_details": {
+          "upstream_inference_cost": 0.0017176,
+          "upstream_inference_prompt_cost": 0.0006951,
+          "upstream_inference_completions_cost": 0.0010225
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 0,
+          "image_tokens": 0,
+          "audio_tokens": 0
+        }
+      },
+      "vision": {
+        "image_kind": "packshot",
+        "ocr_labels": [],
+        "skip_reason": null,
+        "new_attributes": [
+          {
+            "name": "Детали",
+            "value": "капюшон",
+            "evidence": "visual",
+            "search_relevance": "high",
+            "filter_candidate": true
+          },
+          {
+            "name": "Детали",
+            "value": "накладные карманы",
+            "evidence": "visual",
+            "search_relevance": "medium",
+            "filter_candidate": true
+          },
+          {
+            "name": "Застежка",
+            "value": "пуговицы-клыки",
+            "evidence": "visual",
+            "search_relevance": "high",
+            "filter_candidate": true
+          },
+          {
+            "name": "Принт/Узор",
+            "value": "клетка тартан",
+            "evidence": "visual",
+            "search_relevance": "high",
+            "filter_candidate": true
+          },
+          {
+            "name": "Детали",
+            "value": "стеганая",
+            "evidence": "visual",
+            "search_relevance": "medium",
+            "filter_candidate": true
+          },
+          {
+            "name": "Застежка",
+            "value": "молния",
+            "evidence": "visual",
+            "search_relevance": "high",
+            "filter_candidate": true
+          }
+        ],
+        "already_in_feed_visible": [
+          "Длинные рукава"
+        ],
+        "not_useful_from_image": []
+      }
+    },
+    {
+      "product": {
+        "offer_id": "13250245",
+        "name": "Джинсы",
+        "bucket": "dzhinsy",
+        "category_name": "Джинсы",
+        "vendor": "Gucci",
+        "picture": "https://st-cdn.tsum.com/sig/a39bce9d66f815a4c3094a9b684463a1/square/640/i/9b/b6/3e/a6/9bb63ea6-8eb8-3e29-992b-8dde6bc3ec41.jpg",
+        "url": "https://www.tsum.ru/product/he00816096-dzhinsy-gucci-raznotcvetnyi/",
+        "params_keys": [
+          "Пол",
+          "date_create",
+          "Материал",
+          "Страна дизайна",
+          "Оттенок",
+          "Цвет",
+          "brand_id",
+          "model_id",
+          "product_id",
+          "Артикул",
+          "color_concrete_id",
+          "color_base_id",
+          "custom categories",
+          "Лого",
+          "attribute_length",
+          "attribute_type",
+          "Скидка"
+        ]
+      },
+      "model": "google/gemini-2.5-flash",
+      "elapsed_s": 3.45,
+      "usage": {
+        "prompt_tokens": 2182,
+        "completion_tokens": 306,
+        "total_tokens": 2488,
+        "cost": 0.0014196,
+        "is_byok": false,
+        "prompt_tokens_details": {
+          "cached_tokens": 0,
+          "cache_write_tokens": 0,
+          "audio_tokens": 0,
+          "video_tokens": 0
+        },
+        "cost_details": {
+          "upstream_inference_cost": 0.0014196,
+          "upstream_inference_prompt_cost": 0.0006546,
+          "upstream_inference_completions_cost": 0.000765
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 0,
+          "image_tokens": 0,
+          "audio_tokens": 0
+        }
+      },
+      "vision": {
+        "image_kind": "packshot",
+        "ocr_labels": [],
+        "skip_reason": null,
+        "new_attributes": [
+          {
+            "name": "Принт",
+            "value": "Монограмма",
+            "evidence": "visual",
+            "search_relevance": "high",
+            "filter_candidate": true
+          },
+          {
+            "name": "Силуэт",
+            "value": "Прямой",
+            "evidence": "visual",
+            "search_relevance": "medium",
+            "filter_candidate": true
+          },
+          {
+            "name": "Посадка",
+            "value": "Высокая",
+            "evidence": "visual",
+            "search_relevance": "medium",
+            "filter_candidate": true
+          },
+          {
+            "name": "Детали",
+            "value": "Карманы",
+            "evidence": "visual",
+            "search_relevance": "low",
+            "filter_candidate": false
+          }
+        ],
+        "already_in_feed_visible": [
+          "Джинсы",
+          "Хлопок",
+          "Разноцветный"
+        ],
+        "not_useful_from_image": []
+      }
+    },
+    {
+      "product": {
+        "offer_id": "11579699",
+        "name": "Джинсы",
+        "bucket": "dzhinsy",
+        "category_name": "Джинсы",
+        "vendor": "Kiton",
+        "picture": "https://st-cdn.tsum.com/sig/50abbe02f4f2b29359f536168f5be2a0/square/640/i/d0/64/b9/5f/d064b95f-0dd1-3221-817c-41e1a32943b6.jpg",
+        "url": "https://www.tsum.ru/product/5540539-dzhinsy-kiton-temno-sinii/",
+        "params_keys": [
+          "Пол",
+          "date_create",
+          "Материал",
+          "Страна дизайна",
+          "Оттенок",
+          "Цвет",
+          "brand_id",
+          "model_id",
+          "product_id",
+          "Артикул",
+          "color_concrete_id",
+          "color_base_id",
+          "custom categories",
+          "Лого",
+          "attribute_length",
+          "attribute_details",
+          "attribute_type",
+          "Скидка"
+        ]
+      },
+      "model": "google/gemini-2.5-flash",
+      "elapsed_s": 2.77,
+      "usage": {
+        "prompt_tokens": 2201,
+        "completion_tokens": 208,
+        "total_tokens": 2409,
+        "cost": 0.0011803,
+        "is_byok": false,
+        "prompt_tokens_details": {
+          "cached_tokens": 0,
+          "cache_write_tokens": 0,
+          "audio_tokens": 0,
+          "video_tokens": 0
+        },
+        "cost_details": {
+          "upstream_inference_cost": 0.0011803,
+          "upstream_inference_prompt_cost": 0.0006603,
+          "upstream_inference_completions_cost": 0.00052
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 0,
+          "image_tokens": 0,
+          "audio_tokens": 0
+        }
+      },
+      "vision": {
+        "image_kind": "packshot",
+        "ocr_labels": [],
+        "skip_reason": null,
+        "new_attributes": [
+          {
+            "name": "Посадка",
+            "value": "Прямая",
+            "evidence": "visual",
+            "search_relevance": "medium",
+            "filter_candidate": true
+          },
+          {
+            "name": "Тип застежки",
+            "value": "Молния и пуговица",
+            "evidence": "visual",
+            "search_relevance": "medium",
+            "filter_candidate": true
+          }
+        ],
+        "already_in_feed_visible": [
+          "Цвет: Синий",
+          "Оттенок: Темно-синий"
+        ],
+        "not_useful_from_image": []
+      }
+    }
+  ]
+}

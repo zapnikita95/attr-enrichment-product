@@ -1,0 +1,1354 @@
+{
+  "feed": "C:\\Users\\1\\Downloads\\tsum.xml",
+  "offers_total": 663656,
+  "offers_with_picture": 663656,
+  "categories_total": 289,
+  "root_categories": [
+    {
+      "id": "18327",
+      "parentId": "",
+      "name": "Мужское",
+      "url": "https://www.tsum.ru/catalog/muzhskoe-2408/"
+    },
+    {
+      "id": "18330",
+      "parentId": "",
+      "name": "Косметика",
+      "url": "https://www.tsum.ru/catalog/kosmetika-3326/"
+    },
+    {
+      "id": "18338",
+      "parentId": "",
+      "name": "Детское",
+      "url": "https://www.tsum.ru/catalog/detskie_tovary-2518/"
+    },
+    {
+      "id": "18341",
+      "parentId": "",
+      "name": "Apple",
+      "url": "https://www.tsum.ru/catalog/apple-9783/"
+    },
+    {
+      "id": "18368",
+      "parentId": "",
+      "name": "Женское",
+      "url": "https://www.tsum.ru/catalog/zhenskoe-18368/"
+    },
+    {
+      "id": "18382",
+      "parentId": "",
+      "name": "Интерьер",
+      "url": "https://www.tsum.ru/catalog/interer-3933/"
+    },
+    {
+      "id": "18521",
+      "parentId": "",
+      "name": "TEST AG",
+      "url": "https://www.tsum.ru/catalog/test-18521/"
+    },
+    {
+      "id": "19606",
+      "parentId": "",
+      "name": "Интерьер v1",
+      "url": "https://www.tsum.ru/catalog/interier-19606/"
+    },
+    {
+      "id": "20573",
+      "parentId": "",
+      "name": "Unisex",
+      "url": "https://www.tsum.ru/catalog/unisex-20573/"
+    },
+    {
+      "id": "20637",
+      "parentId": "",
+      "name": "Shop-In-Shop",
+      "url": "https://www.tsum.ru/catalog/shop-in-shop-20637/"
+    },
+    {
+      "id": "20985",
+      "parentId": "",
+      "name": "Unisex kids",
+      "url": "https://www.tsum.ru/catalog/unisex-kids-20985/"
+    }
+  ],
+  "unique_param_names": 42,
+  "param_stats": [
+    {
+      "name": "Пол",
+      "offers_with_param": 702011,
+      "fill_pct": 100.0,
+      "examples": [
+        "Женский",
+        "Мужской",
+        "Детский"
+      ]
+    },
+    {
+      "name": "date_create",
+      "offers_with_param": 663656,
+      "fill_pct": 100.0,
+      "examples": [
+        "2020-02-19",
+        "2020-04-30",
+        "2025-03-17",
+        "2020-09-03",
+        "2025-04-17",
+        "2021-08-19",
+        "2025-05-01",
+        "2022-01-18"
+      ]
+    },
+    {
+      "name": "Оттенок",
+      "offers_with_param": 663656,
+      "fill_pct": 100.0,
+      "examples": [
+        "Серебряный",
+        "026",
+        "Черный",
+        "Серый",
+        "Хаки",
+        "Бежевый",
+        "Коричневый",
+        "Желтый"
+      ]
+    },
+    {
+      "name": "Цвет",
+      "offers_with_param": 663656,
+      "fill_pct": 100.0,
+      "examples": [
+        "Серебряный",
+        "Бесцветный",
+        "Чёрный",
+        "Серый",
+        "Хаки",
+        "Бежевый",
+        "Коричневый",
+        "Жёлтый"
+      ]
+    },
+    {
+      "name": "brand_id",
+      "offers_with_param": 663656,
+      "fill_pct": 100.0,
+      "examples": [
+        "11476757",
+        "1292256",
+        "170549",
+        "1395545",
+        "855923",
+        "746716",
+        "736964",
+        "12526306"
+      ]
+    },
+    {
+      "name": "model_id",
+      "offers_with_param": 663656,
+      "fill_pct": 100.0,
+      "examples": [
+        "10890393",
+        "11094280",
+        "13766830",
+        "11302589",
+        "13781080",
+        "12231363",
+        "13785349",
+        "12529429"
+      ]
+    },
+    {
+      "name": "product_id",
+      "offers_with_param": 663656,
+      "fill_pct": 100.0,
+      "examples": [
+        "10890394",
+        "11094281",
+        "13679520",
+        "11302590",
+        "13694506",
+        "12236916",
+        "13699897",
+        "12529430"
+      ]
+    },
+    {
+      "name": "Артикул",
+      "offers_with_param": 663656,
+      "fill_pct": 100.0,
+      "examples": [
+        "00042519",
+        "HE00490000",
+        "7031936",
+        "HE00608131",
+        "7040367",
+        "5590193",
+        "7045741",
+        "HE00763776"
+      ]
+    },
+    {
+      "name": "color_concrete_id",
+      "offers_with_param": 663656,
+      "fill_pct": 100.0,
+      "examples": [
+        "23e8517c-c6ef-3c2c-8bf9-f2c38c6b9452",
+        "5d06dc29-7a6a-36e8-bca6-7a71b9f596a0",
+        "d70b37aa-3b43-3f17-bf95-155aeafd0fc7",
+        "118a4139-c927-3512-b563-80043b879f7f",
+        "26e7d1bb-1914-33db-b9ef-ab74ad2d4603",
+        "98f0aab8-e529-30c1-a361-b071b617b92f",
+        "a980b02e-9826-306f-9f90-aeeb6791e7f4",
+        "e6b1e291-68e5-3df8-90b7-36ea7012c4a0"
+      ]
+    },
+    {
+      "name": "color_base_id",
+      "offers_with_param": 663656,
+      "fill_pct": 100.0,
+      "examples": [
+        "4fdc709c-9184-3c06-98a7-7ce1fdeb6a29",
+        "1911726a-d138-33b4-9620-89b6a44f84c5",
+        "2087f7b9-8eb0-36f1-ba79-76d8d26df408",
+        "bc495800-17f0-3844-b0fb-d729d46a612c",
+        "899538e5-301f-3394-891b-7f36a300cb00",
+        "ab0a3c70-2d97-35d0-90c2-38137e68efbd",
+        "22723eac-c200-3133-bfa8-f8e72880e314",
+        "0d297b95-817b-36d7-9fc9-559e7ef27aa8"
+      ]
+    },
+    {
+      "name": "Скидка",
+      "offers_with_param": 663656,
+      "fill_pct": 100.0,
+      "examples": [
+        "Нет",
+        "Да"
+      ]
+    },
+    {
+      "name": "custom categories",
+      "offers_with_param": 627354,
+      "fill_pct": 94.53,
+      "examples": [
+        "Солнцезащитные очки",
+        "Тональные средства,Для лица,Макияж,Парфюмерия и косметика",
+        "Борсетки,Повседневные сумки",
+        "Костюмы,Повседневные",
+        "Платья,Повседневные",
+        "Шарфы и платки,Шарфы",
+        "Миди,Карандаши",
+        "Миди"
+      ]
+    },
+    {
+      "name": "Материал",
+      "offers_with_param": 602854,
+      "fill_pct": 90.84,
+      "examples": [
+        "Оправа-металл; Линзы-пластик;",
+        "Кожа натуральная: 100%;",
+        "Шерсть: 100%;",
+        "Хлопок: 100%;",
+        "Шерсть: 70%; Кашемир: 30%;",
+        "Кожа: 100%;",
+        "Шелк: 9%; Шерсть: 49%; Лен: 42%;",
+        "Мех/овчина(ягненок)/: 100%;"
+      ]
+    },
+    {
+      "name": "Лого",
+      "offers_with_param": 600279,
+      "fill_pct": 90.45,
+      "examples": [
+        "https://st-cdn.tsum.com/sig/bcf694cb7e6f961ddc84297a0acff87e/width/0/i/ef/64/8e/18/ef648e18-1d1b-4716-8109-7f52ffc557d3.png",
+        "https://st-cdn.tsum.com/sig/387770a1978d81e90bae9f8a06f75910/width/0/i/2a/62/9b/c7/2a629bc7-2558-4ce0-b959-44a64e05473a.png",
+        "https://st-cdn.tsum.com/sig/59e5e8c5c3cff5a232f5942ae08b20c2/width/0/i/6c/d3/0c/a1/6cd30ca1-65b4-4790-8d2c-7b26064b99a6.png",
+        "https://st-cdn.tsum.com/sig/b585c436cf0c1307e37d1d2634fe8cac/width/0/i/25/ee/d2/b5/25eed2b5-20f2-4c8c-aee9-d2ca2bf47f21.png",
+        "https://st-cdn.tsum.com/sig/57ddafe3c9057581b4c92788006ad17d/width/0/i/cc/16/37/46/cc163746-1ac8-4226-89f9-16af261903ff.png",
+        "https://st-cdn.tsum.com/sig/2fa5dcb94d8c8056f4dc0bc332a5a1f6/width/0/i/59/25/2a/6f/59252a6f-6c6b-49c7-baa0-3b64d55bee79.png",
+        "https://st-cdn.tsum.com/sig/9680f9cfbd7fc8656ddad428724484b4/width/0/i/b/fa3521de-d08b-4f66-9919-8bc0d1a0ec06.png",
+        "https://st-cdn.tsum.com/sig/e5c07f474eae00b3843b0db03526bc3d/width/0/i/fc/8f/f4/7c/fc8ff47c-ddeb-41c6-a86e-09488b94b0d0.png"
+      ]
+    },
+    {
+      "name": "Страна дизайна",
+      "offers_with_param": 510293,
+      "fill_pct": 76.89,
+      "examples": [
+        "Италия",
+        "Франция",
+        "Германия",
+        "Россия",
+        "Англия",
+        "Болгария",
+        "США",
+        "Великобритания"
+      ]
+    },
+    {
+      "name": "Размер",
+      "offers_with_param": 477813,
+      "fill_pct": 23.74,
+      "examples": [
+        "42",
+        "44",
+        "46",
+        "50",
+        "54",
+        "40",
+        "48",
+        "52"
+      ]
+    },
+    {
+      "name": "size_id",
+      "offers_with_param": 477813,
+      "fill_pct": 23.74,
+      "examples": [
+        "165932",
+        "164450",
+        "712157",
+        "712155",
+        "164539",
+        "164302",
+        "712156",
+        "164452"
+      ]
+    },
+    {
+      "name": "Штрихкод",
+      "offers_with_param": 471408,
+      "fill_pct": 23.05,
+      "examples": [
+        "56026545",
+        "55999065",
+        "56026544",
+        "56039988",
+        "56039991",
+        "55419368",
+        "55419366",
+        "56256472"
+      ]
+    },
+    {
+      "name": "attribute_length",
+      "offers_with_param": 232738,
+      "fill_pct": 35.07,
+      "examples": [
+        "Миди",
+        "Стандартные",
+        "До середины бедра",
+        "Короткие",
+        "Мини",
+        "Макси",
+        "До колена",
+        "Удлиненные"
+      ]
+    },
+    {
+      "name": "attribute_sleeve",
+      "offers_with_param": 216635,
+      "fill_pct": 32.64,
+      "examples": [
+        "Длинные",
+        "Короткие",
+        "На бретелях",
+        "Без рукавов",
+        "3/4",
+        "С открытыми плечами,Без рукавов",
+        "С открытыми плечами",
+        "Без рукавов,Короткие"
+      ]
+    },
+    {
+      "name": "Сезон",
+      "offers_with_param": 205170,
+      "fill_pct": 30.92,
+      "examples": [
+        "SS 2025",
+        "SS 2024",
+        "FW 25/26",
+        "FW 24/25",
+        "SS 2026",
+        "FW 26/27",
+        "FW 22/23",
+        "FW 23/24"
+      ]
+    },
+    {
+      "name": "attribute_type",
+      "offers_with_param": 142721,
+      "fill_pct": 21.51,
+      "examples": [
+        "Куртка",
+        "Утепленные,Куртка,бомбер",
+        "Пуховик",
+        "Низкие",
+        "костюм",
+        "бельё",
+        "Утепленные,Куртка",
+        "Джерси"
+      ]
+    },
+    {
+      "name": "Бонус 30%",
+      "offers_with_param": 51267,
+      "fill_pct": 7.72,
+      "examples": [
+        "Да"
+      ]
+    },
+    {
+      "name": "attribute_details",
+      "offers_with_param": 50660,
+      "fill_pct": 7.63,
+      "examples": [
+        "Без декора",
+        "Потертости,Декор",
+        "Декор",
+        "Делаве",
+        "Потертости",
+        "Лампасы,Декор",
+        "Бахрома,Стразы",
+        "Однотонный"
+      ]
+    },
+    {
+      "name": "attribute_base",
+      "offers_with_param": 43475,
+      "fill_pct": 6.55,
+      "examples": [
+        "Массивная",
+        "Платформа",
+        "Плоская",
+        "Массивная,Плоская",
+        "Платформа,Массивная",
+        "Плоская,Платформа",
+        "Плоская,Массивная",
+        "Платформа,Плоская"
+      ]
+    },
+    {
+      "name": "attribute_season",
+      "offers_with_param": 21574,
+      "fill_pct": 3.25,
+      "examples": [
+        "Зима",
+        "Осень/Весна",
+        "Лето"
+      ]
+    },
+    {
+      "name": "Big sizes",
+      "offers_with_param": 15254,
+      "fill_pct": 2.3,
+      "examples": [
+        "Да"
+      ]
+    },
+    {
+      "name": "attribute_clasp",
+      "offers_with_param": 15044,
+      "fill_pct": 2.27,
+      "examples": [
+        "Пуговицы",
+        "Молния",
+        "Открытый ворот",
+        "Шнуровка",
+        "Пояс",
+        "Без застежки",
+        "Ремешки",
+        "Кнопки,Пуговицы"
+      ]
+    },
+    {
+      "name": "Только online",
+      "offers_with_param": 10641,
+      "fill_pct": 1.6,
+      "examples": [
+        "Да"
+      ]
+    },
+    {
+      "name": "attribute_gems_jewelry",
+      "offers_with_param": 6809,
+      "fill_pct": 1.03,
+      "examples": [
+        "Бриллианты",
+        "Без драгоценных камней",
+        "Другие,Бриллианты",
+        "Другие",
+        "Сапфиры",
+        "Сапфиры,Бриллианты",
+        "Сапфиры,Бриллианты,Другие",
+        "Другие,Сапфиры"
+      ]
+    },
+    {
+      "name": "attribute_material_jewelry",
+      "offers_with_param": 6585,
+      "fill_pct": 0.99,
+      "examples": [
+        "Желтое золото",
+        "Розовое золото",
+        "Белое золото",
+        "Серебро",
+        "Розовое золото,Белое золото",
+        "Сталь",
+        "Серебро,Розовое золото",
+        "Серебро,Желтое золото"
+      ]
+    },
+    {
+      "name": "Эксклюзивно в ЦУМе",
+      "offers_with_param": 6144,
+      "fill_pct": 0.93,
+      "examples": [
+        "Да"
+      ]
+    },
+    {
+      "name": "Best-seller",
+      "offers_with_param": 5833,
+      "fill_pct": 0.88,
+      "examples": [
+        "Да"
+      ]
+    },
+    {
+      "name": "Предоплата",
+      "offers_with_param": 3320,
+      "fill_pct": 0.5,
+      "examples": [
+        "Да"
+      ]
+    },
+    {
+      "name": "Fashion Show",
+      "offers_with_param": 2915,
+      "fill_pct": 0.44,
+      "examples": [
+        "Да"
+      ]
+    },
+    {
+      "name": "attribute_case_watches",
+      "offers_with_param": 1251,
+      "fill_pct": 0.19,
+      "examples": [
+        "Сталь,Розовое золото",
+        "Сталь",
+        "Breitlight®",
+        "Титан",
+        "Розовое золото",
+        "Керамика",
+        "Сталь,Жёлтое золото",
+        "Белое золото"
+      ]
+    },
+    {
+      "name": "attribute_mechanism_watches",
+      "offers_with_param": 1249,
+      "fill_pct": 0.19,
+      "examples": [
+        "Автомат",
+        "Кварц",
+        "Механика",
+        "Электронный"
+      ]
+    },
+    {
+      "name": "attribute_color_dial_watches",
+      "offers_with_param": 1222,
+      "fill_pct": 0.18,
+      "examples": [
+        "Чёрный",
+        "Серый",
+        "Зелёный",
+        "Синий",
+        "Разноцветный",
+        "Перламутровый",
+        "Голубой",
+        "Белый"
+      ]
+    },
+    {
+      "name": "Третья вещь в подарок",
+      "offers_with_param": 1064,
+      "fill_pct": 0.16,
+      "examples": [
+        "Да"
+      ]
+    },
+    {
+      "name": "Суббренд",
+      "offers_with_param": 751,
+      "fill_pct": 0.11,
+      "examples": [
+        "Emporio Armani"
+      ]
+    },
+    {
+      "name": "Лимитированный выпуск",
+      "offers_with_param": 460,
+      "fill_pct": 0.07,
+      "examples": [
+        "Да"
+      ]
+    },
+    {
+      "name": "Новинка",
+      "offers_with_param": 247,
+      "fill_pct": 0.04,
+      "examples": [
+        "Да"
+      ]
+    }
+  ],
+  "top_categories_by_offers": [
+    {
+      "id": "18413",
+      "parentId": "18368",
+      "name": "Одежда",
+      "url": "https://www.tsum.ru/catalog/odezhda-18413/",
+      "offers": 90800
+    },
+    {
+      "id": "18328",
+      "parentId": "18327",
+      "name": "Одежда",
+      "url": "https://www.tsum.ru/catalog/odezhda-2409/",
+      "offers": 68303
+    },
+    {
+      "id": "18438",
+      "parentId": "18368",
+      "name": "Сумки",
+      "url": "https://www.tsum.ru/catalog/sumki-18438/",
+      "offers": 29619
+    },
+    {
+      "id": "18405",
+      "parentId": "18368",
+      "name": "Обувь",
+      "url": "https://www.tsum.ru/catalog/obuv-18405/",
+      "offers": 26767
+    },
+    {
+      "id": "18414",
+      "parentId": "18413",
+      "name": "Бельё",
+      "url": "https://www.tsum.ru/catalog/belye-2532/",
+      "offers": 21711
+    },
+    {
+      "id": "18457",
+      "parentId": "18380",
+      "name": "Очки",
+      "url": "https://www.tsum.ru/catalog/ochki-18457/",
+      "offers": 18500
+    },
+    {
+      "id": "18440",
+      "parentId": "18327",
+      "name": "Обувь",
+      "url": "https://www.tsum.ru/catalog/obuv-18440/",
+      "offers": 18113
+    },
+    {
+      "id": "18424",
+      "parentId": "18413",
+      "name": "Верхняя одежда",
+      "url": "https://www.tsum.ru/catalog/verkhnyaya-odezhda-18424/",
+      "offers": 15875
+    },
+    {
+      "id": "18380",
+      "parentId": "18368",
+      "name": "Аксессуары",
+      "url": "https://www.tsum.ru/catalog/aksessuary-2404/",
+      "offers": 14993
+    },
+    {
+      "id": "18429",
+      "parentId": "18338",
+      "name": "Одежда для мальчиков",
+      "url": "https://www.tsum.ru/catalog/odezhda_dlya_malchikov-3434/",
+      "offers": 14977
+    },
+    {
+      "id": "18454",
+      "parentId": "18328",
+      "name": "Верхняя одежда",
+      "url": "https://www.tsum.ru/catalog/verkhnyaya-odezhda-18454/",
+      "offers": 14008
+    },
+    {
+      "id": "18680",
+      "parentId": "18328",
+      "name": "Рубашки",
+      "url": "https://www.tsum.ru/catalog/rubashki-18680/",
+      "offers": 13297
+    },
+    {
+      "id": "18339",
+      "parentId": "18338",
+      "name": "Одежда для девочек",
+      "url": "https://www.tsum.ru/catalog/odezhda_dlya_devochek-3403/",
+      "offers": 11730
+    },
+    {
+      "id": "18353",
+      "parentId": "18338",
+      "name": "Аксессуары",
+      "url": "https://www.tsum.ru/catalog/aksessuary-2519/",
+      "offers": 11705
+    },
+    {
+      "id": "18348",
+      "parentId": "18347",
+      "name": "Одежда",
+      "url": "https://www.tsum.ru/catalog/odezhda-18348/",
+      "offers": 11443
+    },
+    {
+      "id": "18373",
+      "parentId": "18328",
+      "name": "Бельё и домашняя одежда",
+      "url": "https://www.tsum.ru/catalog/belye-2448/",
+      "offers": 10927
+    },
+    {
+      "id": "18419",
+      "parentId": "18350",
+      "name": "Галстуки и платки",
+      "url": "https://www.tsum.ru/catalog/galstuki-i-platki-18419/",
+      "offers": 9986
+    },
+    {
+      "id": "19095",
+      "parentId": "18413",
+      "name": "Юбки",
+      "url": "https://www.tsum.ru/catalog/yubki-19095/",
+      "offers": 8892
+    },
+    {
+      "id": "18332",
+      "parentId": "18331",
+      "name": "Для губ",
+      "url": "https://www.tsum.ru/catalog/dlya_gub-10697/",
+      "offers": 8775
+    },
+    {
+      "id": "18741",
+      "parentId": "18330",
+      "name": "Парфюмерия",
+      "url": "https://www.tsum.ru/catalog/parfyumeriya-18741/",
+      "offers": 8086
+    },
+    {
+      "id": "18397",
+      "parentId": "18327",
+      "name": "Сумки",
+      "url": "https://www.tsum.ru/catalog/muzhskie_sumki-4051/",
+      "offers": 7577
+    },
+    {
+      "id": "18451",
+      "parentId": "18331",
+      "name": "Для лица",
+      "url": "https://www.tsum.ru/catalog/dlya_litsa-10692/",
+      "offers": 7072
+    },
+    {
+      "id": "18361",
+      "parentId": "18335",
+      "name": "Для лица",
+      "url": "https://www.tsum.ru/catalog/dlya_litsa-10685/",
+      "offers": 6521
+    },
+    {
+      "id": "18684",
+      "parentId": "18368",
+      "name": "Ювелирные украшения",
+      "url": "https://www.tsum.ru/catalog/yuvelirnye-ukrasheniya-18684/",
+      "offers": 6379
+    },
+    {
+      "id": "19094",
+      "parentId": "18339",
+      "name": "Платья",
+      "url": "https://www.tsum.ru/catalog/platya-19094/",
+      "offers": 6060
+    },
+    {
+      "id": "18690",
+      "parentId": "18380",
+      "name": "Головные уборы",
+      "url": "https://www.tsum.ru/catalog/golovnye-ubory-18690/",
+      "offers": 6041
+    },
+    {
+      "id": "18986",
+      "parentId": "18328",
+      "name": "Джинсы",
+      "url": "https://www.tsum.ru/catalog/dzhinsy-18986/",
+      "offers": 5846
+    },
+    {
+      "id": "18491",
+      "parentId": "18413",
+      "name": "Джинсы",
+      "url": "https://www.tsum.ru/catalog/dzhinsy-18491/",
+      "offers": 5675
+    },
+    {
+      "id": "18483",
+      "parentId": "18338",
+      "name": "Обувь для девочек",
+      "url": "https://www.tsum.ru/catalog/obuv_dlya_devochek-3442/",
+      "offers": 5306
+    },
+    {
+      "id": "19049",
+      "parentId": "18472",
+      "name": "Серьги",
+      "url": "https://www.tsum.ru/catalog/sergi-19049/",
+      "offers": 5170
+    },
+    {
+      "id": "19666",
+      "parentId": "19606",
+      "name": "Ароматы для дома",
+      "url": "https://www.tsum.ru/catalog/aromaty-dlya-doma-19666/",
+      "offers": 4950
+    },
+    {
+      "id": "18447",
+      "parentId": "18338",
+      "name": "Обувь для мальчиков",
+      "url": "https://www.tsum.ru/catalog/obuv_dlya_malchikov-3425/",
+      "offers": 4757
+    },
+    {
+      "id": "18350",
+      "parentId": "18327",
+      "name": "Аксессуары",
+      "url": "https://www.tsum.ru/catalog/aksessuary-4031/",
+      "offers": 4632
+    },
+    {
+      "id": "18959",
+      "parentId": "18350",
+      "name": "Очки",
+      "url": "https://www.tsum.ru/catalog/ochki-18959/",
+      "offers": 4551
+    },
+    {
+      "id": "18473",
+      "parentId": "18472",
+      "name": "Кольца",
+      "url": "https://www.tsum.ru/catalog/koltca-18473/",
+      "offers": 4326
+    },
+    {
+      "id": "18544",
+      "parentId": "18328",
+      "name": "Поло джерси",
+      "url": "https://www.tsum.ru/catalog/polo-18544/",
+      "offers": 4259
+    },
+    {
+      "id": "18843",
+      "parentId": "18399",
+      "name": "Шапки",
+      "url": "https://www.tsum.ru/catalog/shapki-18843/",
+      "offers": 4095
+    },
+    {
+      "id": "18674",
+      "parentId": "18440",
+      "name": "Туфли",
+      "url": "https://www.tsum.ru/catalog/tufli-18674/",
+      "offers": 4013
+    },
+    {
+      "id": "18388",
+      "parentId": "18331",
+      "name": "Для глаз",
+      "url": "https://www.tsum.ru/catalog/dlya_glaz-10699/",
+      "offers": 3980
+    },
+    {
+      "id": "18351",
+      "parentId": "18350",
+      "name": "Ремни",
+      "url": "https://www.tsum.ru/catalog/remni-18351/",
+      "offers": 3912
+    },
+    {
+      "id": "18976",
+      "parentId": "18413",
+      "name": "Шорты",
+      "url": "https://www.tsum.ru/catalog/shorty-18976/",
+      "offers": 3838
+    },
+    {
+      "id": "18609",
+      "parentId": "18399",
+      "name": "Бейсболки",
+      "url": "https://www.tsum.ru/catalog/beisbolki-18609/",
+      "offers": 3798
+    },
+    {
+      "id": "19123",
+      "parentId": "18553",
+      "name": "Раздельные купальники",
+      "url": "https://www.tsum.ru/catalog/razdelnye-kupalniki-19123/",
+      "offers": 3711
+    },
+    {
+      "id": "18651",
+      "parentId": "18429",
+      "name": "Брюки",
+      "url": "https://www.tsum.ru/catalog/bryuki-18651/",
+      "offers": 3586
+    },
+    {
+      "id": "18500",
+      "parentId": "18330",
+      "name": "Уход за волосами",
+      "url": "https://www.tsum.ru/catalog/ukhod_za_volosami-10706/",
+      "offers": 3518
+    },
+    {
+      "id": "18502",
+      "parentId": "18335",
+      "name": "Для тела",
+      "url": "https://www.tsum.ru/catalog/dlya_tela-10695/",
+      "offers": 3467
+    },
+    {
+      "id": "18729",
+      "parentId": "18566",
+      "name": "Кошельки",
+      "url": "https://www.tsum.ru/catalog/koshelki-18729/",
+      "offers": 3431
+    },
+    {
+      "id": "18758",
+      "parentId": "18480",
+      "name": "Шапки",
+      "url": "https://www.tsum.ru/catalog/shapki-18758/",
+      "offers": 2878
+    },
+    {
+      "id": "18441",
+      "parentId": "18440",
+      "name": "Ботинки и полусапоги",
+      "url": "https://www.tsum.ru/catalog/botinki-i-polusapogi-18441/",
+      "offers": 2868
+    },
+    {
+      "id": "18478",
+      "parentId": "18339",
+      "name": "Брюки",
+      "url": "https://www.tsum.ru/catalog/bryuki-18478/",
+      "offers": 2743
+    },
+    {
+      "id": "18562",
+      "parentId": "18472",
+      "name": "Браслеты",
+      "url": "https://www.tsum.ru/catalog/braslety-18562/",
+      "offers": 2705
+    },
+    {
+      "id": "18566",
+      "parentId": "18380",
+      "name": "Аксессуары из кожи",
+      "url": "https://www.tsum.ru/catalog/aksessuary-iz-kozhi-18566/",
+      "offers": 2635
+    },
+    {
+      "id": "19117",
+      "parentId": "18472",
+      "name": "Колье",
+      "url": "https://www.tsum.ru/catalog/kole-19117/",
+      "offers": 2596
+    },
+    {
+      "id": "18519",
+      "parentId": "18328",
+      "name": "Пляжная одежда",
+      "url": "https://www.tsum.ru/catalog/plyazhnye_prinadlezhnosti-2466/",
+      "offers": 2582
+    },
+    {
+      "id": "18882",
+      "parentId": "18665",
+      "name": "Куртки",
+      "url": "https://www.tsum.ru/catalog/kurtki-18882/",
+      "offers": 2571
+    },
+    {
+      "id": "18898",
+      "parentId": "18363",
+      "name": "Кошельки",
+      "url": "https://www.tsum.ru/catalog/koshelki-18898/",
+      "offers": 2515
+    },
+    {
+      "id": "18906",
+      "parentId": "18499",
+      "name": "Куртки",
+      "url": "https://www.tsum.ru/catalog/kurtki-18906/",
+      "offers": 2196
+    },
+    {
+      "id": "19001",
+      "parentId": "18405",
+      "name": "Ботинки",
+      "url": "https://www.tsum.ru/catalog/botinki-19001/",
+      "offers": 2135
+    },
+    {
+      "id": "18807",
+      "parentId": "18475",
+      "name": "Рюкзаки",
+      "url": "https://www.tsum.ru/catalog/ryukzaki-18807/",
+      "offers": 2104
+    },
+    {
+      "id": "18793",
+      "parentId": "18475",
+      "name": "Сумки",
+      "url": "https://www.tsum.ru/catalog/sumki-18793/",
+      "offers": 1986
+    },
+    {
+      "id": "18924",
+      "parentId": "18472",
+      "name": "Подвески",
+      "url": "https://www.tsum.ru/catalog/podveski-18924/",
+      "offers": 1940
+    },
+    {
+      "id": "19658",
+      "parentId": "19606",
+      "name": "Сервировка",
+      "url": "https://www.tsum.ru/catalog/servirovka-19658/",
+      "offers": 1904
+    },
+    {
+      "id": "20985",
+      "parentId": "",
+      "name": "Unisex kids",
+      "url": "https://www.tsum.ru/catalog/unisex-kids-20985/",
+      "offers": 1824
+    },
+    {
+      "id": "18554",
+      "parentId": "18553",
+      "name": "Слитные купальники",
+      "url": "https://www.tsum.ru/catalog/slitnye-kupalniki-18554/",
+      "offers": 1800
+    },
+    {
+      "id": "18477",
+      "parentId": "18363",
+      "name": "Картхолдеры",
+      "url": "https://www.tsum.ru/catalog/futlyary-dlya-plastikovykh-kart-18477/",
+      "offers": 1775
+    },
+    {
+      "id": "18377",
+      "parentId": "18350",
+      "name": "Украшения",
+      "url": "https://www.tsum.ru/catalog/bizhuteriya-18377/",
+      "offers": 1752
+    },
+    {
+      "id": "18626",
+      "parentId": "18429",
+      "name": "Шорты",
+      "url": "https://www.tsum.ru/catalog/shorty-18626/",
+      "offers": 1720
+    },
+    {
+      "id": "18360",
+      "parentId": "18330",
+      "name": "Уход за ногтями",
+      "url": "https://www.tsum.ru/catalog/ukhod_za_nogtyami-10742/",
+      "offers": 1651
+    },
+    {
+      "id": "18340",
+      "parentId": "18339",
+      "name": "Пляжная одежда",
+      "url": "https://www.tsum.ru/catalog/plyazhnaya-odezhda-18340/",
+      "offers": 1644
+    },
+    {
+      "id": "19610",
+      "parentId": "19606",
+      "name": "Текстиль",
+      "url": "https://www.tsum.ru/catalog/tekstil-19610/",
+      "offers": 1543
+    },
+    {
+      "id": "18797",
+      "parentId": "18419",
+      "name": "Платки",
+      "url": "https://www.tsum.ru/catalog/platki-18797/",
+      "offers": 1540
+    },
+    {
+      "id": "18517",
+      "parentId": "18364",
+      "name": "Постельные принадлежности",
+      "url": "https://www.tsum.ru/catalog/postelnye-prinadlezhnosti-18517/",
+      "offers": 1435
+    },
+    {
+      "id": "19088",
+      "parentId": "18488",
+      "name": "Заколки",
+      "url": "https://www.tsum.ru/catalog/zakolki-19088/",
+      "offers": 1366
+    },
+    {
+      "id": "18393",
+      "parentId": "18327",
+      "name": "Косметика",
+      "url": "https://www.tsum.ru/catalog/kosmetika-18393/",
+      "offers": 1233
+    },
+    {
+      "id": "18671",
+      "parentId": "18413",
+      "name": "Комбинезоны",
+      "url": "https://www.tsum.ru/catalog/kombinezony-18671/",
+      "offers": 1204
+    },
+    {
+      "id": "18474",
+      "parentId": "18393",
+      "name": "Парфюмерия",
+      "url": "https://www.tsum.ru/catalog/parfyumeriya-18474/",
+      "offers": 1192
+    },
+    {
+      "id": "18565",
+      "parentId": "18438",
+      "name": "Рюкзаки",
+      "url": "https://www.tsum.ru/catalog/ryukzaki-18565/",
+      "offers": 1159
+    },
+    {
+      "id": "18963",
+      "parentId": "18339",
+      "name": "Шорты",
+      "url": "https://www.tsum.ru/catalog/shorty-18963/",
+      "offers": 1125
+    },
+    {
+      "id": "18363",
+      "parentId": "18350",
+      "name": "Аксессуары из кожи",
+      "url": "https://www.tsum.ru/catalog/aksessuary-iz-kozhi-18363/",
+      "offers": 1123
+    },
+    {
+      "id": "18547",
+      "parentId": "18429",
+      "name": "Пляжная одежда",
+      "url": "https://www.tsum.ru/catalog/plyazhnaya-odezhda-18547/",
+      "offers": 1113
+    }
+  ],
+  "top_vendors": [
+    [
+      "Dolce & Gabbana",
+      23858
+    ],
+    [
+      "Gucci",
+      16115
+    ],
+    [
+      "Brunello Cucinelli",
+      15655
+    ],
+    [
+      "Valentino",
+      11724
+    ],
+    [
+      "BOSS",
+      11379
+    ],
+    [
+      "Polo Ralph Lauren",
+      8191
+    ],
+    [
+      "Tom Ford",
+      7474
+    ],
+    [
+      "Kiton",
+      7334
+    ],
+    [
+      "Dsquared2",
+      7305
+    ],
+    [
+      "Burberry",
+      7006
+    ],
+    [
+      "Bottega Veneta",
+      6729
+    ],
+    [
+      "Loro Piana",
+      6356
+    ],
+    [
+      "Saint Laurent",
+      6300
+    ],
+    [
+      "Prada",
+      5899
+    ],
+    [
+      "Zegna",
+      5829
+    ],
+    [
+      "Canali",
+      5784
+    ],
+    [
+      "Balenciaga",
+      5762
+    ],
+    [
+      "Stefano Ricci",
+      5637
+    ],
+    [
+      "Moschino",
+      5628
+    ],
+    [
+      "Giorgio Armani",
+      5535
+    ],
+    [
+      "Emporio Armani",
+      5509
+    ],
+    [
+      "Paul&Shark",
+      5438
+    ],
+    [
+      "Moncler",
+      5384
+    ],
+    [
+      "Balmain",
+      5306
+    ],
+    [
+      "Off-White",
+      4919
+    ],
+    [
+      "Versace",
+      4798
+    ],
+    [
+      "Stone Island",
+      4760
+    ],
+    [
+      "HUGO",
+      4570
+    ],
+    [
+      "MC2 Saint Barth",
+      4443
+    ],
+    [
+      "Il Gufo",
+      4382
+    ],
+    [
+      "Corneliani",
+      4320
+    ],
+    [
+      "Brioni",
+      4266
+    ],
+    [
+      "Falke",
+      4183
+    ],
+    [
+      "Diesel",
+      4147
+    ],
+    [
+      "Zilli",
+      4107
+    ],
+    [
+      "Givenchy",
+      4005
+    ],
+    [
+      "Santoni",
+      3920
+    ],
+    [
+      "Dries Van Noten",
+      3886
+    ],
+    [
+      "Swarovski",
+      3844
+    ],
+    [
+      "Chloé",
+      3781
+    ]
+  ],
+  "samples_by_bucket_counts": {
+    "aksessuary": 12,
+    "kosmetika": 12,
+    "sumki": 12,
+    "odezhda": 12,
+    "other": 12,
+    "obuv": 12,
+    "platya": 12,
+    "bizhuteriya": 12,
+    "dzhinsy": 12,
+    "rubashki": 12,
+    "parfyumeriya": 12,
+    "ukrasheniya": 12,
+    "tufli": 12,
+    "kurtki": 12,
+    "bryuki": 12,
+    "yuvelirnye": 12,
+    "chasy": 12,
+    "palto": 12
+  }
+}

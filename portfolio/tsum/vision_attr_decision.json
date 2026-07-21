@@ -1,0 +1,2314 @@
+{
+  "partner": "TSUM",
+  "site_id": 203,
+  "model": "google/gemini-2.5-flash",
+  "n_probed": 28,
+  "keep_count": 89,
+  "reject_count": 5,
+  "canon_keep_counts": [
+    [
+      "детали_декор",
+      19
+    ],
+    [
+      "застежка",
+      14
+    ],
+    [
+      "силуэт_посадка",
+      8
+    ],
+    [
+      "воротник_вырез",
+      7
+    ],
+    [
+      "фактура",
+      7
+    ],
+    [
+      "часы_функции",
+      7
+    ],
+    [
+      "украшения",
+      5
+    ],
+    [
+      "принт_узор",
+      4
+    ],
+    [
+      "часы_циферблат",
+      4
+    ],
+    [
+      "силуэт_сумки",
+      3
+    ],
+    [
+      "часы_ремешок",
+      3
+    ],
+    [
+      "очки",
+      2
+    ],
+    [
+      "часы_корпус",
+      2
+    ],
+    [
+      "обувь_форма",
+      1
+    ],
+    [
+      "парфюм_концентрация",
+      1
+    ],
+    [
+      "объем",
+      1
+    ],
+    [
+      "капюшон",
+      1
+    ]
+  ],
+  "keep": [
+    {
+      "offer_id": "11302590",
+      "bucket": "odezhda",
+      "product_name": "Шерстяной костюм",
+      "picture": "https://st-cdn.tsum.com/sig/49afb62384ea400fddc6fdb814760c64/square/640/i/57/d2/d9/c2/57d2d9c2-5d25-3600-8e56-c3add4fb03e7.jpg",
+      "attr": "Принт",
+      "value": "Полоска",
+      "evidence": "visual",
+      "search_relevance": "high",
+      "filter_candidate": true,
+      "decision": "KEEP",
+      "reason": "новый визуальный/OCR атрибут",
+      "canon": "принт_узор"
+    },
+    {
+      "offer_id": "11302590",
+      "bucket": "odezhda",
+      "product_name": "Шерстяной костюм",
+      "picture": "https://st-cdn.tsum.com/sig/49afb62384ea400fddc6fdb814760c64/square/640/i/57/d2/d9/c2/57d2d9c2-5d25-3600-8e56-c3add4fb03e7.jpg",
+      "attr": "Силуэт",
+      "value": "Прямой",
+      "evidence": "visual",
+      "search_relevance": "medium",
+      "filter_candidate": false,
+      "decision": "KEEP",
+      "reason": "новый визуальный/OCR атрибут",
+      "canon": "силуэт_посадка"
+    },
+    {
+      "offer_id": "11302590",
+      "bucket": "odezhda",
+      "product_name": "Шерстяной костюм",
+      "picture": "https://st-cdn.tsum.com/sig/49afb62384ea400fddc6fdb814760c64/square/640/i/57/d2/d9/c2/57d2d9c2-5d25-3600-8e56-c3add4fb03e7.jpg",
+      "attr": "Тип воротника",
+      "value": "Отложной",
+      "evidence": "visual",
+      "search_relevance": "medium",
+      "filter_candidate": true,
+      "decision": "KEEP",
+      "reason": "новый визуальный/OCR атрибут",
+      "canon": "воротник_вырез"
+    },
+    {
+      "offer_id": "11302590",
+      "bucket": "odezhda",
+      "product_name": "Шерстяной костюм",
+      "picture": "https://st-cdn.tsum.com/sig/49afb62384ea400fddc6fdb814760c64/square/640/i/57/d2/d9/c2/57d2d9c2-5d25-3600-8e56-c3add4fb03e7.jpg",
+      "attr": "Тип застежки",
+      "value": "Пуговицы",
+      "evidence": "visual",
+      "search_relevance": "high",
+      "filter_candidate": true,
+      "decision": "KEEP",
+      "reason": "новый визуальный/OCR атрибут",
+      "canon": "застежка"
+    },
+    {
+      "offer_id": "11302590",
+      "bucket": "odezhda",
+      "product_name": "Шерстяной костюм",
+      "picture": "https://st-cdn.tsum.com/sig/49afb62384ea400fddc6fdb814760c64/square/640/i/57/d2/d9/c2/57d2d9c2-5d25-3600-8e56-c3add4fb03e7.jpg",
+      "attr": "Детали",
+      "value": "Карманы",
+      "evidence": "visual",
+      "search_relevance": "medium",
+      "filter_candidate": false,
+      "decision": "KEEP",
+      "reason": "новый визуальный/OCR атрибут",
+      "canon": "детали_декор"
+    },
+    {
+      "offer_id": "11302590",
+      "bucket": "odezhda",
+      "product_name": "Шерстяной костюм",
+      "picture": "https://st-cdn.tsum.com/sig/49afb62384ea400fddc6fdb814760c64/square/640/i/57/d2/d9/c2/57d2d9c2-5d25-3600-8e56-c3add4fb03e7.jpg",
+      "attr": "Посадка",
+      "value": "Классическая",
+      "evidence": "visual",
+      "search_relevance": "medium",
+      "filter_candidate": true,
+      "decision": "KEEP",
+      "reason": "новый визуальный/OCR атрибут",
+      "canon": "силуэт_посадка"
+    },
+    {
+      "offer_id": "13694506",
+      "bucket": "odezhda",
+      "product_name": "Комплект из трех платьев",
+      "picture": "https://st-cdn.tsum.com/sig/9e2c73d904faac4c663f9cd595005a83/square/640/i/00/00/74/00/5d8d4078-7746-4023-91aa-48adcf66b94f.jpg",
+      "attr": "Силуэт",
+      "value": "Прямой",
+      "evidence": "visual",
+      "search_relevance": "high",
+      "filter_candidate": true,
+      "decision": "KEEP",
+      "reason": "новый визуальный/OCR атрибут",
+      "canon": "силуэт_посадка"
+    },
+    {
+      "offer_id": "13694506",
+      "bucket": "odezhda",
+      "product_name": "Комплект из трех платьев",
+      "picture": "https://st-cdn.tsum.com/sig/9e2c73d904faac4c663f9cd595005a83/square/640/i/00/00/74/00/5d8d4078-7746-4023-91aa-48adcf66b94f.jpg",
+      "attr": "Вырез",
+      "value": "Круглый",
+      "evidence": "visual",
+      "search_relevance": "high",
+      "filter_candidate": true,
+      "decision": "KEEP",
+      "reason": "новый визуальный/OCR атрибут",
+      "canon": "воротник_вырез"
+    },
+    {
+      "offer_id": "13694506",
+      "bucket": "odezhda",
+      "product_name": "Комплект из трех платьев",
+      "picture": "https://st-cdn.tsum.com/sig/9e2c73d904faac4c663f9cd595005a83/square/640/i/00/00/74/00/5d8d4078-7746-4023-91aa-48adcf66b94f.jpg",
+      "attr": "Детали",
+      "value": "Многослойность",
+      "evidence": "visual",
+      "search_relevance": "medium",
+      "filter_candidate": true,
+      "decision": "KEEP",
+      "reason": "новый визуальный/OCR атрибут",
+      "canon": "детали_декор"
+    },
+    {
+      "offer_id": "13839154",
+      "bucket": "platya",
+      "product_name": "Платье",
+      "picture": "https://st-cdn.tsum.com/sig/1a4561697369781a419a81b0692832d9/square/640/i/00/03/5d/97/2a4affbd-56f7-4194-9971-7d6190c4c7cc.jpg",
+      "attr": "Вырез",
+      "value": "Вырез-капля",
+      "evidence": "visual",
+      "search_relevance": "high",
+      "filter_candidate": true,
+      "decision": "KEEP",
+      "reason": "новый визуальный/OCR атрибут",
+      "canon": "воротник_вырез"
+    },
+    {
+      "offer_id": "13839154",
+      "bucket": "platya",
+      "product_name": "Платье",
+      "picture": "https://st-cdn.tsum.com/sig/1a4561697369781a419a81b0692832d9/square/640/i/00/03/5d/97/2a4affbd-56f7-4194-9971-7d6190c4c7cc.jpg",
+      "attr": "Воротник",
+      "value": "Воротник-стойка",
+      "evidence": "visual",
+      "search_relevance": "high",
+      "filter_candidate": true,
+      "decision": "KEEP",
+      "reason": "новый визуальный/OCR атрибут",
+      "canon": "воротник_вырез"
+    },
+    {
+      "offer_id": "13839154",
+      "bucket": "platya",
+      "product_name": "Платье",
+      "picture": "https://st-cdn.tsum.com/sig/1a4561697369781a419a81b0692832d9/square/640/i/00/03/5d/97/2a4affbd-56f7-4194-9971-7d6190c4c7cc.jpg",
+      "attr": "Застежка",
+      "value": "Молния",
+      "evidence": "visual",
+      "search_relevance": "medium",
+      "filter_candidate": true,
+      "decision": "KEEP",
+      "reason": "новый визуальный/OCR атрибут",
+      "canon": "застежка"
+    },
+    {
+      "offer_id": "12507670",
+      "bucket": "platya",
+      "product_name": "Хлопковое платье",
+      "picture": "https://st-cdn.tsum.com/sig/d83fbd0acb8705cbd495d60c889da06b/square/640/i/44/6c/3b/2e/446c3b2e-5616-3f90-b304-f3698b21f74d.jpg",
+      "attr": "Тип воротника",
+      "value": "Отложной",
+      "evidence": "visual",
+      "search_relevance": "high",
+      "filter_candidate": true,
+      "decision": "KEEP",
+      "reason": "новый визуальный/OCR атрибут",
+      "canon": "воротник_вырез"
+    },
+    {
+      "offer_id": "12507670",
+      "bucket": "platya",
+      "product_name": "Хлопковое платье",
+      "picture": "https://st-cdn.tsum.com/sig/d83fbd0acb8705cbd495d60c889da06b/square/640/i/44/6c/3b/2e/446c3b2e-5616-3f90-b304-f3698b21f74d.jpg",
+      "attr": "Детали",
+      "value": "Пуговицы",
+      "evidence": "visual",
+      "search_relevance": "medium",
+      "filter_candidate": true,
+      "decision": "KEEP",
+      "reason": "новый визуальный/OCR атрибут",
+      "canon": "детали_декор"
+    },
+    {
+      "offer_id": "12507670",
+      "bucket": "platya",
+      "product_name": "Хлопковое платье",
+      "picture": "https://st-cdn.tsum.com/sig/d83fbd0acb8705cbd495d60c889da06b/square/640/i/44/6c/3b/2e/446c3b2e-5616-3f90-b304-f3698b21f74d.jpg",
+      "attr": "Принт/Узор",
+      "value": "Логомания",
+      "evidence": "visual",
+      "search_relevance": "high",
+      "filter_candidate": true,
+      "decision": "KEEP",
+      "reason": "новый визуальный/OCR атрибут",
+      "canon": "принт_узор"
+    },
+    {
+      "offer_id": "11934438",
+      "bucket": "obuv",
+      "product_name": "Комбинированные кроссовки Zac Zac",
+      "picture": "https://st-cdn.tsum.com/sig/36ab4eb96762c6bfe8e06f044e3246a1/square/640/i/4c/fe/c1/ce/4cfec1ce-15a3-3ee4-8a6f-1dc7a788bc11.jpg",
+      "attr": "Тип застежки",
+      "value": "Шнуровка",
+      "evidence": "visual",
+      "search_relevance": "high",
+      "filter_candidate": true,
+      "decision": "KEEP",
+      "reason": "новый визуальный/OCR атрибут",
+      "canon": "застежка"
+    },
+    {
+      "offer_id": "11934438",
+      "bucket": "obuv",
+      "product_name": "Комбинированные кроссовки Zac Zac",
+      "picture": "https://st-cdn.tsum.com/sig/36ab4eb96762c6bfe8e06f044e3246a1/square/640/i/4c/fe/c1/ce/4cfec1ce-15a3-3ee4-8a6f-1dc7a788bc11.jpg",
+      "attr": "Детали",
+      "value": "Логотип",
+      "evidence": "visual",
+      "search_relevance": "high",
+      "filter_candidate": true,
+      "decision": "KEEP",
+      "reason": "новый визуальный/OCR атрибут",
+      "canon": "детали_декор"
+    },
+    {
+      "offer_id": "11934438",
+      "bucket": "obuv",
+      "product_name": "Комбинированные кроссовки Zac Zac",
+      "picture": "https://st-cdn.tsum.com/sig/36ab4eb96762c6bfe8e06f044e3246a1/square/640/i/4c/fe/c1/ce/4cfec1ce-15a3-3ee4-8a6f-1dc7a788bc11.jpg",
+      "attr": "Фактура",
+      "value": "Сетчатая",
+      "evidence": "visual",
+      "search_relevance": "medium",
+      "filter_candidate": true,
+      "decision": "KEEP",
+      "reason": "новый визуальный/OCR атрибут",
+      "canon": "фактура"
+    },
+    {
+      "offer_id": "2658720",
+      "bucket": "obuv",
+      "product_name": "Комбинированные кроссовки на шнуровке",
+      "picture": "https://st-cdn.tsum.com/sig/d04e169d4572676adb184f762f450001/square/640/i/1d/a8/61/c0/1da861c0-327a-3a43-82dc-b5097665ba2c.jpg",
+      "attr": "Детали",
+      "value": "Логотип",
+      "evidence": "ocr",
+      "search_relevance": "medium",
+      "filter_candidate": false,
+      "decision": "KEEP",
+      "reason": "новый визуальный/OCR атрибут",
+      "canon": "детали_декор"
+    },
+    {
+      "offer_id": "2658720",
+      "bucket": "obuv",
+      "product_name": "Комбинированные кроссовки на шнуровке",
+      "picture": "https://st-cdn.tsum.com/sig/d04e169d4572676adb184f762f450001/square/640/i/1d/a8/61/c0/1da861c0-327a-3a43-82dc-b5097665ba2c.jpg",
+      "attr": "Детали",
+      "value": "Металлизированные вставки",
+      "evidence": "visual",
+      "search_relevance": "low",
+      "filter_candidate": false,
+      "decision": "KEEP",
+      "reason": "новый визуальный/OCR атрибут",
+      "canon": "детали_декор"
+    },
+    {
+      "offer_id": "12062602",
+      "bucket": "tufli",
+      "product_name": "Кожаные монки",
+      "picture": "https://st-cdn.tsum.com/sig/65b5e8b237c988d0a0acbf57fd1cd3e5/square/640/i/6f/dc/00/f4/6fdc00f4-6e71-3e37-8107-87b9974504e1.jpg",
+      "attr": "тип застежки",
+      "value": "пряжки",
+      "evidence": "visual",
+      "search_relevance": "high",
+      "filter_candidate": true,
+      "decision": "KEEP",
+      "reason": "новый визуальный/OCR атрибут",
+      "canon": "застежка"
+    },
+    {
+      "offer_id": "12062602",
+      "bucket": "tufli",
+      "product_name": "Кожаные монки",
+      "picture": "https://st-cdn.tsum.com/sig/65b5e8b237c988d0a0acbf57fd1cd3e5/square/640/i/6f/dc/00/f4/6fdc00f4-6e71-3e37-8107-87b9974504e1.jpg",
+      "attr": "форма носка",
+      "value": "закругленный",
+      "evidence": "visual",
+      "search_relevance": "medium",
+      "filter_candidate": true,
+      "decision": "KEEP",
+      "reason": "новый визуальный/OCR атрибут",
+      "canon": "обувь_форма"
+    },
+    {
+      "offer_id": "12133926",
+      "bucket": "tufli",
+      "product_name": "Кожаные дерби",
+      "picture": "https://st-cdn.tsum.com/sig/31323ca9952794ff08cb70b16584785e/square/640/i/34/37/f1/9f/3437f19f-51b1-34e3-9ec4-e95b1bbf0ad2.jpg",
+      "attr": "детали",
+      "value": "перфорация",
+      "evidence": "visual",
+      "search_relevance": "high",
+      "filter_candidate": true,
+      "decision": "KEEP",
+      "reason": "новый визуальный/OCR атрибут",
+      "canon": "детали_декор"
+    },
+    {
+      "offer_id": "12133926",
+      "bucket": "tufli",
+      "product_name": "Кожаные дерби",
+      "picture": "https://st-cdn.tsum.com/sig/31323ca9952794ff08cb70b16584785e/square/640/i/34/37/f1/9f/3437f19f-51b1-34e3-9ec4-e95b1bbf0ad2.jpg",
+      "attr": "тип застежки",
+      "value": "шнуровка",
+      "evidence": "visual",
+      "search_relevance": "high",
+      "filter_candidate": true,
+      "decision": "KEEP",
+      "reason": "новый визуальный/OCR атрибут",
+      "canon": "застежка"
+    },
+    {
+      "offer_id": "12133926",
+      "bucket": "tufli",
+      "product_name": "Кожаные дерби",
+      "picture": "https://st-cdn.tsum.com/sig/31323ca9952794ff08cb70b16584785e/square/640/i/34/37/f1/9f/3437f19f-51b1-34e3-9ec4-e95b1bbf0ad2.jpg",
+      "attr": "фактура",
+      "value": "зернистая кожа",
+      "evidence": "visual",
+      "search_relevance": "medium",
+      "filter_candidate": true,
+      "decision": "KEEP",
+      "reason": "новый визуальный/OCR атрибут",
+      "canon": "фактура"
+    },
+    {
+      "offer_id": "13679520",
+      "bucket": "sumki",
+      "product_name": "Борсетка",
+      "picture": "https://st-cdn.tsum.com/sig/921f36ce06367a5e4707a29e36d6e7e8/square/640/i/00/00/2e/e8/5fc9683c-cd1a-4fd4-95cb-28c2c91fb2c2.jpg",
+      "attr": "силуэт сумки",
+      "value": "прямоугольный",
+      "evidence": "visual",
+      "search_relevance": "medium",
+      "filter_candidate": true,
+      "decision": "KEEP",
+      "reason": "новый визуальный/OCR атрибут",
+      "canon": "силуэт_сумки"
+    },
+    {
+      "offer_id": "13679520",
+      "bucket": "sumki",
+      "product_name": "Борсетка",
+      "picture": "https://st-cdn.tsum.com/sig/921f36ce06367a5e4707a29e36d6e7e8/square/640/i/00/00/2e/e8/5fc9683c-cd1a-4fd4-95cb-28c2c91fb2c2.jpg",
+      "attr": "тип застежки",
+      "value": "молния",
+      "evidence": "visual",
+      "search_relevance": "high",
+      "filter_candidate": true,
+      "decision": "KEEP",
+      "reason": "новый визуальный/OCR атрибут",
+      "canon": "застежка"
+    },
+    {
+      "offer_id": "13679520",
+      "bucket": "sumki",
+      "product_name": "Борсетка",
+      "picture": "https://st-cdn.tsum.com/sig/921f36ce06367a5e4707a29e36d6e7e8/square/640/i/00/00/2e/e8/5fc9683c-cd1a-4fd4-95cb-28c2c91fb2c2.jpg",
+      "attr": "детали",
+      "value": "внешний карман на молнии",
+      "evidence": "visual",
+      "search_relevance": "medium",
+      "filter_candidate": true,
+      "decision": "KEEP",
+      "reason": "новый визуальный/OCR атрибут",
+      "canon": "детали_декор"
+    },
+    {
+      "offer_id": "13679520",
+      "bucket": "sumki",
+      "product_name": "Борсетка",
+      "picture": "https://st-cdn.tsum.com/sig/921f36ce06367a5e4707a29e36d6e7e8/square/640/i/00/00/2e/e8/5fc9683c-cd1a-4fd4-95cb-28c2c91fb2c2.jpg",
+      "attr": "детали",
+      "value": "красная строчка",
+      "evidence": "visual",
+      "search_relevance": "low",
+      "filter_candidate": false,
+      "decision": "KEEP",
+      "reason": "новый визуальный/OCR атрибут",
+      "canon": "детали_декор"
+    },
+    {
+      "offer_id": "13661940",
+      "bucket": "sumki",
+      "product_name": "Сумка",
+      "picture": "https://st-cdn.tsum.com/sig/d53981e27df0de2788af7a4fb5eba4fb/square/640/i/00/00/c6/88/d91fb729-53fa-4285-ab64-07e7feb35b64.jpg",
+      "attr": "силуэт сумки",
+      "value": "хобо",
+      "evidence": "visual",
+      "search_relevance": "high",
+      "filter_candidate": true,
+      "decision": "KEEP",
+      "reason": "новый визуальный/OCR атрибут",
+      "canon": "силуэт_сумки"
+    },
+    {
+      "offer_id": "13661940",
+      "bucket": "sumki",
+      "product_name": "Сумка",
+      "picture": "https://st-cdn.tsum.com/sig/d53981e27df0de2788af7a4fb5eba4fb/square/640/i/00/00/c6/88/d91fb729-53fa-4285-ab64-07e7feb35b64.jpg",
+      "attr": "количество ручек",
+      "value": "одна",
+      "evidence": "visual",
+      "search_relevance": "medium",
+      "filter_candidate": true,
+      "decision": "KEEP",
+      "reason": "новый визуальный/OCR атрибут",
+      "canon": "силуэт_сумки"
+    },
+    {
+      "offer_id": "13661940",
+      "bucket": "sumki",
+      "product_name": "Сумка",
+      "picture": "https://st-cdn.tsum.com/sig/d53981e27df0de2788af7a4fb5eba4fb/square/640/i/00/00/c6/88/d91fb729-53fa-4285-ab64-07e7feb35b64.jpg",
+      "attr": "детали",
+      "value": "стёганая",
+      "evidence": "visual",
+      "search_relevance": "medium",
+      "filter_candidate": true,
+      "decision": "KEEP",
+      "reason": "новый визуальный/OCR атрибут",
+      "canon": "детали_декор"
+    },
+    {
+      "offer_id": "13524108",
+      "bucket": "parfyumeriya",
+      "product_name": "Парфюмерная вода Bois de Babylone (100ml)",
+      "picture": "https://st-cdn.tsum.com/sig/b59904c37bc30eab22f74fb198095afd/square/640/i/00/04/c8/59/b90c2bf5-fa7b-409f-917b-e5f496559ee6.jpg",
+      "attr": "Концентрация",
+      "value": "Парфюмерная вода",
+      "evidence": "ocr",
+      "search_relevance": "high",
+      "filter_candidate": true,
+      "decision": "KEEP",
+      "reason": "новый визуальный/OCR атрибут",
+      "canon": "парфюм_концентрация"
+    },
+    {
+      "offer_id": "13524108",
+      "bucket": "parfyumeriya",
+      "product_name": "Парфюмерная вода Bois de Babylone (100ml)",
+      "picture": "https://st-cdn.tsum.com/sig/b59904c37bc30eab22f74fb198095afd/square/640/i/00/04/c8/59/b90c2bf5-fa7b-409f-917b-e5f496559ee6.jpg",
+      "attr": "Объем",
+      "value": "100 мл",
+      "evidence": "ocr",
+      "search_relevance": "high",
+      "filter_candidate": true,
+      "decision": "KEEP",
+      "reason": "новый визуальный/OCR атрибут",
+      "canon": "объем"
+    },
+    {
+      "offer_id": "11094281",
+      "bucket": "kosmetika",
+      "product_name": "Матирующий тональный крем Teint Idole Ultra Wear SPF15, оттенок 026 (30ml)",
+      "picture": "https://st-cdn.tsum.com/sig/902119bac0f0c491c5e15c0a51d1705c/square/640/i/d2/0f/43/89/d20f4389-17cf-3296-a401-1a173bca9f23.jpg",
+      "attr": "Эффект",
+      "value": "Комфорт",
+      "evidence": "ocr",
+      "search_relevance": "medium",
+      "filter_candidate": true,
+      "decision": "KEEP",
+      "reason": "новый визуальный/OCR атрибут",
+      "canon": "фактура"
+    },
+    {
+      "offer_id": "1899405",
+      "bucket": "kosmetika",
+      "product_name": "Маска для волос Elacticizer Extreme (150ml)",
+      "picture": "https://st-cdn.tsum.com/sig/c4181ef42892188eed42ddd91c32634d/square/640/i/85/7a/cc/80/857acc80-ad67-3d97-8cf8-6ab722d52fe4.jpg",
+      "attr": "Эффект",
+      "value": "увлажнение",
+      "evidence": "ocr",
+      "search_relevance": "high",
+      "filter_candidate": true,
+      "decision": "KEEP",
+      "reason": "новый визуальный/OCR атрибут",
+      "canon": "фактура"
+    },
+    {
+      "offer_id": "1899405",
+      "bucket": "kosmetika",
+      "product_name": "Маска для волос Elacticizer Extreme (150ml)",
+      "picture": "https://st-cdn.tsum.com/sig/c4181ef42892188eed42ddd91c32634d/square/640/i/85/7a/cc/80/857acc80-ad67-3d97-8cf8-6ab722d52fe4.jpg",
+      "attr": "Эффект",
+      "value": "эластичность",
+      "evidence": "ocr",
+      "search_relevance": "high",
+      "filter_candidate": true,
+      "decision": "KEEP",
+      "reason": "новый визуальный/OCR атрибут",
+      "canon": "фактура"
+    },
+    {
+      "offer_id": "1899405",
+      "bucket": "kosmetika",
+      "product_name": "Маска для волос Elacticizer Extreme (150ml)",
+      "picture": "https://st-cdn.tsum.com/sig/c4181ef42892188eed42ddd91c32634d/square/640/i/85/7a/cc/80/857acc80-ad67-3d97-8cf8-6ab722d52fe4.jpg",
+      "attr": "Эффект",
+      "value": "блеск",
+      "evidence": "ocr",
+      "search_relevance": "high",
+      "filter_candidate": true,
+      "decision": "KEEP",
+      "reason": "новый визуальный/OCR атрибут",
+      "canon": "фактура"
+    },
+    {
+      "offer_id": "10890394",
+      "bucket": "aksessuary",
+      "product_name": "Солнцезащитные очки",
+      "picture": "https://st-cdn.tsum.com/sig/e85eab69c640d7875fbf3530d1293f1d/square/640/i/aa/4d/0b/de/aa4d0bde-1182-37c0-9787-f8fc1976125e.jpg",
+      "attr": "форма оправы",
+      "value": "кошачий глаз",
+      "evidence": "visual",
+      "search_relevance": "high",
+      "filter_candidate": true,
+      "decision": "KEEP",
+      "reason": "новый визуальный/OCR атрибут",
+      "canon": "очки"
+    },
+    {
+      "offer_id": "10890394",
+      "bucket": "aksessuary",
+      "product_name": "Солнцезащитные очки",
+      "picture": "https://st-cdn.tsum.com/sig/e85eab69c640d7875fbf3530d1293f1d/square/640/i/aa/4d/0b/de/aa4d0bde-1182-37c0-9787-f8fc1976125e.jpg",
+      "attr": "тип линз",
+      "value": "градиентные",
+      "evidence": "visual",
+      "search_relevance": "high",
+      "filter_candidate": true,
+      "decision": "KEEP",
+      "reason": "новый визуальный/OCR атрибут",
+      "canon": "очки"
+    },
+    {
+      "offer_id": "12236916",
+      "bucket": "aksessuary",
+      "product_name": "Шарф из шерсти и кашемира",
+      "picture": "https://st-cdn.tsum.com/sig/ed4272c3e7825dec7134bd8ca58e27b8/square/640/i/0c/32/1d/ea/0c321dea-1c41-34af-8341-fb8fcadbf2e5.jpg",
+      "attr": "Фактура",
+      "value": "Вязка",
+      "evidence": "visual",
+      "search_relevance": "medium",
+      "filter_candidate": true,
+      "decision": "KEEP",
+      "reason": "новый визуальный/OCR атрибут",
+      "canon": "фактура"
+    },
+    {
+      "offer_id": "12236916",
+      "bucket": "aksessuary",
+      "product_name": "Шарф из шерсти и кашемира",
+      "picture": "https://st-cdn.tsum.com/sig/ed4272c3e7825dec7134bd8ca58e27b8/square/640/i/0c/32/1d/ea/0c321dea-1c41-34af-8341-fb8fcadbf2e5.jpg",
+      "attr": "Детали",
+      "value": "Металлическая нашивка",
+      "evidence": "visual",
+      "search_relevance": "low",
+      "filter_candidate": false,
+      "decision": "KEEP",
+      "reason": "новый визуальный/OCR атрибут",
+      "canon": "детали_декор"
+    },
+    {
+      "offer_id": "11093797",
+      "bucket": "chasy",
+      "product_name": "Часы Aviator 8 B01 Chronograph 43",
+      "picture": "https://st-cdn.tsum.com/sig/825eff700634568fa1fa476db8ae8b69/square/640/i/b9/2d/b0/5a/b92db05a-7ede-3e6a-a2a4-63d40b0d2781.jpg",
+      "attr": "Тип браслета",
+      "value": "Кожаный",
+      "evidence": "visual",
+      "search_relevance": "high",
+      "filter_candidate": true,
+      "decision": "KEEP",
+      "reason": "новый визуальный/OCR атрибут",
+      "canon": "украшения"
+    },
+    {
+      "offer_id": "11093797",
+      "bucket": "chasy",
+      "product_name": "Часы Aviator 8 B01 Chronograph 43",
+      "picture": "https://st-cdn.tsum.com/sig/825eff700634568fa1fa476db8ae8b69/square/640/i/b9/2d/b0/5a/b92db05a-7ede-3e6a-a2a4-63d40b0d2781.jpg",
+      "attr": "Тип застежки",
+      "value": "Пряжка",
+      "evidence": "visual",
+      "search_relevance": "medium",
+      "filter_candidate": true,
+      "decision": "KEEP",
+      "reason": "новый визуальный/OCR атрибут",
+      "canon": "застежка"
+    },
+    {
+      "offer_id": "11093797",
+      "bucket": "chasy",
+      "product_name": "Часы Aviator 8 B01 Chronograph 43",
+      "picture": "https://st-cdn.tsum.com/sig/825eff700634568fa1fa476db8ae8b69/square/640/i/b9/2d/b0/5a/b92db05a-7ede-3e6a-a2a4-63d40b0d2781.jpg",
+      "attr": "Функции часов",
+      "value": "Хронограф",
+      "evidence": "ocr",
+      "search_relevance": "high",
+      "filter_candidate": true,
+      "decision": "KEEP",
+      "reason": "новый визуальный/OCR атрибут",
+      "canon": "часы_функции"
+    },
+    {
+      "offer_id": "12651124",
+      "bucket": "chasy",
+      "product_name": "Часы Super Avi B04 Chronograph GMT 46 Curtiss Warhawk",
+      "picture": "https://st-cdn.tsum.com/sig/a0dccd1c2aae458470481c1a27a837f4/square/640/i/cf/ba/41/c7/cfba41c7-7093-3641-a7a3-2650b5eb43f1.jpg",
+      "attr": "Тип индикации",
+      "value": "Аналоговый",
+      "evidence": "visual",
+      "search_relevance": "medium",
+      "filter_candidate": true,
+      "decision": "KEEP",
+      "reason": "новый визуальный/OCR атрибут",
+      "canon": "часы_функции"
+    },
+    {
+      "offer_id": "12651124",
+      "bucket": "chasy",
+      "product_name": "Часы Super Avi B04 Chronograph GMT 46 Curtiss Warhawk",
+      "picture": "https://st-cdn.tsum.com/sig/a0dccd1c2aae458470481c1a27a837f4/square/640/i/cf/ba/41/c7/cfba41c7-7093-3641-a7a3-2650b5eb43f1.jpg",
+      "attr": "Функции часов",
+      "value": "Хронограф",
+      "evidence": "visual",
+      "search_relevance": "high",
+      "filter_candidate": true,
+      "decision": "KEEP",
+      "reason": "новый визуальный/OCR атрибут",
+      "canon": "часы_функции"
+    },
+    {
+      "offer_id": "12651124",
+      "bucket": "chasy",
+      "product_name": "Часы Super Avi B04 Chronograph GMT 46 Curtiss Warhawk",
+      "picture": "https://st-cdn.tsum.com/sig/a0dccd1c2aae458470481c1a27a837f4/square/640/i/cf/ba/41/c7/cfba41c7-7093-3641-a7a3-2650b5eb43f1.jpg",
+      "attr": "Функции часов",
+      "value": "GMT",
+      "evidence": "visual",
+      "search_relevance": "high",
+      "filter_candidate": true,
+      "decision": "KEEP",
+      "reason": "новый визуальный/OCR атрибут",
+      "canon": "часы_функции"
+    },
+    {
+      "offer_id": "12651124",
+      "bucket": "chasy",
+      "product_name": "Часы Super Avi B04 Chronograph GMT 46 Curtiss Warhawk",
+      "picture": "https://st-cdn.tsum.com/sig/a0dccd1c2aae458470481c1a27a837f4/square/640/i/cf/ba/41/c7/cfba41c7-7093-3641-a7a3-2650b5eb43f1.jpg",
+      "attr": "Тип циферблата",
+      "value": "Арабские цифры",
+      "evidence": "visual",
+      "search_relevance": "medium",
+      "filter_candidate": true,
+      "decision": "KEEP",
+      "reason": "новый визуальный/OCR атрибут",
+      "canon": "часы_циферблат"
+    },
+    {
+      "offer_id": "12651124",
+      "bucket": "chasy",
+      "product_name": "Часы Super Avi B04 Chronograph GMT 46 Curtiss Warhawk",
+      "picture": "https://st-cdn.tsum.com/sig/a0dccd1c2aae458470481c1a27a837f4/square/640/i/cf/ba/41/c7/cfba41c7-7093-3641-a7a3-2650b5eb43f1.jpg",
+      "attr": "Тип циферблата",
+      "value": "Метки",
+      "evidence": "visual",
+      "search_relevance": "medium",
+      "filter_candidate": true,
+      "decision": "KEEP",
+      "reason": "новый визуальный/OCR атрибут",
+      "canon": "часы_циферблат"
+    },
+    {
+      "offer_id": "12651124",
+      "bucket": "chasy",
+      "product_name": "Часы Super Avi B04 Chronograph GMT 46 Curtiss Warhawk",
+      "picture": "https://st-cdn.tsum.com/sig/a0dccd1c2aae458470481c1a27a837f4/square/640/i/cf/ba/41/c7/cfba41c7-7093-3641-a7a3-2650b5eb43f1.jpg",
+      "attr": "Материал ремешка",
+      "value": "Кожа",
+      "evidence": "visual",
+      "search_relevance": "high",
+      "filter_candidate": true,
+      "decision": "KEEP",
+      "reason": "новый визуальный/OCR атрибут",
+      "canon": "часы_ремешок"
+    },
+    {
+      "offer_id": "12651124",
+      "bucket": "chasy",
+      "product_name": "Часы Super Avi B04 Chronograph GMT 46 Curtiss Warhawk",
+      "picture": "https://st-cdn.tsum.com/sig/a0dccd1c2aae458470481c1a27a837f4/square/640/i/cf/ba/41/c7/cfba41c7-7093-3641-a7a3-2650b5eb43f1.jpg",
+      "attr": "Цвет ремешка",
+      "value": "Коричневый",
+      "evidence": "visual",
+      "search_relevance": "high",
+      "filter_candidate": true,
+      "decision": "KEEP",
+      "reason": "новый визуальный/OCR атрибут",
+      "canon": "часы_ремешок"
+    },
+    {
+      "offer_id": "13802361",
+      "bucket": "ukrasheniya",
+      "product_name": "Колье",
+      "picture": "https://st-cdn.tsum.com/sig/a75346f9f6904efc01c4850b4024115c/square/640/i/00/06/9d/e9/a542cacd-69e1-429a-bf19-393f9ccb256e.jpg",
+      "attr": "Тип плетения",
+      "value": "Якорное",
+      "evidence": "visual",
+      "search_relevance": "medium",
+      "filter_candidate": true,
+      "decision": "KEEP",
+      "reason": "новый визуальный/OCR атрибут",
+      "canon": "украшения"
+    },
+    {
+      "offer_id": "13802361",
+      "bucket": "ukrasheniya",
+      "product_name": "Колье",
+      "picture": "https://st-cdn.tsum.com/sig/a75346f9f6904efc01c4850b4024115c/square/640/i/00/06/9d/e9/a542cacd-69e1-429a-bf19-393f9ccb256e.jpg",
+      "attr": "Детали",
+      "value": "Подвеска",
+      "evidence": "visual",
+      "search_relevance": "high",
+      "filter_candidate": true,
+      "decision": "KEEP",
+      "reason": "новый визуальный/OCR атрибут",
+      "canon": "детали_декор"
+    },
+    {
+      "offer_id": "13567720",
+      "bucket": "ukrasheniya",
+      "product_name": "Колье",
+      "picture": "https://st-cdn.tsum.com/sig/1656020333ff0b5a4e4ec0f975ba0097/square/640/i/00/15/13/e7/bc375e5a-98bf-442f-996b-ae5cfabe092e.jpg",
+      "attr": "форма подвески",
+      "value": "буква N",
+      "evidence": "visual",
+      "search_relevance": "high",
+      "filter_candidate": true,
+      "decision": "KEEP",
+      "reason": "новый визуальный/OCR атрибут",
+      "canon": "украшения"
+    },
+    {
+      "offer_id": "13567720",
+      "bucket": "ukrasheniya",
+      "product_name": "Колье",
+      "picture": "https://st-cdn.tsum.com/sig/1656020333ff0b5a4e4ec0f975ba0097/square/640/i/00/15/13/e7/bc375e5a-98bf-442f-996b-ae5cfabe092e.jpg",
+      "attr": "тип цепочки",
+      "value": "якорная",
+      "evidence": "visual",
+      "search_relevance": "medium",
+      "filter_candidate": false,
+      "decision": "KEEP",
+      "reason": "новый визуальный/OCR атрибут",
+      "canon": "украшения"
+    },
+    {
+      "offer_id": "13492478",
+      "bucket": "yuvelirnye",
+      "product_name": "Часы Turbine Tourbillon",
+      "picture": "https://st-cdn.tsum.com/sig/71813fc679ac992b313a9e89f8e3d9fe/square/640/i/00/67/f0/00/40e9b365-1888-49ae-9e02-1a8d0dc95028.jpg",
+      "attr": "Тип индикации",
+      "value": "Аналоговый",
+      "evidence": "visual",
+      "search_relevance": "high",
+      "filter_candidate": true,
+      "decision": "KEEP",
+      "reason": "новый визуальный/OCR атрибут",
+      "canon": "часы_функции"
+    },
+    {
+      "offer_id": "13492478",
+      "bucket": "yuvelirnye",
+      "product_name": "Часы Turbine Tourbillon",
+      "picture": "https://st-cdn.tsum.com/sig/71813fc679ac992b313a9e89f8e3d9fe/square/640/i/00/67/f0/00/40e9b365-1888-49ae-9e02-1a8d0dc95028.jpg",
+      "attr": "Тип циферблата",
+      "value": "Скелетон",
+      "evidence": "visual",
+      "search_relevance": "high",
+      "filter_candidate": true,
+      "decision": "KEEP",
+      "reason": "новый визуальный/OCR атрибут",
+      "canon": "часы_циферблат"
+    },
+    {
+      "offer_id": "13492478",
+      "bucket": "yuvelirnye",
+      "product_name": "Часы Turbine Tourbillon",
+      "picture": "https://st-cdn.tsum.com/sig/71813fc679ac992b313a9e89f8e3d9fe/square/640/i/00/67/f0/00/40e9b365-1888-49ae-9e02-1a8d0dc95028.jpg",
+      "attr": "Материал браслета",
+      "value": "Каучук",
+      "evidence": "visual",
+      "search_relevance": "high",
+      "filter_candidate": true,
+      "decision": "KEEP",
+      "reason": "новый визуальный/OCR атрибут",
+      "canon": "украшения"
+    },
+    {
+      "offer_id": "13492478",
+      "bucket": "yuvelirnye",
+      "product_name": "Часы Turbine Tourbillon",
+      "picture": "https://st-cdn.tsum.com/sig/71813fc679ac992b313a9e89f8e3d9fe/square/640/i/00/67/f0/00/40e9b365-1888-49ae-9e02-1a8d0dc95028.jpg",
+      "attr": "Тип застежки",
+      "value": "Пряжка",
+      "evidence": "visual",
+      "search_relevance": "medium",
+      "filter_candidate": true,
+      "decision": "KEEP",
+      "reason": "новый визуальный/OCR атрибут",
+      "canon": "застежка"
+    },
+    {
+      "offer_id": "13492478",
+      "bucket": "yuvelirnye",
+      "product_name": "Часы Turbine Tourbillon",
+      "picture": "https://st-cdn.tsum.com/sig/71813fc679ac992b313a9e89f8e3d9fe/square/640/i/00/67/f0/00/40e9b365-1888-49ae-9e02-1a8d0dc95028.jpg",
+      "attr": "Форма корпуса",
+      "value": "Круглая",
+      "evidence": "visual",
+      "search_relevance": "high",
+      "filter_candidate": true,
+      "decision": "KEEP",
+      "reason": "новый визуальный/OCR атрибут",
+      "canon": "часы_корпус"
+    },
+    {
+      "offer_id": "12782662",
+      "bucket": "yuvelirnye",
+      "product_name": "Часы Endurance Pro",
+      "picture": "https://st-cdn.tsum.com/sig/e51b2594c2dc404f9def3f18b4b7bb20/square/640/i/d2/fc/66/e0/d2fc66e0-ec0f-3452-be12-8d467fdd67a4.jpg",
+      "attr": "Тип циферблата",
+      "value": "Аналоговый",
+      "evidence": "visual",
+      "search_relevance": "medium",
+      "filter_candidate": true,
+      "decision": "KEEP",
+      "reason": "новый визуальный/OCR атрибут",
+      "canon": "часы_циферблат"
+    },
+    {
+      "offer_id": "12782662",
+      "bucket": "yuvelirnye",
+      "product_name": "Часы Endurance Pro",
+      "picture": "https://st-cdn.tsum.com/sig/e51b2594c2dc404f9def3f18b4b7bb20/square/640/i/d2/fc/66/e0/d2fc66e0-ec0f-3452-be12-8d467fdd67a4.jpg",
+      "attr": "Функции часов",
+      "value": "Хронограф",
+      "evidence": "ocr",
+      "search_relevance": "high",
+      "filter_candidate": true,
+      "decision": "KEEP",
+      "reason": "новый визуальный/OCR атрибут",
+      "canon": "часы_функции"
+    },
+    {
+      "offer_id": "12782662",
+      "bucket": "yuvelirnye",
+      "product_name": "Часы Endurance Pro",
+      "picture": "https://st-cdn.tsum.com/sig/e51b2594c2dc404f9def3f18b4b7bb20/square/640/i/d2/fc/66/e0/d2fc66e0-ec0f-3452-be12-8d467fdd67a4.jpg",
+      "attr": "Функции часов",
+      "value": "Пульсометр",
+      "evidence": "ocr",
+      "search_relevance": "high",
+      "filter_candidate": true,
+      "decision": "KEEP",
+      "reason": "новый визуальный/OCR атрибут",
+      "canon": "часы_функции"
+    },
+    {
+      "offer_id": "12782662",
+      "bucket": "yuvelirnye",
+      "product_name": "Часы Endurance Pro",
+      "picture": "https://st-cdn.tsum.com/sig/e51b2594c2dc404f9def3f18b4b7bb20/square/640/i/d2/fc/66/e0/d2fc66e0-ec0f-3452-be12-8d467fdd67a4.jpg",
+      "attr": "Материал ремешка",
+      "value": "Каучук",
+      "evidence": "visual",
+      "search_relevance": "high",
+      "filter_candidate": true,
+      "decision": "KEEP",
+      "reason": "новый визуальный/OCR атрибут",
+      "canon": "часы_ремешок"
+    },
+    {
+      "offer_id": "12782662",
+      "bucket": "yuvelirnye",
+      "product_name": "Часы Endurance Pro",
+      "picture": "https://st-cdn.tsum.com/sig/e51b2594c2dc404f9def3f18b4b7bb20/square/640/i/d2/fc/66/e0/d2fc66e0-ec0f-3452-be12-8d467fdd67a4.jpg",
+      "attr": "Форма корпуса",
+      "value": "Круглая",
+      "evidence": "visual",
+      "search_relevance": "high",
+      "filter_candidate": true,
+      "decision": "KEEP",
+      "reason": "новый визуальный/OCR атрибут",
+      "canon": "часы_корпус"
+    },
+    {
+      "offer_id": "13846153",
+      "bucket": "kurtki",
+      "product_name": "Утепленная куртка",
+      "picture": "https://st-cdn.tsum.com/sig/e3000b3cc8b3141e0d86eb6864dfac00/square/640/i/00/0c/49/36/4791717d-06c9-4c4f-a530-81288476607d.jpg",
+      "attr": "капюшон",
+      "value": "есть",
+      "evidence": "visual",
+      "search_relevance": "high",
+      "filter_candidate": true,
+      "decision": "KEEP",
+      "reason": "новый визуальный/OCR атрибут",
+      "canon": "капюшон"
+    },
+    {
+      "offer_id": "13846153",
+      "bucket": "kurtki",
+      "product_name": "Утепленная куртка",
+      "picture": "https://st-cdn.tsum.com/sig/e3000b3cc8b3141e0d86eb6864dfac00/square/640/i/00/0c/49/36/4791717d-06c9-4c4f-a530-81288476607d.jpg",
+      "attr": "застежка",
+      "value": "молния",
+      "evidence": "visual",
+      "search_relevance": "high",
+      "filter_candidate": true,
+      "decision": "KEEP",
+      "reason": "новый визуальный/OCR атрибут",
+      "canon": "застежка"
+    },
+    {
+      "offer_id": "13846153",
+      "bucket": "kurtki",
+      "product_name": "Утепленная куртка",
+      "picture": "https://st-cdn.tsum.com/sig/e3000b3cc8b3141e0d86eb6864dfac00/square/640/i/00/0c/49/36/4791717d-06c9-4c4f-a530-81288476607d.jpg",
+      "attr": "карманы",
+      "value": "прорезные",
+      "evidence": "visual",
+      "search_relevance": "medium",
+      "filter_candidate": true,
+      "decision": "KEEP",
+      "reason": "новый визуальный/OCR атрибут",
+      "canon": "детали_декор"
+    },
+    {
+      "offer_id": "13846153",
+      "bucket": "kurtki",
+      "product_name": "Утепленная куртка",
+      "picture": "https://st-cdn.tsum.com/sig/e3000b3cc8b3141e0d86eb6864dfac00/square/640/i/00/0c/49/36/4791717d-06c9-4c4f-a530-81288476607d.jpg",
+      "attr": "силуэт",
+      "value": "прямой",
+      "evidence": "visual",
+      "search_relevance": "medium",
+      "filter_candidate": true,
+      "decision": "KEEP",
+      "reason": "новый визуальный/OCR атрибут",
+      "canon": "силуэт_посадка"
+    },
+    {
+      "offer_id": "2637975",
+      "bucket": "kurtki",
+      "product_name": "Куртка-бомбер на молнии",
+      "picture": "https://st-cdn.tsum.com/sig/01fbc3d7cfa60afa7e05a4bbee82a00f/square/640/i/cd/31/6d/10/cd316d10-0f18-3e09-93bc-258d135fc365.jpg",
+      "attr": "Тип воротника",
+      "value": "Воротник-стойка",
+      "evidence": "visual",
+      "search_relevance": "high",
+      "filter_candidate": true,
+      "decision": "KEEP",
+      "reason": "новый визуальный/OCR атрибут",
+      "canon": "воротник_вырез"
+    },
+    {
+      "offer_id": "2637975",
+      "bucket": "kurtki",
+      "product_name": "Куртка-бомбер на молнии",
+      "picture": "https://st-cdn.tsum.com/sig/01fbc3d7cfa60afa7e05a4bbee82a00f/square/640/i/cd/31/6d/10/cd316d10-0f18-3e09-93bc-258d135fc365.jpg",
+      "attr": "Детали",
+      "value": "Карманы",
+      "evidence": "visual",
+      "search_relevance": "high",
+      "filter_candidate": true,
+      "decision": "KEEP",
+      "reason": "новый визуальный/OCR атрибут",
+      "canon": "детали_декор"
+    },
+    {
+      "offer_id": "2637975",
+      "bucket": "kurtki",
+      "product_name": "Куртка-бомбер на молнии",
+      "picture": "https://st-cdn.tsum.com/sig/01fbc3d7cfa60afa7e05a4bbee82a00f/square/640/i/cd/31/6d/10/cd316d10-0f18-3e09-93bc-258d135fc365.jpg",
+      "attr": "Тип застежки",
+      "value": "Молния",
+      "evidence": "visual",
+      "search_relevance": "high",
+      "filter_candidate": true,
+      "decision": "KEEP",
+      "reason": "новый визуальный/OCR атрибут",
+      "canon": "застежка"
+    },
+    {
+      "offer_id": "11406128",
+      "bucket": "palto",
+      "product_name": "Шерстяное пальто",
+      "picture": "https://st-cdn.tsum.com/sig/866f850acc1175d9279c5a9448fe76da/square/640/i/c8/ba/6c/b7/c8ba6cb7-b8f4-3a66-89be-549d546080e4.jpg",
+      "attr": "Тип воротника",
+      "value": "Отложной",
+      "evidence": "visual",
+      "search_relevance": "medium",
+      "filter_candidate": true,
+      "decision": "KEEP",
+      "reason": "новый визуальный/OCR атрибут",
+      "canon": "воротник_вырез"
+    },
+    {
+      "offer_id": "11406128",
+      "bucket": "palto",
+      "product_name": "Шерстяное пальто",
+      "picture": "https://st-cdn.tsum.com/sig/866f850acc1175d9279c5a9448fe76da/square/640/i/c8/ba/6c/b7/c8ba6cb7-b8f4-3a66-89be-549d546080e4.jpg",
+      "attr": "Детали",
+      "value": "Карманы",
+      "evidence": "visual",
+      "search_relevance": "medium",
+      "filter_candidate": true,
+      "decision": "KEEP",
+      "reason": "новый визуальный/OCR атрибут",
+      "canon": "детали_декор"
+    },
+    {
+      "offer_id": "11406128",
+      "bucket": "palto",
+      "product_name": "Шерстяное пальто",
+      "picture": "https://st-cdn.tsum.com/sig/866f850acc1175d9279c5a9448fe76da/square/640/i/c8/ba/6c/b7/c8ba6cb7-b8f4-3a66-89be-549d546080e4.jpg",
+      "attr": "Застежка",
+      "value": "Пуговицы",
+      "evidence": "visual",
+      "search_relevance": "high",
+      "filter_candidate": true,
+      "decision": "KEEP",
+      "reason": "новый визуальный/OCR атрибут",
+      "canon": "застежка"
+    },
+    {
+      "offer_id": "11406128",
+      "bucket": "palto",
+      "product_name": "Шерстяное пальто",
+      "picture": "https://st-cdn.tsum.com/sig/866f850acc1175d9279c5a9448fe76da/square/640/i/c8/ba/6c/b7/c8ba6cb7-b8f4-3a66-89be-549d546080e4.jpg",
+      "attr": "Силуэт",
+      "value": "Прямой",
+      "evidence": "visual",
+      "search_relevance": "medium",
+      "filter_candidate": true,
+      "decision": "KEEP",
+      "reason": "новый визуальный/OCR атрибут",
+      "canon": "силуэт_посадка"
+    },
+    {
+      "offer_id": "13594873",
+      "bucket": "palto",
+      "product_name": "Комплект из пальто и жилета",
+      "picture": "https://st-cdn.tsum.com/sig/6853547b5a3e8391fe02f84d70f7ceab/square/640/i/01/9c/cd/eb/30f31003-6677-4df6-b40b-f9b14b4952c2.jpg",
+      "attr": "Детали",
+      "value": "капюшон",
+      "evidence": "visual",
+      "search_relevance": "high",
+      "filter_candidate": true,
+      "decision": "KEEP",
+      "reason": "новый визуальный/OCR атрибут",
+      "canon": "детали_декор"
+    },
+    {
+      "offer_id": "13594873",
+      "bucket": "palto",
+      "product_name": "Комплект из пальто и жилета",
+      "picture": "https://st-cdn.tsum.com/sig/6853547b5a3e8391fe02f84d70f7ceab/square/640/i/01/9c/cd/eb/30f31003-6677-4df6-b40b-f9b14b4952c2.jpg",
+      "attr": "Детали",
+      "value": "накладные карманы",
+      "evidence": "visual",
+      "search_relevance": "medium",
+      "filter_candidate": true,
+      "decision": "KEEP",
+      "reason": "новый визуальный/OCR атрибут",
+      "canon": "детали_декор"
+    },
+    {
+      "offer_id": "13594873",
+      "bucket": "palto",
+      "product_name": "Комплект из пальто и жилета",
+      "picture": "https://st-cdn.tsum.com/sig/6853547b5a3e8391fe02f84d70f7ceab/square/640/i/01/9c/cd/eb/30f31003-6677-4df6-b40b-f9b14b4952c2.jpg",
+      "attr": "Застежка",
+      "value": "пуговицы-клыки",
+      "evidence": "visual",
+      "search_relevance": "high",
+      "filter_candidate": true,
+      "decision": "KEEP",
+      "reason": "новый визуальный/OCR атрибут",
+      "canon": "застежка"
+    },
+    {
+      "offer_id": "13594873",
+      "bucket": "palto",
+      "product_name": "Комплект из пальто и жилета",
+      "picture": "https://st-cdn.tsum.com/sig/6853547b5a3e8391fe02f84d70f7ceab/square/640/i/01/9c/cd/eb/30f31003-6677-4df6-b40b-f9b14b4952c2.jpg",
+      "attr": "Принт/Узор",
+      "value": "клетка тартан",
+      "evidence": "visual",
+      "search_relevance": "high",
+      "filter_candidate": true,
+      "decision": "KEEP",
+      "reason": "новый визуальный/OCR атрибут",
+      "canon": "принт_узор"
+    },
+    {
+      "offer_id": "13594873",
+      "bucket": "palto",
+      "product_name": "Комплект из пальто и жилета",
+      "picture": "https://st-cdn.tsum.com/sig/6853547b5a3e8391fe02f84d70f7ceab/square/640/i/01/9c/cd/eb/30f31003-6677-4df6-b40b-f9b14b4952c2.jpg",
+      "attr": "Детали",
+      "value": "стеганая",
+      "evidence": "visual",
+      "search_relevance": "medium",
+      "filter_candidate": true,
+      "decision": "KEEP",
+      "reason": "новый визуальный/OCR атрибут",
+      "canon": "детали_декор"
+    },
+    {
+      "offer_id": "13594873",
+      "bucket": "palto",
+      "product_name": "Комплект из пальто и жилета",
+      "picture": "https://st-cdn.tsum.com/sig/6853547b5a3e8391fe02f84d70f7ceab/square/640/i/01/9c/cd/eb/30f31003-6677-4df6-b40b-f9b14b4952c2.jpg",
+      "attr": "Застежка",
+      "value": "молния",
+      "evidence": "visual",
+      "search_relevance": "high",
+      "filter_candidate": true,
+      "decision": "KEEP",
+      "reason": "новый визуальный/OCR атрибут",
+      "canon": "застежка"
+    },
+    {
+      "offer_id": "13250245",
+      "bucket": "dzhinsy",
+      "product_name": "Джинсы",
+      "picture": "https://st-cdn.tsum.com/sig/a39bce9d66f815a4c3094a9b684463a1/square/640/i/9b/b6/3e/a6/9bb63ea6-8eb8-3e29-992b-8dde6bc3ec41.jpg",
+      "attr": "Принт",
+      "value": "Монограмма",
+      "evidence": "visual",
+      "search_relevance": "high",
+      "filter_candidate": true,
+      "decision": "KEEP",
+      "reason": "новый визуальный/OCR атрибут",
+      "canon": "принт_узор"
+    },
+    {
+      "offer_id": "13250245",
+      "bucket": "dzhinsy",
+      "product_name": "Джинсы",
+      "picture": "https://st-cdn.tsum.com/sig/a39bce9d66f815a4c3094a9b684463a1/square/640/i/9b/b6/3e/a6/9bb63ea6-8eb8-3e29-992b-8dde6bc3ec41.jpg",
+      "attr": "Силуэт",
+      "value": "Прямой",
+      "evidence": "visual",
+      "search_relevance": "medium",
+      "filter_candidate": true,
+      "decision": "KEEP",
+      "reason": "новый визуальный/OCR атрибут",
+      "canon": "силуэт_посадка"
+    },
+    {
+      "offer_id": "13250245",
+      "bucket": "dzhinsy",
+      "product_name": "Джинсы",
+      "picture": "https://st-cdn.tsum.com/sig/a39bce9d66f815a4c3094a9b684463a1/square/640/i/9b/b6/3e/a6/9bb63ea6-8eb8-3e29-992b-8dde6bc3ec41.jpg",
+      "attr": "Посадка",
+      "value": "Высокая",
+      "evidence": "visual",
+      "search_relevance": "medium",
+      "filter_candidate": true,
+      "decision": "KEEP",
+      "reason": "новый визуальный/OCR атрибут",
+      "canon": "силуэт_посадка"
+    },
+    {
+      "offer_id": "13250245",
+      "bucket": "dzhinsy",
+      "product_name": "Джинсы",
+      "picture": "https://st-cdn.tsum.com/sig/a39bce9d66f815a4c3094a9b684463a1/square/640/i/9b/b6/3e/a6/9bb63ea6-8eb8-3e29-992b-8dde6bc3ec41.jpg",
+      "attr": "Детали",
+      "value": "Карманы",
+      "evidence": "visual",
+      "search_relevance": "low",
+      "filter_candidate": false,
+      "decision": "KEEP",
+      "reason": "новый визуальный/OCR атрибут",
+      "canon": "детали_декор"
+    },
+    {
+      "offer_id": "11579699",
+      "bucket": "dzhinsy",
+      "product_name": "Джинсы",
+      "picture": "https://st-cdn.tsum.com/sig/50abbe02f4f2b29359f536168f5be2a0/square/640/i/d0/64/b9/5f/d064b95f-0dd1-3221-817c-41e1a32943b6.jpg",
+      "attr": "Посадка",
+      "value": "Прямая",
+      "evidence": "visual",
+      "search_relevance": "medium",
+      "filter_candidate": true,
+      "decision": "KEEP",
+      "reason": "новый визуальный/OCR атрибут",
+      "canon": "силуэт_посадка"
+    },
+    {
+      "offer_id": "11579699",
+      "bucket": "dzhinsy",
+      "product_name": "Джинсы",
+      "picture": "https://st-cdn.tsum.com/sig/50abbe02f4f2b29359f536168f5be2a0/square/640/i/d0/64/b9/5f/d064b95f-0dd1-3221-817c-41e1a32943b6.jpg",
+      "attr": "Тип застежки",
+      "value": "Молния и пуговица",
+      "evidence": "visual",
+      "search_relevance": "medium",
+      "filter_candidate": true,
+      "decision": "KEEP",
+      "reason": "новый визуальный/OCR атрибут",
+      "canon": "застежка"
+    }
+  ],
+  "reject": [
+    {
+      "offer_id": "13839154",
+      "bucket": "platya",
+      "product_name": "Платье",
+      "picture": "https://st-cdn.tsum.com/sig/1a4561697369781a419a81b0692832d9/square/640/i/00/03/5d/97/2a4affbd-56f7-4194-9971-7d6190c4c7cc.jpg",
+      "attr": "Длина",
+      "value": "Мини",
+      "evidence": "visual",
+      "search_relevance": "high",
+      "filter_candidate": true,
+      "decision": "REJECT",
+      "reason": "уже есть attribute_length / слабо новое",
+      "canon": "длина"
+    },
+    {
+      "offer_id": "1658680",
+      "bucket": "parfyumeriya",
+      "product_name": "Туалетная вода Ginepro di Sardegna (150ml)",
+      "picture": "https://st-cdn.tsum.com/sig/bcebc092ccb98226a71dc429ad99d689/square/640/i/01/3a/49/18/013a4918-4ee4-3e40-b1c4-e5a892d4b845.jpg",
+      "attr": "Линия",
+      "value": "Blu Mediterraneo",
+      "evidence": "ocr",
+      "search_relevance": "high",
+      "filter_candidate": true,
+      "decision": "REJECT",
+      "reason": "бренд/линия — не vision-ценность",
+      "canon": "линия"
+    },
+    {
+      "offer_id": "11094281",
+      "bucket": "kosmetika",
+      "product_name": "Матирующий тональный крем Teint Idole Ultra Wear SPF15, оттенок 026 (30ml)",
+      "picture": "https://st-cdn.tsum.com/sig/902119bac0f0c491c5e15c0a51d1705c/square/640/i/d2/0f/43/89/d20f4389-17cf-3296-a401-1a173bca9f23.jpg",
+      "attr": "Стойкость",
+      "value": "24 часа",
+      "evidence": "ocr",
+      "search_relevance": "high",
+      "filter_candidate": true,
+      "decision": "REJECT",
+      "reason": "слабая search relevance / маркетинг",
+      "canon": "стойкость"
+    },
+    {
+      "offer_id": "11094281",
+      "bucket": "kosmetika",
+      "product_name": "Матирующий тональный крем Teint Idole Ultra Wear SPF15, оттенок 026 (30ml)",
+      "picture": "https://st-cdn.tsum.com/sig/902119bac0f0c491c5e15c0a51d1705c/square/640/i/d2/0f/43/89/d20f4389-17cf-3296-a401-1a173bca9f23.jpg",
+      "attr": "Особенность",
+      "value": "Без необходимости поправлять макияж",
+      "evidence": "ocr",
+      "search_relevance": "medium",
+      "filter_candidate": false,
+      "decision": "REJECT",
+      "reason": "негация ломает поиск",
+      "canon": "особенность"
+    },
+    {
+      "offer_id": "1899405",
+      "bucket": "kosmetika",
+      "product_name": "Маска для волос Elacticizer Extreme (150ml)",
+      "picture": "https://st-cdn.tsum.com/sig/c4181ef42892188eed42ddd91c32634d/square/640/i/85/7a/cc/80/857acc80-ad67-3d97-8cf8-6ab722d52fe4.jpg",
+      "attr": "Тип волос",
+      "value": "для поврежденных",
+      "evidence": "ocr",
+      "search_relevance": "high",
+      "filter_candidate": true,
+      "decision": "REJECT",
+      "reason": "слабая search relevance / маркетинг",
+      "canon": "тип волос"
+    }
+  ],
+  "do_not_extract_from_images": [
+    {
+      "attr": "Цвет / Оттенок",
+      "why": "fill ~100% в фиде"
+    },
+    {
+      "attr": "Материал (состав %)",
+      "why": "fill ~91% в фиде"
+    },
+    {
+      "attr": "Пол",
+      "why": "всегда в фиде"
+    },
+    {
+      "attr": "Размер",
+      "why": "в фиде (SKU-level)"
+    },
+    {
+      "attr": "Бренд / vendor",
+      "why": "в name; топ запросов — брендовые"
+    },
+    {
+      "attr": "Артикул / id / штрихкод",
+      "why": "технические поля"
+    },
+    {
+      "attr": "Страна дизайна",
+      "why": "уже в фиде (~77%)"
+    },
+    {
+      "attr": "Сезон SS/FW",
+      "why": "уже в фиде; слабо ищут как фильтр"
+    },
+    {
+      "attr": "attribute_length (мини/миди/макси)",
+      "why": "частично заполнен (~35%); не дублировать"
+    },
+    {
+      "attr": "attribute_sleeve",
+      "why": "частично заполнен (~33%); дополнять только пробелы"
+    },
+    {
+      "attr": "Негации (без X)",
+      "why": "ломают поиск"
+    }
+  ],
+  "extract_from_images": [
+    {
+      "attr": "Принт / узор",
+      "why": "в фиде нет отдельного паттерна; attribute_details ~8% и почти без клеток/полосок",
+      "query_family": "принт_узор"
+    },
+    {
+      "attr": "Силуэт / посадка",
+      "why": "нет structured fit; запросы оверсайз/slim/клёш",
+      "query_family": "силуэт_посадка"
+    },
+    {
+      "attr": "Капюшон",
+      "why": "нет boolean hood в фиде",
+      "query_family": "капюшон"
+    },
+    {
+      "attr": "Воротник / вырез",
+      "why": "нет отдельного атрибута",
+      "query_family": "воротник_вырез"
+    },
+    {
+      "attr": "Застёжка (визуальная)",
+      "why": "attribute_clasp только ~2%",
+      "query_family": "застежка"
+    },
+    {
+      "attr": "Детали / декор / фактура",
+      "why": "attribute_details sparse; стёжка, плиссе, пайетки видны на фото",
+      "query_family": "фактура_декор"
+    },
+    {
+      "attr": "Тип сумки (тоут/кроссбоди/багет)",
+      "why": "custom categories частично; визуальный силуэт стабильнее",
+      "query_family": "сумка_тип"
+    },
+    {
+      "attr": "Обувь: каблук / форма носка",
+      "why": "attribute_base есть, но каблук/шпилька в запросах без покрытия",
+      "query_family": "обувь_каблук"
+    },
+    {
+      "attr": "Парфюм: концентрация + ноты (OCR)",
+      "why": "в params нет нот; на флаконе часто EDP/EDT и ноты",
+      "query_family": "парфюм"
+    },
+    {
+      "attr": "Часы: функции / циферблат / ремешок",
+      "why": "watch attrs sparse (<0.2%); OCR с циферблата сильный",
+      "query_family": "часы"
+    }
+  ],
+  "strict_query_impact": {
+    "unique_queries": 924,
+    "searches_90d": 129954,
+    "share_of_top30k_searches_pct": 1.5,
+    "by_family": {
+      "принт_узор": {
+        "unique_queries": 141,
+        "searches_90d": 9803,
+        "examples": [
+          {
+            "q": "леопард",
+            "cnt": 1675
+          },
+          {
+            "q": "леопардовый принт",
+            "cnt": 574
+          },
+          {
+            "q": "футболка с принтом",
+            "cnt": 542
+          },
+          {
+            "q": "в полоску",
+            "cnt": 527
+          },
+          {
+            "q": "рубашка в полоску",
+            "cnt": 457
+          },
+          {
+            "q": "леопардовый",
+            "cnt": 338
+          },
+          {
+            "q": "полоска",
+            "cnt": 325
+          },
+          {
+            "q": "мужская футболка с принтом",
+            "cnt": 208
+          }
+        ]
+      },
+      "силуэт_посадка": {
+        "unique_queries": 93,
+        "searches_90d": 7929,
+        "examples": [
+          {
+            "q": "джинсы клеш",
+            "cnt": 1530
+          },
+          {
+            "q": "футболка оверсайз",
+            "cnt": 953
+          },
+          {
+            "q": "футболка мужская оверсайз",
+            "cnt": 472
+          },
+          {
+            "q": "брюки клеш",
+            "cnt": 305
+          },
+          {
+            "q": "футболка женская оверсайз",
+            "cnt": 290
+          },
+          {
+            "q": "клеш",
+            "cnt": 277
+          },
+          {
+            "q": "рубашка оверсайз",
+            "cnt": 257
+          },
+          {
+            "q": "жакет приталенный",
+            "cnt": 241
+          }
+        ]
+      },
+      "капюшон": {
+        "unique_queries": 24,
+        "searches_90d": 1068,
+        "examples": [
+          {
+            "q": "капюшон",
+            "cnt": 106
+          },
+          {
+            "q": "толстовка на молнии с капюшоном",
+            "cnt": 97
+          },
+          {
+            "q": "рубашка с капюшоном",
+            "cnt": 92
+          },
+          {
+            "q": "куртка с капюшоном",
+            "cnt": 81
+          },
+          {
+            "q": "с капюшоном",
+            "cnt": 79
+          },
+          {
+            "q": "футболка с капюшоном",
+            "cnt": 75
+          },
+          {
+            "q": "ветровка с капюшоном",
+            "cnt": 68
+          },
+          {
+            "q": "кофта с капюшоном",
+            "cnt": 68
+          }
+        ]
+      },
+      "застежка": {
+        "unique_queries": 65,
+        "searches_90d": 9111,
+        "examples": [
+          {
+            "q": "толстовка на молнии",
+            "cnt": 2405
+          },
+          {
+            "q": "худи на молнии",
+            "cnt": 1508
+          },
+          {
+            "q": "кофта на молнии",
+            "cnt": 1246
+          },
+          {
+            "q": "толстовка на молнии мужская",
+            "cnt": 384
+          },
+          {
+            "q": "кардиган на молнии",
+            "cnt": 378
+          },
+          {
+            "q": "худи на молнии мужской",
+            "cnt": 298
+          },
+          {
+            "q": "кофта на молнии мужская",
+            "cnt": 272
+          },
+          {
+            "q": "олимпийка на молнии",
+            "cnt": 249
+          }
+        ]
+      },
+      "обувь_каблук": {
+        "unique_queries": 277,
+        "searches_90d": 67771,
+        "examples": [
+          {
+            "q": "туфли женские на каблуке",
+            "cnt": 20919
+          },
+          {
+            "q": "мюли на каблуке",
+            "cnt": 13439
+          },
+          {
+            "q": "босоножки на каблуке",
+            "cnt": 5675
+          },
+          {
+            "q": "каблуки",
+            "cnt": 3010
+          },
+          {
+            "q": "мюли без каблука",
+            "cnt": 2674
+          },
+          {
+            "q": "босоножки без каблука",
+            "cnt": 1672
+          },
+          {
+            "q": "босоножки женские на каблуке",
+            "cnt": 1105
+          },
+          {
+            "q": "босоножки на танкетке",
+            "cnt": 969
+          }
+        ]
+      },
+      "сумка_тип": {
+        "unique_queries": 116,
+        "searches_90d": 18926,
+        "examples": [
+          {
+            "q": "клатч",
+            "cnt": 7065
+          },
+          {
+            "q": "сумка клатч",
+            "cnt": 1628
+          },
+          {
+            "q": "сумки тоут женские",
+            "cnt": 1401
+          },
+          {
+            "q": "шоппер",
+            "cnt": 1359
+          },
+          {
+            "q": "клатч мужской",
+            "cnt": 924
+          },
+          {
+            "q": "сумка шоппер",
+            "cnt": 715
+          },
+          {
+            "q": "the tote bag",
+            "cnt": 488
+          },
+          {
+            "q": "клатч женский",
+            "cnt": 466
+          }
+        ]
+      },
+      "парфюм": {
+        "unique_queries": 71,
+        "searches_90d": 3385,
+        "examples": [
+          {
+            "q": "туалетная вода",
+            "cnt": 1156
+          },
+          {
+            "q": "туалетная вода мужская",
+            "cnt": 297
+          },
+          {
+            "q": "парфюмерная вода",
+            "cnt": 291
+          },
+          {
+            "q": "парфюмерная вода женская",
+            "cnt": 100
+          },
+          {
+            "q": "chanel туалетная вода platinum egoiste 50ml",
+            "cnt": 73
+          },
+          {
+            "q": "туалетная вода франция",
+            "cnt": 60
+          },
+          {
+            "q": "туалетная вода духи",
+            "cnt": 60
+          },
+          {
+            "q": "chanel туалетная вода",
+            "cnt": 54
+          }
+        ]
+      },
+      "фактура_декор": {
+        "unique_queries": 140,
+        "searches_90d": 12098,
+        "examples": [
+          {
+            "q": "кружево",
+            "cnt": 2132
+          },
+          {
+            "q": "пайетки",
+            "cnt": 885
+          },
+          {
+            "q": "стразы",
+            "cnt": 724
+          },
+          {
+            "q": "кружевной топ",
+            "cnt": 593
+          },
+          {
+            "q": "кружевное платье",
+            "cnt": 475
+          },
+          {
+            "q": "с пайетками",
+            "cnt": 427
+          },
+          {
+            "q": "платье с пайетками",
+            "cnt": 371
+          },
+          {
+            "q": "топ с кружевом",
+            "cnt": 370
+          }
+        ]
+      }
+    }
+  },
+  "feed_params": [
+    {
+      "name": "Пол",
+      "fill_pct": 105.8,
+      "offers": 702011,
+      "role": "searchable",
+      "examples": [
+        "Женский",
+        "Мужской",
+        "Детский"
+      ]
+    },
+    {
+      "name": "date_create",
+      "fill_pct": 100.0,
+      "offers": 663656,
+      "role": "technical",
+      "examples": [
+        "2020-02-19",
+        "2020-04-30",
+        "2025-03-17",
+        "2020-09-03",
+        "2025-04-17"
+      ]
+    },
+    {
+      "name": "Оттенок",
+      "fill_pct": 100.0,
+      "offers": 663656,
+      "role": "searchable",
+      "examples": [
+        "Серебряный",
+        "026",
+        "Черный",
+        "Серый",
+        "Хаки"
+      ]
+    },
+    {
+      "name": "Цвет",
+      "fill_pct": 100.0,
+      "offers": 663656,
+      "role": "searchable",
+      "examples": [
+        "Серебряный",
+        "Бесцветный",
+        "Чёрный",
+        "Серый",
+        "Хаки"
+      ]
+    },
+    {
+      "name": "brand_id",
+      "fill_pct": 100.0,
+      "offers": 663656,
+      "role": "technical",
+      "examples": [
+        "11476757",
+        "1292256",
+        "170549",
+        "1395545",
+        "855923"
+      ]
+    },
+    {
+      "name": "model_id",
+      "fill_pct": 100.0,
+      "offers": 663656,
+      "role": "technical",
+      "examples": [
+        "10890393",
+        "11094280",
+        "13766830",
+        "11302589",
+        "13781080"
+      ]
+    },
+    {
+      "name": "product_id",
+      "fill_pct": 100.0,
+      "offers": 663656,
+      "role": "technical",
+      "examples": [
+        "10890394",
+        "11094281",
+        "13679520",
+        "11302590",
+        "13694506"
+      ]
+    },
+    {
+      "name": "Артикул",
+      "fill_pct": 100.0,
+      "offers": 663656,
+      "role": "technical",
+      "examples": [
+        "00042519",
+        "HE00490000",
+        "7031936",
+        "HE00608131",
+        "7040367"
+      ]
+    },
+    {
+      "name": "color_concrete_id",
+      "fill_pct": 100.0,
+      "offers": 663656,
+      "role": "technical",
+      "examples": [
+        "23e8517c-c6ef-3c2c-8bf9-f2c38c6b9452",
+        "5d06dc29-7a6a-36e8-bca6-7a71b9f596a0",
+        "d70b37aa-3b43-3f17-bf95-155aeafd0fc7",
+        "118a4139-c927-3512-b563-80043b879f7f",
+        "26e7d1bb-1914-33db-b9ef-ab74ad2d4603"
+      ]
+    },
+    {
+      "name": "color_base_id",
+      "fill_pct": 100.0,
+      "offers": 663656,
+      "role": "technical",
+      "examples": [
+        "4fdc709c-9184-3c06-98a7-7ce1fdeb6a29",
+        "1911726a-d138-33b4-9620-89b6a44f84c5",
+        "2087f7b9-8eb0-36f1-ba79-76d8d26df408",
+        "bc495800-17f0-3844-b0fb-d729d46a612c",
+        "899538e5-301f-3394-891b-7f36a300cb00"
+      ]
+    },
+    {
+      "name": "Скидка",
+      "fill_pct": 100.0,
+      "offers": 663656,
+      "role": "searchable",
+      "examples": [
+        "Нет",
+        "Да"
+      ]
+    },
+    {
+      "name": "custom categories",
+      "fill_pct": 94.5,
+      "offers": 627354,
+      "role": "searchable",
+      "examples": [
+        "Солнцезащитные очки",
+        "Тональные средства,Для лица,Макияж,Парфюмерия и косметика",
+        "Борсетки,Повседневные сумки",
+        "Костюмы,Повседневные",
+        "Платья,Повседневные"
+      ]
+    },
+    {
+      "name": "Материал",
+      "fill_pct": 90.8,
+      "offers": 602854,
+      "role": "searchable",
+      "examples": [
+        "Оправа-металл; Линзы-пластик;",
+        "Кожа натуральная: 100%;",
+        "Шерсть: 100%;",
+        "Хлопок: 100%;",
+        "Шерсть: 70%; Кашемир: 30%;"
+      ]
+    },
+    {
+      "name": "Лого",
+      "fill_pct": 90.5,
+      "offers": 600279,
+      "role": "technical",
+      "examples": [
+        "https://st-cdn.tsum.com/sig/bcf694cb7e6f961ddc84297a0acff87e/width/0/i/ef/64/8e/18/ef648e18-1d1b-4716-8109-7f52ffc557d3.png",
+        "https://st-cdn.tsum.com/sig/387770a1978d81e90bae9f8a06f75910/width/0/i/2a/62/9b/c7/2a629bc7-2558-4ce0-b959-44a64e05473a.png",
+        "https://st-cdn.tsum.com/sig/59e5e8c5c3cff5a232f5942ae08b20c2/width/0/i/6c/d3/0c/a1/6cd30ca1-65b4-4790-8d2c-7b26064b99a6.png",
+        "https://st-cdn.tsum.com/sig/b585c436cf0c1307e37d1d2634fe8cac/width/0/i/25/ee/d2/b5/25eed2b5-20f2-4c8c-aee9-d2ca2bf47f21.png",
+        "https://st-cdn.tsum.com/sig/57ddafe3c9057581b4c92788006ad17d/width/0/i/cc/16/37/46/cc163746-1ac8-4226-89f9-16af261903ff.png"
+      ]
+    },
+    {
+      "name": "Страна дизайна",
+      "fill_pct": 76.9,
+      "offers": 510293,
+      "role": "searchable",
+      "examples": [
+        "Италия",
+        "Франция",
+        "Германия",
+        "Россия",
+        "Англия"
+      ]
+    },
+    {
+      "name": "Размер",
+      "fill_pct": 72.0,
+      "offers": 477813,
+      "role": "searchable",
+      "examples": [
+        "42",
+        "44",
+        "46",
+        "50",
+        "54"
+      ]
+    },
+    {
+      "name": "size_id",
+      "fill_pct": 72.0,
+      "offers": 477813,
+      "role": "technical",
+      "examples": [
+        "165932",
+        "164450",
+        "712157",
+        "712155",
+        "164539"
+      ]
+    },
+    {
+      "name": "Штрихкод",
+      "fill_pct": 71.0,
+      "offers": 471408,
+      "role": "technical",
+      "examples": [
+        "56026545",
+        "55999065",
+        "56026544",
+        "56039988",
+        "56039991"
+      ]
+    },
+    {
+      "name": "attribute_length",
+      "fill_pct": 35.1,
+      "offers": 232738,
+      "role": "searchable",
+      "examples": [
+        "Миди",
+        "Стандартные",
+        "До середины бедра",
+        "Короткие",
+        "Мини"
+      ]
+    },
+    {
+      "name": "attribute_sleeve",
+      "fill_pct": 32.6,
+      "offers": 216635,
+      "role": "searchable",
+      "examples": [
+        "Длинные",
+        "Короткие",
+        "На бретелях",
+        "Без рукавов",
+        "3/4"
+      ]
+    },
+    {
+      "name": "Сезон",
+      "fill_pct": 30.9,
+      "offers": 205170,
+      "role": "searchable",
+      "examples": [
+        "SS 2025",
+        "SS 2024",
+        "FW 25/26",
+        "FW 24/25",
+        "SS 2026"
+      ]
+    },
+    {
+      "name": "attribute_type",
+      "fill_pct": 21.5,
+      "offers": 142721,
+      "role": "searchable",
+      "examples": [
+        "Куртка",
+        "Утепленные,Куртка,бомбер",
+        "Пуховик",
+        "Низкие",
+        "костюм"
+      ]
+    },
+    {
+      "name": "Бонус 30%",
+      "fill_pct": 7.7,
+      "offers": 51267,
+      "role": "searchable",
+      "examples": [
+        "Да"
+      ]
+    },
+    {
+      "name": "attribute_details",
+      "fill_pct": 7.6,
+      "offers": 50660,
+      "role": "searchable",
+      "examples": [
+        "Без декора",
+        "Потертости,Декор",
+        "Декор",
+        "Делаве",
+        "Потертости"
+      ]
+    },
+    {
+      "name": "attribute_base",
+      "fill_pct": 6.6,
+      "offers": 43475,
+      "role": "searchable",
+      "examples": [
+        "Массивная",
+        "Платформа",
+        "Плоская",
+        "Массивная,Плоская",
+        "Платформа,Массивная"
+      ]
+    },
+    {
+      "name": "attribute_season",
+      "fill_pct": 3.3,
+      "offers": 21574,
+      "role": "searchable",
+      "examples": [
+        "Зима",
+        "Осень/Весна",
+        "Лето"
+      ]
+    },
+    {
+      "name": "Big sizes",
+      "fill_pct": 2.3,
+      "offers": 15254,
+      "role": "searchable",
+      "examples": [
+        "Да"
+      ]
+    },
+    {
+      "name": "attribute_clasp",
+      "fill_pct": 2.3,
+      "offers": 15044,
+      "role": "searchable",
+      "examples": [
+        "Пуговицы",
+        "Молния",
+        "Открытый ворот",
+        "Шнуровка",
+        "Пояс"
+      ]
+    },
+    {
+      "name": "Только online",
+      "fill_pct": 1.6,
+      "offers": 10641,
+      "role": "searchable",
+      "examples": [
+        "Да"
+      ]
+    },
+    {
+      "name": "attribute_gems_jewelry",
+      "fill_pct": 1.0,
+      "offers": 6809,
+      "role": "searchable",
+      "examples": [
+        "Бриллианты",
+        "Без драгоценных камней",
+        "Другие,Бриллианты",
+        "Другие",
+        "Сапфиры"
+      ]
+    },
+    {
+      "name": "attribute_material_jewelry",
+      "fill_pct": 1.0,
+      "offers": 6585,
+      "role": "searchable",
+      "examples": [
+        "Желтое золото",
+        "Розовое золото",
+        "Белое золото",
+        "Серебро",
+        "Розовое золото,Белое золото"
+      ]
+    },
+    {
+      "name": "Эксклюзивно в ЦУМе",
+      "fill_pct": 0.9,
+      "offers": 6144,
+      "role": "searchable",
+      "examples": [
+        "Да"
+      ]
+    },
+    {
+      "name": "Best-seller",
+      "fill_pct": 0.9,
+      "offers": 5833,
+      "role": "searchable",
+      "examples": [
+        "Да"
+      ]
+    },
+    {
+      "name": "Предоплата",
+      "fill_pct": 0.5,
+      "offers": 3320,
+      "role": "searchable",
+      "examples": [
+        "Да"
+      ]
+    },
+    {
+      "name": "Fashion Show",
+      "fill_pct": 0.4,
+      "offers": 2915,
+      "role": "searchable",
+      "examples": [
+        "Да"
+      ]
+    },
+    {
+      "name": "attribute_case_watches",
+      "fill_pct": 0.2,
+      "offers": 1251,
+      "role": "searchable",
+      "examples": [
+        "Сталь,Розовое золото",
+        "Сталь",
+        "Breitlight®",
+        "Титан",
+        "Розовое золото"
+      ]
+    },
+    {
+      "name": "attribute_mechanism_watches",
+      "fill_pct": 0.2,
+      "offers": 1249,
+      "role": "searchable",
+      "examples": [
+        "Автомат",
+        "Кварц",
+        "Механика",
+        "Электронный"
+      ]
+    },
+    {
+      "name": "attribute_color_dial_watches",
+      "fill_pct": 0.2,
+      "offers": 1222,
+      "role": "searchable",
+      "examples": [
+        "Чёрный",
+        "Серый",
+        "Зелёный",
+        "Синий",
+        "Разноцветный"
+      ]
+    },
+    {
+      "name": "Третья вещь в подарок",
+      "fill_pct": 0.2,
+      "offers": 1064,
+      "role": "searchable",
+      "examples": [
+        "Да"
+      ]
+    },
+    {
+      "name": "Суббренд",
+      "fill_pct": 0.1,
+      "offers": 751,
+      "role": "searchable",
+      "examples": [
+        "Emporio Armani"
+      ]
+    },
+    {
+      "name": "Лимитированный выпуск",
+      "fill_pct": 0.1,
+      "offers": 460,
+      "role": "searchable",
+      "examples": [
+        "Да"
+      ]
+    },
+    {
+      "name": "Новинка",
+      "fill_pct": 0.0,
+      "offers": 247,
+      "role": "searchable",
+      "examples": [
+        "Да"
+      ]
+    }
+  ],
+  "catalog": {
+    "offers_total": 663656,
+    "categories_total": 289,
+    "unique_param_names": 42,
+    "offers_with_picture": 663656
+  },
+  "gap_headline": {
+    "residual_rate_searches_pct": 18.92,
+    "searches_with_residual": 1632601,
+    "total_searches_top30k": 8643144
+  }
+}
