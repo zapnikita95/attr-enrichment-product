@@ -1,0 +1,22 @@
+{
+  "site_id": 221,
+  "model": "google/gemini-2.5-flash-lite",
+  "offers_selected": 5457,
+  "offers_done_ok": 5129,
+  "offers_errors": 21,
+  "keep_rows": 2464,
+  "rejected_rows": 47300,
+  "keep_by_attr": {
+    "Тип упаковки": 532,
+    "Вкус, Добавки": 734,
+    "Технология приготовления": 90,
+    "Форма выпуска": 956,
+    "Нарезка": 58,
+    "Способ обработки": 81,
+    "Тип соуса": 11,
+    "Текстура корма": 2
+  },
+  "dashboard_csv": "C:\\Users\\1\\OneDrive\\Desktop\\attr-enrichment-product\\portfolio\\221_azbuka\\221_vision_dashboard_upload.csv",
+  "desktop_csv": "C:\\Users\\1\\OneDrive\\Desktop\\221_azbuka_vision_dashboard_upload.csv",
+  "elapsed_min": 24.05
+}
