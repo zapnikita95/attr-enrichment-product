@@ -1,0 +1,802 @@
+{
+  "money": {
+    "aov": 6192.55,
+    "matched_queries": 3309,
+    "freq_90d_total": 36059,
+    "freq_90d_strong": 1451,
+    "freq_90d_attr_phrase": 34608,
+    "freq_90d_head": 1451,
+    "freq_90d_tail": 34608,
+    "stream_a_base_month": 606391,
+    "stream_a_opt_month": 1141345,
+    "stream_a_base_year": 7276696,
+    "stream_a_opt_year": 13696145,
+    "stream_b_cons_month": 10259,
+    "stream_b_opt_month": 54199,
+    "text_stream_ref_month": 20804,
+    "text_stream_ref_year": 249652,
+    "assumptions": {
+      "strong_uplift": "0.5 × (exact−fallback) on мельница/дойпак/hand-cooked…",
+      "phrase_uplift_pp_base": 0.8,
+      "phrase_uplift_pp_opt": 1.5,
+      "order_exact": 0.14104,
+      "order_fallback": 0.11774,
+      "aov_source": "221 text-impact study 2026-06-21..2026-07-20",
+      "match_rule": "distinctive tokens only; bare category nouns excluded"
+    }
+  },
+  "baseline": {
+    "sessions": 1613398,
+    "with_search": 242634,
+    "orders": 35575,
+    "revenue": 222175310.76,
+    "searches_90d": 476247
+  },
+  "keep_by_attr": [
+    [
+      "Форма выпуска",
+      956
+    ],
+    [
+      "Вкус, Добавки",
+      734
+    ],
+    [
+      "Тип упаковки",
+      532
+    ],
+    [
+      "Технология приготовления",
+      90
+    ],
+    [
+      "Способ обработки",
+      81
+    ],
+    [
+      "Нарезка",
+      58
+    ],
+    [
+      "Тип соуса",
+      11
+    ],
+    [
+      "Текстура корма",
+      2
+    ]
+  ],
+  "matched_queries_top": [
+    {
+      "query": "масло сливочное",
+      "frequency_90d": 752,
+      "matches": [
+        {
+          "attribute_name": "Вкус, Добавки",
+          "attribute_value": "сливочное традиционное",
+          "offer_id": "407250"
+        }
+      ]
+    },
+    {
+      "query": "оливковое масло",
+      "frequency_90d": 581,
+      "matches": [
+        {
+          "attribute_name": "Вкус, Добавки",
+          "attribute_value": "оливковое масло",
+          "offer_id": "401743"
+        },
+        {
+          "attribute_name": "Вкус, Добавки",
+          "attribute_value": "оливковое масло и перец чили",
+          "offer_id": "546407"
+        }
+      ]
+    },
+    {
+      "query": "набор пирожных",
+      "frequency_90d": 497,
+      "matches": [
+        {
+          "attribute_name": "Форма выпуска",
+          "attribute_value": "подарочный набор",
+          "offer_id": "1017895"
+        },
+        {
+          "attribute_name": "Форма выпуска",
+          "attribute_value": "набор",
+          "offer_id": "529536"
+        }
+      ]
+    },
+    {
+      "query": "набор подарочный",
+      "frequency_90d": 496,
+      "matches": [
+        {
+          "attribute_name": "Форма выпуска",
+          "attribute_value": "подарочный набор",
+          "offer_id": "1017895"
+        },
+        {
+          "attribute_name": "Тип упаковки",
+          "attribute_value": "подарочный набор",
+          "offer_id": "053542"
+        },
+        {
+          "attribute_name": "Форма выпуска",
+          "attribute_value": "набор",
+          "offer_id": "529536"
+        }
+      ]
+    },
+    {
+      "query": "икра красная",
+      "frequency_90d": 405,
+      "matches": [
+        {
+          "attribute_name": "Вкус, Добавки",
+          "attribute_value": "красная икра",
+          "offer_id": "1019783"
+        },
+        {
+          "attribute_name": "Вкус, Добавки",
+          "attribute_value": "боровая матка, красная щетка",
+          "offer_id": "440974"
+        },
+        {
+          "attribute_name": "Вкус, Добавки",
+          "attribute_value": "красная смородина",
+          "offer_id": "475328"
+        }
+      ]
+    },
+    {
+      "query": "кофе зерна",
+      "frequency_90d": 388,
+      "matches": [
+        {
+          "attribute_name": "Форма выпуска",
+          "attribute_value": "зерна",
+          "offer_id": "426144"
+        }
+      ]
+    },
+    {
+      "query": "черная икра",
+      "frequency_90d": 364,
+      "matches": [
+        {
+          "attribute_name": "Вкус, Добавки",
+          "attribute_value": "куркума, имбирь, черная смородина, лукума, перец черный",
+          "offer_id": "478817"
+        }
+      ]
+    },
+    {
+      "query": "без глютена",
+      "frequency_90d": 326,
+      "matches": [
+        {
+          "attribute_name": "Вкус, Добавки",
+          "attribute_value": "Без глютена",
+          "offer_id": "537738"
+        }
+      ]
+    },
+    {
+      "query": "кофе молотый",
+      "frequency_90d": 289,
+      "matches": [
+        {
+          "attribute_name": "Форма выпуска",
+          "attribute_value": "молотый",
+          "offer_id": "466826"
+        }
+      ]
+    },
+    {
+      "query": "хлопья",
+      "frequency_90d": 273,
+      "matches": [
+        {
+          "attribute_name": "Форма выпуска",
+          "attribute_value": "хлопья",
+          "offer_id": "423121"
+        }
+      ]
+    },
+    {
+      "query": "подарочный пакет",
+      "frequency_90d": 272,
+      "matches": [
+        {
+          "attribute_name": "Форма выпуска",
+          "attribute_value": "подарочный набор",
+          "offer_id": "1017895"
+        },
+        {
+          "attribute_name": "Тип упаковки",
+          "attribute_value": "подарочный набор",
+          "offer_id": "053542"
+        }
+      ]
+    },
+    {
+      "query": "пюре",
+      "frequency_90d": 270,
+      "matches": [
+        {
+          "attribute_name": "Форма выпуска",
+          "attribute_value": "суп-пюре",
+          "offer_id": "270530"
+        },
+        {
+          "attribute_name": "Вкус, Добавки",
+          "attribute_value": "мясное пюре с икрой японского тунца",
+          "offer_id": "552283"
+        },
+        {
+          "attribute_name": "Вкус, Добавки",
+          "attribute_value": "яблочное пюре",
+          "offer_id": "349583"
+        }
+      ]
+    },
+    {
+      "query": "чай черный",
+      "frequency_90d": 240,
+      "matches": [
+        {
+          "attribute_name": "Вкус, Добавки",
+          "attribute_value": "морская соль и черный перец",
+          "offer_id": "223891"
+        },
+        {
+          "attribute_name": "Вкус, Добавки",
+          "attribute_value": "черный перец и чеснок",
+          "offer_id": "426327"
+        },
+        {
+          "attribute_name": "Вкус, Добавки",
+          "attribute_value": "черный перец",
+          "offer_id": "340052"
+        }
+      ]
+    },
+    {
+      "query": "пирожное картошка",
+      "frequency_90d": 234,
+      "matches": [
+        {
+          "attribute_name": "Форма выпуска",
+          "attribute_value": "пирожное",
+          "offer_id": "477761"
+        }
+      ]
+    },
+    {
+      "query": "без сахара",
+      "frequency_90d": 229,
+      "matches": [
+        {
+          "attribute_name": "Вкус, Добавки",
+          "attribute_value": "без сахара",
+          "offer_id": "480118"
+        },
+        {
+          "attribute_name": "Способ обработки",
+          "attribute_value": "без сахара",
+          "offer_id": "1015953"
+        },
+        {
+          "attribute_name": "Вкус, Добавки",
+          "attribute_value": "без добавления сахара",
+          "offer_id": "426144"
+        }
+      ]
+    },
+    {
+      "query": "бумажные полотенца",
+      "frequency_90d": 224,
+      "matches": [
+        {
+          "attribute_name": "Форма выпуска",
+          "attribute_value": "бумажные листы",
+          "offer_id": "432761"
+        }
+      ]
+    },
+    {
+      "query": "шоколадные конфеты",
+      "frequency_90d": 216,
+      "matches": [
+        {
+          "attribute_name": "Форма выпуска",
+          "attribute_value": "конфеты",
+          "offer_id": "329136"
+        },
+        {
+          "attribute_name": "Вкус, Добавки",
+          "attribute_value": "шоколадные пралине с дробленым фундуком",
+          "offer_id": "275070"
+        }
+      ]
+    },
+    {
+      "query": "яйца куриные",
+      "frequency_90d": 207,
+      "matches": [
+        {
+          "attribute_name": "Вкус, Добавки",
+          "attribute_value": "Куриные",
+          "offer_id": "334120"
+        }
+      ]
+    },
+    {
+      "query": "масло оливковое",
+      "frequency_90d": 204,
+      "matches": [
+        {
+          "attribute_name": "Вкус, Добавки",
+          "attribute_value": "оливковое масло",
+          "offer_id": "401743"
+        },
+        {
+          "attribute_name": "Вкус, Добавки",
+          "attribute_value": "оливковое масло и перец чили",
+          "offer_id": "546407"
+        }
+      ]
+    },
+    {
+      "query": "печень трески",
+      "frequency_90d": 202,
+      "matches": [
+        {
+          "attribute_name": "Вкус, Добавки",
+          "attribute_value": "Кролик и печень",
+          "offer_id": "181469"
+        },
+        {
+          "attribute_name": "Вкус, Добавки",
+          "attribute_value": "Говядина-печень-горошек",
+          "offer_id": "1007237"
+        }
+      ]
+    },
+    {
+      "query": "кофе в зернах",
+      "frequency_90d": 180,
+      "matches": [
+        {
+          "attribute_name": "Форма выпуска",
+          "attribute_value": "в зернах",
+          "offer_id": "173580"
+        }
+      ]
+    },
+    {
+      "query": "клубника свежая",
+      "frequency_90d": 176,
+      "matches": [
+        {
+          "attribute_name": "Вкус, Добавки",
+          "attribute_value": "клубника",
+          "offer_id": "487012"
+        },
+        {
+          "attribute_name": "Вкус, Добавки",
+          "attribute_value": "ананас, клубника, мандарин",
+          "offer_id": "395968"
+        },
+        {
+          "attribute_name": "Вкус, Добавки",
+          "attribute_value": "дыня, клубника и земляника",
+          "offer_id": "224093"
+        },
+        {
+          "attribute_name": "Вкус, Добавки",
+          "attribute_value": "свежая зелень",
+          "offer_id": "525495"
+        }
+      ]
+    },
+    {
+      "query": "салфетки бумажные",
+      "frequency_90d": 170,
+      "matches": [
+        {
+          "attribute_name": "Форма выпуска",
+          "attribute_value": "бумажные листы",
+          "offer_id": "432761"
+        }
+      ]
+    },
+    {
+      "query": "сок апельсиновый",
+      "frequency_90d": 161,
+      "matches": [
+        {
+          "attribute_name": "Вкус, Добавки",
+          "attribute_value": "Апельсин",
+          "offer_id": "1006214"
+        }
+      ]
+    },
+    {
+      "query": "сыр козий",
+      "frequency_90d": 155,
+      "matches": [
+        {
+          "attribute_name": "Вкус, Добавки",
+          "attribute_value": "козий сыр и карамелизированный лук",
+          "offer_id": "1012608"
+        },
+        {
+          "attribute_name": "Вкус, Добавки",
+          "attribute_value": "козий",
+          "offer_id": "399332"
+        }
+      ]
+    },
+    {
+      "query": "миндальное молоко",
+      "frequency_90d": 152,
+      "matches": [
+        {
+          "attribute_name": "Вкус, Добавки",
+          "attribute_value": "миндаль",
+          "offer_id": "487012"
+        }
+      ]
+    },
+    {
+      "query": "чай зеленый",
+      "frequency_90d": 151,
+      "matches": [
+        {
+          "attribute_name": "Вкус, Добавки",
+          "attribute_value": "зелёный болгарский перец, синий баклажан",
+          "offer_id": "231588"
+        },
+        {
+          "attribute_name": "Вкус, Добавки",
+          "attribute_value": "зеленый овощной перец",
+          "offer_id": "389575"
+        },
+        {
+          "attribute_name": "Вкус, Добавки",
+          "attribute_value": "зеленый лук",
+          "offer_id": "597366"
+        }
+      ]
+    },
+    {
+      "query": "почти готово",
+      "frequency_90d": 145,
+      "matches": [
+        {
+          "attribute_name": "Технология приготовления",
+          "attribute_value": "готово к обжарке",
+          "offer_id": "223393"
+        },
+        {
+          "attribute_name": "Технология приготовления",
+          "attribute_value": "10 минут и готово",
+          "offer_id": "273743"
+        },
+        {
+          "attribute_name": "Технология приготовления",
+          "attribute_value": "готово к употреблению",
+          "offer_id": "007395"
+        }
+      ]
+    },
+    {
+      "query": "уже готово",
+      "frequency_90d": 141,
+      "matches": [
+        {
+          "attribute_name": "Технология приготовления",
+          "attribute_value": "готово к обжарке",
+          "offer_id": "223393"
+        },
+        {
+          "attribute_name": "Технология приготовления",
+          "attribute_value": "10 минут и готово",
+          "offer_id": "273743"
+        },
+        {
+          "attribute_name": "Технология приготовления",
+          "attribute_value": "готово к употреблению",
+          "offer_id": "007395"
+        }
+      ]
+    },
+    {
+      "query": "овсяные хлопья",
+      "frequency_90d": 140,
+      "matches": [
+        {
+          "attribute_name": "Форма выпуска",
+          "attribute_value": "хлопья",
+          "offer_id": "423121"
+        },
+        {
+          "attribute_name": "Вкус, Добавки",
+          "attribute_value": "овсяные хлопья, кокосовая стружка",
+          "offer_id": "270043"
+        }
+      ]
+    },
+    {
+      "query": "суши роллы",
+      "frequency_90d": 137,
+      "matches": [
+        {
+          "attribute_name": "Форма выпуска",
+          "attribute_value": "Роллы",
+          "offer_id": "597229"
+        }
+      ]
+    },
+    {
+      "query": "напиток энергетический",
+      "frequency_90d": 137,
+      "matches": [
+        {
+          "attribute_name": "Форма выпуска",
+          "attribute_value": "Кисломолочный напиток",
+          "offer_id": "261587"
+        },
+        {
+          "attribute_name": "Форма выпуска",
+          "attribute_value": "Молочный напиток",
+          "offer_id": "325589"
+        },
+        {
+          "attribute_name": "Форма выпуска",
+          "attribute_value": "напиток",
+          "offer_id": "332806"
+        }
+      ]
+    },
+    {
+      "query": "стиральный порошок",
+      "frequency_90d": 136,
+      "matches": [
+        {
+          "attribute_name": "Форма выпуска",
+          "attribute_value": "порошок",
+          "offer_id": "396020"
+        }
+      ]
+    },
+    {
+      "query": "холодный чай",
+      "frequency_90d": 135,
+      "matches": [
+        {
+          "attribute_name": "Способ обработки",
+          "attribute_value": "Холодный отжим",
+          "offer_id": "304622"
+        }
+      ]
+    },
+    {
+      "query": "творог фермерский",
+      "frequency_90d": 135,
+      "matches": [
+        {
+          "attribute_name": "Вкус, Добавки",
+          "attribute_value": "фермерский",
+          "offer_id": "279916"
+        }
+      ]
+    },
+    {
+      "query": "картофельное пюре",
+      "frequency_90d": 126,
+      "matches": [
+        {
+          "attribute_name": "Форма выпуска",
+          "attribute_value": "суп-пюре",
+          "offer_id": "270530"
+        },
+        {
+          "attribute_name": "Вкус, Добавки",
+          "attribute_value": "мясное пюре с икрой японского тунца",
+          "offer_id": "552283"
+        },
+        {
+          "attribute_name": "Вкус, Добавки",
+          "attribute_value": "яблочное пюре",
+          "offer_id": "349583"
+        }
+      ]
+    },
+    {
+      "query": "икра черная",
+      "frequency_90d": 126,
+      "matches": [
+        {
+          "attribute_name": "Вкус, Добавки",
+          "attribute_value": "куркума, имбирь, черная смородина, лукума, перец черный",
+          "offer_id": "478817"
+        }
+      ]
+    },
+    {
+      "query": "фруктовая корзина",
+      "frequency_90d": 124,
+      "matches": [
+        {
+          "attribute_name": "Тип упаковки",
+          "attribute_value": "корзина",
+          "offer_id": "538742"
+        }
+      ]
+    },
+    {
+      "query": "горький шоколад",
+      "frequency_90d": 120,
+      "matches": [
+        {
+          "attribute_name": "Вкус, Добавки",
+          "attribute_value": "Желтые фрукты + карамель горький шоколад",
+          "offer_id": "257115"
+        }
+      ]
+    },
+    {
+      "query": "масло подсолнечное",
+      "frequency_90d": 118,
+      "matches": [
+        {
+          "attribute_name": "Вкус, Добавки",
+          "attribute_value": "подсолнечное масло",
+          "offer_id": "389575"
+        }
+      ]
+    },
+    {
+      "query": "блинчики с мясом",
+      "frequency_90d": 117,
+      "matches": [
+        {
+          "attribute_name": "Вкус, Добавки",
+          "attribute_value": "с мясом и овощами",
+          "offer_id": "1010115"
+        }
+      ]
+    },
+    {
+      "query": "кокосовая вода",
+      "frequency_90d": 109,
+      "matches": [
+        {
+          "attribute_name": "Вкус, Добавки",
+          "attribute_value": "кокосовая вода",
+          "offer_id": "462121"
+        },
+        {
+          "attribute_name": "Вкус, Добавки",
+          "attribute_value": "овсяные хлопья, кокосовая стружка",
+          "offer_id": "270043"
+        }
+      ]
+    },
+    {
+      "query": "торт шоколадный",
+      "frequency_90d": 107,
+      "matches": [
+        {
+          "attribute_name": "Вкус, Добавки",
+          "attribute_value": "Шоколадный",
+          "offer_id": "192114"
+        }
+      ]
+    },
+    {
+      "query": "подарочный набор",
+      "frequency_90d": 106,
+      "matches": [
+        {
+          "attribute_name": "Форма выпуска",
+          "attribute_value": "подарочный набор",
+          "offer_id": "1017895"
+        },
+        {
+          "attribute_name": "Тип упаковки",
+          "attribute_value": "подарочный набор",
+          "offer_id": "053542"
+        },
+        {
+          "attribute_name": "Форма выпуска",
+          "attribute_value": "набор",
+          "offer_id": "529536"
+        }
+      ]
+    },
+    {
+      "query": "морская капуста",
+      "frequency_90d": 104,
+      "matches": [
+        {
+          "attribute_name": "Вкус, Добавки",
+          "attribute_value": "морская соль",
+          "offer_id": "176651"
+        },
+        {
+          "attribute_name": "Вкус, Добавки",
+          "attribute_value": "морская соль и черный перец",
+          "offer_id": "223891"
+        },
+        {
+          "attribute_name": "Вкус, Добавки",
+          "attribute_value": "морская соль и яблочный уксус",
+          "offer_id": "351134"
+        }
+      ]
+    },
+    {
+      "query": "арахисовая паста",
+      "frequency_90d": 102,
+      "matches": [
+        {
+          "attribute_name": "Вкус, Добавки",
+          "attribute_value": "арахис",
+          "offer_id": "279205"
+        }
+      ]
+    },
+    {
+      "query": "пирожки с мясом",
+      "frequency_90d": 101,
+      "matches": [
+        {
+          "attribute_name": "Вкус, Добавки",
+          "attribute_value": "с мясом и овощами",
+          "offer_id": "1010115"
+        }
+      ]
+    },
+    {
+      "query": "пирожное макароны",
+      "frequency_90d": 99,
+      "matches": [
+        {
+          "attribute_name": "Форма выпуска",
+          "attribute_value": "пирожное",
+          "offer_id": "477761"
+        }
+      ]
+    },
+    {
+      "query": "творожная масса",
+      "frequency_90d": 99,
+      "matches": [
+        {
+          "attribute_name": "Форма выпуска",
+          "attribute_value": "масса творожная",
+          "offer_id": "235606"
+        }
+      ]
+    },
+    {
+      "query": "вино белое сухое",
+      "frequency_90d": 99,
+      "matches": [
+        {
+          "attribute_name": "Вкус, Добавки",
+          "attribute_value": "карамелизованное сухое молоко",
+          "offer_id": "280787"
+        }
+      ]
+    }
+  ],
+  "generated_at": "2026-07-21T13:26:10+00:00"
+}
