@@ -238,10 +238,24 @@ def compact_prompt(specs: list[FilterAttributeSpec], product_name: str) -> str:
         "Одежда на фото (только главное изделие из названия). "
         "Верни JSON: {\"attributes\":[{\"attr_id\":\"...\",\"value\":\"...\"}]}. "
         "value ТОЛЬКО из списка. круглый≠отложной. пояс≠застёжка.\n"
+        "Верни ВСЕ атрибуты из схемы (каждый attr_id ровно один раз).\n"
         f"Схема:\n{schema}\n"
         f"Товар: {product_name or '—'}\n"
         "Только JSON."
     )
+
+
+def _normalize_attrs(parsed: dict[str, Any], specs: list[FilterAttributeSpec]) -> list[dict[str, Any]]:
+    if not parsed.get("attributes") and any(k in parsed for k in (s.attr_id for s in specs)):
+        parsed = {
+            "attributes": [
+                {"attr_id": k, "value": v}
+                for k, v in parsed.items()
+                if k in {s.attr_id for s in specs}
+            ]
+        }
+    attrs = parsed.get("attributes") or []
+    return attrs if isinstance(attrs, list) else []
 
 
 def extract_one(group: dict, specs: list[FilterAttributeSpec], model: str) -> dict[str, Any]:
@@ -250,21 +264,21 @@ def extract_one(group: dict, specs: list[FilterAttributeSpec], model: str) -> di
     t0 = time.time()
     err = None
     raw = ""
-    parsed: dict[str, Any] = {}
+    attrs: list[dict[str, Any]] = []
     if local and Path(local).is_file():
         prompt = compact_prompt(specs, name)
         try:
-            raw = ollama_vision(prompt, Path(local), model=model, system=SYSTEM, max_tokens=500)
-            parsed = parse_json_object(raw)
-            # accept flat dict too
-            if not parsed.get("attributes") and any(k in parsed for k in (s.attr_id for s in specs)):
-                parsed = {
-                    "attributes": [
-                        {"attr_id": k, "value": v}
-                        for k, v in parsed.items()
-                        if k in {s.attr_id for s in specs}
-                    ]
-                }
+            for attempt in range(2):
+                raw = ollama_vision(
+                    prompt,
+                    Path(local),
+                    model=model,
+                    system=SYSTEM,
+                    max_tokens=700 if attempt else 550,
+                )
+                attrs = _normalize_attrs(parse_json_object(raw), specs)
+                if len(attrs) >= 6:
+                    break
         except Exception as e:
             err = str(e)
     else:
@@ -274,7 +288,7 @@ def extract_one(group: dict, specs: list[FilterAttributeSpec], model: str) -> di
         "elapsed_s": round(time.time() - t0, 2),
         "error": err,
         "raw_text": (raw or "")[:4000],
-        "attributes": parsed.get("attributes") or [],
+        "attributes": attrs,
         "model": model,
     }
 
