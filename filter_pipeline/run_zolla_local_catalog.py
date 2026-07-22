@@ -228,6 +228,29 @@ def merge_attr(dst: dict[str, dict], attr_id: str, value: Any, source: str, conf
     dst[attr_id] = {"value": value, "source": source, "confidence": conf}
 
 
+_NON_APPAREL_RE = re.compile(
+    r"сумк|рюкзак|перчат|шапк|шарф|рем(е|ё)н|носк|колгот|трус|белье|бельё|"
+    r"купальн|плавк|бикини|очк|украшен|серьг|браслет|кошель",
+    re.I,
+)
+# clothing structure attrs that make no sense on bags/gloves/etc.
+_APPAREL_ONLY = {
+    "hood",
+    "length",
+    "sleeve_length",
+    "collar",
+    "belt_drawstring",
+    "quilted",
+    "pockets",
+    "fastener",
+}
+
+
+def is_non_apparel(name: str, category: str = "") -> bool:
+    blob = f"{name or ''} {category or ''}"
+    return bool(_NON_APPAREL_RE.search(blob))
+
+
 def compact_prompt(specs: list[FilterAttributeSpec], product_name: str) -> str:
     """Shorter prompt → faster gemma4 (~2–5s vs 14s with full schema dump)."""
     lines = []
@@ -320,18 +343,32 @@ def build_offer_filters(
         oid = o["offer_id"]
         pk = picture_key(o.get("picture_url") or "", oid)
         slot: dict[str, dict] = {}
+        name = o.get("name") or ""
+        skip_struct = is_non_apparel(name, o.get("category") or "")
         # 1) old print
         pv = coerce_old_print(by_id, o.get("old_extract") or {})
         if pv is not None:
             merge_attr(slot, "print_pattern", pv, "old_extract", 85)
-        # 2) title
-        for aid, val in title_heuristics(o.get("name") or "").items():
+        # 2) title (explicit sleeve/hood in name beats bad vision later via higher conf path)
+        title_hits = title_heuristics(name)
+        for aid, val in title_hits.items():
+            if skip_struct and aid in _APPAREL_ONLY:
+                continue
             if aid in by_id:
                 c = coerce_value(by_id[aid], val)
                 if c.ok:
                     merge_attr(slot, aid, c.value, "title", 75)
-        # 3) vision (wins)
+        # 3) vision (wins) — but not apparel structure on accessories
         for aid, val in (pic_vals.get(pk) or {}).items():
+            if skip_struct and aid in _APPAREL_ONLY:
+                continue
+            # title said long/short sleeve → don't let vision flip to sleeveless
+            if (
+                aid == "sleeve_length"
+                and title_hits.get("sleeve_length") in {"длинный", "короткий", "3/4"}
+                and val == "без рукавов"
+            ):
+                continue
             merge_attr(slot, aid, val, "vision", 90)
         out[oid] = slot
     return out
