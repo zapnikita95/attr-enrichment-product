@@ -113,10 +113,36 @@ def coerce_value(spec: FilterAttributeSpec, raw: Any) -> CoerceResult:
     return CoerceResult(False, None, text, reason="out_of_vocabulary")
 
 
-def feed_collision(value: str, feed_name: str, feed_params: str = "") -> bool:
-    """True if value already present in title/params (do not ship as new filter fact)."""
+def feed_collision(
+    value: str,
+    feed_name: str,
+    feed_params: str = "",
+    *,
+    feed_category: str = "",
+    feed_brand: str = "",
+) -> bool:
+    """True if value already in title / category / brand / params — не выдавать как новый факт."""
     v = _norm(value)
     if len(v) < 3:
         return False
-    blob = _norm(f"{feed_name} {feed_params}")
-    return bool(v and v in blob)
+    blob = _norm(f"{feed_name} {feed_params} {feed_category} {feed_brand}")
+    if not blob:
+        return False
+    if v in blob:
+        return True
+    brand = _norm(feed_brand)
+    if brand and len(brand) >= 3 and (v == brand or v in brand or brand in v):
+        return True
+    # Spot-on ↔ капли на холку
+    form_groups = (
+        {"spot-on", "spot on", "спот-он", "спот он", "капли на холку", "капли"},
+    )
+    vn = v.replace("-", " ")
+    for group in form_groups:
+        if any(vn == g.replace("-", " ") or g.replace("-", " ") in vn for g in group):
+            if any(_norm(g) in blob for g in group if len(g) >= 4):
+                return True
+    tokens = [t for t in re.findall(r"[a-zа-яё0-9%]{3,}", v) if not t.isdigit()]
+    if tokens and all(t in blob for t in tokens):
+        return True
+    return False

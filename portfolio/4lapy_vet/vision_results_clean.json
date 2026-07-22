@@ -165,15 +165,6 @@
         "decision": "KEEP"
       },
       {
-        "name": "Производитель",
-        "value": "Neoterica",
-        "evidence": "ocr",
-        "search_relevance": "high",
-        "filter_candidate": true,
-        "why_helps_search": "Neoterica - бренд, указанный на упаковке, но не в названии или параметрах.",
-        "decision": "KEEP"
-      },
-      {
         "name": "Разработано в",
         "value": "Германия",
         "evidence": "ocr",
@@ -185,6 +176,16 @@
     ],
     "reject": [
       {
+        "name": "Производитель",
+        "value": "Neoterica",
+        "evidence": "ocr",
+        "search_relevance": "high",
+        "filter_candidate": true,
+        "why_helps_search": "Neoterica - бренд, указанный на упаковке, но не в названии или параметрах.",
+        "decision": "REJECT",
+        "reason": "structured_feed_field"
+      },
+      {
         "name": "Тип препарата",
         "value": "комбинированный противопаразитарный",
         "evidence": "ocr",
@@ -194,7 +195,8 @@
         "decision": "REJECT",
         "reason": "structured_feed_field"
       }
-    ]
+    ],
+    "brand": "Гельминтал"
   },
   {
     "id": "1029780",
@@ -345,6 +347,15 @@
         "decision": "KEEP"
       },
       {
+        "name": "Спектр действия",
+        "value": "от блох, личинок блох, вшей, власоедов",
+        "evidence": "ocr",
+        "search_relevance": "high",
+        "filter_candidate": true,
+        "why_helps_search": "Уточняет от каких именно паразитов защищает препарат.",
+        "decision": "KEEP"
+      },
+      {
         "name": "Длительность защиты",
         "value": "4 недели",
         "evidence": "ocr",
@@ -361,7 +372,9 @@
         "filter_candidate": true,
         "why_helps_search": "Пользователи могут искать водостойкие средства.",
         "decision": "KEEP"
-      },
+      }
+    ],
+    "reject": [
       {
         "name": "Серия",
         "value": "Spot-on",
@@ -369,21 +382,11 @@
         "search_relevance": "medium",
         "filter_candidate": true,
         "why_helps_search": "Уточняет линейку продукта.",
-        "decision": "KEEP"
+        "decision": "REJECT",
+        "reason": "form_synonym_collision"
       }
     ],
-    "reject": [
-      {
-        "name": "Спектр действия",
-        "value": "от блох, личинок блох, вшей, власоедов",
-        "evidence": "ocr",
-        "search_relevance": "high",
-        "filter_candidate": true,
-        "why_helps_search": "Уточняет от каких именно паразитов защищает препарат.",
-        "decision": "REJECT",
-        "reason": "feed_or_name_collision"
-      }
-    ]
+    "brand": "Elanco"
   },
   {
     "id": "1043477",
@@ -515,7 +518,8 @@
         "decision": "KEEP"
       }
     ],
-    "reject": []
+    "reject": [],
+    "brand": "Астрафарм"
   },
   {
     "id": "1058979",
@@ -680,7 +684,8 @@
         "decision": "KEEP"
       }
     ],
-    "reject": []
+    "reject": [],
+    "brand": "Apicenna"
   },
   {
     "id": "1067231",
@@ -840,6 +845,15 @@
         "filter_candidate": true,
         "why_helps_search": "Уточняет объем одной пипетки, что может быть важно для дозировки.",
         "decision": "KEEP"
+      },
+      {
+        "name": "Спектр действия",
+        "value": "от блох, вшей, власоедов, ушного клеща, чесоточных клещей, демодекозных клещей, дирофилярий, нематод, легочных гельминтов, глазных гельминтов",
+        "evidence": "ocr",
+        "search_relevance": "high",
+        "filter_candidate": true,
+        "why_helps_search": "Детализирует спектр действия препарата, позволяя пользователям найти средство от конкретных паразитов.",
+        "decision": "KEEP"
       }
     ],
     "reject": [
@@ -852,18 +866,9 @@
         "why_helps_search": "Уточняет количество пипеток в упаковке, что важно для планирования покупки.",
         "decision": "REJECT",
         "reason": "feed_or_name_collision"
-      },
-      {
-        "name": "Спектр действия",
-        "value": "от блох, вшей, власоедов, ушного клеща, чесоточных клещей, демодекозных клещей, дирофилярий, нематод, легочных гельминтов, глазных гельминтов",
-        "evidence": "ocr",
-        "search_relevance": "high",
-        "filter_candidate": true,
-        "why_helps_search": "Детализирует спектр действия препарата, позволяя пользователям найти средство от конкретных паразитов.",
-        "decision": "REJECT",
-        "reason": "feed_or_name_collision"
       }
-    ]
+    ],
+    "brand": "KRKA"
   },
   {
     "id": "1046379",
@@ -1050,7 +1055,8 @@
         "decision": "REJECT",
         "reason": "low_search_relevance"
       }
-    ]
+    ],
+    "brand": "Гельминтал"
   },
   {
     "id": "1019973",
@@ -1247,7 +1253,8 @@
         "decision": "REJECT",
         "reason": "structured_feed_field"
       }
-    ]
+    ],
+    "brand": "Elanco"
   },
   {
     "id": "1063196",
@@ -1560,7 +1567,8 @@
         "decision": "REJECT",
         "reason": "feed_or_name_collision"
       }
-    ]
+    ],
+    "brand": "Rolf"
   },
   {
     "id": "1056247",
@@ -1749,6 +1757,15 @@
       },
       {
         "name": "Особенность",
+        "value": "уничтожает клещей до укуса",
+        "evidence": "ocr",
+        "search_relevance": "medium",
+        "filter_candidate": false,
+        "why_helps_search": "Важная характеристика для пользователей, ищущих максимальную защиту.",
+        "decision": "KEEP"
+      },
+      {
+        "name": "Особенность",
         "value": "даун-эффект в течение 2 минут",
         "evidence": "ocr",
         "search_relevance": "medium",
@@ -1778,16 +1795,6 @@
         "reason": "feed_or_name_collision"
       },
       {
-        "name": "Особенность",
-        "value": "уничтожает клещей до укуса",
-        "evidence": "ocr",
-        "search_relevance": "medium",
-        "filter_candidate": false,
-        "why_helps_search": "Важная характеристика для пользователей, ищущих максимальную защиту.",
-        "decision": "REJECT",
-        "reason": "feed_or_name_collision"
-      },
-      {
         "name": "Разработано в",
         "value": "Германия",
         "evidence": "ocr",
@@ -1797,7 +1804,8 @@
         "decision": "REJECT",
         "reason": "low_search_relevance"
       }
-    ]
+    ],
+    "brand": "Rolf"
   },
   {
     "id": "1066622",
@@ -1904,7 +1912,8 @@
       }
     },
     "keep": [],
-    "reject": []
+    "reject": [],
+    "brand": "Livisto"
   },
   {
     "id": "1004154",
@@ -1999,7 +2008,8 @@
         "decision": "KEEP"
       }
     ],
-    "reject": []
+    "reject": [],
+    "brand": "Аркон"
   },
   {
     "id": "1068811",
@@ -2131,6 +2141,15 @@
         "decision": "KEEP"
       },
       {
+        "name": "Назначение",
+        "value": "для чувствительной кожи",
+        "evidence": "ocr",
+        "search_relevance": "high",
+        "filter_candidate": true,
+        "why_helps_search": "Уточняет, что шампунь подходит для животных с чувствительной кожей, склонной к аллергии.",
+        "decision": "KEEP"
+      },
+      {
         "name": "Особенности",
         "value": "увлажняющий",
         "evidence": "ocr",
@@ -2149,18 +2168,8 @@
         "decision": "KEEP"
       }
     ],
-    "reject": [
-      {
-        "name": "Назначение",
-        "value": "для чувствительной кожи",
-        "evidence": "ocr",
-        "search_relevance": "high",
-        "filter_candidate": true,
-        "why_helps_search": "Уточняет, что шампунь подходит для животных с чувствительной кожей, склонной к аллергии.",
-        "decision": "REJECT",
-        "reason": "feed_or_name_collision"
-      }
-    ]
+    "reject": [],
+    "brand": "Petbiology"
   },
   {
     "id": "1037252",
@@ -2280,7 +2289,8 @@
         "decision": "KEEP"
       }
     ],
-    "reject": []
+    "reject": [],
+    "brand": "Мосагроген"
   },
   {
     "id": "1000031",
@@ -2424,7 +2434,8 @@
         "decision": "REJECT",
         "reason": "structured_feed_field"
       }
-    ]
+    ],
+    "brand": "АВЗ"
   },
   {
     "id": "1046996",
@@ -2521,8 +2532,7 @@
         }
       }
     },
-    "keep": [],
-    "reject": [
+    "keep": [
       {
         "name": "Особенности",
         "value": "высокое содержание Омега 3",
@@ -2530,10 +2540,11 @@
         "search_relevance": "high",
         "filter_candidate": true,
         "why_helps_search": "Пользователи могут искать добавки с высоким содержанием Омега 3.",
-        "decision": "REJECT",
-        "reason": "feed_or_name_collision"
+        "decision": "KEEP"
       }
-    ]
+    ],
+    "reject": [],
+    "brand": "Feel"
   },
   {
     "id": "1066747",
@@ -2682,6 +2693,15 @@
         "decision": "KEEP"
       },
       {
+        "name": "Количество таблеток",
+        "value": "12",
+        "evidence": "ocr",
+        "search_relevance": "medium",
+        "filter_candidate": true,
+        "why_helps_search": "Уточняет количество единиц товара в упаковке, что важно для планирования курса лечения.",
+        "decision": "KEEP"
+      },
+      {
         "name": "Способ применения",
         "value": "внутрь",
         "evidence": "ocr",
@@ -2691,18 +2711,8 @@
         "decision": "KEEP"
       }
     ],
-    "reject": [
-      {
-        "name": "Количество таблеток",
-        "value": "12",
-        "evidence": "ocr",
-        "search_relevance": "medium",
-        "filter_candidate": true,
-        "why_helps_search": "Уточняет количество единиц товара в упаковке, что важно для планирования курса лечения.",
-        "decision": "REJECT",
-        "reason": "feed_or_name_collision"
-      }
-    ]
+    "reject": [],
+    "brand": "Вик"
   },
   {
     "id": "1067323",
@@ -2828,7 +2838,8 @@
         "decision": "KEEP"
       }
     ],
-    "reject": []
+    "reject": [],
+    "brand": "ПРОМОМЕД"
   },
   {
     "id": "1009816",
@@ -2956,6 +2967,7 @@
         "decision": "KEEP"
       }
     ],
-    "reject": []
+    "reject": [],
+    "brand": "KRKA"
   }
 ]

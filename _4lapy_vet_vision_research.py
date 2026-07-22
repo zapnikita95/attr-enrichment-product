@@ -135,7 +135,7 @@ def load_feed() -> tuple[dict, list[dict], dict]:
         elif tag == "offer":
             offers_total += 1
             oid = el.get("id") or ""
-            name = url = price = cat = ""
+            name = url = price = cat = vendor = ""
             params: dict[str, str] = {}
             pics: list[str] = []
             for ch in el:
@@ -148,6 +148,8 @@ def load_feed() -> tuple[dict, list[dict], dict]:
                     price = (ch.text or "").strip()
                 elif ct == "categoryId":
                     cat = (ch.text or "").strip()
+                elif ct == "vendor":
+                    vendor = (ch.text or "").strip()
                 elif ct == "picture" and ch.text:
                     pics.append(ch.text.strip())
                 elif ct == "param":
@@ -165,7 +167,7 @@ def load_feed() -> tuple[dict, list[dict], dict]:
                 path.append(cats[cur]["name"])
                 cur = cats[cur].get("parentId") or ""
             path_s = " / ".join(reversed(path))
-            blob = f"{name} {cname} {path_s} {' '.join(params.values())}".lower()
+            blob = f"{name} {vendor} {cname} {path_s} {' '.join(params.values())}".lower()
             is_vet = any(n in blob for n in VET_CAT_NEEDLES) or any(
                 n in (params.get("Фармакологическая группа") or "").lower()
                 for n in ("антигельминт", "паразит", "блох", "клещ", "витамин", "антибиот")
@@ -175,6 +177,8 @@ def load_feed() -> tuple[dict, list[dict], dict]:
                     {
                         "id": oid,
                         "name": name,
+                        "vendor": vendor,
+                        "brand": vendor or (name.split()[0] if name else ""),
                         "url": url,
                         "price": price,
                         "categoryId": cat,
@@ -259,10 +263,14 @@ def build_prompt(p: dict) -> str:
 ЗАДАЧА: найти атрибуты, которые РЕАЛЬНО видны на фото (визуал упаковки или OCR этикетки),
 и которых НЕТ в названии товара и параметрах фида ниже.
 
-НЕ ИЗВЛЕКАЙ как «новые», если уже есть в названии/params:
-- Для кого (кошки/собаки), Форма выпуска, Фармакологическая группа,
-  Возраст/Размер питомца, Страна, бренд если в name, вес/объём если в name,
-  цену, артикул, штрихкод, маркетинговые слоганы без search-value.
+НЕ ИЗВЛЕКАЙ как «новые», если значение уже есть в названии / бренде(vendor) /
+категории (path) / params — даже если видно на OCR упаковки:
+- бренд, производитель, vendor, торговое имя из name;
+- Форма выпуска и синонимы: Spot-on = капли на холку = спот-он;
+- Для кого, Фармакологическая группа, Возраст/Размер, Страна, артикул, вес/объём из name;
+- цену, штрихкод, маркетинговые слоганы без search-value.
+Если МНН/действующее вещество ЕСТЬ в name или params — не дублируй.
+Если МНН только на упаковке и НЕТ в фиде — это валидный new_attribute.
 
 НЕ ВКЛЮЧАЙ негации («без X») как отдельные атрибуты — только если пользователь явно ищет «без …»
 и это OCR с упаковки как claim (редко; помечай low).
@@ -351,18 +359,132 @@ def parse_json_content(text: str) -> dict:
     return {"parse_error": True, "raw_text": text[:2000]}
 
 
-def feed_collision(name: str, params: dict, attr_name: str, attr_value: str) -> bool:
-    """True if value already grounded in name/params."""
-    blob = f"{name} {' '.join(f'{k} {v}' for k, v in params.items())}".lower()
-    val = (attr_value or "").lower().strip()
-    if not val:
+def _norm_coll(s: str) -> str:
+    s = str(s or "").strip().casefold().replace("ё", "е")
+    s = s.replace("«", "").replace("»", "").replace('"', "")
+    return re.sub(r"\s+", " ", s)
+
+
+# Синонимы формы выпуска / упаковки — не выдавать как «новый» атрибут
+_FORM_SYNONYM_GROUPS = (
+    {"spot-on", "spot on", "спот-он", "спот он", "spoton", "капли на холку", "капли"},
+    {"таблетки", "таблетка", "табл"},
+    {"суспензия", "суспензии"},
+    {"спрей", "аэрозоль"},
+    {"ошейник", "ошейники"},
+)
+
+_BAN_ATTR_NAMES = {
+    "для кого",
+    "форма выпуска",
+    "фармакологическая группа",
+    "возраст питомца",
+    "размер питомца",
+    "страна-производитель",
+    "тип препарата",
+    "бренд",
+    "brand",
+    "vendor",
+    "производитель",
+    "торговая марка",
+    "артикул",
+    "категория",
+}
+
+
+def build_feed_corpus(product: dict) -> list[str]:
+    """Корпус коллизий: название, бренд/vendor, категория/path, params (не description)."""
+    pieces: list[str] = []
+
+    def add(raw: str | None) -> None:
+        t = _norm_coll(raw or "")
+        if t:
+            pieces.append(t)
+
+    add(product.get("name"))
+    add(product.get("vendor"))
+    add(product.get("brand"))
+    add(product.get("category"))
+    path = product.get("category_path") or ""
+    add(path)
+    for seg in re.split(r"[/|>→]+", path):
+        add(seg.strip())
+    params = product.get("params") or {}
+    if isinstance(params, dict):
+        for k, v in params.items():
+            add(str(k))
+            add(str(v))
+            # ключ+значение как в карточке
+            add(f"{k} {v}")
+    # бренд = первое слово названия, если vendor пуст
+    name = product.get("name") or ""
+    if name and not (product.get("vendor") or product.get("brand")):
+        add(name.split()[0])
+    return pieces
+
+
+def _value_redundant_with_piece(value_norm: str, piece: str, *, min_len: int = 4) -> bool:
+    """True если value целиком в piece / piece целиком покрывает value без новых токенов."""
+    if not value_norm or not piece:
+        return False
+    if value_norm == piece:
         return True
-    # token-ish
-    tokens = re.findall(r"[a-zа-яё0-9%]{3,}", val, flags=re.I)
-    if not tokens:
-        return val in blob
-    hits = sum(1 for t in tokens if t in blob)
-    return hits >= max(1, len(tokens) // 2 + (1 if len(tokens) <= 2 else 0))
+    if len(value_norm) >= min_len and value_norm in piece:
+        return True
+    if len(piece) >= min_len and piece in value_norm:
+        rem = value_norm.replace(piece, " ", 1)
+        extra = [t for t in re.findall(r"[\w%-]+", rem, flags=re.UNICODE) if len(t) >= min_len and not t.isdigit()]
+        return len(extra) == 0
+    return False
+
+
+def _form_synonym_collision(value_norm: str, corpus: list[str]) -> bool:
+    """Spot-on ↔ капли на холку и др. — одна сущность формы выпуска."""
+    blob = " ".join(corpus)
+    vn = value_norm.replace("-", " ")
+    for group in _FORM_SYNONYM_GROUPS:
+        value_in_group = False
+        for g in group:
+            gn = g.replace("-", " ")
+            if vn == gn or (len(gn) >= 5 and gn in vn) or (len(vn) >= 5 and vn in gn):
+                value_in_group = True
+                break
+        if not value_in_group:
+            continue
+        if any(g.replace("-", " ") in blob for g in group if len(g) >= 4):
+            return True
+    return False
+
+
+def feed_collision(product: dict, attr_name: str, attr_value: str) -> tuple[bool, str]:
+    """True if value already in name / category / brand / params (или синоним формы)."""
+    an = _norm_coll(attr_name)
+    val = _norm_coll(attr_value)
+    if not val:
+        return True, "empty_value"
+    if an in _BAN_ATTR_NAMES or an.startswith("для кого"):
+        return True, "structured_feed_field"
+    corpus = build_feed_corpus(product)
+    blob = " ".join(corpus)
+    # бренд/vendor как значение
+    for brand_key in ("vendor", "brand"):
+        b = _norm_coll(product.get(brand_key) or "")
+        if b and (val == b or b in val or val in b):
+            return True, "brand_collision"
+    name0 = _norm_coll((product.get("name") or "").split()[0] if product.get("name") else "")
+    if name0 and len(name0) >= 3 and val == name0:
+        return True, "brand_collision"
+    if _form_synonym_collision(val, corpus):
+        return True, "form_synonym_collision"
+    # целое значение / избыточность по кускам корпуса
+    for piece in corpus:
+        if _value_redundant_with_piece(val, piece):
+            return True, "feed_or_name_collision"
+    # все содержательные токены значения уже в корпусе (короткие МНН и т.п.)
+    tokens = [t for t in re.findall(r"[a-zа-яё0-9%]{3,}", val) if not t.isdigit()]
+    if tokens and all(t in blob for t in tokens):
+        return True, "feed_or_name_collision"
+    return False, ""
 
 
 def decide_attrs(product: dict, vision: dict) -> dict:
@@ -373,8 +495,9 @@ def decide_attrs(product: dict, vision: dict) -> dict:
         an, av = (a.get("name") or "").strip(), (a.get("value") or "").strip()
         if not an or not av:
             continue
-        if feed_collision(product.get("name") or "", product.get("params") or {}, an, av):
-            reject.append({**a, "decision": "REJECT", "reason": "feed_or_name_collision"})
+        hit, reason = feed_collision(product, an, av)
+        if hit:
+            reject.append({**a, "decision": "REJECT", "reason": reason or "feed_or_name_collision"})
             continue
         if a.get("search_relevance") == "low" and not a.get("filter_candidate"):
             reject.append({**a, "decision": "REJECT", "reason": "low_search_relevance"})
@@ -576,30 +699,22 @@ def compute_money(qdata: dict, attr_ranking: list[dict]) -> dict:
 
 
 def cleanup_keeps(results: list[dict]) -> list[dict]:
-    """Drop attrs that collide with structured feed fields / weak marketing."""
-    ban_names = {
-        "для кого",
-        "форма выпуска",
-        "фармакологическая группа",
-        "возраст питомца",
-        "размер питомца",
-        "страна-производитель",
-        "тип препарата",
-    }
+    """Повторный проход коллизий по name/category/brand/params (и из vision.new_attributes)."""
     out = []
     for r in results:
-        keep2, rej2 = [], list(r.get("reject") or [])
-        for a in r.get("keep") or []:
-            n = (a.get("name") or "").strip().lower()
-            v = (a.get("value") or "").strip().lower()
-            if n in ban_names or n.startswith("для кого"):
-                rej2.append({**a, "decision": "REJECT", "reason": "structured_feed_field"})
-                continue
-            # Spot-on уже в name «Спот-он»
-            if "spot" in v and "спот" in (r.get("name") or "").lower():
-                rej2.append({**a, "decision": "REJECT", "reason": "name_collision_spot_on"})
-                continue
-            keep2.append(a)
+        vision = r.get("vision") if isinstance(r.get("vision"), dict) else {}
+        # Полный пересчёт KEEP/REJECT из сырого vision — единый gate
+        if vision.get("new_attributes"):
+            dec = decide_attrs(r, vision)
+            keep2, rej2 = dec["keep"], dec["reject"]
+        else:
+            keep2, rej2 = [], list(r.get("reject") or [])
+            for a in r.get("keep") or []:
+                hit, reason = feed_collision(r, a.get("name") or "", a.get("value") or "")
+                if hit:
+                    rej2.append({**a, "decision": "REJECT", "reason": reason or "feed_or_name_collision"})
+                else:
+                    keep2.append({**a, "decision": "KEEP"})
         rr = dict(r)
         rr["keep"] = keep2
         rr["reject"] = rej2

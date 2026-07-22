@@ -192,7 +192,8 @@
         "decision": "KEEP"
       }
     ],
-    "reject": []
+    "reject": [],
+    "brand": "Гельминтал"
   },
   {
     "id": "1029780",
@@ -381,7 +382,8 @@
         "decision": "REJECT",
         "reason": "feed_or_name_collision"
       }
-    ]
+    ],
+    "brand": "Elanco"
   },
   {
     "id": "1043477",
@@ -513,7 +515,8 @@
         "decision": "KEEP"
       }
     ],
-    "reject": []
+    "reject": [],
+    "brand": "Астрафарм"
   },
   {
     "id": "1058979",
@@ -678,7 +681,8 @@
         "decision": "KEEP"
       }
     ],
-    "reject": []
+    "reject": [],
+    "brand": "Apicenna"
   },
   {
     "id": "1067231",
@@ -861,7 +865,8 @@
         "decision": "REJECT",
         "reason": "feed_or_name_collision"
       }
-    ]
+    ],
+    "brand": "KRKA"
   },
   {
     "id": "1046379",
@@ -1048,7 +1053,8 @@
         "decision": "REJECT",
         "reason": "low_search_relevance"
       }
-    ]
+    ],
+    "brand": "Гельминтал"
   },
   {
     "id": "1019973",
@@ -1243,7 +1249,8 @@
         "decision": "KEEP"
       }
     ],
-    "reject": []
+    "reject": [],
+    "brand": "Elanco"
   },
   {
     "id": "1063196",
@@ -1556,7 +1563,8 @@
         "decision": "REJECT",
         "reason": "feed_or_name_collision"
       }
-    ]
+    ],
+    "brand": "Rolf"
   },
   {
     "id": "1056247",
@@ -1793,7 +1801,8 @@
         "decision": "REJECT",
         "reason": "low_search_relevance"
       }
-    ]
+    ],
+    "brand": "Rolf"
   },
   {
     "id": "1066622",
@@ -1900,7 +1909,8 @@
       }
     },
     "keep": [],
-    "reject": []
+    "reject": [],
+    "brand": "Livisto"
   },
   {
     "id": "1004154",
@@ -1995,7 +2005,8 @@
         "decision": "KEEP"
       }
     ],
-    "reject": []
+    "reject": [],
+    "brand": "Аркон"
   },
   {
     "id": "1068811",
@@ -2156,7 +2167,8 @@
         "decision": "REJECT",
         "reason": "feed_or_name_collision"
       }
-    ]
+    ],
+    "brand": "Petbiology"
   },
   {
     "id": "1037252",
@@ -2276,7 +2288,8 @@
         "decision": "KEEP"
       }
     ],
-    "reject": []
+    "reject": [],
+    "brand": "Мосагроген"
   },
   {
     "id": "1000031",
@@ -2417,7 +2430,8 @@
         "decision": "KEEP"
       }
     ],
-    "reject": []
+    "reject": [],
+    "brand": "АВЗ"
   },
   {
     "id": "1046996",
@@ -2526,7 +2540,8 @@
         "decision": "REJECT",
         "reason": "feed_or_name_collision"
       }
-    ]
+    ],
+    "brand": "Feel"
   },
   {
     "id": "1066747",
@@ -2695,7 +2710,8 @@
         "decision": "REJECT",
         "reason": "feed_or_name_collision"
       }
-    ]
+    ],
+    "brand": "Вик"
   },
   {
     "id": "1067323",
@@ -2821,7 +2837,8 @@
         "decision": "KEEP"
       }
     ],
-    "reject": []
+    "reject": [],
+    "brand": "ПРОМОМЕД"
   },
   {
     "id": "1009816",
@@ -2949,6 +2966,7 @@
         "decision": "KEEP"
       }
     ],
-    "reject": []
+    "reject": [],
+    "brand": "KRKA"
   }
 ]
