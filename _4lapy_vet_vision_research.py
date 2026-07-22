@@ -832,14 +832,62 @@ def build_html(
             if v:
                 feed_parts.append(f"<tr><td>{esc(k)}</td><td>{esc(v)}</td></tr>")
         feed_rows = "".join(feed_parts)
+        ev_ru = {"ocr": "с упаковки", "visual": "визуал", "image": "с фото"}
         keep_rows = "".join(
             f"<tr><td><strong>{esc(a.get('name'))}</strong></td><td>{esc(a.get('value'))}</td>"
-            f"<td>{esc(a.get('evidence'))}</td><td>{esc(a.get('search_relevance'))}</td>"
+            f"<td>{esc(ev_ru.get(str(a.get('evidence') or '').lower(), a.get('evidence') or 'с фото'))}</td>"
+            f"<td>{esc(a.get('search_relevance'))}</td>"
             f"<td>{esc(a.get('why_helps_search') or '')}</td></tr>"
             for a in keep
-        ) or "<tr><td colspan=5>Новых KEEP после коллизии с фидом нет — картинка дублирует карточку</td></tr>"
+        ) or "<tr><td colspan=5>Новых атрибутов нет — всё с фото уже есть в карточке фида</td></tr>"
         pic = (c.get("pictures") or [""])[0]
         badge = "FOCUS" if c.get("focus") else (c.get("bucket") or "sample")
+        vision = c.get("vision") or {}
+        kind_ru = {
+            "packshot": "фото упаковки",
+            "label_closeup": "крупный план этикетки",
+            "multipack": "мультипак",
+            "lifestyle": "лайфстайл",
+            "unclear": "кадр неясный",
+        }.get(str(vision.get("image_kind") or ""), "фото товара")
+        ocr_labels = [str(x).strip() for x in (vision.get("ocr_labels") or []) if str(x).strip()]
+        already_vis = [
+            str(x).strip() for x in (vision.get("already_in_feed_visible") or []) if str(x).strip()
+        ]
+        # что с фото уже совпадает с карточкой vs что новое для атрибутов
+        feed_blob = " ".join(
+            [
+                c.get("name") or "",
+                c.get("vendor") or "",
+                c.get("brand") or "",
+                c.get("category") or "",
+                c.get("category_path") or "",
+                " ".join(f"{k} {v}" for k, v in (c.get("params") or {}).items()),
+            ]
+        ).casefold()
+        ocr_dup, ocr_new = [], []
+        for lab in ocr_labels[:12]:
+            ln = lab.casefold().replace("ё", "е")
+            if len(ln) >= 3 and ln in feed_blob:
+                ocr_dup.append(lab)
+            else:
+                ocr_new.append(lab)
+        ocr_block = (
+            f'<p class="case-line ocr-note"><strong>Что прочитали с фото упаковки</strong> '
+            f"(это не название карточки, а надписи на картинке · {esc(kind_ru)}): "
+            f"{esc(', '.join(ocr_labels[:8]) or '—')}</p>"
+        )
+        if ocr_dup or already_vis:
+            shown = ocr_dup or already_vis
+            ocr_block += (
+                f'<p class="case-line ocr-dup">Уже есть в названии / фиде — в атрибуты не берём: '
+                f"{esc(', '.join(shown[:8]))}</p>"
+            )
+        if ocr_new:
+            ocr_block += (
+                f'<p class="case-line ocr-new">На упаковке есть, в карточке фида нет — кандидаты в атрибуты: '
+                f"{esc(', '.join(ocr_new[:8]))}</p>"
+            )
         return f"""
 <article class="case">
   <div class="case-num">{num}</div>
@@ -849,16 +897,16 @@ def build_html(
   <div class="case-body">
     <div class="case-meta">{esc(badge)} · id {esc(c.get('id'))} · {esc(c.get('category'))} · {esc(c.get('price'))} ₽</div>
     <h3>{esc(c.get('name'))}</h3>
-    <p class="case-line">{esc((c.get('vision') or {}).get('image_kind') or '')} · OCR: {esc(', '.join(((c.get('vision') or {}).get('ocr_labels') or [])[:6]))}</p>
+    {ocr_block}
     <div class="case-cols">
       <div>
         <h4>Уже в фиде / названии</h4>
         <table class="mini"><tbody>{feed_rows}</tbody></table>
       </div>
       <div>
-        <h4>С картинки (KEEP) · reject={reject_n}</h4>
+        <h4>Новые атрибуты с упаковки (после очистки дублей) · отсеяно {reject_n}</h4>
         <table class="mini">
-          <thead><tr><th>Атрибут</th><th>Значение</th><th>Доказ.</th><th>Релев.</th><th>Зачем поиску</th></tr></thead>
+          <thead><tr><th>Атрибут</th><th>Значение</th><th>Откуда</th><th>Релев.</th><th>Зачем поиску</th></tr></thead>
           <tbody>{keep_rows}</tbody>
         </table>
       </div>
@@ -917,6 +965,10 @@ th {{ background:#e7f0ea; font-weight:600; }}
 .case-num {{ font-size:22px; font-weight:700; color:var(--accent); }}
 .case-img img {{ width:200px; height:200px; object-fit:contain; background:#f0f4f1; display:block; }}
 .case-meta {{ font-size:12px; color:var(--muted); }}
+.case-line {{ font-size:13px; margin:6px 0; line-height:1.4; }}
+.ocr-note {{ background:#f0f4f1; padding:8px 10px; border-radius:6px; }}
+.ocr-dup {{ color:var(--muted); }}
+.ocr-new {{ color:#1a5c3a; }}
 .case-cols {{ display:grid; grid-template-columns:1fr 1fr; gap:12px; }}
 .case-cols h4 {{ margin:0 0 6px; font-size:12px; color:var(--muted); }}
 table.mini {{ font-size:12px; }}
