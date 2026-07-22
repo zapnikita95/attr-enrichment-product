@@ -25,9 +25,11 @@ import json
 import re
 import sqlite3
 import sys
+import threading
 import time
 import urllib.request
 from collections import Counter, defaultdict
+from concurrent.futures import ThreadPoolExecutor, as_completed
 from datetime import datetime, timezone
 from pathlib import Path
 from typing import Any
@@ -48,8 +50,11 @@ ZOLLA_DB = Path(r"C:\Users\1\OneDrive\Desktop\image_description-main\projects\Zo
 DESKTOP_OUT = Path(r"C:\Users\1\OneDrive\Desktop\Output\Zolla_3826")
 
 OLLAMA_BASE = "http://127.0.0.1:11434"  # direct Ollama (avoid pool contention)
-DEFAULT_MODEL = "gemma4:12b"  # multimodal; use think=False ~2s/pic
+DEFAULT_MODEL = "qwen3.5:9b"  # vision; ~2.5s/pic; 2 workers fit 24GB with num_ctx=4k
+DEFAULT_WORKERS = 2
 SCHEMA = ROOT / "portfolio" / "zolla_filters" / "filter_schema_clean.json"
+# User machine has OLLAMA_CONTEXT_LENGTH=262144 — override per request or VRAM dies.
+NUM_CTX = 4096
 
 # Skip noisy boolean-no / solid in dashboard? Partner wants filters — ship yes + enums + print.
 DASHBOARD_SKIP = {
@@ -79,8 +84,12 @@ def ollama_vision(prompt: str, image_path: Path, *, model: str, system: str, max
     payload = {
         "model": model,
         "stream": False,
-        "think": False,  # gemma4 otherwise dumps into thinking, empty content
-        "options": {"temperature": 0.0, "num_predict": max_tokens},
+        "think": False,  # gemma/qwen otherwise dump into thinking, empty content
+        "options": {
+            "temperature": 0.0,
+            "num_predict": max_tokens,
+            "num_ctx": NUM_CTX,
+        },
         "messages": [
             {"role": "system", "content": system},
             {
@@ -268,17 +277,35 @@ def compact_prompt(specs: list[FilterAttributeSpec], product_name: str) -> str:
     )
 
 
-def _normalize_attrs(parsed: dict[str, Any], specs: list[FilterAttributeSpec]) -> list[dict[str, Any]]:
-    if not parsed.get("attributes") and any(k in parsed for k in (s.attr_id for s in specs)):
-        parsed = {
-            "attributes": [
-                {"attr_id": k, "value": v}
-                for k, v in parsed.items()
-                if k in {s.attr_id for s in specs}
-            ]
-        }
-    attrs = parsed.get("attributes") or []
-    return attrs if isinstance(attrs, list) else []
+def _normalize_attrs(parsed: Any, specs: list[FilterAttributeSpec]) -> list[dict[str, Any]]:
+    """Accept {attributes:[…]}, flat dict, or bare list; map attribute→attr_id (qwen quirk)."""
+    ids = {s.attr_id for s in specs}
+    if isinstance(parsed, dict) and isinstance(parsed.get("_list"), list):
+        parsed = parsed["_list"]
+    if isinstance(parsed, list):
+        items = parsed
+    elif isinstance(parsed, dict):
+        if parsed.get("attributes"):
+            items = parsed["attributes"]
+        elif any(k in parsed for k in ids):
+            items = [{"attr_id": k, "value": v} for k, v in parsed.items() if k in ids]
+        else:
+            items = []
+    else:
+        items = []
+    out: list[dict[str, Any]] = []
+    for a in items:
+        if not isinstance(a, dict):
+            continue
+        aid = str(a.get("attr_id") or a.get("attribute") or a.get("id") or "")
+        if aid not in ids:
+            continue
+        val = a.get("value")
+        # qwen sometimes echoes the whole enum list as value
+        if isinstance(val, str) and "|" in val and val.count("|") >= 2:
+            continue
+        out.append({"attr_id": aid, "value": val})
+    return out
 
 
 def extract_one(group: dict, specs: list[FilterAttributeSpec], model: str) -> dict[str, Any]:
@@ -299,7 +326,7 @@ def extract_one(group: dict, specs: list[FilterAttributeSpec], model: str) -> di
                     system=SYSTEM,
                     max_tokens=700 if attempt else 550,
                 )
-                attrs = _normalize_attrs(parse_json_object(raw), specs)
+                attrs = _normalize_attrs(_parse_model_json(raw), specs)
                 if len(attrs) >= 6:
                     break
         except Exception as e:
@@ -535,6 +562,25 @@ th,td{{border:1px solid #ddd6cc;padding:8px;text-align:left;vertical-align:top}}
     path.write_text(html, encoding="utf-8")
 
 
+def _parse_model_json(raw: str) -> Any:
+    """parse_json_object → dict; also accept top-level JSON array (qwen)."""
+    text = (raw or "").strip()
+    if not text:
+        return {}
+    try:
+        return parse_json_object(text)
+    except Exception:
+        pass
+    # bare array / fenced
+    m = re.search(r"\[[\s\S]*\]", text)
+    if m:
+        try:
+            return json.loads(m.group(0))
+        except json.JSONDecodeError:
+            return {}
+    return {}
+
+
 def main() -> None:
     ap = argparse.ArgumentParser()
     ap.add_argument("--model", default=DEFAULT_MODEL)
@@ -542,6 +588,7 @@ def main() -> None:
     ap.add_argument("--run", action="store_true", help="full unique-pic vision (checkpointed)")
     ap.add_argument("--export-only", action="store_true")
     ap.add_argument("--limit-unique", type=int, default=0)
+    ap.add_argument("--workers", type=int, default=DEFAULT_WORKERS, help="parallel vision workers")
     args = ap.parse_args()
 
     OUT.mkdir(parents=True, exist_ok=True)
@@ -549,6 +596,7 @@ def main() -> None:
     specs = [s for s in _specs(SCHEMA if SCHEMA.is_file() else None) if s.attr_id != "gender_target"]
     ckpt_path = OUT / "vision_checkpoint.jsonl"
     state_path = OUT / "run_state.json"
+    ckpt_lock = threading.Lock()
 
     def log(msg: str) -> None:
         print(msg, flush=True)
@@ -582,52 +630,82 @@ def main() -> None:
         todo = todo[: args.smoke]
 
     if args.run or args.smoke:
-        log(f"vision queue={len(todo)} model={args.model} ollama={OLLAMA_BASE}")
+        workers = max(1, int(args.workers or 1))
+        log(
+            f"vision queue={len(todo)} model={args.model} workers={workers} "
+            f"num_ctx={NUM_CTX} ollama={OLLAMA_BASE}"
+        )
         t_all = time.time()
-        for i, g in enumerate(todo, 1):
-            row = extract_one(g, specs, args.model)
-            vision_by_pic[g["picture_key"]] = row
-            with ckpt_path.open("a", encoding="utf-8") as f:
-                f.write(json.dumps(row, ensure_ascii=False) + "\n")
-            ok = not row.get("error") and bool(row.get("attributes"))
-            log(
-                f"[{i}/{len(todo)}] {g['representative']['offer_id']} "
-                f"{'OK' if ok else 'FAIL'} {row.get('elapsed_s')}s "
-                f"attrs={len(row.get('attributes') or [])} err={row.get('error')}"
+        done_n = 0
+
+        def _mid_export() -> None:
+            of_mid = build_offer_filters(offers, vision_by_pic, specs)
+            export_dashboard_csv(of_mid, specs, OUT / "zolla_filters_dashboard_upload.csv")
+            (DESKTOP_OUT / "zolla_filters_dashboard_upload.csv").write_bytes(
+                (OUT / "zolla_filters_dashboard_upload.csv").read_bytes()
             )
-            if i % 25 == 0:
-                state_path.write_text(
-                    json.dumps(
-                        {
-                            "done": len(vision_by_pic),
-                            "queue_left": len(todo) - i,
-                            "elapsed_min": round((time.time() - t_all) / 60, 1),
-                            "model": args.model,
-                        },
-                        ensure_ascii=False,
-                        indent=2,
-                    ),
-                    encoding="utf-8",
-                )
-            if i % 200 == 0:
-                # mid-run export so partner files stay fresh
-                of_mid = build_offer_filters(offers, vision_by_pic, specs)
-                export_dashboard_csv(of_mid, specs, OUT / "zolla_filters_dashboard_upload.csv")
-                (DESKTOP_OUT / "zolla_filters_dashboard_upload.csv").write_bytes(
-                    (OUT / "zolla_filters_dashboard_upload.csv").read_bytes()
-                )
-                rep_mid = export_analytics(
-                    offers, of_mid, specs, len(groups), len(vision_by_pic), args.model
-                )
-                (OUT / "filter_coverage_analytics.json").write_text(
-                    json.dumps(rep_mid, ensure_ascii=False, indent=2), encoding="utf-8"
-                )
-                write_analytics_html(rep_mid, OUT / "zolla_filters_coverage.html")
-                (DESKTOP_OUT / "zolla_filters_coverage.html").write_text(
-                    (OUT / "zolla_filters_coverage.html").read_text(encoding="utf-8"),
-                    encoding="utf-8",
-                )
-                log(f"  mid-export @ {i} unique")
+            rep_mid = export_analytics(
+                offers, of_mid, specs, len(groups), len(vision_by_pic), args.model
+            )
+            (OUT / "filter_coverage_analytics.json").write_text(
+                json.dumps(rep_mid, ensure_ascii=False, indent=2), encoding="utf-8"
+            )
+            write_analytics_html(rep_mid, OUT / "zolla_filters_coverage.html")
+            (DESKTOP_OUT / "zolla_filters_coverage.html").write_text(
+                (OUT / "zolla_filters_coverage.html").read_text(encoding="utf-8"),
+                encoding="utf-8",
+            )
+
+        def _handle(g: dict) -> dict[str, Any]:
+            return extract_one(g, specs, args.model)
+
+        with ThreadPoolExecutor(max_workers=workers) as pool:
+            futs = {pool.submit(_handle, g): g for g in todo}
+            for fut in as_completed(futs):
+                g = futs[fut]
+                try:
+                    row = fut.result()
+                except Exception as e:
+                    row = {
+                        "picture_key": g["picture_key"],
+                        "elapsed_s": 0,
+                        "error": str(e),
+                        "raw_text": "",
+                        "attributes": [],
+                        "model": args.model,
+                    }
+                with ckpt_lock:
+                    vision_by_pic[g["picture_key"]] = row
+                    with ckpt_path.open("a", encoding="utf-8") as f:
+                        f.write(json.dumps(row, ensure_ascii=False) + "\n")
+                    done_n += 1
+                    i = done_n
+                    ok = not row.get("error") and bool(row.get("attributes"))
+                    log(
+                        f"[{i}/{len(todo)}] {g['representative']['offer_id']} "
+                        f"{'OK' if ok else 'FAIL'} {row.get('elapsed_s')}s "
+                        f"attrs={len(row.get('attributes') or [])} err={row.get('error')}"
+                    )
+                    if i % 25 == 0:
+                        rate = i / max(0.01, (time.time() - t_all) / 60.0)
+                        state_path.write_text(
+                            json.dumps(
+                                {
+                                    "done": len(vision_by_pic),
+                                    "queue_left": len(todo) - i,
+                                    "elapsed_min": round((time.time() - t_all) / 60, 1),
+                                    "pics_per_min": round(rate, 1),
+                                    "model": args.model,
+                                    "workers": workers,
+                                },
+                                ensure_ascii=False,
+                                indent=2,
+                            ),
+                            encoding="utf-8",
+                        )
+                    if i % 200 == 0:
+                        _mid_export()
+                        log(f"  mid-export @ {i} unique")
         log(f"vision pass done in {round((time.time()-t_all)/60,1)} min")
 
     log("merging filters…")
